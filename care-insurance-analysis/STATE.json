@@ -1,0 +1,260 @@
+{
+  "schema": "care_state/v1",
+  "revision": 2,
+  "plan_revision": "2.2",
+  "updated_at": "2026-10-08T23:32:49.598185+09:00",
+  "phase": "planning_complete_analysis_not_started",
+  "writer": "00",
+  "canonical_repository": "myonmyon545-cell/-",
+  "canonical_path": "care-insurance-analysis/STATE.json",
+  "deadline": {
+    "date": "2026-10-12",
+    "timezone": "Asia/Tokyo",
+    "user_time_specified": false
+  },
+  "target_submission": "2026-10-12T21:00:00+09:00",
+  "inputs": {
+    "S01": {
+      "name": "処理対象データ群.xlsx",
+      "id": "libfile_2f275b2a53d481919fb7d942fbecc486",
+      "sha256": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d",
+      "role": "target",
+      "municipality": "三島市22206",
+      "label": "令和7年度第2回",
+      "application_period": [
+        "2025-04-01",
+        "2025-09-30"
+      ],
+      "warehouse_cutoff": "2025-11-30"
+    },
+    "S02": {
+      "name": "第1回.xlsx相当の文字化け名ファイル",
+      "id": "libfile_49bf2650277881919afc2e41b9afaca2",
+      "sha256": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304",
+      "role": "prior_period_reference",
+      "label": "令和7年度第1回",
+      "application_period": [
+        "2024-10-01",
+        "2025-03-31"
+      ],
+      "warehouse_cutoff": "2025-06-30"
+    },
+    "S03": {
+      "name": "R5　元データ.xlsx",
+      "id": "libfile_6ef50a7e48148191bab971c64f1df614",
+      "sha256": "e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f",
+      "role": "structure_and_presentation_reference",
+      "actual_data": "令和4年度第2回、申請期間2022-04-01～2022-09-30",
+      "user_name_binding": "ユーザーのR5基データは現状この資料と解釈。別資料が明示されたら形式要件だけ更新。"
+    },
+    "S04": {
+      "name": "指示書",
+      "id": "libfile_348a1421657c8191938bc42e4a79b9ea",
+      "sha256": "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800",
+      "format": "docx_without_extension",
+      "role": "analysis_priorities_from_old_meeting_script"
+    },
+    "S05": {
+      "name": "manual.pdf",
+      "id": "libfile_7a46b17eb12c8191b3104fe6a8f4f0aa",
+      "sha256": "87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1",
+      "role": "board_analysis_procedure",
+      "pages": 9,
+      "focus": "p1集計項目、p3-4CSV抽出、p5出力と件数確認"
+    },
+    "S06": {
+      "name": "Tool_v1.3 (1).xls",
+      "id": "libfile_6f78bde68948819198a39bb69b17af54",
+      "sha256": "b74b37c05a97d053ef46c16f380177f5a0724151dac5daff1c4076290671e524",
+      "role": "board_analysis_tool",
+      "limitation": "通常セル読取りは確認済み。VBA実行は未確認。"
+    },
+    "S07": {
+      "name": "介護保険データ解析_プロジェクト共通指示.md",
+      "id": "libfile_f293e5879930819186b897dc0e3c4338",
+      "body_revision": "2.0"
+    },
+    "S08": {
+      "name": "プロジェクト作業計画_共通指示.md",
+      "id": "libfile_b1e28b0e61a48191b21f809be438f8f4",
+      "body_revision": "2.0"
+    },
+    "S09": {
+      "name": "プロジェクト作業計画_詳細運用.md",
+      "id": "libfile_605f9fb6055481919ba3ce07b897a540",
+      "body_revision": "2.0"
+    }
+  },
+  "tasks": {
+    "T01": {
+      "owner": "10",
+      "status": "未着手",
+      "wait_reason": null,
+      "confirmed_output": null,
+      "next_action": "入力ID別名期間版ハッシュ固定"
+    },
+    "T02": {
+      "owner": "10",
+      "status": "未着手",
+      "wait_reason": "先行工程",
+      "confirmed_output": null,
+      "next_action": "定義母集団セル対応と既知問題固定"
+    },
+    "T03": {
+      "owner": "10",
+      "status": "未着手",
+      "wait_reason": "先行工程",
+      "confirmed_output": null,
+      "next_action": "分析要点追加と必要セル変更を代表に出力保持保存試行"
+    },
+    "T04": {
+      "owner": "10",
+      "status": "未着手",
+      "wait_reason": "先行工程",
+      "confirmed_output": null,
+      "next_action": "全章の表と通常補正値を元セル付き抽出"
+    },
+    "T05": {
+      "owner": "10",
+      "status": "未着手",
+      "wait_reason": "先行工程",
+      "confirmed_output": null,
+      "next_action": "比較と根拠付き修正を計算"
+    },
+    "T06": {
+      "owner": "10",
+      "status": "未着手",
+      "wait_reason": "先行工程",
+      "confirmed_output": null,
+      "next_action": "候補Excelを作成し保存"
+    },
+    "T07": {
+      "owner": "20",
+      "status": "未着手",
+      "wait_reason": "先行工程",
+      "confirmed_output": null,
+      "next_action": "元資料から独立評価、指摘は30→10へ戻し新候補を再評価"
+    },
+    "T08": {
+      "owner": "10",
+      "status": "未着手",
+      "wait_reason": "先行工程",
+      "confirmed_output": null,
+      "next_action": "判定に応じて完成または暫定を保存提出"
+    }
+  },
+  "manual_tasks": {
+    "M01": {
+      "status": "検証待ち",
+      "wait_reason": "入力と実行環境",
+      "confirmed": "manual本文確認済み",
+      "next_action": "manual項目・抽出条件・入力と環境の確認"
+    },
+    "M02": {
+      "status": "停止",
+      "wait_reason": "入力と実行環境",
+      "confirmed": null,
+      "next_action": "履歴管理の検索条件を固定してCSV抽出、選択件数と出力件数を照合"
+    },
+    "M03": {
+      "status": "停止",
+      "wait_reason": "入力と実行環境",
+      "confirmed": null,
+      "next_action": "Toolで合議体別集計"
+    },
+    "M04": {
+      "status": "停止",
+      "wait_reason": "入力と実行環境",
+      "confirmed": null,
+      "next_action": "全合議体の出力・内訳・合計・抽出件数と例外の照合"
+    }
+  },
+  "known_issues": {
+    "C01": {
+      "observation": "R5名だが本文R4、主対象R7",
+      "action": "形式と現行期間を分ける"
+    },
+    "C02": {
+      "observation": "manualは個票CSV、S01は地域集計",
+      "action": "M工程を条件付きにし主経路から切り離す"
+    },
+    "C03": {
+      "observation": "Ⅰ基礎情報!G521=66、Ⅲ審査判定データ（一次・二次判定）!G136=1787。Ⅰ!G513:G520も件数と割合が不整合。",
+      "repair_candidate": "同ブックⅢ!G128:G136から、見出しを照合してⅠ!G513:G521を復元",
+      "proof_required": "Ⅲ内訳・Ⅰ割合・Ⅳ件数を10と20が独立照合して一致。一意の根拠と修正履歴を残す。",
+      "forbidden": "66を分母にする、Ⅲの値を都合よく変更する、未検証の原本修正"
+    },
+    "C04": {
+      "observation": "S01のⅣ!J208=0.023503077783995522日、S02は0日",
+      "status": "held",
+      "resolve": "元送信・集計結果または個票日付で確認。0日だけでは誤りと断定しない。",
+      "withheld": "調査期間の比較と原因説明",
+      "forbidden": "R5の7.1日や県平均で置換"
+    },
+    "C05": {
+      "observation": "原稿の7.4%を9.6%と8.5%より高いと説明",
+      "action": "現行値と符号で書き直す。職員事情・コロナ等の過去の原因を流用しない"
+    },
+    "C06": {
+      "observation": "原稿の申請から調査と表の調査依頼から実施が異なる",
+      "action": "表の定義を採用"
+    },
+    "C07": {
+      "observation": "両期間の人口認定者基準が同じ",
+      "action": "ストックを合算しない"
+    },
+    "C08": {
+      "observation": "速度・一回性と再現性が同時要件",
+      "action": "今回用コードと記録を保存し一度の確認用再実行。常設化しない"
+    },
+    "pilot": {
+      "checks": 10,
+      "pass": 9,
+      "fail": 1,
+      "failed": "ⅠとⅢの一次判定合計",
+      "scope": "全ブック検査ではない"
+    },
+    "unavailable_from_aggregates": [
+      "変更根拠項目ランキング",
+      "特記事項内容",
+      "月次申請台帳",
+      "原稿の因果説明"
+    ]
+  },
+  "role_chats_created": false,
+  "other_chat_github_access": "初回に確認",
+  "outputs": {
+    "candidate": null,
+    "final_workbook": null,
+    "reproduction_zip": null,
+    "candidate_checks": null
+  },
+  "role_reports": {
+    "10": "reports/10.json",
+    "20": "reports/20.json",
+    "30": "reports/30.json"
+  },
+  "next_action": "00/10のチャットでGitHub同一コミットを読取り。10がT01-T03を開始。20は候補前に検査観点を準備。",
+  "history": [
+    {
+      "event": "共有用の登録内容をローカル準備。GitHub登録は自動承認審査に拒否され未実施。本解析も未実施。",
+      "at": "2026-10-08T23:08:44.774250+09:00"
+    },
+    {
+      "at": "2026-10-08T23:32:49.598185+09:00",
+      "event": "提示済み非公開GitHub宛先と共有内容をユーザー承認。Codex書込みも追認。初期共有と軽量検査を登録。登録結果はコミット読戻しで検証。"
+    }
+  ],
+  "deployment_status": "registered_on_main",
+  "canonical_path_after_activation": "care-insurance-analysis/STATE.json",
+  "approval_scope": "計画本文、資料ID・入力ハッシュ・集計済みの確認値、初期STATE、役割別報告ひな型、README。原本Excel・PDF・個票・認証情報は送らない。",
+  "sharing_authorized": true,
+  "code_writing_authorized": true,
+  "automation_scope": "軽量JSON/コード検査のみ。本解析、チャット起動、完成昇格は実施しない。",
+  "optimization": {
+    "first_evaluation": "all_required_scope",
+    "machine_checks": "all_metrics_every_candidate",
+    "ai_reevaluation": "dependency_closure_plus_C03_C04",
+    "measured_speedup": null
+  }
+}

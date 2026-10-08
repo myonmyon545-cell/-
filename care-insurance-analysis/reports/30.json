@@ -1,0 +1,21 @@
+{
+  "schema": "care_handoff/v1",
+  "role": "30",
+  "plan_revision": "2.2",
+  "status": "waiting_for_input",
+  "task_id": null,
+  "source_commit": null,
+  "updated_at": "2026-10-08T23:32:49.598185+09:00",
+  "inputs": [],
+  "outputs": [],
+  "checks": [],
+  "issues": [],
+  "next_role": "10",
+  "next_action": "問題ID到着後に原因と修正案を返す",
+  "restart_condition": null,
+  "candidate": null,
+  "candidate_fingerprint": null,
+  "newly_checked": [],
+  "reused_from": [],
+  "elapsed_minutes": null
+}
