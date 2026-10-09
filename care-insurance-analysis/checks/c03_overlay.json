@@ -1,0 +1,539 @@
+{
+  "status": "PASS",
+  "role20_report_blob_sha": "8a62a506c6ea56688e7231b44470cabd35d5912a",
+  "scope": "C03 overlay into T04/T05 work results only; source inputs unchanged",
+  "source_copy_sha256": "fef7ab5b1b46bc8eb03c040c3d4767ec9aa41098c6106019397ce29623c77cf6",
+  "input_values_patched": [
+    {
+      "input": "S01",
+      "id": "I.first_decision_duplicate:G513",
+      "value": 66,
+      "source_ref": {
+        "input": "S01",
+        "sheet": "Ⅰ基礎情報",
+        "cell": "G513"
+      },
+      "verdict": "PASS"
+    },
+    {
+      "input": "S01",
+      "id": "I.first_decision_duplicate:G514",
+      "value": 255,
+      "source_ref": {
+        "input": "S01",
+        "sheet": "Ⅰ基礎情報",
+        "cell": "G514"
+      },
+      "verdict": "PASS"
+    },
+    {
+      "input": "S01",
+      "id": "I.first_decision_duplicate:G515",
+      "value": 198,
+      "source_ref": {
+        "input": "S01",
+        "sheet": "Ⅰ基礎情報",
+        "cell": "G515"
+      },
+      "verdict": "PASS"
+    },
+    {
+      "input": "S01",
+      "id": "I.first_decision_duplicate:G516",
+      "value": 432,
+      "source_ref": {
+        "input": "S01",
+        "sheet": "Ⅰ基礎情報",
+        "cell": "G516"
+      },
+      "verdict": "PASS"
+    },
+    {
+      "input": "S01",
+      "id": "I.first_decision_duplicate:G517",
+      "value": 259,
+      "source_ref": {
+        "input": "S01",
+        "sheet": "Ⅰ基礎情報",
+        "cell": "G517"
+      },
+      "verdict": "PASS"
+    },
+    {
+      "input": "S01",
+      "id": "I.first_decision_duplicate:G518",
+      "value": 190,
+      "source_ref": {
+        "input": "S01",
+        "sheet": "Ⅰ基礎情報",
+        "cell": "G518"
+      },
+      "verdict": "PASS"
+    },
+    {
+      "input": "S01",
+      "id": "I.first_decision_duplicate:G519",
+      "value": 230,
+      "source_ref": {
+        "input": "S01",
+        "sheet": "Ⅰ基礎情報",
+        "cell": "G519"
+      },
+      "verdict": "PASS"
+    },
+    {
+      "input": "S01",
+      "id": "I.first_decision_duplicate:G520",
+      "value": 157,
+      "source_ref": {
+        "input": "S01",
+        "sheet": "Ⅰ基礎情報",
+        "cell": "G520"
+      },
+      "verdict": "PASS"
+    },
+    {
+      "input": "S01",
+      "id": "I.first_decision_duplicate:G521",
+      "value": 1787,
+      "source_ref": {
+        "input": "S01",
+        "sheet": "Ⅰ基礎情報",
+        "cell": "G521"
+      },
+      "verdict": "PASS"
+    },
+    {
+      "input": "S02",
+      "id": "I.first_decision_duplicate:G513",
+      "value": 66,
+      "source_ref": {
+        "input": "S02",
+        "sheet": "Ⅲ審査判定データ（一次・二次判定）",
+        "cell": "G128"
+      },
+      "verdict": "PASS"
+    },
+    {
+      "input": "S02",
+      "id": "I.first_decision_duplicate:G514",
+      "value": 246,
+      "source_ref": {
+        "input": "S02",
+        "sheet": "Ⅲ審査判定データ（一次・二次判定）",
+        "cell": "G129"
+      },
+      "verdict": "PASS"
+    },
+    {
+      "input": "S02",
+      "id": "I.first_decision_duplicate:G515",
+      "value": 174,
+      "source_ref": {
+        "input": "S02",
+        "sheet": "Ⅲ審査判定データ（一次・二次判定）",
+        "cell": "G130"
+      },
+      "verdict": "PASS"
+    },
+    {
+      "input": "S02",
+      "id": "I.first_decision_duplicate:G516",
+      "value": 436,
+      "source_ref": {
+        "input": "S02",
+        "sheet": "Ⅲ審査判定データ（一次・二次判定）",
+        "cell": "G131"
+      },
+      "verdict": "PASS"
+    },
+    {
+      "input": "S02",
+      "id": "I.first_decision_duplicate:G517",
+      "value": 216,
+      "source_ref": {
+        "input": "S02",
+        "sheet": "Ⅲ審査判定データ（一次・二次判定）",
+        "cell": "G132"
+      },
+      "verdict": "PASS"
+    },
+    {
+      "input": "S02",
+      "id": "I.first_decision_duplicate:G518",
+      "value": 203,
+      "source_ref": {
+        "input": "S02",
+        "sheet": "Ⅲ審査判定データ（一次・二次判定）",
+        "cell": "G133"
+      },
+      "verdict": "PASS"
+    },
+    {
+      "input": "S02",
+      "id": "I.first_decision_duplicate:G519",
+      "value": 269,
+      "source_ref": {
+        "input": "S02",
+        "sheet": "Ⅲ審査判定データ（一次・二次判定）",
+        "cell": "G134"
+      },
+      "verdict": "PASS"
+    },
+    {
+      "input": "S02",
+      "id": "I.first_decision_duplicate:G520",
+      "value": 140,
+      "source_ref": {
+        "input": "S02",
+        "sheet": "Ⅲ審査判定データ（一次・二次判定）",
+        "cell": "G135"
+      },
+      "verdict": "PASS"
+    },
+    {
+      "input": "S02",
+      "id": "I.first_decision_duplicate:G521",
+      "value": 1750,
+      "source_ref": {
+        "input": "S02",
+        "sheet": "Ⅲ審査判定データ（一次・二次判定）",
+        "cell": "G136"
+      },
+      "verdict": "PASS"
+    }
+  ],
+  "input_total_checks": {
+    "S01": {
+      "original_I_counts": [
+        255,
+        198,
+        432,
+        259,
+        190,
+        230,
+        157,
+        0.03693340794627868,
+        66
+      ],
+      "verified_III_counts": [
+        66,
+        255,
+        198,
+        432,
+        259,
+        190,
+        230,
+        157,
+        1787
+      ],
+      "effective_analysis_counts": [
+        66,
+        255,
+        198,
+        432,
+        259,
+        190,
+        230,
+        157,
+        1787
+      ],
+      "labels_match": true,
+      "ratio_columns_match": true,
+      "parts_sum": 1787,
+      "I_total": 1787,
+      "IV_total_checks": {
+        "J189": 1787,
+        "J207": 1787,
+        "J225": 1787
+      },
+      "source_copy_sha256": "fef7ab5b1b46bc8eb03c040c3d4767ec9aa41098c6106019397ce29623c77cf6",
+      "cell_inventory_json_sha256": "7fbf8dd9d0ea32632d16e10b49026b050db10bb6d9aa26692d0fcea7745af6df",
+      "input_sha256": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d"
+    },
+    "S02": {
+      "original_I_counts": [
+        246,
+        174,
+        436,
+        216,
+        203,
+        269,
+        140,
+        0.037714285714285714,
+        66
+      ],
+      "verified_III_counts": [
+        66,
+        246,
+        174,
+        436,
+        216,
+        203,
+        269,
+        140,
+        1750
+      ],
+      "effective_analysis_counts": [
+        66,
+        246,
+        174,
+        436,
+        216,
+        203,
+        269,
+        140,
+        1750
+      ],
+      "labels_match": true,
+      "ratio_columns_match": true,
+      "parts_sum": 1750,
+      "I_total": 1750,
+      "IV_total_checks": {
+        "J189": 1750,
+        "J207": 1750,
+        "J225": 1750
+      },
+      "source_copy_sha256": null,
+      "cell_inventory_json_sha256": "5f34b80d09ca20adaff696ba14a0b587fe56b1a3fae8afc090b68245f43e7bf4",
+      "input_sha256": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304"
+    }
+  },
+  "period_comparisons": [
+    {
+      "id": "I.first_decision_duplicate:G513:提供期間差",
+      "city_id": "I.first_decision_duplicate:G513",
+      "reference_id": "I.first_decision_duplicate:G513",
+      "reference_input": "S02",
+      "label": "提供期間差",
+      "unit": "件",
+      "status": "valid",
+      "value": 0,
+      "adjustment": "通常",
+      "population": "一次判定結果の有効ケース",
+      "ratio_basis": "",
+      "source_provenance": {
+        "S01": {
+          "input": "S01",
+          "sheet": "Ⅰ基礎情報",
+          "cell": "G513"
+        },
+        "S02": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（一次・二次判定）",
+          "cell": "G128"
+        },
+        "issue": "C03"
+      }
+    },
+    {
+      "id": "I.first_decision_duplicate:G514:提供期間差",
+      "city_id": "I.first_decision_duplicate:G514",
+      "reference_id": "I.first_decision_duplicate:G514",
+      "reference_input": "S02",
+      "label": "提供期間差",
+      "unit": "件",
+      "status": "valid",
+      "value": 9,
+      "adjustment": "通常",
+      "population": "一次判定結果の有効ケース",
+      "ratio_basis": "",
+      "source_provenance": {
+        "S01": {
+          "input": "S01",
+          "sheet": "Ⅰ基礎情報",
+          "cell": "G514"
+        },
+        "S02": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（一次・二次判定）",
+          "cell": "G129"
+        },
+        "issue": "C03"
+      }
+    },
+    {
+      "id": "I.first_decision_duplicate:G515:提供期間差",
+      "city_id": "I.first_decision_duplicate:G515",
+      "reference_id": "I.first_decision_duplicate:G515",
+      "reference_input": "S02",
+      "label": "提供期間差",
+      "unit": "件",
+      "status": "valid",
+      "value": 24,
+      "adjustment": "通常",
+      "population": "一次判定結果の有効ケース",
+      "ratio_basis": "",
+      "source_provenance": {
+        "S01": {
+          "input": "S01",
+          "sheet": "Ⅰ基礎情報",
+          "cell": "G515"
+        },
+        "S02": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（一次・二次判定）",
+          "cell": "G130"
+        },
+        "issue": "C03"
+      }
+    },
+    {
+      "id": "I.first_decision_duplicate:G516:提供期間差",
+      "city_id": "I.first_decision_duplicate:G516",
+      "reference_id": "I.first_decision_duplicate:G516",
+      "reference_input": "S02",
+      "label": "提供期間差",
+      "unit": "件",
+      "status": "valid",
+      "value": -4,
+      "adjustment": "通常",
+      "population": "一次判定結果の有効ケース",
+      "ratio_basis": "",
+      "source_provenance": {
+        "S01": {
+          "input": "S01",
+          "sheet": "Ⅰ基礎情報",
+          "cell": "G516"
+        },
+        "S02": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（一次・二次判定）",
+          "cell": "G131"
+        },
+        "issue": "C03"
+      }
+    },
+    {
+      "id": "I.first_decision_duplicate:G517:提供期間差",
+      "city_id": "I.first_decision_duplicate:G517",
+      "reference_id": "I.first_decision_duplicate:G517",
+      "reference_input": "S02",
+      "label": "提供期間差",
+      "unit": "件",
+      "status": "valid",
+      "value": 43,
+      "adjustment": "通常",
+      "population": "一次判定結果の有効ケース",
+      "ratio_basis": "",
+      "source_provenance": {
+        "S01": {
+          "input": "S01",
+          "sheet": "Ⅰ基礎情報",
+          "cell": "G517"
+        },
+        "S02": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（一次・二次判定）",
+          "cell": "G132"
+        },
+        "issue": "C03"
+      }
+    },
+    {
+      "id": "I.first_decision_duplicate:G518:提供期間差",
+      "city_id": "I.first_decision_duplicate:G518",
+      "reference_id": "I.first_decision_duplicate:G518",
+      "reference_input": "S02",
+      "label": "提供期間差",
+      "unit": "件",
+      "status": "valid",
+      "value": -13,
+      "adjustment": "通常",
+      "population": "一次判定結果の有効ケース",
+      "ratio_basis": "",
+      "source_provenance": {
+        "S01": {
+          "input": "S01",
+          "sheet": "Ⅰ基礎情報",
+          "cell": "G518"
+        },
+        "S02": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（一次・二次判定）",
+          "cell": "G133"
+        },
+        "issue": "C03"
+      }
+    },
+    {
+      "id": "I.first_decision_duplicate:G519:提供期間差",
+      "city_id": "I.first_decision_duplicate:G519",
+      "reference_id": "I.first_decision_duplicate:G519",
+      "reference_input": "S02",
+      "label": "提供期間差",
+      "unit": "件",
+      "status": "valid",
+      "value": -39,
+      "adjustment": "通常",
+      "population": "一次判定結果の有効ケース",
+      "ratio_basis": "",
+      "source_provenance": {
+        "S01": {
+          "input": "S01",
+          "sheet": "Ⅰ基礎情報",
+          "cell": "G519"
+        },
+        "S02": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（一次・二次判定）",
+          "cell": "G134"
+        },
+        "issue": "C03"
+      }
+    },
+    {
+      "id": "I.first_decision_duplicate:G520:提供期間差",
+      "city_id": "I.first_decision_duplicate:G520",
+      "reference_id": "I.first_decision_duplicate:G520",
+      "reference_input": "S02",
+      "label": "提供期間差",
+      "unit": "件",
+      "status": "valid",
+      "value": 17,
+      "adjustment": "通常",
+      "population": "一次判定結果の有効ケース",
+      "ratio_basis": "",
+      "source_provenance": {
+        "S01": {
+          "input": "S01",
+          "sheet": "Ⅰ基礎情報",
+          "cell": "G520"
+        },
+        "S02": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（一次・二次判定）",
+          "cell": "G135"
+        },
+        "issue": "C03"
+      }
+    },
+    {
+      "id": "I.first_decision_duplicate:G521:提供期間差",
+      "city_id": "I.first_decision_duplicate:G521",
+      "reference_id": "I.first_decision_duplicate:G521",
+      "reference_input": "S02",
+      "label": "提供期間差",
+      "unit": "件",
+      "status": "valid",
+      "value": 37,
+      "adjustment": "通常",
+      "population": "一次判定結果の有効ケース",
+      "ratio_basis": "",
+      "source_provenance": {
+        "S01": {
+          "input": "S01",
+          "sheet": "Ⅰ基礎情報",
+          "cell": "G521"
+        },
+        "S02": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（一次・二次判定）",
+          "cell": "G136"
+        },
+        "issue": "C03"
+      }
+    }
+  ],
+  "valid_comparisons": 9
+}

@@ -3,15 +3,56 @@
   "source_sheet_count": 14,
   "output_sheet_count": 15,
   "chart_count": 148,
-  "original_sheet_parts_identical": true,
+  "original_sheet_parts_identical_except_authorized_C03_cells": true,
   "chart_xml_series_axes_layout_identical": true,
   "drawing_and_printer_parts_identical": true,
   "original_style_records_identical": true,
-  "original_formula_and_cached_values_identical": true,
+  "original_formula_and_cached_values_identical_except_authorized_C03_cells": true,
   "defined_name_sheet_indices_shifted": true,
+  "authorized_cell_changes": {
+    "Ⅰ基礎情報": {
+      "G513": {
+        "from": 255,
+        "to": 66
+      },
+      "G514": {
+        "from": 198,
+        "to": 255
+      },
+      "G515": {
+        "from": 432,
+        "to": 198
+      },
+      "G516": {
+        "from": 259,
+        "to": 432
+      },
+      "G517": {
+        "from": 190,
+        "to": 259
+      },
+      "G518": {
+        "from": 230,
+        "to": 190
+      },
+      "G519": {
+        "from": 157,
+        "to": 230
+      },
+      "G520": {
+        "from": 0.03693340794627868,
+        "to": 157
+      },
+      "G521": {
+        "from": 66,
+        "to": 1787
+      }
+    }
+  },
   "changed_original_parts": [
     "xl/styles.xml",
     "xl/workbook.xml",
+    "xl/worksheets/sheet3.xml",
     "xl/_rels/workbook.xml.rels",
     "[Content_Types].xml"
   ],
@@ -19,6 +60,6 @@
     "xl/worksheets/sheet15.xml"
   ],
   "source_sha256": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d",
-  "output_sha256": "b349f3dd6e27f62a4820589ecaaf6ab069429434827c987746c406a1d9349542",
-  "scope": "OOXML structural preservation; visual and application checks are separate"
+  "output_sha256": "fef7ab5b1b46bc8eb03c040c3d4767ec9aa41098c6106019397ce29623c77cf6",
+  "scope": "OOXML structural preservation with exactly the independently approved C03 changes; visual and application checks are separate"
 }

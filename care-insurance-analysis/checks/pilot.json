@@ -6,15 +6,56 @@
     "source_sheet_count": 14,
     "output_sheet_count": 15,
     "chart_count": 148,
-    "original_sheet_parts_identical": true,
+    "original_sheet_parts_identical_except_authorized_C03_cells": true,
     "chart_xml_series_axes_layout_identical": true,
     "drawing_and_printer_parts_identical": true,
     "original_style_records_identical": true,
-    "original_formula_and_cached_values_identical": true,
+    "original_formula_and_cached_values_identical_except_authorized_C03_cells": true,
     "defined_name_sheet_indices_shifted": true,
+    "authorized_cell_changes": {
+      "Ⅰ基礎情報": {
+        "G513": {
+          "from": 255,
+          "to": 66
+        },
+        "G514": {
+          "from": 198,
+          "to": 255
+        },
+        "G515": {
+          "from": 432,
+          "to": 198
+        },
+        "G516": {
+          "from": 259,
+          "to": 432
+        },
+        "G517": {
+          "from": 190,
+          "to": 259
+        },
+        "G518": {
+          "from": 230,
+          "to": 190
+        },
+        "G519": {
+          "from": 157,
+          "to": 230
+        },
+        "G520": {
+          "from": 0.03693340794627868,
+          "to": 157
+        },
+        "G521": {
+          "from": 66,
+          "to": 1787
+        }
+      }
+    },
     "changed_original_parts": [
       "xl/styles.xml",
       "xl/workbook.xml",
+      "xl/worksheets/sheet3.xml",
       "xl/_rels/workbook.xml.rels",
       "[Content_Types].xml"
     ],
@@ -22,8 +63,8 @@
       "xl/worksheets/sheet15.xml"
     ],
     "source_sha256": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d",
-    "output_sha256": "b349f3dd6e27f62a4820589ecaaf6ab069429434827c987746c406a1d9349542",
-    "scope": "OOXML structural preservation; visual and application checks are separate"
+    "output_sha256": "fef7ab5b1b46bc8eb03c040c3d4767ec9aa41098c6106019397ce29623c77cf6",
+    "scope": "OOXML保持試験。原S01数式・キャッシュ・他セルと印刷部品を保持し、C03の9セルだけ許可。"
   },
   "ordinary_export": {
     "verdict": "FAIL",
@@ -32,27 +73,55 @@
   },
   "new_formula_recalculation": {
     "verdict": "PASS",
-    "expected": 0.15868346905285322,
-    "got": 0.15868346905285322,
-    "changedInputRecalculated": true,
-    "elapsedSeconds": 19.397,
-    "reopened_formula": "B5/C5",
-    "reopened_cached_value": 0.15868346905285322
+    "certification_rate_formula": "='Ⅰ基礎情報'!F261/'Ⅰ基礎情報'!F260",
+    "certification_rate_reopened_cached_value": 0.15868346905285322,
+    "C03_total_formula": "=SUM('Ⅰ基礎情報'!G513:G520)",
+    "C03_total_reopened_cached_value": 1787,
+    "temporary_change_test": "G513 66→67: total 1787→1788; restored 66: total 1787",
+    "reopen_reader": "openpyxl read-only data_only and formula views",
+    "workbook_write_performed_by_reader": false
   },
   "native_open": {
     "application": "LibreOfficeDev 26.8 alpha",
     "pdf_export_succeeded": true,
-    "exported_pdf_pages": 138,
-    "scope": "application open/export; no visual approval"
+    "exported_pdf_pages": 137,
+    "summary_page_size": "Letter landscape, fit to one page",
+    "scope": "native open and export; no visual approval"
   },
   "visual": {
     "verdict": "FAIL",
-    "reason": "Japanese font unavailable; glyphs missing in rendering",
-    "needs": "Japanese-compatible TTF/OTF font and original/new summary render comparison"
+    "reason": "要点シートは1ページに収まるが、日本語対応フォントがなく文字グリフが欠落。",
+    "evidence": "work/c03_trial/native/pagecheck/final-001.png",
+    "needs": "日本語対応TTF/OTFまたは日本語対応描画環境を用意し、再出力・表示確認"
   },
   "necessary_original_cell_change": {
-    "verdict": "NOT_EXECUTED",
-    "reason": "C03 independent source proof by ROLE=20 pending"
+    "verdict": "PASS_WORK_COPY",
+    "range": "S01 Ⅰ基礎情報!G513:G521",
+    "old_values": [
+      255,
+      198,
+      432,
+      259,
+      190,
+      230,
+      157,
+      0.03693340794627868,
+      66
+    ],
+    "new_values": [
+      66,
+      255,
+      198,
+      432,
+      259,
+      190,
+      230,
+      157,
+      1787
+    ],
+    "role20_report_blob_sha": "8a62a506c6ea56688e7231b44470cabd35d5912a",
+    "original_input_hash_unchanged": true,
+    "strict_cell_change_preservation": "PASS"
   },
   "candidate_registered": false
 }

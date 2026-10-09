@@ -4,11 +4,12 @@
   "plan_revision": "2.2",
   "status": "partially_completed_waiting_for_conditions",
   "task_id": "T03",
-  "source_commit": "14ad689ab195ed5c10a8ecdc01863bef4204c50d",
-  "pre_save_rechecked_commit": "176588644023d1b2bc186e574abd6c435c089447",
-  "updated_at": "2026-10-09T11:18:48.380637+09:00",
+  "source_commit": "102797981e97c347509569276cbe6ff6e4d1acef",
+  "pre_save_rechecked_commit": "102797981e97c347509569276cbe6ff6e4d1acef",
+  "updated_at": "2026-10-09T15:47:45+09:00",
   "startup_read": {
     "branch": "main",
+    "head_sha": "102797981e97c347509569276cbe6ff6e4d1acef",
     "paths": [
       "PLAN.md",
       "STATE.json",
@@ -16,12 +17,23 @@
       "reports/20.json",
       "reports/30.json"
     ],
+    "blob_sha_by_path": {
+      "PLAN.md": "6e7076831d8b5bdcc85acd346db2161b49c9579b",
+      "STATE.json": "e3119ecc8a658005c987cb6660ad737975b1cf0d",
+      "reports/10.json": "502a9d137f6cc5b99a4acaafcef6700d92be3b52",
+      "reports/20.json": "8a62a506c6ea56688e7231b44470cabd35d5912a",
+      "reports/30.json": "d46d6c69f11d0b1457a04e58acc9c2e032ccabe3"
+    },
     "all_same_commit": true,
-    "initial_completed_tasks": [],
+    "initial_completed_tasks": [
+      "T01",
+      "T02",
+      "T04"
+    ],
     "latest_plan_unchanged": true,
     "latest_report10_unchanged": true,
-    "latest_state_revision": 3,
-    "latest_read_scope": "all five management files at fixed pre-save commit"
+    "latest_state_revision": 5,
+    "latest_read_scope": "main HEADの固定commitで5管理ファイルを読取。PLAN 2.2 / STATE revision 5 / report20 C03 PASSを確認"
   },
   "inputs": [
     {
@@ -413,13 +425,16 @@
       ]
     },
     "T03": {
-      "status": "held",
-      "completed_scope": "新シート追加・元14シート148グラフ数式印刷の構造保持・新数式の再計算と再読取り・ネイティブ開封/出力",
-      "unfinished_scope": "日本語表示検査、必要原セル変更を含む保持試験",
+      "status": "partially_completed_visual_held",
+      "completed_scope": "C03独立照合済みの9セルをS01作業コピーだけへ適用。変更セルが指定9個のみで、元14シート・148グラフ・数式/キャッシュ・図形・印刷部品・既存スタイルを保持。Artifact Toolによる新規計算式・変更/復元試験、保存ブック再読込、LibreOfficeネイティブPDF出力、要点シート1ページ化を確認。",
+      "unfinished_scope": "日本語グリフ欠落。実行環境に日本語フォントがなく、表示確認は不合格。TTF/OTFまたは描画環境提供後に再検査。",
       "evidence": [
         "checks/preservation.json",
-        "checks/pilot.json"
-      ]
+        "checks/pilot.json",
+        "checks/startup.json",
+        "checks/c03_overlay.json"
+      ],
+      "work_copy_sha256": "fef7ab5b1b46bc8eb03c040c3d4767ec9aa41098c6106019397ce29623c77cf6"
     },
     "T04": {
       "status": "completed",
@@ -427,12 +442,13 @@
       "evidence": "再現ZIP内results/extracted_values.json"
     },
     "T05": {
-      "status": "partially_completed",
-      "completed_scope": "比較1469件（有効1422/保留47）、計算可能比率・件数・明示内訳合計の照合、C03修正前と提案後の根拠",
-      "unfinished_scope": "C03の20独立照合後の修正適用、C04/C10/C11の正式元集計確認と影響再計算。修正適用済みとは記録しない",
+      "status": "partially_completed_with_independent_C03_overlay",
+      "completed_scope": "C03をROLE20独立PASSの範囲だけ反映。S01作業コピーと分析値18件を更新、S02は原本不変更でⅢから比較値を取得。内訳合計とⅣ3件を再確認。C03提供期間差9件を有効化。",
+      "remaining_scope": "C04/C10/C11の正式根拠、E20-01の定義・出力修正提案待ち。該当工程に依存する分析を保留。",
       "evidence": [
+        "checks/c03_overlay.json",
         "checks/calculation_summary.json",
-        "checks/startup.json"
+        "checks/metric_inventory.json"
       ]
     },
     "T06": {
@@ -465,21 +481,35 @@
       "type": "code_and_aggregate_checks",
       "repository": "myonmyon545-cell/-",
       "paths": [
-        "care-insurance-analysis/src/",
+        "care-insurance-analysis/src/c03_trial.mjs",
+        "care-insurance-analysis/src/apply_c03_overlay.py",
+        "care-insurance-analysis/src/preserve_package.py",
+        "care-insurance-analysis/checks/metric_inventory.json",
         "care-insurance-analysis/checks/startup.json",
         "care-insurance-analysis/checks/calculation_summary.json",
+        "care-insurance-analysis/checks/c03_overlay.json",
         "care-insurance-analysis/checks/preservation.json",
-        "care-insurance-analysis/checks/pilot.json",
-        "care-insurance-analysis/checks/replay.json"
+        "care-insurance-analysis/checks/pilot.json"
       ],
       "save_contract": "reports/10.jsonと同じ原子的コミット。保存後にcommit tree/blob SHAと報告本文を読戻して検証する。"
+    },
+    {
+      "type": "S01_C03_work_copy",
+      "name": "S01_C03_作業コピー_保持試験.xlsx",
+      "library_file_id": "libfile_62b53f903fd08191b6791f304b704519",
+      "version": "0",
+      "sha256": "fef7ab5b1b46bc8eb03c040c3d4767ec9aa41098c6106019397ce29623c77cf6",
+      "size_bytes": 1677542,
+      "saved": true,
+      "readback_verified": true,
+      "scope": "C03独立PASSの9セル修正・保持試験専用。候補/完成成果ではない。日本語表示未解決"
     }
   ],
   "checks": [
     {
       "id": "input_hashes",
       "verdict": "PASS",
-      "scope": "S01～S06実バイト、S04別名は同一バイト。必須原資料はすべてアクセス済み"
+      "scope": "入力ファイルの原本SHA-256を再確認。S01原本不変更"
     },
     {
       "id": "source_values",
@@ -488,62 +518,66 @@
       "independent_parser": "openpyxl read-only data_only",
       "differences": [],
       "workbook_write_performed": false,
-      "scope": "all extracted source values; not independent AI interpretation or layout evaluation"
+      "scope": "C03反映の前に全抽出値一致を別読取で確認"
     },
     {
       "id": "numeric",
       "verdict": "PASS_WITH_HOLDS",
       "counts": {
-        "integer_count": 2258,
+        "integer_count": 2276,
         "ratio": 2170,
         "provided_transcription": 1784,
         "ratio_display_interval": 7
       },
       "count_total_checks": 112,
       "count_total_pass": 112,
-      "source_holds": 97,
-      "valid_comparisons": 1422,
+      "source_holds": 79,
+      "valid_comparisons": 1431,
       "held_comparisons": 47,
-      "scope": "計算可能集計比率は原数値精度、提供補正値/平均/得点/分布統計は出所・転記照合。原資料の正確性や分析全体の承認ではない"
+      "scope": "C03反映後。C04/C09/C10/C11等の未解決は別途保留"
     },
     {
       "id": "deterministic_replay",
       "verdict": "PASS",
       "evidence": "checks/replay.json",
-      "scope": "今回用計算コードを1回確認再実行。数値結果と照合結果がバイト一致"
+      "scope": "既存T04計算再現。C03反映後値はchecks/c03_overlay.jsonで別途確認"
     },
     {
       "id": "output_structure",
       "verdict": "PASS",
-      "scope": "原14シート148グラフ、原数式・キャッシュ、描画・プリンターパーツと元スタイルの保持のみ"
+      "evidence": "checks/preservation.json",
+      "scope": "C03の9セル変更だけ許可。元14シート148グラフ、数式/キャッシュ、描画と印刷設定を保持"
     },
     {
       "id": "output_visual",
       "verdict": "FAIL",
-      "scope": "日本語フォント欠如で文字表示が欠落。出力候補は登録しない"
+      "evidence": "checks/pilot.json",
+      "scope": "要点シートは横向き1ページに収まる。日本語フォントなしで日本語字形が欠落"
     },
     {
       "id": "necessary_cell_change",
-      "verdict": "NOT_EXECUTED",
-      "scope": "C03独立根拠確認待ち"
+      "verdict": "PASS_WORK_COPY",
+      "evidence": "checks/c03_overlay.json",
+      "scope": "S01作業コピーに限りⅠ!G513:G521。S01/S02原本は変更せず"
     },
     {
       "id": "handoff_metadata",
       "verdict": "PASS",
-      "scope": "PLAN2.2/STATE2.2/各role報告の整合のみ。最終報告を含むローカル検査実行済み。解析合格ではない。",
+      "scope": "PLAN 2.2 / STATE revision 5 / report20/30との記録整合。最終承認ではない",
       "result": {
         "handoff": "PASS",
-        "analysis": "NOT_STARTED_OR_NO_CANDIDATE"
+        "analysis": "IN_PROGRESS_WITH_HELD_ITEMS"
       }
     }
   ],
   "issues": [
     {
       "id": "C03",
-      "status": "HELD",
-      "needs": "ROLE=20による独立照合",
-      "applied": false,
-      "evidence": "checks/startup.json"
+      "status": "PASS_WORK_COPY",
+      "needs": "作業コピーの保持・再読込は確認済み。日本語表示はE01として未解決",
+      "applied": true,
+      "originals_modified": false,
+      "evidence": "checks/c03_overlay.json"
     },
     {
       "id": "C04",
@@ -577,9 +611,9 @@
       "id": "E01",
       "status": "HELD",
       "target": "日本語対応フォント",
-      "needs": "日本語対応TTF/OTFを実行環境に提供し、元表と分析要点の表示を再検査",
-      "attempted_access": "実行環境の日本語フォント一覧は空。接続GitHub経由の公開フォントはバイナリ取得不可/大きなファイルの内容未返却",
-      "reason": "表示検査の実行環境不足"
+      "needs": "日本語対応TTF/OTFまたは日本語対応描画環境。原表と要点シートを再出力・再確認",
+      "attempted_access": "実行環境の日本語フォント一覧を確認、該当グリフを持つフォントなし",
+      "reason": "保存ブックPDFの第1ページで日本語グリフ欠落を確認"
     }
   ],
   "manual_tasks": {
@@ -606,29 +640,36 @@
     },
     {
       "target": "日本語フォント",
-      "needed_action": "日本語対応TTF/OTFを提供または利用可能な描画環境を用意"
+      "needed_action": "日本語対応TTF/OTFまたは日本語対応描画環境を提供。元表と要点シートを再出力して字形とレイアウトを確認"
     }
   ],
   "next_role": "00",
-  "next_action": "00は保存済み報告をSTATEへ統合。10はT03の日本語表示・必要セル変更試験を再開し、T05の修正待ちを解消。20はC03根拠を元資料から独立照合し、候補後に全必須範囲を評価。担当を遠隔起動した事実はない。",
-  "restart_condition": "新しいmainの計画/状態/報告と入力ハッシュを固定して読む。無変更のT01/T02/T04は保存済み結果を再利用。E01とC03の条件成立後にT03の未実施部分を検査。C04/C10/C11は根拠が来た影響範囲だけ再計算。候補保存後だけcare_candidate/v1を生成。",
+  "next_action": "00は本報告をSTATEへ統合。10は日本語フォント/描画環境が利用可能になった時点でT03の表示再検査。30修正案に依存しないC03工程は完了したが、C04/C09/C10/C11とE20-01依存の定義修正は保留。候補登録・完成扱いはしない。",
+  "restart_condition": "日本語対応フォント提供時はT03表示再検査。ROLE=30提案と正式元集計等の根拠が揃ったら、該当保留だけ再開。",
   "candidate": null,
   "candidate_fingerprint": null,
   "newly_checked": [
-    "T01",
-    "T02",
-    "T03 structural pilot",
-    "T04",
-    "T05 aggregate comparisons",
-    "one calculation replay",
-    "M01 source reading"
+    "T03 C03独立根拠反映",
+    "S01作業コピーのセル限定保持試験",
+    "Artifact Tool計算式の変更/復元試験",
+    "作業コピー再読込・LibreOfficeネイティブPDF・1ページ表示確認",
+    "C03のT05集計オーバーレイ",
+    "C03内訳合計とⅣ合計",
+    "main固定HEADからの管理ファイル読取"
   ],
   "reused_from": [],
-  "elapsed_minutes": null,
   "time_measurements": {
-    "pilot_total_seconds": 19.397,
-    "scope": "実測したArtifact import/render/export試行。修正待ち・表示待ちは含まない",
-    "whole_session_duration": "開始計測がないため未記録"
+    "display_pdf_native_export_pages": 137,
+    "summary_print_layout": "1 page, Letter landscape, fit-to-page",
+    "S01_source_sha256_unchanged": true,
+    "work_copy_sha256": "fef7ab5b1b46bc8eb03c040c3d4767ec9aa41098c6106019397ce29623c77cf6",
+    "formula_reopen_certification_rate": 0.15868346905285322,
+    "formula_reopen_C03_total": 1787,
+    "temporary_change_and_restore": [
+      1787,
+      1788,
+      1787
+    ]
   },
   "release_status": "not_created",
   "originals_modified": false,
@@ -646,6 +687,6 @@
     "openpyxl_read_only": "3.1.5",
     "xlrd": "2.0.1",
     "LibreOffice": "26.8 alpha",
-    "japanese_font": "unavailable"
+    "japanese_font": "unavailable; Japanese glyphs missing in PDF visual check"
   }
 }

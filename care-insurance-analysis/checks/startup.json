@@ -2,8 +2,13 @@
   "schema": "care_startup_checks/v1",
   "plan_revision": "2.2",
   "C03": {
-    "status": "HELD",
-    "role10_label_match": true,
+    "status": "PASS_WORK_COPY",
+    "role20_report_blob_sha": "8a62a506c6ea56688e7231b44470cabd35d5912a",
+    "role20_evidence_source_commit": "b5b14b75d8329850b441640ff5b92408a9ccca81",
+    "original_S01_sha256": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d",
+    "S01_work_copy_sha256": "fef7ab5b1b46bc8eb03c040c3d4767ec9aa41098c6106019397ce29623c77cf6",
+    "scope": "S01作業コピー限定。原本とS02は不変更。S02比較値はⅢG128:G136を使用。",
+    "cell_range": "S01 Ⅰ基礎情報!G513:G521",
     "original_counts": [
       255,
       198,
@@ -15,7 +20,7 @@
       0.03693340794627868,
       66
     ],
-    "proposed_counts": [
+    "applied_counts": [
       66,
       255,
       198,
@@ -26,12 +31,17 @@
       157,
       1787
     ],
-    "proposed_parts_sum": 1787,
+    "parts_sum": 1787,
     "total": 1787,
     "I_ratio_matches_III": true,
-    "IV_total": 1787,
-    "applied": false,
-    "needs": "ROLE=20による独立照合"
+    "IV_totals": [
+      1787,
+      1787,
+      1787
+    ],
+    "applied": true,
+    "structural_preservation": "PASS",
+    "visual_Japanese": "HELD_NO_JAPANESE_FONT"
   },
   "C04": {
     "status": "HELD",
@@ -858,9 +868,9 @@
   "numeric_coverage": {
     "required_source_cells": 3158,
     "extracted_values": 6316,
-    "held_or_missing": 97,
-    "comparisons": 1469,
-    "valid_comparisons": 1422,
+    "held_or_missing": 79,
+    "comparisons": 1478,
+    "valid_comparisons": 1431,
     "scope": "ROLE=10 aggregate calculation; not independent evaluation or release approval"
   }
 }

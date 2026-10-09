@@ -3,12 +3,12 @@
   "plan_revision": "2.2",
   "required_source_cells": 3158,
   "extracted_values": 6316,
-  "held_or_missing": 97,
-  "comparisons": 1469,
-  "valid_comparisons": 1422,
+  "held_or_missing": 79,
+  "comparisons": 1478,
+  "valid_comparisons": 1431,
   "scope": "ROLE=10 aggregate calculation; not independent evaluation or release approval",
   "numeric_checks": {
-    "integer_count": 2258,
+    "integer_count": 2276,
     "ratio": 2170,
     "provided_transcription": 1784,
     "ratio_display_interval": 7
@@ -25,114 +25,6 @@
     "scope": "all extracted source values; not independent AI interpretation or layout evaluation"
   },
   "held_source_cells": [
-    {
-      "input": "S01",
-      "id": "I.first_decision_duplicate:G513",
-      "source_ref": {
-        "input": "S01",
-        "sheet": "Ⅰ基礎情報",
-        "cell": "G513"
-      },
-      "status": "held",
-      "reason": "C03：一次判定件数は独立照合・修正待ち",
-      "source_value": 255
-    },
-    {
-      "input": "S01",
-      "id": "I.first_decision_duplicate:G514",
-      "source_ref": {
-        "input": "S01",
-        "sheet": "Ⅰ基礎情報",
-        "cell": "G514"
-      },
-      "status": "held",
-      "reason": "C03：一次判定件数は独立照合・修正待ち",
-      "source_value": 198
-    },
-    {
-      "input": "S01",
-      "id": "I.first_decision_duplicate:G515",
-      "source_ref": {
-        "input": "S01",
-        "sheet": "Ⅰ基礎情報",
-        "cell": "G515"
-      },
-      "status": "held",
-      "reason": "C03：一次判定件数は独立照合・修正待ち",
-      "source_value": 432
-    },
-    {
-      "input": "S01",
-      "id": "I.first_decision_duplicate:G516",
-      "source_ref": {
-        "input": "S01",
-        "sheet": "Ⅰ基礎情報",
-        "cell": "G516"
-      },
-      "status": "held",
-      "reason": "C03：一次判定件数は独立照合・修正待ち",
-      "source_value": 259
-    },
-    {
-      "input": "S01",
-      "id": "I.first_decision_duplicate:G517",
-      "source_ref": {
-        "input": "S01",
-        "sheet": "Ⅰ基礎情報",
-        "cell": "G517"
-      },
-      "status": "held",
-      "reason": "C03：一次判定件数は独立照合・修正待ち",
-      "source_value": 190
-    },
-    {
-      "input": "S01",
-      "id": "I.first_decision_duplicate:G518",
-      "source_ref": {
-        "input": "S01",
-        "sheet": "Ⅰ基礎情報",
-        "cell": "G518"
-      },
-      "status": "held",
-      "reason": "C03：一次判定件数は独立照合・修正待ち",
-      "source_value": 230
-    },
-    {
-      "input": "S01",
-      "id": "I.first_decision_duplicate:G519",
-      "source_ref": {
-        "input": "S01",
-        "sheet": "Ⅰ基礎情報",
-        "cell": "G519"
-      },
-      "status": "held",
-      "reason": "C03：一次判定件数は独立照合・修正待ち",
-      "source_value": 157
-    },
-    {
-      "input": "S01",
-      "id": "I.first_decision_duplicate:G520",
-      "source_ref": {
-        "input": "S01",
-        "sheet": "Ⅰ基礎情報",
-        "cell": "G520"
-      },
-      "status": "held",
-      "reason": "C03：一次判定件数は独立照合・修正待ち",
-      "source_value": 0.03693340794627868
-    },
-    {
-      "input": "S01",
-      "id": "I.first_decision_duplicate:G521",
-      "source_ref": {
-        "input": "S01",
-        "sheet": "Ⅰ基礎情報",
-        "cell": "G521"
-      },
-      "status": "held",
-      "reason": "C03：一次判定件数は独立照合・修正待ち",
-      "source_value": 66
-    },
     {
       "input": "S01",
       "id": "II.selection.07.70:H71",
@@ -600,114 +492,6 @@
       "status": "held",
       "reason": "C04：市調査期間は両提供期間とも確認待ち",
       "source_value": 0.023503077783995522
-    },
-    {
-      "input": "S02",
-      "id": "I.first_decision_duplicate:G513",
-      "source_ref": {
-        "input": "S02",
-        "sheet": "Ⅰ基礎情報",
-        "cell": "G513"
-      },
-      "status": "held",
-      "reason": "C03：一次判定件数は独立照合・修正待ち",
-      "source_value": 246
-    },
-    {
-      "input": "S02",
-      "id": "I.first_decision_duplicate:G514",
-      "source_ref": {
-        "input": "S02",
-        "sheet": "Ⅰ基礎情報",
-        "cell": "G514"
-      },
-      "status": "held",
-      "reason": "C03：一次判定件数は独立照合・修正待ち",
-      "source_value": 174
-    },
-    {
-      "input": "S02",
-      "id": "I.first_decision_duplicate:G515",
-      "source_ref": {
-        "input": "S02",
-        "sheet": "Ⅰ基礎情報",
-        "cell": "G515"
-      },
-      "status": "held",
-      "reason": "C03：一次判定件数は独立照合・修正待ち",
-      "source_value": 436
-    },
-    {
-      "input": "S02",
-      "id": "I.first_decision_duplicate:G516",
-      "source_ref": {
-        "input": "S02",
-        "sheet": "Ⅰ基礎情報",
-        "cell": "G516"
-      },
-      "status": "held",
-      "reason": "C03：一次判定件数は独立照合・修正待ち",
-      "source_value": 216
-    },
-    {
-      "input": "S02",
-      "id": "I.first_decision_duplicate:G517",
-      "source_ref": {
-        "input": "S02",
-        "sheet": "Ⅰ基礎情報",
-        "cell": "G517"
-      },
-      "status": "held",
-      "reason": "C03：一次判定件数は独立照合・修正待ち",
-      "source_value": 203
-    },
-    {
-      "input": "S02",
-      "id": "I.first_decision_duplicate:G518",
-      "source_ref": {
-        "input": "S02",
-        "sheet": "Ⅰ基礎情報",
-        "cell": "G518"
-      },
-      "status": "held",
-      "reason": "C03：一次判定件数は独立照合・修正待ち",
-      "source_value": 269
-    },
-    {
-      "input": "S02",
-      "id": "I.first_decision_duplicate:G519",
-      "source_ref": {
-        "input": "S02",
-        "sheet": "Ⅰ基礎情報",
-        "cell": "G519"
-      },
-      "status": "held",
-      "reason": "C03：一次判定件数は独立照合・修正待ち",
-      "source_value": 140
-    },
-    {
-      "input": "S02",
-      "id": "I.first_decision_duplicate:G520",
-      "source_ref": {
-        "input": "S02",
-        "sheet": "Ⅰ基礎情報",
-        "cell": "G520"
-      },
-      "status": "held",
-      "reason": "C03：一次判定件数は独立照合・修正待ち",
-      "source_value": 0.037714285714285714
-    },
-    {
-      "input": "S02",
-      "id": "I.first_decision_duplicate:G521",
-      "source_ref": {
-        "input": "S02",
-        "sheet": "Ⅰ基礎情報",
-        "cell": "G521"
-      },
-      "status": "held",
-      "reason": "C03：一次判定件数は独立照合・修正待ち",
-      "source_value": 66
     },
     {
       "input": "S02",
@@ -1895,5 +1679,5 @@
     }
   ],
   "definitions_sha256": "3eb00c6041866615e1b4e406ea72192d97df93a607799686ab59f41e604e74a1",
-  "results_sha256": "a37f24eaa1c8316be03d1d0dc162e75be6de7d7975c2d3196715140dfc400070"
+  "results_sha256": "f6065d76e3b7386c8f22772b4537152a8dea2cd4a32e6ddbe0899506af2931b5"
 }
