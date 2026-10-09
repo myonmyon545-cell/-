@@ -1,0 +1,642 @@
+{
+  "schema": "care_source_supplement/v1",
+  "plan_revision": "2.3",
+  "updated_at": "2026-10-10T01:06:52+09:00",
+  "base_commit": "1051610978f031164d83e1ba02f72fe162a48b60",
+  "source": {
+    "id": "S10",
+    "name": "③R8.5.31_個別業務資料（介護保険課）.docx",
+    "library_file_id": "libfile_292453196e588191a056e2f761753670",
+    "sha256": "a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2",
+    "size_bytes": 584930,
+    "library_version": "0",
+    "page_count": 82,
+    "publication_date_in_filename": "2026-05-31",
+    "body_date_caution": "第10節は2026-08-01。他節や実績/予定はそれぞれの本文・列見出しで判定。ファイル名の日付を全表へ一律適用しない。",
+    "read_scope": "本文全82ページ・3991行を通読。補完対象はDOCX XML表セルを照合。全ページ画像の目視は未実施。",
+    "table_locator": "word/document.xml内w:tblの0始まりインデックス。ページはLibrary表示の1始まり/冊子印刷番号を併記。",
+    "verified_by": "planning",
+    "verified_at": "2026-10-10T01:06:52+09:00"
+  },
+  "status": "source_read_and_plan_integrated_candidate_not_applied",
+  "source_policy": {
+    "default_adoption": "reference_only",
+    "raw_source_reconstruction": false,
+    "replace_S01_S02_values": false,
+    "release_approval": false,
+    "core_scope": "S01/S02の母集団・期間・算出規則は維持。S10は独立した業務参考。",
+    "missing_semantics": "空欄・－・括弧・再掲・予定を0へ変換しない。",
+    "version_warning": "資料内のR7市独自集計は厚労省公表後差替予定。実公表の有無は未確認。"
+  },
+  "records": [
+    {
+      "id": "S10-01",
+      "title": "年度認定調査・主治医意見書受理件数",
+      "locator": {
+        "table_index_0based": 50,
+        "library_page": 42,
+        "printed_page": 45,
+        "section": "13(1)②"
+      },
+      "unit": "件",
+      "status": "reference_only",
+      "values": {
+        "R5": {
+          "survey": 4447,
+          "opinion_received": 4427
+        },
+        "R6": {
+          "survey": 3690,
+          "opinion_received": 3773
+        },
+        "R7": {
+          "survey": 4107,
+          "opinion_received": 4160
+        },
+        "R8_planned": {
+          "survey": 4500,
+          "opinion_received": 4500
+        }
+      },
+      "use": "年間業務量の不足背景を補完。調査件数と意見書件数は別指標。S01の1787ケースの分母にしない。"
+    },
+    {
+      "id": "S10-02",
+      "title": "認定調査訪問体制の年度実績",
+      "locator": {
+        "table_index_0based": 54,
+        "library_page": 43,
+        "printed_page": 46,
+        "section": "13(1)⑥"
+      },
+      "unit": "件",
+      "status": "reference_only",
+      "values": {
+        "R5": {
+          "direct": 4106,
+          "contracted": 341,
+          "total": 4447,
+          "contracted_parenthetical": 7,
+          "inbound_entrusted": 6
+        },
+        "R6": {
+          "direct": 3598,
+          "contracted": 92,
+          "total": 3690,
+          "contracted_parenthetical": 18,
+          "inbound_entrusted": 10
+        },
+        "R7": {
+          "direct": 3095,
+          "contracted": 1012,
+          "total": 4107,
+          "contracted_parenthetical": 8,
+          "inbound_entrusted": 12
+        },
+        "R8_planned": {
+          "direct": 1580,
+          "contracted": 2920,
+          "total": 4500,
+          "contracted_parenthetical": 10,
+          "inbound_entrusted": 10
+        }
+      },
+      "use": "直営＋委託＝合計の独立検査。括弧内/受託嘱託は別属性で二重加算しない。"
+    },
+    {
+      "id": "S10-03",
+      "title": "委託割合と委託移行の背景",
+      "locator": [
+        {
+          "table_index_0based": 52,
+          "library_page": 42,
+          "printed_page": 45,
+          "section": "13(1)④"
+        },
+        {
+          "table_index_0based": 53,
+          "library_page": 43,
+          "printed_page": 46,
+          "section": "13(1)⑤"
+        },
+        {
+          "table_index_0based": 55,
+          "library_page": 44,
+          "printed_page": 47,
+          "section": "13(5)"
+        }
+      ],
+      "unit": "percent_as_printed",
+      "status": "reference_only",
+      "values": {
+        "home_office_percent": {
+          "R5": 9.7,
+          "R6": 2.2,
+          "R7": 7,
+          "R8_planned": 7
+        },
+        "authorized_contractor_percent": {
+          "R7": 16.5,
+          "R8_planned": 57.8
+        },
+        "future_plan": {
+          "R8": {
+            "total": 4500,
+            "authorized": 2600,
+            "home_office": 324,
+            "percent": 65,
+            "direct_staff": 4
+          },
+          "R9": {
+            "total": 4600,
+            "authorized": 3500,
+            "home_office": 324,
+            "percent": 83,
+            "direct_staff": 2
+          },
+          "R10": {
+            "total": 4800,
+            "authorized": 4476,
+            "home_office": 324,
+            "percent": 100,
+            "direct_staff": 0
+          }
+        }
+      },
+      "use": "対全申請の提供割合。訪問件数1012/4107とは分母が異なり、7.0+16.5と一致する前提を置かない。R8以降は予定のみ。"
+    },
+    {
+      "id": "S10-04",
+      "title": "認定審査会の体制",
+      "locator": {
+        "table_index_0based": 57,
+        "library_page": 48,
+        "printed_page": 51,
+        "section": "14(1)①"
+      },
+      "status": "reference_only",
+      "unit": "mixed",
+      "values": {
+        "members": 60,
+        "members_per_board": 4,
+        "boards": 12,
+        "ordinary_meetings_per_week": 3,
+        "daytime_meetings_per_month": 2
+      },
+      "use": "M01の合議体数を資料記載12と補足。12×4=48と委員総数60を無理に一致させず構成の意味を区別。合議体IDや個票は提供されていないためM02～M04を解放しない。"
+    },
+    {
+      "id": "S10-05",
+      "title": "審査開催回数・認定件数",
+      "locator": {
+        "table_index_0based": 58,
+        "library_page": 49,
+        "printed_page": 52,
+        "section": "14(1)②"
+      },
+      "status": "reference_only",
+      "values": {
+        "R5": {
+          "meetings": 140,
+          "decisions": 4505
+        },
+        "R6": {
+          "meetings": 132,
+          "decisions": 3717
+        },
+        "R7": {
+          "meetings": 130,
+          "decisions": 3926
+        },
+        "R8_planned": {
+          "meetings": 140,
+          "decisions": 4500
+        }
+      },
+      "use": "年度の開催/認定フロー。調査4107、意見書4160、認定3926は別段階・別集計で同数に強制しない。件数を住民実人数へ言い換えない。"
+    },
+    {
+      "id": "S10-06",
+      "title": "年度審査結果内訳",
+      "locator": {
+        "table_index_0based": 59,
+        "library_page": 49,
+        "printed_page": 52,
+        "section": "14(1)③"
+      },
+      "status": "reference_only",
+      "year_binding": "直前の年度表と文脈からR7と読む。単独表に年がないため10/20が節内で再確認し、曖昧ならheld。",
+      "unit": "件",
+      "values": {
+        "categories": [
+          "非該当",
+          "要支援1",
+          "要支援2",
+          "要介護1",
+          "要介護2",
+          "要介護3",
+          "要介護4",
+          "要介護5"
+        ],
+        "counts": [
+          71,
+          587,
+          416,
+          939,
+          591,
+          417,
+          548,
+          357
+        ],
+        "total": 3926
+      },
+      "use": "年度内訳の合計検査。S01一次二次移行やC11分母の復元には使わない。"
+    },
+    {
+      "id": "S10-07",
+      "title": "年度末認定者ストック",
+      "locator": {
+        "table_index_0based": 60,
+        "library_page": 49,
+        "printed_page": 52,
+        "section": "14(1)④"
+      },
+      "status": "reference_only",
+      "unit": "人",
+      "values": {
+        "categories": [
+          "要支援1",
+          "要支援2",
+          "要介護1",
+          "要介護2",
+          "要介護3",
+          "要介護4",
+          "要介護5"
+        ],
+        "R5": {
+          "counts": [
+            806,
+            637,
+            1158,
+            810,
+            621,
+            666,
+            410
+          ],
+          "total": 5108
+        },
+        "R6": {
+          "counts": [
+            836,
+            645,
+            1261,
+            818,
+            603,
+            708,
+            358
+          ],
+          "total": 5229
+        },
+        "R7": {
+          "counts": [
+            885,
+            682,
+            1231,
+            847,
+            579,
+            736,
+            367
+          ],
+          "total": 5327
+        },
+        "R8": null
+      },
+      "use": "年度末別枠の背景。第1号/第2号範囲が明示されないためS01の2025年1月・第1号5125と同一扱いしない。対応する65歳以上人口なしで新認定率を算出しない。"
+    },
+    {
+      "id": "S10-08",
+      "title": "延期通知の理由別件数",
+      "locator": {
+        "table_index_0based": 61,
+        "library_page": 50,
+        "printed_page": 53,
+        "section": "14(1)⑤"
+      },
+      "status": "held",
+      "issue": "C12",
+      "unit": "件",
+      "values": {
+        "R5": {
+          "board_wait": 2572,
+          "opinion_wait": 483,
+          "survey_wait": 1396,
+          "survey_reprinted": 178,
+          "reported_total": 4273
+        },
+        "R6": {
+          "board_wait": 1839,
+          "opinion_wait": 706,
+          "survey_wait": 144,
+          "survey_reprinted": 51,
+          "reported_total": 2638
+        },
+        "R7": {
+          "board_wait": 1479,
+          "opinion_wait": 767,
+          "survey_wait": 2171,
+          "survey_reprinted": 424,
+          "reported_total": 3393
+        }
+      },
+      "use": "原記載の参考保存まで。重複/再掲の意味未確認、R7には算術不一致。理由別構成比・ユニーク申請者数・30日超率・原因割合の結論は禁止。"
+    },
+    {
+      "id": "S10-09",
+      "title": "認定処理に要した日数",
+      "locator": {
+        "table_index_0based": 62,
+        "library_page": 50,
+        "printed_page": 53,
+        "section": "14(1)⑥"
+      },
+      "status": "reference_only",
+      "issue": "C13",
+      "unit": "日",
+      "values": {
+        "R5": {
+          "city": {
+            "recognition": 48.8,
+            "survey": 26.8,
+            "opinion": 20.9,
+            "board_admin": 16.8
+          },
+          "prefecture": {
+            "recognition": 38.2,
+            "survey": 13.6,
+            "opinion": 17.1,
+            "board_admin": 14.9
+          },
+          "national": {
+            "recognition": 40.8,
+            "survey": 11.7,
+            "opinion": 18,
+            "board_admin": 17.1
+          }
+        },
+        "R6": {
+          "city": {
+            "recognition": 35.4,
+            "survey": 8.6,
+            "survey_original_text": "(8.6)",
+            "opinion": 19.4,
+            "board_admin": 14.3
+          },
+          "prefecture": {
+            "recognition": 38.1,
+            "survey": 12.8,
+            "opinion": 16.7,
+            "board_admin": 14.7
+          },
+          "national": {
+            "recognition": 39.9,
+            "survey": 11.1,
+            "opinion": 17.9,
+            "board_admin": 16.8
+          }
+        },
+        "R7": {
+          "city": {
+            "recognition": 47,
+            "survey": 25.6,
+            "opinion": 17.5,
+            "board_admin": null
+          },
+          "prefecture": null,
+          "national": null
+        }
+      },
+      "source_warning": "R5/R6は厚生労働省公表との見出し。R7は市独自方法による集計で、厚生労働省公表後差替予定。日付基準・除外・有効件数・対象期間詳細は未提示。",
+      "use": "年度・集計方法付き提供値の参考掲載。日数を足して認定47.0を再現しない。S01/S02平均の置換、混在比較/加重平均、速度改善・悪化/原因の断定は不可。R6括弧の意味は未確定。"
+    },
+    {
+      "id": "S10-10",
+      "title": "30日以内の認定件数割合",
+      "locator": {
+        "table_index_0based": 62,
+        "library_page": 50,
+        "printed_page": 53,
+        "section": "14(1)⑥"
+      },
+      "status": "reference_only",
+      "unit": "percent_as_printed",
+      "values": {
+        "R5": {
+          "city": 6.3,
+          "prefecture": 25.1,
+          "national": 20.4
+        },
+        "R6": {
+          "city": 32.1,
+          "prefecture": 26.9,
+          "national": 22.8
+        },
+        "R7": {
+          "city": null,
+          "prefecture": null,
+          "national": null
+        }
+      },
+      "use": "R5/R6の提供参考値。R7の空欄はmissing。延期通知3393やS01 1787からR7達成率を復元しない。"
+    },
+    {
+      "id": "S10-11",
+      "title": "認定業務の対策・予定",
+      "locator": {
+        "library_pages": [
+          41,
+          44,
+          45,
+          51,
+          52
+        ],
+        "printed_pages": [
+          44,
+          47,
+          48,
+          54,
+          55
+        ],
+        "section": "13現状/課題/方向性・14対策"
+      },
+      "status": "reference_only",
+      "facts": [
+        "市から主治医へ意見書を郵送依頼し返信用封筒で受理",
+        "資料は意見書14日以内取寄せ・記載平準化を課題として記載",
+        "調査員/事務受託法人管理者への研修を実施する対策",
+        "資料は合議体委員を6か月間隔で組替え、委員連絡会で事例検討と記載",
+        "R8～R10は段階的な委託移行予定"
+      ],
+      "use": "現在値の因果ではなく資料記載の業務背景/対策と表示。14日は調査期間や認定全体期間の基準として転用しない。"
+    }
+  ],
+  "fill_matrix": [
+    {
+      "gap": "年間業務量・年度末ストック・委託体制・業務改善背景",
+      "decision": "補完可能_独立参考欄",
+      "records": [
+        "S10-01",
+        "S10-02",
+        "S10-03",
+        "S10-05",
+        "S10-07",
+        "S10-11"
+      ]
+    },
+    {
+      "gap": "認定処理日数の別集計参考",
+      "decision": "補完可能_暫定提供値と定義差を明示",
+      "records": [
+        "S10-09",
+        "S10-10"
+      ],
+      "not_resolved": [
+        "C04"
+      ]
+    },
+    {
+      "gap": "合議体の体制",
+      "decision": "資料記載12合議体のみ補完",
+      "records": [
+        "S10-04"
+      ],
+      "not_resolved": [
+        "M02",
+        "M03",
+        "M04",
+        "合議体ID",
+        "個票CSV"
+      ]
+    },
+    {
+      "gap": "C10薬の内服見出し/率・C11変更率の正式分母",
+      "decision": "補完不可_対応表/個票なし",
+      "records": [],
+      "not_resolved": [
+        "C10",
+        "C11"
+      ]
+    },
+    {
+      "gap": "C09分母0",
+      "decision": "既知未算出_新資料待ちでない",
+      "records": [],
+      "not_resolved": []
+    },
+    {
+      "gap": "月次申請台帳・変更根拠・特記事項・当期30日超率",
+      "decision": "補完不可_年度表から復元しない",
+      "records": []
+    },
+    {
+      "gap": "延期理由構成と独立合計",
+      "decision": "保留_原記載不一致と再掲定義待ち",
+      "records": [
+        "S10-08"
+      ],
+      "not_resolved": [
+        "C12"
+      ]
+    }
+  ],
+  "source_diagnostics": [
+    {
+      "id": "D01",
+      "test": "訪問件数の直営＋委託＝合計",
+      "verdict": "PASS_SOURCE_ARITHMETIC",
+      "years": [
+        "R5",
+        "R6",
+        "R7",
+        "R8_planned"
+      ],
+      "scope": "表54の算術のみ。S01補正・母集団一致を証明しない"
+    },
+    {
+      "id": "D02",
+      "test": "審査結果8区分＝3926、年度末7区分＝各合計",
+      "verdict": "PASS_SOURCE_ARITHMETIC",
+      "scope": "表59/60の算術のみ。個票独立評価ではない"
+    },
+    {
+      "id": "D03",
+      "test": "延期通知理由和－掲載合計",
+      "verdict": "FAIL_SOURCE_CONSISTENCY",
+      "raw_sum": {
+        "R5": 4451,
+        "R6": 2689,
+        "R7": 4417
+      },
+      "reported_total": {
+        "R5": 4273,
+        "R6": 2638,
+        "R7": 3393
+      },
+      "reprinted": {
+        "R5": 178,
+        "R6": 51,
+        "R7": 424
+      },
+      "hypothetical_sum_minus_reprinted": {
+        "R5": 4273,
+        "R6": 2638,
+        "R7": 3993
+      },
+      "hypothetical_gap": {
+        "R5": 0,
+        "R6": 0,
+        "R7": 600
+      },
+      "scope": "再掲を引くとR5/R6は合うが意味の承認ではない。R7はさらに600差。原数字の修正・どちらを正しいか断定しない"
+    },
+    {
+      "id": "D04",
+      "test": "R8委託予定数の表間差",
+      "verdict": "HELD_DIFFERENT_PLAN_COUNTS",
+      "table54_contracted": 2920,
+      "table55_authorized_plus_home": 2924,
+      "gap": 4,
+      "issue": "C14",
+      "scope": "予定表間の差を注記。丸め・見込更新などの原因未確認"
+    }
+  ],
+  "workflow": {
+    "next_role": "10",
+    "steps": [
+      "T09:S10の実バイトSHA/表見出し/ページを独立照合し入力台帳へ",
+      "T10:補完可否・期間/母集団/提供値と再算出・保留の対照表を構造化",
+      "T11:既存の先頭分析要点1枚へ独立参考欄を追加しE20修正と一括で新候補生成",
+      "T07:20が2.3契約の全独立評価＋Q13、C03/C04、保持/可読性/再現を確認",
+      "00:新報告だけをSTATEへ統合; FAILなら30→10→20; 合格時T08"
+    ],
+    "new_chats": 0,
+    "source_wait": "C04/C10/C11/C12は解放しない。C13/C14は参考限界を明示し本体とは独立。"
+  },
+  "plan_verification": {
+    "checked_at": "2026-10-10T01:06:52+09:00",
+    "boundary_tests_passed": 24,
+    "plan_state_source_revision": "PASS",
+    "task_dependency_DAG": "PASS",
+    "requirements_checks": "PASS",
+    "original_role_reports_and_candidate": "UNCHANGED",
+    "fixed_candidate_blob": "f89352f5ff9a5f41a7c8b178dcd1b651def9d45c",
+    "handoff": {
+      "analysis": "REVISED_PLAN_AWAITING_NEW_CANDIDATE",
+      "retained_evaluation": "FAIL",
+      "retained_plan_revision": "2.2",
+      "current_plan_revision": "2.3"
+    },
+    "new_candidate_application": "NOT_EXECUTED",
+    "independent_S10_review": "NOT_EXECUTED",
+    "scope": "計画・資料精読・版移行の検査。解析完了・新候補合格ではない。"
+  }
+}

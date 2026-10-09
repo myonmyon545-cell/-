@@ -163,21 +163,63 @@ def check_repository(root):
     require("revision: '" + revision + "'" in plan, "PLAN/STATE revision mismatch")
     require(state["writer"] == "00", "STATE writer must be 00")
     reports = {}
+    change = state.get("plan_change", {})
+    previous = change.get("previous_revision")
+    transition = change.get("current_revision") == revision and previous != revision
+    retained = change.get("retained_historical_report_blobs", {})
     for role in ("10", "20", "30"):
-        report = json.loads((root / "reports" / (role + ".json")).read_text(encoding="utf-8"))
+        report_bytes = (root / "reports" / (role + ".json")).read_bytes()
+        report = json.loads(report_bytes)
         require(report.get("schema") == "care_handoff/v1" and report.get("role") == role, "report role/schema mismatch")
-        require(report.get("plan_revision") == revision, "report plan revision mismatch")
+        if report.get("plan_revision") != revision:
+            require(transition and report.get("plan_revision") == previous,
+                    "report plan revision mismatch")
+            blob = hashlib.sha1(b"blob " + str(len(report_bytes)).encode("ascii")
+                                + b"\0" + report_bytes).hexdigest()
+            require(retained.get(role) == blob,
+                    "historical report changed without current revision: " + role)
         reports[role] = report
     path = root / "checks" / "candidate.json"
     if not path.exists():
+        if transition and change.get("retained_candidate"):
+            return {"handoff": "METADATA_ONLY", "analysis": "REVISED_PLAN_AWAITING_NEW_CANDIDATE",
+                    "scope": "candidate package unavailable here; no numerical or release approval"}
         require(not any(reports[r].get("status") == "completed" and reports[r].get("task_id") in {"T06", "T07", "T08"} for r in reports), "candidate missing despite completed output/evaluation")
         return {"handoff": "PASS", "analysis": "NOT_STARTED_OR_NO_CANDIDATE", "scope": "metadata only; not analysis approval"}
     package = json.loads(path.read_text(encoding="utf-8"))
     expected = {k: v["sha256"] for k, v in state["inputs"].items() if "sha256" in v}
+    if package.get("plan_revision") != revision:
+        require(transition and package.get("plan_revision") == previous,
+                "candidate plan revision mismatch")
+        saved = change.get("retained_candidate", {})
+        require(package.get("candidate") == {k: saved[k] for k in ("id", "version", "sha256")},
+                "historical candidate identity mismatch")
+        historical = check_package(package, previous, expected)
+        require(historical["candidate_fingerprint"] == saved.get("candidate_fingerprint"),
+                "historical candidate fingerprint mismatch")
+        require(reports["10"].get("candidate_fingerprint") == historical["candidate_fingerprint"],
+                "historical work report fingerprint mismatch")
+        require(reports["10"].get("candidate") == package["candidate"],
+                "historical work report candidate mismatch")
+        require(str(state.get("outputs", {}).get("candidate", {}).get("release_status", "")).startswith("not_released"),
+                "historical candidate must not be released")
+        verdict = check_evaluation(reports["20"], package)
+        return {"handoff": "PASS", "analysis": "REVISED_PLAN_AWAITING_NEW_CANDIDATE",
+                "retained_plan_revision": previous, "retained_evaluation": verdict,
+                "current_plan_revision": revision,
+                "scope": "historical package checked; new plan implementation/evaluation not performed"}
+    if "S10" in expected:
+        require(package.get("input_hashes", {}).get("S10") == expected["S10"],
+                "current candidate must include fixed S10 input hash")
     result = check_package(package, revision, expected)
+    require(reports["10"].get("plan_revision") == revision,
+            "current candidate needs current work report")
     require(reports["10"].get("candidate_fingerprint") == result["candidate_fingerprint"], "work report candidate fingerprint mismatch")
     require(reports["10"].get("candidate") == package["candidate"], "work report candidate identity mismatch")
-    result["independent_evaluation"] = check_evaluation(reports["20"], package)
+    if reports["20"].get("plan_revision") != revision:
+        result["independent_evaluation"] = "evaluation_pending_plan_revision"
+    else:
+        result["independent_evaluation"] = check_evaluation(reports["20"], package)
     return result
 
 
