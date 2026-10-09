@@ -1,0 +1,343 @@
+{
+  "S01": {
+    "library_file_id": "libfile_2f275b2a53d481919fb7d942fbecc486",
+    "sha256": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d",
+    "size_bytes": 1615421,
+    "sheet_count": 14,
+    "chart_count": 148,
+    "sheets": [
+      {
+        "name": "表紙・目次",
+        "dimension": "A1:AQ138",
+        "state": "visible",
+        "populated_cells": 71,
+        "formula_cells": 0
+      },
+      {
+        "name": "データの見方",
+        "dimension": "A1:AC284",
+        "state": "visible",
+        "populated_cells": 84,
+        "formula_cells": 0
+      },
+      {
+        "name": "Ⅰ基礎情報",
+        "dimension": "A1:BE568",
+        "state": "visible",
+        "populated_cells": 1037,
+        "formula_cells": 219
+      },
+      {
+        "name": "Ⅱ調査項目データ（第１群）",
+        "dimension": "A1:AQ585",
+        "state": "visible",
+        "populated_cells": 1720,
+        "formula_cells": 504
+      },
+      {
+        "name": "Ⅱ調査項目データ（第２群）",
+        "dimension": "A1:AR307",
+        "state": "visible",
+        "populated_cells": 1252,
+        "formula_cells": 392
+      },
+      {
+        "name": "Ⅱ調査項目データ（第３群）",
+        "dimension": "A1:AQ210",
+        "state": "visible",
+        "populated_cells": 749,
+        "formula_cells": 224
+      },
+      {
+        "name": "Ⅱ調査項目データ（第４群）",
+        "dimension": "A1:AP349",
+        "state": "visible",
+        "populated_cells": 1229,
+        "formula_cells": 373
+      },
+      {
+        "name": "Ⅱ調査項目データ（第５群）",
+        "dimension": "A1:AQ183",
+        "state": "visible",
+        "populated_cells": 692,
+        "formula_cells": 216
+      },
+      {
+        "name": "Ⅱ調査項目データ（その他）",
+        "dimension": "A1:AQ180",
+        "state": "visible",
+        "populated_cells": 668,
+        "formula_cells": 192
+      },
+      {
+        "name": "Ⅱ（３）５項目",
+        "dimension": "A1:AQ433",
+        "state": "visible",
+        "populated_cells": 1995,
+        "formula_cells": 756
+      },
+      {
+        "name": "Ⅲ審査判定データ（一次・二次判定）",
+        "dimension": "A1:BI246",
+        "state": "visible",
+        "populated_cells": 798,
+        "formula_cells": 292
+      },
+      {
+        "name": "Ⅲ審査判定データ（変更率）",
+        "dimension": "A1:BA774",
+        "state": "visible",
+        "populated_cells": 2560,
+        "formula_cells": 58
+      },
+      {
+        "name": "Ⅲ審査判定データ（有効期間）",
+        "dimension": "A1:AU226",
+        "state": "visible",
+        "populated_cells": 619,
+        "formula_cells": 136
+      },
+      {
+        "name": "Ⅳ事務データ",
+        "dimension": "A1:AW240",
+        "state": "visible",
+        "populated_cells": 348,
+        "formula_cells": 0
+      }
+    ]
+  },
+  "S02": {
+    "library_file_id": "libfile_0d9cfee943ec819188518e4922ce620e",
+    "sha256": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304",
+    "size_bytes": 1609475,
+    "sheet_count": 14,
+    "chart_count": 148,
+    "sheets": [
+      {
+        "name": "表紙・目次",
+        "dimension": "A1:AQ138",
+        "state": "visible",
+        "populated_cells": 71,
+        "formula_cells": 0
+      },
+      {
+        "name": "データの見方",
+        "dimension": "A1:AC284",
+        "state": "visible",
+        "populated_cells": 84,
+        "formula_cells": 0
+      },
+      {
+        "name": "Ⅰ基礎情報",
+        "dimension": "A1:BE568",
+        "state": "visible",
+        "populated_cells": 1037,
+        "formula_cells": 219
+      },
+      {
+        "name": "Ⅱ調査項目データ（第１群）",
+        "dimension": "A1:AQ585",
+        "state": "visible",
+        "populated_cells": 1720,
+        "formula_cells": 504
+      },
+      {
+        "name": "Ⅱ調査項目データ（第２群）",
+        "dimension": "A1:AR307",
+        "state": "visible",
+        "populated_cells": 1252,
+        "formula_cells": 392
+      },
+      {
+        "name": "Ⅱ調査項目データ（第３群）",
+        "dimension": "A1:AQ210",
+        "state": "visible",
+        "populated_cells": 749,
+        "formula_cells": 224
+      },
+      {
+        "name": "Ⅱ調査項目データ（第４群）",
+        "dimension": "A1:AP349",
+        "state": "visible",
+        "populated_cells": 1229,
+        "formula_cells": 373
+      },
+      {
+        "name": "Ⅱ調査項目データ（第５群）",
+        "dimension": "A1:AQ183",
+        "state": "visible",
+        "populated_cells": 692,
+        "formula_cells": 216
+      },
+      {
+        "name": "Ⅱ調査項目データ（その他）",
+        "dimension": "A1:AQ180",
+        "state": "visible",
+        "populated_cells": 668,
+        "formula_cells": 192
+      },
+      {
+        "name": "Ⅱ（３）５項目",
+        "dimension": "A1:AQ433",
+        "state": "visible",
+        "populated_cells": 1995,
+        "formula_cells": 756
+      },
+      {
+        "name": "Ⅲ審査判定データ（一次・二次判定）",
+        "dimension": "A1:BI246",
+        "state": "visible",
+        "populated_cells": 798,
+        "formula_cells": 292
+      },
+      {
+        "name": "Ⅲ審査判定データ（変更率）",
+        "dimension": "A1:BA774",
+        "state": "visible",
+        "populated_cells": 2560,
+        "formula_cells": 58
+      },
+      {
+        "name": "Ⅲ審査判定データ（有効期間）",
+        "dimension": "A1:AU226",
+        "state": "visible",
+        "populated_cells": 619,
+        "formula_cells": 136
+      },
+      {
+        "name": "Ⅳ事務データ",
+        "dimension": "A1:AW240",
+        "state": "visible",
+        "populated_cells": 348,
+        "formula_cells": 0
+      }
+    ]
+  },
+  "S03": {
+    "library_file_id": "libfile_1a33a04a77e4819197bfdf49e7cd8099",
+    "sha256": "e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f",
+    "size_bytes": 1892849,
+    "sheet_count": 14,
+    "chart_count": 148,
+    "sheets": [
+      {
+        "name": "表紙・目次",
+        "dimension": "A1:AQ138",
+        "state": "visible",
+        "populated_cells": 71,
+        "formula_cells": 0
+      },
+      {
+        "name": "データの見方",
+        "dimension": "A1:AC291",
+        "state": "visible",
+        "populated_cells": 111,
+        "formula_cells": 0
+      },
+      {
+        "name": "Ⅰ基礎情報",
+        "dimension": "A1:BE568",
+        "state": "visible",
+        "populated_cells": 1035,
+        "formula_cells": 219
+      },
+      {
+        "name": "Ⅱ調査項目データ（第１群）",
+        "dimension": "A1:AQ585",
+        "state": "visible",
+        "populated_cells": 1721,
+        "formula_cells": 561
+      },
+      {
+        "name": "Ⅱ調査項目データ（第２群）",
+        "dimension": "A1:AR307",
+        "state": "visible",
+        "populated_cells": 1253,
+        "formula_cells": 435
+      },
+      {
+        "name": "Ⅱ調査項目データ（第３群）",
+        "dimension": "A1:AQ210",
+        "state": "visible",
+        "populated_cells": 750,
+        "formula_cells": 246
+      },
+      {
+        "name": "Ⅱ調査項目データ（第４群）",
+        "dimension": "A1:AP349",
+        "state": "visible",
+        "populated_cells": 1229,
+        "formula_cells": 418
+      },
+      {
+        "name": "Ⅱ調査項目データ（第５群）",
+        "dimension": "A1:AQ183",
+        "state": "visible",
+        "populated_cells": 692,
+        "formula_cells": 237
+      },
+      {
+        "name": "Ⅱ調査項目データ（その他）",
+        "dimension": "A1:AQ180",
+        "state": "visible",
+        "populated_cells": 668,
+        "formula_cells": 216
+      },
+      {
+        "name": "Ⅱ（３）５項目",
+        "dimension": "A1:AQ433",
+        "state": "visible",
+        "populated_cells": 1995,
+        "formula_cells": 756
+      },
+      {
+        "name": "Ⅲ審査判定データ（一次・二次判定）",
+        "dimension": "A1:BI246",
+        "state": "visible",
+        "populated_cells": 799,
+        "formula_cells": 292
+      },
+      {
+        "name": "Ⅲ審査判定データ（変更率）",
+        "dimension": "A1:BA774",
+        "state": "visible",
+        "populated_cells": 2558,
+        "formula_cells": 60
+      },
+      {
+        "name": "Ⅲ審査判定データ（有効期間）",
+        "dimension": "A1:AU226",
+        "state": "visible",
+        "populated_cells": 617,
+        "formula_cells": 136
+      },
+      {
+        "name": "Ⅳ事務データ",
+        "dimension": "A1:AW240",
+        "state": "visible",
+        "populated_cells": 346,
+        "formula_cells": 0
+      }
+    ]
+  },
+  "S04": {
+    "library_file_id": "libfile_348a1421657c8191938bc42e4a79b9ea",
+    "sha256": "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800",
+    "size_bytes": 31749
+  },
+  "S05": {
+    "library_file_id": "libfile_f40c9f4e1d0081919fb497f31e737856",
+    "sha256": "87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1",
+    "size_bytes": 1128810
+  },
+  "S06": {
+    "library_file_id": "libfile_b7623c4ffd6881919e938f89942286f3",
+    "sha256": "b74b37c05a97d053ef46c16f380177f5a0724151dac5daff1c4076290671e524",
+    "size_bytes": 34816
+  },
+  "S04_alias": {
+    "library_file_id": "libfile_d66db96b3c5881919cf10890068434de",
+    "sha256": "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800",
+    "size_bytes": 31749
+  }
+}

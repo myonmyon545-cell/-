@@ -1,0 +1,866 @@
+{
+  "schema": "care_startup_checks/v1",
+  "plan_revision": "2.2",
+  "C03": {
+    "status": "HELD",
+    "role10_label_match": true,
+    "original_counts": [
+      255,
+      198,
+      432,
+      259,
+      190,
+      230,
+      157,
+      0.03693340794627868,
+      66
+    ],
+    "proposed_counts": [
+      66,
+      255,
+      198,
+      432,
+      259,
+      190,
+      230,
+      157,
+      1787
+    ],
+    "proposed_parts_sum": 1787,
+    "total": 1787,
+    "I_ratio_matches_III": true,
+    "IV_total": 1787,
+    "applied": false,
+    "needs": "ROLE=20による独立照合"
+  },
+  "C04": {
+    "status": "HELD",
+    "city_current": 0.023503077783995522,
+    "city_prior": 0,
+    "valid_n": 1787,
+    "needs": "元送信・集計結果または個票の調査依頼日・実施日"
+  },
+  "C09": {
+    "status": "HELD",
+    "source_errors": [
+      {
+        "sheet": "Ⅲ審査判定データ（変更率）",
+        "cell": "N110",
+        "value": "#DIV/0!",
+        "formula": "J110/$J$109",
+        "formula_attributes": {
+          "t": "shared",
+          "ref": "N110:N116",
+          "si": "3"
+        }
+      },
+      {
+        "sheet": "Ⅲ審査判定データ（変更率）",
+        "cell": "N111",
+        "value": "#DIV/0!",
+        "formula": null,
+        "formula_attributes": {
+          "t": "shared",
+          "si": "3"
+        }
+      },
+      {
+        "sheet": "Ⅲ審査判定データ（変更率）",
+        "cell": "N112",
+        "value": "#DIV/0!",
+        "formula": null,
+        "formula_attributes": {
+          "t": "shared",
+          "si": "3"
+        }
+      },
+      {
+        "sheet": "Ⅲ審査判定データ（変更率）",
+        "cell": "N113",
+        "value": "#DIV/0!",
+        "formula": null,
+        "formula_attributes": {
+          "t": "shared",
+          "si": "3"
+        }
+      },
+      {
+        "sheet": "Ⅲ審査判定データ（変更率）",
+        "cell": "N114",
+        "value": "#DIV/0!",
+        "formula": null,
+        "formula_attributes": {
+          "t": "shared",
+          "si": "3"
+        }
+      },
+      {
+        "sheet": "Ⅲ審査判定データ（変更率）",
+        "cell": "N115",
+        "value": "#DIV/0!",
+        "formula": null,
+        "formula_attributes": {
+          "t": "shared",
+          "si": "3"
+        }
+      },
+      {
+        "sheet": "Ⅲ審査判定データ（変更率）",
+        "cell": "N116",
+        "value": "#DIV/0!",
+        "formula": null,
+        "formula_attributes": {
+          "t": "shared",
+          "si": "3"
+        }
+      }
+    ],
+    "denominator": 0,
+    "needs": "候補では未算出と明記。原表修正する場合は明示した根拠と独立評価"
+  },
+  "R5_template": {
+    "sheet_names_same": true,
+    "chart_counts": [
+      148,
+      148
+    ],
+    "cover_text": "第２回提供データの集計対象期間：令和４年4月1日（申請）～令和4年9月30日（申請）の6か月間の申請データ\n（※令和4年11月30日までに介護保険総合データベースに格納されたデータ（11月の締日までに国保連合会に\n送信したデータ））レイワレイワレイワ"
+  },
+  "manual": {
+    "M01": "本文・Toolセル読取り確認済み。CSV・列定義・認定ソフト・VBA実行環境なし",
+    "M02_M04": "入力環境待ち",
+    "main_path_dependency": false
+  },
+  "table_counts": {
+    "all": 148,
+    "survey_selection": 74,
+    "focus": 36
+  },
+  "source_numeric_errors_count": 7,
+  "C10": {
+    "status": "HELD",
+    "affected_cells": [],
+    "mismatches": [
+      {
+        "issue": "C10",
+        "input": "S01",
+        "id": "II.selection.07.70:J71",
+        "source": 0.259653049804141,
+        "calculated": 0.6843398876404494,
+        "numerator": 1949,
+        "denominator": 2848,
+        "calculation_sources": {
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "numerator": "H71",
+          "denominator": [
+            "H71",
+            "H72",
+            "H73"
+          ]
+        }
+      },
+      {
+        "issue": "C10",
+        "input": "S01",
+        "id": "II.selection.07.70:N71",
+        "source": 0.23909950269782906,
+        "calculated": 0.5683592167454423,
+        "numerator": 42087,
+        "denominator": 74050,
+        "calculation_sources": {
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "numerator": "L71",
+          "denominator": [
+            "L71",
+            "L72",
+            "L73"
+          ]
+        }
+      },
+      {
+        "issue": "C10",
+        "input": "S01",
+        "id": "II.selection.07.70:R71",
+        "source": 0.2708303232721689,
+        "calculated": 0.5680571023452035,
+        "numerator": 1249157,
+        "denominator": 2198999,
+        "calculation_sources": {
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "numerator": "P71",
+          "denominator": [
+            "P71",
+            "P72",
+            "P73"
+          ]
+        }
+      },
+      {
+        "issue": "C10",
+        "input": "S01",
+        "id": "II.selection.07.70:J72",
+        "source": 0.4969222160044768,
+        "calculated": 0.16292134831460675,
+        "numerator": 464,
+        "denominator": 2848,
+        "calculation_sources": {
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "numerator": "H72",
+          "denominator": [
+            "H71",
+            "H72",
+            "H73"
+          ]
+        }
+      },
+      {
+        "issue": "C10",
+        "input": "S01",
+        "id": "II.selection.07.70:N72",
+        "source": 0.5497090852739388,
+        "calculated": 0.22919648885887914,
+        "numerator": 16972,
+        "denominator": 74050,
+        "calculation_sources": {
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "numerator": "L72",
+          "denominator": [
+            "L71",
+            "L72",
+            "L73"
+          ]
+        }
+      },
+      {
+        "issue": "C10",
+        "input": "S01",
+        "id": "II.selection.07.70:R72",
+        "source": 0.5246566010221327,
+        "calculated": 0.22143075099170123,
+        "numerator": 486926,
+        "denominator": 2198999,
+        "calculation_sources": {
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "numerator": "P72",
+          "denominator": [
+            "P71",
+            "P72",
+            "P73"
+          ]
+        }
+      },
+      {
+        "issue": "C10",
+        "input": "S01",
+        "id": "II.selection.07.70:J73",
+        "source": 0.2434247341913822,
+        "calculated": 0.15273876404494383,
+        "numerator": 435,
+        "denominator": 2848,
+        "calculation_sources": {
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "numerator": "H73",
+          "denominator": [
+            "H71",
+            "H72",
+            "H73"
+          ]
+        }
+      },
+      {
+        "issue": "C10",
+        "input": "S01",
+        "id": "II.selection.07.70:N73",
+        "source": 0.2111914120282321,
+        "calculated": 0.2024442943956786,
+        "numerator": 14991,
+        "denominator": 74050,
+        "calculation_sources": {
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "numerator": "L73",
+          "denominator": [
+            "L71",
+            "L72",
+            "L73"
+          ]
+        }
+      },
+      {
+        "issue": "C10",
+        "input": "S01",
+        "id": "II.selection.07.70:R73",
+        "source": 0.20451307570569835,
+        "calculated": 0.21051214666309534,
+        "numerator": 462916,
+        "denominator": 2198999,
+        "calculation_sources": {
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "numerator": "P73",
+          "denominator": [
+            "P71",
+            "P72",
+            "P73"
+          ]
+        }
+      },
+      {
+        "issue": "C10",
+        "input": "S02",
+        "id": "II.selection.07.70:J71",
+        "source": 0.26171428571428573,
+        "calculated": 0.6921164772727273,
+        "numerator": 1949,
+        "denominator": 2816,
+        "calculation_sources": {
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "numerator": "H71",
+          "denominator": [
+            "H71",
+            "H72",
+            "H73"
+          ]
+        }
+      },
+      {
+        "issue": "C10",
+        "input": "S02",
+        "id": "II.selection.07.70:N71",
+        "source": 0.23325304722283044,
+        "calculated": 0.5800862817526498,
+        "numerator": 42087,
+        "denominator": 72553,
+        "calculation_sources": {
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "numerator": "L71",
+          "denominator": [
+            "L71",
+            "L72",
+            "L73"
+          ]
+        }
+      },
+      {
+        "issue": "C10",
+        "input": "S02",
+        "id": "II.selection.07.70:R71",
+        "source": 0.26297692400319805,
+        "calculated": 0.5682757791241336,
+        "numerator": 1247400,
+        "denominator": 2195061,
+        "calculation_sources": {
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "numerator": "P71",
+          "denominator": [
+            "P71",
+            "P72",
+            "P73"
+          ]
+        }
+      },
+      {
+        "issue": "C10",
+        "input": "S02",
+        "id": "II.selection.07.70:J72",
+        "source": 0.5045714285714286,
+        "calculated": 0.16264204545454544,
+        "numerator": 458,
+        "denominator": 2816,
+        "calculation_sources": {
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "numerator": "H72",
+          "denominator": [
+            "H71",
+            "H72",
+            "H73"
+          ]
+        }
+      },
+      {
+        "issue": "C10",
+        "input": "S02",
+        "id": "II.selection.07.70:N72",
+        "source": 0.5552733377125757,
+        "calculated": 0.2202389976982344,
+        "numerator": 15979,
+        "denominator": 72553,
+        "calculation_sources": {
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "numerator": "L72",
+          "denominator": [
+            "L71",
+            "L72",
+            "L73"
+          ]
+        }
+      },
+      {
+        "issue": "C10",
+        "input": "S02",
+        "id": "II.selection.07.70:R72",
+        "source": 0.5307653718357359,
+        "calculated": 0.22083440961321804,
+        "numerator": 484745,
+        "denominator": 2195061,
+        "calculation_sources": {
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "numerator": "P72",
+          "denominator": [
+            "P71",
+            "P72",
+            "P73"
+          ]
+        }
+      },
+      {
+        "issue": "C10",
+        "input": "S02",
+        "id": "II.selection.07.70:J73",
+        "source": 0.2337142857142857,
+        "calculated": 0.14524147727272727,
+        "numerator": 409,
+        "denominator": 2816,
+        "calculation_sources": {
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "numerator": "H73",
+          "denominator": [
+            "H71",
+            "H72",
+            "H73"
+          ]
+        }
+      },
+      {
+        "issue": "C10",
+        "input": "S02",
+        "id": "II.selection.07.70:N73",
+        "source": 0.21147361506459383,
+        "calculated": 0.1996747205491158,
+        "numerator": 14487,
+        "denominator": 72553,
+        "calculation_sources": {
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "numerator": "L73",
+          "denominator": [
+            "L71",
+            "L72",
+            "L73"
+          ]
+        }
+      },
+      {
+        "issue": "C10",
+        "input": "S02",
+        "id": "II.selection.07.70:R73",
+        "source": 0.20625770416106606,
+        "calculated": 0.21088981126264827,
+        "numerator": 462916,
+        "denominator": 2195061,
+        "calculation_sources": {
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "numerator": "P73",
+          "denominator": [
+            "P71",
+            "P72",
+            "P73"
+          ]
+        }
+      }
+    ],
+    "needs": "S01/S02の薬の内服について正式な元送信・集計表と列定義",
+    "correction_applied": false
+  },
+  "C11": {
+    "status": "HELD",
+    "affected_cells": [],
+    "mismatches": [
+      {
+        "issue": "C11",
+        "input": "S01",
+        "id": "III.change.new_application:N370",
+        "source": 0.043478260869565216,
+        "calculated": 0.043209876543209874,
+        "numerator": 35,
+        "denominator": 810,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "J370",
+          "denominator": "J369"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S01",
+        "id": "III.change.new_application:T370",
+        "source": 0.0527323355377654,
+        "calculated": 0.05074017013865631,
+        "numerator": 1515,
+        "denominator": 29858,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "P370",
+          "denominator": "P369"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S01",
+        "id": "III.change.new_application:Z370",
+        "source": 0.07726760773706677,
+        "calculated": 0.0730771908536646,
+        "numerator": 73474,
+        "denominator": 1005430,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "V370",
+          "denominator": "V369"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S01",
+        "id": "III.change.new_application:T371",
+        "source": 0.001461886529759833,
+        "calculated": 0.001406658182061759,
+        "numerator": 42,
+        "denominator": 29858,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "P371",
+          "denominator": "P369"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S01",
+        "id": "III.change.new_application:Z371",
+        "source": 0.006911325340229235,
+        "calculated": 0.006536506768248411,
+        "numerator": 6572,
+        "denominator": 1005430,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "V371",
+          "denominator": "V369"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S01",
+        "id": "III.change.renewal:T431",
+        "source": 0.05866371821197283,
+        "calculated": 0.05747090864075266,
+        "numerator": 1857,
+        "denominator": 32312,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "P431",
+          "denominator": "P430"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S01",
+        "id": "III.change.renewal:Z431",
+        "source": 0.0827176008474409,
+        "calculated": 0.08045160553079649,
+        "numerator": 88004,
+        "denominator": 1093875,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "V431",
+          "denominator": "V430"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S01",
+        "id": "III.change.renewal:T432",
+        "source": 0.0024640657084188913,
+        "calculated": 0.0024139638524387223,
+        "numerator": 78,
+        "denominator": 32312,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "P432",
+          "denominator": "P430"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S01",
+        "id": "III.change.renewal:Z432",
+        "source": 0.004756045864824905,
+        "calculated": 0.0046257570563364185,
+        "numerator": 5060,
+        "denominator": 1093875,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "V432",
+          "denominator": "V430"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S01",
+        "id": "III.change.category_change:T492",
+        "source": 0.05242673992673993,
+        "calculated": 0.051968682627936004,
+        "numerator": 458,
+        "denominator": 8813,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "P492",
+          "denominator": "P491"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S01",
+        "id": "III.change.category_change:Z492",
+        "source": 0.08105744313273827,
+        "calculated": 0.07997542604909819,
+        "numerator": 22521,
+        "denominator": 281599,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "V492",
+          "denominator": "V491"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S01",
+        "id": "III.change.category_change:T493",
+        "source": 0.0004578754578754579,
+        "calculated": 0.0004538749574492227,
+        "numerator": 4,
+        "denominator": 8813,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "P493",
+          "denominator": "P491"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S01",
+        "id": "III.change.category_change:Z493",
+        "source": 0.005949467319320472,
+        "calculated": 0.005870049254436273,
+        "numerator": 1653,
+        "denominator": 281599,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "V493",
+          "denominator": "V491"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S02",
+        "id": "III.change.new_application:N370",
+        "source": 0.04046242774566474,
+        "calculated": 0.040369088811995385,
+        "numerator": 35,
+        "denominator": 867,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "J370",
+          "denominator": "J369"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S02",
+        "id": "III.change.new_application:T370",
+        "source": 0.051262486126526084,
+        "calculated": 0.04938354104714491,
+        "numerator": 1478,
+        "denominator": 29929,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "P370",
+          "denominator": "P369"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S02",
+        "id": "III.change.new_application:Z370",
+        "source": 0.07523399678375872,
+        "calculated": 0.07116096310610162,
+        "numerator": 71626,
+        "denominator": 1006535,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "V370",
+          "denominator": "V369"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S02",
+        "id": "III.change.new_application:T371",
+        "source": 0.0030868479467258602,
+        "calculated": 0.0029737044338267234,
+        "numerator": 89,
+        "denominator": 29929,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "P371",
+          "denominator": "P369"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S02",
+        "id": "III.change.new_application:Z371",
+        "source": 0.007543776909236242,
+        "calculated": 0.0071353703547318275,
+        "numerator": 7182,
+        "denominator": 1006535,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "V371",
+          "denominator": "V369"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S02",
+        "id": "III.change.renewal:N431",
+        "source": 0.04283604135893648,
+        "calculated": 0.04277286135693215,
+        "numerator": 29,
+        "denominator": 678,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "J431",
+          "denominator": "J430"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S02",
+        "id": "III.change.renewal:T431",
+        "source": 0.05550216242191254,
+        "calculated": 0.05455097496795088,
+        "numerator": 1617,
+        "denominator": 29642,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "P431",
+          "denominator": "P430"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S02",
+        "id": "III.change.renewal:Z431",
+        "source": 0.08443141156349131,
+        "calculated": 0.0821043566229356,
+        "numerator": 87328,
+        "denominator": 1063622,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "V431",
+          "denominator": "V430"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S02",
+        "id": "III.change.renewal:T432",
+        "source": 0.0009954005629161805,
+        "calculated": 0.0009783415424060454,
+        "numerator": 29,
+        "denominator": 29642,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "P432",
+          "denominator": "P430"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S02",
+        "id": "III.change.renewal:Z432",
+        "source": 0.00485832542949047,
+        "calculated": 0.004724422774256267,
+        "numerator": 5025,
+        "denominator": 1063622,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "V432",
+          "denominator": "V430"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S02",
+        "id": "III.change.category_change:T492",
+        "source": 0.053000339021358346,
+        "calculated": 0.0524960823819118,
+        "numerator": 469,
+        "denominator": 8934,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "P492",
+          "denominator": "P491"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S02",
+        "id": "III.change.category_change:Z492",
+        "source": 0.0795261287731309,
+        "calculated": 0.07848332702457558,
+        "numerator": 21978,
+        "denominator": 280034,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "V492",
+          "denominator": "V491"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S02",
+        "id": "III.change.category_change:T493",
+        "source": 0.003051192225110182,
+        "calculated": 0.0030221625251846875,
+        "numerator": 27,
+        "denominator": 8934,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "P493",
+          "denominator": "P491"
+        }
+      },
+      {
+        "issue": "C11",
+        "input": "S02",
+        "id": "III.change.category_change:Z493",
+        "source": 0.006625368176522098,
+        "calculated": 0.006538491754572659,
+        "numerator": 1831,
+        "denominator": 280034,
+        "calculation_sources": {
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "numerator": "V493",
+          "denominator": "V491"
+        }
+      }
+    ],
+    "needs": "変更率の正式な対象・除外ケース定義と申請区分別の元集計結果",
+    "correction_applied": false
+  },
+  "numeric_coverage": {
+    "required_source_cells": 3158,
+    "extracted_values": 6316,
+    "held_or_missing": 97,
+    "comparisons": 1469,
+    "valid_comparisons": 1422,
+    "scope": "ROLE=10 aggregate calculation; not independent evaluation or release approval"
+  }
+}

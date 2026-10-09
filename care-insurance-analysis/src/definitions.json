@@ -1,0 +1,4582 @@
+{
+  "schema": "care_definitions/v1",
+  "plan_revision": "2.2",
+  "period": "2025-04-01～2025-09-30（申請日基準、2025-11-30格納締切）",
+  "stock_basis": "2025年1月。S01/S02で同じストックを合算しない",
+  "table_inventory": [
+    {
+      "id": "I.population",
+      "sheet": "Ⅰ基礎情報",
+      "ranges": [
+        "G129:Q139",
+        "T129:Z139"
+      ],
+      "requirements": [
+        "R02"
+      ],
+      "population": "2025年1月基準の住民基本台帳人口",
+      "units": [
+        "人",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "G129総人口、G130 65歳以上、G131 75歳以上、G132 85歳以上",
+        "K/N/Qは65歳以上人口分母、T/W/Zは総人口分母"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "I.certification",
+      "sheet": "Ⅰ基礎情報",
+      "ranges": [
+        "F260:AA270"
+      ],
+      "requirements": [
+        "R03"
+      ],
+      "population": "2025年1月基準の第1号被保険者認定者／65歳以上人口",
+      "units": [
+        "人",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "F260=65歳以上人口、F261=第1号認定者、F262=軽度、F263=中重度",
+        "I/O/R認定者構成、U/X/AA人口認定率、Lは年齢補正認定者構成"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "I.certification.summary",
+      "sheet": "Ⅰ基礎情報",
+      "ranges": [
+        "D287:W287",
+        "D324:W324",
+        "D355:W355"
+      ],
+      "requirements": [
+        "R03"
+      ],
+      "population": "第1号被保険者／65歳以上人口",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "通常と年齢補正を別指標",
+      "rules": [
+        "D通常市、J市年齢補正、Q通常県、W通常全国",
+        "県の補正値は未掲載。比較先を創作しない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "I.dementia",
+      "sheet": "Ⅰ基礎情報",
+      "ranges": [
+        "G390:Z400"
+      ],
+      "requirements": [
+        "R04"
+      ],
+      "population": "認知症高齢者自立度の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "G/N/U件数、K/R/Z構成比",
+        "II以上はIIa+IIb+IIIa+IIIb+IV+M、III以上はIIIa+IIIb+IV+M"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "I.disability",
+      "sheet": "Ⅰ基礎情報",
+      "ranges": [
+        "G452:Z462"
+      ],
+      "requirements": [
+        "R04"
+      ],
+      "population": "障害高齢者自立度の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "B以上はB1+B2+C1+C2、分母は当該表全体"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "I.first_decision_duplicate",
+      "sheet": "Ⅰ基礎情報",
+      "ranges": [
+        "G513:Y521"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "一次判定結果の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常／有効期間・年齢補正",
+      "rules": [
+        "G513:G521はC03で保留。IIIの正しい内訳を二重集計しない",
+        "K/N/QとU/Yは提供比率を別条件で保持"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "II.score.1",
+      "sheet": "Ⅱ調査項目データ（第１群）",
+      "ranges": [
+        "G188:W188"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "集計対象ケースの提供中間評価項目得点",
+      "units": [
+        "点"
+      ],
+      "adjustment": "通常／有効期間・年齢補正",
+      "rules": [
+        "G/K/O通常市県全国、S/W補正市全国",
+        "個票と公式採点規則なしに再採点しない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "II.selection.03.249",
+      "sheet": "Ⅱ調査項目データ（第１群）",
+      "ranges": [
+        "H250:R251"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　1-1_麻痺（左-上肢）",
+      "header_row": 249,
+      "data_rows": [
+        250,
+        251
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.03.262",
+      "sheet": "Ⅱ調査項目データ（第１群）",
+      "ranges": [
+        "H263:R264"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　1-1_麻痺（右-上肢）",
+      "header_row": 262,
+      "data_rows": [
+        263,
+        264
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.03.274",
+      "sheet": "Ⅱ調査項目データ（第１群）",
+      "ranges": [
+        "H275:R276"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　1-1_麻痺（左-下肢）",
+      "header_row": 274,
+      "data_rows": [
+        275,
+        276
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.03.286",
+      "sheet": "Ⅱ調査項目データ（第１群）",
+      "ranges": [
+        "H287:R288"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　1-1_麻痺（右-下肢）",
+      "header_row": 286,
+      "data_rows": [
+        287,
+        288
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.03.298",
+      "sheet": "Ⅱ調査項目データ（第１群）",
+      "ranges": [
+        "H299:R300"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　1-1_麻痺（その他）",
+      "header_row": 298,
+      "data_rows": [
+        299,
+        300
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.03.314",
+      "sheet": "Ⅱ調査項目データ（第１群）",
+      "ranges": [
+        "H315:R316"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　1-2_拘縮（肩関節）",
+      "header_row": 314,
+      "data_rows": [
+        315,
+        316
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.03.327",
+      "sheet": "Ⅱ調査項目データ（第１群）",
+      "ranges": [
+        "H328:R329"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　1-2_拘縮（股関節）",
+      "header_row": 327,
+      "data_rows": [
+        328,
+        329
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.03.340",
+      "sheet": "Ⅱ調査項目データ（第１群）",
+      "ranges": [
+        "H341:R342"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　1-2_拘縮（膝関節）",
+      "header_row": 340,
+      "data_rows": [
+        341,
+        342
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.03.353",
+      "sheet": "Ⅱ調査項目データ（第１群）",
+      "ranges": [
+        "H354:R355"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　1-2_拘縮（その他）",
+      "header_row": 353,
+      "data_rows": [
+        354,
+        355
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.03.371",
+      "sheet": "Ⅱ調査項目データ（第１群）",
+      "ranges": [
+        "H372:R374"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　1-3_寝返り",
+      "header_row": 371,
+      "data_rows": [
+        372,
+        373,
+        374
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.03.388",
+      "sheet": "Ⅱ調査項目データ（第１群）",
+      "ranges": [
+        "H389:R391"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　1-4_起き上がり",
+      "header_row": 388,
+      "data_rows": [
+        389,
+        390,
+        391
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.03.405",
+      "sheet": "Ⅱ調査項目データ（第１群）",
+      "ranges": [
+        "H406:R409"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　1-5_座位保持",
+      "header_row": 405,
+      "data_rows": [
+        406,
+        407,
+        408,
+        409
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.03.430",
+      "sheet": "Ⅱ調査項目データ（第１群）",
+      "ranges": [
+        "H431:R433"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　1-6_両足での立位",
+      "header_row": 430,
+      "data_rows": [
+        431,
+        432,
+        433
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.03.447",
+      "sheet": "Ⅱ調査項目データ（第１群）",
+      "ranges": [
+        "H448:R450"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　1-7_歩行",
+      "header_row": 447,
+      "data_rows": [
+        448,
+        449,
+        450
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.03.464",
+      "sheet": "Ⅱ調査項目データ（第１群）",
+      "ranges": [
+        "H465:R467"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　1-8_立ち上がり",
+      "header_row": 464,
+      "data_rows": [
+        465,
+        466,
+        467
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.03.486",
+      "sheet": "Ⅱ調査項目データ（第１群）",
+      "ranges": [
+        "H487:R489"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　1-9_片足での立位",
+      "header_row": 486,
+      "data_rows": [
+        487,
+        488,
+        489
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.03.503",
+      "sheet": "Ⅱ調査項目データ（第１群）",
+      "ranges": [
+        "H504:R507"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　1-10_洗身",
+      "header_row": 503,
+      "data_rows": [
+        504,
+        505,
+        506,
+        507
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.03.523",
+      "sheet": "Ⅱ調査項目データ（第１群）",
+      "ranges": [
+        "H524:R526"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　1-11_つめ切り",
+      "header_row": 523,
+      "data_rows": [
+        524,
+        525,
+        526
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.03.545",
+      "sheet": "Ⅱ調査項目データ（第１群）",
+      "ranges": [
+        "H546:R550"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　1-12_視力",
+      "header_row": 545,
+      "data_rows": [
+        546,
+        547,
+        548,
+        549,
+        550
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.03.566",
+      "sheet": "Ⅱ調査項目データ（第１群）",
+      "ranges": [
+        "H567:R571"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　1-13_聴力",
+      "header_row": 566,
+      "data_rows": [
+        567,
+        568,
+        569,
+        570,
+        571
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.score.2",
+      "sheet": "Ⅱ調査項目データ（第２群）",
+      "ranges": [
+        "G8:W8"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "集計対象ケースの提供中間評価項目得点",
+      "units": [
+        "点"
+      ],
+      "adjustment": "通常／有効期間・年齢補正",
+      "rules": [
+        "G/K/O通常市県全国、S/W補正市全国",
+        "個票と公式採点規則なしに再採点しない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "II.selection.04.70",
+      "sheet": "Ⅱ調査項目データ（第２群）",
+      "ranges": [
+        "H71:R74"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　2-1_移乗",
+      "header_row": 70,
+      "data_rows": [
+        71,
+        72,
+        73,
+        74
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.04.90",
+      "sheet": "Ⅱ調査項目データ（第２群）",
+      "ranges": [
+        "H91:R94"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　2-2_移動",
+      "header_row": 90,
+      "data_rows": [
+        91,
+        92,
+        93,
+        94
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.04.110",
+      "sheet": "Ⅱ調査項目データ（第２群）",
+      "ranges": [
+        "H111:R113"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　2-3_えん下",
+      "header_row": 110,
+      "data_rows": [
+        111,
+        112,
+        113
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.04.132",
+      "sheet": "Ⅱ調査項目データ（第２群）",
+      "ranges": [
+        "H133:R136"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　2-4_食事摂取",
+      "header_row": 132,
+      "data_rows": [
+        133,
+        134,
+        135,
+        136
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.04.152",
+      "sheet": "Ⅱ調査項目データ（第２群）",
+      "ranges": [
+        "H153:R156"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　2-5_排尿",
+      "header_row": 152,
+      "data_rows": [
+        153,
+        154,
+        155,
+        156
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.04.172",
+      "sheet": "Ⅱ調査項目データ（第２群）",
+      "ranges": [
+        "H173:R176"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　2-6_排便",
+      "header_row": 172,
+      "data_rows": [
+        173,
+        174,
+        175,
+        176
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.04.197",
+      "sheet": "Ⅱ調査項目データ（第２群）",
+      "ranges": [
+        "H198:R200"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　2-7_口腔清潔",
+      "header_row": 197,
+      "data_rows": [
+        198,
+        199,
+        200
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.04.214",
+      "sheet": "Ⅱ調査項目データ（第２群）",
+      "ranges": [
+        "H215:R217"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　2-8_洗顔",
+      "header_row": 214,
+      "data_rows": [
+        215,
+        216,
+        217
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.04.231",
+      "sheet": "Ⅱ調査項目データ（第２群）",
+      "ranges": [
+        "H232:R234"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　2-9_整髪",
+      "header_row": 231,
+      "data_rows": [
+        232,
+        233,
+        234
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.04.253",
+      "sheet": "Ⅱ調査項目データ（第２群）",
+      "ranges": [
+        "H254:R257"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　2-10_上衣の着脱",
+      "header_row": 253,
+      "data_rows": [
+        254,
+        255,
+        256,
+        257
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.04.273",
+      "sheet": "Ⅱ調査項目データ（第２群）",
+      "ranges": [
+        "H274:R277"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　2-11_ズボン等の着脱",
+      "header_row": 273,
+      "data_rows": [
+        274,
+        275,
+        276,
+        277
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.04.293",
+      "sheet": "Ⅱ調査項目データ（第２群）",
+      "ranges": [
+        "H294:R296"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　2-12_外出頻度",
+      "header_row": 293,
+      "data_rows": [
+        294,
+        295,
+        296
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.score.3",
+      "sheet": "Ⅱ調査項目データ（第３群）",
+      "ranges": [
+        "G8:W8"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "集計対象ケースの提供中間評価項目得点",
+      "units": [
+        "点"
+      ],
+      "adjustment": "通常／有効期間・年齢補正",
+      "rules": [
+        "G/K/O通常市県全国、S/W補正市全国",
+        "個票と公式採点規則なしに再採点しない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "II.selection.05.70",
+      "sheet": "Ⅱ調査項目データ（第３群）",
+      "ranges": [
+        "H71:R74"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　3-1_意思の伝達",
+      "header_row": 70,
+      "data_rows": [
+        71,
+        72,
+        73,
+        74
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.05.90",
+      "sheet": "Ⅱ調査項目データ（第３群）",
+      "ranges": [
+        "H91:R92"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　3-2_毎日の日課を理解",
+      "header_row": 90,
+      "data_rows": [
+        91,
+        92
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.05.103",
+      "sheet": "Ⅱ調査項目データ（第３群）",
+      "ranges": [
+        "H104:R105"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　3-3_生年月日をいう",
+      "header_row": 103,
+      "data_rows": [
+        104,
+        105
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.05.116",
+      "sheet": "Ⅱ調査項目データ（第３群）",
+      "ranges": [
+        "H117:R118"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　3-4_短期記憶",
+      "header_row": 116,
+      "data_rows": [
+        117,
+        118
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.05.134",
+      "sheet": "Ⅱ調査項目データ（第３群）",
+      "ranges": [
+        "H135:R136"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　3-5_自分の名前をいう",
+      "header_row": 134,
+      "data_rows": [
+        135,
+        136
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.05.147",
+      "sheet": "Ⅱ調査項目データ（第３群）",
+      "ranges": [
+        "H148:R149"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　3-6_今の季節を理解",
+      "header_row": 147,
+      "data_rows": [
+        148,
+        149
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.05.160",
+      "sheet": "Ⅱ調査項目データ（第３群）",
+      "ranges": [
+        "H161:R162"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　3-7_場所の理解",
+      "header_row": 160,
+      "data_rows": [
+        161,
+        162
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.05.173",
+      "sheet": "Ⅱ調査項目データ（第３群）",
+      "ranges": [
+        "H174:R176"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　3-8_徘徊",
+      "header_row": 173,
+      "data_rows": [
+        174,
+        175,
+        176
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.05.195",
+      "sheet": "Ⅱ調査項目データ（第３群）",
+      "ranges": [
+        "H196:R198"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　3-9_外出して戻れない",
+      "header_row": 195,
+      "data_rows": [
+        196,
+        197,
+        198
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.score.4",
+      "sheet": "Ⅱ調査項目データ（第４群）",
+      "ranges": [
+        "G8:W8"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "集計対象ケースの提供中間評価項目得点",
+      "units": [
+        "点"
+      ],
+      "adjustment": "通常／有効期間・年齢補正",
+      "rules": [
+        "G/K/O通常市県全国、S/W補正市全国",
+        "個票と公式採点規則なしに再採点しない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "II.selection.06.69",
+      "sheet": "Ⅱ調査項目データ（第４群）",
+      "ranges": [
+        "H70:R72"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　4-1_被害的",
+      "header_row": 69,
+      "data_rows": [
+        70,
+        71,
+        72
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.06.86",
+      "sheet": "Ⅱ調査項目データ（第４群）",
+      "ranges": [
+        "H87:R89"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　4-2_作話",
+      "header_row": 86,
+      "data_rows": [
+        87,
+        88,
+        89
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.06.103",
+      "sheet": "Ⅱ調査項目データ（第４群）",
+      "ranges": [
+        "H104:R106"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　4-3_感情が不安定",
+      "header_row": 103,
+      "data_rows": [
+        104,
+        105,
+        106
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.06.125",
+      "sheet": "Ⅱ調査項目データ（第４群）",
+      "ranges": [
+        "H126:R128"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　4-4_昼夜逆転",
+      "header_row": 125,
+      "data_rows": [
+        126,
+        127,
+        128
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.06.142",
+      "sheet": "Ⅱ調査項目データ（第４群）",
+      "ranges": [
+        "H143:R145"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　4-5_同じ話をする",
+      "header_row": 142,
+      "data_rows": [
+        143,
+        144,
+        145
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.06.159",
+      "sheet": "Ⅱ調査項目データ（第４群）",
+      "ranges": [
+        "H160:R162"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　4-6_大声を出す",
+      "header_row": 159,
+      "data_rows": [
+        160,
+        161,
+        162
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.06.181",
+      "sheet": "Ⅱ調査項目データ（第４群）",
+      "ranges": [
+        "H182:R184"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　4-7_介護に抵抗",
+      "header_row": 181,
+      "data_rows": [
+        182,
+        183,
+        184
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.06.198",
+      "sheet": "Ⅱ調査項目データ（第４群）",
+      "ranges": [
+        "H199:R201"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　4-8_落ち着きなし",
+      "header_row": 198,
+      "data_rows": [
+        199,
+        200,
+        201
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.06.215",
+      "sheet": "Ⅱ調査項目データ（第４群）",
+      "ranges": [
+        "H216:R218"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　4-9_一人で出たがる",
+      "header_row": 215,
+      "data_rows": [
+        216,
+        217,
+        218
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.06.237",
+      "sheet": "Ⅱ調査項目データ（第４群）",
+      "ranges": [
+        "H238:R240"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　4-10_収集癖",
+      "header_row": 237,
+      "data_rows": [
+        238,
+        239,
+        240
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.06.254",
+      "sheet": "Ⅱ調査項目データ（第４群）",
+      "ranges": [
+        "H255:R257"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　4-11_物や衣類を壊す",
+      "header_row": 254,
+      "data_rows": [
+        255,
+        256,
+        257
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.06.271",
+      "sheet": "Ⅱ調査項目データ（第４群）",
+      "ranges": [
+        "H272:R274"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　4-12_ひどい物忘れ",
+      "header_row": 271,
+      "data_rows": [
+        272,
+        273,
+        274
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.06.293",
+      "sheet": "Ⅱ調査項目データ（第４群）",
+      "ranges": [
+        "H294:R296"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　4-13_独り言・独り笑い",
+      "header_row": 293,
+      "data_rows": [
+        294,
+        295,
+        296
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.06.310",
+      "sheet": "Ⅱ調査項目データ（第４群）",
+      "ranges": [
+        "H311:R313"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　4-14_自分勝手に行動する",
+      "header_row": 310,
+      "data_rows": [
+        311,
+        312,
+        313
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.06.327",
+      "sheet": "Ⅱ調査項目データ（第４群）",
+      "ranges": [
+        "H328:R330"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　4-15_話がまとまらない",
+      "header_row": 327,
+      "data_rows": [
+        328,
+        329,
+        330
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.score.5",
+      "sheet": "Ⅱ調査項目データ（第５群）",
+      "ranges": [
+        "G8:W8"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "集計対象ケースの提供中間評価項目得点",
+      "units": [
+        "点"
+      ],
+      "adjustment": "通常／有効期間・年齢補正",
+      "rules": [
+        "G/K/O通常市県全国、S/W補正市全国",
+        "個票と公式採点規則なしに再採点しない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "II.selection.07.70",
+      "sheet": "Ⅱ調査項目データ（第５群）",
+      "ranges": [
+        "H71:R73"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　5-1_薬の内服",
+      "header_row": 70,
+      "data_rows": [
+        71,
+        72,
+        73
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.07.87",
+      "sheet": "Ⅱ調査項目データ（第５群）",
+      "ranges": [
+        "H88:R90"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　5-2_金銭の管理",
+      "header_row": 87,
+      "data_rows": [
+        88,
+        89,
+        90
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.07.104",
+      "sheet": "Ⅱ調査項目データ（第５群）",
+      "ranges": [
+        "H105:R108"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　5-3_日常の意思決定",
+      "header_row": 104,
+      "data_rows": [
+        105,
+        106,
+        107,
+        108
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.07.129",
+      "sheet": "Ⅱ調査項目データ（第５群）",
+      "ranges": [
+        "H130:R132"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　5-4_集団への不適応",
+      "header_row": 129,
+      "data_rows": [
+        130,
+        131,
+        132
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.07.146",
+      "sheet": "Ⅱ調査項目データ（第５群）",
+      "ranges": [
+        "H147:R150"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　5-5_買い物",
+      "header_row": 146,
+      "data_rows": [
+        147,
+        148,
+        149,
+        150
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.07.166",
+      "sheet": "Ⅱ調査項目データ（第５群）",
+      "ranges": [
+        "H167:R170"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　5-6_簡単な調理",
+      "header_row": 166,
+      "data_rows": [
+        167,
+        168,
+        169,
+        170
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.08.8",
+      "sheet": "Ⅱ調査項目データ（その他）",
+      "ranges": [
+        "H9:R10"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　特別な医療_点滴の管理",
+      "header_row": 8,
+      "data_rows": [
+        9,
+        10
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.08.22",
+      "sheet": "Ⅱ調査項目データ（その他）",
+      "ranges": [
+        "H23:R24"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　特別な医療_中心静脈栄養",
+      "header_row": 22,
+      "data_rows": [
+        23,
+        24
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.08.35",
+      "sheet": "Ⅱ調査項目データ（その他）",
+      "ranges": [
+        "H36:R37"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　特別な医療_透析",
+      "header_row": 35,
+      "data_rows": [
+        36,
+        37
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.08.48",
+      "sheet": "Ⅱ調査項目データ（その他）",
+      "ranges": [
+        "H49:R50"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　特別な医療_ストーマの処置",
+      "header_row": 48,
+      "data_rows": [
+        49,
+        50
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.08.66",
+      "sheet": "Ⅱ調査項目データ（その他）",
+      "ranges": [
+        "H67:R68"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　特別な医療_酸素療法",
+      "header_row": 66,
+      "data_rows": [
+        67,
+        68
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.08.79",
+      "sheet": "Ⅱ調査項目データ（その他）",
+      "ranges": [
+        "H80:R81"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　特別な医療_レスピレーター",
+      "header_row": 79,
+      "data_rows": [
+        80,
+        81
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.08.92",
+      "sheet": "Ⅱ調査項目データ（その他）",
+      "ranges": [
+        "H93:R94"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　特別な医療_気管切開の処置",
+      "header_row": 92,
+      "data_rows": [
+        93,
+        94
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.08.105",
+      "sheet": "Ⅱ調査項目データ（その他）",
+      "ranges": [
+        "H106:R107"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　特別な医療_疼痛の看護",
+      "header_row": 105,
+      "data_rows": [
+        106,
+        107
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.08.124",
+      "sheet": "Ⅱ調査項目データ（その他）",
+      "ranges": [
+        "H125:R126"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　特別な医療_経管栄養",
+      "header_row": 124,
+      "data_rows": [
+        125,
+        126
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.08.137",
+      "sheet": "Ⅱ調査項目データ（その他）",
+      "ranges": [
+        "H138:R139"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　特別な医療_モニター測定",
+      "header_row": 137,
+      "data_rows": [
+        138,
+        139
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.08.150",
+      "sheet": "Ⅱ調査項目データ（その他）",
+      "ranges": [
+        "H151:R152"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　特別な医療_じょくそうの処置",
+      "header_row": 150,
+      "data_rows": [
+        151,
+        152
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.selection.08.163",
+      "sheet": "Ⅱ調査項目データ（その他）",
+      "ranges": [
+        "H164:R165"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "当該調査項目の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "H/L/P選択件数、J/N/R選択率",
+        "当該表から有効件数を確認。複数選択を100%に強制しない"
+      ],
+      "input": "S01",
+      "label": "　特別な医療_カテーテル",
+      "header_row": 163,
+      "data_rows": [
+        164,
+        165
+      ],
+      "count_columns": [
+        "H",
+        "L",
+        "P"
+      ],
+      "ratio_columns": [
+        "J",
+        "N",
+        "R"
+      ],
+      "choice_column": "C"
+    },
+    {
+      "id": "II.focus.75",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P76:AD77"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        76,
+        77
+      ]
+    },
+    {
+      "id": "II.focus.83",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P84:AD85"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        84,
+        85
+      ]
+    },
+    {
+      "id": "II.focus.91",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P92:AD93"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        92,
+        93
+      ]
+    },
+    {
+      "id": "II.focus.99",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P100:AD101"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        100,
+        101
+      ]
+    },
+    {
+      "id": "II.focus.107",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P108:AD109"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        108,
+        109
+      ]
+    },
+    {
+      "id": "II.focus.115",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P116:AD117"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        116,
+        117
+      ]
+    },
+    {
+      "id": "II.focus.137",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P138:AD139"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        138,
+        139
+      ]
+    },
+    {
+      "id": "II.focus.145",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P146:AD147"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        146,
+        147
+      ]
+    },
+    {
+      "id": "II.focus.153",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P154:AD155"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        154,
+        155
+      ]
+    },
+    {
+      "id": "II.focus.161",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P162:AD163"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        162,
+        163
+      ]
+    },
+    {
+      "id": "II.focus.169",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P170:AD171"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        170,
+        171
+      ]
+    },
+    {
+      "id": "II.focus.177",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P178:AD179"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        178,
+        179
+      ]
+    },
+    {
+      "id": "II.focus.197",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P198:AD201"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        198,
+        199,
+        200,
+        201
+      ]
+    },
+    {
+      "id": "II.focus.207",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P208:AD211"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        208,
+        209,
+        210,
+        211
+      ]
+    },
+    {
+      "id": "II.focus.215",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P216:AD219"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        216,
+        217,
+        218,
+        219
+      ]
+    },
+    {
+      "id": "II.focus.223",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P224:AD227"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        224,
+        225,
+        226,
+        227
+      ]
+    },
+    {
+      "id": "II.focus.231",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P232:AD235"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        232,
+        233,
+        234,
+        235
+      ]
+    },
+    {
+      "id": "II.focus.239",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P240:AD243"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        240,
+        241,
+        242,
+        243
+      ]
+    },
+    {
+      "id": "II.focus.259",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P260:AD263"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        260,
+        261,
+        262,
+        263
+      ]
+    },
+    {
+      "id": "II.focus.269",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P270:AD273"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        270,
+        271,
+        272,
+        273
+      ]
+    },
+    {
+      "id": "II.focus.277",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P278:AD281"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        278,
+        279,
+        280,
+        281
+      ]
+    },
+    {
+      "id": "II.focus.285",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P286:AD289"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        286,
+        287,
+        288,
+        289
+      ]
+    },
+    {
+      "id": "II.focus.293",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P294:AD297"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        294,
+        295,
+        296,
+        297
+      ]
+    },
+    {
+      "id": "II.focus.301",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P302:AD305"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        302,
+        303,
+        304,
+        305
+      ]
+    },
+    {
+      "id": "II.focus.320",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P321:AD324"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        321,
+        322,
+        323,
+        324
+      ]
+    },
+    {
+      "id": "II.focus.330",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P331:AD334"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        331,
+        332,
+        333,
+        334
+      ]
+    },
+    {
+      "id": "II.focus.338",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P339:AD342"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        339,
+        340,
+        341,
+        342
+      ]
+    },
+    {
+      "id": "II.focus.346",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P347:AD350"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        347,
+        348,
+        349,
+        350
+      ]
+    },
+    {
+      "id": "II.focus.354",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P355:AD358"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        355,
+        356,
+        357,
+        358
+      ]
+    },
+    {
+      "id": "II.focus.362",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P363:AD366"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        363,
+        364,
+        365,
+        366
+      ]
+    },
+    {
+      "id": "II.focus.381",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P382:AD383"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        382,
+        383
+      ]
+    },
+    {
+      "id": "II.focus.389",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P390:AD391"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        390,
+        391
+      ]
+    },
+    {
+      "id": "II.focus.397",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P398:AD399"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        398,
+        399
+      ]
+    },
+    {
+      "id": "II.focus.405",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P406:AD407"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        406,
+        407
+      ]
+    },
+    {
+      "id": "II.focus.413",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P414:AD415"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        414,
+        415
+      ]
+    },
+    {
+      "id": "II.focus.421",
+      "sheet": "Ⅱ（３）５項目",
+      "ranges": [
+        "P422:AD423"
+      ],
+      "requirements": [
+        "R05"
+      ],
+      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "units": [
+        "比率"
+      ],
+      "adjustment": "有効期間・年齢補正",
+      "rules": [
+        "提供選択率と自治体分布統計。個票なし再算出を称しない",
+        "左下肢・右下肢は原定義の1-1麻痺に属する。5項目を6項目と数えない"
+      ],
+      "input": "S01",
+      "data_rows": [
+        422,
+        423
+      ]
+    },
+    {
+      "id": "III.first_decision",
+      "sheet": "Ⅲ審査判定データ（一次・二次判定）",
+      "ranges": [
+        "G128:Y136"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "一次判定の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常／有効期間・年齢補正",
+      "rules": [
+        "G件数、K/N/Q通常比率、U/Y補正比率"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "III.second_decision",
+      "sheet": "Ⅲ審査判定データ（一次・二次判定）",
+      "ranges": [
+        "G191:Y199"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "二次判定の有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常／有効期間・年齢補正",
+      "rules": [
+        "周辺集計から移行表や変更件数を復元しない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "III.change.all",
+      "sheet": "Ⅲ審査判定データ（変更率）",
+      "ranges": [
+        "H67:AA69"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "同表の対象ケース。構成比と区分内変更率を区別",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "要支援2と要介護1の相互変更は変化なし",
+        "分母0の構成比は未算出。C09 N110:N116を0%にしない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "III.change.severity_composition",
+      "sheet": "Ⅲ審査判定データ（変更率）",
+      "ranges": [
+        "H101:AA108"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "同表の対象ケース。構成比と区分内変更率を区別",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "要支援2と要介護1の相互変更は変化なし",
+        "分母0の構成比は未算出。C09 N110:N116を0%にしない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "III.change.mild_composition",
+      "sheet": "Ⅲ審査判定データ（変更率）",
+      "ranges": [
+        "H109:AA116"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "同表の対象ケース。構成比と区分内変更率を区別",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "要支援2と要介護1の相互変更は変化なし",
+        "分母0の構成比は未算出。C09 N110:N116を0%にしない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "III.change.severe_within",
+      "sheet": "Ⅲ審査判定データ（変更率）",
+      "ranges": [
+        "H129:AA136"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "同表の対象ケース。構成比と区分内変更率を区別",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "要支援2と要介護1の相互変更は変化なし",
+        "分母0の構成比は未算出。C09 N110:N116を0%にしない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "III.change.mild_within",
+      "sheet": "Ⅲ審査判定データ（変更率）",
+      "ranges": [
+        "H249:AA256"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "同表の対象ケース。構成比と区分内変更率を区別",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "要支援2と要介護1の相互変更は変化なし",
+        "分母0の構成比は未算出。C09 N110:N116を0%にしない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "III.change.new_application",
+      "sheet": "Ⅲ審査判定データ（変更率）",
+      "ranges": [
+        "H369:AA371"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "同表の対象ケース。構成比と区分内変更率を区別",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "要支援2と要介護1の相互変更は変化なし",
+        "分母0の構成比は未算出。C09 N110:N116を0%にしない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "III.change.renewal",
+      "sheet": "Ⅲ審査判定データ（変更率）",
+      "ranges": [
+        "H430:AA432"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "同表の対象ケース。構成比と区分内変更率を区別",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "要支援2と要介護1の相互変更は変化なし",
+        "分母0の構成比は未算出。C09 N110:N116を0%にしない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "III.change.category_change",
+      "sheet": "Ⅲ審査判定データ（変更率）",
+      "ranges": [
+        "H491:AA493"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "同表の対象ケース。構成比と区分内変更率を区別",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "要支援2と要介護1の相互変更は変化なし",
+        "分母0の構成比は未算出。C09 N110:N116を0%にしない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "III.change.previous_to_current",
+      "sheet": "Ⅲ審査判定データ（変更率）",
+      "ranges": [
+        "H552:AA555"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "同表の対象ケース。構成比と区分内変更率を区別",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "要支援2と要介護1の相互変更は変化なし",
+        "分母0の構成比は未算出。C09 N110:N116を0%にしない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "III.change.previous_milder",
+      "sheet": "Ⅲ審査判定データ（変更率）",
+      "ranges": [
+        "H615:AA617"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "同表の対象ケース。構成比と区分内変更率を区別",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "要支援2と要介護1の相互変更は変化なし",
+        "分母0の構成比は未算出。C09 N110:N116を0%にしない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "III.change.previous_same",
+      "sheet": "Ⅲ審査判定データ（変更率）",
+      "ranges": [
+        "H676:AA678"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "同表の対象ケース。構成比と区分内変更率を区別",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "要支援2と要介護1の相互変更は変化なし",
+        "分母0の構成比は未算出。C09 N110:N116を0%にしない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "III.change.previous_severer",
+      "sheet": "Ⅲ審査判定データ（変更率）",
+      "ranges": [
+        "H737:AA739"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "同表の対象ケース。構成比と区分内変更率を区別",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "要支援2と要介護1の相互変更は変化なし",
+        "分母0の構成比は未算出。C09 N110:N116を0%にしない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "III.validity.all",
+      "sheet": "Ⅲ審査判定データ（有効期間）",
+      "ranges": [
+        "H67:Z72"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "当該二次判定区分の認定有効期間有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "区分1-6、7-12、13-24、25-36、37-48か月",
+        "開始日が1日以外は翌月を起点。48月超等を最終区分へ押し込まない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "III.validity.support1",
+      "sheet": "Ⅲ審査判定データ（有効期間）",
+      "ranges": [
+        "H87:Z92"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "当該二次判定区分の認定有効期間有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "区分1-6、7-12、13-24、25-36、37-48か月",
+        "開始日が1日以外は翌月を起点。48月超等を最終区分へ押し込まない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "III.validity.support2",
+      "sheet": "Ⅲ審査判定データ（有効期間）",
+      "ranges": [
+        "H106:Z111"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "当該二次判定区分の認定有効期間有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "区分1-6、7-12、13-24、25-36、37-48か月",
+        "開始日が1日以外は翌月を起点。48月超等を最終区分へ押し込まない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "III.validity.care1",
+      "sheet": "Ⅲ審査判定データ（有効期間）",
+      "ranges": [
+        "H132:Z137"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "当該二次判定区分の認定有効期間有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "区分1-6、7-12、13-24、25-36、37-48か月",
+        "開始日が1日以外は翌月を起点。48月超等を最終区分へ押し込まない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "III.validity.care2",
+      "sheet": "Ⅲ審査判定データ（有効期間）",
+      "ranges": [
+        "H150:Z155"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "当該二次判定区分の認定有効期間有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "区分1-6、7-12、13-24、25-36、37-48か月",
+        "開始日が1日以外は翌月を起点。48月超等を最終区分へ押し込まない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "III.validity.care3",
+      "sheet": "Ⅲ審査判定データ（有効期間）",
+      "ranges": [
+        "H168:Z173"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "当該二次判定区分の認定有効期間有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "区分1-6、7-12、13-24、25-36、37-48か月",
+        "開始日が1日以外は翌月を起点。48月超等を最終区分へ押し込まない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "III.validity.care4",
+      "sheet": "Ⅲ審査判定データ（有効期間）",
+      "ranges": [
+        "H195:Z200"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "当該二次判定区分の認定有効期間有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "区分1-6、7-12、13-24、25-36、37-48か月",
+        "開始日が1日以外は翌月を起点。48月超等を最終区分へ押し込まない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "III.validity.care5",
+      "sheet": "Ⅲ審査判定データ（有効期間）",
+      "ranges": [
+        "H214:Z219"
+      ],
+      "requirements": [
+        "R06"
+      ],
+      "population": "当該二次判定区分の認定有効期間有効ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "区分1-6、7-12、13-24、25-36、37-48か月",
+        "開始日が1日以外は翌月を起点。48月超等を最終区分へ押し込まない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "IV.insured",
+      "sheet": "Ⅳ事務データ",
+      "ranges": [
+        "J129:Z132"
+      ],
+      "requirements": [
+        "R07"
+      ],
+      "population": "期間中の集計対象申請ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [],
+      "input": "S01"
+    },
+    {
+      "id": "IV.application",
+      "sheet": "Ⅳ事務データ",
+      "ranges": [
+        "J150:Z153"
+      ],
+      "requirements": [
+        "R07"
+      ],
+      "population": "期間中の集計対象申請ケース",
+      "units": [
+        "件",
+        "比率"
+      ],
+      "adjustment": "通常",
+      "rules": [],
+      "input": "S01"
+    },
+    {
+      "id": "IV.days.opinion",
+      "sheet": "Ⅳ事務データ",
+      "ranges": [
+        "J189:Z190"
+      ],
+      "requirements": [
+        "R07"
+      ],
+      "population": "当該日数指標の地域別有効ケース",
+      "units": [
+        "件",
+        "日"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "日数は提供平均の転記と整合確認のみ。個票なし再計算しない",
+        "判定日を越す日付の除外。申請日前の依頼・同日を一律除外しない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "IV.days.survey",
+      "sheet": "Ⅳ事務データ",
+      "ranges": [
+        "J207:Z208"
+      ],
+      "requirements": [
+        "R07"
+      ],
+      "population": "当該日数指標の地域別有効ケース",
+      "units": [
+        "件",
+        "日"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "日数は提供平均の転記と整合確認のみ。個票なし再計算しない",
+        "判定日を越す日付の除外。申請日前の依頼・同日を一律除外しない"
+      ],
+      "input": "S01"
+    },
+    {
+      "id": "IV.days.recognition",
+      "sheet": "Ⅳ事務データ",
+      "ranges": [
+        "J225:Z226"
+      ],
+      "requirements": [
+        "R07"
+      ],
+      "population": "当該日数指標の地域別有効ケース",
+      "units": [
+        "件",
+        "日"
+      ],
+      "adjustment": "通常",
+      "rules": [
+        "日数は提供平均の転記と整合確認のみ。個票なし再計算しない",
+        "判定日を越す日付の除外。申請日前の依頼・同日を一律除外しない"
+      ],
+      "input": "S01"
+    }
+  ],
+  "selection_tables": 74,
+  "required_metric_id_rule": "table_id:cell。セル列は地域と補正区分を一意に表し、これらは各レコードの明示フィールドにも保持。台帳の実掲載値を列挙。未掲載の県補正値を創作せず、補助領域と重複を除く",
+  "source_auxiliary_rule": "AR以降のグラフ補助は別領域。印刷範囲を超える補助値を二重集計しない。元分布統計はprovided",
+  "differences": "比率差=100*(市-比較先) pp、日数差=市-比較先。通常と補正を混ぜない",
+  "known_issue_policy": {
+    "C03": "10照合済み、20独立照合前は原セルを修正しない",
+    "C04": "市調査期間の比較と原因説明を保留",
+    "C09": "軽度変更数0の構成比は未算出。原数式エラーを既存不整合として区別",
+    "C10": "第5群の薬の内服表は件数と掲載割合が不一致。件数・割合の比較を保留し元集計の確認を要する",
+    "C11": "申請区分別変更率の掲載比率と同表対象件数分母が不一致のセルを保留。除外ケースや別分母を推測しない"
+  },
+  "national_scope": "期間中500件以上送信自治体の対象全ケース。自治体比率の単純平均ではない"
+}

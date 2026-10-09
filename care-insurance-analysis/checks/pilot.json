@@ -1,0 +1,58 @@
+{
+  "schema": "care_output_pilot/v1",
+  "status": "HELD",
+  "structural_preservation": {
+    "status": "PASS",
+    "source_sheet_count": 14,
+    "output_sheet_count": 15,
+    "chart_count": 148,
+    "original_sheet_parts_identical": true,
+    "chart_xml_series_axes_layout_identical": true,
+    "drawing_and_printer_parts_identical": true,
+    "original_style_records_identical": true,
+    "original_formula_and_cached_values_identical": true,
+    "defined_name_sheet_indices_shifted": true,
+    "changed_original_parts": [
+      "xl/styles.xml",
+      "xl/workbook.xml",
+      "xl/_rels/workbook.xml.rels",
+      "[Content_Types].xml"
+    ],
+    "new_parts": [
+      "xl/worksheets/sheet15.xml"
+    ],
+    "source_sha256": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d",
+    "output_sha256": "b349f3dd6e27f62a4820589ecaaf6ab069429434827c987746c406a1d9349542",
+    "scope": "OOXML structural preservation; visual and application checks are separate"
+  },
+  "ordinary_export": {
+    "verdict": "FAIL",
+    "charts_retained": 0,
+    "reason": "unsupported combination charts were dropped"
+  },
+  "new_formula_recalculation": {
+    "verdict": "PASS",
+    "expected": 0.15868346905285322,
+    "got": 0.15868346905285322,
+    "changedInputRecalculated": true,
+    "elapsedSeconds": 19.397,
+    "reopened_formula": "B5/C5",
+    "reopened_cached_value": 0.15868346905285322
+  },
+  "native_open": {
+    "application": "LibreOfficeDev 26.8 alpha",
+    "pdf_export_succeeded": true,
+    "exported_pdf_pages": 138,
+    "scope": "application open/export; no visual approval"
+  },
+  "visual": {
+    "verdict": "FAIL",
+    "reason": "Japanese font unavailable; glyphs missing in rendering",
+    "needs": "Japanese-compatible TTF/OTF font and original/new summary render comparison"
+  },
+  "necessary_original_cell_change": {
+    "verdict": "NOT_EXECUTED",
+    "reason": "C03 independent source proof by ROLE=20 pending"
+  },
+  "candidate_registered": false
+}

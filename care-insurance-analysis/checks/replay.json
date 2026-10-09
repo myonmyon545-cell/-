@@ -1,0 +1,14 @@
+{
+  "verdict": "PASS",
+  "scope": "one deterministic aggregate calculation rerun; not input extraction/rendering/VBA rerun",
+  "files": {
+    "extracted_values.json": {
+      "equal": true,
+      "sha256": "a37f24eaa1c8316be03d1d0dc162e75be6de7d7975c2d3196715140dfc400070"
+    },
+    "numeric_checks.json": {
+      "equal": true,
+      "sha256": "47bbc7ae361a5599bf72059226e2a2de911f20a84d6ec01f88589ae7501a2466"
+    }
+  }
+}
