@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "scope": "T01/T02/T04/T05の再現可能な集計・状態処理。候補Excelのバイト再現ではない",
+  "inputs_unchanged": true,
+  "files_compared": 6,
+  "hashes": {
+    "definitions": {
+      "replay": "80ab7d39bff69756b820d6508bbedd2058b2306b91ecfbccb445bb8bc404b14f",
+      "current": "80ab7d39bff69756b820d6508bbedd2058b2306b91ecfbccb445bb8bc404b14f"
+    },
+    "inventory": {
+      "replay": "22b117e0a93a30480ec54fdf58bbd7daa037d185736b35461f8af5c2b22f7273",
+      "current": "22b117e0a93a30480ec54fdf58bbd7daa037d185736b35461f8af5c2b22f7273"
+    },
+    "extracted": {
+      "replay": "2a3590942aafbc1562e787aa8292f6ed8cb0e08a9a5b9b9b6b0de145223c1bac",
+      "current": "2a3590942aafbc1562e787aa8292f6ed8cb0e08a9a5b9b9b6b0de145223c1bac"
+    },
+    "numeric": {
+      "replay": "86920c8c6f7eb5846842c47cbccf9c0d3caab3f598570286f5a61423807514f8",
+      "current": "86920c8c6f7eb5846842c47cbccf9c0d3caab3f598570286f5a61423807514f8"
+    },
+    "summary": {
+      "replay": "42af679ae8cd02cdbc24f2c3f7d09fd03837777e114576078f74def90eb7f89c",
+      "current": "42af679ae8cd02cdbc24f2c3f7d09fd03837777e114576078f74def90eb7f89c"
+    },
+    "role30_check": {
+      "replay": "7a7b58734a6018ded42bd7a1fa49e417107c6c6d1ab8a775c8f669e3b322a3da",
+      "current": "7a7b58734a6018ded42bd7a1fa49e417107c6c6d1ab8a775c8f669e3b322a3da"
+    }
+  },
+  "differences": {}
+}

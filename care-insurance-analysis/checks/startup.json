@@ -3,12 +3,7 @@
   "plan_revision": "2.2",
   "C03": {
     "status": "PASS_WORK_COPY",
-    "role20_report_blob_sha": "8a62a506c6ea56688e7231b44470cabd35d5912a",
-    "role20_evidence_source_commit": "b5b14b75d8329850b441640ff5b92408a9ccca81",
-    "original_S01_sha256": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d",
-    "S01_work_copy_sha256": "fef7ab5b1b46bc8eb03c040c3d4767ec9aa41098c6106019397ce29623c77cf6",
-    "scope": "S01作業コピー限定。原本とS02は不変更。S02比較値はⅢG128:G136を使用。",
-    "cell_range": "S01 Ⅰ基礎情報!G513:G521",
+    "role10_label_match": true,
     "original_counts": [
       255,
       198,
@@ -20,7 +15,7 @@
       0.03693340794627868,
       66
     ],
-    "applied_counts": [
+    "proposed_counts": [
       66,
       255,
       198,
@@ -31,17 +26,15 @@
       157,
       1787
     ],
-    "parts_sum": 1787,
+    "proposed_parts_sum": 1787,
     "total": 1787,
     "I_ratio_matches_III": true,
-    "IV_totals": [
-      1787,
-      1787,
-      1787
-    ],
+    "IV_total": 1787,
     "applied": true,
-    "structural_preservation": "PASS",
-    "visual_Japanese": "HELD_NO_JAPANESE_FONT"
+    "needs": "ROLE=20による独立照合",
+    "source_copy_sha256": "fef7ab5b1b46bc8eb03c040c3d4767ec9aa41098c6106019397ce29623c77cf6",
+    "originals_modified": false,
+    "role20_report_blob_sha": "8a62a506c6ea56688e7231b44470cabd35d5912a"
   },
   "C04": {
     "status": "HELD",
@@ -149,7 +142,440 @@
   "source_numeric_errors_count": 7,
   "C10": {
     "status": "HELD",
-    "affected_cells": [],
+    "affected_cells": [
+      {
+        "input": "S01",
+        "id": "II.selection.07.70:H71",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "H71"
+        },
+        "status": "held",
+        "reason": "C10：薬の内服の選択件数が同表の割合・有効件数と不整合",
+        "source_value": 1949
+      },
+      {
+        "input": "S01",
+        "id": "II.selection.07.70:J71",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "J71"
+        },
+        "status": "held",
+        "reason": "C10：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.259653049804141
+      },
+      {
+        "input": "S01",
+        "id": "II.selection.07.70:L71",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "L71"
+        },
+        "status": "held",
+        "reason": "C10：薬の内服の選択件数が同表の割合・有効件数と不整合",
+        "source_value": 42087
+      },
+      {
+        "input": "S01",
+        "id": "II.selection.07.70:N71",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "N71"
+        },
+        "status": "held",
+        "reason": "C10：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.23909950269782906
+      },
+      {
+        "input": "S01",
+        "id": "II.selection.07.70:P71",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "P71"
+        },
+        "status": "held",
+        "reason": "C10:P70地域見出し異常と選択件数・割合不整合。正式元集計待ち",
+        "source_value": 1249157
+      },
+      {
+        "input": "S01",
+        "id": "II.selection.07.70:R71",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "R71"
+        },
+        "status": "held",
+        "reason": "C10:P70地域見出し異常と選択件数・割合不整合。正式元集計待ち",
+        "source_value": 0.2708303232721689
+      },
+      {
+        "input": "S01",
+        "id": "II.selection.07.70:H72",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "H72"
+        },
+        "status": "held",
+        "reason": "C10：薬の内服の選択件数が同表の割合・有効件数と不整合",
+        "source_value": 464
+      },
+      {
+        "input": "S01",
+        "id": "II.selection.07.70:J72",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "J72"
+        },
+        "status": "held",
+        "reason": "C10：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.4969222160044768
+      },
+      {
+        "input": "S01",
+        "id": "II.selection.07.70:L72",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "L72"
+        },
+        "status": "held",
+        "reason": "C10：薬の内服の選択件数が同表の割合・有効件数と不整合",
+        "source_value": 16972
+      },
+      {
+        "input": "S01",
+        "id": "II.selection.07.70:N72",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "N72"
+        },
+        "status": "held",
+        "reason": "C10：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.5497090852739388
+      },
+      {
+        "input": "S01",
+        "id": "II.selection.07.70:P72",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "P72"
+        },
+        "status": "held",
+        "reason": "C10:P70地域見出し異常と選択件数・割合不整合。正式元集計待ち",
+        "source_value": 486926
+      },
+      {
+        "input": "S01",
+        "id": "II.selection.07.70:R72",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "R72"
+        },
+        "status": "held",
+        "reason": "C10:P70地域見出し異常と選択件数・割合不整合。正式元集計待ち",
+        "source_value": 0.5246566010221327
+      },
+      {
+        "input": "S01",
+        "id": "II.selection.07.70:H73",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "H73"
+        },
+        "status": "held",
+        "reason": "C10：薬の内服の選択件数が同表の割合・有効件数と不整合",
+        "source_value": 435
+      },
+      {
+        "input": "S01",
+        "id": "II.selection.07.70:J73",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "J73"
+        },
+        "status": "held",
+        "reason": "C10：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.2434247341913822
+      },
+      {
+        "input": "S01",
+        "id": "II.selection.07.70:L73",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "L73"
+        },
+        "status": "held",
+        "reason": "C10：薬の内服の選択件数が同表の割合・有効件数と不整合",
+        "source_value": 14991
+      },
+      {
+        "input": "S01",
+        "id": "II.selection.07.70:N73",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "N73"
+        },
+        "status": "held",
+        "reason": "C10：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.2111914120282321
+      },
+      {
+        "input": "S01",
+        "id": "II.selection.07.70:P73",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "P73"
+        },
+        "status": "held",
+        "reason": "C10:P70地域見出し異常と選択件数・割合不整合。正式元集計待ち",
+        "source_value": 462916
+      },
+      {
+        "input": "S01",
+        "id": "II.selection.07.70:R73",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "R73"
+        },
+        "status": "held",
+        "reason": "C10:P70地域見出し異常と選択件数・割合不整合。正式元集計待ち",
+        "source_value": 0.20451307570569835
+      },
+      {
+        "input": "S02",
+        "id": "II.selection.07.70:H71",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "H71"
+        },
+        "status": "held",
+        "reason": "C10：薬の内服の選択件数が同表の割合・有効件数と不整合",
+        "source_value": 1949
+      },
+      {
+        "input": "S02",
+        "id": "II.selection.07.70:J71",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "J71"
+        },
+        "status": "held",
+        "reason": "C10：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.26171428571428573
+      },
+      {
+        "input": "S02",
+        "id": "II.selection.07.70:L71",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "L71"
+        },
+        "status": "held",
+        "reason": "C10：薬の内服の選択件数が同表の割合・有効件数と不整合",
+        "source_value": 42087
+      },
+      {
+        "input": "S02",
+        "id": "II.selection.07.70:N71",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "N71"
+        },
+        "status": "held",
+        "reason": "C10：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.23325304722283044
+      },
+      {
+        "input": "S02",
+        "id": "II.selection.07.70:P71",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "P71"
+        },
+        "status": "held",
+        "reason": "C10:P70地域見出し異常と選択件数・割合不整合。正式元集計待ち",
+        "source_value": 1247400
+      },
+      {
+        "input": "S02",
+        "id": "II.selection.07.70:R71",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "R71"
+        },
+        "status": "held",
+        "reason": "C10:P70地域見出し異常と選択件数・割合不整合。正式元集計待ち",
+        "source_value": 0.26297692400319805
+      },
+      {
+        "input": "S02",
+        "id": "II.selection.07.70:H72",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "H72"
+        },
+        "status": "held",
+        "reason": "C10：薬の内服の選択件数が同表の割合・有効件数と不整合",
+        "source_value": 458
+      },
+      {
+        "input": "S02",
+        "id": "II.selection.07.70:J72",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "J72"
+        },
+        "status": "held",
+        "reason": "C10：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.5045714285714286
+      },
+      {
+        "input": "S02",
+        "id": "II.selection.07.70:L72",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "L72"
+        },
+        "status": "held",
+        "reason": "C10：薬の内服の選択件数が同表の割合・有効件数と不整合",
+        "source_value": 15979
+      },
+      {
+        "input": "S02",
+        "id": "II.selection.07.70:N72",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "N72"
+        },
+        "status": "held",
+        "reason": "C10：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.5552733377125757
+      },
+      {
+        "input": "S02",
+        "id": "II.selection.07.70:P72",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "P72"
+        },
+        "status": "held",
+        "reason": "C10:P70地域見出し異常と選択件数・割合不整合。正式元集計待ち",
+        "source_value": 484745
+      },
+      {
+        "input": "S02",
+        "id": "II.selection.07.70:R72",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "R72"
+        },
+        "status": "held",
+        "reason": "C10:P70地域見出し異常と選択件数・割合不整合。正式元集計待ち",
+        "source_value": 0.5307653718357359
+      },
+      {
+        "input": "S02",
+        "id": "II.selection.07.70:H73",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "H73"
+        },
+        "status": "held",
+        "reason": "C10：薬の内服の選択件数が同表の割合・有効件数と不整合",
+        "source_value": 409
+      },
+      {
+        "input": "S02",
+        "id": "II.selection.07.70:J73",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "J73"
+        },
+        "status": "held",
+        "reason": "C10：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.2337142857142857
+      },
+      {
+        "input": "S02",
+        "id": "II.selection.07.70:L73",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "L73"
+        },
+        "status": "held",
+        "reason": "C10：薬の内服の選択件数が同表の割合・有効件数と不整合",
+        "source_value": 14487
+      },
+      {
+        "input": "S02",
+        "id": "II.selection.07.70:N73",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "N73"
+        },
+        "status": "held",
+        "reason": "C10：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.21147361506459383
+      },
+      {
+        "input": "S02",
+        "id": "II.selection.07.70:P73",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "P73"
+        },
+        "status": "held",
+        "reason": "C10:P70地域見出し異常と選択件数・割合不整合。正式元集計待ち",
+        "source_value": 462916
+      },
+      {
+        "input": "S02",
+        "id": "II.selection.07.70:R73",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "R73"
+        },
+        "status": "held",
+        "reason": "C10:P70地域見出し異常と選択件数・割合不整合。正式元集計待ち",
+        "source_value": 0.20625770416106606
+      }
+    ],
     "mismatches": [
       {
         "issue": "C10",
@@ -477,11 +903,395 @@
       }
     ],
     "needs": "S01/S02の薬の内服について正式な元送信・集計表と列定義",
-    "correction_applied": false
+    "hold_propagation_applied": true,
+    "formal_value_correction_applied": false,
+    "header_issue": {
+      "status": "held",
+      "source_ref_by_input": {
+        "S01": {
+          "input": "S01",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "P70",
+          "raw_value": 644821
+        },
+        "S02": {
+          "input": "S02",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "cell": "P70",
+          "raw_value": 618046
+        }
+      },
+      "reason": "C10:P70の地域見出しが数値。正式な地域名・列位置は未確定"
+    },
+    "numeric_held_by_input": {
+      "S01": 18,
+      "S02": 18
+    }
   },
   "C11": {
     "status": "HELD",
-    "affected_cells": [],
+    "affected_cells": [
+      {
+        "input": "S01",
+        "id": "III.change.new_application:N370",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "N370"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.043478260869565216
+      },
+      {
+        "input": "S01",
+        "id": "III.change.new_application:T370",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "T370"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.0527323355377654
+      },
+      {
+        "input": "S01",
+        "id": "III.change.new_application:Z370",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "Z370"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.07726760773706677
+      },
+      {
+        "input": "S01",
+        "id": "III.change.new_application:N371",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "N371"
+        },
+        "status": "held",
+        "reason": "C11:ゼロ分子でも正式な対象・除外ケース分母未確定",
+        "source_value": 0
+      },
+      {
+        "input": "S01",
+        "id": "III.change.new_application:T371",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "T371"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.001461886529759833
+      },
+      {
+        "input": "S01",
+        "id": "III.change.new_application:Z371",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "Z371"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.006911325340229235
+      },
+      {
+        "input": "S01",
+        "id": "III.change.renewal:T431",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "T431"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.05866371821197283
+      },
+      {
+        "input": "S01",
+        "id": "III.change.renewal:Z431",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "Z431"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.0827176008474409
+      },
+      {
+        "input": "S01",
+        "id": "III.change.renewal:T432",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "T432"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.0024640657084188913
+      },
+      {
+        "input": "S01",
+        "id": "III.change.renewal:Z432",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "Z432"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.004756045864824905
+      },
+      {
+        "input": "S01",
+        "id": "III.change.category_change:T492",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "T492"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.05242673992673993
+      },
+      {
+        "input": "S01",
+        "id": "III.change.category_change:Z492",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "Z492"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.08105744313273827
+      },
+      {
+        "input": "S01",
+        "id": "III.change.category_change:T493",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "T493"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.0004578754578754579
+      },
+      {
+        "input": "S01",
+        "id": "III.change.category_change:Z493",
+        "source_ref": {
+          "input": "S01",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "Z493"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.005949467319320472
+      },
+      {
+        "input": "S02",
+        "id": "III.change.new_application:N370",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "N370"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.04046242774566474
+      },
+      {
+        "input": "S02",
+        "id": "III.change.new_application:T370",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "T370"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.051262486126526084
+      },
+      {
+        "input": "S02",
+        "id": "III.change.new_application:Z370",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "Z370"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.07523399678375872
+      },
+      {
+        "input": "S02",
+        "id": "III.change.new_application:N371",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "N371"
+        },
+        "status": "held",
+        "reason": "C11:ゼロ分子でも正式な対象・除外ケース分母未確定",
+        "source_value": 0
+      },
+      {
+        "input": "S02",
+        "id": "III.change.new_application:T371",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "T371"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.0030868479467258602
+      },
+      {
+        "input": "S02",
+        "id": "III.change.new_application:Z371",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "Z371"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.007543776909236242
+      },
+      {
+        "input": "S02",
+        "id": "III.change.renewal:N431",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "N431"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.04283604135893648
+      },
+      {
+        "input": "S02",
+        "id": "III.change.renewal:T431",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "T431"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.05550216242191254
+      },
+      {
+        "input": "S02",
+        "id": "III.change.renewal:Z431",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "Z431"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.08443141156349131
+      },
+      {
+        "input": "S02",
+        "id": "III.change.renewal:N432",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "N432"
+        },
+        "status": "held",
+        "reason": "C11:ゼロ分子でも正式な対象・除外ケース分母未確定",
+        "source_value": 0
+      },
+      {
+        "input": "S02",
+        "id": "III.change.renewal:T432",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "T432"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.0009954005629161805
+      },
+      {
+        "input": "S02",
+        "id": "III.change.renewal:Z432",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "Z432"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.00485832542949047
+      },
+      {
+        "input": "S02",
+        "id": "III.change.category_change:T492",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "T492"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.053000339021358346
+      },
+      {
+        "input": "S02",
+        "id": "III.change.category_change:Z492",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "Z492"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.0795261287731309
+      },
+      {
+        "input": "S02",
+        "id": "III.change.category_change:T493",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "T493"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.003051192225110182
+      },
+      {
+        "input": "S02",
+        "id": "III.change.category_change:Z493",
+        "source_ref": {
+          "input": "S02",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "cell": "Z493"
+        },
+        "status": "held",
+        "reason": "C11：掲載比率と同表の件数からの再計算が不一致",
+        "source_value": 0.006625368176522098
+      }
+    ],
     "mismatches": [
       {
         "issue": "C11",
@@ -863,14 +1673,23 @@
       }
     ],
     "needs": "変更率の正式な対象・除外ケース定義と申請区分別の元集計結果",
-    "correction_applied": false
+    "hold_propagation_applied": true,
+    "formal_value_correction_applied": false,
+    "zero_numerator_new_held": 3
+  },
+  "E20-01": {
+    "status": "APPLIED_AWAITING_INDEPENDENT_CANDIDATE_REVIEW",
+    "focus_tables": 36,
+    "focus_metrics": 648,
+    "certification_metrics": 12,
+    "proposal_report_blob_sha": "d46d6c69f11d0b1457a04e58acc9c2e032ccabe3"
   },
   "numeric_coverage": {
     "required_source_cells": 3158,
     "extracted_values": 6316,
-    "held_or_missing": 79,
+    "held_or_missing": 82,
     "comparisons": 1478,
-    "valid_comparisons": 1431,
+    "valid_comparisons": 1429,
     "scope": "ROLE=10 aggregate calculation; not independent evaluation or release approval"
   }
 }

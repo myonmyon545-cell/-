@@ -123,5 +123,18 @@
     "original_input_hash_unchanged": true,
     "strict_cell_change_preservation": "PASS"
   },
-  "candidate_registered": false
+  "candidate_registered": false,
+  "candidate_trial": {
+    "status": "STRUCTURAL_PASS_VISUAL_HELD",
+    "id": "care-S01-20261009-v1",
+    "candidate_sha256": "fe3ccd49b45400ea70687cd67cb50a7f9563cd7dd6641bd7c82c57aa97cbb570",
+    "sheet_count": 19,
+    "original_sheets": 14,
+    "new_sheets": 5,
+    "charts": 148,
+    "graft_evidence": "checks/candidate_preservation.json",
+    "native_open": "LibreOfficeDev 26.8 alphaで開封・別一時ファイルへのxlsx再保存成功。19シート/案内日本語文字列/C03=1787を再読込",
+    "Japanese_visual": "FAIL:日本語対応フォントが実行環境にない。Artifact Toolの案内レンダーでも字形欠落",
+    "candidate_registered_as_completed_output": false
+  }
 }

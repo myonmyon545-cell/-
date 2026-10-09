@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "source_sha256": {
+    "S01": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d",
+    "S02": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304"
+  },
+  "proposal_report_blob_sha": "d46d6c69f11d0b1457a04e58acc9c2e032ccabe3",
+  "E20-01": {
+    "focus_tables": 36,
+    "focus_metrics": 648,
+    "certification_metrics": 12
+  },
+  "C10": {
+    "per_input_numeric_held": 18,
+    "header_ref": "P70",
+    "header_source_values": {
+      "S01": 644821,
+      "S02": 618046
+    }
+  },
+  "C11": {
+    "prior_mismatched_held": 27,
+    "zero_numerator_newly_held": 3,
+    "all_30_held": true
+  },
+  "status_propagation": {
+    "input_records": 6316,
+    "held_or_missing": 82,
+    "comparisons": 1478,
+    "valid_comparisons": 1429
+  }
+}

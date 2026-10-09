@@ -58,7 +58,7 @@
       "requirements": [
         "R03"
       ],
-      "population": "第1号被保険者／65歳以上人口",
+      "population": "各行の軽度・中重度を区別した第1号認定者数／65歳以上人口。J列は提供年齢補正値",
       "units": [
         "比率"
       ],
@@ -67,7 +67,39 @@
         "D通常市、J市年齢補正、Q通常県、W通常全国",
         "県の補正値は未掲載。比較先を創作しない"
       ],
-      "input": "S01"
+      "input": "S01",
+      "row_semantics": {
+        "287": {
+          "row": 287,
+          "name": "認定率",
+          "definition": "第1号認定者数/65歳以上人口",
+          "heading": "Ⅰ基礎情報!D284",
+          "numerator_ref": "F261",
+          "denominator_ref": "F260"
+        },
+        "324": {
+          "row": 324,
+          "name": "軽度認定率（要支援１・２、要介護１）",
+          "definition": "軽度の第1号認定者数/65歳以上人口",
+          "heading": "Ⅰ基礎情報!D321",
+          "numerator_ref": "F262",
+          "denominator_ref": "F260"
+        },
+        "355": {
+          "row": 355,
+          "name": "中・重度認定率（要介護２～５）",
+          "definition": "中・重度の第1号認定者数/65歳以上人口",
+          "heading": "Ⅰ基礎情報!D352",
+          "numerator_ref": "F263",
+          "denominator_ref": "F260"
+        }
+      },
+      "column_semantics": {
+        "D": "市・通常",
+        "J": "市・年齢補正の提供値（元資料で個票再算出不可）",
+        "Q": "県・通常",
+        "W": "全国・通常"
+      }
     },
     {
       "id": "I.dementia",
@@ -2451,7 +2483,25 @@
         "N",
         "R"
       ],
-      "choice_column": "C"
+      "choice_column": "C",
+      "header_issue": {
+        "status": "held",
+        "source_ref_by_input": {
+          "S01": {
+            "input": "S01",
+            "sheet": "Ⅱ調査項目データ（第５群）",
+            "cell": "P70",
+            "raw_value": 644821
+          },
+          "S02": {
+            "input": "S02",
+            "sheet": "Ⅱ調査項目データ（第５群）",
+            "cell": "P70",
+            "raw_value": 618046
+          }
+        },
+        "reason": "C10:P70の地域見出しが数値。正式な地域名・列位置は未確定"
+      }
     },
     {
       "id": "II.selection.07.87",
@@ -3116,7 +3166,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "全体",
       "units": [
         "比率"
       ],
@@ -3129,6 +3179,17 @@
       "data_rows": [
         76,
         77
+      ],
+      "item_id": "1-1-left-lower",
+      "item_name": "1-1_麻痺（左-下肢）",
+      "item_title_cell": "C72",
+      "population_scope": "全体",
+      "population_heading_cell": null,
+      "statistics_heading_row": 75,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3140,7 +3201,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：非該当・要支援１・要支援２",
       "units": [
         "比率"
       ],
@@ -3153,6 +3214,17 @@
       "data_rows": [
         84,
         85
+      ],
+      "item_id": "1-1-left-lower",
+      "item_name": "1-1_麻痺（左-下肢）",
+      "item_title_cell": "C72",
+      "population_scope": "一次判定結果：非該当・要支援１・要支援２",
+      "population_heading_cell": "C81",
+      "statistics_heading_row": 83,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3164,7 +3236,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：非該当・要支援１・要支援２・要介護１",
       "units": [
         "比率"
       ],
@@ -3177,6 +3249,17 @@
       "data_rows": [
         92,
         93
+      ],
+      "item_id": "1-1-left-lower",
+      "item_name": "1-1_麻痺（左-下肢）",
+      "item_title_cell": "C72",
+      "population_scope": "一次判定結果：非該当・要支援１・要支援２・要介護１",
+      "population_heading_cell": "C89",
+      "statistics_heading_row": 91,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3188,7 +3271,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：要介護１・要介護２",
       "units": [
         "比率"
       ],
@@ -3201,6 +3284,17 @@
       "data_rows": [
         100,
         101
+      ],
+      "item_id": "1-1-left-lower",
+      "item_name": "1-1_麻痺（左-下肢）",
+      "item_title_cell": "C72",
+      "population_scope": "一次判定結果：要介護１・要介護２",
+      "population_heading_cell": "C97",
+      "statistics_heading_row": 99,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3212,7 +3306,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：要介護２・要介護３",
       "units": [
         "比率"
       ],
@@ -3225,6 +3319,17 @@
       "data_rows": [
         108,
         109
+      ],
+      "item_id": "1-1-left-lower",
+      "item_name": "1-1_麻痺（左-下肢）",
+      "item_title_cell": "C72",
+      "population_scope": "一次判定結果：要介護２・要介護３",
+      "population_heading_cell": "C105",
+      "statistics_heading_row": 107,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3236,7 +3341,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：要介護４・要介護５",
       "units": [
         "比率"
       ],
@@ -3249,6 +3354,17 @@
       "data_rows": [
         116,
         117
+      ],
+      "item_id": "1-1-left-lower",
+      "item_name": "1-1_麻痺（左-下肢）",
+      "item_title_cell": "C72",
+      "population_scope": "一次判定結果：要介護４・要介護５",
+      "population_heading_cell": "C113",
+      "statistics_heading_row": 115,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3260,7 +3376,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "全体",
       "units": [
         "比率"
       ],
@@ -3273,6 +3389,17 @@
       "data_rows": [
         138,
         139
+      ],
+      "item_id": "1-1-right-lower",
+      "item_name": "1-1_麻痺（右-下肢）",
+      "item_title_cell": "C134",
+      "population_scope": "全体",
+      "population_heading_cell": null,
+      "statistics_heading_row": 137,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3284,7 +3411,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：非該当・要支援１・要支援２",
       "units": [
         "比率"
       ],
@@ -3297,6 +3424,17 @@
       "data_rows": [
         146,
         147
+      ],
+      "item_id": "1-1-right-lower",
+      "item_name": "1-1_麻痺（右-下肢）",
+      "item_title_cell": "C134",
+      "population_scope": "一次判定結果：非該当・要支援１・要支援２",
+      "population_heading_cell": "C143",
+      "statistics_heading_row": 145,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3308,7 +3446,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：非該当・要支援１・要支援２・要介護１",
       "units": [
         "比率"
       ],
@@ -3321,6 +3459,17 @@
       "data_rows": [
         154,
         155
+      ],
+      "item_id": "1-1-right-lower",
+      "item_name": "1-1_麻痺（右-下肢）",
+      "item_title_cell": "C134",
+      "population_scope": "一次判定結果：非該当・要支援１・要支援２・要介護１",
+      "population_heading_cell": "C151",
+      "statistics_heading_row": 153,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3332,7 +3481,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：要介護１・要介護２",
       "units": [
         "比率"
       ],
@@ -3345,6 +3494,17 @@
       "data_rows": [
         162,
         163
+      ],
+      "item_id": "1-1-right-lower",
+      "item_name": "1-1_麻痺（右-下肢）",
+      "item_title_cell": "C134",
+      "population_scope": "一次判定結果：要介護１・要介護２",
+      "population_heading_cell": "C159",
+      "statistics_heading_row": 161,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3356,7 +3516,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：要介護２・要介護３",
       "units": [
         "比率"
       ],
@@ -3369,6 +3529,17 @@
       "data_rows": [
         170,
         171
+      ],
+      "item_id": "1-1-right-lower",
+      "item_name": "1-1_麻痺（右-下肢）",
+      "item_title_cell": "C134",
+      "population_scope": "一次判定結果：要介護２・要介護３",
+      "population_heading_cell": "C167",
+      "statistics_heading_row": 169,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3380,7 +3551,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：要介護４・要介護５",
       "units": [
         "比率"
       ],
@@ -3393,6 +3564,17 @@
       "data_rows": [
         178,
         179
+      ],
+      "item_id": "1-1-right-lower",
+      "item_name": "1-1_麻痺（右-下肢）",
+      "item_title_cell": "C134",
+      "population_scope": "一次判定結果：要介護４・要介護５",
+      "population_heading_cell": "C175",
+      "statistics_heading_row": 177,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3404,7 +3586,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "全体",
       "units": [
         "比率"
       ],
@@ -3419,6 +3601,17 @@
         199,
         200,
         201
+      ],
+      "item_id": "1-5",
+      "item_name": "1-5_座位保持",
+      "item_title_cell": "C194",
+      "population_scope": "全体",
+      "population_heading_cell": null,
+      "statistics_heading_row": 197,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3430,7 +3623,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：非該当・要支援１・要支援２",
       "units": [
         "比率"
       ],
@@ -3445,6 +3638,17 @@
         209,
         210,
         211
+      ],
+      "item_id": "1-5",
+      "item_name": "1-5_座位保持",
+      "item_title_cell": "C194",
+      "population_scope": "一次判定結果：非該当・要支援１・要支援２",
+      "population_heading_cell": "C205",
+      "statistics_heading_row": 207,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3456,7 +3660,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：非該当・要支援１・要支援２・要介護１",
       "units": [
         "比率"
       ],
@@ -3471,6 +3675,17 @@
         217,
         218,
         219
+      ],
+      "item_id": "1-5",
+      "item_name": "1-5_座位保持",
+      "item_title_cell": "C194",
+      "population_scope": "一次判定結果：非該当・要支援１・要支援２・要介護１",
+      "population_heading_cell": "C213",
+      "statistics_heading_row": 215,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3482,7 +3697,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：要介護１・要介護２",
       "units": [
         "比率"
       ],
@@ -3497,6 +3712,17 @@
         225,
         226,
         227
+      ],
+      "item_id": "1-5",
+      "item_name": "1-5_座位保持",
+      "item_title_cell": "C194",
+      "population_scope": "一次判定結果：要介護１・要介護２",
+      "population_heading_cell": "C221",
+      "statistics_heading_row": 223,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3508,7 +3734,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：要介護２・要介護３",
       "units": [
         "比率"
       ],
@@ -3523,6 +3749,17 @@
         233,
         234,
         235
+      ],
+      "item_id": "1-5",
+      "item_name": "1-5_座位保持",
+      "item_title_cell": "C194",
+      "population_scope": "一次判定結果：要介護２・要介護３",
+      "population_heading_cell": "C229",
+      "statistics_heading_row": 231,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3534,7 +3771,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：要介護４・要介護５",
       "units": [
         "比率"
       ],
@@ -3549,6 +3786,17 @@
         241,
         242,
         243
+      ],
+      "item_id": "1-5",
+      "item_name": "1-5_座位保持",
+      "item_title_cell": "C194",
+      "population_scope": "一次判定結果：要介護４・要介護５",
+      "population_heading_cell": "C237",
+      "statistics_heading_row": 239,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3560,7 +3808,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "全体",
       "units": [
         "比率"
       ],
@@ -3575,6 +3823,17 @@
         261,
         262,
         263
+      ],
+      "item_id": "2-1",
+      "item_name": "2-1_移乗",
+      "item_title_cell": "C256",
+      "population_scope": "全体",
+      "population_heading_cell": null,
+      "statistics_heading_row": 259,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3586,7 +3845,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：非該当・要支援１・要支援２",
       "units": [
         "比率"
       ],
@@ -3601,6 +3860,17 @@
         271,
         272,
         273
+      ],
+      "item_id": "2-1",
+      "item_name": "2-1_移乗",
+      "item_title_cell": "C256",
+      "population_scope": "一次判定結果：非該当・要支援１・要支援２",
+      "population_heading_cell": "C267",
+      "statistics_heading_row": 269,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3612,7 +3882,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：非該当・要支援１・要支援２・要介護１",
       "units": [
         "比率"
       ],
@@ -3627,6 +3897,17 @@
         279,
         280,
         281
+      ],
+      "item_id": "2-1",
+      "item_name": "2-1_移乗",
+      "item_title_cell": "C256",
+      "population_scope": "一次判定結果：非該当・要支援１・要支援２・要介護１",
+      "population_heading_cell": "C275",
+      "statistics_heading_row": 277,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3638,7 +3919,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：要介護１・要介護２",
       "units": [
         "比率"
       ],
@@ -3653,6 +3934,17 @@
         287,
         288,
         289
+      ],
+      "item_id": "2-1",
+      "item_name": "2-1_移乗",
+      "item_title_cell": "C256",
+      "population_scope": "一次判定結果：要介護１・要介護２",
+      "population_heading_cell": "C283",
+      "statistics_heading_row": 285,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3664,7 +3956,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：要介護２・要介護３",
       "units": [
         "比率"
       ],
@@ -3679,6 +3971,17 @@
         295,
         296,
         297
+      ],
+      "item_id": "2-1",
+      "item_name": "2-1_移乗",
+      "item_title_cell": "C256",
+      "population_scope": "一次判定結果：要介護２・要介護３",
+      "population_heading_cell": "C291",
+      "statistics_heading_row": 293,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3690,7 +3993,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：要介護４・要介護５",
       "units": [
         "比率"
       ],
@@ -3705,6 +4008,17 @@
         303,
         304,
         305
+      ],
+      "item_id": "2-1",
+      "item_name": "2-1_移乗",
+      "item_title_cell": "C256",
+      "population_scope": "一次判定結果：要介護４・要介護５",
+      "population_heading_cell": "C299",
+      "statistics_heading_row": 301,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3716,7 +4030,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "全体",
       "units": [
         "比率"
       ],
@@ -3731,6 +4045,17 @@
         322,
         323,
         324
+      ],
+      "item_id": "2-2",
+      "item_name": "2-2_移動",
+      "item_title_cell": "C317",
+      "population_scope": "全体",
+      "population_heading_cell": null,
+      "statistics_heading_row": 320,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3742,7 +4067,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：非該当・要支援１・要支援２",
       "units": [
         "比率"
       ],
@@ -3757,6 +4082,17 @@
         332,
         333,
         334
+      ],
+      "item_id": "2-2",
+      "item_name": "2-2_移動",
+      "item_title_cell": "C317",
+      "population_scope": "一次判定結果：非該当・要支援１・要支援２",
+      "population_heading_cell": "C328",
+      "statistics_heading_row": 330,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3768,7 +4104,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：非該当・要支援１・要支援２・要介護１",
       "units": [
         "比率"
       ],
@@ -3783,6 +4119,17 @@
         340,
         341,
         342
+      ],
+      "item_id": "2-2",
+      "item_name": "2-2_移動",
+      "item_title_cell": "C317",
+      "population_scope": "一次判定結果：非該当・要支援１・要支援２・要介護１",
+      "population_heading_cell": "C336",
+      "statistics_heading_row": 338,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3794,7 +4141,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：要介護１・要介護２",
       "units": [
         "比率"
       ],
@@ -3809,6 +4156,17 @@
         348,
         349,
         350
+      ],
+      "item_id": "2-2",
+      "item_name": "2-2_移動",
+      "item_title_cell": "C317",
+      "population_scope": "一次判定結果：要介護１・要介護２",
+      "population_heading_cell": "C344",
+      "statistics_heading_row": 346,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3820,7 +4178,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：要介護２・要介護３",
       "units": [
         "比率"
       ],
@@ -3835,6 +4193,17 @@
         356,
         357,
         358
+      ],
+      "item_id": "2-2",
+      "item_name": "2-2_移動",
+      "item_title_cell": "C317",
+      "population_scope": "一次判定結果：要介護２・要介護３",
+      "population_heading_cell": "C352",
+      "statistics_heading_row": 354,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3846,7 +4215,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：要介護４・要介護５",
       "units": [
         "比率"
       ],
@@ -3861,6 +4230,17 @@
         364,
         365,
         366
+      ],
+      "item_id": "2-2",
+      "item_name": "2-2_移動",
+      "item_title_cell": "C317",
+      "population_scope": "一次判定結果：要介護４・要介護５",
+      "population_heading_cell": "C360",
+      "statistics_heading_row": 362,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3872,7 +4252,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "全体",
       "units": [
         "比率"
       ],
@@ -3885,6 +4265,17 @@
       "data_rows": [
         382,
         383
+      ],
+      "item_id": "3-4",
+      "item_name": "3-4_短期記憶",
+      "item_title_cell": "C378",
+      "population_scope": "全体",
+      "population_heading_cell": null,
+      "statistics_heading_row": 381,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3896,7 +4287,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：非該当・要支援１・要支援２",
       "units": [
         "比率"
       ],
@@ -3909,6 +4300,17 @@
       "data_rows": [
         390,
         391
+      ],
+      "item_id": "3-4",
+      "item_name": "3-4_短期記憶",
+      "item_title_cell": "C378",
+      "population_scope": "一次判定結果：非該当・要支援１・要支援２",
+      "population_heading_cell": "C387",
+      "statistics_heading_row": 389,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3920,7 +4322,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：非該当・要支援１・要支援２・要介護１",
       "units": [
         "比率"
       ],
@@ -3933,6 +4335,17 @@
       "data_rows": [
         398,
         399
+      ],
+      "item_id": "3-4",
+      "item_name": "3-4_短期記憶",
+      "item_title_cell": "C378",
+      "population_scope": "一次判定結果：非該当・要支援１・要支援２・要介護１",
+      "population_heading_cell": "C395",
+      "statistics_heading_row": 397,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3944,7 +4357,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：要介護１・要介護２",
       "units": [
         "比率"
       ],
@@ -3957,6 +4370,17 @@
       "data_rows": [
         406,
         407
+      ],
+      "item_id": "3-4",
+      "item_name": "3-4_短期記憶",
+      "item_title_cell": "C378",
+      "population_scope": "一次判定結果：要介護１・要介護２",
+      "population_heading_cell": "C403",
+      "statistics_heading_row": 405,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3968,7 +4392,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：要介護２・要介護３",
       "units": [
         "比率"
       ],
@@ -3981,6 +4405,17 @@
       "data_rows": [
         414,
         415
+      ],
+      "item_id": "3-4",
+      "item_name": "3-4_短期記憶",
+      "item_title_cell": "C378",
+      "population_scope": "一次判定結果：要介護２・要介護３",
+      "population_heading_cell": "C411",
+      "statistics_heading_row": 413,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -3992,7 +4427,7 @@
       "requirements": [
         "R05"
       ],
-      "population": "一次判定区分を限定した当該調査項目の有効ケース",
+      "population": "一次判定結果：要介護４・要介護５",
       "units": [
         "比率"
       ],
@@ -4005,6 +4440,17 @@
       "data_rows": [
         422,
         423
+      ],
+      "item_id": "3-4",
+      "item_name": "3-4_短期記憶",
+      "item_title_cell": "C378",
+      "population_scope": "一次判定結果：要介護４・要介護５",
+      "population_heading_cell": "C419",
+      "statistics_heading_row": 421,
+      "statistic_rule": "R/S～Z/AAは500件以上送信自治体の分布統計、AB/ACは三島市の提供選択率",
+      "focus_exception_source_refs": [
+        "Ⅱ（３）５項目!C37",
+        "Ⅱ（３）５項目!C38"
       ]
     },
     {
@@ -4575,8 +5021,12 @@
     "C03": "10照合済み、20独立照合前は原セルを修正しない",
     "C04": "市調査期間の比較と原因説明を保留",
     "C09": "軽度変更数0の構成比は未算出。原数式エラーを既存不整合として区別",
-    "C10": "第5群の薬の内服表は件数と掲載割合が不一致。件数・割合の比較を保留し元集計の確認を要する",
-    "C11": "申請区分別変更率の掲載比率と同表対象件数分母が不一致のセルを保留。除外ケースや別分母を推測しない"
+    "C10": "薬の内服H/J/L/N/P/R71:73は入力別にheld。P70見出し異常を別記。P/R地域名を推定しない",
+    "C11": "申請区分別30比率は入力別held。ゼロ分子3件をvalidへ戻さず正式分母待ち"
   },
-  "national_scope": "期間中500件以上送信自治体の対象全ケース。自治体比率の単純平均ではない"
+  "national_scope": "期間中500件以上送信自治体の対象全ケース。自治体比率の単純平均ではない",
+  "role30_proposal": {
+    "report_blob_sha": "d46d6c69f11d0b1457a04e58acc9c2e032ccabe3",
+    "source_commit": "3c63328c7b10b2fb7cd4c9fd81c5d71c6e0ed8f4"
+  }
 }

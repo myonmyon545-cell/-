@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "source_copy_sha256": "fef7ab5b1b46bc8eb03c040c3d4767ec9aa41098c6106019397ce29623c77cf6",
+  "candidate_sha256": "fe3ccd49b45400ea70687cd67cb50a7f9563cd7dd6641bd7c82c57aa97cbb570",
+  "source_sheet_count": 15,
+  "candidate_sheet_count": 19,
+  "charts": 148,
+  "new_sheets": [
+    "候補案内",
+    "指標一覧",
+    "比較一覧",
+    "定義・保留"
+  ],
+  "existing_original_parts_identical_except_registration_and_appended_styles": true,
+  "changed_existing_parts": [
+    "[Content_Types].xml",
+    "xl/_rels/workbook.xml.rels",
+    "xl/styles.xml",
+    "xl/workbook.xml"
+  ],
+  "new_parts": [
+    "xl/worksheets/sheet16.xml",
+    "xl/worksheets/sheet17.xml",
+    "xl/worksheets/sheet18.xml",
+    "xl/worksheets/sheet19.xml"
+  ]
+}

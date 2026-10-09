@@ -40,14 +40,44 @@ def main():
             for c in (['H','O','V'] if t['id']=='III.validity.all' else ['K','Q','W']):
                 total(sid,t['sheet'],t['id']+':'+c,c+str(hi),[c+str(r) for r in range(lo,hi)])
     held=[{'input':r['input_id'],'id':r['id'],'source_ref':r['source_ref'],'status':r['status'],'reason':r['reason'],'source_value':r['source_value']} for r in result['records'] if r['status']!='valid']
+    by_input={(r['input_id'],r['id']):r for r in result['records']}
     for m in inv['metrics']:
-        m['extraction_status_by_input']={r['input_id']:{'status':r['status'],'reason':r['reason']} for r in result['records'] if r['id']==m['id']}
-    inv['stage']='source-cell inventory with post-extraction status; independent requirement coverage review pending'
+        per_input={}
+        for sid in ['S01','S02']:
+            r=by_input.get((sid,m['id']))
+            if r is None:raise ValueError('missing input-specific metric '+sid+' '+m['id'])
+            per_input[sid]={'status':r['status'],'reason':r['reason'],
+                            'source_ref':r['source_ref'],'input_sha256':r['input_hash']}
+        m['extraction_status_by_input']=per_input
+        m['status']='valid' if all(x['status']=='valid' for x in per_input.values()) else 'held'
+        m['reason']=None if m['status']=='valid' else '入力別statusを参照。共有状態からvalidへ戻さない'
+        m['status_resolution']='input_id+id+source_ref+input_sha256; input-specific status required'
+    inv['stage']='input-specific source-cell inventory; independent candidate review pending'
     write_json(a.out/'metric_inventory.json',inv)
     checks=json.loads((a.contract/'startup_checks.json').read_text())
     for issue,need in [('C10','S01/S02の薬の内服について正式な元送信・集計表と列定義'),('C11','変更率の正式な対象・除外ケース定義と申請区分別の元集計結果')]:
         mismatches=[x for x in result['unexpected_issues'] if x.get('issue')==issue]
-        checks[issue]={'status':'HELD','affected_cells':[x for x in held if (x['reason'] or '').startswith(issue+':')],'mismatches':mismatches,'needs':need,'correction_applied':False}
+        affected=[x for x in held if (x['reason'] or '').startswith(issue)]
+        checks[issue]={'status':'HELD','affected_cells':affected,'mismatches':mismatches,
+                       'needs':need,'hold_propagation_applied':True,'formal_value_correction_applied':False}
+    if 'ROLE30' in result.get('correction_overlays',{}):
+        role30=result['correction_overlays']['ROLE30']
+        checks['E20-01']={'status':'APPLIED_AWAITING_INDEPENDENT_CANDIDATE_REVIEW',
+                          'focus_tables':role30['focus_metrics']//18,
+                          'focus_metrics':role30['focus_metrics'],
+                          'certification_metrics':role30['certification_metrics'],
+                          'proposal_report_blob_sha':role30['proposal_report_blob_sha']}
+        checks['C10']['header_issue']=role30['C10_header_issue']
+        checks['C10']['numeric_held_by_input']={'S01':18,'S02':18}
+        checks['C11']['zero_numerator_new_held']=3
+        if len(checks['C10']['affected_cells'])!=36 or len(checks['C11']['affected_cells'])!=30:
+            raise ValueError('ROLE30 C10/C11 hold scope mismatch')
+    if 'C03' in result.get('correction_overlays',{}):
+        c03=result['correction_overlays']['C03']
+        checks['C03'].update({'status':'PASS_WORK_COPY','applied':True,
+                               'source_copy_sha256':c03['S01_work_copy_sha256'],
+                               'originals_modified':False,
+                               'role20_report_blob_sha':c03['role20_report_blob_sha']})
     checks['numeric_coverage']={'required_source_cells':len(inv['metrics']),'extracted_values':len(result['records']),'held_or_missing':len(held),'comparisons':len(result['comparisons']),'valid_comparisons':sum(x['status']=='valid' for x in result['comparisons']),'scope':'ROLE=10 aggregate calculation; not independent evaluation or release approval'}
     write_json(a.out/'startup.json',checks)
     numeric=json.loads((a.calculation/'numeric_checks.json').read_text())
