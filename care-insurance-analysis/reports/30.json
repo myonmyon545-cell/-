@@ -3,10 +3,18 @@
   "role": "30",
   "plan_revision": "2.2",
   "operations_revision": "2.2.1",
-  "status": "correction_proposal_ready_pre_candidate",
-  "task_id": "T07_pre_candidate_findings",
-  "source_commit": "3c63328c7b10b2fb7cd4c9fd81c5d71c6e0ed8f4",
-  "updated_at": "2026-10-09T15:32:29.543+09:00",
+  "status": "candidate_v1_correction_proposal_ready",
+  "task_id": "T07_v1_feedback",
+  "source_commit": "f15b6c5f1b4dc02f31cd21bdb498bb6f3c87009f",
+  "updated_at": "2026-10-09T17:38:41.975+09:00",
+  "candidate": {
+    "id": "care-S01-20261009-v1",
+    "version": 1,
+    "sha256": "fe3ccd49b45400ea70687cd67cb50a7f9563cd7dd6641bd7c82c57aa97cbb570",
+    "storage_id": "libfile_7d32eed56014819184d160de1a2af7d5",
+    "storage_version": 0
+  },
+  "candidate_fingerprint": "9f123c60a6e16622204b6abc33736d85d55358be8956a9776b716659fe620695",
   "inputs": [
     {
       "path": "care-insurance-analysis/PLAN.md",
@@ -14,679 +22,332 @@
     },
     {
       "path": "care-insurance-analysis/STATE.json",
-      "git_blob_sha": "552993fce3df387f4e7e1bb7c20946b2e29aaf3a"
+      "git_blob_sha": "0c2f70c64794c936068c85db5b4a70d010e9c285"
     },
     {
       "path": "care-insurance-analysis/reports/10.json",
-      "git_blob_sha": "502a9d137f6cc5b99a4acaafcef6700d92be3b52"
+      "git_blob_sha": "ecdd8f911fe4d4acb436a1771ace280427e80b04"
     },
     {
       "path": "care-insurance-analysis/reports/20.json",
-      "git_blob_sha": "8a62a506c6ea56688e7231b44470cabd35d5912a"
+      "git_blob_sha": "57863de7a6ba499b2872df9cf0b6549c43afa7e7"
     },
     {
       "path": "care-insurance-analysis/reports/30.json",
-      "git_blob_sha": "c0bdba7a13e3003cd4109222040321b974f75dd9"
+      "git_blob_sha": "d46d6c69f11d0b1457a04e58acc9c2e032ccabe3"
     },
     {
       "path": "care-insurance-analysis/src/definitions.json",
-      "git_blob_sha": "2bdff82d98b0b598330f6a5bbee1bf0d02955033"
+      "git_blob_sha": "66194b2e5ce51fe6673a8ec8ab4ba029b52cb916"
     },
     {
-      "path": "care-insurance-analysis/src/metric_inventory.json",
-      "git_blob_sha": "a45a8c27aba7d2e2ab9b13c0064716240e2be265",
-      "read_via": "介護保険解析_再現用.zip v0 内src/metric_inventory.json。同じ2,976,158 bytesのGit blob SHAを固定コミット/20報告と照合。ZIPの管理情報は現行STATEの正本としない。"
+      "path": "care-insurance-analysis/src/build_candidate.py",
+      "git_blob_sha": "5ada3c2e46ef34d84a9d89c55712c70444253aac"
+    },
+    {
+      "path": "care-insurance-analysis/src/build_candidate_tables.py",
+      "git_blob_sha": "ac52c957e69d7aa93ce310c0194f2c8337f54138"
+    },
+    {
+      "path": "care-insurance-analysis/src/candidate_donor.mjs",
+      "git_blob_sha": "5607eca7cc35785af71cf0fcc9872ada78576940"
+    },
+    {
+      "path": "care-insurance-analysis/src/graft_candidate.py",
+      "git_blob_sha": "e3c05f5cede70f3c4ab51917739d51f4795f2918"
+    },
+    {
+      "path": "care-insurance-analysis/checks/preservation.json",
+      "git_blob_sha": "48204be6d194df9ddebbadd2160f696d3ad6efca"
+    },
+    {
+      "path": "care-insurance-analysis/checks/pilot.json",
+      "git_blob_sha": "3e9cec0a5f98881beb3d89fde7681dc6669d036a"
+    },
+    {
+      "path": "care-insurance-analysis/checks/candidate.json",
+      "git_blob_sha": "f89352f5ff9a5f41a7c8b178dcd1b651def9d45c",
+      "read_basis": "本体大容量のため20の固定版・fingerprint独立計算結果と10報告を採用。今回全JSON本文の直接再検査はしていない。"
+    },
+    {
+      "name": "介護保険解析_候補_v1.xlsx",
+      "storage_id": "libfile_7d32eed56014819184d160de1a2af7d5",
+      "version": 0,
+      "sha256": "fe3ccd49b45400ea70687cd67cb50a7f9563cd7dd6641bd7c82c57aa97cbb570",
+      "inspection": "実バイトSHA、19シート構成、要点と追加一覧の表示形式・印刷設定を読取"
+    },
+    {
+      "name": "介護保険解析_再現用.zip",
+      "storage_id": "libfile_d613c5b2ffb08191bf6eff5c8d7e0fdb",
+      "version": 1,
+      "sha256": "2cb1f00cf39098dacad171ad11eb38484229a24c09ed45c7cc4ee57444ac7fd2",
+      "inspection": "ZIP内README、package_repro.py、候補v1資料を確認。旧版0と混同しない。"
     }
   ],
-  "sources_checked": {
-    "S01": {
-      "sha256": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d",
-      "sheet_samples": [
-        "Ⅱ（３）５項目!C37:C38/C72:AB85",
-        "Ⅰ基礎情報!D284:W355",
-        "Ⅱ調査項目データ（第５群）!C68:R73",
-        "Ⅲ審査判定データ（変更率）!J369:Z432"
-      ]
-    },
-    "S02": {
-      "sha256": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304",
-      "comparison_source": true
-    }
+  "prior_proposal": {
+    "commit": "67f2734951e548575babdb3ba57eb05ad318e3a2",
+    "issues": [
+      "E20-01",
+      "C11",
+      "C10",
+      "STATUS-PROPAGATION"
+    ],
+    "v1_result": "E20-01独立PASS、C10/C11入力別保留伝播PASS。ただし原表・図への表示はE20-03として残る。以前の本文はGit履歴に保持。"
   },
-  "outputs": [
-    {
-      "type": "proposal",
-      "path": "care-insurance-analysis/reports/30.json",
-      "candidate_modified": false
-    }
-  ],
-  "checks": [
-    {
-      "id": "head_and_blob",
-      "verdict": "PASS",
-      "detail": "mainを固定コミットに再確認し、5報告/計画・定義台帳・ハッシュ一致のZIP指標台帳を照合"
-    },
-    {
-      "id": "source_headers",
-      "verdict": "PASS",
-      "detail": "S01元ブックの36表の項目・区分見出し、統計列、認定率3見出し、薬の内服P70を読取"
-    },
-    {
-      "id": "candidate_and_excel",
-      "verdict": "NOT_EXECUTED",
-      "detail": "候補未生成。本報告は修正の指示であり適用・評価の合格ではない"
-    }
-  ],
+  "evaluation": {
+    "role20_report_commit": "f15b6c5f1b4dc02f31cd21bdb498bb6f3c87009f",
+    "verdict": "FAIL",
+    "key_findings": [
+      "Q06 FAIL",
+      "Q10 FAIL",
+      "Q07/Q08/Q09/Q11 HELD",
+      "Q12 開封/保存のみPASS"
+    ],
+    "not_release_approval": true
+  },
   "issues": [
     {
-      "id": "E20-01",
+      "id": "E20-02",
+      "severity": "major",
       "classification": "fix_now",
-      "requirements": [
-        "R03",
-        "R05",
-        "R10",
-        "R12"
-      ],
       "locations": [
-        "src/definitions.json table_inventory II.focus.* 36件 / I.certification.summary",
-        "src/metric_inventory.json II.focus.* 648件 / I.certification.summary 12件",
-        "10の抽出・説明/比較/要点/グラフ用ラベル生成"
+        "src/build_candidate_tables.py: guide/metric_rows/comparison_rows/definition_rows",
+        "src/candidate_donor.mjs: specs/表示書式/印刷設定",
+        "src/graft_candidate.py: NEW_SHEETS/登録・definedNames",
+        "preserve_package.pyが作る分析要点（または同等の一枚生成工程）",
+        "候補Excelの先頭5枚と全体印刷構成"
       ],
+      "cause": "v1は試験用の分析要点を5枚目に残し、案内・指標一覧・比較一覧・定義保留の4枚を先頭に追加。追加一覧に成果を分散し、比率のGeneral表示と印刷対象無指定を許した。PLANの先頭分析要点1枚・14列・重点結果・根拠・印刷構成に反する。",
       "evidence": [
-        "reports/20.json E20-01",
-        "S01 Ⅱ（３）５項目 C72,C81,C89,C97,C105,C113 と各項目の同型見出し",
-        "S01 Ⅱ（３）５項目 P75,R75:AB75（以後各表の対応見出し行）",
-        "S01 Ⅰ基礎情報 D284,D321,D352; F260:F263, D287:W287,D324:W324,D355:W355; C37:C38"
+        "PLAN outputs.workbook: 元14枚保持＋先頭分析要点1枚、上部重点結果/下部比較表・算出根拠・未解決事項と14列",
+        "v1実ファイル19枚。分析要点A2/A31に保持試験・最終候補ではないの旧文言",
+        "指標一覧J/KがGeneralで0.5818等の小数のまま",
+        "reports/20 Q06:148グラフ部品保持、PDF1203ページ、候補案内横3ページ。v1独立FAIL"
       ],
-      "cause": "全体6表を層別とする汎用populationを36表へ一律設定し、項目名/対象区分/統計列の意味を保存していない。認定率概要12行のrow_labelは空。",
       "change": {
-        "focus_table_mapping": [
-          {
-            "table_id": "II.focus.75",
-            "item_id": "1-1-left-lower",
-            "item_name": "1-1_麻痺（左-下肢）",
-            "item_title_cell": "C72",
-            "population_scope": "全体",
-            "population_heading_cell": null,
-            "statistics_heading_row": 75,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.83",
-            "item_id": "1-1-left-lower",
-            "item_name": "1-1_麻痺（左-下肢）",
-            "item_title_cell": "C72",
-            "population_scope": "一次判定結果：非該当・要支援１・要支援２",
-            "population_heading_cell": "C81",
-            "statistics_heading_row": 83,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.91",
-            "item_id": "1-1-left-lower",
-            "item_name": "1-1_麻痺（左-下肢）",
-            "item_title_cell": "C72",
-            "population_scope": "一次判定結果：非該当・要支援１・要支援２・要介護１",
-            "population_heading_cell": "C89",
-            "statistics_heading_row": 91,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.99",
-            "item_id": "1-1-left-lower",
-            "item_name": "1-1_麻痺（左-下肢）",
-            "item_title_cell": "C72",
-            "population_scope": "一次判定結果：要介護１・要介護２",
-            "population_heading_cell": "C97",
-            "statistics_heading_row": 99,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.107",
-            "item_id": "1-1-left-lower",
-            "item_name": "1-1_麻痺（左-下肢）",
-            "item_title_cell": "C72",
-            "population_scope": "一次判定結果：要介護２・要介護３",
-            "population_heading_cell": "C105",
-            "statistics_heading_row": 107,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.115",
-            "item_id": "1-1-left-lower",
-            "item_name": "1-1_麻痺（左-下肢）",
-            "item_title_cell": "C72",
-            "population_scope": "一次判定結果：要介護４・要介護５",
-            "population_heading_cell": "C113",
-            "statistics_heading_row": 115,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.137",
-            "item_id": "1-1-right-lower",
-            "item_name": "1-1_麻痺（右-下肢）",
-            "item_title_cell": "C134",
-            "population_scope": "全体",
-            "population_heading_cell": null,
-            "statistics_heading_row": 137,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.145",
-            "item_id": "1-1-right-lower",
-            "item_name": "1-1_麻痺（右-下肢）",
-            "item_title_cell": "C134",
-            "population_scope": "一次判定結果：非該当・要支援１・要支援２",
-            "population_heading_cell": "C143",
-            "statistics_heading_row": 145,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.153",
-            "item_id": "1-1-right-lower",
-            "item_name": "1-1_麻痺（右-下肢）",
-            "item_title_cell": "C134",
-            "population_scope": "一次判定結果：非該当・要支援１・要支援２・要介護１",
-            "population_heading_cell": "C151",
-            "statistics_heading_row": 153,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.161",
-            "item_id": "1-1-right-lower",
-            "item_name": "1-1_麻痺（右-下肢）",
-            "item_title_cell": "C134",
-            "population_scope": "一次判定結果：要介護１・要介護２",
-            "population_heading_cell": "C159",
-            "statistics_heading_row": 161,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.169",
-            "item_id": "1-1-right-lower",
-            "item_name": "1-1_麻痺（右-下肢）",
-            "item_title_cell": "C134",
-            "population_scope": "一次判定結果：要介護２・要介護３",
-            "population_heading_cell": "C167",
-            "statistics_heading_row": 169,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.177",
-            "item_id": "1-1-right-lower",
-            "item_name": "1-1_麻痺（右-下肢）",
-            "item_title_cell": "C134",
-            "population_scope": "一次判定結果：要介護４・要介護５",
-            "population_heading_cell": "C175",
-            "statistics_heading_row": 177,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.197",
-            "item_id": "1-5",
-            "item_name": "1-5_座位保持",
-            "item_title_cell": "C194",
-            "population_scope": "全体",
-            "population_heading_cell": null,
-            "statistics_heading_row": 197,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.207",
-            "item_id": "1-5",
-            "item_name": "1-5_座位保持",
-            "item_title_cell": "C194",
-            "population_scope": "一次判定結果：非該当・要支援１・要支援２",
-            "population_heading_cell": "C205",
-            "statistics_heading_row": 207,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.215",
-            "item_id": "1-5",
-            "item_name": "1-5_座位保持",
-            "item_title_cell": "C194",
-            "population_scope": "一次判定結果：非該当・要支援１・要支援２・要介護１",
-            "population_heading_cell": "C213",
-            "statistics_heading_row": 215,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.223",
-            "item_id": "1-5",
-            "item_name": "1-5_座位保持",
-            "item_title_cell": "C194",
-            "population_scope": "一次判定結果：要介護１・要介護２",
-            "population_heading_cell": "C221",
-            "statistics_heading_row": 223,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.231",
-            "item_id": "1-5",
-            "item_name": "1-5_座位保持",
-            "item_title_cell": "C194",
-            "population_scope": "一次判定結果：要介護２・要介護３",
-            "population_heading_cell": "C229",
-            "statistics_heading_row": 231,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.239",
-            "item_id": "1-5",
-            "item_name": "1-5_座位保持",
-            "item_title_cell": "C194",
-            "population_scope": "一次判定結果：要介護４・要介護５",
-            "population_heading_cell": "C237",
-            "statistics_heading_row": 239,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.259",
-            "item_id": "2-1",
-            "item_name": "2-1_移乗",
-            "item_title_cell": "C256",
-            "population_scope": "全体",
-            "population_heading_cell": null,
-            "statistics_heading_row": 259,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.269",
-            "item_id": "2-1",
-            "item_name": "2-1_移乗",
-            "item_title_cell": "C256",
-            "population_scope": "一次判定結果：非該当・要支援１・要支援２",
-            "population_heading_cell": "C267",
-            "statistics_heading_row": 269,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.277",
-            "item_id": "2-1",
-            "item_name": "2-1_移乗",
-            "item_title_cell": "C256",
-            "population_scope": "一次判定結果：非該当・要支援１・要支援２・要介護１",
-            "population_heading_cell": "C275",
-            "statistics_heading_row": 277,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.285",
-            "item_id": "2-1",
-            "item_name": "2-1_移乗",
-            "item_title_cell": "C256",
-            "population_scope": "一次判定結果：要介護１・要介護２",
-            "population_heading_cell": "C283",
-            "statistics_heading_row": 285,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.293",
-            "item_id": "2-1",
-            "item_name": "2-1_移乗",
-            "item_title_cell": "C256",
-            "population_scope": "一次判定結果：要介護２・要介護３",
-            "population_heading_cell": "C291",
-            "statistics_heading_row": 293,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.301",
-            "item_id": "2-1",
-            "item_name": "2-1_移乗",
-            "item_title_cell": "C256",
-            "population_scope": "一次判定結果：要介護４・要介護５",
-            "population_heading_cell": "C299",
-            "statistics_heading_row": 301,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.320",
-            "item_id": "2-2",
-            "item_name": "2-2_移動",
-            "item_title_cell": "C317",
-            "population_scope": "全体",
-            "population_heading_cell": null,
-            "statistics_heading_row": 320,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.330",
-            "item_id": "2-2",
-            "item_name": "2-2_移動",
-            "item_title_cell": "C317",
-            "population_scope": "一次判定結果：非該当・要支援１・要支援２",
-            "population_heading_cell": "C328",
-            "statistics_heading_row": 330,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.338",
-            "item_id": "2-2",
-            "item_name": "2-2_移動",
-            "item_title_cell": "C317",
-            "population_scope": "一次判定結果：非該当・要支援１・要支援２・要介護１",
-            "population_heading_cell": "C336",
-            "statistics_heading_row": 338,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.346",
-            "item_id": "2-2",
-            "item_name": "2-2_移動",
-            "item_title_cell": "C317",
-            "population_scope": "一次判定結果：要介護１・要介護２",
-            "population_heading_cell": "C344",
-            "statistics_heading_row": 346,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.354",
-            "item_id": "2-2",
-            "item_name": "2-2_移動",
-            "item_title_cell": "C317",
-            "population_scope": "一次判定結果：要介護２・要介護３",
-            "population_heading_cell": "C352",
-            "statistics_heading_row": 354,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.362",
-            "item_id": "2-2",
-            "item_name": "2-2_移動",
-            "item_title_cell": "C317",
-            "population_scope": "一次判定結果：要介護４・要介護５",
-            "population_heading_cell": "C360",
-            "statistics_heading_row": 362,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.381",
-            "item_id": "3-4",
-            "item_name": "3-4_短期記憶",
-            "item_title_cell": "C378",
-            "population_scope": "全体",
-            "population_heading_cell": null,
-            "statistics_heading_row": 381,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.389",
-            "item_id": "3-4",
-            "item_name": "3-4_短期記憶",
-            "item_title_cell": "C378",
-            "population_scope": "一次判定結果：非該当・要支援１・要支援２",
-            "population_heading_cell": "C387",
-            "statistics_heading_row": 389,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.397",
-            "item_id": "3-4",
-            "item_name": "3-4_短期記憶",
-            "item_title_cell": "C378",
-            "population_scope": "一次判定結果：非該当・要支援１・要支援２・要介護１",
-            "population_heading_cell": "C395",
-            "statistics_heading_row": 397,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.405",
-            "item_id": "3-4",
-            "item_name": "3-4_短期記憶",
-            "item_title_cell": "C378",
-            "population_scope": "一次判定結果：要介護１・要介護２",
-            "population_heading_cell": "C403",
-            "statistics_heading_row": 405,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.413",
-            "item_id": "3-4",
-            "item_name": "3-4_短期記憶",
-            "item_title_cell": "C378",
-            "population_scope": "一次判定結果：要介護２・要介護３",
-            "population_heading_cell": "C411",
-            "statistics_heading_row": 413,
-            "source_sheet": "Ⅱ（３）５項目"
-          },
-          {
-            "table_id": "II.focus.421",
-            "item_id": "3-4",
-            "item_name": "3-4_短期記憶",
-            "item_title_cell": "C378",
-            "population_scope": "一次判定結果：要介護４・要介護５",
-            "population_heading_cell": "C419",
-            "statistics_heading_row": 421,
-            "source_sheet": "Ⅱ（３）５項目"
-          }
-        ],
-        "strata_labels": [
-          "全体",
-          "非該当・要支援１・要支援２",
-          "非該当・要支援１・要支援２・要介護１",
-          "要介護１・要介護２",
-          "要介護２・要介護３",
-          "要介護４・要介護５"
-        ],
-        "focus_metric_rule": "各II.focus表のP列データ行を選択肢、R/T/V/X/Z/AB列をそれぞれ最小値/第1四分位点/中央値/第3四分位点/最大値/三島市の提供選択率とする。R～Zは500件以上送信自治体の分布統計（当該見出し行P列を根拠）、ABは市で、全国人口の率と同一視しない。各指標へitem_id,item_name,population_scope,statistic_kind,heading_source_refを保存し、row_labelは選択肢を保つ。36表と648行の数値と既存IDは維持。",
-        "focus_exception": "S01 Ⅱ（３）５項目!C37:一次判定「非該当」は二次判定結果にかかわらず有効期間補正なし。C38:一次判定「非該当以外」かつ二次判定「非該当」は集計除外。層別/全体で適用条件を注記し、元資料の『有効期間・年齢補正』ラベルを無条件の個票補正実施へ言い換えない。",
-        "certification_rows": [
-          {
-            "row": 287,
-            "name": "認定率",
-            "definition": "第1号認定者数/65歳以上人口",
-            "heading": "Ⅰ基礎情報!D284",
-            "numerator_ref": "F261",
-            "denominator_ref": "F260"
-          },
-          {
-            "row": 324,
-            "name": "軽度認定率（要支援１・２、要介護１）",
-            "definition": "軽度の第1号認定者数/65歳以上人口",
-            "heading": "Ⅰ基礎情報!D321",
-            "numerator_ref": "F262",
-            "denominator_ref": "F260"
-          },
-          {
-            "row": 355,
-            "name": "中・重度認定率（要介護２～５）",
-            "definition": "中・重度の第1号認定者数/65歳以上人口",
-            "heading": "Ⅰ基礎情報!D352",
-            "numerator_ref": "F263",
-            "denominator_ref": "F260"
-          }
-        ],
-        "certification_columns": {
-          "D": "市・通常",
-          "J": "市・年齢補正の提供値（元資料で個票再算出不可）",
-          "Q": "県・通常",
-          "W": "全国・通常"
-        },
-        "certification_rule": "I.certification.summaryの12行は認定率の種別と分子/分母の意味を明示。軽度・中重度の足し合わせと認定率の一致は通常値で照合し、補正値は提供値として条件を分離。S01/S02の人口ストックは同じ2025年1月で合算しない。"
+        "workbook_layout": "元14シートの順序・名称・元表・目次・148グラフ系列/参照/軸/配置を保ち、追加は先頭の「分析要点」1枚のみ（計15枚）。候補案内/指標一覧/比較一覧/定義・保留の4枚は最終ブックへ入れない。6316指標・1478比較・定義・検査の完全な機械台帳は再現ZIP/検査JSONで保持し、要点シートには必須分析と監査可能な採用比較を集約。元表を消して15枚に合わせない。",
+        "summary_top": "主対象S01と期間/2025年1月人口ストックを明示。R02人口構成・高齢化/75・85、R03認定/軽度/中重度、R04認知症II/III・障害B、R05調査5群/特別医療/重点5項目/補正、R06一次二次・変更率/申請区分/有効期間、R07被保険者・申請件数・意見書/調査/認定日数について、根拠と状態を添えた重点結果。C04/C10/C11は数値結論を記さず、C09を分母0の未算出と明示。必要な行数は実データで設計し、必須範囲を削らない。",
+        "summary_lower": "比較表の各行はPLAN指定14列を同じ順序で置く：指標ID/区分/期間または基準日/通常または補正/単位/市/県/全国/第1回参考値/県差/全国差/提供期間差/元セル/判定。採用したR02～R07の必須指標を分母・元セルへ追えるよう配置し、比較不可/未掲載は空欄または横線＋理由IDを判定列に表示。必要なら下方に算出根拠・修正履歴（C03）・C04/C09/C10/C11未解決事項/依存抑止を設ける。補正と通常、人口ストックと期間ケースを混在しない。",
+        "numeric_display": "内部値は原精度の数値として維持。率は表示上%で原則小数1桁、差はpp、日数は日、件数は整数、点は原資料の意味に従う。既に百分率の値を二重に100倍しない。整数0、分母0の未算出、正式分母待ちのheld、未掲載を区別。Generalの裸小数や『0.0日』の保留値を確定結論として見せない。元資料値そのものは無根拠で書換えない。",
+        "print": "分析要点の明示的な印刷範囲・用紙/余白/改ページ・横幅1ページ・複数行へ渡る表は縦に必要ページ数を許容・繰返し見出しを設定。元14シートの既存印刷領域/改ページ/目次/隠し領域は保持。候補全体のPDF総ページと各シートの開始/終了ページを計測し、v1の1203ページ・案内3ページを新候補の基準値に流用しない。長い検査台帳はExcel印刷から外しZIPで参照。",
+        "obsolete_copy": "保持試験用、最終候補ではない、20再評価待ち等の旧表現を新候補の実態に一致する版/評価状態へ更新。完成や暫定の確定表示は20の合格前にしない。"
       },
-      "impact": "定義36表・648指標と認定率12指標、およびラベルを引用する比較表・分析要点・グラフ/説明。数値そのものの改変不要。",
-      "recheck": "36表すべての項目/全体6・層別30/見出しセルと648行のstatistic_kind/地域/選択肢を突合。12行の種別と4地域補正条件を照合。対象ラベルを候補Excelの要点/比較/図へ追跡し、C37:C38例外を表示。20が固定候補で独立再評価。"
+      "impact": [
+        "新候補の追加シート構成/定義名/全追加部品と印刷パッケージ",
+        "要点のR02～R07全重点結果・比較/説明・表示桁",
+        "既存14シートの相対インデックス変化によるPrint_Area localSheetId/目次/リンク/数式参照",
+        "候補再現ZIPと検査JSONの出力・定義/テンプレートhash、candidate_fingerprint"
+      ],
+      "recheck": "計15シートで「分析要点」が1番目、その後に元14枚の元順序。148グラフの系列・参照・軸・配置、元目次・元印刷/隠し部品を原本と突合。14列名/順序、R02～R07各必須分野の重点/比較/根拠/保留、表示単位・丸め・符号を元セルで検査。全ブック印刷を実行しシート別ページと表の切れ/横分割を確認。v1の旧文言/不要4枚ゼロ、元14枚の削除ゼロ。"
     },
     {
-      "id": "C11",
-      "classification": "fix_hold_now_formal_definition_later",
-      "requirements": [
-        "R06",
-        "R10",
-        "R12"
-      ],
+      "id": "E20-03",
+      "severity": "major",
+      "classification": "fix_now",
       "locations": [
-        "src/metric_inventory.jsonのⅢ審査判定データ（変更率）30割合の入力別状態",
-        "10の抽出値・比較・要点・候補生成"
+        "S01作業コピーのⅣ事務データ J208付近の原表・比較画像",
+        "Ⅱ調査項目データ（第５群）C68:R73と対応chart78.xml",
+        "Ⅲ審査判定データ（変更率）対象ブロックおよびC09 N110:N116付近",
+        "分析要点の該当行と図表参照"
       ],
+      "cause": "入力別JSON・追加一覧はheld/nullと比較抑止済みだが、元表と既存グラフ/画像が元値を表示したまま。原表だけを開く/印刷すると『有効な比較』と誤読しうる。部品バイト同一は意味表示の合格ではない。",
       "evidence": [
-        "reports/20.json C11:元資料で不一致27（S01 13、S02 14）およびゼロ分子3",
-        "S01/S02 Ⅲ審査判定データ（変更率）!J369:Z371,J430:Z432,J491:Z493"
+        "20のC10 chart78 AM78:AM80/AN78:AN80 がJ71:J73/N71:N73へ依存",
+        "20のC04 Native PDF終盤に市0.0/県9.5/全国10.3を未注記で確認",
+        "20のC11 N/T/Z370:371,431:432,492:493、およびC09 #DIV/0! 7件",
+        "候補比較JSONの49件heldはPASS、原表と図表の局所表示はFAIL"
       ],
-      "cause": "0/未確定分母の表示値0が一致しても、分母の定義を検証できない。非ゼロ比率27行と同一の疑義分母を使う3行がvalidのまま。",
       "change": {
-        "additional_held": [
+        "general_policy": "原値/画像/グラフを無根拠で削除・0置換・系列の確定改造をしない。見た場所だけで効く『未検証（C04/C10/C11）・比較/結論対象外・分析要点の根拠/保留欄参照』という局所表示を原表セル範囲または隣接余白/図表キャプションへ追加し、印刷にも必ず含める。コメントだけ/非印刷シートの凡例だけは不可。元部品保持検査は元14シート全バイト一致に固執せず、C03と特定局所注記のみを明示allowlist化し、数式・原値・系列参照・軸/配置を別途同値検査。",
+        "per_issue": [
           {
-            "input": "S01",
-            "id": "III.change.new_application:N371",
-            "cell": "N371",
-            "numerator": "J371=0",
-            "denominator": "J369=810"
+            "issue": "C04",
+            "sheet": "Ⅳ事務データ",
+            "range": "J208および調査日数の比較画像/表",
+            "note": "市調査期間値は未検証。市県全国差・期間比較/原因結論対象外。C04／分析要点の保留欄を参照。県/全国の他平均まで無根拠に保留しない。"
           },
           {
-            "input": "S02",
-            "id": "III.change.new_application:N371",
-            "cell": "N371",
-            "numerator": "J371=0",
-            "denominator": "J369=867"
+            "issue": "C10",
+            "sheet": "Ⅱ調査項目データ（第５群）",
+            "range": "P70、H/J/L/N/P/R71:73およびchart78",
+            "note": "薬の内服の地域見出し・件数/率は未検証。元値・図は保管表示のみで比較/結論対象外。C10／分析要点を参照。chart78本体または直近の印刷可能キャプションに明瞭な印を付ける。P70を全国と断定しない。"
           },
           {
-            "input": "S02",
-            "id": "III.change.renewal:N432",
-            "cell": "N432",
-            "numerator": "J432=0",
-            "denominator": "J430=678"
+            "issue": "C11",
+            "sheet": "Ⅲ審査判定データ（変更率）",
+            "range": "N/T/Z370:371,431:432,492:493のうち入力別30率。S01原表上ではS01該当14率を正確に列挙し、県/全国/未疑義率を一律にheldにしない",
+            "note": "掲載率の対象分母未確定。指定した率は比較/結論対象外。C11／分析要点を参照。S02比較値はS01原表へ紛れ込ませず要点の期間差・根拠で表示。"
+          },
+          {
+            "issue": "C09",
+            "sheet": "Ⅲ審査判定データ（変更率）",
+            "range": "J109=0, N110:N116=#DIV/0! および対応図",
+            "note": "軽度変更構成比は分母0のため未算出（元数式エラーを保持）。0%ではない。C09／分析要点を参照。新資料待ちとは書かない。"
           }
         ],
-        "rule": "上記3入力別レコードをheld、reason=C11_未確定分母へ変更し、既存不一致27もheldを維持。ゼロ件はcountとして残すがゼロ%を確認済みvalidとして比較へ渡さない。元表件数と掲載率は書換えない。今回分母疑義のないセルへ一律保留を拡張しない。"
+        "image_and_chart_dependency": "1478比較→原表・元chart/図・貼付画像・印刷ページへの逆引き対応表を生成/手動確認。chart78以外も対象範囲の参照式・キャッシュ・画像描画位置と周辺キャプションを検査し、保留値を有効な棒/折れ線・数値説明として読ませない。凡例と注記が画像に焼き込まれている場合は元画像を保持し、隣接で同等の局所注記を付ける。",
+        "label_policy": "正式資料待ちC04/C10/C11と、既知の分母0で未算出C09を別の文言・色/印で区別。注記位置は元表・図・画像ごとに印刷プレビューで確認し、重なり/欠落があれば調整。"
       },
-      "impact": "入力別30比率とそれらを使う市県全国差・提供期間差・説明/グラフ。ゼロ件数は保持。",
-      "formal_evidence_required": "申請区分別の正式対象/除外ケース定義、地域と期間別の元集計表、有効分母と変更件数。逆算分母を正式値にしない。",
-      "recheck": "30入力別レコードがすべてheldで候補にもvalidとして出ない。ゼロ分子3件が欠けない。正式分母取得時に30件の掲載率・件数と一件ずつ照合し、変更範囲の比較/説明/グラフを再評価。"
+      "impact": [
+        "指定原表/図/画像・注記と印刷ページ",
+        "対応チャートの参照と要点の該当比較/文章/候補状態",
+        "元部品保持検査の許可差分と再計算/描画検査",
+        "C04/C10/C11正式根拠到着時の影響閉包"
+      ],
+      "recheck": "全82保留指標と49保留比較の依存先から原表/図/画像へのカバレッジ表を作成。特にC10 chart78、C04 J208/比較画像、C11指定率、C09 7エラーをオンスクリーンと日本語PDF双方で局所確認。注記が該当表/図と同じ印刷ページで可読、元値・元系列/参照/軸・他のvalid値は無変更。正式資料なしでheldを解除しない。"
+    },
+    {
+      "id": "E20-04",
+      "severity": "major",
+      "classification": "fix_now_verify_after_implementation",
+      "locations": [
+        "再現ZIP候補v1内src/README.md",
+        "ZIP内candidate/package_repro.py",
+        "固定コードのsrc/replay_pipeline.py/build_candidate_tables.py/candidate_donor.mjs/graft_candidate.py/build_candidate.py",
+        "ZIPのmanifest/環境・実行ログ、Q08/Q11検査記録"
+      ],
+      "cause": "READMEは処理順序の説明に偏り、実行可能なコマンド・配置/依存環境が不足。package_repro.pyが旧scratch絶対パス固定。数値6ファイルの再実行だけではExcel全生成・変更後の再計算/再読取を証明できない。",
+      "evidence": [
+        "ZIP版1 SHA2cb1f00c...のREADMEを読取。candidate/package_repro.pyのroot=Path('/workspace/scratch/dd7887fa78cd')を確認",
+        "20が同一コードの6ファイル再実行一致を確認した一方、Excel全生成再実行なし",
+        "20 Q08は追加B9/B10の元値/キャッシュとPDF一致だが固定候補の強制再計算・別保存再読取未実施"
+      ],
+      "change": {
+        "layout_and_paths": "ZIP直下にREPRODUCE.md/固定設定/環境ロックまたは版一覧/manifest/実行スクリプト/検査結果/修正履歴を配置。入力はS01～S06のID・SHA・取得方法と、ZIPには原本が含まれない旨を記載。--input-dir/--work-dir/--output-dir 等のCLI引数またはスクリプト自身の位置から相対パスを解決し、旧scratch絶対パス、実行者固有のHOME/固定ドライブ名を排除。10は各スクリプトの実際のargparse/helpへ合わせてコマンドを記載し、記載コマンドを空の一時作業先でそのまま試す。",
+        "commands_sequence": "REPRODUCE.mdに①取得・SHA照合②依存環境作成/バージョン確認③元入力の読取と定義/6316抽出④C03を作業コピーへ一度だけ適用（元原本は不可）⑤E20-01/C10/C11/C09の状態を適用⑥14列の分析要点1枚を生成・元14枚へ接合⑦候補ID/版/実xlsxSHAとcandidate JSON fingerprintを固定⑧全機械/元パーツ/印刷/表示検査⑨別一時ディレクトリで数値およびExcel全生成を確認、の正確なコマンド/引数/入出力相対パスと失敗時停止条件を掲載。推測コマンドを本報告で『実行済み』とはしない。",
+        "environment": "10の報告にあるPython 3.12.14、Node v24.19.0、Artifact Tool 2.8.85、pandas 2.2.3、openpyxl read-only 3.1.5、xlrd 2.0.1、LibreOffice 26.8 alpha、および実際に使用した日本語フォント名・版・レンダラをZIP内の環境記録へ。必要な依存と任意閲覧手段を区分し、未利用環境を『検証済み』としない。",
+        "replay_and_recalc": "数値6ファイルのハッシュ一致に加え、同じ元入力/コード/設定/テンプレートで別一時出力に15枚Excelを一度全生成。候補SHAがZIPメタ/報告と対応し、非決定的ZIP時刻等でファイルバイトが異なる場合は、全6316値・保留/比較1478・原14シート部品/グラフ・先頭要点・印刷定義/注記を論理同値で比較し差分理由を記録。追加/変更数式は隔離した試験コピーを再計算エンジンで実再計算→別保存→data_only等で再読取し、元値式/予期値/評価範囲を突合。PDF化や元キャッシュ一致だけを再計算と呼ばない。再保存により元部品が変わる場合は試験コピー結果と提出候補の保持を別判定。必要なら新候補の数式依存を最小化するが、PLAN Q08を未実施PASSへ変更しない。",
+        "package_consistency": "ZIPのmanifestに候補保存ID/版/sha、検査candidate_fingerprint、定義・テンプレートsha、code_commit、元入力SHA、検査日時/環境と、20評価の再利用有無を記録。reports/10/20/30は同じ固定候補に対応した版/コミットを明示（後更新の20は次版の評価結果として混同しない）。ZIP CRC・全内部SHAを読戻す。"
+      },
+      "impact": [
+        "全生成コード/パッケージ作成と再現README/manifest",
+        "Q08再計算、Q11全Excel生成、Q12保存/開封/再読取",
+        "候補版・コードコミット/定義テンプレートSHA/fingerprintと20の評価再利用条件"
+      ],
+      "recheck": "新しい作業ディレクトリへZIPと入力を配置し、README記載の全コマンドを順番に実行。固定絶対パス検索0、入力SHA一致、生成15枚/148グラフ、全数機械値/状態・比較/表示/注記/印刷の同値、再計算後の期待値と保存後再読取を確認。実行ログ・バージョン・実測時間・候補SHA・ZIP manifestを相互照合し20が独立判定。"
+    },
+    {
+      "id": "E01",
+      "severity": "release_blocker",
+      "classification": "environment_then_verify",
+      "locations": [
+        "候補の日本語文字列が入る分析要点、局所注記、元14シート/図の変更影響箇所",
+        "PDF/PNG等の実描画およびNative環境/フォント一覧の記録"
+      ],
+      "cause": "v1を描画したLibreOfficeDev 26.8 alpha環境は日本語フォントが見つからず、セルに文字列があってもPDFで字形が落ちた。画像中の文字が見えることはセル見出しの合格根拠ではない。",
+      "evidence": [
+        "20 Q09: PDF 1203ページ中1/1067/1203をPNGで目視、日本語セル文字欠落",
+        "10 checks/pilot.jsonおよび20 native_render。文字列読取と日本語描画は別判定"
+      ],
+      "change": {
+        "setup": "利用権限内の日本語TTF/OTF（例としてNoto Sans CJK等、実際の入手/版/ライセンスは10が確認）を描画エンジンが認識する環境へ配置、または日本語表示可能なExcel/LibreOffice環境で候補を開く。権限回避や未確認の導入完了宣言はしない。フォント一覧と代替結果を記録。",
+        "validation": "固定された次候補SHAを読取専用で開き、先頭分析要点全ページ、C03変更とC04/C09/C10/C11の表・図・局所注記、元目次/印刷改ページの代表と境界をPDF/PNGへ描画。日本語固有字形（Ⅰ/Ⅱ/Ⅲ/Ⅳ、長音、括弧、率・区分名）が実際に読み取れ、切れ/重なり/豆腐字/横分断がないことを目視。元14枚は部品保持の差分検査も併用。失敗ならE01 HELDで提出不可。"
+      },
+      "impact": [
+        "Q07文字化け/欠落、Q09表示、Q10説明、release_gates final/provisional",
+        "局所注記の印刷可読性と全ブックページ対応"
+      ],
+      "recheck": "環境名/フォント名版/候補ID版SHA/描画エンジン版、ページ番号と検証画像、目視判定を検査記録に紐付け。20が同じ固定候補の日本語可読性と代表/境界ページを独立確認。"
+    }
+  ],
+  "hold_boundaries": [
+    {
+      "id": "C04",
+      "status": "HELD_FORMAL_SOURCE_REQUIRED",
+      "rule": "市調査期間の正式元集計または日付/除外規則待ち。値・比較・原因を推測採用しない。"
     },
     {
       "id": "C10",
-      "classification": "fix_hold_now_formal_source_later",
-      "requirements": [
-        "R05",
-        "R10",
-        "R12"
-      ],
-      "locations": [
-        "src/definitions.json II.selection.07.70と既知問題のaffected_cells",
-        "src/metric_inventory.json II.selection.07.70 18数値指標",
-        "10の抽出・比較・要点・対応グラフ"
-      ],
-      "evidence": [
-        "S01 Ⅱ調査項目データ（第５群）!C68=5-1_薬の内服、P70=644821（文字の地域見出しとして破損）",
-        "同表H/L/P71:73の件数とJ/N/R71:73の掲載割合は同じ分布と整合しない",
-        "reports/20.json C10 S01/S02の地域別件数・比率の独立検査"
-      ],
-      "cause": "地域見出しP70に数値が入り、選択肢件数と割合が食い違う。『全国』は他表からの推測にとどまり、この見出しを確定復元できない。",
-      "change": {
-        "sheet": "Ⅱ調査項目データ（第５群）",
-        "per_input": [
-          "S01",
-          "S02"
-        ],
-        "held_numeric_cells": [
-          "H71:H73",
-          "J71:J73",
-          "L71:L73",
-          "N71:N73",
-          "P71:P73",
-          "R71:R73"
-        ],
-        "held_header_cell": "P70",
-        "verified_context_cells": [
-          "C68",
-          "C70",
-          "C71:C73",
-          "H70",
-          "L70"
-        ],
-        "policy": "入力別18数値指標をheld維持し、P70は見出し異常の独立issueとしてheldへ登録。P列の地域名を正式根拠なしに全国と確定せず、P/R列に由来する指標のregionは未確定と明示。H/Lの表示見出しは保持するが同表の数値比較を保留。既知問題affected_cellsの空配列を上記範囲とP70へ更新。件数/割合/見出しを推定値で置換しない。"
-      },
-      "impact": "S01/S02各18数値セルとP70、その地域ラベルを使う比較/説明/グラフ。薬の内服以外の第5群表へ一律波及しない。",
-      "formal_evidence_required": "元送信/集計表にある正式の地域列見出し・列位置、3選択肢ごとの件数/有効分母/掲載率、両期間の生成定義。",
-      "recheck": "S01/S02でP70を含めhold_scopeを数え、候補のP/R列見出し/値が確定値として出ないことを検査。正式資料取得後、全地域×3選択肢の件数・分母・割合・列位置を照合して依存先も再評価。"
+      "status": "HELD_FORMAL_SOURCE_REQUIRED",
+      "rule": "S01/S02各18数値・P70見出し、chart78含む表/図は局所未検証表示。地域名や率を推測復元しない。"
     },
     {
-      "id": "STATUS-PROPAGATION",
-      "classification": "fix_now",
-      "requirements": [
-        "R10",
-        "R12"
-      ],
-      "locations": [
-        "src/metric_inventory.json status と extraction_status_by_input",
-        "10の抽出値正規化とcandidate.json生成"
-      ],
-      "evidence": [
-        "reports/20.json status_propagation_note:63入力別レコードでtop-level validと入力別heldが併存",
-        "ZIP v0 metric_inventory.json Git blob SHA一致。II.selection.07.70:H71/J71、III.change.new_application:N371等を確認",
-        "20が見たresults/extracted_values.jsonでは当時の保留を反映。ただし候補未生成。"
-      ],
-      "cause": "inventoryのtop-level statusは共通初期値で、S01/S02の差異とC11追加保留を単体では表現しきれない。",
-      "change": {
-        "precedence": [
-          "固定された入力版とsource_refを選択",
-          "その入力のextraction_status_by_input[input]を採用",
-          "当該入力・指標に対する最新の明示issue override（C10,C11等）があれば反映",
-          "依存元にheld/missing/not_applicableがあれば派生比率/差/説明も有効判定へ進めず、その理由とsource_refを保持"
-        ],
-        "rule": "top-level statusを入力別のvalidへのフォールバックや保留解除に使用しない。入力別状態が欠ける場合はvalidを仮定せず検査エラーとする。入力ID＋指標ID＋出所セル/ハッシュを候補レコードの一意キーにし、S02値がS01のID/出所を上書きしない。required_metricsとdepends_onも同じ入力別IDへ揃える。数値0・未算出null・heldを区別。候補のvalueはheldを有効な比較元として使わず、必要な原値は別の元値フィールドに来歴付きで残す。",
-        "sample_expectations": [
-          {
-            "input": "S01",
-            "metric": "III.change.new_application:N371",
-            "status": "held"
-          },
-          {
-            "input": "S02",
-            "metric": "III.change.new_application:N371",
-            "status": "held"
-          },
-          {
-            "input": "S02",
-            "metric": "III.change.renewal:N432",
-            "status": "held"
-          },
-          {
-            "input": "S01",
-            "metric": "II.selection.07.70:J71",
-            "status": "held"
-          }
-        ]
-      },
-      "impact": "少なくとも既存の63件の不一致状態とC11追加の3入力別レコード、および依存する比較・説明・図。全入力の候補生成経路。",
-      "recheck": "入力別全3158台帳指標の候補状態と固定抽出/問題台帳を照合。上記サンプルとS01/S02異状態ケースを含め、heldがvalidへ戻らず、validは不要に保留へならないことを検証。全指標件数・依存閉包・candidate_fingerprintを再生成し、20が候補全範囲を初回独立評価。"
+      "id": "C11",
+      "status": "HELD_FORMAL_SOURCE_REQUIRED",
+      "rule": "S01 14率、S02 16率と依存比較。0/x=0だけで分母検証済みとしない。"
+    },
+    {
+      "id": "C09",
+      "status": "NOT_COMPUTABLE_ZERO_DENOMINATOR",
+      "rule": "J109=0、J110:J116=0でN110:N116は0/0。新資料待ちではなく既知の未算出。原セル#DIV/0!保持、表示上は0%にしない。"
     }
   ],
-  "dependency_boundary": {
-    "formal_source_needed": [
-      "C10の見出し/件数/割合の確定修正",
-      "C11の対象分母と率の確定修正",
-      "C04の市調査日数の確定と比較"
-    ],
-    "can_apply_now": [
-      "E20-01の見出し由来の意味定義",
-      "C11ゼロ比率3件を含む保留伝播",
-      "C10 P70を含む明示的保留範囲",
-      "入力別状態から候補への一貫伝播",
-      "C03は20による独立根拠PASS。10がS01作業コピーへ修正可"
-    ],
-    "other_held": "C09 0/0は未算出の表示対応を今行える。"
-  },
+  "handoff_order": [
+    {
+      "step": 1,
+      "owner": "10",
+      "work": "v1の固定保存ID/版/SHAと評価fingerprintを読み、原本14枚/148グラフ・C03適用済みを確認。重複修正しない。全保留/図表の依存一覧と変更allowlistを作る。"
+    },
+    {
+      "step": 2,
+      "owner": "10",
+      "work": "E20-02の先頭1枚・14列・必須重点/比較/根拠/数値形式/印刷設定を実装。余分4枚を新候補に作らずZIP側へ監査台帳を保持。"
+    },
+    {
+      "step": 3,
+      "owner": "10",
+      "work": "E20-03の原表/図/画像の局所注記と依存抑止を元値・系列/軸を保持して適用。C04/C10/C11はheld、C09は未算出。"
+    },
+    {
+      "step": 4,
+      "owner": "10",
+      "work": "E20-04の相対パス実行手順/環境/固定入力ハッシュ/全生成・隔離再計算検査を整備。E01の日本語描画環境を確保し実プレビュー。環境が未解決なら表示合格を宣言しない。"
+    },
+    {
+      "step": 5,
+      "owner": "10",
+      "work": "新候補v2をv1と区別する保存版・候補ID/版/SHAで固定し、全機械検査・保持/描画/再計算/再現と新ZIP CRCを記録。checks/candidate.jsonとreports/10.jsonを同一コミットで渡す。"
+    },
+    {
+      "step": 6,
+      "owner": "20",
+      "work": "新候補を独立再評価。v1 Q06/Q10 FAIL、Q07/Q08/Q09/Q11 HELDなので、影響閉包/計画版・コード/定義/テンプレート変化を確認し再利用可否を厳格に判定。00だけがSTATEへ統合。"
+    }
+  ],
+  "impact_closure": [
+    "新規分析要点と元14シート登録index・Print_Area/目次/数式/隠し領域",
+    "C03既修正9セルと新局所注記allowlist",
+    "82保留値/49保留比較→要点/原表/148グラフから該当図/画像/説明/印刷ページ",
+    "6316指標/1478比較全数機械チェック・定義/テンプレート/コード版変更による再評価失効",
+    "日本語描画/Excel全生成・再計算・保存後再読込"
+  ],
+  "checks": [
+    {
+      "id": "same_commit_review",
+      "verdict": "PASS",
+      "scope": "PLAN/STATE/10/20/30と関連GitHub資料をmain f15b6c5で固定して読取"
+    },
+    {
+      "id": "candidate_file_identity",
+      "verdict": "PASS",
+      "scope": "実v1 XLSX SHA fe3ccd...一致。ZIP v1 SHA 2cb1...一致、本文READMEと絶対パスを確認"
+    },
+    {
+      "id": "implementation_and_release",
+      "verdict": "NOT_EXECUTED",
+      "scope": "本報告は提案のみ。Excel/コード/STATE無変更、新候補の受入は20に委ねる"
+    }
+  ],
+  "outputs": [
+    {
+      "type": "consolidated_correction_proposal",
+      "path": "care-insurance-analysis/reports/30.json"
+    }
+  ],
   "next_role": "10",
-  "next_action": "本報告のE20-01/C10/C11/入力別保留案を定義・指標台帳と候補生成経路へ適用。C03は20根拠PASSを踏まえS01作業コピーへ適用し、T03表示・保存試験を再開。正式資料待ちの数値/見出しは確定しない。新候補を一版として固定して20へ渡す。",
-  "restart_condition": "main現行HEADのPLAN/STATE/10/20/30とS01/S02固定ハッシュを照合。10の候補ID・版・SHA256、同一コミットのchecks/candidate.jsonとreports/10.jsonが揃った時点で20が初回全独立評価。",
-  "candidate": null,
-  "candidate_fingerprint": null,
+  "next_action": "handoff_orderの1～5を順に適用し、元14枚保持＋先頭要点1枚と局所保留注記/日本語可読性/全生成再現を新候補で検証。正式資料なしにC04/C10/C11を解除しない。C09は分母0未算出として扱う。",
+  "restart_condition": "mainの現行HEADからPLAN/STATE/10/20/30と新候補版を再固定。10が新候補ID/保存版/SHAと同一コミットのcandidate検査JSON/10報告を揃えたら20が独立再評価。",
   "newly_checked": [
-    "fixed GitHub head and 5 management files",
-    "definitions.json",
-    "metric_inventory.json matching ZIP Git blob",
-    "S01/S02 byte hashes",
-    "S01 focus/header and certification samples",
-    "S01 C10 and C11 source cells"
+    "v1実XLSX SHA・19シート/印刷設定",
+    "20の全初回独立評価",
+    "10の候補/環境/保持試験報告",
+    "v1 ZIP README/package_repro.py",
+    "関連候補生成スクリプトとPLAN出力契約"
   ],
   "reused_from": [],
   "elapsed_minutes": null,
   "verdict": "PROPOSAL_ONLY",
-  "release_status": "not_created",
+  "release_status": "not_released",
   "write_scope": {
     "only": "care-insurance-analysis/reports/30.json",
     "excel_modified": false,
