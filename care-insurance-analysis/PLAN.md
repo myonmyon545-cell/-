@@ -1,13 +1,16 @@
 # 介護保険データ解析 AI実行仕様
 
-版2.2 / 2026-10-08 / 主対象：処理対象データ群.xlsx / 計画・進捗の正本はGitHub
+解析契約2.2 / 運用版2.2.1 / 2026-10-09 / 主対象：処理対象データ群.xlsx / 計画・進捗の正本はGitHub
 
-この仕様はAI用のYAML設定・工程契約であり、単独で実行するプログラムではない。`ROLE=00|10|20|30` を指定する。未指定は00。最初にmeta・invariants・sources・自ROLE・github_handoff・startupを読み、その工程に必要な算出規則と検査を参照する。最新のユーザー指示、現行共通指示、詳細運用を併用する。候補到着前の評価と修正チャットは準備または待機とし、合格報告を作らない。
+この仕様はAI用のYAML設定・工程契約であり、単独で実行するプログラムではない。`ROLE=00|10|20|30|40` を指定する。未指定は00。最初にmeta・invariants・sources・自ROLE・github_handoff・startupを読み、その工程に必要な算出規則と検査を参照する。最新のユーザー指示、現行共通指示、詳細運用を併用する。候補到着前の評価と修正チャットは準備または待機とし、合格報告を作らない。
 
 ```yaml
 meta:
   schema: care_analysis_execution_v2
   revision: '2.2'
+  operations_revision: '2.2.1'
+  operations_updated_at: '2026-10-09'
+  version_policy: revisionは解析・評価契約、operations_revisionはその契約を変えない閲覧・案内の運用版。運用だけの変更は候補の評価を無効化しない。入力・定義・コード・テンプレート・要件・検査・受入条件への変更はrevisionを更新し、既存の再評価規則を適用する。
   project: 介護保険データ解析
   state: planning_complete_analysis_not_started
   canonical_plan: GitHub mainのcare-insurance-analysis/PLAN.md。本ファイルは同じ版の導入用写し。GitHubを読めない場合は確定コミットの写しを使う。
@@ -185,6 +188,25 @@ roles:
     forbidden_writes:
     - Excel
     - STATE
+  '40':
+    chat: 40 作業履歴
+    model: GPT-6 Luna
+    effort: Medium
+    access: read_only
+    writes: []
+    duties:
+    - PLAN・STATE・10/20/30の報告を同一コミットで読む
+    - 当該フォルダのコミット履歴と必要な過去版・差分から直近10件を一覧表示
+    - 計画変更・解析作業・評価・修正・管理更新を区別し、細かな同一作業はまとめる
+    - 確認日時・対象コミット・最新記録日時・未解決事項・次の操作を表示
+    - 更新指示のたびに再取得し、前回確認からの差分を優先して表示
+    forbidden_writes:
+    - PLAN
+    - STATE
+    - 役割別報告
+    - コード
+    - Excel
+    detail: care-insurance-analysis/roles/40.md
   model_fallbacks:
     Astra_unavailable: 別評価チャットのSol High
     Luna_unavailable: Sol Medium
@@ -845,12 +867,13 @@ github_handoff:
     work_report: care-insurance-analysis/reports/10.json
     evaluation: care-insurance-analysis/reports/20.json
     correction: care-insurance-analysis/reports/30.json
+    history_view: care-insurance-analysis/roles/40.md
     future_analysis_code: care-insurance-analysis/src/
     verifier: care-insurance-analysis/tools/verify_handoff.py
     candidate_checks: care-insurance-analysis/checks/candidate.json
     workflow: .github/workflows/care-handoff-check.yml
   startup_read: branchの現在コミットを取得し、PLAN・STATE・必要な報告を同じコミットで直接読む。検索インデックスを待たない。参照コミットを報告に記録。
-  write_policy: 00はPLAN/STATE、10はsrc・candidate検査JSON・reports/10、20/30は自分の報告を更新。更新前に現在HEADとファイルSHAを読み、比較交換で競合を検出。強制上書きしない。PLAN更新は関連STATE/報告の版も一つのコミットで整合させる。
+  write_policy: 00はPLAN/STATE、10はsrc・candidate検査JSON・reports/10、20/30は自分の報告を更新。40は読取り専用。ユーザーから本件の追加指示を受けた計画担当は承認された範囲でPLAN/README/役割の運用定義を更新できるが、STATEと実行報告は各担当の専有を維持する。更新前に現在HEADとファイルSHAを読み、比較交換で競合を検出。強制上書きしない。解析契約revisionを変えるPLAN更新は00が関連STATE/報告の版と再評価状態を整合させ、一つのコミットで反映する。operations_revisionだけの変更ではSTATE/実行報告/候補の版を付け替えない。
   candidate_atomic_update: checks/candidate.jsonとreports/10.jsonは一つのコミットで更新。20は候補ID版SHAとcandidate_fingerprintを報告へ固定。STATE更新は00が後で統合してよい。
   capability_gate: 各役割チャットの初回に直接読取りを試す。接続できなければ確定版の添付へ切替し、00がGitHub正本へ反映。
   runner_limit: ActionsはJSON/コードの検査を実行する。別チャットを起動・遠隔操作・常時監視しない。候補Excel・元資料をActionsから取得する機能は作らない。
@@ -861,7 +884,25 @@ startup:
   '10': GitHubと入力へのアクセスを確認。T01→T02/T03を開始し、出力保持方式を最優先で試す。src/reports/10へ保存。候補後はmachine_contractを作り全機械検査。Excelと再現ZIPは現在の保存先へ。
   '20': PLAN/STATEと10の報告を確認。候補前は定義・既知問題と検査観点を準備。候補後は初回の全独立評価、修正後はreevaluation。reports/20に対象fingerprintと判定を記録。
   '30': 指摘前は待機。20の固定候補と問題IDから再現/原因/変更案/影響/再検証を一通にまとめ、reports/30へ返す。10が適用し20が再評価。Excelは編集しない。
-  first_user_action: 本ファイルを情報源へ追加・既存導入用指示を更新し4チャットを開設。ROLE指定の短い開始文を各チャットへ送りモデルを選ぶ。GitHubだけでは起動しない。
+  '40': GitHubの同一コミットのPLAN・STATE・10/20/30報告とroles/40.mdを読む。当該フォルダのコミット履歴と必要な過去版・差分を確認し、日時/担当/工程/実施内容/検証結果/成果物と根拠の直近10件表を表示。更新指示で再取得。書込み・完成昇格・別チャット監視は行わない。
+  first_user_action: 実行担当00/10/20/30の4チャットと閲覧専用40を同じプロジェクトで開設し、ROLE指定の開始文を送る。mdを保存できない場合はGitHubの現在コミットを取得して同じ版のPLAN/STATE/必要報告を読み該当startupを実行するよう指示する。40はroles/40.mdも読む。モデルは実際の選択欄で設定。GitHubだけでは起動しない。
+change_management:
+  authorization: 2026-10-09、ユーザーが40の共有指示への組込みと、今後の追加指示の自動組込み・再構成による最適化を依頼。
+  trigger: この計画チャットで本プロジェクトの追加指示を受けた際に適用する。無人の定期監視や他チャットからの自動収集を意味しない。
+  procedure:
+  - 現在HEADと現行PLAN/STATE/必要報告を読み、稼働中の工程と書込み競合を確認
+  - 目的・期限・一回性・再現性・算出方法・元資料・受入基準との矛盾と変更の影響を確認
+  - 承認済み範囲の変更を最小差分で組み込み、不要な重複や受渡しを減らす
+  - 契約を変えない閲覧・案内変更はoperations_revisionを更新。契約に影響する変更はrevisionと再評価・依存を更新し00が状態を統合
+  - 構造/既存機械検査/変更対象に必要な確認を行い、未検証の完了や稼働状態を書かない
+  - 現在HEADを期待値にした非強制更新で保存し、結果を読戻してコミットと変更点を報告
+  scope_boundary: 明示された目的・処理範囲・期限・原本保護・外部共有先と共有内容・重要な制約を独断で変更しない。新たな権限や重要な判断が必要な場合だけ確認する。
+  operations_history:
+  - version: '2.2.1'
+    date: '2026-10-09'
+    change: 閲覧専用40と履歴一覧/更新手順、今後の指示組込み手順、GitHub直読みによるmd保存不要の開始方法を追加。
+    impact: 計算・入力・要件・候補・評価・受入条件は変更なし。STATE/実行報告/候補は更新しない。解析契約revisionは2.2のまま。
+
 references:
   model_docs: https://learn.chatgpt.com/docs/models
   model_note: 役割と推論設定は速度・重要性への設計判断。公式の用途説明を確認済み。利用可否は実際の選択欄で確認。
@@ -942,6 +983,8 @@ machine_contract:
   release_authority: 機械は完成昇格もSTATE更新も実施しない。20の独立判定を00が統合し、10がrelease_gatesに従って提出。
 ```
 
-開始文：`ROLE=00`（進捗）、`ROLE=10`（作業）、`ROLE=20`（評価）、`ROLE=30`（修正）のいずれかに「添付のAI実行仕様を読み、該当startupを実行してください。」を添える。モデルはrolesの推奨を実際の選択欄で設定する。
+開始文：`ROLE=00`（進捗）、`ROLE=10`（作業）、`ROLE=20`（評価）、`ROLE=30`（修正）、`ROLE=40`（履歴閲覧）のいずれかに「添付のAI実行仕様を読み、該当startupを実行してください。」を添える。モデルはrolesの推奨を実際の選択欄で設定する。
 
 版2.2の変更：承認済み非公開GitHubを共有正本へ移行し、軽量機械検査と版付きの差分再評価を追加。初回は全独立評価、修正後も全数機械検査を行い、AI再評価は影響範囲へ集中する。Drive/Airtableは必要が生じた場合の予備。期限・一回性・再現性・R5形式・manualの条件付き工程を維持。本解析と候補Excelの生成は未実施。
+
+運用版2.2.1の変更：40の読取り専用履歴ビューと追加指示の組込み・検証・保存方針を追加。解析契約2.2および実行記録は維持。履歴ビューは保存済み記録を表示し、保存前の他チャットの稼働状態は取得しない。
