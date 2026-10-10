@@ -339,5 +339,95 @@
     "library_file_id": "libfile_d66db96b3c5881919cf10890068434de",
     "sha256": "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800",
     "size_bytes": 31749
+  },
+  "S10": {
+    "library_file_id": "libfile_292453196e588191a056e2f761753670",
+    "name": "③R8.5.31_個別業務資料（介護保険課）.docx",
+    "sha256": "a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2",
+    "size_bytes": 584930,
+    "library_version": "0",
+    "role": "annual_context_and_user_authorized_survey_mean_display_substitute",
+    "verification": {
+      "verified_by": "10",
+      "verified_at": "2026-10-10T13:02:00+09:00",
+      "access_route": "provided_project_attachment_local_copy",
+      "local_sha256_matches_plan_and_source_record": true,
+      "document_format": "DOCX",
+      "evidence_blocks_checked": 11,
+      "records": [
+        {
+          "id": "S10-01",
+          "tables": [
+            50
+          ]
+        },
+        {
+          "id": "S10-02",
+          "tables": [
+            54
+          ]
+        },
+        {
+          "id": "S10-03",
+          "tables": [
+            52,
+            53,
+            55
+          ]
+        },
+        {
+          "id": "S10-04",
+          "tables": [
+            57
+          ]
+        },
+        {
+          "id": "S10-05",
+          "tables": [
+            58
+          ]
+        },
+        {
+          "id": "S10-06",
+          "tables": [
+            59
+          ]
+        },
+        {
+          "id": "S10-07",
+          "tables": [
+            60
+          ]
+        },
+        {
+          "id": "S10-08",
+          "tables": [
+            61
+          ]
+        },
+        {
+          "id": "S10-09",
+          "tables": [
+            62
+          ]
+        },
+        {
+          "id": "S10-10",
+          "tables": [
+            62
+          ]
+        },
+        {
+          "id": "S10-11",
+          "sections": [
+            "本文記述"
+          ]
+        }
+      ],
+      "annual_labels_and_periods_checked": true,
+      "notes": "S10-01～10の原表セル値をDOCX XMLの表で照合。S10-11は本文記述を確認。R7調査25.6日は年度独自集計でありS01期間の復元・比較には使わない。承認判断と適用は別工程T10/T11。",
+      "originals_modified": false
+    },
+    "status": "T09_verified_input_ledger_saved"
   }
 }
