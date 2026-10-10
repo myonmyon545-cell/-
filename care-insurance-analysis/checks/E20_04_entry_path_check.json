@@ -1,0 +1,132 @@
+{
+  "schema": "care_e20_04_entry_path_check/v1",
+  "result": "PASS_PATH_UNIT_ONLY",
+  "code_sha256": "07266b76db2c55e93071c2bf3d074006b90fb03d57fe06b11e1e96c9c2bfbb62",
+  "checks": {
+    "syntax": true,
+    "no_fixed_filesystem_paths": true,
+    "cwd_a_absolute": true,
+    "cwd_a_relative": true,
+    "cwd_b_absolute": true,
+    "cwd_b_relative": true,
+    "same_resolution_from_two_directories": true,
+    "missing_base_rejected": true,
+    "same_path_rejected": true,
+    "existing_output_rejected": true,
+    "required_arguments": true,
+    "no_output_or_directory_created": true,
+    "synthetic_input_and_existing_output_unchanged": true
+  },
+  "execution": [
+    {
+      "cwd_label": "cwd_a",
+      "args": [
+        "--base",
+        "<temporary-root>/inputs/synthetic.xlsx",
+        "--out",
+        "<temporary-root>/output/probe.xlsx",
+        "--check-paths-only"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"base\": \"<temporary-root>/inputs/synthetic.xlsx\", \"out\": \"<temporary-root>/output/probe.xlsx\", \"mode\": \"paths_only\"}\n",
+      "stderr": ""
+    },
+    {
+      "cwd_label": "cwd_a",
+      "args": [
+        "--base",
+        "../inputs/synthetic.xlsx",
+        "--out",
+        "../output/probe.xlsx",
+        "--check-paths-only"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"base\": \"<temporary-root>/inputs/synthetic.xlsx\", \"out\": \"<temporary-root>/output/probe.xlsx\", \"mode\": \"paths_only\"}\n",
+      "stderr": ""
+    },
+    {
+      "cwd_label": "cwd_b",
+      "args": [
+        "--base",
+        "<temporary-root>/inputs/synthetic.xlsx",
+        "--out",
+        "<temporary-root>/output/probe.xlsx",
+        "--check-paths-only"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"base\": \"<temporary-root>/inputs/synthetic.xlsx\", \"out\": \"<temporary-root>/output/probe.xlsx\", \"mode\": \"paths_only\"}\n",
+      "stderr": ""
+    },
+    {
+      "cwd_label": "cwd_b",
+      "args": [
+        "--base",
+        "../inputs/synthetic.xlsx",
+        "--out",
+        "../output/probe.xlsx",
+        "--check-paths-only"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"base\": \"<temporary-root>/inputs/synthetic.xlsx\", \"out\": \"<temporary-root>/output/probe.xlsx\", \"mode\": \"paths_only\"}\n",
+      "stderr": ""
+    },
+    {
+      "cwd_label": "cwd_a",
+      "args": [
+        "--base",
+        "../inputs/missing.xlsx",
+        "--out",
+        "<temporary-root>/output/probe.xlsx",
+        "--check-paths-only"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "usage: make_print_probe.py [-h] --base BASE --out OUT [--check-paths-only]\nmake_print_probe.py: error: [Errno 2] No such file or directory: '../inputs/missing.xlsx'\n"
+    },
+    {
+      "cwd_label": "cwd_b",
+      "args": [
+        "--base",
+        "<temporary-root>/inputs/synthetic.xlsx",
+        "--out",
+        "<temporary-root>/inputs/synthetic.xlsx",
+        "--check-paths-only"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "usage: make_print_probe.py [-h] --base BASE --out OUT [--check-paths-only]\nmake_print_probe.py: error: output must not overwrite the input\n"
+    },
+    {
+      "cwd_label": "cwd_a",
+      "args": [
+        "--base",
+        "<temporary-root>/inputs/synthetic.xlsx",
+        "--out",
+        "<temporary-root>/occupied.xlsx",
+        "--check-paths-only"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "usage: make_print_probe.py [-h] --base BASE --out OUT [--check-paths-only]\nmake_print_probe.py: error: output already exists; choose a new output path\n"
+    },
+    {
+      "cwd_label": "cwd_b",
+      "args": [
+        "--check-paths-only"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "usage: make_print_probe.py [-h] --base BASE --out OUT [--check-paths-only]\nmake_print_probe.py: error: the following arguments are required: --base, --out\n"
+    }
+  ],
+  "scope": "Syntax and CLI path resolution only; synthetic non-XLSX bytes. No real workbook processing.",
+  "not_run": [
+    "real_data_probe_generation",
+    "ZIP_regeneration",
+    "full_pipeline_replay",
+    "Excel_recalculation",
+    "Japanese_print_readability",
+    "candidate_certification"
+  ],
+  "E20_04_overall": "NOT_PASS"
+}
