@@ -2,11 +2,11 @@
   "schema": "care_handoff/v1",
   "role": "10",
   "plan_revision": "2.4",
-  "status": "T11_E20_03_notes_saved_structure_PASS_japanese_print_HELD",
+  "status": "T11_E20_04_unit2_path_fix_saved_PASS_unit_only_overall_NOT_PASS",
   "task_id": "T11_E20-03",
   "source_commit": "f342d5187ab211aa99a4633c21282942645a6854",
   "pre_save_rechecked_commit": "f342d5187ab211aa99a4633c21282942645a6854",
-  "updated_at": "2026-10-10T18:45:54+09:00",
+  "updated_at": "2026-10-10T20:50:18+09:00",
   "startup_read": {
     "branch": "main",
     "head_sha": "afa996bc6a3d7a82b7d1fd04a0381e8abcfa3833",
@@ -963,6 +963,85 @@
       "other_role_reports_modified": false,
       "old_candidate_modified": false,
       "C03_reapplied": false
+    },
+    "T11_E20-04_unit2": {
+      "task_id": "T11_E20-04_unit2",
+      "source_commit": "3ad9e836e53d528de337fa01ba8d46aebf3858b2",
+      "pre_save_rechecked_commit": "b9000ebab84a744210e2410112812c2c9b118945",
+      "request_at": "2026-10-10T20:50:18+09:00",
+      "result": "PASS_PATH_UNIT_ONLY",
+      "E20_04_overall": "NOT_PASS",
+      "selected_entry": "care-insurance-analysis/src/make_print_probe.py",
+      "provenance": {
+        "checkpoint_library_file_id": "libfile_8a62012c3b5c8191aa8503294a3a21b6",
+        "checkpoint_version": 0,
+        "checkpoint_sha256": "cc9320d25e1989ca58a099a6b5c57554c8c286d567ae4377ccdaa1371edd3f22",
+        "origin_entry": "make_print_probe.py",
+        "path_audit_reused": true,
+        "previous_unsaved_E20_04_pipeline_adopted": false
+      },
+      "changes": [
+        {
+          "original_location": "make_print_probe.py:5",
+          "before": "caller-specific outputs/20261010_t11_e20_03 workbook path",
+          "after": "required --base; resolve once; validate existing file"
+        },
+        {
+          "original_location": "make_print_probe.py:19,21",
+          "before": "fixed /tmp/e03_print_probe_final.xlsx",
+          "after": "required --out; resolve once; reject existing output/source alias; exclusive ZIP creation"
+        },
+        {
+          "change": "main guard and --check-paths-only added",
+          "effect": "import does not run assembly; path check never opens/writes XLSX"
+        }
+      ],
+      "code_sha256": "07266b76db2c55e93071c2bf3d074006b90fb03d57fe06b11e1e96c9c2bfbb62",
+      "code_commit": "79e91d8a8cc21d947c80e8f2967faba6e6c1a122",
+      "checks_commit": "b9000ebab84a744210e2410112812c2c9b118945",
+      "verification_record": "care-insurance-analysis/checks/E20_04_entry_path_check.json",
+      "checks": {
+        "syntax": true,
+        "no_fixed_filesystem_paths": true,
+        "cwd_a_absolute": true,
+        "cwd_a_relative": true,
+        "cwd_b_absolute": true,
+        "cwd_b_relative": true,
+        "same_resolution_from_two_directories": true,
+        "missing_base_rejected": true,
+        "same_path_rejected": true,
+        "existing_output_rejected": true,
+        "required_arguments": true,
+        "no_output_or_directory_created": true,
+        "synthetic_input_and_existing_output_unchanged": true
+      },
+      "test_command": "python care-insurance-analysis/src/test_make_print_probe_paths.py --result <temporary-check-result.json>",
+      "path_check_command": "python care-insurance-analysis/src/make_print_probe.py --base <read-only-input.xlsx> --out <new-probe.xlsx> --check-paths-only",
+      "not_run": [
+        "real_data_probe_generation",
+        "ZIP_regeneration",
+        "full_pipeline_replay",
+        "Excel_recalculation",
+        "Japanese_print_readability",
+        "candidate_certification"
+      ],
+      "not_changed": [
+        "input_originals",
+        "E20_03_work_copy_version2",
+        "retained_ZIPs",
+        "STATE.json",
+        "reports/20.json",
+        "reports/30.json",
+        "old_candidates"
+      ],
+      "remaining": {
+        "E20_03_Japanese_print": "HELD",
+        "E01": "HELD",
+        "E20_04_full_reproduction": "NOT_PASS",
+        "prior_recalculation_failure": "not retried, not resolved by path fix"
+      },
+      "next_action": "次の小単位は保存済みE20-03作業コピー版2を--base、新しい隔離出力を--outに指定した印刷確認コピー生成と構造検査。今回未実施。全工程再実行・再計算は別単位の指示を待つ。",
+      "designation": "実行入口のパス修正のみ。候補v2・完成品認定なし。"
     }
   },
   "outputs": [
@@ -1235,7 +1314,7 @@
     }
   ],
   "next_role": "10",
-  "next_action": "日本語フォント対応環境で同じ注記15か所を実描画してE20-03の印刷可読性を再判定。その後にE20-04を別単位で進める。",
+  "next_action": "次の小単位は保存済みE20-03作業コピー版2を--base、新しい隔離出力を--outに指定した印刷確認コピー生成と構造検査。今回未実施。全工程再実行・再計算は別単位の指示を待つ。",
   "restart_condition": "20の独立評価、C04/C10/C11等の正式根拠、日本語対応TTF/OTFまたは描画環境が得られた時点で該当保留を解消し新候補版を固定。",
   "candidate": {
     "id": "care-S01-20261009-v1",
@@ -1781,6 +1860,85 @@
       "other_role_reports_modified": false,
       "old_candidate_modified": false,
       "C03_reapplied": false
+    },
+    {
+      "task_id": "T11_E20-04_unit2",
+      "source_commit": "3ad9e836e53d528de337fa01ba8d46aebf3858b2",
+      "pre_save_rechecked_commit": "b9000ebab84a744210e2410112812c2c9b118945",
+      "request_at": "2026-10-10T20:50:18+09:00",
+      "result": "PASS_PATH_UNIT_ONLY",
+      "E20_04_overall": "NOT_PASS",
+      "selected_entry": "care-insurance-analysis/src/make_print_probe.py",
+      "provenance": {
+        "checkpoint_library_file_id": "libfile_8a62012c3b5c8191aa8503294a3a21b6",
+        "checkpoint_version": 0,
+        "checkpoint_sha256": "cc9320d25e1989ca58a099a6b5c57554c8c286d567ae4377ccdaa1371edd3f22",
+        "origin_entry": "make_print_probe.py",
+        "path_audit_reused": true,
+        "previous_unsaved_E20_04_pipeline_adopted": false
+      },
+      "changes": [
+        {
+          "original_location": "make_print_probe.py:5",
+          "before": "caller-specific outputs/20261010_t11_e20_03 workbook path",
+          "after": "required --base; resolve once; validate existing file"
+        },
+        {
+          "original_location": "make_print_probe.py:19,21",
+          "before": "fixed /tmp/e03_print_probe_final.xlsx",
+          "after": "required --out; resolve once; reject existing output/source alias; exclusive ZIP creation"
+        },
+        {
+          "change": "main guard and --check-paths-only added",
+          "effect": "import does not run assembly; path check never opens/writes XLSX"
+        }
+      ],
+      "code_sha256": "07266b76db2c55e93071c2bf3d074006b90fb03d57fe06b11e1e96c9c2bfbb62",
+      "code_commit": "79e91d8a8cc21d947c80e8f2967faba6e6c1a122",
+      "checks_commit": "b9000ebab84a744210e2410112812c2c9b118945",
+      "verification_record": "care-insurance-analysis/checks/E20_04_entry_path_check.json",
+      "checks": {
+        "syntax": true,
+        "no_fixed_filesystem_paths": true,
+        "cwd_a_absolute": true,
+        "cwd_a_relative": true,
+        "cwd_b_absolute": true,
+        "cwd_b_relative": true,
+        "same_resolution_from_two_directories": true,
+        "missing_base_rejected": true,
+        "same_path_rejected": true,
+        "existing_output_rejected": true,
+        "required_arguments": true,
+        "no_output_or_directory_created": true,
+        "synthetic_input_and_existing_output_unchanged": true
+      },
+      "test_command": "python care-insurance-analysis/src/test_make_print_probe_paths.py --result <temporary-check-result.json>",
+      "path_check_command": "python care-insurance-analysis/src/make_print_probe.py --base <read-only-input.xlsx> --out <new-probe.xlsx> --check-paths-only",
+      "not_run": [
+        "real_data_probe_generation",
+        "ZIP_regeneration",
+        "full_pipeline_replay",
+        "Excel_recalculation",
+        "Japanese_print_readability",
+        "candidate_certification"
+      ],
+      "not_changed": [
+        "input_originals",
+        "E20_03_work_copy_version2",
+        "retained_ZIPs",
+        "STATE.json",
+        "reports/20.json",
+        "reports/30.json",
+        "old_candidates"
+      ],
+      "remaining": {
+        "E20_03_Japanese_print": "HELD",
+        "E01": "HELD",
+        "E20_04_full_reproduction": "NOT_PASS",
+        "prior_recalculation_failure": "not retried, not resolved by path fix"
+      },
+      "next_action": "次の小単位は保存済みE20-03作業コピー版2を--base、新しい隔離出力を--outに指定した印刷確認コピー生成と構造検査。今回未実施。全工程再実行・再計算は別単位の指示を待つ。",
+      "designation": "実行入口のパス修正のみ。候補v2・完成品認定なし。"
     }
   ],
   "previous_report_checkpoint": {
@@ -1789,5 +1947,5 @@
     "source_commit": "0ca348449ba7b05b4ac8ae3f59351abdaf28a5c6",
     "updated_at": "2026-10-10T18:41:59+09:00"
   },
-  "updated_at_basis": "今回ユーザー指示の送信日時。完了時刻の計測値ではない。"
+  "updated_at_basis": "今回の指示送信時刻。実行完了時刻の実測ではない。"
 }
