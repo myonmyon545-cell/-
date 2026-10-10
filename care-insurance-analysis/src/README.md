@@ -1,16 +1,13 @@
-# ROLE=10 再現手順（解析契約2.2）
+# ROLE=10 再現手順（解析契約2.4）
 
-main の候補登録コミットと `checks/candidate.json` に固定された入力・定義・コード版を参照する。元資料はプロジェクト情報源のS01～S06を使用し、SHA256を `src/input_manifest.json` と照合する。原本Excel/PDFと個票はGitHubへ格納しない。
+候補 `care-S01-20261010-v3` は評価用であり、完成/暫定提出ではない。主入力S01/S02/S03/S04/S05/S06と追加参考S10のSHA256を `src/input_manifest.json` と `references/S10_excerpts.json` に照合する。原本は変更しない。C03確認済み作業コピー（SHA256 `fef7ab5b1b46bc8eb03c040c3d4767ec9aa41098c6106019397ce29623c77cf6`）を再利用し、訂正を重複適用しない。
 
-## 保存済みの処理
+## 実行の概要
 
-1. `inspect_inputs.py` でS01/S02の14シートと元値を読取り、`prepare_contract.py` と `metric_inventory.py` で148表・3158指標を構成する。
-2. `calculate.py` と `verify_extraction.py` で6316入力別値を抽出し、独立した読取りパーサーで元値を照合する。
-3. ROLE=20が独立PASSとしたC03を、Artifact ToolでS01作業コピーのⅠ!G513:G521へ適用する。`preserve_package.py` で元14シート・148グラフ・元数式・描画・印刷部品を保持したまま要点シートを追加する。S01/S02原本は変更しない。
-4. `apply_c03_overlay.py` はS01作業コピーとS02のⅢ件数を出所付きで集計へ反映する。
-5. `apply_role30.py` は `reports/30.json` のE20-01/C10/C11/入力別状態案を元資料と照合し、定義・抽出・比較の保留を伝播する。正式根拠のない値・地域見出しは確定しない。
-6. `summarize_checks.py` で全指標の入力別状態と検査を出力する。`replay_pipeline.py` が別一時出力への確認用再実行を行い、定義・抽出・状態・検査の6ファイルが一致することを確認する。
-7. `build_candidate_tables.py` の全6316指標と1478比較・定義/保留表示から、`candidate_donor.mjs` がArtifact Toolで新規4シートを作成する。`graft_candidate.py` は確認済みC03コピーへ4シートを追加し、既存15シートの部品を保持する。
-8. `build_candidate.py` は入力別ID・状態・比較抑止を `checks/candidate.json` に固定し、`tools/verify_handoff.py` とユニットテストで機械契約を検査する。候補の `code_commit` はこのコードと定義を固定した先行コミットを示す。
+1. Python 3.12、Node 22、`@oai/artifact-tool` 2.8.85で `src/integrate_s10.py` を実行する。S10 DOCXのSHA/サイズ、162明示セル、11表ブロック、表54/59/60合計を照合する。
+2. `src/summary_v2.py` がS10の独立参考表とS01/S02の保留付き比較表を生成する。S10 R7市独自25.6日はS01の平均を復元した値と扱わず、県/全国/第1回比較を抑止する。C10・C11・C09の値と比較は保留/未算出のまま。
+3. `src/summary_v2.mjs` が先頭要点1シートと印刷可能な局所注記を作り、`src/graft_v2.py` がC03作業コピーへ追加する。元14シート・148グラフと元数式/図/画像部品を保つ。
+4. `src/build_candidate_v3.py` は分析要点とⅣ!J208のC04置換を固定し、`checks/candidate.json` と機械検査結果を生成する。候補SHAとcandidate_fingerprintは実ファイルから算出する。
+5. `src/run_native_trial.py` で別コピーへ再計算・保存・読戻し境界試験を行う。配布候補は直接再保存しない。`fc-match`、`pdffonts`、PDF/PNGの実描画を確認し、日本語字形は読める環境でない限り未合格とする。
 
-候補は20の初回全範囲独立評価対象。日本語フォントが実行環境になく、表示検査は未合格。C04/C10/C11の正式資料も未着である。保留値の数値結論を抑止し、完成/暫定提出とは区別する。
+作業時環境ではLibreOfficeDev 26.8 alphaで候補を開きPDF化できたが、日本語TTF/OTFがなく、PDFに日本語字形が描画されなかった。日本語表示の検査は未合格。C04置換は承認済み表示例外であり、S01期間の原値復元/検証ではない。正式資料待ちのC10/C11等をS10で解除しない。

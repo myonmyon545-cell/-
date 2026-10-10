@@ -8,7 +8,7 @@ from pathlib import Path
 
 SHA256 = re.compile(r"^[0-9a-f]{64}$")
 SHA1 = re.compile(r"^[0-9a-f]{40}$")
-STATES = {"valid", "held", "missing", "not_applicable"}
+STATES = {"valid", "held", "missing", "not_applicable", "provided_substitute"}
 
 
 def require(condition, message):
@@ -236,3 +236,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
