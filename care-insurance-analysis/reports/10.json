@@ -2,11 +2,11 @@
   "schema": "care_handoff/v1",
   "role": "10",
   "plan_revision": "2.4",
-  "status": "T10_structured_classification_saved_with_documented_limits",
-  "task_id": "T10",
-  "source_commit": "afa996bc6a3d7a82b7d1fd04a0381e8abcfa3833",
-  "pre_save_rechecked_commit": "afa996bc6a3d7a82b7d1fd04a0381e8abcfa3833",
-  "updated_at": "2026-10-10T13:07:27+09:00",
+  "status": "T11_E20_02_scope_structure_PASS_remaining_units_pending",
+  "task_id": "T11_E20-02",
+  "source_commit": "0ca348449ba7b05b4ac8ae3f59351abdaf28a5c6",
+  "pre_save_rechecked_commit": "0ca348449ba7b05b4ac8ae3f59351abdaf28a5c6",
+  "updated_at": "2026-10-10T18:41:59+09:00",
   "startup_read": {
     "branch": "main",
     "head_sha": "afa996bc6a3d7a82b7d1fd04a0381e8abcfa3833",
@@ -499,6 +499,146 @@
         "S10-06年度帰属は節内確認まで条件付き。",
         "C14の2920/2924確定訂正は未確認。"
       ]
+    },
+    "T11_E20-02": {
+      "recorded_at": "2026-10-10T18:41:59+09:00",
+      "source_commit": "0ca348449ba7b05b4ac8ae3f59351abdaf28a5c6",
+      "task_id": "T11_E20-02",
+      "result": "PASS_E20_02_STRUCTURAL_AND_SCOPE",
+      "scope": "先頭「分析要点」のR02～R07収録・範囲・構造。前回不足R04～R07の31行を含む。既存実物検査・読戻し記録を再利用し、作業コピー版1の実ファイルSHAと照合。",
+      "work_copy": {
+        "name": "介護保険解析_作業コピー_T11-E20-02.xlsx",
+        "library_file_id": "libfile_5b4c950910fc8191930febed5dbb7889",
+        "version": 1,
+        "sha256": "38de9fc6dc34045eb3aa2b17597bb0c8aceb9ac2d513c9fe6432fe263dbcfae5",
+        "readback_sha256": "38de9fc6dc34045eb3aa2b17597bb0c8aceb9ac2d513c9fe6432fe263dbcfae5",
+        "designation": "作業コピー。完成候補認定なし。"
+      },
+      "validation_records": [
+        {
+          "library_file_id": "libfile_aa3f0270d53881919ef80ed8f9bc3e33",
+          "version": 2,
+          "name": "T11_E20_02_actual_inspection.json"
+        },
+        {
+          "library_file_id": "libfile_efa1c0adeed4819194f7872c18acaca5",
+          "version": 1,
+          "name": "T11_E20_02_validation_readback.json"
+        }
+      ],
+      "checks": {
+        "sheet_order": {
+          "result": "PASS",
+          "detail": [
+            "分析要点",
+            "表紙・目次",
+            "データの見方",
+            "Ⅰ基礎情報",
+            "Ⅱ調査項目データ（第１群）",
+            "Ⅱ調査項目データ（第２群）",
+            "Ⅱ調査項目データ（第３群）",
+            "Ⅱ調査項目データ（第４群）",
+            "Ⅱ調査項目データ（第５群）",
+            "Ⅱ調査項目データ（その他）",
+            "Ⅱ（３）５項目",
+            "Ⅲ審査判定データ（一次・二次判定）",
+            "Ⅲ審査判定データ（変更率）",
+            "Ⅲ審査判定データ（有効期間）",
+            "Ⅳ事務データ"
+          ]
+        },
+        "fourteen_columns": {
+          "result": "PASS",
+          "detail": {
+            "max_column": 14,
+            "header_rows": [
+              6,
+              55,
+              67
+            ]
+          }
+        },
+        "R04_R07_31_targeted_rows": {
+          "result": "PASS",
+          "detail": []
+        },
+        "R02_R03_R06_previous_rows": {
+          "result": "PASS",
+          "detail": []
+        },
+        "R02_R07_basis": {
+          "result": "PASS",
+          "detail": [
+            "R02",
+            "R03",
+            "R04",
+            "R05",
+            "R06",
+            "R07"
+          ]
+        },
+        "scope_coverage": {
+          "result": "PASS",
+          "detail": {
+            "counts": {
+              "R04": 3,
+              "R05": 17,
+              "R06": 4,
+              "R07": 7
+            }
+          }
+        },
+        "C04_separate_S10_annual": {
+          "result": "PASS",
+          "detail": null
+        },
+        "C09_C10_C11_hold": {
+          "result": "PASS",
+          "detail": null
+        },
+        "S10_reference_independent": {
+          "result": "PASS",
+          "detail": null
+        },
+        "simple_confirmation": {
+          "result": "PASS",
+          "detail": null
+        },
+        "print_settings": {
+          "result": "PASS",
+          "detail": {
+            "area": "'分析要点'!$A$1:$N$80",
+            "title": "$6:$6"
+          }
+        },
+        "original_parts_charts_C03": {
+          "result": "PASS",
+          "detail": {
+            "changed_parts": [
+              "xl/styles.xml",
+              "xl/workbook.xml",
+              "xl/worksheets/sheet15.xml"
+            ],
+            "chart_count": 148,
+            "C03_reapplied": false
+          }
+        }
+      },
+      "scope_reconciliation": "旧版FAIL_SCOPE_COVERAGEは当時の範囲不足。旧限定PASSは構造・保存読戻しのみ。更新後版1ではR04～R07を含む範囲・構造PASS。",
+      "not_run": [
+        "E20-03局所注記",
+        "E20-04全生成再現",
+        "日本語実描画"
+      ],
+      "holds": {
+        "C09": "分母0による未算出",
+        "C10": "欠落許容・数値不採用",
+        "C11": "正式分母待ちで保留",
+        "C04": "S10年度参考・比較不可"
+      },
+      "next_action": "E20-03局所注記を次の小単位で実施。E20-04全生成再現と日本語実描画は未実施を維持。",
+      "workbook_modified_this_run": false,
+      "STATE_modified": false
     }
   },
   "outputs": [
@@ -771,7 +911,7 @@
     }
   ],
   "next_role": "10",
-  "next_action": "次回はT11を小単位で開始。T10の仕分けJSONを適用し、先頭要点1枚/局所注記/保持・印刷・日本語・再現の検証へ進む。C11保留を維持し、STATEは00のみ更新。",
+  "next_action": "E20-03局所注記を次の小単位で実施。E20-04全生成再現と日本語実描画は未実施を維持。",
   "restart_condition": "20の独立評価、C04/C10/C11等の正式根拠、日本語対応TTF/OTFまたは描画環境が得られた時点で該当保留を解消し新候補版を固定。",
   "candidate": {
     "id": "care-S01-20261009-v1",
@@ -840,5 +980,153 @@
     "last_error": "今回の最初の書込みは自動承認レビューで一度拒否。リポジトリ所有者一致・private公開範囲・push権限を読取確認した後、保存に成功。以後の保存/読戻しでエラーなし。",
     "recovered_work": "前回確認時、作業フォルダに2.3/2.4未保存中間成果はなく、未保存作業は回収不能。今回はT10出力2件をGitHubに保存。",
     "next_action": "次回T11を開始。S01原本と旧候補は変更せず、C03再適用なし、C11保留と品質ゲート維持。"
+  },
+  "execution_checkpoints": [
+    {
+      "recorded_at": "2026-10-10T18:41:59+09:00",
+      "source_commit": "0ca348449ba7b05b4ac8ae3f59351abdaf28a5c6",
+      "task_id": "T11_E20-02",
+      "result": "PASS_E20_02_STRUCTURAL_AND_SCOPE",
+      "scope": "先頭「分析要点」のR02～R07収録・範囲・構造。前回不足R04～R07の31行を含む。既存実物検査・読戻し記録を再利用し、作業コピー版1の実ファイルSHAと照合。",
+      "work_copy": {
+        "name": "介護保険解析_作業コピー_T11-E20-02.xlsx",
+        "library_file_id": "libfile_5b4c950910fc8191930febed5dbb7889",
+        "version": 1,
+        "sha256": "38de9fc6dc34045eb3aa2b17597bb0c8aceb9ac2d513c9fe6432fe263dbcfae5",
+        "readback_sha256": "38de9fc6dc34045eb3aa2b17597bb0c8aceb9ac2d513c9fe6432fe263dbcfae5",
+        "designation": "作業コピー。完成候補認定なし。"
+      },
+      "validation_records": [
+        {
+          "library_file_id": "libfile_aa3f0270d53881919ef80ed8f9bc3e33",
+          "version": 2,
+          "name": "T11_E20_02_actual_inspection.json"
+        },
+        {
+          "library_file_id": "libfile_efa1c0adeed4819194f7872c18acaca5",
+          "version": 1,
+          "name": "T11_E20_02_validation_readback.json"
+        }
+      ],
+      "checks": {
+        "sheet_order": {
+          "result": "PASS",
+          "detail": [
+            "分析要点",
+            "表紙・目次",
+            "データの見方",
+            "Ⅰ基礎情報",
+            "Ⅱ調査項目データ（第１群）",
+            "Ⅱ調査項目データ（第２群）",
+            "Ⅱ調査項目データ（第３群）",
+            "Ⅱ調査項目データ（第４群）",
+            "Ⅱ調査項目データ（第５群）",
+            "Ⅱ調査項目データ（その他）",
+            "Ⅱ（３）５項目",
+            "Ⅲ審査判定データ（一次・二次判定）",
+            "Ⅲ審査判定データ（変更率）",
+            "Ⅲ審査判定データ（有効期間）",
+            "Ⅳ事務データ"
+          ]
+        },
+        "fourteen_columns": {
+          "result": "PASS",
+          "detail": {
+            "max_column": 14,
+            "header_rows": [
+              6,
+              55,
+              67
+            ]
+          }
+        },
+        "R04_R07_31_targeted_rows": {
+          "result": "PASS",
+          "detail": []
+        },
+        "R02_R03_R06_previous_rows": {
+          "result": "PASS",
+          "detail": []
+        },
+        "R02_R07_basis": {
+          "result": "PASS",
+          "detail": [
+            "R02",
+            "R03",
+            "R04",
+            "R05",
+            "R06",
+            "R07"
+          ]
+        },
+        "scope_coverage": {
+          "result": "PASS",
+          "detail": {
+            "counts": {
+              "R04": 3,
+              "R05": 17,
+              "R06": 4,
+              "R07": 7
+            }
+          }
+        },
+        "C04_separate_S10_annual": {
+          "result": "PASS",
+          "detail": null
+        },
+        "C09_C10_C11_hold": {
+          "result": "PASS",
+          "detail": null
+        },
+        "S10_reference_independent": {
+          "result": "PASS",
+          "detail": null
+        },
+        "simple_confirmation": {
+          "result": "PASS",
+          "detail": null
+        },
+        "print_settings": {
+          "result": "PASS",
+          "detail": {
+            "area": "'分析要点'!$A$1:$N$80",
+            "title": "$6:$6"
+          }
+        },
+        "original_parts_charts_C03": {
+          "result": "PASS",
+          "detail": {
+            "changed_parts": [
+              "xl/styles.xml",
+              "xl/workbook.xml",
+              "xl/worksheets/sheet15.xml"
+            ],
+            "chart_count": 148,
+            "C03_reapplied": false
+          }
+        }
+      },
+      "scope_reconciliation": "旧版FAIL_SCOPE_COVERAGEは当時の範囲不足。旧限定PASSは構造・保存読戻しのみ。更新後版1ではR04～R07を含む範囲・構造PASS。",
+      "not_run": [
+        "E20-03局所注記",
+        "E20-04全生成再現",
+        "日本語実描画"
+      ],
+      "holds": {
+        "C09": "分母0による未算出",
+        "C10": "欠落許容・数値不採用",
+        "C11": "正式分母待ちで保留",
+        "C04": "S10年度参考・比較不可"
+      },
+      "next_action": "E20-03局所注記を次の小単位で実施。E20-04全生成再現と日本語実描画は未実施を維持。",
+      "workbook_modified_this_run": false,
+      "STATE_modified": false
+    }
+  ],
+  "previous_report_checkpoint": {
+    "status": "T10_structured_classification_saved_with_documented_limits",
+    "task_id": "T10",
+    "source_commit": "afa996bc6a3d7a82b7d1fd04a0381e8abcfa3833",
+    "updated_at": "2026-10-10T13:07:27+09:00"
   }
 }
