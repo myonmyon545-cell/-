@@ -1,0 +1,21 @@
+{
+  "schema": "care_audit_event/v1",
+  "event_id": "planning_20261010_continuing_authorization",
+  "at": "2026-10-10T10:59:09+09:00",
+  "role": "planning",
+  "user_verbatim": "常に許可",
+  "authorization": {
+    "status": "continuing_authorized",
+    "scope": [
+      "介護保険データ解析に関係する取得可能な過去/現在の公開会話と作業記録の収録",
+      "会話/作業タイムラインの更新と再構成",
+      "承認済み目的と制約内で追加指示を計画へ組込み、GitHubへ保存",
+      "完成時の別添全ログと簡易確認文への収録"
+    ],
+    "confirmation_policy": "上記範囲は再確認不要",
+    "boundaries": "本プロジェクトの既存の目的・権限・原本保護・非公開保存・役割分担を維持。取得できない会話の全文保存や無人監視は実施済みと扱わない。"
+  },
+  "input_commit": "8ca932825f69203c89dba5b4bf47d2e551608a74",
+  "analysis_contract_changed": false,
+  "workbook_changed": false
+}
