@@ -1,0 +1,24 @@
+{
+  "schema": "care_log_event/v1",
+  "event_id": "planning_20261010_shared_process_atlas",
+  "at": "2026-10-10T11:33:20+09:00",
+  "role": "planning",
+  "user_verbatim": "これをプラットフォームに継続更新を行なって。この作業はここのチャットとロール00に分担。どっちからもアクセスできるようにして\n加えて別枠で立てて欲しいのが最後の完成版に添付するAIでの実際におこなった処理工程と、詳細なワークフロー及び入れ子式になったファイルツリーを三次元的に視覚化しクリックすればファイル概要が開けるようにして欲しい",
+  "input_commit": "2e00b8aac02f3b2452f29e4ca1daa58b22eec228",
+  "results": {
+    "offline_atlas_created": true,
+    "workflow_tasks": 12,
+    "github_tree_items": 103,
+    "automation_created": true,
+    "site_published": false
+  },
+  "observed_failures": [
+    {
+      "step": "Sites source helper read",
+      "error": "failed to read skill resource",
+      "action": "停止。公開/作成未実施。共有GitHubとオフライン添付へ保存し未公開を明記。"
+    }
+  ],
+  "analysis_contract_changed": false,
+  "state_modified": false
+}

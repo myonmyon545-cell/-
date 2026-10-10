@@ -1,0 +1,37 @@
+{
+  "schema": "care_shared_platform/v1",
+  "project": "介護保険データ解析",
+  "canonical_repository": "myonmyon545-cell/-",
+  "canonical_path": "care-insurance-analysis/viewer",
+  "operations_revision": "2.4.3",
+  "source_commit": "2e00b8aac02f3b2452f29e4ca1daa58b22eec228",
+  "hosting": {
+    "status": "BLOCKED_NOT_PUBLISHED",
+    "project_id": null,
+    "url": null,
+    "reason": "Sites source helper resource not available in this environment; no Site created."
+  },
+  "update_owners": [
+    "planning",
+    "00"
+  ],
+  "automation": {
+    "created": true,
+    "id": "6ac9a5227c948191aa8c0f2c19a28601",
+    "frequency": "HOURLY",
+    "timezone": "Asia/Tokyo",
+    "until": "2026-10-12T23:59:00+09:00",
+    "verified_runs": 0
+  },
+  "final_attachment": {
+    "owner": "10",
+    "status": "TEMPLATE_ONLY_PENDING_FINAL_CANDIDATE",
+    "html": "介護保険解析_処理工程アトラス.html",
+    "data": "処理工程アトラス.json",
+    "include_in_full_log_zip": true
+  },
+  "verification": {
+    "actual_browser": "NOT_EXECUTED",
+    "sites_deployment": "NOT_EXECUTED"
+  }
+}

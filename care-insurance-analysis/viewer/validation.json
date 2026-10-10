@@ -1,0 +1,13 @@
+{
+  "schema": "care_atlas_checks/v1",
+  "unique_DOM_ids": "PASS",
+  "workflow_DAG": "PASS",
+  "file_paths_and_summaries": "PASS",
+  "javascript_syntax": "PASS",
+  "replay_structured_data": "PASS",
+  "PLAN_yaml_and_contract_unchanged": "PASS",
+  "remote_network_calls": "NONE",
+  "actual_browser_and_3D_visual_test": "NOT_EXECUTED: managed browser skill unavailable; no preview started",
+  "original_data_embedded": false,
+  "release": "NOT_FINAL"
+}

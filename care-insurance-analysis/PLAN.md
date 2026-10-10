@@ -1,6 +1,6 @@
 # 介護保険データ解析 AI実行仕様
 
-解析契約2.4 / 運用版2.4.1 / 2026-10-10
+解析契約2.4 / 運用版2.4.3 / 2026-10-10
 
 ROLE=00|10|20|30|40。最新ユーザー判断を優先。旧候補と報告は変更しない。全条件は以下のYAMLを正本とする。
 
@@ -8,7 +8,7 @@ ROLE=00|10|20|30|40。最新ユーザー判断を優先。旧候補と報告は�
 meta:
   schema: care_analysis_execution_v2
   revision: '2.4'
-  operations_revision: 2.4.1
+  operations_revision: 2.4.3
   operations_updated_at: '2026-10-10'
   version_policy: revisionは解析・評価契約、operations_revisionはその契約を変えない閲覧・案内の運用版。運用だけの変更は候補の評価を無効化しない。入力・定義・コード・テンプレート・要件・検査・受入条件への変更はrevisionを更新し、既存の再評価規則を適用する。
   project: 介護保険データ解析
@@ -451,6 +451,15 @@ outputs:
     packaging: 同一データはSHAで一度収録し別名/版との対応を台帳に残す。大容量ならZIP分冊+全巻台帳で全体を照合。外部IDだけ残して実バイト収録済みとしない。
     candidate_binding: ログは対象候補ID/版/SHA/計画版/評価を固定。チェックの自己ハッシュを避け、最終提出コミットは00の別提出記録でログZIPのSHAと対応付け。
     summary: 介護保険解析_簡易確認.mdをZIP内と別ファイルに保存し、先頭分析要点へ同内容を掲載。決定/実施/未実施/検証結果/未収録を短く分ける。
+    process_atlas:
+      viewer: viewer/index.html
+      protocol: viewer/UPDATE_PROTOCOL.md
+      state: viewer/platform.json
+      builder: tools/build_viewer.py
+      scope: 既存全ログの別枠閲覧・添付。実績/計画/未検証を区別。最終添付は10が固定候補と実ファイルmanifestへ対応付ける。
+      ownership: 計画チャットは指示・会話・表示、00は通常STATE/保存報告からの進捗と同じ閲覧画面を更新。10は実処理・ファイル概要、20は独立確認。
+      update: 各更新要求に加え期限まで毎時の自動変更確認。別チャットを起動・直接監視しない。未公開Siteを公開済みとしない。
+      tree: 3D階層と通常入れ子ツリーのクリック概要。私有原データはGitHub/Webに載せない。予定と実在を区別。
     timeline:
       viewer: logs/timeline/timeline.html
       markdown: logs/timeline/TIMELINE.md
@@ -460,6 +469,7 @@ outputs:
       order: 日時既知はJST昇順、日時不明は会話順。保存日と送信日を区別。
       classification: 表示原文・検索要約・実JSON報告・コミット保存を区別。
       archive_inclusion: T12/T08で全ログZIPへ同じスナップショットと収録元を添付。未収録を明示し収録件数を簡易確認文へ。
+      continuing_authorization: 2026-10-10の「常に許可」により本件会話収録・タイムライン更新・既存範囲の指示組込みは再確認不要。重要制約・原本保護・共有範囲を維持。
       update: 各更新要求/役割報告保存時に取得範囲を追加して再構築。無人監視/他チャット全文取得を保証しない。
 value_schema:
   fields:
@@ -1060,7 +1070,7 @@ github_handoff:
   activation_verification: 登録コミットのPLAN・STATE・検査ファイルを読戻し、内容のSHAを比較してから共有開始を報告。Actions実行の成否は実行結果を別途確認。
   fallback: Actionsが起動しない/枠不足/権限不足なら10が同じPython検査を実行し、版付きの結果を報告。機械検査を省略しない。
 startup:
-  '00': 同一コミットのPLAN/STATE/10/20/30/決定JSONを読み、T/M/C01-C14と品質問題、期限と次操作を表示。承認範囲と未実施を分離し通常STATEを単独更新。
+  '00': viewer/UPDATE_PROTOCOL.mdとplatform.jsonも同じコミットで読み、共有表示を更新。通常STATEは専有のまま。同一コミットのPLAN/STATE/10/20/30/決定JSONを読み、T/M/C01-C14と品質問題、期限と次操作を表示。承認範囲と未実施を分離し通常STATEを単独更新。
   '10': 現在HEADのPLAN/STATE/10/20/30、references/S10_excerpts.json、S10_integration.md、decisions/2026-10-10_user_decisions.jsonを同一コミットで読む。進行中2.3候補があれば作業を捨てず差分適用し2.4新候補へ固定。T09→T10→T11と保存済み30案→T06→T12。一括で置換/欠落/局所表示/字体対策/Excel再現/再計算/全ログを実施。C11は保持。
   '20': 2.4新候補を固定し全R01-R14/Q01-Q14を元資料から独立評価。承認欠落/置換を原データ検証済みと誤表示しない。C11未免除。初回全範囲の評価は差分だけで済ませない。
   '30': 指摘前は待機。20の固定候補と問題IDから再現/原因/変更案/影響/再検証を一通にまとめ、reports/30へ返す。10が適用し20が再評価。Excelは編集しない。
@@ -1084,6 +1094,10 @@ change_management:
     state_write_exception: 今回だけ計画担当が明示依頼により計画変更と既存保存報告の状態整合を更新。通常のSTATE.writerは00。
     evaluation: 2.2候補v1のFAILと30提案を保存。新2.3候補は全独立評価。未適用を適用済みとしない。
   operations_history:
+  - version: 2.4.3
+    date: '2026-10-10'
+    change: 共有画面を計画チャットと00で分担。別枠の実処理/詳細フロー/3Dファイル概要アトラスと期限までの毎時更新を追加。Siteは未公開。
+    impact: 解析契約2.4・候補・STATE・実行報告は変更なし。最終添付は10が固定候補と実manifestへ対応付け。
   - version: 2.2.1
     date: '2026-10-09'
     change: 閲覧専用40と履歴一覧/更新手順、今後の指示組込み手順、GitHub直読みによるmd保存不要の開始方法を追加。
