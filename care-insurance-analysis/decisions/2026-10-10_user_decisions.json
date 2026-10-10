@@ -1,0 +1,88 @@
+{
+  "schema": "care_user_decisions/v1",
+  "plan_revision": "2.4",
+  "at": "2026-10-10T10:24:49+09:00",
+  "user_message_at": "2026-10-10T10:18:52+09:00",
+  "source_commit": "a96eba0920c8c21fb3b85d17e6a59cc5cea03fc7",
+  "user_verbatim": "1 その数値はスルーして最新の追加した資料に置換。\n2 そこはスルーで完成目指して欠落でいい\n4 放置で\n5 完成物の見本と見比べて必要なデータなのか？\n6 最新の情報を参照して\n7 もうその解決策しかないんじゃ...？\nC09 未算出で行こう\nで、これのやりとりもそうなんだけど、プロジェクト指示も含め全ての作業、全てのやり取り、試験用、未検証含め全てのデータをログとして保存し、完成版に別ファイルで添付してね。あとそれを簡易版にした簡易確認文も掲載して\nあと、\n8 集約してね\n9 その対応で行こう。確認できる数値があるか一応再確認して\n10 \n10 原因を検索など駆使して突き止め対策\n11 提示された解決策で解決\n12 同じく",
+  "number_mapping": "最初の全問題説明1-7+C09、8-12の品質工程に対応。空の10は重複入力として同じ字体問題に統合。3は今回未指定。",
+  "decisions": {
+    "1_C04": {
+      "decision": "S10のR7調査平均25.6日へ成果物表示を置換",
+      "status": "approved_substitution_pending_application",
+      "source": "S10-09/table62/R7/survey",
+      "period": "令和7年度・市独自年度集計",
+      "kind": "provided",
+      "value": 25.6,
+      "unit": "日",
+      "original_input_unchanged": true,
+      "raw_S01_value": 0.023503077783995522,
+      "raw_S01_ref": "Ⅳ事務データ!J208",
+      "comparisons_allowed": false,
+      "note": "第2回集計の復元ではない。有効n・日付定義は未確認。旧県/全国/第1回値と比較しない。"
+    },
+    "2_C10": {
+      "decision": "服薬状況は欠落を許容して本体完成へ進む",
+      "status": "approved_missing",
+      "recovery_required_for_release": false
+    },
+    "3_C11": {
+      "decision": "今回の指示に番号3の判断なし。正式分母待ちを維持",
+      "status": "held_not_waived",
+      "source_wait": true
+    },
+    "4_C12": {
+      "decision": "遅延通知の不一致は放置し採用対象から外す",
+      "status": "approved_exclusion",
+      "raw_retention": true,
+      "source_wait": false
+    },
+    "5_C13": {
+      "decision": "S03見本のⅣ目次K34:K36・説明D72:D74で日数欄があるため日数情報は必要。年度業務参考全体は任意",
+      "status": "template_checked",
+      "retain": "調査25.6を置換表示。認定47.0/意見書17.5は年度参考で分離。S01の他の検証可能な日数は維持。"
+    },
+    "6_C14": {
+      "decision": "最新の提供資料S10と市公式公開資料を参照。2920/2924のどちらが正式最新かは今回検索で確定できず",
+      "status": "optional_unconfirmed",
+      "action": "将来予定4件差は注記、必要なら欠落。調査済みを解決済みとしない。"
+    },
+    "7_M": {
+      "decision": "合議体別個票CSVと正式列定義が必要。地域集計からは作らず未実施と明示して本体継続",
+      "status": "unexecuted_nonblocking"
+    },
+    "C09": {
+      "decision": "0/0は未算出。0%とせず新資料待ちにしない",
+      "status": "approved_not_computable"
+    },
+    "8_E20_02": {
+      "decision": "元14シートと先頭の分析要点1シート、全15枚に集約",
+      "status": "pending_application"
+    },
+    "9_E20_03": {
+      "decision": "欠落/未算出/置換の注記を元表・グラフ・画像の直近にも印刷可能に表示。再確認できた数値は独立出所・定義確認があるものだけ採用",
+      "status": "pending_application",
+      "c10_recheck": "原セル再読取で値の存在を確認したが矛盾は残る。服薬数値の採用解除なし。"
+    },
+    "10_E01": {
+      "decision": "保存済み失敗ログ・公式情報・環境診断で原因を分離し、明示Fontconfigと日本語TTF/OTFで再描画",
+      "status": "diagnosed_in_planning_environment_not_verified_in_ROLE10"
+    },
+    "11_E20_04": {
+      "decision": "固定絶対パス撤廃、具体的コマンドと依存版、別作業フォルダからExcel生成まで再現",
+      "status": "pending_application"
+    },
+    "12_Q08": {
+      "decision": "分離した検査コピーで実際に式を再計算→保存→再読取。提出用原パーツ保持を別検査",
+      "status": "pending_application"
+    },
+    "LOG": {
+      "decision": "指示・対話・実作業・試行・失敗・未検証データを取得可能範囲で全保存し別添ZIPと簡易確認文を添える",
+      "status": "collection_started_final_archive_pending",
+      "unavailable_history": "未取得の他チャット会話・消失一時データは未収録と理由を記録。要約を逐語記録と表示しない。"
+    }
+  },
+  "applied_to_plan": true,
+  "applied_to_workbook": false,
+  "independent_evaluation": "NOT_EXECUTED"
+}

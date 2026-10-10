@@ -1,0 +1,36 @@
+{
+  "schema": "care_audit_event/v1",
+  "event_id": "planning_20261010_decisions",
+  "at": "2026-10-10T10:24:49+09:00",
+  "role": "planning",
+  "plan_revision": "2.4",
+  "input_commit": "a96eba0920c8c21fb3b85d17e6a59cc5cea03fc7",
+  "user_verbatim": "1 その数値はスルーして最新の追加した資料に置換。\n2 そこはスルーで完成目指して欠落でいい\n4 放置で\n5 完成物の見本と見比べて必要なデータなのか？\n6 最新の情報を参照して\n7 もうその解決策しかないんじゃ...？\nC09 未算出で行こう\nで、これのやりとりもそうなんだけど、プロジェクト指示も含め全ての作業、全てのやり取り、試験用、未検証含め全てのデータをログとして保存し、完成版に別ファイルで添付してね。あとそれを簡易版にした簡易確認文も掲載して\nあと、\n8 集約してね\n9 その対応で行こう。確認できる数値があるか一応再確認して\n10 \n10 原因を検索など駆使して突き止め対策\n11 提示された解決策で解決\n12 同じく",
+  "public_response_summary": "置換に年度/集計方法表示、欠落/除外/未算出を許容。C11未免除、未取得会話は未収録。実Excel変更は10へ引継ぐ。",
+  "response_type": "summary_not_verbatim",
+  "results": {
+    "plan_integrated": true,
+    "candidate_applied": false,
+    "tests": "PASS:24 + DAG/要件対応/版整合。新Excel独立検証ではない。",
+    "log_archive": "not_generated"
+  },
+  "observed_failures": [
+    {
+      "operation": "refresh_files_apply_patch",
+      "reason": "同一パスのDelete/Add競合で拒否。別スナップショットから復旧。原本/remote未変更。"
+    },
+    {
+      "operation": "C10_read_S02_by_path",
+      "reason": "拡張子なしでopenpyxl拒否。バイナリストリーム読取りで成功。原本未変更。"
+    },
+    {
+      "operation": "planning_validation_first_attempt",
+      "reason": "旧工程キーday1の想定違いでKeyError。実構造のgateを探索して修正、24検査とDAG/要件対応を再確認。"
+    }
+  ],
+  "coverage_gaps": [
+    "他チャット全文は未取得",
+    "過去の消失一時ファイルは未取得",
+    "このイベントは現在の指示原文と処理記録。過去全会話の逐語保存済みではない。"
+  ]
+}

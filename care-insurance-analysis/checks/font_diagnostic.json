@@ -1,0 +1,32 @@
+{
+  "baseline_font": "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+  "baseline_glyph_coverage": {
+    "介": false,
+    "護": false,
+    "保": false,
+    "険": false,
+    "調": false,
+    "査": false,
+    "認": false,
+    "定": false,
+    "未": false,
+    "算": false,
+    "出": false
+  },
+  "configured_font": "/workspace/scratch/64d3a079be0e/inspection/ZenKakuGothicNew-Regular.ttf",
+  "configured_glyph_coverage": {
+    "介": true,
+    "護": true,
+    "保": true,
+    "険": true,
+    "調": true,
+    "査": true,
+    "認": true,
+    "定": true,
+    "未": true,
+    "算": true,
+    "出": true
+  },
+  "diagnosis": "この計画環境の既定Fontconfigは日本語フォントを選ばずDejaVu Sansへフォールバック。日本語TTFは作業フォルダに存在するが既定検索対象外。明示設定で日本語字形を持つフォントを認識。10の別環境で同一原因とするには同じ診断と実描画が必要。",
+  "actual_candidate_pdf_verified": false
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "care_planning_validation/v1",
+  "plan_revision": "2.4",
+  "at": "2026-10-10T10:26:19+09:00",
+  "dependency_DAG": "PASS",
+  "requirement_task_check_mapping": "PASS",
+  "revision_consistency": "PASS",
+  "retained_candidate_validation": {
+    "handoff": "PASS",
+    "analysis": "REVISED_PLAN_AWAITING_NEW_CANDIDATE",
+    "retained_plan_revision": "2.2",
+    "retained_evaluation": "FAIL",
+    "current_plan_revision": "2.4",
+    "scope": "historical package checked; new plan implementation/evaluation not performed"
+  },
+  "tests": {
+    "passed": 24,
+    "stdout": "",
+    "stderr": "test_changed_historical_candidate_rejected (test_revision_transition.RevisionTransitionTests.test_changed_historical_candidate_rejected) ... ok\ntest_changed_historical_values_rejected (test_revision_transition.RevisionTransitionTests.test_changed_historical_values_rejected) ... ok\ntest_missing_package_is_not_analysis_pass (test_revision_transition.RevisionTransitionTests.test_missing_package_is_not_analysis_pass) ... ok\ntest_new_candidate_waits_for_new_evaluation (test_revision_transition.RevisionTransitionTests.test_new_candidate_waits_for_new_evaluation) ... ok\ntest_new_plan_cannot_omit_supplement_hash (test_revision_transition.RevisionTransitionTests.test_new_plan_cannot_omit_supplement_hash) ... ok\ntest_old_candidate_cannot_be_released (test_revision_transition.RevisionTransitionTests.test_old_candidate_cannot_be_released) ... ok\ntest_old_failure_stays_old_and_pending (test_revision_transition.RevisionTransitionTests.test_old_failure_stays_old_and_pending) ... ok\ntest_old_report_must_not_be_rewritten (test_revision_transition.RevisionTransitionTests.test_old_report_must_not_be_rewritten) ... ok\ntest_unapproved_revision_rejected (test_revision_transition.RevisionTransitionTests.test_unapproved_revision_rejected) ... ok\ntest_cycle (test_verify_handoff.HandoffTests.test_cycle) ... ok\ntest_duplicate_id (test_verify_handoff.HandoffTests.test_duplicate_id) ... ok\ntest_fractional_count (test_verify_handoff.HandoffTests.test_fractional_count) ... ok\ntest_global_change_invalidates_all (test_verify_handoff.HandoffTests.test_global_change_invalidates_all) ... ok\ntest_held_propagates (test_verify_handoff.HandoffTests.test_held_propagates) ... ok\ntest_missing_is_not_zero (test_verify_handoff.HandoffTests.test_missing_is_not_zero) ... ok\ntest_missing_required (test_verify_handoff.HandoffTests.test_missing_required) ... ok\ntest_nan (test_verify_handoff.HandoffTests.test_nan) ... ok\ntest_original_total_error (test_verify_handoff.HandoffTests.test_original_total_error) ... ok\ntest_stale_evaluation (test_verify_handoff.HandoffTests.test_stale_evaluation) ... ok\ntest_transitive_change_scope (test_verify_handoff.HandoffTests.test_transitive_change_scope) ... ok\ntest_valid_values (test_verify_handoff.HandoffTests.test_valid_values) ... ok\ntest_wrong_input_hash (test_verify_handoff.HandoffTests.test_wrong_input_hash) ... ok\ntest_wrong_population_ratio (test_verify_handoff.HandoffTests.test_wrong_population_ratio) ... ok\ntest_zero_denominator (test_verify_handoff.HandoffTests.test_zero_denominator) ... ok\n\n----------------------------------------------------------------------\nRan 24 tests in 0.014s\n\nOK\n",
+    "exit_code": 0
+  },
+  "current_candidate_application": "NOT_EXECUTED",
+  "current_independent_review": "NOT_EXECUTED",
+  "log_zip": "NOT_GENERATED",
+  "user_decision_original_saved": true
+}

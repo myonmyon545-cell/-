@@ -1,8 +1,8 @@
 {
   "schema": "care_source_supplement/v1",
-  "plan_revision": "2.3",
-  "updated_at": "2026-10-10T01:06:52+09:00",
-  "base_commit": "1051610978f031164d83e1ba02f72fe162a48b60",
+  "plan_revision": "2.4",
+  "updated_at": "2026-10-10T10:24:49+09:00",
+  "base_commit": "a96eba0920c8c21fb3b85d17e6a59cc5cea03fc7",
   "source": {
     "id": "S10",
     "name": "③R8.5.31_個別業務資料（介護保険課）.docx",
@@ -20,13 +20,28 @@
   },
   "status": "source_read_and_plan_integrated_candidate_not_applied",
   "source_policy": {
-    "default_adoption": "reference_only",
+    "default_adoption": "reference_only_except_authorized_C04_display_substitution",
     "raw_source_reconstruction": false,
-    "replace_S01_S02_values": false,
+    "replace_S01_S02_values": "原本不変更。採用/表示はC04のみ明示承認の例外。",
     "release_approval": false,
-    "core_scope": "S01/S02の母集団・期間・算出規則は維持。S10は独立した業務参考。",
+    "core_scope": "S01主解析の母集団は維持。調査平均表示のみS10 R7年度25.6日にユーザー承認置換。比較不可。",
     "missing_semantics": "空欄・－・括弧・再掲・予定を0へ変換しない。",
-    "version_warning": "資料内のR7市独自集計は厚労省公表後差替予定。実公表の有無は未確認。"
+    "version_warning": "資料内のR7市独自集計は厚労省公表後差替予定。実公表の有無は未確認。",
+    "user_authorized_exception": {
+      "decision": "S10のR7調査平均25.6日へ成果物表示を置換",
+      "status": "approved_substitution_pending_application",
+      "source": "S10-09/table62/R7/survey",
+      "period": "令和7年度・市独自年度集計",
+      "kind": "provided",
+      "value": 25.6,
+      "unit": "日",
+      "original_input_unchanged": true,
+      "raw_S01_value": 0.023503077783995522,
+      "raw_S01_ref": "Ⅳ事務データ!J208",
+      "comparisons_allowed": false,
+      "note": "第2回集計の復元ではない。有効n・日付定義は未確認。旧県/全国/第1回値と比較しない。"
+    },
+    "raw_S01_S02_unchanged": true
   },
   "records": [
     {
@@ -416,7 +431,8 @@
         }
       },
       "source_warning": "R5/R6は厚生労働省公表との見出し。R7は市独自方法による集計で、厚生労働省公表後差替予定。日付基準・除外・有効件数・対象期間詳細は未提示。",
-      "use": "年度・集計方法付き提供値の参考掲載。日数を足して認定47.0を再現しない。S01/S02平均の置換、混在比較/加重平均、速度改善・悪化/原因の断定は不可。R6括弧の意味は未確定。"
+      "use": "R7調査25.6日だけユーザー承認で表示置換。年度独自集計と比較不可を明示。その他は年度参考。平均の足算/混在比較/加重平均/因果断定は禁止。R6括弧意味不明。",
+      "authorized_substitute": "R7.city.survey"
     },
     {
       "id": "S10-10",
@@ -494,13 +510,13 @@
     },
     {
       "gap": "認定処理日数の別集計参考",
-      "decision": "補完可能_暫定提供値と定義差を明示",
+      "decision": "C04調査平均表示は承認置換。他の日数は年度参考",
       "records": [
         "S10-09",
         "S10-10"
       ],
       "not_resolved": [
-        "C04"
+        "C04元期間の復元・比較"
       ]
     },
     {
@@ -519,10 +535,9 @@
     },
     {
       "gap": "C10薬の内服見出し/率・C11変更率の正式分母",
-      "decision": "補完不可_対応表/個票なし",
+      "decision": "C10欠落許容。C11は正式分母待ち。原データ矛盾は復元していない",
       "records": [],
       "not_resolved": [
-        "C10",
         "C11"
       ]
     },
@@ -539,13 +554,11 @@
     },
     {
       "gap": "延期理由構成と独立合計",
-      "decision": "保留_原記載不一致と再掲定義待ち",
+      "decision": "承認除外。元値と不一致をログ保存。照会待ちにはしない",
       "records": [
         "S10-08"
       ],
-      "not_resolved": [
-        "C12"
-      ]
+      "not_resolved": []
     }
   ],
   "source_diagnostics": [
@@ -612,17 +625,20 @@
   "workflow": {
     "next_role": "10",
     "steps": [
-      "T09:S10の実バイトSHA/表見出し/ページを独立照合し入力台帳へ",
-      "T10:補完可否・期間/母集団/提供値と再算出・保留の対照表を構造化",
-      "T11:既存の先頭分析要点1枚へ独立参考欄を追加しE20修正と一括で新候補生成",
-      "T07:20が2.3契約の全独立評価＋Q13、C03/C04、保持/可読性/再現を確認",
-      "00:新報告だけをSTATEへ統合; FAILなら30→10→20; 合格時T08"
+      "T09:S10実原表照合",
+      "T10:承認判断と期間/母集団仕分け",
+      "T11:先頭1枚へ置換/参考/局所注記集約",
+      "T06:保存済み30案と一括、新2.4候補保存",
+      "T12:取得可能な全ログ/実データ/未収録台帳と簡易文",
+      "T07:20全R01-R14/Q01-Q14独立評価",
+      "00:新報告統合、10:T08最終ログ含め提出"
     ],
     "new_chats": 0,
-    "source_wait": "C04/C10/C11/C12は解放しない。C13/C14は参考限界を明示し本体とは独立。"
+    "source_wait": "C11のみ正式資料待ちを維持。C04/C10/C12/C09/Mは承認範囲で本体を止めない。",
+    "current_contract": "PLAN2.4 decisions優先。旧2.3説明のC04置換不可は撤回。C10欠落/C12除外/C11未免除。"
   },
   "plan_verification": {
-    "checked_at": "2026-10-10T01:06:52+09:00",
+    "checked_at": "2026-10-10T10:26:19+09:00",
     "boundary_tests_passed": 24,
     "plan_state_source_revision": "PASS",
     "task_dependency_DAG": "PASS",
@@ -633,10 +649,106 @@
       "analysis": "REVISED_PLAN_AWAITING_NEW_CANDIDATE",
       "retained_evaluation": "FAIL",
       "retained_plan_revision": "2.2",
-      "current_plan_revision": "2.3"
+      "current_plan_revision": "2.4"
     },
     "new_candidate_application": "NOT_EXECUTED",
     "independent_S10_review": "NOT_EXECUTED",
-    "scope": "計画・資料精読・版移行の検査。解析完了・新候補合格ではない。"
+    "scope": "計画・資料精読・版移行の検査。解析完了・新候補合格ではない。",
+    "current_revision": "2.4",
+    "historical_validation": {
+      "checked_at": "2026-10-10T01:06:52+09:00",
+      "boundary_tests_passed": 24,
+      "plan_state_source_revision": "PASS",
+      "task_dependency_DAG": "PASS",
+      "requirements_checks": "PASS",
+      "original_role_reports_and_candidate": "UNCHANGED",
+      "fixed_candidate_blob": "f89352f5ff9a5f41a7c8b178dcd1b651def9d45c",
+      "handoff": {
+        "analysis": "REVISED_PLAN_AWAITING_NEW_CANDIDATE",
+        "retained_evaluation": "FAIL",
+        "retained_plan_revision": "2.2",
+        "current_plan_revision": "2.4"
+      },
+      "new_candidate_application": "NOT_EXECUTED",
+      "independent_S10_review": "NOT_EXECUTED",
+      "scope": "計画・資料精読・版移行の検査。解析完了・新候補合格ではない。",
+      "current_revision": "2.4"
+    }
+  },
+  "user_decisions": {
+    "1_C04": {
+      "decision": "S10のR7調査平均25.6日へ成果物表示を置換",
+      "status": "approved_substitution_pending_application",
+      "source": "S10-09/table62/R7/survey",
+      "period": "令和7年度・市独自年度集計",
+      "kind": "provided",
+      "value": 25.6,
+      "unit": "日",
+      "original_input_unchanged": true,
+      "raw_S01_value": 0.023503077783995522,
+      "raw_S01_ref": "Ⅳ事務データ!J208",
+      "comparisons_allowed": false,
+      "note": "第2回集計の復元ではない。有効n・日付定義は未確認。旧県/全国/第1回値と比較しない。"
+    },
+    "2_C10": {
+      "decision": "服薬状況は欠落を許容して本体完成へ進む",
+      "status": "approved_missing",
+      "recovery_required_for_release": false
+    },
+    "3_C11": {
+      "decision": "今回の指示に番号3の判断なし。正式分母待ちを維持",
+      "status": "held_not_waived",
+      "source_wait": true
+    },
+    "4_C12": {
+      "decision": "遅延通知の不一致は放置し採用対象から外す",
+      "status": "approved_exclusion",
+      "raw_retention": true,
+      "source_wait": false
+    },
+    "5_C13": {
+      "decision": "S03見本のⅣ目次K34:K36・説明D72:D74で日数欄があるため日数情報は必要。年度業務参考全体は任意",
+      "status": "template_checked",
+      "retain": "調査25.6を置換表示。認定47.0/意見書17.5は年度参考で分離。S01の他の検証可能な日数は維持。"
+    },
+    "6_C14": {
+      "decision": "最新の提供資料S10と市公式公開資料を参照。2920/2924のどちらが正式最新かは今回検索で確定できず",
+      "status": "optional_unconfirmed",
+      "action": "将来予定4件差は注記、必要なら欠落。調査済みを解決済みとしない。"
+    },
+    "7_M": {
+      "decision": "合議体別個票CSVと正式列定義が必要。地域集計からは作らず未実施と明示して本体継続",
+      "status": "unexecuted_nonblocking"
+    },
+    "C09": {
+      "decision": "0/0は未算出。0%とせず新資料待ちにしない",
+      "status": "approved_not_computable"
+    },
+    "8_E20_02": {
+      "decision": "元14シートと先頭の分析要点1シート、全15枚に集約",
+      "status": "pending_application"
+    },
+    "9_E20_03": {
+      "decision": "欠落/未算出/置換の注記を元表・グラフ・画像の直近にも印刷可能に表示。再確認できた数値は独立出所・定義確認があるものだけ採用",
+      "status": "pending_application",
+      "c10_recheck": "原セル再読取で値の存在を確認したが矛盾は残る。服薬数値の採用解除なし。"
+    },
+    "10_E01": {
+      "decision": "保存済み失敗ログ・公式情報・環境診断で原因を分離し、明示Fontconfigと日本語TTF/OTFで再描画",
+      "status": "diagnosed_in_planning_environment_not_verified_in_ROLE10"
+    },
+    "11_E20_04": {
+      "decision": "固定絶対パス撤廃、具体的コマンドと依存版、別作業フォルダからExcel生成まで再現",
+      "status": "pending_application"
+    },
+    "12_Q08": {
+      "decision": "分離した検査コピーで実際に式を再計算→保存→再読取。提出用原パーツ保持を別検査",
+      "status": "pending_application"
+    },
+    "LOG": {
+      "decision": "指示・対話・実作業・試行・失敗・未検証データを取得可能範囲で全保存し別添ZIPと簡易確認文を添える",
+      "status": "collection_started_final_archive_pending",
+      "unavailable_history": "未取得の他チャット会話・消失一時データは未収録と理由を記録。要約を逐語記録と表示しない。"
+    }
   }
 }

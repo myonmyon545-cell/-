@@ -1,20 +1,20 @@
 # 介護保険データ解析 AI実行仕様
 
-解析契約2.3 / 運用版2.3.0 / 2026-10-10 / 主対象：処理対象データ群.xlsx / 計画・進捗の正本はGitHub
+解析契約2.4 / 運用版2.4.0 / 2026-10-10
 
-この仕様はAI用のYAML設定・工程契約であり、単独で実行するプログラムではない。`ROLE=00|10|20|30|40` を指定する。未指定は00。最初にmeta・invariants・sources・自ROLE・github_handoff・startupを読み、その工程に必要な算出規則と検査を参照する。最新のユーザー指示、現行共通指示、詳細運用を併用する。候補到着前の評価と修正チャットは準備または待機とし、合格報告を作らない。
+ROLE=00|10|20|30|40。最新ユーザー判断を優先。旧候補と報告は変更しない。全条件は以下のYAMLを正本とする。
 
 ```yaml
 meta:
   schema: care_analysis_execution_v2
-  revision: '2.3'
-  operations_revision: '2.3.0'
+  revision: '2.4'
+  operations_revision: 2.4.0
   operations_updated_at: '2026-10-10'
   version_policy: revisionは解析・評価契約、operations_revisionはその契約を変えない閲覧・案内の運用版。運用だけの変更は候補の評価を無効化しない。入力・定義・コード・テンプレート・要件・検査・受入条件への変更はrevisionを更新し、既存の再評価規則を適用する。
   project: 介護保険データ解析
-  state: revised_contract_pending_next_candidate
+  state: approved_missing_and_substitution_pending_candidate
   canonical_plan: GitHub mainのcare-insurance-analysis/PLAN.md。本ファイルは同じ版の導入用写し。GitHubを読めない場合は確定コミットの写しを使う。
-  checked_at: '2026-10-10'
+  checked_at: '2026-10-10T10:24:49+09:00'
   deadline:
     date: '2026-10-12'
     timezone: Asia/Tokyo
@@ -28,9 +28,9 @@ meta:
   - R5の掲載構成
   - 再現性
   - 処理速度
-  execution_status_policy: 実績はSTATEと担当報告を参照。2.2候補v1は保存済みだが独立評価FAIL。2.3の補完適用・新候補・独立評価は未実施。別チャットの実行状態は直接観測しない。
+  execution_status_policy: 旧2.2候補v1とFAIL評価を保持。2.4はユーザー指定の置換/欠落/除外とログ契約を追加。新候補適用・評価・最終ログZIPは未実施。別チャット実行状態は観測しない。
 invariants:
-- S01だけを主対象とする。複製を合算せず、原本は変更しない。
+- S01を主対象とし、C04の調査平均表示のみユーザー承認によりS10の年度提供値25.6日へ置換。原本は変更しない。期間違いを明記し比較から除外。
 - R5は形式参照。年度・期間・数値は本文で判定し、過去値を転用しない。
 - 数値はコードと表計算で処理し、AIの暗算や生成文を数値の正本にしない。
 - 事実、解釈、仮説、実施結果を区別する。未確認は補完しない。
@@ -38,6 +38,7 @@ invariants:
 - 別チャットの自動操作、共有記憶、自動監視を前提にしない。
 - 期限が迫っても検査を省略せず、保留・暫定と完成を区別する。
 - 今回用のコードでよい。常設サイト、DB、定期実行、汎用ライブラリ、新規GitHub構築を必須にしない。
+- C10欠落・C12除外・C09未算出・M未実施は承認された完了範囲。ただし未検証値を合格値にしない。C11の免除は未指示。
 sources:
   S01:
     name: 処理対象データ群.xlsx
@@ -105,7 +106,7 @@ sources:
     sha256: a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2
     size_bytes: 584930
     pages: 82
-    role: separately_labelled_administrative_context_not_target_replacement
+    role: annual_context_and_user_authorized_survey_mean_display_substitute
     checked_at: '2026-10-10'
     reviewed: 全82ページ本文通読、関連表はDOCX XMLセルで照合。全ページ画像の目視は未実施。
     extracts: care-insurance-analysis/references/S10_excerpts.json
@@ -139,6 +140,7 @@ roles:
     writes:
     - GitHubのSTATE.json
     - 現行PLAN.md
+    - 自役割の追記イベントと取得可能な公開会話/実行ログ（ログ原データは非公開保存）
     duties:
     - 版と担当の固定
     - 報告による状態更新
@@ -160,6 +162,7 @@ roles:
     - 最終Excel
     - 再現パッケージ
     - GitHubのreports/10.json
+    - 自役割の追記イベントと取得可能な公開会話/実行ログ（ログ原データは非公開保存）
     duties:
     - 読取り
     - 抽出
@@ -172,6 +175,7 @@ roles:
     effort: High
     writes:
     - GitHubのreports/20.json
+    - 自役割の追記イベントと取得可能な公開会話/実行ログ（ログ原データは非公開保存）
     duties:
     - 初回は全必須範囲を元資料から独立評価
     - 修正後は影響閉包と重要問題を再評価
@@ -187,6 +191,7 @@ roles:
     escalate_to_high: 複雑な原因。仕様争点はAstraを候補にする。
     writes:
     - GitHubのreports/30.json
+    - 自役割の追記イベントと取得可能な公開会話/実行ログ（ログ原データは非公開保存）
     duties:
     - 再現例
     - 原因
@@ -354,18 +359,41 @@ requirements:
     - Q10
     - Q12
   R13:
-    content: S10で不足する年度業務背景を補完し、原データ欠損・保留・比較可能性と区別する
-    tasks: [T09, T10, T11, T07]
-    checks: [Q01, Q02, Q03, Q04, Q06, Q09, Q10, Q11, Q12, Q13]
+    content: S10年度業務参考と承認された調査平均表示の置換。S01期間の復元と混同せず、他の保留を勝手に解除しない
+    tasks:
+    - T09
+    - T10
+    - T11
+    - T07
+    checks:
+    - Q01
+    - Q02
+    - Q03
+    - Q04
+    - Q06
+    - Q09
+    - Q10
+    - Q11
+    - Q12
+    - Q13
+  R14:
+    content: 取得可能な全指示/会話/作業/試験/未検証/失敗/データを追跡し、別添ログZIPと簡易確認文を同じ提出に添付
+    tasks:
+    - T12
+    - T07
+    - T08
+    checks:
+    - Q12
+    - Q14
 outputs:
   workbook:
     name: R7_介護保険データ解析結果.xlsx
     base: S01_copy
     reference: S03_structure
-    preserve: 元14シートの名称、掲載項目、表、目次、印刷構成、148グラフの系列と参照と配置
+    preserve: 元14シートの名称、掲載項目、表、目次、印刷構成、148グラフの系列参照軸配置。許可例外はC03既修正9セル、C04表示置換と必要注記、承認欠落/未算出の局所表示。例外の前後/依存先を全記録。
     add: 先頭の分析要点1シート
-    summary: 上部に重点結果、下部に比較表・算出根拠・未解決事項。同じ先頭1枚内の別枠にS10業務参考を期間・母集団・集計方法・出所付きで掲載。全15枚を維持し、第2の追加シートは作らない。
-    supplement_presentation: S10日数は市独自集計・比較不可等を同じ行または直近注記へ。保留参考数値は主比較列に紛れ込ませない。監査全台帳は再現ZIPへ。
+    summary: 上部に重点結果、下部に比較表・算出根拠・未解決事項。同じ先頭1枚内の別枠にS10業務参考を期間・母集団・集計方法・出所付きで掲載。全15枚を維持し、第2の追加シートは作らない。 置換平均をS01第2回の行へ偽装しない。簡易確認文を同じ先頭1枚の下部に掲載。
+    supplement_presentation: 調査平均の採用表示はS10 R7市独自25.6日。出所・年度・独自集計・第2回比較不可を直近表示。他のS10参考は独立枠。C10欠落/C12除外/C09未算出/M未実施を先頭簡易確認文と局所に表示。
     columns:
     - 指標ID
     - 区分
@@ -382,7 +410,7 @@ outputs:
     - 元セル
     - 判定
     writing_strategy: 元ブックのコピーへ必要箇所だけ変更。148グラフの全面再作成を初期案にしない。
-    correction_policy: 根拠が一意の箇所だけ修正し、前後・理由・評価を記録する。
+    correction_policy: 正式根拠で一意の修正と、今回の明示承認C04表示置換だけ許可。置換は元値の正しさを回復した修正とは区別。
   reproducibility:
     name: 介護保険解析_再現用.zip
     minimum:
@@ -407,6 +435,22 @@ outputs:
   - 集計Excelからの合議体差推定
   - 因果断定
   - 不要な高度統計
+  audit_log:
+    name: 介護保険解析_全作業ログ.zip
+    separate_from_workbook: true
+    collection_scope:
+    - 取得したユーザー指示と公開応答
+    - 全版プロジェクト/PLAN/STATE/役割指示
+    - 役割報告とGitHub履歴/差分
+    - 入力原本・各候補・中間データ・試験データ・未検証出力・失敗生成物
+    - 実行コマンド/依存版/開始終了/標準出力/標準エラー/終了コード/検査結果
+    - 採否・置換前後・欠落・除外・未算出と理由
+    - 最終評価・提出物のID/版/SHA256・収録台帳
+    storage: 原本/個票/候補等の実バイトは非公開の既存ファイル保存先に保管しログZIPへ収録。GitHubへ原本/個票/認証情報は置かず、指示・安全な集計診断・イベント・ハッシュだけ。
+    limits: 内部思考や認証情報は収録しない。未取得チャット/消失一時ファイル/読めないファイルを復元したとは扱わずmissing_manifestに理由を記す。会話原文と要約を区別。
+    packaging: 同一データはSHAで一度収録し別名/版との対応を台帳に残す。大容量ならZIP分冊+全巻台帳で全体を照合。外部IDだけ残して実バイト収録済みとしない。
+    candidate_binding: ログは対象候補ID/版/SHA/計画版/評価を固定。チェックの自己ハッシュを避け、最終提出コミットは00の別提出記録でログZIPのSHAと対応付け。
+    summary: 介護保険解析_簡易確認.mdをZIP内と別ファイルに保存し、先頭分析要点へ同内容を掲載。決定/実施/未実施/検証結果/未収録を短く分ける。
 value_schema:
   fields:
   - 指標ID
@@ -435,6 +479,10 @@ value_schema:
   - missing
   - not_applicable
   - held
+  - approved_missing
+  - approved_excluded
+  - not_computable
+  - provided_substitute
   mapping: 見出し・結合セルで同定。補助セルと隠し領域を区別し、ⅠとⅢの重複値を二重集計しない。
 calculation_rules:
   population:
@@ -504,6 +552,19 @@ calculation_rules:
     allowed_cases: 同日、申請日前の依頼等は元仕様で許される場合がある。一律除外しない。
     raw_schema_needed: 欠損・終了前開始等の扱いは個票と正式仕様で固定。
     aggregate_only: 提供平均の転記・整合確認まで。個票なしに平均再計算や30日超比率を実施済みとしない。
+    authorized_survey_substitution:
+      decision: S10のR7調査平均25.6日へ成果物表示を置換
+      status: approved_substitution_pending_application
+      source: S10-09/table62/R7/survey
+      period: 令和7年度・市独自年度集計
+      kind: provided
+      value: 25.6
+      unit: 日
+      original_input_unchanged: true
+      raw_S01_value: 0.023503077783995522
+      raw_S01_ref: Ⅳ事務データ!J208
+      comparisons_allowed: false
+      note: 第2回集計の復元ではない。有効n・日付定義は未確認。旧県/全国/第1回値と比較しない。
   adjustments:
     age_general_form: sum(national_age_weight * city_age_specific_value)
     validity_weight: 有効期間月数/12
@@ -525,9 +586,9 @@ calculation_rules:
     zero_denominator: 未算出。欠損と0を区別し、IFERRORで異常を0へ隠さない。
   supplemental_context:
     source: S10
-    policy: 年度業務参考として独立掲載。S01/S02の値・分母・日付基準を置換しない。
+    policy: 原則年度参考。ただしC04調査平均表示のみ明示承認によりS10 R7値25.6日へ置換。他のS01/S02の値/分母/定義を置換しない。
     count_checks: 表54直営+委託、表59審査結果8区分、表60年度末7区分の整数合計を検査。嘱託/再掲を重複加算しない。
-    office_days: S10のR7認定47.0/調査25.6/意見書17.5日は市独自提供値。日付基準・期間詳細・除外・有効n不明のためkind=providedの参考であり、C04復旧・S01/S02との差・年度改善悪化・原因推定に用いない。
+    office_days: S10のR7調査25.6日を年度独自提供値の置換表示として採用。認定47.0/意見書17.5は年度参考。有効n・日付定義未確定のためS01/S02/県全国との比較や因果説明は不可。
     stock: 年度末R7計5327は第1号/第2号範囲未確定。S01の2025年1月第1号5125やケース1787と同一扱いしない。対応人口なしで認定率を作らない。
     delay_notifications: 再掲・重複規則とR7合計が未確定。構成比/申請実人数/当期30日超率を復元しない。S10空欄と－はmissing、0扱いしない。
     ratios: S10の掲載％は原単位を記録。機械ratioへ入れるなら100で割り、表示と差分で二重100倍しない。対全申請の委託割合と訪問件数分母を混同しない。
@@ -547,10 +608,10 @@ known_issues:
     forbidden: 66を分母にする、Ⅲの値を都合よく変更する、未検証の原本修正
   C04:
     observation: S01のⅣ!J208=0.023503077783995522日、S02は0日
-    status: held
-    resolve: 元送信・集計結果または個票日付で確認。0日だけでは誤りと断定しない。
-    withheld: 調査期間の比較と原因説明
-    forbidden: R5の7.1日や県平均で置換
+    status: approved_provided_substitute_pending_application
+    resolve: 追加資料S10-09のR7調査25.6日を掲載値に置換。元S01/S02値は監査保存。元期間の復元・再算出としては未解決だが承認範囲では新資料待ちを完了障害にしない。
+    withheld: 異なる期間/母集団の県全国第1回との差、旧分布と置換平均の一体表示、原因説明
+    forbidden: S10年度25.6日をS01第2回平均として表示。置換平均で旧分布/中央値/四分位/有効nを復元。
   C05:
     observation: 原稿の7.4%を9.6%と8.5%より高いと説明
     action: 現行値と符号で書き直す。職員事情・コロナ等の過去の原因を流用しない
@@ -568,24 +629,25 @@ known_issues:
     action: 既知の分母0未算出。新資料待ちや0%にしない。原エラーと未算出注記を区別。
   C10:
     observation: 薬の内服P70破損見出し、S01/S02各18数値と対応chart78
-    status: held
-    resolve: 正式元集計と列定義。S10は該当定義を提供せず解除不可。
+    status: approved_missing
+    resolve: 元値は監査に保存。採用値null、完成物は欠落と表示。調査/復旧を本体の停止条件にしない。
   C11:
     observation: S01 14率・S02 16率の正式分母未確定。ゼロ分子3率も含む。
     status: held
     resolve: 正式対象・除外定義と申請区分別元集計。S10の年度審査内訳で復元しない。
+    action: 正式分母不明の保留は維持。今回ユーザーの番号3判断なし。免除/欠落許容が明示されるまでは重要未解決として扱う。
   C12:
     observation: S10表61のR7延期理由和4417、掲載計3393。再掲424を仮に除いても3993で600差。
-    status: held
-    action: 元記載を保存、重複/再掲/合計の正式照会。理由構成比・単一原因割合・実人数・30日超率に採用しない。
+    status: approved_excluded
+    action: 原表の数字と矛盾をログ保存し解析対象外。照会/復旧を停止条件にしない。
   C13:
     observation: S10表62のR7日数は市独自集計で公表後差替予定、定義/有効n不明。R6調査8.6は括弧付き。
     status: reference_only
-    action: 定義差・暫定と近接表示。C04は未解決のまま。R7の県/全国や事務処理日数・30日以内率は空欄。
+    action: S03見本のⅣに日数欄があるため日数情報は残す。C04表示はS10 25.6日へ置換、期間/独自集計を明示。他の年度日数は任意参考。R7県全国/事務処理日数/30日以内率は欠落。
   C14:
     observation: S10表54 R8委託予定2920と表55 2600+324=2924に4件差。
     status: held_optional_future_plan
-    action: 予定参考の不一致として注記。推測補正せずR7解析の主経路を止めない。
+    action: 最新提供資料S10と市公式資料を照合。今回検索で2920/2924の正式訂正値は確定できず。任意予定参考の不一致として注記または欠落にし、本体を止めない。
   pilot:
     checks: 10
     pass: 9
@@ -641,7 +703,7 @@ manual_branch:
   board_limit: 1ファイル20合議体、21以上は複数出力。全出力が揃うまで完了にしない。
   execution_policy: 古いExcel設定を現環境で実施済みとしない。xls読取りや変換はVBA実行とは異なる。
   alternative: 正式定義と代表CSVによる既存出力との一致を検証した場合だけ代替実装。合議体を推測しない。
-  deadline_gate: 10月9日にCSVと環境を判断。未提供なら条件待ちを確定し、本体を進める。
+  deadline_gate: 個票CSV/正式列定義等が未提供ならM未実施を明記し本体継続。提供された場合だけ条件を確認し実行。
 execution:
   T01:
     owner: '10'
@@ -698,7 +760,7 @@ execution:
     - T03
     - T05
     - T11
-    work: 30のE20-02/E20-03/E20-04/E01修正案とS10補完を一括適用し、新候補を作成し保存
+    work: 保存済み30修正案とS10、今回の承認決定を一括適用。C03二重適用なし。新候補版2以上を生成固定保存。
     output: 候補ExcelのID版ハッシュとcare_candidate/v1検査パッケージを固定。reports/10と同じコミットで登録。
     checks:
     - Q06
@@ -710,6 +772,7 @@ execution:
     owner: '20'
     deps:
     - T06
+    - T12
     work: 初回は全範囲の独立評価。修正後は再評価プロセスに従い、全数機械検査＋影響閉包の独立評価。
     output: 問題IDと判定
     checks:
@@ -726,40 +789,71 @@ execution:
     - Q11
     - Q12
     - Q13
+    - Q14
   T08:
     owner: '10'
     deps:
     - T07
-    work: 判定に応じて完成または暫定を保存提出
+    work: 20評価に応じて完成または暫定を保存。全作業ログに評価/修正/提出記録を追記し、Excel・再現ZIP・別添全ログZIP・簡易確認文を同時提出。
     output: Excelと再現ZIPと00への報告
     checks:
     - Q12
+    - Q14
   T09:
     owner: '10'
     deps: []
     work: S10実バイトSHA・文書版・表セル・年度見出しを再確認し、11根拠ブロックを入力台帳に固定
     output: 入力台帳と実照合結果。references/S10_excerpts.jsonは計画担当の抽出根拠であり10適用済みの証明ではない。
-    checks: [Q01, Q02, Q12, Q13]
+    checks:
+    - Q01
+    - Q02
+    - Q12
+    - Q13
   T10:
     owner: '10'
-    deps: [T09]
-    work: 不足項目の補完可否と期間/母集団/定義/予定を仕分け。C04/C10/C11は維持、C12-C14とmissingを伝播
+    deps:
+    - T09
+    work: 承認決定に従いC04提供値置換・C10欠落・C12除外・C09未算出を仕分け。C11保留は維持。C13期間差/C14予定差を表示。
     output: S10-*ID別の構造化参考値・局所制約・依存表。個票と対応分母を創作しない。
-    checks: [Q01, Q02, Q03, Q04, Q10, Q13]
+    checks:
+    - Q01
+    - Q02
+    - Q03
+    - Q04
+    - Q10
+    - Q13
   T11:
     owner: '10'
-    deps: [T10]
-    work: 既存の先頭分析要点1枚の別枠へ年度業務参考を追加し、既存修正と同じ候補で保持/印刷/日本語/再現を検証
+    deps:
+    - T10
+    work: 先頭要点1枚に集約し年度日数置換と簡易確認文を掲載。元表/グラフ/画像の局所注記、保持/印刷/日本語/再現を同じ候補で検証。
     output: 補完が識別可能な単一要点シート、再現ZIP内の抽出根拠/再現手順/環境/検査記録
-    checks: [Q06, Q07, Q08, Q09, Q10, Q11, Q12, Q13]
+    checks:
+    - Q06
+    - Q07
+    - Q08
+    - Q09
+    - Q10
+    - Q11
+    - Q12
+    - Q13
   split: Ⅰ、Ⅱ、Ⅲ・Ⅳの3処理単位。共通抽出器を使い、章別チャットを増やさない。
   order_optimization: 説明重点のⅠ・Ⅲ・Ⅳを先に、Ⅱは一括抽出。全章の必須範囲を落とさない。
   concurrency: T02とT03は独立範囲なら並行可。同一出力への書込みは直列。
   live_estimate: 未処理単位数×実測単位時間＋生成評価保存受渡し時間の幅。確認待ちは別扱い。
-  critical_path_parallel: t01+max(t02+t04+t05,t03,t09+t10+t11)+t06+t07+t08
-  current_remaining_path: max(S10照合仕分け参考欄作成,30修正と日本語環境確保)+新候補生成保存+全独立評価+必要修正再評価+提出。担当10内で並行不可な作業は加算。
-  optimize_current: 新チャット/外部連携/30再提案を必須にせず、10が既存30案とS10補完を一回の新候補へまとめる。原数値の処理結果は出所不変範囲で再利用できるが旧評価のPASSは2.3へ再利用不可。
+  critical_path_parallel: max(t01+t02+t04+t05,t01+t03,t09+t10+t11)+t06+t12+t07+t08。依存起点と実際の並行可否を反映。
+  current_remaining_path: max(追加根拠/承認仕分け,保存済み30修正と日本語環境)+候補生成保存+ログ集約+20全独立評価+修正再評価+最終ログ提出。C11は別途保留。
+  optimize_current: 新チャットや30再提案を必須にせず10が一括適用。出所不変の抽出結果は再利用可。旧2.2/2.3の評価PASSは2.4へコピー不可。
   critical_path_policy: 実際に並行できない部分は加算し、修正・確認待ちも加える。残り暦時間を全て稼働時間にしない。
+  T12:
+    owner: '10'
+    deps:
+    - T06
+    work: 各担当の追記ログを集約し、取得可能な全実データ・指示・履歴・失敗・未検証も非公開ログZIPに収録。未収録台帳と簡易確認文を作り候補へ対応付け。
+    output: 評価前ログZIP/簡易確認文/収録ハッシュ台帳。T08で20/30/00の最終記録を追加して最終版を固定。
+    checks:
+    - Q12
+    - Q14
 milestones:
   dates:
   - target: '2026-10-09T18:00:00+09:00'
@@ -767,7 +861,7 @@ milestones:
     - T01
     - T02
     - T03
-    gate: 出力保持経路、C03照合、C04照会経路、CSV可否
+    gate: 出力保持経路、C03照合、C04承認置換、C11正式分母、CSV可否
   - target: '2026-10-10T20:00:00+09:00'
     done:
     - T04
@@ -800,6 +894,7 @@ milestones:
   - 計算根拠
   - 独立評価
   - 再現記録
+  gate: C04/C10/C12は今回の承認範囲では新資料待ちにしない。C11正式分母と出力保持/日本語/Excel全再現/ログ収録/独立評価を確認。
 checks:
   Q01: 全指標の値単位期間母集団補正条件元セルを照合。
   Q02: 整数件数と内訳は完全一致。非整数の件数を検出。
@@ -813,7 +908,7 @@ checks:
   Q10: 数値と高低増減の説明、符号、分母、単位が一致。因果は根拠がある範囲。
   Q11: 同じ入力コード設定依存版で一度確認用再実行し、別一時出力の指標値判定と構成を比較。整数判定は完全一致、比率はQ03。時刻等によるファイルハッシュ差は許容。
   Q12: 開けること・保存成功・入力出力版・成果の実態を確認。未実施と未確認を合格に混ぜない。
-  Q13: S10の全11根拠ブロック/採用参考値を実原表から独立照合。期間・実績予定・母集団・提供値・括弧再掲空欄・局所制約を確認。C12を検出し採用抑止、C13/C14制約を表示。S10参考をS01/S02主比較へ混入せずC04/C10/C11が無根拠に解除されない。
+  Q13: S10全11根拠の元表独立照合とC04 25.6日置換の年度/独自集計/出所・比較不可表示。C10欠落/C12除外/C09未算出の承認記録と局所注記、C11未免除を確認。C14を確認済訂正値と偽らない。
   finding_schema:
   - 問題ID
   - 重大度
@@ -829,11 +924,12 @@ checks:
   - FAIL
   - HELD
   independence: 20は10の合格宣言を根拠にせず元資料を独立確認。機械検査のPASSだけでは完成を判定しない。
+  Q14: 実データ収録台帳のSHA/サイズ/版/検証状態を照合。入力・旧候補・全試験/失敗/未検証・指示/対話の取得可能範囲を突合。未収録と要約を区別。別添ZIP保存/再開封/CRCと全収録SHA、簡易確認文と完成物の一致を20が独立検査。
 release_gates:
-  final: 必須掲載・計算・表示・再現・保存が合格し、重要未解決なし。完成と表示。
+  final: 改訂必須掲載/計算/表示/再現/保存/ログが独立評価合格し、承認範囲外の重要未解決なし。C04提供値置換/C10欠落/C12除外/C09未算出/M未実施を明示した完成は許容。C11は免除されていない。
   provisional: 読めること・原本保持・候補の整合性と既知状態表示は検査済みだが重要未確認が残る。暫定と表示し保留値の結論を抑止。
   failed_integrity: 開けない、参照破損、意図しない変更等なら最終反映を止め、診断と保存済みの確認可能部分を報告。
-  deadline_policy: 期限時の暫定提出は品質面の完了を意味しない。C04未解決を完成へ変えない。
+  deadline_policy: 期限までに承認済欠落を埋める必要なし。ただしC11や表示/整合性/再現等の未解決を自動免除しない。
   manual_status: M未実施は別欄に明示。本体を止めないが、合議体が必須と追加指示されたらその完了条件を更新。
 state_and_handoff:
   canonical: GitHub PLAN1・STATE1、成果Excel1・再現ZIP1。導入用写しやZIP内の控えを独立更新しない。
@@ -888,6 +984,7 @@ state_and_handoff:
   candidate_freeze: 評価中は版とハッシュを固定し上書きしない。修正は新しい候補版。
   persistence: 必要な節目を永続保存。同じIDの版履歴を使い、最終2等を増やさない。
   state_snapshot_in_zip: 管理情報の控えであり別の更新正本にしない。
+  audit_policy: 各担当が作業/試行/失敗/未検証のイベントを役割別に保存。00だけ通常STATE更新、10だけ候補/ログZIP生成、20は独立検査、30は修正根拠、40は閲覧。過去会話全件の自動取得を保証しない。
 failure_policy:
   repeat: 同じ条件の同じ失敗2回で原因確認または条件変更。無益な再試行を続けない。
   stall: 実測通常単位の3倍で出力ログ変化なしを調査開始目安。観測不能なら時間だけで停止を断定しない。
@@ -953,9 +1050,9 @@ github_handoff:
   activation_verification: 登録コミットのPLAN・STATE・検査ファイルを読戻し、内容のSHAを比較してから共有開始を報告。Actions実行の成否は実行結果を別途確認。
   fallback: Actionsが起動しない/枠不足/権限不足なら10が同じPython検査を実行し、版付きの結果を報告。機械検査を省略しない。
 startup:
-  '00': GitHubの同一コミットのPLAN/STATE/報告を読み、TとM、C01-C08、期限、次の操作を表示。今回の登録と検査の実態を確認。本解析完了と表示しない。STATEを単独更新。
-  '10': 現在HEADのPLAN/STATE/10/20/30とreferences/S10_excerpts.json・S10_integration.mdを読む。保存済みC03は二重適用しない。現行では30のv1修正とT09→T10→T11を先に続行して新候補2以上を作る。初回のみT01→T02/T03を開始し、出力保持方式を最優先で試す。src/reports/10へ保存。候補後はmachine_contractを作り全機械検査。Excelと再現ZIPは現在の保存先へ。
-  '20': PLAN/STATEと10の報告、S10補完根拠を確認。2.3は入力/要件/計画/テンプレート/コード変更なので旧2.2評価再利用不可。新固定候補の全R01-R13/Q01-Q13を独立評価。候補前は定義・既知問題と検査観点を準備。候補後は初回の全独立評価、修正後はreevaluation。reports/20に対象fingerprintと判定を記録。
+  '00': 同一コミットのPLAN/STATE/10/20/30/決定JSONを読み、T/M/C01-C14と品質問題、期限と次操作を表示。承認範囲と未実施を分離し通常STATEを単独更新。
+  '10': 現在HEADのPLAN/STATE/10/20/30、references/S10_excerpts.json、S10_integration.md、decisions/2026-10-10_user_decisions.jsonを同一コミットで読む。進行中2.3候補があれば作業を捨てず差分適用し2.4新候補へ固定。T09→T10→T11と保存済み30案→T06→T12。一括で置換/欠落/局所表示/字体対策/Excel再現/再計算/全ログを実施。C11は保持。
+  '20': 2.4新候補を固定し全R01-R14/Q01-Q14を元資料から独立評価。承認欠落/置換を原データ検証済みと誤表示しない。C11未免除。初回全範囲の評価は差分だけで済ませない。
   '30': 指摘前は待機。20の固定候補と問題IDから再現/原因/変更案/影響/再検証を一通にまとめ、reports/30へ返す。10が適用し20が再評価。Excelは編集しない。
   '40': GitHubの同一コミットのPLAN・STATE・10/20/30報告とroles/40.mdを読む。当該フォルダのコミット履歴と必要な過去版・差分を確認し、日時/担当/工程/実施内容/検証結果/成果物と根拠の直近10件表を表示。更新指示で再取得。書込み・完成昇格・別チャット監視は行わない。
   first_user_action: 実行担当00/10/20/30の4チャットと閲覧専用40を同じプロジェクトで開設し、ROLE指定の開始文を送る。mdを保存できない場合はGitHubの現在コミットを取得して同じ版のPLAN/STATE/必要報告を読み該当startupを実行するよう指示する。40はroles/40.mdも読む。モデルは実際の選択欄で設定。GitHubだけでは起動しない。
@@ -977,11 +1074,15 @@ change_management:
     state_write_exception: 今回だけ計画担当が明示依頼により計画変更と既存保存報告の状態整合を更新。通常のSTATE.writerは00。
     evaluation: 2.2候補v1のFAILと30提案を保存。新2.3候補は全独立評価。未適用を適用済みとしない。
   operations_history:
-  - version: '2.2.1'
+  - version: 2.2.1
     date: '2026-10-09'
     change: 閲覧専用40と履歴一覧/更新手順、今後の指示組込み手順、GitHub直読みによるmd保存不要の開始方法を追加。
     impact: 計算・入力・要件・候補・評価・受入条件は変更なし。STATE/実行報告/候補は更新しない。解析契約revisionは2.2のまま。
-
+  contract_change_20261010_v24:
+    revision: '2.4'
+    reason: ユーザーがC04置換/C10欠落/C12放置/C09未算出と品質修正、全ログ別添/簡易文を明示。C11は未指定。
+    state_write_exception: 既存自動組込みと今回具体指示の計画反映として再開情報のみ更新。通常writer00を維持。
+    applied_to_workbook: false
 references:
   model_docs: https://learn.chatgpt.com/docs/models
   model_note: 役割と推論設定は速度・重要性への設計判断。公式の用途説明を確認済み。利用可否は実際の選択欄で確認。
@@ -1060,14 +1161,9 @@ machine_contract:
   workbook_hash: 10/20の実行環境で実ExcelのSHA256をcandidate.sha256と照合。Actionsは参照メタデータしか持たず実Excel保持/表示を保証しない。
   startup_result: 候補未生成時はmetadata only/NOT_STARTED_OR_NO_CANDIDATE。初期検査PASSを本解析合格へ読み替えない。
   revision_transition: STATE.plan_changeの前版を旧報告/旧候補として保存し、旧計画の評価を新計画へ付替えない。新版候補がまだない場合はREVISED_PLAN_AWAITING_NEW_CANDIDATE、新版評価待ちはevaluation_pending_plan_revision。メタデータ受渡し成功は解析合格ではない。
-  supplement_contract: S10参考はS10-*名前空間と独立reference_only/held/missing区分。参考値を主解析validへ変換しない。10はprovided転記の範囲とC12-C14制約を検査に含める。参照台帳を再現ZIPへ固定。
+  supplement_contract: S10-*独立出所を維持。C04置換表示だけprovided_substituteとしてユーザー承認に対応付け。C10欠落/C12除外/C09未算出は採用null/比較なし。既存care_candidate/v1の機械状態は互換held/not_applicable等を維持し、新presentation_status/decision_refへ表示区分を別記。未算出や提供値をvalid再算出にしない。
+    旧S01調査行はheldのまま保持し、新S10置換行は転記確認後にstatus=valid, kind=provided, verification_scope=年度独自提供値の転記確認、presentation_status=provided_substituteとする。統計の再計算合格ではない。比較依存に使用不可。
   release_authority: 機械は完成昇格もSTATE更新も実施しない。20の独立判定を00が統合し、10がrelease_gatesに従って提出。
 ```
 
-開始文：`ROLE=00`（進捗）、`ROLE=10`（作業）、`ROLE=20`（評価）、`ROLE=30`（修正）、`ROLE=40`（履歴閲覧）のいずれかに「添付のAI実行仕様を読み、該当startupを実行してください。」を添える。モデルはrolesの推奨を実際の選択欄で設定する。
-
-版2.2の変更：承認済み非公開GitHubを共有正本へ移行し、軽量機械検査と版付きの差分再評価を追加。初回は全独立評価、修正後も全数機械検査を行い、AI再評価は影響範囲へ集中する。Drive/Airtableは必要が生じた場合の予備。期限・一回性・再現性・R5形式・manualの条件付き工程を維持。本解析と候補Excelの生成は未実施。
-
-運用版2.2.1の変更：40の読取り専用履歴ビューと追加指示の組込み・検証・保存方針を追加。解析契約2.2および実行記録は維持。履歴ビューは保存済み記録を表示し、保存前の他チャットの稼働状態は取得しない。
-
-解析契約2.3の変更（2026-10-10）：S10全体精読に基づく年度業務参考の補完、T09-T11/R13/Q13、C12-C14、旧記録を保存する版移行を追加。S01/S02主対象、元14枚＋先頭要点1枚、148グラフ、期限と一回性は維持。補完の新候補への適用・新候補評価は未実施。旧版の未着手記述は歴史的説明であり現状はSTATEを参照。
+2.4変更：承認置換/欠落/除外、全ログ別添と簡易確認文。Excel変更/新評価/最終全ログは未実施。旧版全履歴はGitHubに保持。
