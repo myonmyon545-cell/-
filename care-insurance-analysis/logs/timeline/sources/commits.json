@@ -983,5 +983,234 @@
     ],
     "full_diff_available": false,
     "diff_omission_reason": "タイムライン生成物の再帰的な差分全文複製を避ける。変更ファイル一覧と固定コミットで参照。イベント本文は別途収録。"
+  },
+  {
+    "sha": "c908dea1a5a3f5cf0149169b3d27b370999819d7",
+    "message": "care: shared update protocol and offline 3D process atlas (ops 2.4.3)",
+    "commit_at": "2026-10-10T02:42:33Z",
+    "files": [
+      {
+        "path": "care-insurance-analysis/PLAN.md",
+        "status": "modified",
+        "sha": "dab4980781f5d0d3061b78aeea91b7eb7e06efc3",
+        "additions": 17,
+        "deletions": 3
+      },
+      {
+        "path": "care-insurance-analysis/logs/events/planning_20261010_shared_process_atlas.json",
+        "status": "added",
+        "sha": "5b2d6368f69cf97f539537fe4c40213e21c00d85",
+        "additions": 24,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/tools/build_viewer.py",
+        "status": "added",
+        "sha": "a7cffdc82621b2c3f73d342cc2fd35de9192b813",
+        "additions": 39,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/viewer/UPDATE_PROTOCOL.md",
+        "status": "added",
+        "sha": "1604a19ab9116e87bb278315688a66b920e4bd76",
+        "additions": 40,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/viewer/index.html",
+        "status": "added",
+        "sha": "fb19e31751dae101c3a45dc3425f0976c59a99c0",
+        "additions": 27,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/viewer/input.json",
+        "status": "added",
+        "sha": "9548f751114745af05596536ebb38f84ee59ecb3",
+        "additions": 3618,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/viewer/manifest.json",
+        "status": "added",
+        "sha": "27e4e8e909d670215f72adbbfd78527c91066912",
+        "additions": 24,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/viewer/platform.json",
+        "status": "added",
+        "sha": "dc61d64a7be110fb1afbc619db5634b30334a15b",
+        "additions": 37,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/viewer/process_atlas.json",
+        "status": "added",
+        "sha": "463d35d9272246033a9656289df9c30b75bde8ba",
+        "additions": 2432,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/viewer/validation.json",
+        "status": "added",
+        "sha": "cedb0bedb0729ad30e4458b704ce1d132e3d6346",
+        "additions": 13,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/viewer/viewer_template.html",
+        "status": "added",
+        "sha": "5245c2030ef509e9f2dc59925262ad859ab1bfb3",
+        "additions": 27,
+        "deletions": 0
+      }
+    ],
+    "full_diff_available": false,
+    "diff_scope": "生成物の再帰複製を避け、変更一覧と固定コミットを記録。差分本文は固定コミット参照。"
+  },
+  {
+    "sha": "2e00b8aac02f3b2452f29e4ca1daa58b22eec228",
+    "message": "care: extend timeline to 110 records and continuing authorization (operations 2.4.2)",
+    "commit_at": "2026-10-10T02:27:14Z",
+    "files": [
+      {
+        "path": "care-insurance-analysis/logs/timeline/TIMELINE.md",
+        "status": "modified",
+        "sha": "b0bb5c05d22aa24401a2fe9e50bc3289f85ccce3",
+        "additions": 135,
+        "deletions": 3
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/coverage.json",
+        "status": "modified",
+        "sha": "232ecbbc5515e6f7fa6e5fe1e374d0dad120cf44",
+        "additions": 8,
+        "deletions": 7
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/manifest.json",
+        "status": "modified",
+        "sha": "3c6822cc87a8c1825691ffa508f7e051c607b72f",
+        "additions": 24,
+        "deletions": 19
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/assistant_available_text.json",
+        "status": "modified",
+        "sha": "a01149ba8755266c1061ca25f701f7866ba03df6",
+        "additions": 14,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/commits.json",
+        "status": "modified",
+        "sha": "498109a613cc817d0d9724b960f906bf3e7ab60f",
+        "additions": 193,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/conversation_available_user_text.json",
+        "status": "modified",
+        "sha": "d7932e6b704075bb56148595e3679844fcaa6542",
+        "additions": 10,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/events.json",
+        "status": "added",
+        "sha": "ae374a0ed8d2ca8d6deb496a94e34d1890301b17",
+        "additions": 167,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/timeline.csv",
+        "status": "modified",
+        "sha": "1e5be17e8ad1faa0b04cac6557f99017c601f83d",
+        "additions": 456,
+        "deletions": 102
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/timeline.html",
+        "status": "modified",
+        "sha": "8d4d7c603cd5589a3a337ad668992c518de4c295",
+        "additions": 694,
+        "deletions": 4
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/timeline.json",
+        "status": "modified",
+        "sha": "aaed224987e4a288563f9ee6b3df90a4b116aa4a",
+        "additions": 127,
+        "deletions": 9
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/validation.json",
+        "status": "modified",
+        "sha": "714e61dd11c30d6bdead96bfd7e4a14589cd2a94",
+        "additions": 13,
+        "deletions": 16
+      },
+      {
+        "path": "care-insurance-analysis/tools/build_timeline.py",
+        "status": "modified",
+        "sha": "6e9f5d6f82d6379b63f3d11e556bbdb77287ec2d",
+        "additions": 10,
+        "deletions": 4
+      }
+    ],
+    "full_diff_available": false,
+    "diff_scope": "生成物の再帰複製を避け、変更一覧と固定コミットを記録。差分本文は固定コミット参照。"
+  },
+  {
+    "sha": "f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
+    "message": "care: repair viewer access, deploy private atlas and record resumed updates",
+    "commit_at": "2026-10-10T02:50:05Z",
+    "files": [
+      {
+        "path": "care-insurance-analysis/logs/events/planning_20261010_shared_viewer_repair.json",
+        "status": "added",
+        "sha": "594eafe52ee3f4e8a17a6678e54cca16dfeb705c",
+        "additions": 64,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/tools/build_viewer.py",
+        "status": "modified",
+        "sha": "ed67408de5b318898c2eff24835d02635ff80a94",
+        "additions": 1,
+        "deletions": 1
+      },
+      {
+        "path": "care-insurance-analysis/viewer/UPDATE_PROTOCOL.md",
+        "status": "modified",
+        "sha": "364457154fb5447363de52352ab1981454cba965",
+        "additions": 1,
+        "deletions": 1
+      },
+      {
+        "path": "care-insurance-analysis/viewer/platform.json",
+        "status": "modified",
+        "sha": "aedb96fd8c1b94134661e90d480925a6b275c569",
+        "additions": 12,
+        "deletions": 6
+      },
+      {
+        "path": "care-insurance-analysis/viewer/validation.json",
+        "status": "modified",
+        "sha": "518f1c8c20b0d9ce676888af20471caff7fcb686",
+        "additions": 11,
+        "deletions": 1
+      },
+      {
+        "path": "care-insurance-analysis/viewer/viewer_template.html",
+        "status": "modified",
+        "sha": "55fccaf53c04aa416a7e8c0fa7d960d71da317db",
+        "additions": 4,
+        "deletions": 4
+      }
+    ],
+    "full_diff_available": false
   }
 ]

@@ -1,23 +1,23 @@
 {
   "schema": "care_atlas_manifest/v1",
-  "base_commit": "2e00b8aac02f3b2452f29e4ca1daa58b22eec228",
+  "base_commit": "f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
   "candidate_binding": null,
   "release_status": "NOT_FINAL",
   "files": [
     {
       "path": "index.html",
-      "sha256": "c4f816cf6137671188791cc5d6300a334350505debb38cd67149aaf5bdf2d2ab",
-      "bytes": 153123
+      "sha256": "798e5d4b5d5601868c03baf7a6ec19b072dc87f797baacaa6fca22543123a4ff",
+      "bytes": 185922
     },
     {
       "path": "process_atlas.json",
-      "sha256": "bb76e5976eb8765b43f9515419fdc4a5bde09783f7e9bcab5184898d4c33cca4",
-      "bytes": 156722
+      "sha256": "0fa85aac8f2a5b7f0abca32b9f497337100d68d02b05267b426658ba34e5c517",
+      "bytes": 191970
     },
     {
       "path": "validation.json",
-      "sha256": "f0a33b4f62d0bf4df1fcd3fc1a9553bc9c76e6af166312ba4f107ccfff388706",
-      "bytes": 449
+      "sha256": "94b5d0ca0504ab78c8c88982abeaf93d51a5cd70d16e127f27d745b01cf3d22c",
+      "bytes": 1078
     }
   ],
   "self_hash": "manifest excluded"

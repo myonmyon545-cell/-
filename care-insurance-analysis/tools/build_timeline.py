@@ -35,7 +35,7 @@ def build(source_path,out):
         add('assistant-'+str(m['sequence']),m.get('timestamp'),'計画AI','計画','会話原文',m.get('title','計画2.4の保存・引継ぎ回答'),m['content'],'現在の計画チャット表示本文',m['scope'],m['sequence'])
     for event in data.get('events',[]):
         x=event['content']
-        add('event-'+x['event_id'],x.get('at'),str(x.get('role','計画')),'計画','作業イベント',x['event_id'],json.dumps(x,ensure_ascii=False,indent=2),'sources/events.json','保存済みイベント本文。会話原文とは別の作業記録。日時未記録の場合は推定しない。')
+        add('event-'+x['event_id'],x.get('at'),str(x.get('role','計画')),x.get('chat','計画'),'作業イベント',x['event_id'],json.dumps(x,ensure_ascii=False,indent=2),'sources/events.json','保存済みイベント本文。会話原文とは別の作業記録。日時未記録の場合は推定しない。')
     maps=[{'c0':'資料確認','c2':'資料確認','c3':'資料確認','c1':'計画','c4':'共通指示','c5':'10 作業'}, {'c0':'計画','c1':'20 評価','c3':'40 履歴','c4':'10 作業'}]
     excluded=[]
     for i,result in enumerate(data['retrieved_context']):
@@ -104,3 +104,4 @@ def build(source_path,out):
 
 if __name__=='__main__':
     a=argparse.ArgumentParser();group=a.add_mutually_exclusive_group(required=True);group.add_argument('--source');group.add_argument('--source-dir');a.add_argument('--out',required=True);args=a.parse_args();pack=build(assemble(args.source_dir) if args.source_dir else args.source,args.out);print(json.dumps({'records':len(pack['records']),'coverage':pack['coverage']},ensure_ascii=False))
+

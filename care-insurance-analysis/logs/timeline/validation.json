@@ -1,16 +1,30 @@
 {
-  "records": 110,
-  "unique_ids": "PASS",
-  "replay_records_coverage": "PASS",
-  "base_commit": "88885a5d5204c5bd2cdfaf007687f78ceef335c6",
-  "new_events": 3,
-  "original_user_timestamp_policy": "不明日時は補完しない",
-  "actual_browser_visual_test": "NOT_EXECUTED: browser unavailable in prior probe",
-  "analysis_candidate_modified": false,
-  "state_and_role_reports_modified": false,
-  "plan_yaml": "PASS",
+  "schema": "care_shared_view_validation/v1",
+  "checked_at": "2026-10-10T11:53:32+09:00",
+  "source_commit": "f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
+  "records": 118,
+  "previous_records": 114,
+  "all_previous_record_ids_preserved": true,
+  "unique_ids": true,
+  "task_dependency_graph": "PASS",
+  "dates_jst": "PASS",
+  "viewer_timeline_equality": "PASS",
+  "fixed_tree_equality": "PASS",
+  "embedded_json_equality": "PASS",
   "javascript_syntax": "PASS",
-  "observed_failures": [
-    "初回YAML検証コマンドの引用符が不適切でシェル展開が発生。終了1。検証専用ファイルへ切り替えPASS。原本・正本への書込みなし。"
+  "manifest_hashes": "PASS",
+  "actual_browser": "NOT_EXECUTED",
+  "ipad_keyboard_offline_interaction": "NOT_EXECUTED",
+  "sites_deployment": "SUCCEEDED_PRIVATE",
+  "analysis_acceptance": "NOT_EVALUATED",
+  "exact_rebuild": "PASS: index.html and process_atlas.json byte-for-byte",
+  "deployment_id": "appgdep_6ac9a8dc988881919c3f3fd52be47fdb",
+  "local_attempts": [
+    {
+      "result": "FAILED",
+      "check": "timeline manifest SHA after reuse of temporary output",
+      "recovery": "clean temporary output directory; regenerate all outputs and verify SHA again",
+      "analysis_affected": false
+    }
   ]
 }

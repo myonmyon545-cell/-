@@ -1,23 +1,30 @@
 {
-  "schema": "care_atlas_checks/v1",
-  "unique_DOM_ids": "PASS",
-  "workflow_DAG": "PASS",
-  "file_paths_and_summaries": "PASS",
+  "schema": "care_shared_view_validation/v1",
+  "checked_at": "2026-10-10T11:53:32+09:00",
+  "source_commit": "f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
+  "records": 118,
+  "previous_records": 114,
+  "all_previous_record_ids_preserved": true,
+  "unique_ids": true,
+  "task_dependency_graph": "PASS",
+  "dates_jst": "PASS",
+  "viewer_timeline_equality": "PASS",
+  "fixed_tree_equality": "PASS",
+  "embedded_json_equality": "PASS",
   "javascript_syntax": "PASS",
-  "replay_structured_data": "PASS",
-  "PLAN_yaml_and_contract_unchanged": "PASS",
-  "remote_network_calls": "NONE",
-  "actual_browser_and_3D_visual_test": "NOT_EXECUTED: managed browser skill unavailable; no preview started",
-  "original_data_embedded": false,
-  "release": "NOT_FINAL",
-  "dom_fixture": {
-    "search": "PASS",
-    "tabs": "PASS",
-    "task_details": "PASS",
-    "folder_details": "PASS",
-    "parent_navigation": "PASS",
-    "scope": "Node DOM fixture, not real browser"
-  },
-  "deployment": "SUCCEEDED_PRIVATE",
-  "scope": "Repaired deployed Site and local output; repository generated index/process_atlas not replaced in this transaction."
+  "manifest_hashes": "PASS",
+  "actual_browser": "NOT_EXECUTED",
+  "ipad_keyboard_offline_interaction": "NOT_EXECUTED",
+  "sites_deployment": "SUCCEEDED_PRIVATE",
+  "analysis_acceptance": "NOT_EVALUATED",
+  "exact_rebuild": "PASS: index.html and process_atlas.json byte-for-byte",
+  "deployment_id": "appgdep_6ac9a8dc988881919c3f3fd52be47fdb",
+  "local_attempts": [
+    {
+      "result": "FAILED",
+      "check": "timeline manifest SHA after reuse of temporary output",
+      "recovery": "clean temporary output directory; regenerate all outputs and verify SHA again",
+      "analysis_affected": false
+    }
+  ]
 }

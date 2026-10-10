@@ -3,8 +3,8 @@
   "raw_assistant_messages": 3,
   "retrieved_summaries": 25,
   "saved_report_versions": 17,
-  "commit_records": 20,
-  "dated_records": 68,
+  "commit_records": 23,
+  "dated_records": 76,
   "undated_records": 42,
   "excluded_retrieval_records": 3,
   "gaps": [
@@ -16,5 +16,5 @@
     "GitHub大型JSONの差分は一部省略。必要な報告/STATEは実JSONを別取得。"
   ],
   "not_claimed": "全チャット全文収録済み、他チャット実行状態の直接観測、候補完成/評価合格は主張しない。",
-  "saved_work_events": 3
+  "saved_work_events": 8
 }

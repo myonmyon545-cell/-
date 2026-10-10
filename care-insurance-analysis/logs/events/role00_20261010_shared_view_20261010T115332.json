@@ -1,0 +1,42 @@
+{
+  "schema": "care_audit_event/v1",
+  "event_id": "role00_20261010_shared_view_20261010T115332",
+  "role": "00",
+  "chat": "00 進捗",
+  "at": "2026-10-10T11:53:32+09:00",
+  "source_commit": "f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
+  "kind": "確認・更新作業",
+  "user_instruction": {
+    "text": "最新mainのcare-insurance-analysis/viewer/UPDATE_PROTOCOL.mdとplatform.jsonを読み、共有画面の更新を通常の進捗更新に組み込んでください。",
+    "representation": "このチャットで取得したユーザー原文",
+    "original_sent_at": null
+  },
+  "confirmed_reports": {
+    "10": {
+      "blob_sha": "ecdd8f911fe4d4acb436a1771ace280427e80b04",
+      "reported_at": "2026-10-09T16:29:07+09:00",
+      "freshness": "最新状況未確認"
+    },
+    "20": {
+      "blob_sha": "57863de7a6ba499b2872df9cf0b6549c43afa7e7",
+      "reported_at": "2026-10-09T17:13:29.181705+09:00",
+      "freshness": "最新状況未確認"
+    },
+    "30": {
+      "blob_sha": "d790c1686cb72176664af414cabc82cece8bacca",
+      "reported_at": "2026-10-09T17:38:41.975+09:00",
+      "freshness": "最新状況未確認"
+    }
+  },
+  "actions": [
+    "同一HEADのPLAN/STATE/10/20/30/決定と共有表示を確認",
+    "通常進捗更新と共有画面更新の手順を規約へ明記",
+    "既存sourcesを維持して新コミットと未収録イベントを重複なく追記",
+    "固定入力でtimeline/viewerを一時生成・検査し、期待HEADで保存する"
+  ],
+  "analysis_task_completion_changed": false,
+  "other_chat_runtime_directly_observed": false,
+  "browser": "NOT_EXECUTED",
+  "sites": "NOT_EXECUTED",
+  "save_receipt_policy": "保存コミットと全変更の読戻し一致を保存後に確認。生成時点では保存完了を主張しない。"
+}

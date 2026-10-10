@@ -4,16 +4,17 @@
   "canonical_repository": "myonmyon545-cell/-",
   "canonical_path": "care-insurance-analysis/viewer",
   "operations_revision": "2.4.3",
-  "source_commit": "2e00b8aac02f3b2452f29e4ca1daa58b22eec228",
+  "source_commit": "f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
   "hosting": {
     "status": "PUBLISHED_PRIVATE",
     "project_id": "appgprj_6ac9a6f33718819199cfb04689e0550f",
     "url": "https://care-analysis-atlas.adept-sun-2909.chatgpt.site",
     "source_checkout": "/workspace/sites/care-analysis-atlas",
     "audience": "owner_private",
-    "deployment_id": "appgdep_6ac9a78ce0bc8191b61236eb703c9365",
-    "version_id": "appgprj_6ac9a6f33718819199cfb04689e0550f~appgver_4dc60dd404988191995dc276574248cb",
-    "source_commit": "3bb14bf26870318803b633cafd3b25e0706f4bd3"
+    "deployment_id": "appgdep_6ac9a8dc988881919c3f3fd52be47fdb",
+    "version_id": "appgprj_6ac9a6f33718819199cfb04689e0550f~appgver_4ecb3027f3688191b90812e57f0dd183",
+    "source_commit": "14b4da64ad9b04f7b536d4665262183b288d8db6",
+    "updated_at": "2026-10-10T02:54:33.508075+00:00"
   },
   "update_owners": [
     "planning",
@@ -39,5 +40,16 @@
     "actual_browser": "NOT_EXECUTED",
     "sites_deployment": "SUCCEEDED",
     "dom_fixture": "PASS: search/tabs/tasks/folders/parent"
+  },
+  "normal_progress_update": {
+    "owner": "00",
+    "enabled": true,
+    "protocol": "viewer/UPDATE_PROTOCOL.md",
+    "checked_at": "2026-10-10T11:53:32+09:00",
+    "source_commit": "f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
+    "validation": "viewer/validation.json",
+    "mode": "fixed_snapshot_regeneration",
+    "save_verification": "保存後に固定コミットで全変更を読戻す。保存済みという判定はその結果に基づく。",
+    "sites_deployment": "SUCCEEDED_PRIVATE"
   }
 }

@@ -1,22 +1,22 @@
 {
   "schema": "care_process_atlas/v1",
-  "as_of": "2026-10-10T11:38:04+09:00",
-  "base_commit": "2e00b8aac02f3b2452f29e4ca1daa58b22eec228",
+  "as_of": "2026-10-10T11:53:32+09:00",
+  "base_commit": "f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
   "plan_revision": "2.4",
   "candidate_binding": null,
   "release_status": "NOT_FINAL",
   "timeline": {
     "schema": "care_timeline/v1",
-    "as_of": "2026-10-10T11:25:26+09:00",
-    "base_commit": "88885a5d5204c5bd2cdfaf007687f78ceef335c6",
+    "as_of": "2026-10-10T11:53:32+09:00",
+    "base_commit": "f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
     "timezone": "Asia/Tokyo",
     "coverage": {
       "raw_user_messages": 42,
       "raw_assistant_messages": 3,
       "retrieved_summaries": 25,
       "saved_report_versions": 17,
-      "commit_records": 20,
-      "dated_records": 68,
+      "commit_records": 23,
+      "dated_records": 76,
       "undated_records": 42,
       "excluded_retrieval_records": 3,
       "gaps": [
@@ -28,7 +28,7 @@
         "GitHub大型JSONの差分は一部省略。必要な報告/STATEは実JSONを別取得。"
       ],
       "not_claimed": "全チャット全文収録済み、他チャット実行状態の直接観測、候補完成/評価合格は主張しない。",
-      "saved_work_events": 3
+      "saved_work_events": 8
     },
     "records": [
       {
@@ -916,6 +916,110 @@
         "conversation_order": 42
       },
       {
+        "id": "commit-2e00b8aac02f3b2452f29e4ca1daa58b22eec228",
+        "at": "2026-10-10T11:27:14+09:00",
+        "display_time": "2026-10-10 11:27:14 JST",
+        "role": "記録保存",
+        "chat": "GitHub",
+        "kind": "保存履歴",
+        "title": "care: extend timeline to 110 records and continuing authorization (operations 2.4.2)",
+        "body": "{\n  \"changed_files\": [\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/TIMELINE.md\",\n      \"status\": \"modified\",\n      \"sha\": \"b0bb5c05d22aa24401a2fe9e50bc3289f85ccce3\",\n      \"additions\": 135,\n      \"deletions\": 3\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/coverage.json\",\n      \"status\": \"modified\",\n      \"sha\": \"232ecbbc5515e6f7fa6e5fe1e374d0dad120cf44\",\n      \"additions\": 8,\n      \"deletions\": 7\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/manifest.json\",\n      \"status\": \"modified\",\n      \"sha\": \"3c6822cc87a8c1825691ffa508f7e051c607b72f\",\n      \"additions\": 24,\n      \"deletions\": 19\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/assistant_available_text.json\",\n      \"status\": \"modified\",\n      \"sha\": \"a01149ba8755266c1061ca25f701f7866ba03df6\",\n      \"additions\": 14,\n      \"deletions\": 0\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/commits.json\",\n      \"status\": \"modified\",\n      \"sha\": \"498109a613cc817d0d9724b960f906bf3e7ab60f\",\n      \"additions\": 193,\n      \"deletions\": 0\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/conversation_available_user_text.json\",\n      \"status\": \"modified\",\n      \"sha\": \"d7932e6b704075bb56148595e3679844fcaa6542\",\n      \"additions\": 10,\n      \"deletions\": 0\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/events.json\",\n      \"status\": \"added\",\n      \"sha\": \"ae374a0ed8d2ca8d6deb496a94e34d1890301b17\",\n      \"additions\": 167,\n      \"deletions\": 0\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/timeline.csv\",\n      \"status\": \"modified\",\n      \"sha\": \"1e5be17e8ad1faa0b04cac6557f99017c601f83d\",\n      \"additions\": 456,\n      \"deletions\": 102\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/timeline.html\",\n      \"status\": \"modified\",\n      \"sha\": \"8d4d7c603cd5589a3a337ad668992c518de4c295\",\n      \"additions\": 694,\n      \"deletions\": 4\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/timeline.json\",\n      \"status\": \"modified\",\n      \"sha\": \"aaed224987e4a288563f9ee6b3df90a4b116aa4a\",\n      \"additions\": 127,\n      \"deletions\": 9\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/validation.json\",\n      \"status\": \"modified\",\n      \"sha\": \"714e61dd11c30d6bdead96bfd7e4a14589cd2a94\",\n      \"additions\": 13,\n      \"deletions\": 16\n    },\n    {\n      \"path\": \"care-insurance-analysis/tools/build_timeline.py\",\n      \"status\": \"modified\",\n      \"sha\": \"6e9f5d6f82d6379b63f3d11e556bbdb77287ec2d\",\n      \"additions\": 10,\n      \"deletions\": 4\n    }\n  ],\n  \"diff_available\": false,\n  \"completion_policy\": \"コミット説明だけで解析完了を判定しない。\"\n}",
+        "source": "https://github.com/myonmyon545-cell/-/commit/2e00b8aac02f3b2452f29e4ca1daa58b22eec228",
+        "quality": "GitHubコミットと変更ファイル一覧を確認。保存日時。",
+        "conversation_order": null
+      },
+      {
+        "id": "event-planning_20261010_shared_process_atlas",
+        "at": "2026-10-10T11:33:20+09:00",
+        "display_time": "2026-10-10 11:33:20 JST",
+        "role": "planning",
+        "chat": "計画",
+        "kind": "作業イベント",
+        "title": "planning_20261010_shared_process_atlas",
+        "body": "{\n  \"schema\": \"care_log_event/v1\",\n  \"event_id\": \"planning_20261010_shared_process_atlas\",\n  \"at\": \"2026-10-10T11:33:20+09:00\",\n  \"role\": \"planning\",\n  \"user_verbatim\": \"これをプラットフォームに継続更新を行なって。この作業はここのチャットとロール00に分担。どっちからもアクセスできるようにして\\n加えて別枠で立てて欲しいのが最後の完成版に添付するAIでの実際におこなった処理工程と、詳細なワークフロー及び入れ子式になったファイルツリーを三次元的に視覚化しクリックすればファイル概要が開けるようにして欲しい\",\n  \"input_commit\": \"2e00b8aac02f3b2452f29e4ca1daa58b22eec228\",\n  \"results\": {\n    \"offline_atlas_created\": true,\n    \"workflow_tasks\": 12,\n    \"github_tree_items\": 103,\n    \"automation_created\": true,\n    \"site_published\": false\n  },\n  \"observed_failures\": [\n    {\n      \"step\": \"Sites source helper read\",\n      \"error\": \"failed to read skill resource\",\n      \"action\": \"停止。公開/作成未実施。共有GitHubとオフライン添付へ保存し未公開を明記。\"\n    }\n  ],\n  \"analysis_contract_changed\": false,\n  \"state_modified\": false\n}",
+        "source": "sources/events.json",
+        "quality": "保存済みイベント本文。会話原文とは別の作業記録。日時未記録の場合は推定しない。",
+        "conversation_order": null
+      },
+      {
+        "id": "commit-c908dea1a5a3f5cf0149169b3d27b370999819d7",
+        "at": "2026-10-10T11:42:33+09:00",
+        "display_time": "2026-10-10 11:42:33 JST",
+        "role": "記録保存",
+        "chat": "GitHub",
+        "kind": "保存履歴",
+        "title": "care: shared update protocol and offline 3D process atlas (ops 2.4.3)",
+        "body": "{\n  \"changed_files\": [\n    {\n      \"path\": \"care-insurance-analysis/PLAN.md\",\n      \"status\": \"modified\",\n      \"sha\": \"dab4980781f5d0d3061b78aeea91b7eb7e06efc3\",\n      \"additions\": 17,\n      \"deletions\": 3\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/events/planning_20261010_shared_process_atlas.json\",\n      \"status\": \"added\",\n      \"sha\": \"5b2d6368f69cf97f539537fe4c40213e21c00d85\",\n      \"additions\": 24,\n      \"deletions\": 0\n    },\n    {\n      \"path\": \"care-insurance-analysis/tools/build_viewer.py\",\n      \"status\": \"added\",\n      \"sha\": \"a7cffdc82621b2c3f73d342cc2fd35de9192b813\",\n      \"additions\": 39,\n      \"deletions\": 0\n    },\n    {\n      \"path\": \"care-insurance-analysis/viewer/UPDATE_PROTOCOL.md\",\n      \"status\": \"added\",\n      \"sha\": \"1604a19ab9116e87bb278315688a66b920e4bd76\",\n      \"additions\": 40,\n      \"deletions\": 0\n    },\n    {\n      \"path\": \"care-insurance-analysis/viewer/index.html\",\n      \"status\": \"added\",\n      \"sha\": \"fb19e31751dae101c3a45dc3425f0976c59a99c0\",\n      \"additions\": 27,\n      \"deletions\": 0\n    },\n    {\n      \"path\": \"care-insurance-analysis/viewer/input.json\",\n      \"status\": \"added\",\n      \"sha\": \"9548f751114745af05596536ebb38f84ee59ecb3\",\n      \"additions\": 3618,\n      \"deletions\": 0\n    },\n    {\n      \"path\": \"care-insurance-analysis/viewer/manifest.json\",\n      \"status\": \"added\",\n      \"sha\": \"27e4e8e909d670215f72adbbfd78527c91066912\",\n      \"additions\": 24,\n      \"deletions\": 0\n    },\n    {\n      \"path\": \"care-insurance-analysis/viewer/platform.json\",\n      \"status\": \"added\",\n      \"sha\": \"dc61d64a7be110fb1afbc619db5634b30334a15b\",\n      \"additions\": 37,\n      \"deletions\": 0\n    },\n    {\n      \"path\": \"care-insurance-analysis/viewer/process_atlas.json\",\n      \"status\": \"added\",\n      \"sha\": \"463d35d9272246033a9656289df9c30b75bde8ba\",\n      \"additions\": 2432,\n      \"deletions\": 0\n    },\n    {\n      \"path\": \"care-insurance-analysis/viewer/validation.json\",\n      \"status\": \"added\",\n      \"sha\": \"cedb0bedb0729ad30e4458b704ce1d132e3d6346\",\n      \"additions\": 13,\n      \"deletions\": 0\n    },\n    {\n      \"path\": \"care-insurance-analysis/viewer/viewer_template.html\",\n      \"status\": \"added\",\n      \"sha\": \"5245c2030ef509e9f2dc59925262ad859ab1bfb3\",\n      \"additions\": 27,\n      \"deletions\": 0\n    }\n  ],\n  \"diff_available\": false,\n  \"completion_policy\": \"コミット説明だけで解析完了を判定しない。\"\n}",
+        "source": "https://github.com/myonmyon545-cell/-/commit/c908dea1a5a3f5cf0149169b3d27b370999819d7",
+        "quality": "GitHubコミットと変更ファイル一覧を確認。保存日時。",
+        "conversation_order": null
+      },
+      {
+        "id": "event-planning_20261010_shared_viewer_repair",
+        "at": "2026-10-10T11:49:16+09:00",
+        "display_time": "2026-10-10 11:49:16 JST",
+        "role": "planning",
+        "chat": "計画",
+        "kind": "作業イベント",
+        "title": "planning_20261010_shared_viewer_repair",
+        "body": "{\n  \"schema\": \"care_audit_event/v1\",\n  \"event_id\": \"planning_20261010_shared_viewer_repair\",\n  \"at\": \"2026-10-10T11:49:16+09:00\",\n  \"role\": \"planning\",\n  \"user_verbatim\": \"どちらも動いてないから確認して\",\n  \"input_commit\": \"c908dea1a5a3f5cf0149169b3d27b370999819d7\",\n  \"observed\": {\n    \"previous_automation_run_missing_files\": \"required viewer files were absent at 2e00b8a; available at c908dea\",\n    \"site_before\": \"NOT_PUBLISHED\",\n    \"attachment_JS_execution\": \"not directly observed; sandbox preview limitation possible, not proven\",\n    \"actual_browser\": \"NOT_EXECUTED\"\n  },\n  \"changes\": [\n    \"private Site deployed with atlas and standalone timeline\",\n    \"global history function renamed renderHistory to avoid browser API name collision; not proven as original failure cause\",\n    \"noscript message added\",\n    \"stable input timestamp allows exact rebuild\",\n    \"existing hourly automation resumed\"\n  ],\n  \"verification\": {\n    \"schema\": \"care_atlas_checks/v1\",\n    \"unique_DOM_ids\": \"PASS\",\n    \"workflow_DAG\": \"PASS\",\n    \"file_paths_and_summaries\": \"PASS\",\n    \"javascript_syntax\": \"PASS\",\n    \"replay_structured_data\": \"PASS\",\n    \"PLAN_yaml_and_contract_unchanged\": \"PASS\",\n    \"remote_network_calls\": \"NONE\",\n    \"actual_browser_and_3D_visual_test\": \"NOT_EXECUTED: managed browser skill unavailable; no preview started\",\n    \"original_data_embedded\": false,\n    \"release\": \"NOT_FINAL\",\n    \"dom_fixture\": {\n      \"search\": \"PASS\",\n      \"tabs\": \"PASS\",\n      \"task_details\": \"PASS\",\n      \"folder_details\": \"PASS\",\n      \"parent_navigation\": \"PASS\",\n      \"scope\": \"Node DOM fixture, not real browser\"\n    },\n    \"deployment\": \"SUCCEEDED_PRIVATE\"\n  },\n  \"hosting\": {\n    \"status\": \"PUBLISHED_PRIVATE\",\n    \"project_id\": \"appgprj_6ac9a6f33718819199cfb04689e0550f\",\n    \"url\": \"https://care-analysis-atlas.adept-sun-2909.chatgpt.site\",\n    \"source_checkout\": \"/workspace/sites/care-analysis-atlas\",\n    \"audience\": \"owner_private\",\n    \"deployment_id\": \"appgdep_6ac9a78ce0bc8191b61236eb703c9365\",\n    \"version_id\": \"appgprj_6ac9a6f33718819199cfb04689e0550f~appgver_4dc60dd404988191995dc276574248cb\",\n    \"source_commit\": \"3bb14bf26870318803b633cafd3b25e0706f4bd3\"\n  },\n  \"candidate_changed\": false,\n  \"STATE_and_reports_changed\": false,\n  \"release_status\": \"NOT_FINAL\",\n  \"transient_attempts\": [\n    {\n      \"action\": \"site helper launched in scratch root\",\n      \"result\": \"cancelled before credential input or any source save; relaunched in dedicated Site checkout\"\n    }\n  ],\n  \"github_save_scope\": \"template/generator/hosting metadata/protocol/validation/event only; detailed input and generated data not retransmitted\",\n  \"auto_review_rejection\": \"Full viewer/input.json replacement rejected for detailed private project data. Reduced write excludes all full inputs and generated data.\"\n}",
+        "source": "sources/events.json",
+        "quality": "保存済みイベント本文。会話原文とは別の作業記録。日時未記録の場合は推定しない。",
+        "conversation_order": null
+      },
+      {
+        "id": "commit-f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
+        "at": "2026-10-10T11:50:05+09:00",
+        "display_time": "2026-10-10 11:50:05 JST",
+        "role": "記録保存",
+        "chat": "GitHub",
+        "kind": "保存履歴",
+        "title": "care: repair viewer access, deploy private atlas and record resumed updates",
+        "body": "{\n  \"changed_files\": [\n    {\n      \"path\": \"care-insurance-analysis/logs/events/planning_20261010_shared_viewer_repair.json\",\n      \"status\": \"added\",\n      \"sha\": \"594eafe52ee3f4e8a17a6678e54cca16dfeb705c\",\n      \"additions\": 64,\n      \"deletions\": 0\n    },\n    {\n      \"path\": \"care-insurance-analysis/tools/build_viewer.py\",\n      \"status\": \"modified\",\n      \"sha\": \"ed67408de5b318898c2eff24835d02635ff80a94\",\n      \"additions\": 1,\n      \"deletions\": 1\n    },\n    {\n      \"path\": \"care-insurance-analysis/viewer/UPDATE_PROTOCOL.md\",\n      \"status\": \"modified\",\n      \"sha\": \"364457154fb5447363de52352ab1981454cba965\",\n      \"additions\": 1,\n      \"deletions\": 1\n    },\n    {\n      \"path\": \"care-insurance-analysis/viewer/platform.json\",\n      \"status\": \"modified\",\n      \"sha\": \"aedb96fd8c1b94134661e90d480925a6b275c569\",\n      \"additions\": 12,\n      \"deletions\": 6\n    },\n    {\n      \"path\": \"care-insurance-analysis/viewer/validation.json\",\n      \"status\": \"modified\",\n      \"sha\": \"518f1c8c20b0d9ce676888af20471caff7fcb686\",\n      \"additions\": 11,\n      \"deletions\": 1\n    },\n    {\n      \"path\": \"care-insurance-analysis/viewer/viewer_template.html\",\n      \"status\": \"modified\",\n      \"sha\": \"55fccaf53c04aa416a7e8c0fa7d960d71da317db\",\n      \"additions\": 4,\n      \"deletions\": 4\n    }\n  ],\n  \"diff_available\": false,\n  \"completion_policy\": \"コミット説明だけで解析完了を判定しない。\"\n}",
+        "source": "https://github.com/myonmyon545-cell/-/commit/f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
+        "quality": "GitHubコミットと変更ファイル一覧を確認。保存日時。",
+        "conversation_order": null
+      },
+      {
+        "id": "event-role00_20261010_shared_view_20261010T115106",
+        "at": "2026-10-10T11:51:06+09:00",
+        "display_time": "2026-10-10 11:51:06 JST",
+        "role": "00",
+        "chat": "00 進捗",
+        "kind": "作業イベント",
+        "title": "role00_20261010_shared_view_20261010T115106",
+        "body": "{\n  \"schema\": \"care_audit_event/v1\",\n  \"event_id\": \"role00_20261010_shared_view_20261010T115106\",\n  \"role\": \"00\",\n  \"chat\": \"00 進捗\",\n  \"at\": \"2026-10-10T11:51:06+09:00\",\n  \"source_commit\": \"c908dea1a5a3f5cf0149169b3d27b370999819d7\",\n  \"kind\": \"確認・更新作業\",\n  \"user_instruction\": {\n    \"text\": \"最新mainのcare-insurance-analysis/viewer/UPDATE_PROTOCOL.mdとplatform.jsonを読み、共有画面の更新を通常の進捗更新に組み込んでください。\",\n    \"representation\": \"このチャットで取得したユーザー原文\",\n    \"original_sent_at\": null\n  },\n  \"confirmed_reports\": {\n    \"10\": {\n      \"blob_sha\": \"ecdd8f911fe4d4acb436a1771ace280427e80b04\",\n      \"reported_at\": \"2026-10-09T16:29:07+09:00\",\n      \"freshness\": \"最新状況未確認\"\n    },\n    \"20\": {\n      \"blob_sha\": \"57863de7a6ba499b2872df9cf0b6549c43afa7e7\",\n      \"reported_at\": \"2026-10-09T17:13:29.181705+09:00\",\n      \"freshness\": \"最新状況未確認\"\n    },\n    \"30\": {\n      \"blob_sha\": \"d790c1686cb72176664af414cabc82cece8bacca\",\n      \"reported_at\": \"2026-10-09T17:38:41.975+09:00\",\n      \"freshness\": \"最新状況未確認\"\n    }\n  },\n  \"actions\": [\n    \"同一HEADのPLAN/STATE/10/20/30/決定と共有表示を確認\",\n    \"通常進捗更新と共有画面更新の手順を規約へ明記\",\n    \"既存sourcesを維持して新コミットと未収録イベントを重複なく追記\",\n    \"固定入力でtimeline/viewerを一時生成・検査し、期待HEADで保存する\"\n  ],\n  \"analysis_task_completion_changed\": false,\n  \"other_chat_runtime_directly_observed\": false,\n  \"browser\": \"NOT_EXECUTED\",\n  \"sites\": \"NOT_EXECUTED\",\n  \"save_receipt_policy\": \"保存コミットと全変更の読戻し一致を保存後に確認。生成時点では保存完了を主張しない。\"\n}",
+        "source": "sources/events.json",
+        "quality": "保存済みイベント本文。会話原文とは別の作業記録。日時未記録の場合は推定しない。",
+        "conversation_order": null
+      },
+      {
+        "id": "event-role00_20261010_shared_view_20261010T115314",
+        "at": "2026-10-10T11:53:14+09:00",
+        "display_time": "2026-10-10 11:53:14 JST",
+        "role": "00",
+        "chat": "00 進捗",
+        "kind": "作業イベント",
+        "title": "role00_20261010_shared_view_20261010T115314",
+        "body": "{\n  \"schema\": \"care_audit_event/v1\",\n  \"event_id\": \"role00_20261010_shared_view_20261010T115314\",\n  \"role\": \"00\",\n  \"chat\": \"00 進捗\",\n  \"at\": \"2026-10-10T11:53:14+09:00\",\n  \"source_commit\": \"f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1\",\n  \"kind\": \"確認・更新作業\",\n  \"user_instruction\": {\n    \"text\": \"最新mainのcare-insurance-analysis/viewer/UPDATE_PROTOCOL.mdとplatform.jsonを読み、共有画面の更新を通常の進捗更新に組み込んでください。\",\n    \"representation\": \"このチャットで取得したユーザー原文\",\n    \"original_sent_at\": null\n  },\n  \"confirmed_reports\": {\n    \"10\": {\n      \"blob_sha\": \"ecdd8f911fe4d4acb436a1771ace280427e80b04\",\n      \"reported_at\": \"2026-10-09T16:29:07+09:00\",\n      \"freshness\": \"最新状況未確認\"\n    },\n    \"20\": {\n      \"blob_sha\": \"57863de7a6ba499b2872df9cf0b6549c43afa7e7\",\n      \"reported_at\": \"2026-10-09T17:13:29.181705+09:00\",\n      \"freshness\": \"最新状況未確認\"\n    },\n    \"30\": {\n      \"blob_sha\": \"d790c1686cb72176664af414cabc82cece8bacca\",\n      \"reported_at\": \"2026-10-09T17:38:41.975+09:00\",\n      \"freshness\": \"最新状況未確認\"\n    }\n  },\n  \"actions\": [\n    \"同一HEADのPLAN/STATE/10/20/30/決定と共有表示を確認\",\n    \"通常進捗更新と共有画面更新の手順を規約へ明記\",\n    \"既存sourcesを維持して新コミットと未収録イベントを重複なく追記\",\n    \"固定入力でtimeline/viewerを一時生成・検査し、期待HEADで保存する\"\n  ],\n  \"analysis_task_completion_changed\": false,\n  \"other_chat_runtime_directly_observed\": false,\n  \"browser\": \"NOT_EXECUTED\",\n  \"sites\": \"NOT_EXECUTED\",\n  \"save_receipt_policy\": \"保存コミットと全変更の読戻し一致を保存後に確認。生成時点では保存完了を主張しない。\"\n}",
+        "source": "sources/events.json",
+        "quality": "保存済みイベント本文。会話原文とは別の作業記録。日時未記録の場合は推定しない。",
+        "conversation_order": null
+      },
+      {
+        "id": "event-role00_20261010_shared_view_20261010T115332",
+        "at": "2026-10-10T11:53:32+09:00",
+        "display_time": "2026-10-10 11:53:32 JST",
+        "role": "00",
+        "chat": "00 進捗",
+        "kind": "作業イベント",
+        "title": "role00_20261010_shared_view_20261010T115332",
+        "body": "{\n  \"schema\": \"care_audit_event/v1\",\n  \"event_id\": \"role00_20261010_shared_view_20261010T115332\",\n  \"role\": \"00\",\n  \"chat\": \"00 進捗\",\n  \"at\": \"2026-10-10T11:53:32+09:00\",\n  \"source_commit\": \"f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1\",\n  \"kind\": \"確認・更新作業\",\n  \"user_instruction\": {\n    \"text\": \"最新mainのcare-insurance-analysis/viewer/UPDATE_PROTOCOL.mdとplatform.jsonを読み、共有画面の更新を通常の進捗更新に組み込んでください。\",\n    \"representation\": \"このチャットで取得したユーザー原文\",\n    \"original_sent_at\": null\n  },\n  \"confirmed_reports\": {\n    \"10\": {\n      \"blob_sha\": \"ecdd8f911fe4d4acb436a1771ace280427e80b04\",\n      \"reported_at\": \"2026-10-09T16:29:07+09:00\",\n      \"freshness\": \"最新状況未確認\"\n    },\n    \"20\": {\n      \"blob_sha\": \"57863de7a6ba499b2872df9cf0b6549c43afa7e7\",\n      \"reported_at\": \"2026-10-09T17:13:29.181705+09:00\",\n      \"freshness\": \"最新状況未確認\"\n    },\n    \"30\": {\n      \"blob_sha\": \"d790c1686cb72176664af414cabc82cece8bacca\",\n      \"reported_at\": \"2026-10-09T17:38:41.975+09:00\",\n      \"freshness\": \"最新状況未確認\"\n    }\n  },\n  \"actions\": [\n    \"同一HEADのPLAN/STATE/10/20/30/決定と共有表示を確認\",\n    \"通常進捗更新と共有画面更新の手順を規約へ明記\",\n    \"既存sourcesを維持して新コミットと未収録イベントを重複なく追記\",\n    \"固定入力でtimeline/viewerを一時生成・検査し、期待HEADで保存する\"\n  ],\n  \"analysis_task_completion_changed\": false,\n  \"other_chat_runtime_directly_observed\": false,\n  \"browser\": \"NOT_EXECUTED\",\n  \"sites\": \"NOT_EXECUTED\",\n  \"save_receipt_policy\": \"保存コミットと全変更の読戻し一致を保存後に確認。生成時点では保存完了を主張しない。\"\n}",
+        "source": "sources/events.json",
+        "quality": "保存済みイベント本文。会話原文とは別の作業記録。日時未記録の場合は推定しない。",
+        "conversation_order": null
+      },
+      {
         "id": "user-1",
         "at": null,
         "display_time": "送信日時不明 / 会話順 1",
@@ -1519,7 +1623,20 @@
         "Q01"
       ],
       "id": "T01",
-      "record_status": "現行計画。新版候補への完了報告未確認"
+      "record_status": "完了",
+      "saved_state": {
+        "owner": "10",
+        "status": "完了",
+        "wait_reason": null,
+        "confirmed_output": {
+          "evidence": "care-insurance-analysis/src/input_manifest.json",
+          "scope": "入力ID・別名・期間・SHA256の台帳確定。STATE統合は00が実施。",
+          "reported_at": "2026-10-09T11:18:48.380637+09:00"
+        },
+        "next_action": "10が最新mainの同一コミットを読み、今回確認済みハッシュ・別名を引継いで入力台帳を確定。reports/10で実施と検証を報告。",
+        "completion_scope_note": "既存S01/S02の2.2処理実績を保存。S10追加分はT09-T11と新候補検証が未実施。"
+      },
+      "verification_scope": "STATEの保存記録。旧版実績と新版候補への適用を区別。実行状態の直接観測ではない。"
     },
     {
       "owner": "10",
@@ -1534,7 +1651,24 @@
         "Q05"
       ],
       "id": "T02",
-      "record_status": "現行計画。新版候補への完了報告未確認"
+      "record_status": "完了",
+      "saved_state": {
+        "owner": "10",
+        "status": "完了",
+        "wait_reason": null,
+        "confirmed_output": {
+          "evidence": [
+            "care-insurance-analysis/src/definitions.json",
+            "care-insurance-analysis/src/metric_inventory.json",
+            "care-insurance-analysis/checks/startup.json"
+          ],
+          "scope": "148表ブロック・3158掲載値の定義/母集団/通常補正/元セルを固定。保留あり。",
+          "reported_at": "2026-10-09T11:18:48.380637+09:00"
+        },
+        "next_action": "10が既存定義/保留を保持してS10を別名前空間に追加し、定義とR13網羅性を更新。",
+        "completion_scope_note": "既存S01/S02の2.2処理実績を保存。S10追加分はT09-T11と新候補検証が未実施。"
+      },
+      "verification_scope": "STATEの保存記録。旧版実績と新版候補への適用を区別。実行状態の直接観測ではない。"
     },
     {
       "owner": "10",
@@ -1551,7 +1685,24 @@
         "Q12"
       ],
       "id": "T03",
-      "record_status": "現行計画。新版候補への完了報告未確認"
+      "record_status": "一部完了・表示保留",
+      "saved_state": {
+        "owner": "10",
+        "status": "一部完了・表示保留",
+        "wait_reason": "20はv1の日本語描画不合格と構成・印刷課題を確認。30提案に基づく新候補の保持/表示は未検証。",
+        "confirmed_output": {
+          "evidence": [
+            "care-insurance-analysis/checks/c03_overlay.json",
+            "care-insurance-analysis/checks/candidate_preservation.json",
+            "care-insurance-analysis/checks/pilot.json"
+          ],
+          "completed_scope": "C03をS01作業コピーに適用。元14シート/148グラフと部品保持、再開封を確認。",
+          "unfinished_scope": "日本語字形の表示確認。",
+          "reported_at": "2026-10-09T16:29:07+09:00"
+        },
+        "next_action": "日本語対応TTF/OTFまたは日本語描画環境を用意し、元表と候補を再出力して表示・レイアウトを確認。"
+      },
+      "verification_scope": "STATEの保存記録。旧版実績と新版候補への適用を区別。実行状態の直接観測ではない。"
     },
     {
       "owner": "10",
@@ -1565,7 +1716,20 @@
         "Q02"
       ],
       "id": "T04",
-      "record_status": "現行計画。新版候補への完了報告未確認"
+      "record_status": "完了",
+      "saved_state": {
+        "owner": "10",
+        "status": "完了",
+        "wait_reason": null,
+        "confirmed_output": {
+          "evidence": "再現用ZIP内 results/extracted_values.json",
+          "scope": "S01/S02から6316値を抽出。独立パーサーで全元値一致。97件を保留/欠損として区別。",
+          "reported_at": "2026-10-09T11:18:48.380637+09:00"
+        },
+        "next_action": "全章の表と通常補正値を元セル付き抽出",
+        "completion_scope_note": "既存S01/S02の2.2処理実績を保存。S10追加分はT09-T11と新候補検証が未実施。"
+      },
+      "verification_scope": "STATEの保存記録。旧版実績と新版候補への適用を区別。実行状態の直接観測ではない。"
     },
     {
       "owner": "10",
@@ -1581,7 +1745,24 @@
         "Q05"
       ],
       "id": "T05",
-      "record_status": "現行計画。新版候補への完了報告未確認"
+      "record_status": "利用可能資料分完了（保留付き）",
+      "saved_state": {
+        "owner": "10",
+        "status": "利用可能資料分完了（保留付き）",
+        "wait_reason": "C11正式分母のみ資料待ちを維持。C04承認置換/C10承認欠落/C12対象外/C09未算出を適用待ち。",
+        "confirmed_output": {
+          "evidence": [
+            "care-insurance-analysis/checks/role30_apply.json",
+            "care-insurance-analysis/checks/calculation_summary.json",
+            "care-insurance-analysis/checks/replay_role30.json"
+          ],
+          "scope": "E20-01定義案適用、6316指標から1478比較へ入力別状態伝播。保留49比較。計算可能範囲を検査。",
+          "reported_at": "2026-10-09T16:29:07+09:00"
+        },
+        "next_action": "既存計算結果の出所不変範囲を再利用し、T09-T11の参考区分と保留を適用。",
+        "completion_scope_note": "既存S01/S02の2.2処理実績を保存。S10追加分はT09-T11と新候補検証が未実施。"
+      },
+      "verification_scope": "STATEの保存記録。旧版実績と新版候補への適用を区別。実行状態の直接観測ではない。"
     },
     {
       "owner": "10",
@@ -1600,7 +1781,27 @@
         "Q10"
       ],
       "id": "T06",
-      "record_status": "現行計画。新版候補への完了報告未確認"
+      "record_status": "旧候補v1保存済み・FAIL／新2.4候補未着手",
+      "saved_state": {
+        "owner": "10",
+        "status": "旧候補v1保存済み・FAIL／新2.4候補未着手",
+        "wait_reason": "v1の独立評価FAIL。E20-02/E20-03/E20-04/E01とS10補完を一括適用した新候補が必要。",
+        "confirmed_output": {
+          "evidence": [
+            "care-insurance-analysis/checks/candidate.json",
+            "care-insurance-analysis/checks/candidate_preservation.json",
+            "care-insurance-analysis/checks/pilot.json"
+          ],
+          "candidate_id": "care-S01-20261009-v1",
+          "version": 1,
+          "sha256": "fe3ccd49b45400ea70687cd67cb50a7f9563cd7dd6641bd7c82c57aa97cbb570",
+          "library_file_id": "libfile_7d32eed56014819184d160de1a2af7d5",
+          "readback_verified": true,
+          "reported_at": "2026-10-09T16:29:07+09:00"
+        },
+        "next_action": "現在HEADのPLAN/STATE/10/20/30、references/S10_excerpts.json、S10_integration.md、decisions/2026-10-10_user_decisions.jsonを同一コミットで読む。進行中2.3候補があれば作業を捨てず差分適用し2.4新候補へ固定。T09→T10→T11と保存済み30案→T06→T12。一括で置換/欠落/局所表示/字体対策/Excel再現/再計算/全ログを実施。C11は保持。"
+      },
+      "verification_scope": "STATEの保存記録。旧版実績と新版候補への適用を区別。実行状態の直接観測ではない。"
     },
     {
       "owner": "20",
@@ -1627,7 +1828,25 @@
         "Q14"
       ],
       "id": "T07",
-      "record_status": "現行計画。新版候補への完了報告未確認"
+      "record_status": "旧v1評価FAIL・新2.4全独立評価待ち",
+      "saved_state": {
+        "owner": "20",
+        "status": "旧v1評価FAIL・新2.4全独立評価待ち",
+        "wait_reason": "新版候補が未生成。旧評価は2.2で全独立評価完了条件未達、2.4へ判定再利用不可。",
+        "confirmed_output": {
+          "evidence": "reports/20.json",
+          "scope": "2.2候補v1の保存済み初回独立評価。verdict FAIL、全独立評価完了=false。",
+          "reported_at": "2026-10-09T17:13:29.181705+09:00",
+          "candidate": {
+            "id": "care-S01-20261009-v1",
+            "version": 1,
+            "sha256": "fe3ccd49b45400ea70687cd67cb50a7f9563cd7dd6641bd7c82c57aa97cbb570"
+          },
+          "plan_revision": "2.2"
+        },
+        "next_action": "2.4新候補を固定し全R01-R14/Q01-Q14を元資料から独立評価。承認欠落/置換を原データ検証済みと誤表示しない。C11未免除。初回全範囲の評価は差分だけで済ませない。"
+      },
+      "verification_scope": "STATEの保存記録。旧版実績と新版候補への適用を区別。実行状態の直接観測ではない。"
     },
     {
       "owner": "10",
@@ -1641,7 +1860,15 @@
         "Q14"
       ],
       "id": "T08",
-      "record_status": "現行計画。新版候補への完了報告未確認"
+      "record_status": "未着手",
+      "saved_state": {
+        "owner": "10",
+        "status": "未着手",
+        "wait_reason": "独立評価FAIL、新候補と表示/再現/補完評価が未了。完成・暫定の提出条件未達。",
+        "confirmed_output": null,
+        "next_action": "判定に応じて完成または暫定を保存提出"
+      },
+      "verification_scope": "STATEの保存記録。旧版実績と新版候補への適用を区別。実行状態の直接観測ではない。"
     },
     {
       "owner": "10",
@@ -1655,7 +1882,17 @@
         "Q13"
       ],
       "id": "T09",
-      "record_status": "現行計画。新版候補への完了報告未確認"
+      "record_status": "未着手",
+      "saved_state": {
+        "owner": "10",
+        "status": "未着手",
+        "wait_reason": null,
+        "deps": [],
+        "confirmed_output": null,
+        "next_action": "S10バイトSHAと表セル/年度見出しの独立照合",
+        "plan_revision": "2.4"
+      },
+      "verification_scope": "STATEの保存記録。旧版実績と新版候補への適用を区別。実行状態の直接観測ではない。"
     },
     {
       "owner": "10",
@@ -1673,7 +1910,19 @@
         "Q13"
       ],
       "id": "T10",
-      "record_status": "現行計画。新版候補への完了報告未確認"
+      "record_status": "未着手",
+      "saved_state": {
+        "owner": "10",
+        "status": "未着手",
+        "wait_reason": "先行工程",
+        "deps": [
+          "T09"
+        ],
+        "confirmed_output": null,
+        "next_action": "補完可否・母集団/期間・提供値/予定/保留の仕分け",
+        "plan_revision": "2.4"
+      },
+      "verification_scope": "STATEの保存記録。旧版実績と新版候補への適用を区別。実行状態の直接観測ではない。"
     },
     {
       "owner": "10",
@@ -1693,7 +1942,19 @@
         "Q13"
       ],
       "id": "T11",
-      "record_status": "現行計画。新版候補への完了報告未確認"
+      "record_status": "未着手",
+      "saved_state": {
+        "owner": "10",
+        "status": "未着手",
+        "wait_reason": "先行工程",
+        "deps": [
+          "T10"
+        ],
+        "confirmed_output": null,
+        "next_action": "先頭要点1枚に集約し年度日数置換と簡易確認文を掲載。元表/グラフ/画像の局所注記、保持/印刷/日本語/再現を同じ候補で検証。",
+        "plan_revision": "2.4"
+      },
+      "verification_scope": "STATEの保存記録。旧版実績と新版候補への適用を区別。実行状態の直接観測ではない。"
     },
     {
       "owner": "10",
@@ -1707,15 +1968,25 @@
         "Q14"
       ],
       "id": "T12",
-      "record_status": "現行計画。新版候補への完了報告未確認"
+      "record_status": "未着手",
+      "saved_state": {
+        "owner": "10",
+        "work": "各担当の追記ログを集約し、取得可能な全実データ・指示・履歴・失敗・未検証も非公開ログZIPに収録。未収録台帳と簡易確認文を作り候補へ対応付け。",
+        "plan_revision": "2.4",
+        "status": "未着手",
+        "deps": [
+          "T06"
+        ]
+      },
+      "verification_scope": "STATEの保存記録。旧版実績と新版候補への適用を区別。実行状態の直接観測ではない。"
     }
   ],
   "files": [
     {
       "path": "care-insurance-analysis/PLAN.md",
       "type": "blob",
-      "sha": "8f924e3ae281ca08f2a565dcd8341cad435246cc",
-      "size": 60763,
+      "sha": "dab4980781f5d0d3061b78aeea91b7eb7e06efc3",
+      "size": 62352,
       "summary": "現行解析・評価契約と運用仕様。"
     },
     {
@@ -1852,7 +2123,7 @@
     {
       "path": "care-insurance-analysis/logs",
       "type": "tree",
-      "sha": "bb37b3dccfc4c609efb70925cb01d434fe30f6fa",
+      "sha": "5856e8d2542918276a05f733f9c9c3088e2cc03e",
       "summary": "入れ子構造のフォルダ。下位項目を選択して概要を表示。"
     },
     {
@@ -1872,7 +2143,7 @@
     {
       "path": "care-insurance-analysis/logs/events",
       "type": "tree",
-      "sha": "9a7a90370aa1a9b22f2c3d14e712e29174739edd",
+      "sha": "168bc7183ee4a343b326abf81a711b32a8ab39f4",
       "summary": "入れ子構造のフォルダ。下位項目を選択して概要を表示。"
     },
     {
@@ -1887,6 +2158,20 @@
       "type": "blob",
       "sha": "2eb4949fcf35820713fb756cf6d6477a44d69d8a",
       "size": 2405,
+      "summary": "取得可能な作業/会話/検証の履歴。原文と要約、失敗と成功を区別。"
+    },
+    {
+      "path": "care-insurance-analysis/logs/events/planning_20261010_shared_process_atlas.json",
+      "type": "blob",
+      "sha": "5b2d6368f69cf97f539537fe4c40213e21c00d85",
+      "size": 1218,
+      "summary": "取得可能な作業/会話/検証の履歴。原文と要約、失敗と成功を区別。"
+    },
+    {
+      "path": "care-insurance-analysis/logs/events/planning_20261010_shared_viewer_repair.json",
+      "type": "blob",
+      "sha": "594eafe52ee3f4e8a17a6678e54cca16dfeb705c",
+      "size": 2823,
       "summary": "取得可能な作業/会話/検証の履歴。原文と要約、失敗と成功を区別。"
     },
     {
@@ -2389,7 +2674,7 @@
     {
       "path": "care-insurance-analysis/tools",
       "type": "tree",
-      "sha": "49090c3f81e8335e7b42d2191c128d1e252ba622",
+      "sha": "bfaaa9b93508d4214492c917e2950d9eea501203",
       "summary": "入れ子構造のフォルダ。下位項目を選択して概要を表示。"
     },
     {
@@ -2398,6 +2683,13 @@
       "sha": "6e9f5d6f82d6379b63f3d11e556bbdb77287ec2d",
       "size": 16094,
       "summary": "収録元からタイムラインを再生成するコード。"
+    },
+    {
+      "path": "care-insurance-analysis/tools/build_viewer.py",
+      "type": "blob",
+      "sha": "ed67408de5b318898c2eff24835d02635ff80a94",
+      "size": 4606,
+      "summary": "固定コミットで存在を確認した管理ファイル。概要はファイル用途の説明。"
     },
     {
       "path": "care-insurance-analysis/tools/test_revision_transition.py",
@@ -2419,6 +2711,68 @@
       "sha": "8ad947d0f68de591a79e8418dd6b9c7ab2bc8939",
       "size": 12359,
       "summary": "固定コミットで存在を確認した管理ファイル。概要はファイル用途の説明。"
+    },
+    {
+      "path": "care-insurance-analysis/viewer",
+      "type": "tree",
+      "sha": "0c3e212d4e82d0fda44b304555acfb04ac6f7332",
+      "summary": "入れ子構造のフォルダ。下位項目を選択して概要を表示。"
+    },
+    {
+      "path": "care-insurance-analysis/viewer/UPDATE_PROTOCOL.md",
+      "type": "blob",
+      "sha": "364457154fb5447363de52352ab1981454cba965",
+      "size": 5705,
+      "summary": "固定コミットで存在を確認した管理ファイル。概要はファイル用途の説明。"
+    },
+    {
+      "path": "care-insurance-analysis/viewer/index.html",
+      "type": "blob",
+      "sha": "fb19e31751dae101c3a45dc3425f0976c59a99c0",
+      "size": 153123,
+      "summary": "固定コミットで存在を確認した管理ファイル。概要はファイル用途の説明。"
+    },
+    {
+      "path": "care-insurance-analysis/viewer/input.json",
+      "type": "blob",
+      "sha": "9548f751114745af05596536ebb38f84ee59ecb3",
+      "size": 237926,
+      "summary": "固定コミットで存在を確認した管理ファイル。概要はファイル用途の説明。"
+    },
+    {
+      "path": "care-insurance-analysis/viewer/manifest.json",
+      "type": "blob",
+      "sha": "27e4e8e909d670215f72adbbfd78527c91066912",
+      "size": 668,
+      "summary": "固定コミットで存在を確認した管理ファイル。概要はファイル用途の説明。"
+    },
+    {
+      "path": "care-insurance-analysis/viewer/platform.json",
+      "type": "blob",
+      "sha": "aedb96fd8c1b94134661e90d480925a6b275c569",
+      "size": 1496,
+      "summary": "固定コミットで存在を確認した管理ファイル。概要はファイル用途の説明。"
+    },
+    {
+      "path": "care-insurance-analysis/viewer/process_atlas.json",
+      "type": "blob",
+      "sha": "463d35d9272246033a9656289df9c30b75bde8ba",
+      "size": 156722,
+      "summary": "固定コミットで存在を確認した管理ファイル。概要はファイル用途の説明。"
+    },
+    {
+      "path": "care-insurance-analysis/viewer/validation.json",
+      "type": "blob",
+      "sha": "518f1c8c20b0d9ce676888af20471caff7fcb686",
+      "size": 823,
+      "summary": "固定コミットで存在を確認した管理ファイル。概要はファイル用途の説明。"
+    },
+    {
+      "path": "care-insurance-analysis/viewer/viewer_template.html",
+      "type": "blob",
+      "sha": "55fccaf53c04aa416a7e8c0fa7d960d71da317db",
+      "size": 13827,
+      "summary": "固定コミットで存在を確認した管理ファイル。概要はファイル用途の説明。"
     }
   ],
   "state_record_at": "2026-10-10T10:24:49+09:00",
@@ -2426,7 +2780,6 @@
     "過去の全チャット原文は未取得",
     "現行2.4新候補の実処理完了は未確認",
     "非公開原本/候補のファイルツリーはROLE10の実manifest待ち",
-    "共有サイトは公開未完了",
     "実ブラウザ操作・3D視覚検証は未実施"
   ]
 }

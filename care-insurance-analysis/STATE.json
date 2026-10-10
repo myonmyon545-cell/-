@@ -1,8 +1,8 @@
 {
   "schema": "care_state/v1",
-  "revision": 8,
+  "revision": 9,
   "plan_revision": "2.4",
-  "updated_at": "2026-10-10T10:24:49+09:00",
+  "updated_at": "2026-10-10T11:53:32+09:00",
   "phase": "user_decisions_integrated_waiting_ROLE10_candidate_2_4",
   "writer": "00",
   "canonical_repository": "myonmyon545-cell/-",
@@ -771,6 +771,12 @@
       "role": "planning",
       "source_commit": "a96eba0920c8c21fb3b85d17e6a59cc5cea03fc7",
       "event": "ユーザーの明示判断をPLAN2.4へ組込み。C04年度提供値置換/C10欠落/C12除外/C09未算出、全ログ別添/簡易文、保持/日本語/再現/再計算の工程を更新。C11は未免除。実Excelと他担当報告は未変更。"
+    },
+    {
+      "at": "2026-10-10T11:53:32+09:00",
+      "role": "00",
+      "source_commit": "f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
+      "event": "同一コミットの進捗と共有画面更新規約を確認。報告更新なし（最新状況未確認）。運用2.4.3を通常進捗更新へ組込み。解析工程/候補/評価の完了は昇格しない。"
     }
   ],
   "deployment_status": "registered_on_main",
@@ -793,17 +799,21 @@
     "all_four_created": "未確認"
   },
   "startup_00": {
-    "status": "progress_review_completed",
-    "checked_at": "2026-10-09T16:39:41+09:00",
-    "source_commit": "a855a41a7801f321db399356f3627f7db4be02aa",
-    "plan_revision": "2.2",
+    "status": "progress_and_shared_view_review",
+    "checked_at": "2026-10-10T11:53:32+09:00",
+    "source_commit": "f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
+    "plan_revision": "2.4",
     "repository_visibility": "private",
     "read_paths": [
       "care-insurance-analysis/PLAN.md",
       "care-insurance-analysis/STATE.json",
       "care-insurance-analysis/reports/10.json",
       "care-insurance-analysis/reports/20.json",
-      "care-insurance-analysis/reports/30.json"
+      "care-insurance-analysis/reports/30.json",
+      "care-insurance-analysis/decisions/2026-10-10_user_decisions.json",
+      "care-insurance-analysis/viewer/UPDATE_PROTOCOL.md",
+      "care-insurance-analysis/viewer/platform.json",
+      "care-insurance-analysis/logs/timeline/timeline.json"
     ],
     "git_blob_identity": {
       "verified_files": 5,
@@ -864,21 +874,20 @@
       "duration_estimate": null,
       "note": "暦時間は稼働時間と同一ではない。10の試行実測と受渡し待ちを取得後に見積りを更新。C04未解決なら完成判定に進めない。"
     },
-    "operations_revision": "2.2.1",
+    "operations_revision": "2.4.3",
     "same_commit": true,
     "analysis_candidate_exists": true,
     "analysis_complete": false,
     "other_chat_runtime_directly_observed": false,
     "notes": [
-      "同一mainコミットのPLAN/STATE/10/20/30を確認。報告で保存・読戻しされた成果だけSTATEへ統合。",
-      "10の候補v1はID/SHA/保存・読戻しを確認。完成成果や独立評価合格ではない。",
-      "候補の機械契約・構造保持・再現検査はPASS。日本語字形の視覚検査はFAIL_HELD。",
-      "20の最新保存記録は候補前の11:42報告。候補v1への独立評価は未確認。30のチャット実行状態も直接観察していない。"
+      "PLAN2.4/運用2.4.3と同一mainの保存報告を確認。10/20/30報告本文は前回確認版から変更なし。最新状況未確認。",
+      "旧2.2候補v1のFAILを保持。新2.4候補の実施・保存・独立評価は未確認。",
+      "共有画面の通常更新をUPDATE_PROTOCOLへ組込み。固定画面の再生成と保存読戻しを実施し、Site/既存添付/自動実行の更新は別途確認する。"
     ]
   },
-  "operations_revision": "2.4.0",
-  "canonical_plan_checked_commit": "1051610978f031164d83e1ba02f72fe162a48b60",
-  "canonical_plan_blob_sha": "6e7076831d8b5bdcc85acd346db2161b49c9579b",
+  "operations_revision": "2.4.3",
+  "canonical_plan_checked_commit": "f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
+  "canonical_plan_blob_sha": "dab4980781f5d0d3061b78aeea91b7eb7e06efc3",
   "checks": [
     {
       "id": "input_hashes",
@@ -1056,7 +1065,11 @@
       "last_recorded_status": "candidate_saved_waiting_independent_review_and_visual_condition",
       "plan_revision": "2.2",
       "verdict": null,
-      "note": "同一コミットの保存記録を確認。他チャットの実行状態は直接観測していない。旧2.2記録を保持。"
+      "note": "保存済み報告を同一HEADで再確認。報告更新なし。実行状態は直接観測していない。",
+      "checked_at": "2026-10-10T11:53:32+09:00",
+      "checked_commit": "f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
+      "content_changed_since_previous": false,
+      "freshness": "最新状況未確認"
     },
     "20": {
       "last_recorded_at": "2026-10-09T17:13:29.181705+09:00",
@@ -1072,7 +1085,11 @@
       },
       "status": "completed",
       "plan_revision": "2.2",
-      "note": "同一コミットの保存記録を確認。他チャットの実行状態は直接観測していない。旧2.2記録を保持。"
+      "note": "保存済み報告を同一HEADで再確認。報告更新なし。実行状態は直接観測していない。",
+      "checked_at": "2026-10-10T11:53:32+09:00",
+      "checked_commit": "f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
+      "content_changed_since_previous": false,
+      "freshness": "最新状況未確認"
     },
     "30": {
       "last_recorded_at": "2026-10-09T17:38:41.975+09:00",
@@ -1089,15 +1106,19 @@
       },
       "status": "candidate_v1_correction_proposal_ready",
       "plan_revision": "2.2",
-      "note": "同一コミットの保存記録を確認。他チャットの実行状態は直接観測していない。旧2.2記録を保持。"
+      "note": "保存済み報告を同一HEADで再確認。報告更新なし。実行状態は直接観測していない。",
+      "checked_at": "2026-10-10T11:53:32+09:00",
+      "checked_commit": "f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
+      "content_changed_since_previous": false,
+      "freshness": "最新状況未確認"
     }
   },
   "deadline_impact": {
-    "checked_at": "2026-10-10T10:24:49+09:00",
+    "checked_at": "2026-10-10T11:53:32+09:00",
     "candidate_milestone": "2026-10-10T20:00:00+09:00",
     "independent_review_milestone": "2026-10-11T20:00:00+09:00",
     "submission_target": "2026-10-12T21:00:00+09:00",
-    "status": "承認置換/欠落/除外で外部資料待ちを減らす。C11未免除、日本語実描画/Excel生成再現/ログ/全独立評価は未完了。",
+    "status": "新2.4候補の保存報告なし。10/10 20:00候補、10/11 20:00評価、10/12 21:00提出の工程余裕は未確認。C11保留と日本語/再現/再計算/全ログ/全独立評価の未了を保持。",
     "estimate": null,
     "source_waits": [
       "C11"
@@ -1158,5 +1179,24 @@
     "final_archive_generated": false,
     "unavailable_history_policy": "未収録を明示。要約と原文を区別。",
     "actual_candidate_updated": false
+  },
+  "shared_view_update": {
+    "owner": "00",
+    "operations_revision": "2.4.3",
+    "source_commit": "f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
+    "checked_at": "2026-10-10T11:53:32+09:00",
+    "protocol": "viewer/UPDATE_PROTOCOL.md",
+    "normal_progress_update": true,
+    "snapshot_only": true,
+    "hosting_status": "PUBLISHED_PRIVATE",
+    "actual_browser": "NOT_EXECUTED",
+    "completion_scope": "画面の生成・検査はviewer/validation.json、保存読戻しは保存後に確認。解析完了の証明ではない。",
+    "sites_deployment": {
+      "status": "succeeded",
+      "deployment_id": "appgdep_6ac9a8dc988881919c3f3fd52be47fdb",
+      "version_id": "appgprj_6ac9a6f33718819199cfb04689e0550f~appgver_4ecb3027f3688191b90812e57f0dd183",
+      "url": "https://care-analysis-atlas.adept-sun-2909.chatgpt.site",
+      "at": "2026-10-10T02:54:33.508075+00:00"
+    }
   }
 }
