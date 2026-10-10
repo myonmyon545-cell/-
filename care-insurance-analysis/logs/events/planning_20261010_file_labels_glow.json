@@ -1,0 +1,21 @@
+{
+  "id": "planning_20261010_file_labels_glow",
+  "actor": "planning",
+  "type": "viewer_update",
+  "timestamp": "2026-10-10T03:29:42Z",
+  "source_commit": "0ddf93af74f34f15c0b7732f3c621c714c81a72e",
+  "user_correction": "発行ではなく発光",
+  "summary": "用途見出しと現行文書・最新登録資料・最新保存候補の発光を追加。原本の変更・公開なし。",
+  "actual": [
+    "private_site_deployment_succeeded",
+    "registered_metadata_added",
+    "future_update_prompt_updated"
+  ],
+  "verification": {
+    "node_fixture": "130 nodes / 129 edges; alias, latest exclusion, PDF/Excel presence; PASS",
+    "regeneration": "two separate outputs byte-identical",
+    "browser_visual": "未実施"
+  },
+  "completion_recognition": false,
+  "site_source_commit": "a2947721ab2730436ba029f897b8c237b789b8af"
+}

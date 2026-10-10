@@ -69,6 +69,24 @@
     "nodes": 116,
     "edges": 115,
     "render_engine": "Canvas 2D perspective projection of 3D coordinates; standalone offline",
-    "actual_browser": "NOT_EXECUTED"
+    "actual_browser": "NOT_EXECUTED",
+    "file_label_policy": "用途を見出しに表示、元のファイル名・IDを保持",
+    "latest_glow_policy": "現行文書・最新追加資料・最新保存候補（完成未承認）",
+    "registered_artifacts": "metadata_only; tools/registered_files.py"
+  },
+  "last_deployment": {
+    "id": "appgdep_6ac9b11a0a908191a6a19accce530dbb",
+    "project_id": "appgprj_6ac9a6f33718819199cfb04689e0550f",
+    "title": "介護保険解析｜共有履歴・処理アトラス",
+    "version_id": "appgprj_6ac9a6f33718819199cfb04689e0550f~appgver_ac667c23b2fc819192fc82cda36b13ef",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://care-analysis-atlas.adept-sun-2909.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6ac9a6f33718819199cfb04689e0550f",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-10-10T03:29:42.073086+00:00"
   }
 }

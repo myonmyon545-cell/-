@@ -11,6 +11,11 @@ const c={document:{hidden:false,getElementById:x=>ids[x],createElement:x=>new E(
 for(const script of html.matchAll(/<script>([\s\S]*?)<\/script>/g))vm.runInContext(script[1],c);
 assert.equal(ids.files.hidden,false);
 const g=c.window.careGraph3D;assert(g.nodeCount>100);assert.equal(g.edgeCount,g.nodeCount-1);
+assert.equal(vm.runInContext("fileTitle({path:'care-insurance-analysis/reports/10.json'})",c),'作業担当の実施報告');
+assert(vm.runInContext("fileIsLatest({path:'care-insurance-analysis/PLAN.md'})",c));
+assert(!vm.runInContext("fileIsLatest({path:'care-insurance-analysis/logs/timeline/sources/snapshots/ab10-10.json'})",c));
+assert(vm.runInContext("D.files.some(f=>f.origin==='library_metadata'&&f.path.endsWith('.pdf'))",c));
+assert(vm.runInContext("D.files.some(f=>f.origin==='library_metadata'&&f.path.endsWith('.xlsx'))",c));
 for(const p of g.positions.values())assert(['x','y','z'].every(k=>Number.isFinite(p[k])));
 animation(50);assert(calls.some(x=>x[0]==='fillText'));
 const f=[...g.positions.keys()].find(p=>p.endsWith('PLAN.md'));g.select(f);animation(100);assert(ids.details.children.length>0);

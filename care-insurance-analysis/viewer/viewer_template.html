@@ -4,9 +4,56 @@
 <div class="notice">完成版ではありません。実施済みの保存報告と、現在の計画を分離しています。全文未取得・未検証は補完していません。共有サイトは非公開で配信済みです。取得時点の記録を表示し、更新は担当が保存記録から反映します。</div>
 <section id="history"><div class="stats" id="counts"></div><div class="controls"><input id="search" aria-label="履歴検索" placeholder="本文・問題IDを検索"><select id="kind" aria-label="記録の種類"></select><select id="chat" aria-label="チャット"></select></div><p id="result" class="muted"></p><div id="events"></div></section>
 <section id="process" hidden><h2>実際に保存された処理記録</h2><p class="muted">古い候補v1の実績。現行契約2.4への適用完了を意味しません。</p><div id="actual" class="workflow"></div><h2>現行計画の依存付きワークフロー</h2><p>入力固定 → 抽出・保持試行と追加資料を並行 → 比較・要点統合 → 新候補固定 → ログ集約 → 全独立評価 → 修正再評価 → 提出。各工程を開くと依存・担当・入出力・検査を表示します。</p><div class="grid"><div id="tasks" class="workflow"></div><aside class="panel" id="taskdetail"><h3>工程の詳細</h3><p>工程を選択してください。</p></aside></div><h2>計算の要点</h2><div class="panel">比率 = 分子 ÷ 対応する有効分母。差 = 100 ×（市比率 − 比較先比率）pp。集約比率 = 分子合計 ÷ 分母合計。平均の集約は件数加重で、個票・対応件数がなければ再算出しない。C09の0/0は未算出。S10年度調査日数25.6日は提供値置換で、半年間の調査日数・差の再計算には使わない。</div></section>
-<section id="files" hidden><h2>ファイルの情報空間</h2><p class="muted">実在ファイルを立体配置した回遊空間。線はフォルダの親子関係で、意味の類似度ではありません。ドラッグ・ピンチで探索し、タップで概要と選択地点への移動。</p><div class="controls"><label>左右 <input id="ry" type="range" min="-45" max="45" value="-18"></label><label>上下 <input id="rx" type="range" min="-25" max="35" value="12"></label><button id="reset">位置を戻す</button><button id="up">親へ戻る</button></div><div id="crumb" class="breadcrumb"></div><div class="grid"><div><div class="stage"><div id="space" class="space"></div></div><h3>通常の入れ子ツリー</h3><div id="tree" class="tree panel"></div></div><aside id="details" class="panel"><h3>ファイル概要</h3><p>ファイルを選択してください。</p></aside></div></section>
+<section id="files" hidden><h2>ファイルの情報空間</h2><p class="muted">用途見出し付きの情報空間。発光は現行文書・最新追加資料・最新保存候補（完成未承認）の目印。線はフォルダの親子関係で、意味の類似度ではありません。ドラッグ・ピンチで探索し、タップで概要と選択地点への移動。</p><div class="controls"><label>左右 <input id="ry" type="range" min="-45" max="45" value="-18"></label><label>上下 <input id="rx" type="range" min="-25" max="35" value="12"></label><button id="reset">位置を戻す</button><button id="up">親へ戻る</button></div><div id="crumb" class="breadcrumb"></div><div class="grid"><div><div class="stage"><div id="space" class="space"></div></div><h3>通常の入れ子ツリー</h3><div id="tree" class="tree panel"></div></div><aside id="details" class="panel"><h3>ファイル概要</h3><p>ファイルを選択してください。</p></aside></div></section>
 <section id="updates" hidden><h2>共通正本と更新分担</h2><div class="panel"><p><strong>この計画チャット：</strong>取得できる会話・指示・決定、閲覧画面の構成、計画変更を追記。</p><p><strong>ROLE00：</strong>保存報告を同じコミットで確認し、通常STATEと進捗・提出台帳を更新。共通スナップショットを再生成。</p><p><strong>ROLE10：</strong>実処理の入出力・コマンド・検査・実測時間・ファイル概要を提供し、最終候補に対応した添付HTML/JSON/全ログへ固定。</p><p><strong>ROLE20：</strong>実施記録と計画、候補ID/版/SHA、表示・収録漏れを独立確認。</p><p>両チャットは同じGitHubのviewer/UPDATE_PROTOCOL.mdを読み、単一の正本から更新。別チャットの起動・遠隔操作はしません。閲覧画面を開いただけでは最新情報を取得しません。</p><p>ファイルの追加は既存版を消さず、更新前HEADを期待値にして保存。競合時は再読取りし、他担当の追記を取り込みます。</p><p>最終添付は更新し続ける表示と別の固定版。候補ID/版/SHA・計画版・評価・ログZIP SHA・添付内manifestを一致させて提出。予定ファイルを存在済みと表示しません。</p><a id="github" target="_blank" rel="noopener">GitHubの正本を開く</a></div></section>
 </main><script id="data" type="application/json">__DATA__</script><script>
+/* Display aliases preserve filenames and identities. Latest means active registered version, not release approval. */
+function fileTitle(f){
+  if(f.display_title)return f.display_title;
+  const name=f.path.split('/').pop();
+  const known={
+    'PLAN.md':'現行の解析・作業指示書','STATE.json':'全体の進捗台帳',
+    '10.json':'作業担当の実施報告','20.json':'評価担当の独立検査','30.json':'修正担当の改善案',
+    '00.md':'進捗担当の役割','10.md':'作業担当の役割','20.md':'評価担当の役割','30.md':'修正担当の役割','40.md':'履歴閲覧の役割',
+    'UPDATE_PROTOCOL.md':'共有画面の更新ルール','platform.json':'閲覧先・配信・更新設定',
+    'input.json':'画面再生成の固定入力','viewer_template.html':'3D画面の表示テンプレート',
+    'index.html':'共有履歴・3Dアトラス','process_atlas.json':'処理・ファイルの表示データ',
+    'timeline.json':'時系列の記録データ','timeline.html':'会話・作業タイムライン','timeline.csv':'時系列一覧のCSV',
+    'TIMELINE.md':'会話・作業の履歴一覧','coverage.json':'会話の収録範囲と欠落',
+    'candidate.json':'候補の数値・根拠の検査台帳','manifest.json':'収録ファイルとハッシュ一覧',
+    'validation.json':'表示・再生成の検査結果','definitions.json':'指標の計算・対象定義',
+    'metric_inventory.json':'必須指標の一覧','input_manifest.json':'入力原本の登録台帳',
+    'S10_excerpts.json':'追加業務資料の抽出根拠','S10_integration.md':'追加業務資料の反映指示',
+    '簡易確認.md':'判断・欠落・未算出の簡易確認文','README.md':'このフォルダの使い方',
+    'build_viewer.py':'3Dアトラスの生成処理','build_timeline.py':'タイムラインの生成処理',
+    'test_graph3d.cjs':'3D操作の動作検査',
+    'src':'解析・候補生成のプログラム','checks':'数値・保持・再現の検査記録',
+    'reports':'担当別の保存報告','references':'参照資料・判断根拠','roles':'担当の役割と開始手順',
+    'logs':'会話・試行・作業ログ','events':'実作業・指示のイベント',
+    'viewer':'共有履歴・処理アトラス','tools':'再生成・検査の道具',
+    'sources':'収録元の記録','snapshots':'過去版の報告・進捗記録','timeline':'時系列の履歴',
+    'decisions':'承認済みの判断・変更方針'
+  };
+  const snap=name.match(/^([a-f0-9]+)-(STATE|10|20|30)\.json$/);
+  if(snap)return '過去版｜'+({'STATE':'進捗台帳','10':'作業報告','20':'独立評価','30':'修正案'}[snap[2]]);
+  if(known[name])return known[name];
+  const verbs={'build':'生成','verify':'検証','test':'試験','extract':'抽出','replay':'再現','apply':'適用','graft':'構成保持','render':'描画','package':'梱包','summarize':'集約'};
+  const topics={'candidate':'解析候補','timeline':'履歴','viewer':'共有画面','preservation':'原部品保持','font':'日本語表示','calculation':'計算結果','numeric':'数値','metric':'指標','handoff':'担当間受渡し','startup':'開始時点','pilot':'小規模出力','recalc':'再計算','role30':'修正案'};
+  const stem=name.replace(/\.[^.]+$/,'');
+  const v=Object.entries(verbs).find(([k])=>stem.startsWith(k+'_'));
+  const t=Object.entries(topics).find(([k])=>stem.includes(k));
+  if(v&&t)return t[1]+'の'+v[1]+'処理';
+  if(t)return t[1]+(f.path.includes('/checks/')?'の検査記録':'の関連記録');
+  if(/^planning_/.test(stem))return '計画・指示の保存イベント';
+  if(/C\d+/.test(stem))return '問題'+stem.match(/C\d+/)[0]+'の確認記録';
+  if(f.type==='tree')return 'フォルダ｜'+name;
+  if(/\.pdf$/i.test(name))return 'PDF資料｜'+stem;
+  if(/\.xlsx?$/i.test(name))return 'Excel資料｜'+stem;
+  if(/\.docx?$/i.test(name))return '文書資料｜'+stem;
+  return (f.path.includes('/checks/')?'検査記録｜':f.path.includes('/logs/')?'保存ログ｜':'関連ファイル｜')+stem;
+}
+function fileIsLatest(f){return !!f.latest_label||(!f.path.includes('/snapshots/')&&['PLAN.md','UPDATE_PROTOCOL.md','簡易確認.md'].includes(f.path.split('/').pop()));}
+function fileLatestLabel(f){return f.latest_label||(fileIsLatest(f)?'現行版':'');}
 const D=JSON.parse(document.getElementById('data').textContent), el=id=>document.getElementById(id);
 function node(tag,text,cls){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e;}
 function clear(e){e.replaceChildren();}function json(e,x){e.append(node('pre',JSON.stringify(x,null,2)));}
@@ -19,10 +66,10 @@ for(const r of D.actual){const b=node('button',undefined,'task');b.append(node('
 for(const t of D.tasks){const b=node('button',undefined,'task');b.append(node('strong',t.id+' · ROLE '+t.owner),node('span',t.work),node('small','前提 '+(t.deps.join(' / ')||'なし')+' / '+t.record_status));b.onclick=()=>{clear(el('taskdetail'));el('taskdetail').append(node('h3',t.id));json(el('taskdetail'),t);};el('tasks').append(b);}
 const files=D.files, root={path:'care-insurance-analysis',type:'tree',summary:'プロジェクト正本。非公開原データはこのGitHubフォルダには含めない。'};let current=root.path;
 function children(path){return files.filter(f=>f.path.startsWith(path+'/')&&f.path.slice(path.length+1).indexOf('/')===-1);}
-function overview(f){clear(el('details'));el('details').append(node('h3',f.path.split('/').pop()),node('p',f.summary),node('p',f.type==='tree'?'フォルダ / 下位 '+children(f.path).length+'項目':'保存済みGitHubファイル','tag'));json(el('details'),{path:f.path,blob_sha:f.sha||null,size_bytes:f.size??null,source_commit:D.base_commit,verification:'パス・Gitオブジェクト確認。概要は用途説明。内容精読/解析合格を意味しない。'});const a=node('a','固定版をGitHubで開く');a.href='https://github.com/myonmyon545-cell/-/'+(f.type==='tree'?'tree':'blob')+'/'+D.base_commit+'/'+f.path;a.target='_blank';a.rel='noopener';el('details').append(a);}
+function overview(f){clear(el('details'));el('details').append(node('h3',fileTitle(f)),node('p',f.original_name||f.path.split('/').pop(),'filemeta'),node('p',f.summary),node('p',f.type==='tree'?'フォルダ / 下位 '+children(f.path).length+'項目':(f.origin==='library_metadata'?'登録済みファイル情報':'保存済みGitHubファイル'),'tag'));json(el('details'),{path:f.path,blob_sha:f.sha||null,size_bytes:f.size??null,source_commit:D.base_commit,verification:f.origin?'保存台帳で確認したメタデータ。ファイル内容の検証・完成判定は別。':'パス・Gitオブジェクト確認。概要は用途説明。内容精読/解析合格を意味しない。'});if(f.origin){el('details').append(node('p','登録済み原資料・成果物。Webへ原本はアップロードしていません。','muted'));json(el('details'),{original_name:f.original_name,library_file_id:f.library_file_id,version:f.version,sha256:f.sha256,status:f.latest_label||'原本・参照資料'});return;}const a=node('a','固定版をGitHubで開く');a.href='https://github.com/myonmyon545-cell/-/'+(f.type==='tree'?'tree':'blob')+'/'+D.base_commit+'/'+f.path;a.target='_blank';a.rel='noopener';el('details').append(a);}
 function choose(f){overview(f);if(f.type==='tree'){current=f.path;space();}}
-function space(){clear(el('space'));clear(el('crumb'));let p='';for(const part of current.split('/')){p+=(p?'/':'')+part;const path=p;const b=node('button',part);b.onclick=()=>{current=path;space();};el('crumb').append(b);}const depth=current.split('/').length-1;for(let i=0;i<2;i++){const plane=node('div',undefined,'plane');plane.style.transform='translateZ('+(-70*(depth+i))+'px)';plane.append(node('p',i?'階層 '+depth+' / フォルダ内を選択':current,'plane-head'));if(i===0){const tiles=node('div',undefined,'tiles');for(const f of children(current)){const b=node('button',f.path.split('/').pop(),'tile'+(f.type==='tree'?' folder':''));b.onclick=()=>choose(f);tiles.append(b);}plane.append(tiles);}el('space').prepend(plane);}el('up').disabled=current===root.path;}
-function tree(parent,target){for(const f of children(parent)){if(f.type==='tree'){const d=node('details'),s=node('summary',f.path.split('/').pop());s.onclick=()=>overview(f);d.append(s);tree(f.path,d);target.append(d);}else{const b=node('button',f.path.split('/').pop());b.onclick=()=>choose(f);target.append(b);}}}tree(root.path,el('tree'));space();
+function space(){clear(el('space'));clear(el('crumb'));let p='';for(const part of current.split('/')){p+=(p?'/':'')+part;const path=p;const b=node('button',part);b.onclick=()=>{current=path;space();};el('crumb').append(b);}const depth=current.split('/').length-1;for(let i=0;i<2;i++){const plane=node('div',undefined,'plane');plane.style.transform='translateZ('+(-70*(depth+i))+'px)';plane.append(node('p',i?'階層 '+depth+' / フォルダ内を選択':current,'plane-head'));if(i===0){const tiles=node('div',undefined,'tiles');for(const f of children(current)){const b=node('button',fileTitle(f),'tile'+(f.type==='tree'?' folder':''));b.onclick=()=>choose(f);tiles.append(b);}plane.append(tiles);}el('space').prepend(plane);}el('up').disabled=current===root.path;}
+function tree(parent,target){for(const f of children(parent)){if(f.type==='tree'){const d=node('details'),s=node('summary',fileTitle(f));s.onclick=()=>overview(f);d.append(s);tree(f.path,d);target.append(d);}else{const b=node('button',fileTitle(f));b.onclick=()=>choose(f);target.append(b);}}}tree(root.path,el('tree'));space();
 for(const id of ['rx','ry'])el(id).oninput=()=>el('space').style.setProperty('--'+id,el(id).value+'deg');el('reset').onclick=()=>{el('rx').value=12;el('ry').value=-18;el('rx').oninput();el('ry').oninput();};el('up').onclick=()=>{if(current!==root.path){current=current.slice(0,current.lastIndexOf('/'));space();}};el('github').href='https://github.com/myonmyon545-cell/-/tree/main/care-insurance-analysis/viewer';
 </script>
 <style>
@@ -73,7 +120,7 @@ for(const id of ['rx','ry'])el(id).oninput=()=>el('space').style.setProperty('--
   stage.append(hud);
   const hint = node('div','ドラッグで回転 · ピンチでズーム · 点をタップして移動','universe-hint');stage.append(hint);
   const tools = node('div',undefined,'controls universe-tools');
-  const search = node('input');search.placeholder='ファイル名を探す';search.setAttribute('aria-label','3Dファイル検索');
+  const search = node('input');search.placeholder='用途・ファイル名を探す';search.setAttribute('aria-label','3Dファイル検索');
   const cruise=node('button','自動回遊を開始');
   const theme=node('button','明るい空間');
   const full=node('button','大きく見る');
@@ -152,17 +199,19 @@ for(const id of ['rx','ry'])el(id).oninput=()=>el('space').style.setProperty('--
     const projected=graph.map(f=>({f,p:project(positions.get(f.path))})).filter(x=>x.p).sort((a,b)=>b.p.z-a.p.z);
     hits=[];
     for(const {f,p} of projected){if(p.x< -150||p.x>W+150||p.y< -30||p.y>H+30)continue;
-      const name=f.path.split('/').pop(),match=!q||f.path.toLowerCase().includes(q);
-      const active=f.path===selected||f.path===hover,folder=f.type==='tree';
+      const name=fileTitle(f),match=!q||(fileTitle(f)+' '+f.path+' '+(f.original_name||'')).toLowerCase().includes(q);
+      const active=f.path===selected||f.path===hover,folder=f.type==='tree',latest=fileIsLatest(f);
       const color=light?['#157d70','#6553a2','#94711d','#2d6c9a','#a05071'][positions.get(f.path).branch%5||0]:palette[positions.get(f.path).branch%5||0];
       ctx.globalAlpha=match?Math.max(.35,Math.min(1,p.s+.2)):.08;
       const size=active?14:folder?12:Math.max(10,Math.min(13,11*p.s));ctx.font=(folder||active?'600 ':'400 ')+size+'px system-ui';
       const label=name.length>34?name.slice(0,30)+'…':name;const w=ctx.measureText(label).width+18;
+      if(latest){ctx.shadowColor=light?'#1d9a86':'#83ffe0';ctx.shadowBlur=reduced?18:20+6*Math.sin(now*.002);ctx.strokeStyle=light?'#1d9a86':'#83ffe0';ctx.lineWidth=1.2;ctx.strokeRect(p.x-w/2-4,p.y-16,w+8,32);ctx.shadowBlur=0;}
       if(active||folder){ctx.fillStyle=light?'#ffffffed':'#0e1b25e8';ctx.fillRect(p.x-w/2,p.y-12,w,24);ctx.strokeStyle=color;ctx.lineWidth=active?1.5:.5;ctx.strokeRect(p.x-w/2,p.y-12,w,24);}
       ctx.fillStyle=color;ctx.fillRect(p.x-w/2-6,p.y-3,folder?6:3,folder?6:3);
       ctx.fillStyle=active?color:light?'#243a40':'#c0d1d9';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(label,p.x,p.y);
+      if(latest){ctx.font='9px system-ui';ctx.fillStyle=light?'#177c69':'#83ffe0';ctx.fillText(fileLatestLabel(f),p.x,p.y+20);}
       if(match)hits.unshift({path:f.path,x:p.x,y:p.y,w});}
-    ctx.globalAlpha=1;hint.textContent=hover?hover.split('/').pop()+' · タップで概要と移動':'ドラッグで回転 · ピンチでズーム · 点をタップして移動';
+    ctx.globalAlpha=1;hint.textContent=hover?fileTitle(graph.find(f=>f.path===hover))+' · タップで概要と移動':'ドラッグで回転 · ピンチでズーム · 点をタップして移動';
   }
   space();resize();requestAnimationFrame(draw);
   window.careGraph3D={nodeCount:graph.length,edgeCount:edges.length,select,project,positions};

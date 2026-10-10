@@ -4,6 +4,7 @@ from pathlib import Path
 from datetime import datetime
 from zoneinfo import ZoneInfo
 import yaml
+from registered_files import registered_files
 
 def build(source, timeline, template, out):
  source=json.loads(Path(source).read_text()); timeline=json.loads(Path(timeline).read_text()); out=Path(out);out.mkdir(parents=True,exist_ok=True)
@@ -22,6 +23,7 @@ def build(source, timeline, template, out):
    elif '/roles/' in f['path']:summary='担当チャットの役割・開始・受渡し指示。'
    else:summary='固定コミットで存在を確認した管理ファイル。概要はファイル用途の説明。'
   files.append(dict(f,summary=summary))
+ files.extend(registered_files(source))
  actual=[]
  for role,r in source['reports'].items():
   actual.append({'title':'ROLE'+role+' 保存済み報告','at':r.get('updated_at'),'status':r.get('verdict',r.get('status')),'plan_revision':r.get('plan_revision'),'candidate':r.get('candidate'),'next_action':r.get('next_action'),'source':'reports/'+role+'.json','scope':'保存済み報告に基づく履歴。現行契約への適用完了は別途必要。'})
