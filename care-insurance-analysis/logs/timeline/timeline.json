@@ -1,26 +1,27 @@
 {
   "schema": "care_timeline/v1",
-  "as_of": "2026-10-10T10:45:05+09:00",
-  "base_commit": "1bb4fdc43e15811909f711dbe7f76608a928cbe5",
+  "as_of": "2026-10-10T11:25:26+09:00",
+  "base_commit": "88885a5d5204c5bd2cdfaf007687f78ceef335c6",
   "timezone": "Asia/Tokyo",
   "coverage": {
-    "raw_user_messages": 40,
-    "raw_assistant_messages": 1,
+    "raw_user_messages": 42,
+    "raw_assistant_messages": 3,
     "retrieved_summaries": 25,
     "saved_report_versions": 17,
-    "commit_records": 18,
-    "dated_records": 62,
-    "undated_records": 39,
+    "commit_records": 20,
+    "dated_records": 68,
+    "undated_records": 42,
     "excluded_retrieval_records": 3,
     "gaps": [
       "過去チャット全体の原文は未取得。検索要約を全文と表示しない。",
       "00/30の公開会話全文は未取得。保存済みJSON報告/STATEで補完。",
       "40は一部要約のみ。全更新会話は未取得。",
-      "古い計画AI応答は全件未取得。今回取得した表示原文1件と検索要約を収録。",
+      "古い計画AI応答は全件未取得。取得できた表示原文と検索要約のみを収録。",
       "送信日時不明の原文は会話順を保持し、保存日時を送信日時へ転用しない。",
       "GitHub大型JSONの差分は一部省略。必要な報告/STATEは実JSONを別取得。"
     ],
-    "not_claimed": "全チャット全文収録済み、他チャット実行状態の直接観測、候補完成/評価合格は主張しない。"
+    "not_claimed": "全チャット全文収録済み、他チャット実行状態の直接観測、候補完成/評価合格は主張しない。",
+    "saved_work_events": 3
   },
   "records": [
     {
@@ -752,6 +753,19 @@
       "conversation_order": 39
     },
     {
+      "id": "event-planning_20261010_decisions",
+      "at": "2026-10-10T10:24:49+09:00",
+      "display_time": "2026-10-10 10:24:49 JST",
+      "role": "planning",
+      "chat": "計画",
+      "kind": "作業イベント",
+      "title": "planning_20261010_decisions",
+      "body": "{\n  \"schema\": \"care_audit_event/v1\",\n  \"event_id\": \"planning_20261010_decisions\",\n  \"at\": \"2026-10-10T10:24:49+09:00\",\n  \"role\": \"planning\",\n  \"plan_revision\": \"2.4\",\n  \"input_commit\": \"a96eba0920c8c21fb3b85d17e6a59cc5cea03fc7\",\n  \"user_verbatim\": \"1 その数値はスルーして最新の追加した資料に置換。\\n2 そこはスルーで完成目指して欠落でいい\\n4 放置で\\n5 完成物の見本と見比べて必要なデータなのか？\\n6 最新の情報を参照して\\n7 もうその解決策しかないんじゃ...？\\nC09 未算出で行こう\\nで、これのやりとりもそうなんだけど、プロジェクト指示も含め全ての作業、全てのやり取り、試験用、未検証含め全てのデータをログとして保存し、完成版に別ファイルで添付してね。あとそれを簡易版にした簡易確認文も掲載して\\nあと、\\n8 集約してね\\n9 その対応で行こう。確認できる数値があるか一応再確認して\\n10 \\n10 原因を検索など駆使して突き止め対策\\n11 提示された解決策で解決\\n12 同じく\",\n  \"public_response_summary\": \"置換に年度/集計方法表示、欠落/除外/未算出を許容。C11未免除、未取得会話は未収録。実Excel変更は10へ引継ぐ。\",\n  \"response_type\": \"summary_not_verbatim\",\n  \"results\": {\n    \"plan_integrated\": true,\n    \"candidate_applied\": false,\n    \"tests\": \"PASS:24 + DAG/要件対応/版整合。新Excel独立検証ではない。\",\n    \"log_archive\": \"not_generated\"\n  },\n  \"observed_failures\": [\n    {\n      \"operation\": \"refresh_files_apply_patch\",\n      \"reason\": \"同一パスのDelete/Add競合で拒否。別スナップショットから復旧。原本/remote未変更。\"\n    },\n    {\n      \"operation\": \"C10_read_S02_by_path\",\n      \"reason\": \"拡張子なしでopenpyxl拒否。バイナリストリーム読取りで成功。原本未変更。\"\n    },\n    {\n      \"operation\": \"planning_validation_first_attempt\",\n      \"reason\": \"旧工程キーday1の想定違いでKeyError。実構造のgateを探索して修正、24検査とDAG/要件対応を再確認。\"\n    }\n  ],\n  \"coverage_gaps\": [\n    \"他チャット全文は未取得\",\n    \"過去の消失一時ファイルは未取得\",\n    \"このイベントは現在の指示原文と処理記録。過去全会話の逐語保存済みではない。\"\n  ]\n}",
+      "source": "sources/events.json",
+      "quality": "保存済みイベント本文。会話原文とは別の作業記録。日時未記録の場合は推定しない。",
+      "conversation_order": null
+    },
+    {
       "id": "snapshot-e3b27a95a4ab1906b43a8d0c6684e4544bcae639-STATE.json",
       "at": "2026-10-10T10:24:49+09:00",
       "display_time": "2026-10-10 10:24:49 JST",
@@ -828,6 +842,71 @@
       "source": "https://github.com/myonmyon545-cell/-/commit/1bb4fdc43e15811909f711dbe7f76608a928cbe5",
       "quality": "GitHubコミットと変更ファイル一覧を確認。保存日時。",
       "conversation_order": null
+    },
+    {
+      "id": "commit-8ca932825f69203c89dba5b4bf47d2e551608a74",
+      "at": "2026-10-10T10:58:37+09:00",
+      "display_time": "2026-10-10 10:58:37 JST",
+      "role": "記録保存",
+      "chat": "GitHub",
+      "kind": "保存履歴",
+      "title": "Archive available past care-analysis conversations and add reproducible timeline viewer (ops 2.4.1)",
+      "body": "{\n  \"changed_files\": [\n    {\n      \"path\": \"care-insurance-analysis/PLAN.md\",\n      \"status\": \"modified\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/README.md\",\n      \"status\": \"modified\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/TIMELINE.md\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/coverage.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/manifest.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/assistant_available_text.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/commits.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/context_1.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/context_2.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/conversation_available_user_text.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/excluded_retrieval_records.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/snapshots/102797981e97-STATE.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/snapshots/1051610978f0-30.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/snapshots/14ad689ab195-10.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/snapshots/14ad689ab195-20.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/snapshots/14ad689ab195-30.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/snapshots/14ad689ab195-STATE.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/snapshots/176588644023-STATE.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/snapshots/3c63328c7b10-20.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/snapshots/67f2734951e5-30.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/snapshots/a34c36881e99-STATE.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/snapshots/a855a41a7801-10.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/snapshots/a96eba0920c8-STATE.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/snapshots/b5b14b75d832-STATE.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/snapshots/ca5e064bdfbf-10.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/snapshots/e3b27a95a4ab-STATE.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/snapshots/e3e5258ef1ea-10.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/sources/snapshots/f15b6c5f1b4d-20.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/timeline.csv\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/timeline.html\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/timeline.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/timeline/validation.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/roles/40.md\",\n      \"status\": \"modified\",\n      \"patch\": null\n    },\n    {\n      \"path\": \"care-insurance-analysis/tools/build_timeline.py\",\n      \"status\": \"added\",\n      \"patch\": null\n    }\n  ],\n  \"diff_available\": false,\n  \"completion_policy\": \"コミット説明だけで解析完了を判定しない。\"\n}",
+      "source": "https://github.com/myonmyon545-cell/-/commit/8ca932825f69203c89dba5b4bf47d2e551608a74",
+      "quality": "GitHubコミットと変更ファイル一覧を確認。保存日時。",
+      "conversation_order": null
+    },
+    {
+      "id": "event-planning_20261010_continuing_authorization",
+      "at": "2026-10-10T10:59:09+09:00",
+      "display_time": "2026-10-10 10:59:09 JST",
+      "role": "planning",
+      "chat": "計画",
+      "kind": "作業イベント",
+      "title": "planning_20261010_continuing_authorization",
+      "body": "{\n  \"schema\": \"care_audit_event/v1\",\n  \"event_id\": \"planning_20261010_continuing_authorization\",\n  \"at\": \"2026-10-10T10:59:09+09:00\",\n  \"role\": \"planning\",\n  \"user_verbatim\": \"常に許可\",\n  \"authorization\": {\n    \"status\": \"continuing_authorized\",\n    \"scope\": [\n      \"介護保険データ解析に関係する取得可能な過去/現在の公開会話と作業記録の収録\",\n      \"会話/作業タイムラインの更新と再構成\",\n      \"承認済み目的と制約内で追加指示を計画へ組込み、GitHubへ保存\",\n      \"完成時の別添全ログと簡易確認文への収録\"\n    ],\n    \"confirmation_policy\": \"上記範囲は再確認不要\",\n    \"boundaries\": \"本プロジェクトの既存の目的・権限・原本保護・非公開保存・役割分担を維持。取得できない会話の全文保存や無人監視は実施済みと扱わない。\"\n  },\n  \"input_commit\": \"8ca932825f69203c89dba5b4bf47d2e551608a74\",\n  \"analysis_contract_changed\": false,\n  \"workbook_changed\": false\n}",
+      "source": "sources/events.json",
+      "quality": "保存済みイベント本文。会話原文とは別の作業記録。日時未記録の場合は推定しない。",
+      "conversation_order": null
+    },
+    {
+      "id": "user-41",
+      "at": "2026-10-10T10:59:09+09:00",
+      "display_time": "2026-10-10 10:59:09 JST",
+      "role": "プロデューサー",
+      "chat": "計画",
+      "kind": "会話原文",
+      "title": "常に許可",
+      "body": "常に許可",
+      "source": "logs/conversation_available_user_text.json",
+      "quality": "表示済み本文。時刻未取得分は日時不明。",
+      "conversation_order": 41
+    },
+    {
+      "id": "commit-88885a5d5204c5bd2cdfaf007687f78ceef335c6",
+      "at": "2026-10-10T10:59:49+09:00",
+      "display_time": "2026-10-10 10:59:49 JST",
+      "role": "記録保存",
+      "chat": "GitHub",
+      "kind": "保存履歴",
+      "title": "Record continuing authorization for care-analysis conversation logging and timeline updates",
+      "body": "{\n  \"changed_files\": [\n    {\n      \"path\": \"care-insurance-analysis/logs/events/planning_20261010_continuing_authorization.json\",\n      \"status\": \"added\",\n      \"patch\": null\n    }\n  ],\n  \"diff_available\": false,\n  \"completion_policy\": \"コミット説明だけで解析完了を判定しない。\"\n}",
+      "source": "https://github.com/myonmyon545-cell/-/commit/88885a5d5204c5bd2cdfaf007687f78ceef335c6",
+      "quality": "GitHubコミットと変更ファイル一覧を確認。保存日時。",
+      "conversation_order": null
+    },
+    {
+      "id": "user-42",
+      "at": "2026-10-10T11:23:48+09:00",
+      "display_time": "2026-10-10 11:23:48 JST",
+      "role": "プロデューサー",
+      "chat": "計画",
+      "kind": "会話原文",
+      "title": "さっきの指示の続きを行なって",
+      "body": "さっきの指示の続きを行なって",
+      "source": "logs/conversation_available_user_text.json",
+      "quality": "表示済み本文。時刻未取得分は日時不明。",
+      "conversation_order": 42
     },
     {
       "id": "user-1",
@@ -1335,6 +1414,45 @@
       "source": "現在の計画チャット表示本文",
       "quality": "この計画チャットで現在表示される直前応答の本文。送信時刻は原記録未照合。",
       "conversation_order": 39.5
+    },
+    {
+      "id": "assistant-40.5",
+      "at": null,
+      "display_time": "送信日時不明 / 会話順 40.5",
+      "role": "計画AI",
+      "chat": "計画",
+      "kind": "会話原文",
+      "title": "タイムライン101件の保存報告",
+      "body": "プロデューサー、**過去の会話と作業記録101件を収録したタイムラインを保存した、ね。**\n\n[タイムラインを開く](sandbox:/workspace/scratch/64d3a079be0e/inspection/timeline/generated/timeline.html)\n[GitHubで時系列一覧を見る](https://github.com/myonmyon545-cell/-/blob/main/care-insurance-analysis/logs/timeline/TIMELINE.md)\n\n本文を開いたり、検索・チャット別の絞込みができます。原文・会話要約・保存報告を区別し、日時不明の発言は会話順で残しました。\n\n**過去チャットの全文は取得できていません。** 未収録箇所も明記しています。完成時の別添ログへ、タイムラインと収録元を含める指示も組み込み済みです。",
+      "source": "現在の計画チャット表示本文",
+      "quality": "表示済み最終回答原文。送信日時未取得。",
+      "conversation_order": 40.5
+    },
+    {
+      "id": "assistant-41.5",
+      "at": null,
+      "display_time": "送信日時不明 / 会話順 41.5",
+      "role": "計画AI",
+      "chat": "計画",
+      "kind": "会話原文",
+      "title": "継続許可の保存報告",
+      "body": "プロデューサー、継続許可として保存しました。今後、このプロジェクトの会話収録・タイムライン更新・追加指示の組込みは、確認を挟まず進める、ね。",
+      "source": "現在の計画チャット表示本文",
+      "quality": "表示済み最終回答原文。送信日時未取得。",
+      "conversation_order": 41.5
+    },
+    {
+      "id": "event-planning_20261010_v24_save_receipt",
+      "at": null,
+      "display_time": "送信日時不明",
+      "role": "計画",
+      "chat": "計画",
+      "kind": "作業イベント",
+      "title": "planning_20261010_v24_save_receipt",
+      "body": "{\n  \"schema\": \"care_audit_receipt/v1\",\n  \"event_id\": \"planning_20261010_v24_save_receipt\",\n  \"plan_revision\": \"2.4\",\n  \"saved_commit\": \"e3b27a95a4ab1906b43a8d0c6684e4544bcae639\",\n  \"readback\": [\n    {\n      \"path\": \"care-insurance-analysis/PLAN.md\",\n      \"match\": true,\n      \"sha\": \"d0c360c5441fe71f2b019bbfce4a8f7431a86f7a\"\n    },\n    {\n      \"path\": \"care-insurance-analysis/STATE.json\",\n      \"match\": true,\n      \"sha\": \"ce0e9334b6a70b8b6963e05bc58db4a07c23328b\"\n    },\n    {\n      \"path\": \"care-insurance-analysis/README.md\",\n      \"match\": true,\n      \"sha\": \"b750cc2cfbc07ddae0b7f411c1cbc8a72211d720\"\n    },\n    {\n      \"path\": \"care-insurance-analysis/references/S10_excerpts.json\",\n      \"match\": true,\n      \"sha\": \"93d812066d0b7ade5142c325b5a6ce7762bddd72\"\n    },\n    {\n      \"path\": \"care-insurance-analysis/references/S10_integration.md\",\n      \"match\": true,\n      \"sha\": \"a1e5dbe3c9d882be0d53a786470249596b2ad7c7\"\n    },\n    {\n      \"path\": \"care-insurance-analysis/references/簡易確認.md\",\n      \"match\": true,\n      \"sha\": \"dac1788673e33388cf8d7011ecc1d00e57c62a59\"\n    },\n    {\n      \"path\": \"care-insurance-analysis/decisions/2026-10-10_user_decisions.json\",\n      \"match\": true,\n      \"sha\": \"95fd03a84a39fe68b49d69c570c590ea40250301\"\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/README.md\",\n      \"match\": true,\n      \"sha\": \"ce1df0656f790427a822f36af2298a94ac93b31e\"\n    },\n    {\n      \"path\": \"care-insurance-analysis/logs/events/planning_20261010_decisions.json\",\n      \"match\": true,\n      \"sha\": \"2eb4949fcf35820713fb756cf6d6477a44d69d8a\"\n    },\n    {\n      \"path\": \"care-insurance-analysis/checks/font_diagnostic.json\",\n      \"match\": true,\n      \"sha\": \"40fbce5d3f15b3facce197813d69ef26339a09df\"\n    },\n    {\n      \"path\": \"care-insurance-analysis/checks/C10_recheck.json\",\n      \"match\": true,\n      \"sha\": \"5c50c5c2e503bf271f0f7fd31952fa204b0dab41\"\n    },\n    {\n      \"path\": \"care-insurance-analysis/checks/planning_2_4_validation.json\",\n      \"match\": true,\n      \"sha\": \"9f253286f382ff0d9b1ff50afa2aed324e93a18f\"\n    }\n  ],\n  \"changed_paths\": [\n    \"care-insurance-analysis/PLAN.md\",\n    \"care-insurance-analysis/README.md\",\n    \"care-insurance-analysis/STATE.json\",\n    \"care-insurance-analysis/checks/C10_recheck.json\",\n    \"care-insurance-analysis/checks/font_diagnostic.json\",\n    \"care-insurance-analysis/checks/planning_2_4_validation.json\",\n    \"care-insurance-analysis/decisions/2026-10-10_user_decisions.json\",\n    \"care-insurance-analysis/logs/README.md\",\n    \"care-insurance-analysis/logs/events/planning_20261010_decisions.json\",\n    \"care-insurance-analysis/references/S10_excerpts.json\",\n    \"care-insurance-analysis/references/S10_integration.md\",\n    \"care-insurance-analysis/references/簡易確認.md\"\n  ],\n  \"historical_role_reports_and_candidate_unchanged\": true,\n  \"errors\": [\n    {\n      \"operation\": \"github_compare_commits\",\n      \"error\": \"Internal error\",\n      \"recovery\": \"GitHub REST compare取得で差分12ファイル確認\"\n    },\n    {\n      \"operation\": \"fetch_commit_workflow_runs\",\n      \"error\": \"Missing repo_full_name/commit_sha\",\n      \"recovery\": \"正しい引数で再取得。workflow_runs=[]、Actions完了は未確認\"\n    }\n  ],\n  \"candidate_changed\": false,\n  \"final_log_zip_created\": false,\n  \"final_public_response_record\": \"最終公開応答はこの受領記録後に表示。自動全文収録は未実施。\",\n  \"next\": \"ROLE10 applies PLAN2.4 startup; ROLE20 independently reviews new fixed candidate\"\n}",
+      "source": "sources/events.json",
+      "quality": "保存済みイベント本文。会話原文とは別の作業記録。日時未記録の場合は推定しない。",
+      "conversation_order": null
     }
   ]
 }

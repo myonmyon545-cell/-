@@ -790,5 +790,198 @@
       }
     ],
     "full_diff_available": true
+  },
+  {
+    "sha": "8ca932825f69203c89dba5b4bf47d2e551608a74",
+    "commit_at": "2026-10-10T01:58:37Z",
+    "message": "Archive available past care-analysis conversations and add reproducible timeline viewer (ops 2.4.1)",
+    "files": [
+      {
+        "path": "care-insurance-analysis/PLAN.md",
+        "status": "modified",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/README.md",
+        "status": "modified",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/TIMELINE.md",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/coverage.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/manifest.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/assistant_available_text.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/commits.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/context_1.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/context_2.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/conversation_available_user_text.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/excluded_retrieval_records.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/snapshots/102797981e97-STATE.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/snapshots/1051610978f0-30.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/snapshots/14ad689ab195-10.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/snapshots/14ad689ab195-20.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/snapshots/14ad689ab195-30.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/snapshots/14ad689ab195-STATE.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/snapshots/176588644023-STATE.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/snapshots/3c63328c7b10-20.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/snapshots/67f2734951e5-30.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/snapshots/a34c36881e99-STATE.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/snapshots/a855a41a7801-10.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/snapshots/a96eba0920c8-STATE.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/snapshots/b5b14b75d832-STATE.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/snapshots/ca5e064bdfbf-10.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/snapshots/e3b27a95a4ab-STATE.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/snapshots/e3e5258ef1ea-10.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/sources/snapshots/f15b6c5f1b4d-20.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/timeline.csv",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/timeline.html",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/timeline.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/logs/timeline/validation.json",
+        "status": "added",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/roles/40.md",
+        "status": "modified",
+        "patch": null
+      },
+      {
+        "path": "care-insurance-analysis/tools/build_timeline.py",
+        "status": "added",
+        "patch": null
+      }
+    ],
+    "full_diff_available": false,
+    "diff_omission_reason": "タイムライン生成物の再帰的な差分全文複製を避ける。変更ファイル一覧と固定コミットで参照。イベント本文は別途収録。"
+  },
+  {
+    "sha": "88885a5d5204c5bd2cdfaf007687f78ceef335c6",
+    "commit_at": "2026-10-10T01:59:49Z",
+    "message": "Record continuing authorization for care-analysis conversation logging and timeline updates",
+    "files": [
+      {
+        "path": "care-insurance-analysis/logs/events/planning_20261010_continuing_authorization.json",
+        "status": "added",
+        "patch": null
+      }
+    ],
+    "full_diff_available": false,
+    "diff_omission_reason": "タイムライン生成物の再帰的な差分全文複製を避ける。変更ファイル一覧と固定コミットで参照。イベント本文は別途収録。"
   }
 ]

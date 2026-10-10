@@ -1,19 +1,20 @@
 {
-  "raw_user_messages": 40,
-  "raw_assistant_messages": 1,
+  "raw_user_messages": 42,
+  "raw_assistant_messages": 3,
   "retrieved_summaries": 25,
   "saved_report_versions": 17,
-  "commit_records": 18,
-  "dated_records": 62,
-  "undated_records": 39,
+  "commit_records": 20,
+  "dated_records": 68,
+  "undated_records": 42,
   "excluded_retrieval_records": 3,
   "gaps": [
     "過去チャット全体の原文は未取得。検索要約を全文と表示しない。",
     "00/30の公開会話全文は未取得。保存済みJSON報告/STATEで補完。",
     "40は一部要約のみ。全更新会話は未取得。",
-    "古い計画AI応答は全件未取得。今回取得した表示原文1件と検索要約を収録。",
+    "古い計画AI応答は全件未取得。取得できた表示原文と検索要約のみを収録。",
     "送信日時不明の原文は会話順を保持し、保存日時を送信日時へ転用しない。",
     "GitHub大型JSONの差分は一部省略。必要な報告/STATEは実JSONを別取得。"
   ],
-  "not_claimed": "全チャット全文収録済み、他チャット実行状態の直接観測、候補完成/評価合格は主張しない。"
+  "not_claimed": "全チャット全文収録済み、他チャット実行状態の直接観測、候補完成/評価合格は主張しない。",
+  "saved_work_events": 3
 }

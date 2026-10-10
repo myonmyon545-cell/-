@@ -18,7 +18,7 @@ def assemble(folder):
         sha=next(c['sha'] for c in commits if c['sha'].startswith(short))
         repository_path='care-insurance-analysis/'+('STATE.json' if name=='STATE.json' else 'reports/'+name)
         snapshots.append({'sha':sha,'path':repository_path,'content':json.loads(path.read_text())})
-    return {'base_commit':load('timeline.json')['base_commit'],'retrieved_context':[load('sources/context_1.json'),load('sources/context_2.json')],'commit_details':commits,'snapshots':snapshots,'visible_users':load('sources/conversation_available_user_text.json'),'assistant_raw':load('sources/assistant_available_text.json')}
+    return {'base_commit':load('timeline.json')['base_commit'],'retrieved_context':[load('sources/context_1.json'),load('sources/context_2.json')],'commit_details':commits,'snapshots':snapshots,'visible_users':load('sources/conversation_available_user_text.json'),'assistant_raw':load('sources/assistant_available_text.json'),'events':load('sources/events.json') if (folder/'sources/events.json').exists() else []}
 
 def build(source_path,out):
     data=source_path if isinstance(source_path,dict) else json.loads(Path(source_path).read_text());out=Path(out);out.mkdir(parents=True,exist_ok=True)
@@ -32,7 +32,10 @@ def build(source_path,out):
     for m in data['visible_users']['messages']:
         add('user-'+str(m['sequence']),m.get('timestamp'),'プロデューサー','計画','会話原文',m['content'].splitlines()[0][:90],m['content'],'logs/conversation_available_user_text.json','表示済み本文。時刻未取得分は日時不明。',m['sequence'])
     for m in data.get('assistant_raw',[]):
-        add('assistant-'+str(m['sequence']),m.get('timestamp'),'計画AI','計画','会話原文','計画2.4の保存・引継ぎ回答',m['content'],'現在の計画チャット表示本文',m['scope'],m['sequence'])
+        add('assistant-'+str(m['sequence']),m.get('timestamp'),'計画AI','計画','会話原文',m.get('title','計画2.4の保存・引継ぎ回答'),m['content'],'現在の計画チャット表示本文',m['scope'],m['sequence'])
+    for event in data.get('events',[]):
+        x=event['content']
+        add('event-'+x['event_id'],x.get('at'),str(x.get('role','計画')),'計画','作業イベント',x['event_id'],json.dumps(x,ensure_ascii=False,indent=2),'sources/events.json','保存済みイベント本文。会話原文とは別の作業記録。日時未記録の場合は推定しない。')
     maps=[{'c0':'資料確認','c2':'資料確認','c3':'資料確認','c1':'計画','c4':'共通指示','c5':'10 作業'}, {'c0':'計画','c1':'20 評価','c3':'40 履歴','c4':'10 作業'}]
     excluded=[]
     for i,result in enumerate(data['retrieved_context']):
@@ -63,7 +66,9 @@ def build(source_path,out):
     records=known+unknown
     coverage={'raw_user_messages':len(data['visible_users']['messages']),'raw_assistant_messages':len(data.get('assistant_raw',[])),'retrieved_summaries':sum(x['kind']=='会話要約' for x in records),'saved_report_versions':len(data['snapshots']),'commit_records':len(data['commit_details']),'dated_records':len(known),'undated_records':len(unknown),'excluded_retrieval_records':len(excluded),'gaps':['過去チャット全体の原文は未取得。検索要約を全文と表示しない。','00/30の公開会話全文は未取得。保存済みJSON報告/STATEで補完。','40は一部要約のみ。全更新会話は未取得。','古い計画AI応答は全件未取得。今回取得した表示原文1件と検索要約を収録。','送信日時不明の原文は会話順を保持し、保存日時を送信日時へ転用しない。','GitHub大型JSONの差分は一部省略。必要な報告/STATEは実JSONを別取得。'],'not_claimed':'全チャット全文収録済み、他チャット実行状態の直接観測、候補完成/評価合格は主張しない。'}
     pack={'schema':'care_timeline/v1','as_of':datetime.now(ZoneInfo('Asia/Tokyo')).isoformat(timespec='seconds'),'base_commit':data['base_commit'],'timezone':'Asia/Tokyo','coverage':coverage,'records':records}
-    dump(out/'timeline.json',pack);dump(out/'sources/commits.json',data['commit_details'])
+    coverage['saved_work_events']=len(data.get('events',[]))
+    coverage['gaps'][3]='古い計画AI応答は全件未取得。取得できた表示原文と検索要約のみを収録。'
+    dump(out/'timeline.json',pack);dump(out/'sources/commits.json',data['commit_details']);dump(out/'sources/events.json',data.get('events',[]))
     dump(out/'sources/conversation_available_user_text.json',data['visible_users']);dump(out/'sources/assistant_available_text.json',data.get('assistant_raw',[]))
     for i,x in enumerate(data['retrieved_context']):dump(out/f'sources/context_{i+1}.json',x)
     dump(out/'sources/excluded_retrieval_records.json',excluded)
@@ -85,7 +90,8 @@ def build(source_path,out):
         lines.append('| '+x['display_time'].replace(' JST','')+' | '+x['chat']+' / '+x['role']+' | '+x['kind']+' | '+x['title'].replace('|','／').replace('\n',' ')+' | '+link+' |')
     lines+=['','## 送信日時不明の会話原文','', '順序だけを保持。保存時刻や他の会話の日時を転用しません。','']
     for x in unknown:
-        lines+=['<details>',f'<summary>会話順{x["conversation_order"]:g} / {x["role"]} / {esc(x["title"])}</summary>','',x['body'],'','</details>','']
+        order=f'会話順{x["conversation_order"]:g}' if x['conversation_order'] else '記録日時不明'
+        lines+=['<details>',f'<summary>{order} / {x["role"]} / {esc(x["title"])}</summary>','',x['body'],'','</details>','']
     lines+=['## 未収録','']+['- '+x for x in coverage['gaps']]
     (out/'TIMELINE.md').write_text('\n'.join(lines)+'\n')
     dump(out/'coverage.json',coverage)

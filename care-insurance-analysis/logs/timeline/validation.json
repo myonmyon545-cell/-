@@ -1,19 +1,16 @@
 {
-  "records": 101,
-  "ids_unique": "PASS",
-  "dates_sorted_JST": "PASS",
-  "undated_conversation_order": "PASS",
-  "raw_vs_summary_distinction": "PASS",
-  "source_snapshot_count": 17,
+  "records": 110,
+  "unique_ids": "PASS",
+  "replay_records_coverage": "PASS",
+  "base_commit": "88885a5d5204c5bd2cdfaf007687f78ceef335c6",
+  "new_events": 3,
+  "original_user_timestamp_policy": "不明日時は補完しない",
+  "actual_browser_visual_test": "NOT_EXECUTED: browser unavailable in prior probe",
+  "analysis_candidate_modified": false,
+  "state_and_role_reports_modified": false,
+  "plan_yaml": "PASS",
   "javascript_syntax": "PASS",
-  "filter_element_references": "PASS",
-  "remote_network_calls": "NONE",
-  "actual_browser_visual_test": "NOT_EXECUTED: bundled Playwright lacks Chromium executable; no browser available",
-  "interaction_test": "NOT_EXECUTED_IN_REAL_BROWSER",
-  "previous_failed_attempts": [
-    "Playwright browser executable unavailable",
-    "reading large source through command output exceeded output budget; recovered with local overlay file merge"
-  ],
-  "scope": "静的構造とJS構文の確認。実ブラウザ操作・視覚検証済みとは扱わない。",
-  "replay_from_archived_sources": "PASS:全101記録/収録範囲/固定コミットが一致。生成時刻の差は許容。"
+  "observed_failures": [
+    "初回YAML検証コマンドの引用符が不適切でシェル展開が発生。終了1。検証専用ファイルへ切り替えPASS。原本・正本への書込みなし。"
+  ]
 }

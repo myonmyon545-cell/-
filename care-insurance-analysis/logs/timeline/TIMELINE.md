@@ -1,8 +1,8 @@
 # 介護保険データ解析 会話・作業タイムライン
 
-取得時点：2026-10-10T10:45:05+09:00 / 日本時間。対象コミット：`1bb4fdc43e15811909f711dbe7f76608a928cbe5`。
+取得時点：2026-10-10T11:25:26+09:00 / 日本時間。対象コミット：`88885a5d5204c5bd2cdfaf007687f78ceef335c6`。
 
-ユーザー原文40件、AI応答原文1件、会話要約25件、報告・進捗17版、変更履歴18件。
+ユーザー原文42件、AI応答原文3件、会話要約25件、報告・進捗17版、変更履歴20件。
 
 **全チャット全文の収録ではありません。原文・検索要約・実報告・保存日時を区別しています。**
 
@@ -66,12 +66,18 @@
 | 2026-10-10 01:18:54 | GitHub / 記録保存 | 保存履歴 | Integrate S10 administrative context and care plan 2.3 with preserved historical evaluation | [根拠](https://github.com/myonmyon545-cell/-/commit/a96eba0920c8c21fb3b85d17e6a59cc5cea03fc7) |
 | 2026-10-10 09:44:06 | 計画 / 計画 AI | 会話要約 | 追加資料で年間業務量・体制・認定者数・参考日数等11ブロックを補完。ただし半年間主解析への代入不可；C04/C10/C11/C12等未解決、Excel反映未確認 | [根拠](sources/context_1.json) |
 | 2026-10-10 10:18:52 | 計画 / プロデューサー | 会話原文 | 1 その数値はスルーして最新の追加した資料に置換。 | [根拠](logs/conversation_available_user_text.json) |
+| 2026-10-10 10:24:49 | 計画 / planning | 作業イベント | planning_20261010_decisions | [根拠](sources/events.json) |
 | 2026-10-10 10:24:49 | 役割00 / 00 | 保存報告 | 進捗・計画記録 / user_decisions_integrated_waiting_ROLE10_candidate_2_4 | [根拠](sources/snapshots/e3b27a95a4ab-STATE.json) |
 | 2026-10-10 10:27:23 | GitHub / 記録保存 | 保存履歴 | Apply care plan 2.4 user decisions and full audit log contract; preserve historical candidate | [根拠](https://github.com/myonmyon545-cell/-/commit/e3b27a95a4ab1906b43a8d0c6684e4544bcae639) |
 | 2026-10-10 10:29:03 | GitHub / 記録保存 | 保存履歴 | Retain available planning user messages and plan 2.4 save receipt | [根拠](https://github.com/myonmyon545-cell/-/commit/482ad7a2ecf502b9bb4184cf06b847922438ff2a) |
 | 2026-10-10 10:29:21 | 計画 / 計画 AI | 会話要約 | 計画2.4へ、追加資料25.6日置換、服薬欠落、C09未算出、ログ別添・簡易確認文、表示検証等を反映した要約。00の進捗・40の履歴確認本文は取得できず未収録。 | [根拠](sources/context_2.json) |
 | 2026-10-10 10:40:06 | 計画 / プロデューサー | 会話原文 | 過去のチャットも収録してタイムライン形式で見れるようににして欲しい | [根拠](logs/conversation_available_user_text.json) |
 | 2026-10-10 10:40:21 | GitHub / 10 作業 | 保存履歴 | Add ROLE10 candidate v3 generation and S10 display integration | [根拠](https://github.com/myonmyon545-cell/-/commit/1bb4fdc43e15811909f711dbe7f76608a928cbe5) |
+| 2026-10-10 10:58:37 | GitHub / 記録保存 | 保存履歴 | Archive available past care-analysis conversations and add reproducible timeline viewer (ops 2.4.1) | [根拠](https://github.com/myonmyon545-cell/-/commit/8ca932825f69203c89dba5b4bf47d2e551608a74) |
+| 2026-10-10 10:59:09 | 計画 / planning | 作業イベント | planning_20261010_continuing_authorization | [根拠](sources/events.json) |
+| 2026-10-10 10:59:09 | 計画 / プロデューサー | 会話原文 | 常に許可 | [根拠](logs/conversation_available_user_text.json) |
+| 2026-10-10 10:59:49 | GitHub / 記録保存 | 保存履歴 | Record continuing authorization for care-analysis conversation logging and timeline updates | [根拠](https://github.com/myonmyon545-cell/-/commit/88885a5d5204c5bd2cdfaf007687f78ceef335c6) |
+| 2026-10-10 11:23:48 | 計画 / プロデューサー | 会話原文 | さっきの指示の続きを行なって | [根拠](logs/conversation_available_user_text.json) |
 
 ## 送信日時不明の会話原文
 
@@ -402,11 +408,137 @@ startup「10」を実行してください。
 
 </details>
 
+<details>
+<summary>会話順40.5 / 計画AI / タイムライン101件の保存報告</summary>
+
+プロデューサー、**過去の会話と作業記録101件を収録したタイムラインを保存した、ね。**
+
+[タイムラインを開く](sandbox:/workspace/scratch/64d3a079be0e/inspection/timeline/generated/timeline.html)
+[GitHubで時系列一覧を見る](https://github.com/myonmyon545-cell/-/blob/main/care-insurance-analysis/logs/timeline/TIMELINE.md)
+
+本文を開いたり、検索・チャット別の絞込みができます。原文・会話要約・保存報告を区別し、日時不明の発言は会話順で残しました。
+
+**過去チャットの全文は取得できていません。** 未収録箇所も明記しています。完成時の別添ログへ、タイムラインと収録元を含める指示も組み込み済みです。
+
+</details>
+
+<details>
+<summary>会話順41.5 / 計画AI / 継続許可の保存報告</summary>
+
+プロデューサー、継続許可として保存しました。今後、このプロジェクトの会話収録・タイムライン更新・追加指示の組込みは、確認を挟まず進める、ね。
+
+</details>
+
+<details>
+<summary>記録日時不明 / 計画 / planning_20261010_v24_save_receipt</summary>
+
+{
+  "schema": "care_audit_receipt/v1",
+  "event_id": "planning_20261010_v24_save_receipt",
+  "plan_revision": "2.4",
+  "saved_commit": "e3b27a95a4ab1906b43a8d0c6684e4544bcae639",
+  "readback": [
+    {
+      "path": "care-insurance-analysis/PLAN.md",
+      "match": true,
+      "sha": "d0c360c5441fe71f2b019bbfce4a8f7431a86f7a"
+    },
+    {
+      "path": "care-insurance-analysis/STATE.json",
+      "match": true,
+      "sha": "ce0e9334b6a70b8b6963e05bc58db4a07c23328b"
+    },
+    {
+      "path": "care-insurance-analysis/README.md",
+      "match": true,
+      "sha": "b750cc2cfbc07ddae0b7f411c1cbc8a72211d720"
+    },
+    {
+      "path": "care-insurance-analysis/references/S10_excerpts.json",
+      "match": true,
+      "sha": "93d812066d0b7ade5142c325b5a6ce7762bddd72"
+    },
+    {
+      "path": "care-insurance-analysis/references/S10_integration.md",
+      "match": true,
+      "sha": "a1e5dbe3c9d882be0d53a786470249596b2ad7c7"
+    },
+    {
+      "path": "care-insurance-analysis/references/簡易確認.md",
+      "match": true,
+      "sha": "dac1788673e33388cf8d7011ecc1d00e57c62a59"
+    },
+    {
+      "path": "care-insurance-analysis/decisions/2026-10-10_user_decisions.json",
+      "match": true,
+      "sha": "95fd03a84a39fe68b49d69c570c590ea40250301"
+    },
+    {
+      "path": "care-insurance-analysis/logs/README.md",
+      "match": true,
+      "sha": "ce1df0656f790427a822f36af2298a94ac93b31e"
+    },
+    {
+      "path": "care-insurance-analysis/logs/events/planning_20261010_decisions.json",
+      "match": true,
+      "sha": "2eb4949fcf35820713fb756cf6d6477a44d69d8a"
+    },
+    {
+      "path": "care-insurance-analysis/checks/font_diagnostic.json",
+      "match": true,
+      "sha": "40fbce5d3f15b3facce197813d69ef26339a09df"
+    },
+    {
+      "path": "care-insurance-analysis/checks/C10_recheck.json",
+      "match": true,
+      "sha": "5c50c5c2e503bf271f0f7fd31952fa204b0dab41"
+    },
+    {
+      "path": "care-insurance-analysis/checks/planning_2_4_validation.json",
+      "match": true,
+      "sha": "9f253286f382ff0d9b1ff50afa2aed324e93a18f"
+    }
+  ],
+  "changed_paths": [
+    "care-insurance-analysis/PLAN.md",
+    "care-insurance-analysis/README.md",
+    "care-insurance-analysis/STATE.json",
+    "care-insurance-analysis/checks/C10_recheck.json",
+    "care-insurance-analysis/checks/font_diagnostic.json",
+    "care-insurance-analysis/checks/planning_2_4_validation.json",
+    "care-insurance-analysis/decisions/2026-10-10_user_decisions.json",
+    "care-insurance-analysis/logs/README.md",
+    "care-insurance-analysis/logs/events/planning_20261010_decisions.json",
+    "care-insurance-analysis/references/S10_excerpts.json",
+    "care-insurance-analysis/references/S10_integration.md",
+    "care-insurance-analysis/references/簡易確認.md"
+  ],
+  "historical_role_reports_and_candidate_unchanged": true,
+  "errors": [
+    {
+      "operation": "github_compare_commits",
+      "error": "Internal error",
+      "recovery": "GitHub REST compare取得で差分12ファイル確認"
+    },
+    {
+      "operation": "fetch_commit_workflow_runs",
+      "error": "Missing repo_full_name/commit_sha",
+      "recovery": "正しい引数で再取得。workflow_runs=[]、Actions完了は未確認"
+    }
+  ],
+  "candidate_changed": false,
+  "final_log_zip_created": false,
+  "final_public_response_record": "最終公開応答はこの受領記録後に表示。自動全文収録は未実施。",
+  "next": "ROLE10 applies PLAN2.4 startup; ROLE20 independently reviews new fixed candidate"
+}
+
+</details>
+
 ## 未収録
 
 - 過去チャット全体の原文は未取得。検索要約を全文と表示しない。
 - 00/30の公開会話全文は未取得。保存済みJSON報告/STATEで補完。
 - 40は一部要約のみ。全更新会話は未取得。
-- 古い計画AI応答は全件未取得。今回取得した表示原文1件と検索要約を収録。
+- 古い計画AI応答は全件未取得。取得できた表示原文と検索要約のみを収録。
 - 送信日時不明の原文は会話順を保持し、保存日時を送信日時へ転用しない。
 - GitHub大型JSONの差分は一部省略。必要な報告/STATEは実JSONを別取得。
