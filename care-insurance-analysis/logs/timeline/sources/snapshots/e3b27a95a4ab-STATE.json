@@ -1,0 +1,1162 @@
+{
+  "schema": "care_state/v1",
+  "revision": 8,
+  "plan_revision": "2.4",
+  "updated_at": "2026-10-10T10:24:49+09:00",
+  "phase": "user_decisions_integrated_waiting_ROLE10_candidate_2_4",
+  "writer": "00",
+  "canonical_repository": "myonmyon545-cell/-",
+  "canonical_path": "care-insurance-analysis/STATE.json",
+  "deadline": {
+    "date": "2026-10-12",
+    "timezone": "Asia/Tokyo",
+    "user_time_specified": false
+  },
+  "target_submission": "2026-10-12T21:00:00+09:00",
+  "inputs": {
+    "S01": {
+      "name": "処理対象データ群.xlsx",
+      "id": "libfile_2f275b2a53d481919fb7d942fbecc486",
+      "sha256": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d",
+      "role": "target",
+      "municipality": "三島市22206",
+      "label": "令和7年度第2回",
+      "application_period": [
+        "2025-04-01",
+        "2025-09-30"
+      ],
+      "warehouse_cutoff": "2025-11-30",
+      "access_verified_at": "2026-10-09T10:44:20.659016+09:00",
+      "bytes_hash_verified": true,
+      "available_aliases": [
+        {
+          "library_file_id": "libfile_2f275b2a53d481919fb7d942fbecc486",
+          "name": "処理対象データ群.xlsx",
+          "attachment_basename": "01-UTF-8-Q-E7-AC-AC-EF-BC-92-E5-9B-9E-2Exlsx-1",
+          "sha256": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d",
+          "sha256_matches_canonical": true,
+          "access_route": "provided_project_attachment_local_copy",
+          "verified_by": "10",
+          "verified_at": "2026-10-09T11:18:48.380637+09:00"
+        }
+      ],
+      "content_access_scope": "表紙・目次、元14シート一覧と148グラフパーツ数、C03/C04等の指定元セルを読取り。保持出力試験・全指標抽出は未実施。",
+      "last_verified_by": "10",
+      "last_verified_at": "2026-10-09T11:18:48.380637+09:00"
+    },
+    "S02": {
+      "name": "第1回.xlsx相当の文字化け名ファイル",
+      "id": "libfile_49bf2650277881919afc2e41b9afaca2",
+      "sha256": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304",
+      "role": "prior_period_reference",
+      "label": "令和7年度第1回",
+      "application_period": [
+        "2024-10-01",
+        "2025-03-31"
+      ],
+      "warehouse_cutoff": "2025-06-30",
+      "access_verified_at": "2026-10-09T10:44:20.659016+09:00",
+      "bytes_hash_verified": true,
+      "available_aliases": [
+        {
+          "library_file_id": "libfile_0d9cfee943ec819188518e4922ce620e",
+          "name": "第1回提供データ.xlsx（添付コピー）",
+          "attachment_basename": "04-UTF-8-Q-E7-AC-AC-EF-BC-91-E5-9B-9E-2Exlsx-1",
+          "sha256": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304",
+          "sha256_matches_canonical": true,
+          "access_route": "provided_project_attachment_local_copy",
+          "verified_by": "10",
+          "verified_at": "2026-10-09T11:18:48.380637+09:00"
+        }
+      ],
+      "content_access_scope": "表紙・期間、C03/C04対応セルを読取り。提供期間比較は未実施。",
+      "last_verified_by": "10",
+      "last_verified_at": "2026-10-09T11:18:48.380637+09:00"
+    },
+    "S03": {
+      "name": "R5　元データ.xlsx",
+      "id": "libfile_6ef50a7e48148191bab971c64f1df614",
+      "sha256": "e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f",
+      "role": "structure_and_presentation_reference",
+      "actual_data": "令和4年度第2回、申請期間2022-04-01～2022-09-30",
+      "user_name_binding": "ユーザーのR5基データは現状この資料と解釈。別資料が明示されたら形式要件だけ更新。",
+      "access_verified_at": "2026-10-09T10:44:20.659016+09:00",
+      "bytes_hash_verified": true,
+      "available_aliases": [
+        {
+          "library_file_id": "libfile_1a33a04a77e4819197bfdf49e7cd8099",
+          "name": "R5 元データ(1).xlsx",
+          "attachment_basename": "03-R5-1-.xlsx",
+          "sha256": "e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f",
+          "sha256_matches_canonical": true,
+          "access_route": "provided_project_attachment_local_copy",
+          "verified_by": "10",
+          "verified_at": "2026-10-09T11:18:48.380637+09:00"
+        }
+      ],
+      "content_access_scope": "表紙の令和4年度第2回・期間、14シート/148グラフパーツ数と代表元セルを読取り。R5という名前と対象期間を区別。",
+      "last_verified_by": "10",
+      "last_verified_at": "2026-10-09T11:18:48.380637+09:00"
+    },
+    "S04": {
+      "name": "指示書",
+      "id": "libfile_348a1421657c8191938bc42e4a79b9ea",
+      "sha256": "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800",
+      "format": "docx_without_extension",
+      "role": "analysis_priorities_from_old_meeting_script",
+      "access_verified_at": "2026-10-09T10:44:20.659016+09:00",
+      "bytes_hash_verified": true,
+      "available_aliases": [
+        {
+          "library_file_id": "libfile_348a1421657c8191938bc42e4a79b9ea",
+          "name": "指示書",
+          "attachment_basename": "07-file-7",
+          "sha256": "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800",
+          "sha256_matches_canonical": true,
+          "access_route": "provided_project_attachment_local_copy",
+          "verified_by": "10",
+          "verified_at": "2026-10-09T11:18:48.380637+09:00"
+        },
+        {
+          "library_file_id": "libfile_d66db96b3c5881919cf10890068434de",
+          "name": "R5まとめ見本(1)",
+          "attachment_basename": "05-R5-1",
+          "sha256": "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800",
+          "sha256_matches_canonical": true,
+          "access_route": "provided_project_attachment_local_copy",
+          "verified_by": "10",
+          "verified_at": "2026-10-09T11:18:48.380637+09:00"
+        }
+      ],
+      "content_access_scope": "DOCX本文全文を読取り。過年度会議説明であり、数値・原因の今回への流用をしない。",
+      "last_verified_by": "10",
+      "last_verified_at": "2026-10-09T11:18:48.380637+09:00"
+    },
+    "S05": {
+      "name": "manual.pdf",
+      "id": "libfile_7a46b17eb12c8191b3104fe6a8f4f0aa",
+      "sha256": "87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1",
+      "role": "board_analysis_procedure",
+      "pages": 9,
+      "focus": "p1集計項目、p3-4CSV抽出、p5出力と件数確認",
+      "access_verified_at": "2026-10-09T10:44:20.659016+09:00",
+      "bytes_hash_verified": true,
+      "available_aliases": [
+        {
+          "library_file_id": "libfile_f40c9f4e1d0081919fb497f31e737856",
+          "name": "manual(1).pdf",
+          "attachment_basename": "06-manual-1-.pdf",
+          "sha256": "87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1",
+          "sha256_matches_canonical": true,
+          "access_route": "provided_project_attachment_local_copy",
+          "verified_by": "10",
+          "verified_at": "2026-10-09T11:18:48.380637+09:00"
+        }
+      ],
+      "content_access_scope": "9ページ本文を読取り。個票CSV抽出、選択/出力件数照合、Toolのマクロ集計の条件を確認。",
+      "last_verified_by": "10",
+      "last_verified_at": "2026-10-09T11:18:48.380637+09:00"
+    },
+    "S06": {
+      "name": "Tool_v1.3 (1).xls",
+      "id": "libfile_6f78bde68948819198a39bb69b17af54",
+      "sha256": "b74b37c05a97d053ef46c16f380177f5a0724151dac5daff1c4076290671e524",
+      "role": "board_analysis_tool",
+      "limitation": "通常セル読取りは確認済み。VBA実行は未確認。",
+      "access_verified_at": "2026-10-09T10:44:20.659016+09:00",
+      "bytes_hash_verified": true,
+      "available_aliases": [
+        {
+          "library_file_id": "libfile_b7623c4ffd6881919e938f89942286f3",
+          "name": "Tool_v1.3 (1)(1).xls",
+          "attachment_basename": "02-Tool_v1.3-1-1-.xls",
+          "sha256": "b74b37c05a97d053ef46c16f380177f5a0724151dac5daff1c4076290671e524",
+          "sha256_matches_canonical": true,
+          "access_route": "provided_project_attachment_local_copy",
+          "verified_by": "10",
+          "verified_at": "2026-10-09T11:18:48.380637+09:00"
+        }
+      ],
+      "content_access_scope": "実ファイルの存在・形式・SHA256のみ今回照合。VBA実行は未確認。",
+      "last_verified_by": "10",
+      "last_verified_at": "2026-10-09T11:18:48.380637+09:00"
+    },
+    "S07": {
+      "name": "介護保険データ解析_プロジェクト共通指示.md",
+      "id": "libfile_f293e5879930819186b897dc0e3c4338",
+      "body_revision": "2.0"
+    },
+    "S08": {
+      "name": "プロジェクト作業計画_共通指示.md",
+      "id": "libfile_b1e28b0e61a48191b21f809be438f8f4",
+      "body_revision": "2.0",
+      "access_verified_at": "2026-10-09T10:44:20.659016+09:00",
+      "body_revision_verified": "2.0",
+      "library_version": "1"
+    },
+    "S09": {
+      "name": "プロジェクト作業計画_詳細運用.md",
+      "id": "libfile_605f9fb6055481919ba3ce07b897a540",
+      "body_revision": "2.0",
+      "access_verified_at": "2026-10-09T10:44:20.659016+09:00",
+      "body_revision_verified": "2.0"
+    },
+    "S10": {
+      "id": "libfile_292453196e588191a056e2f761753670",
+      "name": "③R8.5.31_個別業務資料（介護保険課）.docx",
+      "library_file_id": "libfile_292453196e588191a056e2f761753670",
+      "sha256": "a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2",
+      "size_bytes": 584930,
+      "library_version": "0",
+      "page_count": 82,
+      "publication_date_in_filename": "2026-05-31",
+      "body_date_caution": "第10節は2026-08-01。他節や実績/予定はそれぞれの本文・列見出しで判定。ファイル名の日付を全表へ一律適用しない。",
+      "read_scope": "本文全82ページ・3991行を通読。補完対象はDOCX XML表セルを照合。全ページ画像の目視は未実施。",
+      "table_locator": "word/document.xml内w:tblの0始まりインデックス。ページはLibrary表示の1始まり/冊子印刷番号を併記。",
+      "verified_by": "planning",
+      "verified_at": "2026-10-10T01:06:52+09:00",
+      "role": "separate_administrative_reference",
+      "bytes_hash_verified": true,
+      "originals_modified": false,
+      "access_route": "Library本文＋実DOCX XML表セル",
+      "analysis_applied": false
+    }
+  },
+  "tasks": {
+    "T01": {
+      "owner": "10",
+      "status": "完了",
+      "wait_reason": null,
+      "confirmed_output": {
+        "evidence": "care-insurance-analysis/src/input_manifest.json",
+        "scope": "入力ID・別名・期間・SHA256の台帳確定。STATE統合は00が実施。",
+        "reported_at": "2026-10-09T11:18:48.380637+09:00"
+      },
+      "next_action": "10が最新mainの同一コミットを読み、今回確認済みハッシュ・別名を引継いで入力台帳を確定。reports/10で実施と検証を報告。",
+      "completion_scope_note": "既存S01/S02の2.2処理実績を保存。S10追加分はT09-T11と新候補検証が未実施。"
+    },
+    "T02": {
+      "owner": "10",
+      "status": "完了",
+      "wait_reason": null,
+      "confirmed_output": {
+        "evidence": [
+          "care-insurance-analysis/src/definitions.json",
+          "care-insurance-analysis/src/metric_inventory.json",
+          "care-insurance-analysis/checks/startup.json"
+        ],
+        "scope": "148表ブロック・3158掲載値の定義/母集団/通常補正/元セルを固定。保留あり。",
+        "reported_at": "2026-10-09T11:18:48.380637+09:00"
+      },
+      "next_action": "10が既存定義/保留を保持してS10を別名前空間に追加し、定義とR13網羅性を更新。",
+      "completion_scope_note": "既存S01/S02の2.2処理実績を保存。S10追加分はT09-T11と新候補検証が未実施。"
+    },
+    "T03": {
+      "owner": "10",
+      "status": "一部完了・表示保留",
+      "wait_reason": "20はv1の日本語描画不合格と構成・印刷課題を確認。30提案に基づく新候補の保持/表示は未検証。",
+      "confirmed_output": {
+        "evidence": [
+          "care-insurance-analysis/checks/c03_overlay.json",
+          "care-insurance-analysis/checks/candidate_preservation.json",
+          "care-insurance-analysis/checks/pilot.json"
+        ],
+        "completed_scope": "C03をS01作業コピーに適用。元14シート/148グラフと部品保持、再開封を確認。",
+        "unfinished_scope": "日本語字形の表示確認。",
+        "reported_at": "2026-10-09T16:29:07+09:00"
+      },
+      "next_action": "日本語対応TTF/OTFまたは日本語描画環境を用意し、元表と候補を再出力して表示・レイアウトを確認。"
+    },
+    "T04": {
+      "owner": "10",
+      "status": "完了",
+      "wait_reason": null,
+      "confirmed_output": {
+        "evidence": "再現用ZIP内 results/extracted_values.json",
+        "scope": "S01/S02から6316値を抽出。独立パーサーで全元値一致。97件を保留/欠損として区別。",
+        "reported_at": "2026-10-09T11:18:48.380637+09:00"
+      },
+      "next_action": "全章の表と通常補正値を元セル付き抽出",
+      "completion_scope_note": "既存S01/S02の2.2処理実績を保存。S10追加分はT09-T11と新候補検証が未実施。"
+    },
+    "T05": {
+      "owner": "10",
+      "status": "利用可能資料分完了（保留付き）",
+      "wait_reason": "C11正式分母のみ資料待ちを維持。C04承認置換/C10承認欠落/C12対象外/C09未算出を適用待ち。",
+      "confirmed_output": {
+        "evidence": [
+          "care-insurance-analysis/checks/role30_apply.json",
+          "care-insurance-analysis/checks/calculation_summary.json",
+          "care-insurance-analysis/checks/replay_role30.json"
+        ],
+        "scope": "E20-01定義案適用、6316指標から1478比較へ入力別状態伝播。保留49比較。計算可能範囲を検査。",
+        "reported_at": "2026-10-09T16:29:07+09:00"
+      },
+      "next_action": "既存計算結果の出所不変範囲を再利用し、T09-T11の参考区分と保留を適用。",
+      "completion_scope_note": "既存S01/S02の2.2処理実績を保存。S10追加分はT09-T11と新候補検証が未実施。"
+    },
+    "T06": {
+      "owner": "10",
+      "status": "旧候補v1保存済み・FAIL／新2.4候補未着手",
+      "wait_reason": "v1の独立評価FAIL。E20-02/E20-03/E20-04/E01とS10補完を一括適用した新候補が必要。",
+      "confirmed_output": {
+        "evidence": [
+          "care-insurance-analysis/checks/candidate.json",
+          "care-insurance-analysis/checks/candidate_preservation.json",
+          "care-insurance-analysis/checks/pilot.json"
+        ],
+        "candidate_id": "care-S01-20261009-v1",
+        "version": 1,
+        "sha256": "fe3ccd49b45400ea70687cd67cb50a7f9563cd7dd6641bd7c82c57aa97cbb570",
+        "library_file_id": "libfile_7d32eed56014819184d160de1a2af7d5",
+        "readback_verified": true,
+        "reported_at": "2026-10-09T16:29:07+09:00"
+      },
+      "next_action": "現在HEADのPLAN/STATE/10/20/30、references/S10_excerpts.json、S10_integration.md、decisions/2026-10-10_user_decisions.jsonを同一コミットで読む。進行中2.3候補があれば作業を捨てず差分適用し2.4新候補へ固定。T09→T10→T11と保存済み30案→T06→T12。一括で置換/欠落/局所表示/字体対策/Excel再現/再計算/全ログを実施。C11は保持。"
+    },
+    "T07": {
+      "owner": "20",
+      "status": "旧v1評価FAIL・新2.4全独立評価待ち",
+      "wait_reason": "新版候補が未生成。旧評価は2.2で全独立評価完了条件未達、2.4へ判定再利用不可。",
+      "confirmed_output": {
+        "evidence": "reports/20.json",
+        "scope": "2.2候補v1の保存済み初回独立評価。verdict FAIL、全独立評価完了=false。",
+        "reported_at": "2026-10-09T17:13:29.181705+09:00",
+        "candidate": {
+          "id": "care-S01-20261009-v1",
+          "version": 1,
+          "sha256": "fe3ccd49b45400ea70687cd67cb50a7f9563cd7dd6641bd7c82c57aa97cbb570"
+        },
+        "plan_revision": "2.2"
+      },
+      "next_action": "2.4新候補を固定し全R01-R14/Q01-Q14を元資料から独立評価。承認欠落/置換を原データ検証済みと誤表示しない。C11未免除。初回全範囲の評価は差分だけで済ませない。"
+    },
+    "T08": {
+      "owner": "10",
+      "status": "未着手",
+      "wait_reason": "独立評価FAIL、新候補と表示/再現/補完評価が未了。完成・暫定の提出条件未達。",
+      "confirmed_output": null,
+      "next_action": "判定に応じて完成または暫定を保存提出"
+    },
+    "T09": {
+      "owner": "10",
+      "status": "未着手",
+      "wait_reason": null,
+      "deps": [],
+      "confirmed_output": null,
+      "next_action": "S10バイトSHAと表セル/年度見出しの独立照合",
+      "plan_revision": "2.4"
+    },
+    "T10": {
+      "owner": "10",
+      "status": "未着手",
+      "wait_reason": "先行工程",
+      "deps": [
+        "T09"
+      ],
+      "confirmed_output": null,
+      "next_action": "補完可否・母集団/期間・提供値/予定/保留の仕分け",
+      "plan_revision": "2.4"
+    },
+    "T11": {
+      "owner": "10",
+      "status": "未着手",
+      "wait_reason": "先行工程",
+      "deps": [
+        "T10"
+      ],
+      "confirmed_output": null,
+      "next_action": "先頭要点1枚に集約し年度日数置換と簡易確認文を掲載。元表/グラフ/画像の局所注記、保持/印刷/日本語/再現を同じ候補で検証。",
+      "plan_revision": "2.4"
+    },
+    "T12": {
+      "owner": "10",
+      "work": "各担当の追記ログを集約し、取得可能な全実データ・指示・履歴・失敗・未検証も非公開ログZIPに収録。未収録台帳と簡易確認文を作り候補へ対応付け。",
+      "plan_revision": "2.4",
+      "status": "未着手",
+      "deps": [
+        "T06"
+      ]
+    }
+  },
+  "manual_tasks": {
+    "M01": {
+      "status": "検証待ち",
+      "wait_reason": "入力・環境",
+      "confirmed": "manual全9ページ本文・添付ファイル構成を今回確認。合議体集計の実行条件は未成立。",
+      "next_action": "10が個票CSV現物、合議体ID・正式列定義、文字コード/日付/重複規則、抽出権限とVBA環境を確認。未提供ならM02-M04を条件待ちとして本体継続。"
+    },
+    "M02": {
+      "status": "停止",
+      "wait_reason": "個票CSV未提供（今回の添付7件）。認定ソフトアクセス・VBA実行環境は未確認。",
+      "confirmed": null,
+      "next_action": "履歴管理の検索条件を固定してCSV抽出、選択件数と出力件数を照合"
+    },
+    "M03": {
+      "status": "停止",
+      "wait_reason": "個票CSV未提供（今回の添付7件）。認定ソフトアクセス・VBA実行環境は未確認。",
+      "confirmed": null,
+      "next_action": "Toolで合議体別集計"
+    },
+    "M04": {
+      "status": "停止",
+      "wait_reason": "個票CSV未提供（今回の添付7件）。認定ソフトアクセス・VBA実行環境は未確認。",
+      "confirmed": null,
+      "next_action": "全合議体の出力・内訳・合計・抽出件数と例外の照合"
+    }
+  },
+  "known_issues": {
+    "C01": {
+      "observation": "R5名だが本文R4、主対象R7",
+      "action": "形式と現行期間を分ける"
+    },
+    "C02": {
+      "observation": "manualは個票CSV、S01は地域集計",
+      "action": "M工程を条件付きにし主経路から切り離す"
+    },
+    "C03": {
+      "observation": "Ⅰ基礎情報!G521=66、Ⅲ審査判定データ（一次・二次判定）!G136=1787。Ⅰ!G513:G520も件数と割合が不整合。",
+      "repair_candidate": "同ブックⅢ!G128:G136から、見出しを照合してⅠ!G513:G521を復元",
+      "proof_required": "Ⅲ内訳・Ⅰ割合・Ⅳ件数を10と20が独立照合して一致。一意の根拠と修正履歴を残す。",
+      "forbidden": "66を分母にする、Ⅲの値を都合よく変更する、未検証の原本修正",
+      "startup_observation": {
+        "at": "2026-10-09T10:44:20.659016+09:00",
+        "S01": {
+          "Ⅰ基礎情報!G521": 66,
+          "Ⅲ審査判定データ（一次・二次判定）!G136": 1787,
+          "Ⅳ事務データ!J189": 1787,
+          "Ⅳ事務データ!J207": 1787,
+          "Ⅳ事務データ!J225": 1787
+        },
+        "S02": {
+          "Ⅰ基礎情報!G521": 66,
+          "Ⅲ審査判定データ（一次・二次判定）!G136": 1750
+        },
+        "status": "observed_unrepaired",
+        "next_action": "10はS01の見出し・Ⅰ割合・Ⅲ内訳・Ⅳ件数を照合。S02の同位置にも不整合があるため比較値の抽出元を確認。修正合格は20の独立確認後。"
+      },
+      "last_reported_status": "PASS_FIXED_V1_2.2",
+      "needs": "作業コピーの保持・再読込は確認済み。日本語表示はE01として未解決",
+      "applied": true,
+      "last_reported_at": "2026-10-09T17:13:29.181705+09:00",
+      "last_reported_by": "20",
+      "evidence": "checks/c03_overlay.json"
+    },
+    "C04": {
+      "observation": "S01のⅣ!J208=0.023503077783995522日、S02は0日",
+      "status": "approved_provided_substitute_pending_application",
+      "resolve": "追加資料S10-09のR7調査25.6日を掲載値に置換。元S01/S02値は監査保存。元期間の復元・再算出としては未解決だが承認範囲では新資料待ちを完了障害にしない。",
+      "withheld": "異なる期間/母集団の県全国第1回との差、旧分布と置換平均の一体表示、原因説明",
+      "forbidden": "S10年度25.6日をS01第2回平均として表示。置換平均で旧分布/中央値/四分位/有効nを復元。",
+      "startup_observation": {
+        "at": "2026-10-09T10:44:20.659016+09:00",
+        "S01": {
+          "Ⅳ事務データ!J208": 0.023503077783995522
+        },
+        "S02": {
+          "Ⅳ事務データ!J208": 0
+        },
+        "status": "held_no_correction",
+        "next_action": "元送信・集計結果または個票日付の提供で確認。調査期間の比較と原因説明を保留。"
+      },
+      "last_reported_status": "HELD",
+      "needs": "追加資料S10-09のR7調査25.6日を掲載値に置換。元S01/S02値は監査保存。元期間の復元・再算出としては未解決だが承認範囲では新資料待ちを完了障害にしない。",
+      "applied": false,
+      "last_reported_at": "2026-10-09T16:29:07+09:00",
+      "last_reported_by": "10",
+      "evidence": "checks/startup.json",
+      "decision_at": "2026-10-10T10:24:49+09:00",
+      "decision_ref": "decisions/2026-10-10_user_decisions.json",
+      "current_plan_applied_to_candidate": false,
+      "historical_needs": "元送信・集計結果または個票の調査依頼日・実施日"
+    },
+    "C05": {
+      "observation": "原稿の7.4%を9.6%と8.5%より高いと説明",
+      "action": "現行値と符号で書き直す。職員事情・コロナ等の過去の原因を流用しない"
+    },
+    "C06": {
+      "observation": "原稿の申請から調査と表の調査依頼から実施が異なる",
+      "action": "表の定義を採用"
+    },
+    "C07": {
+      "observation": "両期間の人口認定者基準が同じ",
+      "action": "ストックを合算しない"
+    },
+    "C08": {
+      "observation": "速度・一回性と再現性が同時要件",
+      "action": "今回用コードと記録を保存し一度の確認用再実行。常設化しない"
+    },
+    "pilot": {
+      "checks": 10,
+      "pass": 9,
+      "fail": 1,
+      "failed": "ⅠとⅢの一次判定合計",
+      "scope": "全ブック検査ではない"
+    },
+    "unavailable_from_aggregates": [
+      "変更根拠項目ランキング",
+      "特記事項内容",
+      "月次申請台帳",
+      "原稿の因果説明"
+    ],
+    "C09": {
+      "last_reported_status": "NOT_COMPUTABLE_ZERO_DENOMINATOR",
+      "needs": "既知の0/0未算出。原値を保持し局所に未算出注記。新資料待ちではない。",
+      "applied": false,
+      "last_reported_at": "2026-10-09T17:38:41.975+09:00",
+      "last_reported_by": "20/30",
+      "evidence": "checks/startup.json",
+      "observation": "S01軽度変更数0、対応構成比7セルが0/0",
+      "action": "既知の分母0未算出。新資料待ちや0%にしない。原エラーと未算出注記を区別。",
+      "decision_at": "2026-10-10T10:24:49+09:00",
+      "decision_ref": "decisions/2026-10-10_user_decisions.json",
+      "current_plan_applied_to_candidate": false
+    },
+    "C10": {
+      "last_reported_status": "HELD_PROPAGATED",
+      "needs": "元値は監査に保存。採用値null、完成物は欠落と表示。調査/復旧を本体の停止条件にしない。",
+      "applied": true,
+      "last_reported_at": "2026-10-09T16:29:07+09:00",
+      "last_reported_by": "10",
+      "evidence": "checks/role30_apply.json",
+      "proposed_by": "30",
+      "proposal_report": "reports/30.json",
+      "observation": "薬の内服P70破損見出し、S01/S02各18数値と対応chart78",
+      "status": "approved_missing",
+      "resolve": "元値は監査に保存。採用値null、完成物は欠落と表示。調査/復旧を本体の停止条件にしない。",
+      "decision_at": "2026-10-10T10:24:49+09:00",
+      "decision_ref": "decisions/2026-10-10_user_decisions.json",
+      "current_plan_applied_to_candidate": false,
+      "historical_needs": "両入力の18数値ずつとP70破損見出しを保持。正式元集計と列定義による復旧が必要"
+    },
+    "C11": {
+      "last_reported_status": "HELD_PROPAGATED",
+      "needs": "既知27比率とゼロ分子3比率を保留。正式対象・除外定義と申請区分別元集計が必要",
+      "applied": true,
+      "last_reported_at": "2026-10-09T16:29:07+09:00",
+      "last_reported_by": "10",
+      "evidence": "checks/role30_apply.json",
+      "proposed_by": "30",
+      "proposal_report": "reports/30.json",
+      "observation": "S01 14率・S02 16率の正式分母未確定。ゼロ分子3率も含む。",
+      "status": "held",
+      "resolve": "正式対象・除外定義と申請区分別元集計。S10の年度審査内訳で復元しない。",
+      "action": "正式分母不明の保留は維持。今回ユーザーの番号3判断なし。免除/欠落許容が明示されるまでは重要未解決として扱う。",
+      "decision_at": "2026-10-10T10:24:49+09:00",
+      "decision_ref": "decisions/2026-10-10_user_decisions.json",
+      "current_plan_applied_to_candidate": false
+    },
+    "E01": {
+      "last_reported_status": "HELD",
+      "needs": "30の保存済み案を10が新2.4候補へ適用・検証。旧v1は提出不可。",
+      "applied": false,
+      "last_reported_at": "2026-10-09T17:38:41.975+09:00",
+      "last_reported_by": "20/30",
+      "evidence": "checks/pilot.json",
+      "proposal_ready": true,
+      "proposal_report": "reports/30.json"
+    },
+    "E20-01": {
+      "last_reported_status": "PASS_FIXED_V1_2.2",
+      "needs": "20が36表と認定率の意味定義を元資料から独立確認",
+      "proposal_report": "reports/30.json",
+      "last_reported_at": "2026-10-09T17:13:29.181705+09:00",
+      "last_reported_by": "20",
+      "applied": true,
+      "evidence": "checks/role30_apply.json"
+    },
+    "STATUS-PROPAGATION": {
+      "last_reported_status": "APPLIED_MACHINE_CHECK_PASS",
+      "needs": "入力別保留伝播は10が適用し候補機械契約でPASS。独立確認は20の候補評価待ち。",
+      "proposal_report": "reports/30.json",
+      "last_reported_at": "2026-10-09T16:29:07+09:00",
+      "last_reported_by": "10",
+      "applied": true,
+      "evidence": "checks/role30_apply.json"
+    },
+    "E20-02": {
+      "last_reported_status": "FAIL",
+      "applied": false,
+      "proposal_ready": true,
+      "proposal_report": "reports/30.json",
+      "needs": "30の保存済み案を10が新2.4候補へ適用・検証。旧v1は提出不可。",
+      "last_reported_at": "2026-10-09T17:38:41.975+09:00",
+      "last_reported_by": "20/30"
+    },
+    "E20-03": {
+      "last_reported_status": "FAIL",
+      "applied": false,
+      "proposal_ready": true,
+      "proposal_report": "reports/30.json",
+      "needs": "30の保存済み案を10が新2.4候補へ適用・検証。旧v1は提出不可。",
+      "last_reported_at": "2026-10-09T17:38:41.975+09:00",
+      "last_reported_by": "20/30"
+    },
+    "E20-04": {
+      "last_reported_status": "HELD",
+      "applied": false,
+      "proposal_ready": true,
+      "proposal_report": "reports/30.json",
+      "needs": "30の保存済み案を10が新2.4候補へ適用・検証。旧v1は提出不可。",
+      "last_reported_at": "2026-10-09T17:38:41.975+09:00",
+      "last_reported_by": "20/30"
+    },
+    "C12": {
+      "status": "approved_excluded",
+      "needs": "原表の数字と矛盾をログ保存し解析対象外。照会/復旧を停止条件にしない。",
+      "last_reported_by": "planning_source_review",
+      "last_reported_at": "2026-10-10T01:06:52+09:00",
+      "source": "S10",
+      "evidence": "references/S10_excerpts.json",
+      "applied": false,
+      "observation": "S10表61のR7延期理由和4417、掲載計3393。再掲424を仮に除いても3993で600差。",
+      "action": "原表の数字と矛盾をログ保存し解析対象外。照会/復旧を停止条件にしない。",
+      "decision_at": "2026-10-10T10:24:49+09:00",
+      "decision_ref": "decisions/2026-10-10_user_decisions.json",
+      "current_plan_applied_to_candidate": false,
+      "historical_needs": "延期理由合計/再掲/重複の正式定義待ち。R7は再掲除外仮算でも600差。構成比は採用不可。"
+    },
+    "C13": {
+      "status": "reference_only",
+      "needs": "S03見本のⅣに日数欄があるため日数情報は残す。C04表示はS10 25.6日へ置換、期間/独自集計を明示。他の年度日数は任意参考。R7県全国/事務処理日数/30日以内率は欠落。",
+      "last_reported_by": "planning_source_review",
+      "last_reported_at": "2026-10-10T01:06:52+09:00",
+      "source": "S10",
+      "evidence": "references/S10_excerpts.json",
+      "applied": false,
+      "observation": "S10表62のR7日数は市独自集計で公表後差替予定、定義/有効n不明。R6調査8.6は括弧付き。",
+      "action": "S03見本のⅣに日数欄があるため日数情報は残す。C04表示はS10 25.6日へ置換、期間/独自集計を明示。他の年度日数は任意参考。R7県全国/事務処理日数/30日以内率は欠落。",
+      "decision_at": "2026-10-10T10:24:49+09:00",
+      "decision_ref": "decisions/2026-10-10_user_decisions.json",
+      "current_plan_applied_to_candidate": false,
+      "historical_needs": "R7日数は市独自集計・差替予定。日付基準/有効n未確認。C04置換不可。"
+    },
+    "C14": {
+      "status": "held_optional_future_plan",
+      "needs": "最新提供資料S10と市公式資料を照合。今回検索で2920/2924の正式訂正値は確定できず。任意予定参考の不一致として注記または欠落にし、本体を止めない。",
+      "last_reported_by": "planning_source_review",
+      "last_reported_at": "2026-10-10T01:06:52+09:00",
+      "source": "S10",
+      "evidence": "references/S10_excerpts.json",
+      "applied": false,
+      "observation": "S10表54 R8委託予定2920と表55 2600+324=2924に4件差。",
+      "action": "最新提供資料S10と市公式資料を照合。今回検索で2920/2924の正式訂正値は確定できず。任意予定参考の不一致として注記または欠落にし、本体を止めない。",
+      "decision_at": "2026-10-10T10:24:49+09:00",
+      "decision_ref": "decisions/2026-10-10_user_decisions.json",
+      "current_plan_applied_to_candidate": false,
+      "historical_needs": "R8委託予定表間4件差。R7実績へ転用せず本体独立で継続。"
+    }
+  },
+  "role_chats_created": null,
+  "other_chat_github_access": "00のみ同一コミット直接読取り確認済み。10/20/30は各初回に実際のアクセスを確認。",
+  "outputs": {
+    "candidate": {
+      "id": "care-S01-20261009-v1",
+      "version": 1,
+      "sha256": "fe3ccd49b45400ea70687cd67cb50a7f9563cd7dd6641bd7c82c57aa97cbb570",
+      "name": "介護保険解析_候補_v1.xlsx",
+      "library_file_id": "libfile_7d32eed56014819184d160de1a2af7d5",
+      "library_version": "0",
+      "size_bytes": 2213592,
+      "saved": true,
+      "readback_verified": true,
+      "release_status": "not_released_v1_failed_and_superseded_plan",
+      "scope": "解析契約2.2の固定旧候補。2.3未適用。20評価FAIL。ファイルID/版/SHA不変更。",
+      "plan_revision": "2.2"
+    },
+    "final_workbook": null,
+    "reproduction_zip": {
+      "name": "介護保険解析_再現用.zip",
+      "library_file_id": "libfile_d613c5b2ffb08191bf6eff5c8d7e0fdb",
+      "version": "1",
+      "sha256": "2cb1f00cf39098dacad171ad11eb38484229a24c09ed45c7cc4ee57444ac7fd2",
+      "size_bytes": 5087433,
+      "saved": true,
+      "type": "候補v1の再現・評価用チェックポイント。提出成果ではない。",
+      "verification": "ZIP CRC and all 43 inner file SHA256 verified; readback verified",
+      "reported_at": "2026-10-09T16:29:07+09:00"
+    },
+    "candidate_checks": {
+      "candidate_id": "care-S01-20261009-v1",
+      "fingerprint": "9f123c60a6e16622204b6abc33736d85d55358be8956a9776b716659fe620695",
+      "report_commit": "a855a41a7801f321db399356f3627f7db4be02aa",
+      "checks": [
+        "machine_contract PASS",
+        "package_preservation PASS",
+        "full_replay_after_role30 PASS",
+        "necessary_cell_change PASS_WORK_COPY",
+        "output_visual FAIL_HELD",
+        "input_specific_holds PASS"
+      ],
+      "role20_independent_review": "2.2固定v1はFAIL。新版2.3候補は未生成・未評価。",
+      "plan_revision": "2.2"
+    },
+    "code_and_aggregate_checks": {
+      "repository": "myonmyon545-cell/-",
+      "commit": "ffda24608348a5390c35a7b81c216bba03394cc6",
+      "paths": [
+        "care-insurance-analysis/src/apply_role30.py",
+        "care-insurance-analysis/src/build_candidate.py",
+        "care-insurance-analysis/src/build_candidate_tables.py",
+        "care-insurance-analysis/src/candidate_donor.mjs",
+        "care-insurance-analysis/src/graft_candidate.py",
+        "care-insurance-analysis/src/replay_pipeline.py",
+        "care-insurance-analysis/src/summarize_checks.py",
+        "care-insurance-analysis/src/definitions.json",
+        "care-insurance-analysis/src/metric_inventory.json",
+        "care-insurance-analysis/checks/role30_apply.json",
+        "care-insurance-analysis/checks/candidate_preservation.json",
+        "care-insurance-analysis/checks/replay_role30.json",
+        "care-insurance-analysis/checks/candidate.json"
+      ],
+      "reported_at": "2026-10-09T16:29:07+09:00"
+    },
+    "audit_log": {
+      "name": "介護保険解析_全作業ログ.zip",
+      "status": "未生成",
+      "final_archive_saved": false
+    },
+    "quick_check": {
+      "name": "介護保険解析_簡易確認.md",
+      "status": "計画版のみ_候補反映未実施"
+    }
+  },
+  "role_reports": {
+    "10": "reports/10.json",
+    "20": "reports/20.json",
+    "30": "reports/30.json"
+  },
+  "next_action": "10で最新2.4を同一HEADから読取り、進行中2.3作業へ差分を一括適用。新候補+ログを固定し20が全独立評価。C11正式分母の保留は継続。",
+  "history": [
+    {
+      "event": "共有用の登録内容をローカル準備。GitHub登録は自動承認審査に拒否され未実施。本解析も未実施。",
+      "at": "2026-10-08T23:08:44.774250+09:00"
+    },
+    {
+      "at": "2026-10-08T23:32:49.598185+09:00",
+      "event": "提示済み非公開GitHub宛先と共有内容をユーザー承認。Codex書込みも追認。初期共有と軽量検査を登録。登録結果はコミット読戻しで検証。"
+    },
+    {
+      "at": "2026-10-09T10:44:20.659016+09:00",
+      "role": "00",
+      "source_commit": "14ad689ab195ed5c10a8ecdc01863bef4204c50d",
+      "event": "同一コミットのPLAN/STATE/役割報告、非公開repo、初期登録とActionsログ（15検査成功・metadata only）を確認。添付7件はS01-S06の記録ハッシュに一致。指示書/manual/R5/対象と比較資料の必要本文・元セル、S08/S09本文を確認。ROLE=00の起動確認と入力別名・条件待ち・次操作のみSTATEへ記録。本解析・T01-T08の完了昇格・別チャット起動は未実施。"
+    },
+    {
+      "at": "2026-10-09T11:30:23+09:00",
+      "role": "00",
+      "source_commit": "0aba93618ab3d43e1ea5b2007714a9b8cd8c91ab",
+      "event": "main上の同一コミットでPLAN2.2/運用2.2.1と各報告を確認。ROLE=10の11:18 JST報告、検査記録、成果物記録をSTATEへ統合。T01/T02/T04完了、T03停止、T05検証待ち、T06停止、T07/T08未着手。候補/完成Excelなし。ROLE=20/30の実行状態は最新状況未確認。"
+    },
+    {
+      "at": "2026-10-09T15:41:10+09:00",
+      "role": "00",
+      "source_commit": "67f2734951e548575babdb3ba57eb05ad318e3a2",
+      "event": "main同一コミットのPLAN/STATE/10/20/30を確認。20の候補前独立評価（C03根拠PASS、E20-01網羅性FAIL、候補未生成でT07未完了）と30のE20-01/C10/C11/入力別保留伝播の修正案を統合。C03適用および30案適用は未確認のため未完了のまま。20/30のチャット実行状態を直接確認したとは扱わない。"
+    },
+    {
+      "at": "2026-10-09T16:39:41+09:00",
+      "role": "00",
+      "source_commit": "a855a41a7801f321db399356f3627f7db4be02aa",
+      "event": "同一mainコミットの5管理ファイルを確認。10の16:29報告に基づき、30提案の適用、C03作業コピー修正、候補v1とZIPの保存/読戻し、機械・構造・再現検査をSTATEへ反映。日本語表示はFAIL、20の候補独立評価待ち、正式資料待ちは未解決として維持。"
+    },
+    {
+      "at": "2026-10-10T01:06:52+09:00",
+      "role": "planning",
+      "source_commit": "1051610978f031164d83e1ba02f72fe162a48b60",
+      "event": "ユーザーの明示依頼でS10全82ページ本文と関連DOCX表セルを精読。年度業務参考11ブロックを抽出、C12延期通知合計の不一致/C13日数定義差/C14予定表差を記録。PLAN2.3/追加工程/STATE計画変更を更新。保存済み20のv1 FAILと30修正案を統合。Excel/解析コード/他担当報告/候補検査JSONは変更せず、新候補適用・評価は未実施。"
+    },
+    {
+      "at": "2026-10-10T10:24:49+09:00",
+      "role": "planning",
+      "source_commit": "a96eba0920c8c21fb3b85d17e6a59cc5cea03fc7",
+      "event": "ユーザーの明示判断をPLAN2.4へ組込み。C04年度提供値置換/C10欠落/C12除外/C09未算出、全ログ別添/簡易文、保持/日本語/再現/再計算の工程を更新。C11は未免除。実Excelと他担当報告は未変更。"
+    }
+  ],
+  "deployment_status": "registered_on_main",
+  "canonical_path_after_activation": "care-insurance-analysis/STATE.json",
+  "approval_scope": "計画本文、資料ID・入力ハッシュ・集計済みの確認値、初期STATE、役割別報告ひな型、README。原本Excel・PDF・個票・認証情報は送らない。",
+  "sharing_authorized": true,
+  "code_writing_authorized": true,
+  "automation_scope": "軽量JSON/コード検査のみ。本解析、チャット起動、完成昇格は実施しない。",
+  "optimization": {
+    "first_evaluation": "all_required_scope",
+    "machine_checks": "all_metrics_every_candidate",
+    "ai_reevaluation": "dependency_closure_plus_C03_C04",
+    "measured_speedup": null
+  },
+  "role_chats_verification": {
+    "10": "未確認",
+    "20": "未確認",
+    "30": "未確認",
+    "00": "今回のROLE=00指示により当チャットで開始",
+    "all_four_created": "未確認"
+  },
+  "startup_00": {
+    "status": "progress_review_completed",
+    "checked_at": "2026-10-09T16:39:41+09:00",
+    "source_commit": "a855a41a7801f321db399356f3627f7db4be02aa",
+    "plan_revision": "2.2",
+    "repository_visibility": "private",
+    "read_paths": [
+      "care-insurance-analysis/PLAN.md",
+      "care-insurance-analysis/STATE.json",
+      "care-insurance-analysis/reports/10.json",
+      "care-insurance-analysis/reports/20.json",
+      "care-insurance-analysis/reports/30.json"
+    ],
+    "git_blob_identity": {
+      "verified_files": 5,
+      "match": true,
+      "paths": [
+        "care-insurance-analysis/PLAN.md",
+        "care-insurance-analysis/STATE.json",
+        "care-insurance-analysis/reports/10.json",
+        "care-insurance-analysis/reports/20.json",
+        "care-insurance-analysis/reports/30.json"
+      ]
+    },
+    "registered_files_verified": true,
+    "originals_modified": false,
+    "analysis_executed": false,
+    "completed_main_tasks": [],
+    "main_task_completion_source": "reports/10・20・30に完了工程の報告なし。T01-T08は昇格しない。",
+    "checks": {
+      "github_actions": {
+        "run_id": 37793561045,
+        "job_id": 113366995227,
+        "head_sha": "14ad689ab195ed5c10a8ecdc01863bef4204c50d",
+        "status": "completed",
+        "conclusion": "success",
+        "tests_passed": 15,
+        "handoff": "PASS",
+        "analysis": "NOT_STARTED_OR_NO_CANDIDATE",
+        "scope": "metadata only; not analysis approval",
+        "url": "https://github.com/myonmyon545-cell/-/actions/runs/37793561045"
+      },
+      "local_fixed_commit": {
+        "boundary_tests_passed": 15,
+        "handoff": "PASS",
+        "analysis": "NOT_STARTED_OR_NO_CANDIDATE",
+        "scope": "取得9ファイルのGit blob SHA一致を確認した固定コミットの検査"
+      }
+    },
+    "access_failures": [],
+    "raw_csv": {
+      "status": "not_supplied_in_current_attachments",
+      "scope": "今回の添付7件",
+      "not_asserted": "Library全体や他チャットの未提供ファイルの不存在は未確認"
+    },
+    "model": {
+      "requested_role": "00",
+      "recommended": "GPT-6 Luna / High",
+      "actual_selection": "unverified",
+      "note": "ROLE指定では実モデルや推論設定を変更しない。"
+    },
+    "deadline_impact": {
+      "nearest_target": "2026-10-09T18:00:00+09:00",
+      "tasks": [
+        "T01",
+        "T02",
+        "T03"
+      ],
+      "submission_target": "2026-10-12T21:00:00+09:00",
+      "duration_estimate": null,
+      "note": "暦時間は稼働時間と同一ではない。10の試行実測と受渡し待ちを取得後に見積りを更新。C04未解決なら完成判定に進めない。"
+    },
+    "operations_revision": "2.2.1",
+    "same_commit": true,
+    "analysis_candidate_exists": true,
+    "analysis_complete": false,
+    "other_chat_runtime_directly_observed": false,
+    "notes": [
+      "同一mainコミットのPLAN/STATE/10/20/30を確認。報告で保存・読戻しされた成果だけSTATEへ統合。",
+      "10の候補v1はID/SHA/保存・読戻しを確認。完成成果や独立評価合格ではない。",
+      "候補の機械契約・構造保持・再現検査はPASS。日本語字形の視覚検査はFAIL_HELD。",
+      "20の最新保存記録は候補前の11:42報告。候補v1への独立評価は未確認。30のチャット実行状態も直接観察していない。"
+    ]
+  },
+  "operations_revision": "2.4.0",
+  "canonical_plan_checked_commit": "1051610978f031164d83e1ba02f72fe162a48b60",
+  "canonical_plan_blob_sha": "6e7076831d8b5bdcc85acd346db2161b49c9579b",
+  "checks": [
+    {
+      "id": "input_hashes",
+      "verdict": "PASS",
+      "scope": "入力ファイルの原本SHA-256を再確認。S01原本不変更",
+      "reported_by": "10",
+      "reported_at": "2026-10-09T16:29:07+09:00",
+      "report_commit": "a855a41a7801f321db399356f3627f7db4be02aa"
+    },
+    {
+      "id": "source_values",
+      "verdict": "PASS",
+      "verified_source_values": 6316,
+      "independent_parser": "openpyxl read-only data_only",
+      "differences": [],
+      "workbook_write_performed": false,
+      "scope": "C03反映の前に全抽出値一致を別読取で確認",
+      "reported_by": "10",
+      "reported_at": "2026-10-09T16:29:07+09:00",
+      "report_commit": "a855a41a7801f321db399356f3627f7db4be02aa"
+    },
+    {
+      "id": "numeric",
+      "verdict": "PASS_WITH_HOLDS",
+      "counts": {
+        "integer_count": 2276,
+        "ratio": 2170,
+        "provided_transcription": 1784,
+        "ratio_display_interval": 7
+      },
+      "count_total_checks": 112,
+      "count_total_pass": 112,
+      "source_holds": 82,
+      "valid_comparisons": 1429,
+      "held_comparisons": 49,
+      "scope": "ROLE30案適用後。入力別保留は候補まで伝播。正式根拠待ちの値は採用・比較しない",
+      "reported_by": "10",
+      "reported_at": "2026-10-09T16:29:07+09:00",
+      "report_commit": "a855a41a7801f321db399356f3627f7db4be02aa"
+    },
+    {
+      "id": "deterministic_replay",
+      "verdict": "PASS",
+      "evidence": "checks/replay.json",
+      "scope": "既存T04計算再現。C03反映後値はchecks/c03_overlay.jsonで別途確認",
+      "reported_by": "10",
+      "reported_at": "2026-10-09T16:29:07+09:00",
+      "report_commit": "a855a41a7801f321db399356f3627f7db4be02aa"
+    },
+    {
+      "id": "output_structure",
+      "verdict": "PASS",
+      "evidence": "checks/candidate_preservation.json",
+      "scope": "候補19シートの元14シート148グラフと既存数式・描画・印刷部品保持",
+      "reported_by": "10",
+      "reported_at": "2026-10-09T16:29:07+09:00",
+      "report_commit": "a855a41a7801f321db399356f3627f7db4be02aa"
+    },
+    {
+      "id": "output_visual",
+      "verdict": "FAIL",
+      "evidence": "checks/pilot.json",
+      "scope": "要点シートは横向き1ページに収まる。日本語フォントなしで日本語字形が欠落",
+      "reported_by": "10",
+      "reported_at": "2026-10-09T16:29:07+09:00",
+      "report_commit": "a855a41a7801f321db399356f3627f7db4be02aa"
+    },
+    {
+      "id": "necessary_cell_change",
+      "verdict": "PASS_WORK_COPY",
+      "evidence": "checks/c03_overlay.json",
+      "scope": "S01作業コピーに限りⅠ!G513:G521。S01/S02原本は変更せず",
+      "reported_by": "10",
+      "reported_at": "2026-10-09T16:29:07+09:00",
+      "report_commit": "a855a41a7801f321db399356f3627f7db4be02aa"
+    },
+    {
+      "id": "handoff_metadata",
+      "verdict": "PASS",
+      "scope": "PLAN 2.2 / STATE revision 5 / 20 C03 PASS / 30修正案の整合。20の候補独立評価は未実施",
+      "result": {
+        "handoff": "PASS",
+        "analysis": "CANDIDATE_REVIEW_PENDING_WITH_HELD_ITEMS"
+      },
+      "reported_by": "10",
+      "reported_at": "2026-10-09T16:29:07+09:00",
+      "report_commit": "a855a41a7801f321db399356f3627f7db4be02aa"
+    },
+    {
+      "id": "E20-01_definition",
+      "verdict": "PASS_APPLIED_PENDING_INDEPENDENT_REVIEW",
+      "scope": "36表の項目名/対象区分/統計種類、648焦点指標と12認定要約の意味を元セルと照合",
+      "evidence": "checks/role30_apply.json",
+      "reported_by": "10",
+      "reported_at": "2026-10-09T16:29:07+09:00",
+      "report_commit": "a855a41a7801f321db399356f3627f7db4be02aa"
+    },
+    {
+      "id": "input_specific_holds",
+      "verdict": "PASS",
+      "counts": {
+        "metrics_total": 6316,
+        "valid": 1429,
+        "held_or_absent": 82,
+        "comparisons_total": 1478,
+        "held": 49,
+        "C10_numeric_held": 36,
+        "C11_ratio_held": 30
+      },
+      "scope": "C11ゼロ分子3件も保留。C10 P70数値見出しは両入力で異常記録。抽出・比較・候補へ伝播。",
+      "evidence": "checks/role30_apply.json",
+      "reported_by": "10",
+      "reported_at": "2026-10-09T16:29:07+09:00",
+      "report_commit": "a855a41a7801f321db399356f3627f7db4be02aa"
+    },
+    {
+      "id": "candidate_machine_contract",
+      "verdict": "PASS",
+      "fingerprint": "9f123c60a6e16622204b6abc33736d85d55358be8956a9776b716659fe620695",
+      "evidence": "checks/candidate.json",
+      "scope": "ID/版/SHA固定。保留の採用値null、比較抑止。機械的整合性であり独立評価ではない",
+      "reported_by": "10",
+      "reported_at": "2026-10-09T16:29:07+09:00",
+      "report_commit": "a855a41a7801f321db399356f3627f7db4be02aa"
+    },
+    {
+      "id": "candidate_package_preservation",
+      "verdict": "PASS",
+      "evidence": "checks/candidate_preservation.json",
+      "scope": "元14シート・148グラフと数式/描画/印刷部品が同一。C03既修正9セルを保持。19シートで再開封",
+      "reported_by": "10",
+      "reported_at": "2026-10-09T16:29:07+09:00",
+      "report_commit": "a855a41a7801f321db399356f3627f7db4be02aa"
+    },
+    {
+      "id": "full_replay_after_role30",
+      "verdict": "PASS",
+      "evidence": "checks/replay_role30.json",
+      "scope": "別一時ディレクトリで全工程再実行、生成6ファイルのバイトハッシュ一致",
+      "reported_by": "10",
+      "reported_at": "2026-10-09T16:29:07+09:00",
+      "report_commit": "a855a41a7801f321db399356f3627f7db4be02aa"
+    },
+    {
+      "id": "candidate_visual_japanese",
+      "verdict": "FAIL_HELD",
+      "scope": "候補の文字列とセルは存在するが、日本語フォントがなく描画の字形欠落。日本語環境で原表/候補を再出力して検査",
+      "evidence": "checks/pilot.json",
+      "reported_by": "10",
+      "reported_at": "2026-10-09T16:29:07+09:00",
+      "report_commit": "a855a41a7801f321db399356f3627f7db4be02aa"
+    },
+    {
+      "id": "S10_source_review",
+      "verdict": "SOURCE_REVIEW_COMPLETED_WITH_HELDS",
+      "scope": "82頁本文精読、関連DOCX表セルとSHA照合。年度業務参考抽出。候補適用/独立評価は未実施。",
+      "reported_by": "planning",
+      "reported_at": "2026-10-10T01:06:52+09:00",
+      "source_sha256": "a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2",
+      "evidence": "references/S10_excerpts.json"
+    }
+  ],
+  "report_freshness": {
+    "10": {
+      "last_recorded_at": "2026-10-09T16:29:07+09:00",
+      "status": "candidate_saved_waiting_independent_review_and_visual_condition",
+      "source_commit": "1051610978f031164d83e1ba02f72fe162a48b60",
+      "pre_save_rechecked_commit": "e3e5258ef1ea6424780daf22e2b38b1e16e1c8a6",
+      "report_sha": "ecdd8f911fe4d4acb436a1771ace280427e80b04",
+      "candidate": {
+        "id": "care-S01-20261009-v1",
+        "version": 1,
+        "sha256": "fe3ccd49b45400ea70687cd67cb50a7f9563cd7dd6641bd7c82c57aa97cbb570"
+      },
+      "last_recorded_status": "candidate_saved_waiting_independent_review_and_visual_condition",
+      "plan_revision": "2.2",
+      "verdict": null,
+      "note": "同一コミットの保存記録を確認。他チャットの実行状態は直接観測していない。旧2.2記録を保持。"
+    },
+    "20": {
+      "last_recorded_at": "2026-10-09T17:13:29.181705+09:00",
+      "last_recorded_status": "completed",
+      "source_commit": "1051610978f031164d83e1ba02f72fe162a48b60",
+      "pre_save_rechecked_commit": "b5b14b75d8329850b441640ff5b92408a9ccca81",
+      "report_sha": "57863de7a6ba499b2872df9cf0b6549c43afa7e7",
+      "verdict": "FAIL",
+      "candidate": {
+        "id": "care-S01-20261009-v1",
+        "version": 1,
+        "sha256": "fe3ccd49b45400ea70687cd67cb50a7f9563cd7dd6641bd7c82c57aa97cbb570"
+      },
+      "status": "completed",
+      "plan_revision": "2.2",
+      "note": "同一コミットの保存記録を確認。他チャットの実行状態は直接観測していない。旧2.2記録を保持。"
+    },
+    "30": {
+      "last_recorded_at": "2026-10-09T17:38:41.975+09:00",
+      "last_recorded_status": "candidate_v1_correction_proposal_ready",
+      "source_commit": "1051610978f031164d83e1ba02f72fe162a48b60",
+      "report_sha": "d790c1686cb72176664af414cabc82cece8bacca",
+      "verdict": "PROPOSAL_ONLY",
+      "candidate": {
+        "id": "care-S01-20261009-v1",
+        "version": 1,
+        "sha256": "fe3ccd49b45400ea70687cd67cb50a7f9563cd7dd6641bd7c82c57aa97cbb570",
+        "storage_id": "libfile_7d32eed56014819184d160de1a2af7d5",
+        "storage_version": 0
+      },
+      "status": "candidate_v1_correction_proposal_ready",
+      "plan_revision": "2.2",
+      "note": "同一コミットの保存記録を確認。他チャットの実行状態は直接観測していない。旧2.2記録を保持。"
+    }
+  },
+  "deadline_impact": {
+    "checked_at": "2026-10-10T10:24:49+09:00",
+    "candidate_milestone": "2026-10-10T20:00:00+09:00",
+    "independent_review_milestone": "2026-10-11T20:00:00+09:00",
+    "submission_target": "2026-10-12T21:00:00+09:00",
+    "status": "承認置換/欠落/除外で外部資料待ちを減らす。C11未免除、日本語実描画/Excel生成再現/ログ/全独立評価は未完了。",
+    "estimate": null,
+    "source_waits": [
+      "C11"
+    ],
+    "not_new_source_wait": [
+      "C04",
+      "C09",
+      "C10",
+      "C12",
+      "C14",
+      "M"
+    ],
+    "main_path": "10新候補→20全独立評価→00統合→10提出。指摘時30→10→20。"
+  },
+  "plan_change": {
+    "previous_revision": "2.2",
+    "current_revision": "2.4",
+    "at": "2026-10-10T10:24:49+09:00",
+    "actual_updated_by": "planning",
+    "one_time_authorization": "既存の自動組込み/再構成許可と2026-10-10の具体的判断を計画とJSONへ反映。通常00専有を維持。",
+    "base_commit": "a96eba0920c8c21fb3b85d17e6a59cc5cea03fc7",
+    "reason": "ユーザー承認の採用/欠落/除外と全ログ収録を追加",
+    "status": "applied_to_plan_not_applied_to_candidate",
+    "retained_historical_report_blobs": {
+      "10": "ecdd8f911fe4d4acb436a1771ace280427e80b04",
+      "20": "57863de7a6ba499b2872df9cf0b6549c43afa7e7",
+      "30": "d790c1686cb72176664af414cabc82cece8bacca"
+    },
+    "retained_candidate": {
+      "id": "care-S01-20261009-v1",
+      "version": 1,
+      "sha256": "fe3ccd49b45400ea70687cd67cb50a7f9563cd7dd6641bd7c82c57aa97cbb570",
+      "plan_revision": "2.2",
+      "candidate_fingerprint": "9f123c60a6e16622204b6abc33736d85d55358be8956a9776b716659fe620695"
+    },
+    "historical_report_policy": "旧報告/候補検査は2.2の固定証拠として変更しない。新版完了・合格への流用禁止。",
+    "full_independent_reevaluation_required": true,
+    "changes_applied_to_workbook": false,
+    "next_role": "10",
+    "pending_tasks": [
+      "T09",
+      "T10",
+      "T11",
+      "T06_new_candidate",
+      "T12",
+      "T07_full_review_2.4",
+      "T08"
+    ],
+    "source_excerpts": "references/S10_excerpts.json",
+    "previous_canonical_revision": "2.3",
+    "baseline_note": "previous_revisionは不変の旧候補/役割報告2.2の検査基準。直前の計画はprevious_canonical_revision=2.3。"
+  },
+  "canonical_plan_reference_note": "前版PLANの確認根拠。新PLANはこのSTATEと同じ保存コミットで読む。",
+  "audit_log": {
+    "scope": "取得可能な全記録と全データ",
+    "collection_started": true,
+    "decision_event": "logs/events/planning_20261010_decisions.json",
+    "final_archive_generated": false,
+    "unavailable_history_policy": "未収録を明示。要約と原文を区別。",
+    "actual_candidate_updated": false
+  }
+}

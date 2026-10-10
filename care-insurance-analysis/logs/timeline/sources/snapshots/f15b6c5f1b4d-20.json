@@ -1,0 +1,692 @@
+{
+  "schema": "care_handoff/v1",
+  "role": "20",
+  "plan_revision": "2.2",
+  "status": "completed",
+  "task_id": "T07",
+  "source_commit": "a34c36881e99f940280eafa88c1e871ad145ca78",
+  "pre_save_rechecked_commit": "a34c36881e99f940280eafa88c1e871ad145ca78",
+  "updated_at": "2026-10-09T17:13:29.181705+09:00",
+  "review_mode": "initial_full_candidate_review",
+  "verdict": "FAIL",
+  "scope": "候補v1を実バイトで固定した初回の全範囲独立評価。候補前報告のPASSは再利用していない。R01～R12/Q01～Q12を対象に判定。環境・操作制約で未検証の範囲はHELDと明記。",
+  "candidate": {
+    "id": "care-S01-20261009-v1",
+    "version": 1,
+    "sha256": "fe3ccd49b45400ea70687cd67cb50a7f9563cd7dd6641bd7c82c57aa97cbb570"
+  },
+  "candidate_fingerprint": "9f123c60a6e16622204b6abc33736d85d55358be8956a9776b716659fe620695",
+  "candidate_storage": {
+    "name": "介護保険解析_候補_v1.xlsx",
+    "library_file_id": "libfile_7d32eed56014819184d160de1a2af7d5",
+    "library_version": 0,
+    "size_bytes": 2213592,
+    "actual_sha256_verified": true,
+    "sha256_unchanged_after_review": true
+  },
+  "release_status": "NOT_APPROVED_FOR_FINAL_OR_PROVISIONAL",
+  "T07_completed": false,
+  "full_independent_evaluation_completed": false,
+  "completion_explanation": "初回全範囲の評価報告とFAIL判定は確定。Q08の強制再計算・再読取り、Q09の日本語正常表示、Q11のExcel全生成再現は未合格/未検証であり、T07の受入完了とは扱わない。候補が存在するため候補前待機報告ではない。",
+  "completed_tasks": [],
+  "inputs": [
+    {
+      "source_id": "S01",
+      "library_file_id": "libfile_2f275b2a53d481919fb7d942fbecc486",
+      "sha256": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d",
+      "size_bytes": 1615421,
+      "independently_bytes_verified": true,
+      "access": "provided local project source; original bytes unchanged"
+    },
+    {
+      "source_id": "S02",
+      "library_file_id": "libfile_0d9cfee943ec819188518e4922ce620e",
+      "sha256": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304",
+      "size_bytes": 1609475,
+      "independently_bytes_verified": true,
+      "access": "provided local project source; original bytes unchanged"
+    },
+    {
+      "source_id": "S03",
+      "library_file_id": "libfile_1a33a04a77e4819197bfdf49e7cd8099",
+      "sha256": "e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f",
+      "size_bytes": 1892849,
+      "independently_bytes_verified": true,
+      "access": "provided local project source; original bytes unchanged"
+    },
+    {
+      "source_id": "S04",
+      "library_file_id": "libfile_348a1421657c8191938bc42e4a79b9ea",
+      "sha256": "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800",
+      "size_bytes": 31749,
+      "independently_bytes_verified": true,
+      "access": "provided local project source; original bytes unchanged"
+    },
+    {
+      "source_id": "S05",
+      "library_file_id": "libfile_f40c9f4e1d0081919fb497f31e737856",
+      "sha256": "87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1",
+      "size_bytes": 1128810,
+      "independently_bytes_verified": true,
+      "access": "provided local project source; original bytes unchanged"
+    },
+    {
+      "source_id": "S06",
+      "library_file_id": "libfile_b7623c4ffd6881919e938f89942286f3",
+      "sha256": "b74b37c05a97d053ef46c16f380177f5a0724151dac5daff1c4076290671e524",
+      "size_bytes": 34816,
+      "independently_bytes_verified": true,
+      "access": "provided local project source; original bytes unchanged"
+    },
+    {
+      "source_id": "S04_alias",
+      "library_file_id": "libfile_d66db96b3c5881919cf10890068434de",
+      "sha256": "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800",
+      "size_bytes": 31749,
+      "independently_bytes_verified": true,
+      "access": "provided local project source; original bytes unchanged"
+    }
+  ],
+  "startup_read": {
+    "same_commit": true,
+    "commit": "a34c36881e99f940280eafa88c1e871ad145ca78",
+    "paths": [
+      "PLAN.md",
+      "STATE.json",
+      "reports/10.json",
+      "reports/20.json",
+      "reports/30.json",
+      "checks/candidate.json",
+      "checks/candidate_preservation.json",
+      "checks/c03_overlay.json",
+      "checks/role30_apply.json",
+      "checks/calculation_summary.json",
+      "checks/metric_inventory.json",
+      "checks/replay_role30.json",
+      "checks/replay.json",
+      "checks/pilot.json",
+      "checks/preservation.json",
+      "checks/startup.json",
+      "src/definitions.json",
+      "src/metric_inventory.json",
+      "src/input_manifest.json",
+      "src/README.md",
+      "tools/verify_handoff.py",
+      "tools/test_verify_handoff.py"
+    ],
+    "large_file_method": "checks/candidate.json等の大容量ファイルは再現ZIP version 1から読取し、Git blob SHA-1を同一コミットのrecursive treeと照合。ZIP内34リポジトリファイル一致、相違0。",
+    "candidate_json_blob_sha": "f89352f5ff9a5f41a7c8b178dcd1b651def9d45c",
+    "previous_role20_blob_sha": "8a62a506c6ea56688e7231b44470cabd35d5912a",
+    "state_revision": 6,
+    "code_commit": "ffda24608348a5390c35a7b81c216bba03394cc6",
+    "code_commit_src_matches_current_snapshot": true
+  },
+  "checks": [
+    {
+      "id": "V1-IDENTITY",
+      "verdict": "PASS",
+      "scope": "Library保存版0の候補実ファイル、ZIP内候補、candidate JSON、10の報告のID/版/SHA一致。定義SHA256とtemplate/input SHA、コードコミットのsrc blobを確認。fingerprintは規定正規化で独立再計算。"
+    },
+    {
+      "id": "Q01",
+      "verdict": "PASS_WITH_LIMITS",
+      "scope": "6316入力別指標の元値・出所・単位・期間・母集団・通常/補正を照合。登録必須IDは6316/6316で重複欠落なし。148表、74選択表（正常地域見出し73＋C10破損表1）、36焦点表を元見出しに対応。C03のS01原値からの9差分は意図した修正、S02はⅢの出所に切替。その他の元値差異0。C03の18件は拡張根拠ハッシュを別検算、残6298件は標準根拠ハッシュ一致。表示の出所説明はE20-02で未合格。"
+    },
+    {
+      "id": "Q02",
+      "verdict": "PASS_WITH_HOLDS",
+      "integer_count_checks": 2276,
+      "total_and_parts_checks": 112,
+      "differences": [],
+      "scope": "元資料から整数性と112内訳合計を再検算。C03の原不整合とC10は別管理。認知症Ⅱ以上/Ⅲ以上・障害B以上の集約を内訳と照合。S03のM=1を含むⅡ以上943も確認。"
+    },
+    {
+      "id": "Q03",
+      "verdict": "PASS_WITH_HOLDS",
+      "valid_recomputed_ratios": 2174,
+      "scope": "元セルから分子分母を読み直し絶対誤差1e-10で確認。S02 U264:U270の7件は元比率小数4桁の丸め区間を区別し、採用値は元件数比と一致。1478比較を独立再算出し符号・pp/件/日/点・依存入力を検算。valid1429、held49。C10/C11の不一致は合格値に含めない。"
+    },
+    {
+      "id": "Q04",
+      "verdict": "PASS_AGGREGATE_SCOPE_WITH_HOLDS",
+      "scope": "C09の0/0と全体軽度変更率0/正の分母を区別。C11のゼロ分子3件も保留。認知症Mを含む集約、支援2/介護1同順位の元定義、有効期間5区分、日数の指標別有効件数を照合。個票日付がないため月数境界・同日・欠損除外の実個票処理は未実行であり実行済みとしない。"
+    },
+    {
+      "id": "Q05",
+      "verdict": "PASS_TRANSCRIPTION_ONLY",
+      "provided_metrics": 1784,
+      "scope": "提供補正率・平均日数・群得点・分布統計は出所と転記一致の範囲。個票による再補正/平均再算出ではない。通常と補正を分離、未掲載県補正値なし。全国値と自治体分布統計を区別。"
+    },
+    {
+      "id": "Q06",
+      "verdict": "FAIL",
+      "preservation_subcheck": "PASS",
+      "source_sheets": 14,
+      "candidate_sheets": 19,
+      "charts": 148,
+      "original_formulas_preserved": 3362,
+      "scope": "元パーツ比較で変更はworkbook/style/content type/relationships登録部とsheet3のC03の9セルのみ。全148chart、drawing、画像、元13シートXML、隠し領域、目次、印刷部品は同一。stylesの元要素prefix保持、元Print_AreaのlocalSheetIdは+5で正しく対応。しかし分析要点が5番目、追加5シート、候補全体印刷1203ページで契約出力は不適合。E20-02。"
+    },
+    {
+      "id": "Q07",
+      "verdict": "HELD",
+      "structural_subcheck": "PASS",
+      "scope": "原本3362数式に対し候補3364（分析要点B9/B10の2式追加）。既存の#DIV/0!7セルのみ、追加数式の#REF!なし、追加2式の循環なし。C09エラーを0に改変していない。日本語字形は実描画で欠落しE01を維持。全原数式の独立強制再計算/循環検出を完了したとはしない。"
+    },
+    {
+      "id": "Q08",
+      "verdict": "HELD",
+      "scope": "分析要点B9=5125/32297、B10=SUM(Ⅰ!G513:G520)=1787を元値から検算し、保存キャッシュとNative PDFの15.9%/1787を確認。10の変更→再計算→復元試験は記録を読んだが、この固定v1に対する20の強制再計算・保存後再読取りは未実施。ユーザーのExcel編集禁止に従い候補も試験コピーも変更/再保存していない。PDF化だけを再計算証明としない。"
+    },
+    {
+      "id": "Q09",
+      "verdict": "HELD",
+      "actual_render_result": "FAIL_JAPANESE_GLYPHS",
+      "scope": "固定v1をLibreOffice 26.8 alphaで読取専用PDF出力。1203ページ。1ページ（候補案内）、1067ページ（分析要点）、1203ページ（Ⅳ日数）をPNG化して目視。日本語のセル見出し・説明が消失。候補案内は横に3ページへ分断。日本語が読めないため全体の字形/切れ/重なり合格は出さない。Artifact Tool 2.8.85の固定候補importも Xml_MessageWithErrorPosition, Xml_UserException, 2, 2 で失敗したが、これのみをExcel破損とは断定しない。"
+    },
+    {
+      "id": "Q10",
+      "verdict": "FAIL",
+      "comparison_math_subcheck": "PASS",
+      "scope": "全1478比較の数学と入力別抑止は一致。原稿の古い因果説明は候補に流用されていない。しかし分析要点に重点結果と規定比較表が未整備、保持試験/最終候補ではない等の旧文言が残る。原表のC04/C10/C11の値・比較表示には局所的な保留注記なし。C10 chart78の市県系列が保留セルへ依存。E20-02/E20-03。"
+    },
+    {
+      "id": "Q11",
+      "verdict": "HELD",
+      "numeric_replay_subcheck": "PASS",
+      "files_replayed_and_matched": 6,
+      "scope": "同一コード/元入力を別一時出力へ1回確認再実行。definitions/inventory/extracted/numeric/summary/role30_check全6ファイルのバイトSHA一致。Excel全生成は本レビューでは未実行。ZIPには全生成用の実行コマンド・環境記録が十分に同梱されずpackage_repro.pyは旧絶対パス。E20-04。"
+    },
+    {
+      "id": "Q12",
+      "verdict": "PASS_SAVED_OPENABLE_WITH_LIMITS",
+      "scope": "保存版0実ファイルのSHA、ZIP CRC/43ファイルhash、openpyxl開封、Native PDF出力成功を確認。追加4シート111356セルをcandidate_tablesと全件照合（6316指標/1478比較を含む）、差異0。候補を再保存しての検査はしていない。保存成功/開封可能は日本語表示・完成提出の合格を意味しない。"
+    },
+    {
+      "id": "V1-MACHINE",
+      "verdict": "PASS",
+      "scope": "固定コミットtools/verify_handoff.pyのcheck_packageを実行。6234 valid/82 held、fingerprint一致。固定コミットの全15ユニットテスト成功。独自元資料検査とは別。"
+    }
+  ],
+  "issues": [
+    {
+      "id": "C03",
+      "severity": "resolved_numeric",
+      "verdict": "PASS",
+      "status": "independently_verified_applied_to_fixed_v1",
+      "evidence": {
+        "sheet": "Ⅰ基礎情報",
+        "cells": "G513:G521",
+        "before": [
+          255,
+          198,
+          432,
+          259,
+          190,
+          230,
+          157,
+          0.03693340794627868,
+          66
+        ],
+        "after": [
+          66,
+          255,
+          198,
+          432,
+          259,
+          190,
+          230,
+          157,
+          1787
+        ],
+        "reference": "Ⅲ審査判定データ（一次・二次判定）!G128:G136",
+        "proof": "9行見出し、8内訳合計1787、K/N/Q/U/Yの45割合、ⅣJ189/J207/J225の1787に一致。S02も同照合で1750、原本未修正。"
+      },
+      "remaining_limit": "日本語表示と固定候補実再計算は別検査でHELD。C03根拠PASSを候補全体PASSに流用しない。"
+    },
+    {
+      "id": "E20-01",
+      "severity": "resolved_definition",
+      "verdict": "PASS",
+      "status": "independently_verified_in_definitions_records_and_workbook",
+      "evidence": "36焦点表の項目名・全体6/層別30・統計種類をS01/S02の見出しへ直接照合。648指標×2入力=1296件一致。認定率3種類×4地域補正列×2入力=24件の意味をD284/D321/D352と分子分母へ照合。左右下肢を含む6表種を原定義5項目として扱う。候補の指標一覧/定義・保留へ反映。",
+      "next_action": "00はこの定義不足を解消済みとして統合可能。ただし候補の説明・構成不備はE20-02として残る。"
+    },
+    {
+      "id": "C04",
+      "severity": "major",
+      "verdict": "HELD",
+      "status": "awaiting_formal_source",
+      "input_scope": {
+        "S01": "Ⅳ事務データ!J208=0.023503077783995522、J207=1787",
+        "S02": "Ⅳ事務データ!J208=0、J207=1750"
+      },
+      "evidence": "2平均はheld、採用値null、関連3比較はheld。県/全国の他の平均、意見書/認定期間を一律保留にしていない。",
+      "needed": "元送信・集計結果または対象個票の調査依頼日/実施日と正式除外規則。有効件数を指標ごとに確認。",
+      "forbidden": "0日だけで誤りと断定、R5や県平均で置換、期間比較/原因説明。",
+      "next_role": "10",
+      "next_action": "正式資料待ちを維持。元表/画像をそのまま見せる箇所はE20-03の局所保留表示を追加する案を30が提示。"
+    },
+    {
+      "id": "C09",
+      "severity": "known_not_computable",
+      "verdict": "PASS_DEFINITION_AND_LIST_SUPPRESSION",
+      "status": "not_computable_no_new_source_needed_for_zero_denominator",
+      "evidence": "S01/S02ともⅢ審査判定データ（変更率）!J109=0、J110:J116=0、N110:N116=#DIV/0!。14レコードheld/null、依存比較抑止。分析要点B11は未算出（分母0）。元表7エラーは保持。",
+      "next_action": "未算出の根拠は既に存在する。STATEのC09根拠未取得を00が是正し、正式根拠待ちのC04/C10/C11と区別。原表のエラー表示を局所注記で区別し、日本語正常表示で再検査。",
+      "next_role": "00/30/10"
+    },
+    {
+      "id": "C10",
+      "severity": "major",
+      "verdict": "HELD",
+      "status": "numeric_hold_propagation_pass_chart_hold_incomplete",
+      "input_scope": {
+        "S01": "Ⅱ調査項目データ（第５群）!H/J/L/N/P/R71:73の18値、P70=644821",
+        "S02": "同18値、P70=618046"
+      },
+      "evidence": "計36値held、P/Rの地域は未確定と明記、採用値null。S01市件数合計2848、S02=2816で、同掲載割合と不整合。県/全国欄も正式根拠待ち。比較JSONの依存抑止は合格。元chart78には保留の割合が残るため表示面はE20-03。",
+      "needed": "各入力の正式地域見出し・選択肢別件数・有効分母・割合・対象期間を含む元集計。",
+      "next_role": "30",
+      "next_action": "数値を推定せず、保留の原表/グラフを有効比較と誤読しない注記案を提示。10が次版へ反映。"
+    },
+    {
+      "id": "C11",
+      "severity": "major",
+      "verdict": "HELD",
+      "status": "input_specific_hold_propagation_pass",
+      "input_scope": {
+        "S01": "不一致13率＋N371ゼロ分子1率=14率",
+        "S02": "不一致14率＋N371/N432ゼロ分子2率=16率"
+      },
+      "evidence": "Ⅲ審査判定データ（変更率）の新規369:371、更新430:432、区分変更491:493。N31の同申請区分分母定義を読取。30率をheld/nullにし、依存比較を抑止。0/x=0だけで分母正当性を判定していない。",
+      "needed": "入力別/地域別/申請区分別の正式対象・除外定義と有効分母、元集計。",
+      "next_role": "10",
+      "next_action": "正式資料待ちを維持し、対象外のvalid率は無根拠に解除/追加保留しない。原表の局所注記はE20-03で対応。"
+    },
+    {
+      "id": "E20-02",
+      "severity": "major",
+      "verdict": "FAIL",
+      "status": "new",
+      "title": "分析要点・シート構成・印刷が出力契約未達",
+      "evidence": [
+        "PLAN outputs.workbook.addは先頭の分析要点1シート。候補は候補案内/指標一覧/比較一覧/定義・保留/分析要点の順で5枚追加、計19枚。",
+        "分析要点!A2=作業コピーの保持試験、B31=構造保持試験用、C31=最終候補ではない。規定14列の比較表と全必須領域の重点結果・算出根拠を要点シートにまとめていない。",
+        "指標一覧のJ/K等はGeneralで割合を小数のまま表示。候補全体Native PDFは1203ページ、候補案内が横3ページに分断。分析要点自体は1067ページ目のLetter横1枚。10の137ページは候補全体検査の証拠として再利用不可。"
+      ],
+      "next_role": "30",
+      "next_action": "PLANを独断で19枚へ変更しない。先頭の分析要点に規定の重点結果/比較/根拠/未解決事項を構成し、追加台帳の扱いを契約に合わせる修正案を一括提示。10が次版を生成し、実候補の印刷範囲/方向/縮尺/見出し/数値表示を検査。"
+    },
+    {
+      "id": "E20-03",
+      "severity": "major",
+      "verdict": "FAIL",
+      "status": "new",
+      "title": "保留の伝播が追加一覧で止まり原表・既存グラフの比較表示が残る",
+      "evidence": [
+        "C10: chart78.xmlのAM78:AM80/AN78:AN80は第５群のJ71:J73/N71:N73へ依存し、保留割合を市/県比較として保持。元部品同一性は保持PASSであって比較有効性PASSではない。",
+        "C04: Ⅳ!J208は原表に0.0日として残る。Native PDF1203ページに市0.0、県9.5、全国10.3と元の比較画像を確認。保留を示す局所追記はない。",
+        "C11原表のN/T/Z370:371,431:432,492:493とC09の既存エラーも原表そのまま。追加案内に総括注意はあるが、原表単独閲覧/印刷での誤読防止が不足。"
+      ],
+      "next_role": "30",
+      "next_action": "原数値・グラフを無根拠に削除/改変せず、元表保持と両立する局所的な『未検証・比較/結論対象外』表示、保留一覧への参照、出力範囲の扱いを提案。10は図表・画像・説明まで依存影響一覧へ追加して次版で検証。"
+    },
+    {
+      "id": "E01",
+      "severity": "release_blocker",
+      "verdict": "HELD",
+      "status": "actual_render_failed_environment_not_resolved",
+      "evidence": "日本語フォント一覧なし。固定候補のNative PDF1/1067/1203ページをPNG目視し、日本語セル字形欠落を確認。元画像内の一部文字が見えてもブックの日本語正常表示合格にはならない。",
+      "next_role": "10",
+      "next_action": "日本語フォント対応環境を確保し、固定した次候補の追加/変更範囲および保留注記を実描画。原部品保持を併用して元表の文字・図・改ページを検査し証拠を候補SHAに結び付ける。環境未解決なら保留を維持。"
+    },
+    {
+      "id": "E20-04",
+      "severity": "major",
+      "verdict": "HELD",
+      "status": "new",
+      "title": "再現パッケージの全生成手順・候補再計算証拠が不足",
+      "evidence": [
+        "数値パイプライン再実行6ファイルは一致。一方、Excel全生成の確認用再実行は未実施。",
+        "ZIPのsrc/README.mdは順序の説明中心で、起動コマンドと必要ディレクトリ配置・依存環境の再構成手順が十分にない。package_repro.pyは/workspace/scratch/dd7887fa78cd固定。環境詳細は10のGit報告にはあるがZIP内にreports/10.jsonが含まれない。",
+        "20はExcel編集禁止のため、強制再計算→別保存→再読取りを実施せず、キャッシュ/PDF一致で代用しなかった。"
+      ],
+      "next_role": "30/10",
+      "next_action": "30は入力ID/取得/配置、実行コマンド、依存版、数値再現とExcel生成再現の区別、別一時出力比較、固定候補での変更→再計算→復元/再読取り証拠の補完案を提示。10が実行し新版の候補SHAと対応付ける。"
+    }
+  ],
+  "requirement_coverage": [
+    {
+      "id": "R01",
+      "verdict": "FAIL",
+      "evidence": "S01主対象R7第2回/S02第1回参考/S03本文R4形式参考の区別と期間は正しい。出力構成はE20-02。"
+    },
+    {
+      "id": "R02",
+      "verdict": "PASS_NUMERIC",
+      "evidence": "人口11行、65歳以上/総人口、75歳以上・85歳以上/65歳以上と総人口基準率を区別。同じ2025年1月ストックの合算なし。"
+    },
+    {
+      "id": "R03",
+      "verdict": "PASS_NUMERIC",
+      "evidence": "5125/32297、軽度2698/32297、中重度2427/32297、認定者内訳と通常/年齢補正の列を照合。E20-01解消。"
+    },
+    {
+      "id": "R04",
+      "verdict": "PASS_NUMERIC",
+      "evidence": "市S01Ⅱ以上1165/1787、Ⅲ以上388/1787、障害B以上551/1787。市県全国/S02各内訳合計を照合。Mを除外しない。"
+    },
+    {
+      "id": "R05",
+      "verdict": "HELD",
+      "evidence": "5群得点、74選択表、特別な医療、36焦点表の登録・転記・定義は確認。C10正式根拠と保留グラフ表示が残る。"
+    },
+    {
+      "id": "R06",
+      "verdict": "HELD",
+      "evidence": "一次二次/変更率/申請区分/前回判定/有効期間を照合。C03適用PASS、C09未算出確認、C11保留30率。個票移行表の捏造なし。"
+    },
+    {
+      "id": "R07",
+      "verdict": "HELD",
+      "evidence": "被保険者/申請件数/3日数の値・有効件数・定義を確認。意見書19.3、認定49.1は提供平均として転記範囲。調査期間C04保留。"
+    },
+    {
+      "id": "R08",
+      "verdict": "CONDITIONAL_WAIT_NOT_MAIN_PATH_BLOCKER",
+      "evidence": "S05全9ページ本文を再読、S06の通常セルをxlrdで読取。manualはCSV/合議体ID/正式列/二次判定日例/選択件数照合/20合議体単位出力/VBA環境が必要。集計Excelから合議体を推定せずM02～M04未実行。"
+    },
+    {
+      "id": "R09",
+      "verdict": "PASS_HANDOFF_SCOPE",
+      "evidence": "10/20/30とSTATEを同版で直接読取。実際の他チャット稼働は未観測。20→30→10→20→00で次操作を固定。"
+    },
+    {
+      "id": "R10",
+      "verdict": "FAIL",
+      "evidence": "保存・開封は確認。要点/印刷/保留図表/日本語表示は未合格。"
+    },
+    {
+      "id": "R11",
+      "verdict": "HELD",
+      "evidence": "数値処理の1回再実行は成功。Excel全再現・手順はE20-04。10月12日提出の保証なし。"
+    },
+    {
+      "id": "R12",
+      "verdict": "PASS_IDENTITY_FAIL_ACCEPTANCE",
+      "evidence": "candidate ID/version/storage version/SHA/fingerprint/input/definition/template/code固定、全安価検査実行。今回の前回評価再利用0。FAIL/HELD範囲は次版にPASS転記禁止。"
+    }
+  ],
+  "newly_checked": {
+    "mode": "full",
+    "required_metrics": 6316,
+    "comparisons": 1478,
+    "table_blocks": 148,
+    "source_inputs": 6,
+    "original_sheets": 14,
+    "candidate_sheets": 19,
+    "charts": 148,
+    "excel_table_cells": 111356,
+    "integer_checks": 2276,
+    "ratio_checks": 2174,
+    "total_checks": 112,
+    "provided_transcription_only": 1784,
+    "full_machine_test_count": 15
+  },
+  "reused_from": [],
+  "held": {
+    "metric_ids": [
+      "S01::II.selection.07.70:H71",
+      "S01::II.selection.07.70:J71",
+      "S01::II.selection.07.70:L71",
+      "S01::II.selection.07.70:N71",
+      "S01::II.selection.07.70:P71",
+      "S01::II.selection.07.70:R71",
+      "S01::II.selection.07.70:H72",
+      "S01::II.selection.07.70:J72",
+      "S01::II.selection.07.70:L72",
+      "S01::II.selection.07.70:N72",
+      "S01::II.selection.07.70:P72",
+      "S01::II.selection.07.70:R72",
+      "S01::II.selection.07.70:H73",
+      "S01::II.selection.07.70:J73",
+      "S01::II.selection.07.70:L73",
+      "S01::II.selection.07.70:N73",
+      "S01::II.selection.07.70:P73",
+      "S01::II.selection.07.70:R73",
+      "S01::III.change.mild_composition:N110",
+      "S01::III.change.mild_composition:N111",
+      "S01::III.change.mild_composition:N112",
+      "S01::III.change.mild_composition:N113",
+      "S01::III.change.mild_composition:N114",
+      "S01::III.change.mild_composition:N115",
+      "S01::III.change.mild_composition:N116",
+      "S01::III.change.new_application:N370",
+      "S01::III.change.new_application:T370",
+      "S01::III.change.new_application:Z370",
+      "S01::III.change.new_application:N371",
+      "S01::III.change.new_application:T371",
+      "S01::III.change.new_application:Z371",
+      "S01::III.change.renewal:T431",
+      "S01::III.change.renewal:Z431",
+      "S01::III.change.renewal:T432",
+      "S01::III.change.renewal:Z432",
+      "S01::III.change.category_change:T492",
+      "S01::III.change.category_change:Z492",
+      "S01::III.change.category_change:T493",
+      "S01::III.change.category_change:Z493",
+      "S01::IV.days.survey:J208",
+      "S02::II.selection.07.70:H71",
+      "S02::II.selection.07.70:J71",
+      "S02::II.selection.07.70:L71",
+      "S02::II.selection.07.70:N71",
+      "S02::II.selection.07.70:P71",
+      "S02::II.selection.07.70:R71",
+      "S02::II.selection.07.70:H72",
+      "S02::II.selection.07.70:J72",
+      "S02::II.selection.07.70:L72",
+      "S02::II.selection.07.70:N72",
+      "S02::II.selection.07.70:P72",
+      "S02::II.selection.07.70:R72",
+      "S02::II.selection.07.70:H73",
+      "S02::II.selection.07.70:J73",
+      "S02::II.selection.07.70:L73",
+      "S02::II.selection.07.70:N73",
+      "S02::II.selection.07.70:P73",
+      "S02::II.selection.07.70:R73",
+      "S02::III.change.mild_composition:N110",
+      "S02::III.change.mild_composition:N111",
+      "S02::III.change.mild_composition:N112",
+      "S02::III.change.mild_composition:N113",
+      "S02::III.change.mild_composition:N114",
+      "S02::III.change.mild_composition:N115",
+      "S02::III.change.mild_composition:N116",
+      "S02::III.change.new_application:N370",
+      "S02::III.change.new_application:T370",
+      "S02::III.change.new_application:Z370",
+      "S02::III.change.new_application:N371",
+      "S02::III.change.new_application:T371",
+      "S02::III.change.new_application:Z371",
+      "S02::III.change.renewal:N431",
+      "S02::III.change.renewal:T431",
+      "S02::III.change.renewal:Z431",
+      "S02::III.change.renewal:N432",
+      "S02::III.change.renewal:T432",
+      "S02::III.change.renewal:Z432",
+      "S02::III.change.category_change:T492",
+      "S02::III.change.category_change:Z492",
+      "S02::III.change.category_change:T493",
+      "S02::III.change.category_change:Z493",
+      "S02::IV.days.survey:J208"
+    ],
+    "comparison_ids": [
+      "cmp::II.selection.07.70:J71:県差",
+      "cmp::II.selection.07.70:J71:全国差",
+      "cmp::II.selection.07.70:J71:提供期間差",
+      "cmp::II.selection.07.70:J72:県差",
+      "cmp::II.selection.07.70:J72:全国差",
+      "cmp::II.selection.07.70:J72:提供期間差",
+      "cmp::II.selection.07.70:J73:県差",
+      "cmp::II.selection.07.70:J73:全国差",
+      "cmp::II.selection.07.70:J73:提供期間差",
+      "cmp::III.change.mild_composition:N110:県差",
+      "cmp::III.change.mild_composition:N110:全国差",
+      "cmp::III.change.mild_composition:N110:提供期間差",
+      "cmp::III.change.mild_composition:N111:県差",
+      "cmp::III.change.mild_composition:N111:全国差",
+      "cmp::III.change.mild_composition:N111:提供期間差",
+      "cmp::III.change.mild_composition:N112:県差",
+      "cmp::III.change.mild_composition:N112:全国差",
+      "cmp::III.change.mild_composition:N112:提供期間差",
+      "cmp::III.change.mild_composition:N113:県差",
+      "cmp::III.change.mild_composition:N113:全国差",
+      "cmp::III.change.mild_composition:N113:提供期間差",
+      "cmp::III.change.mild_composition:N114:県差",
+      "cmp::III.change.mild_composition:N114:全国差",
+      "cmp::III.change.mild_composition:N114:提供期間差",
+      "cmp::III.change.mild_composition:N115:県差",
+      "cmp::III.change.mild_composition:N115:全国差",
+      "cmp::III.change.mild_composition:N115:提供期間差",
+      "cmp::III.change.mild_composition:N116:県差",
+      "cmp::III.change.mild_composition:N116:全国差",
+      "cmp::III.change.mild_composition:N116:提供期間差",
+      "cmp::III.change.new_application:N370:県差",
+      "cmp::III.change.new_application:N370:全国差",
+      "cmp::III.change.new_application:N370:提供期間差",
+      "cmp::III.change.new_application:N371:県差",
+      "cmp::III.change.new_application:N371:全国差",
+      "cmp::III.change.new_application:N371:提供期間差",
+      "cmp::III.change.renewal:N431:県差",
+      "cmp::III.change.renewal:N431:全国差",
+      "cmp::III.change.renewal:N431:提供期間差",
+      "cmp::III.change.renewal:N432:県差",
+      "cmp::III.change.renewal:N432:全国差",
+      "cmp::III.change.renewal:N432:提供期間差",
+      "cmp::III.change.category_change:N492:県差",
+      "cmp::III.change.category_change:N492:全国差",
+      "cmp::III.change.category_change:N493:県差",
+      "cmp::III.change.category_change:N493:全国差",
+      "cmp::IV.days.survey:J208:県差",
+      "cmp::IV.days.survey:J208:全国差",
+      "cmp::IV.days.survey:J208:提供期間差"
+    ],
+    "counts": {
+      "C04": 2,
+      "C09": 14,
+      "C10": 36,
+      "C11": 30,
+      "total": 82,
+      "comparisons": 49
+    },
+    "pending_checks": [
+      "Q08固定候補実再計算・再読取り",
+      "Q09日本語正常表示",
+      "Q11Excel全生成再現"
+    ]
+  },
+  "reproduction": {
+    "library_file_id": "libfile_d613c5b2ffb08191bf6eff5c8d7e0fdb",
+    "library_version": 1,
+    "zip_sha256": "2cb1f00cf39098dacad171ad11eb38484229a24c09ed45c7cc4ee57444ac7fd2",
+    "manifest_files_verified": 43,
+    "crc": "PASS",
+    "numeric_replay": {
+      "status": "PASS",
+      "scope": "T01/T02/T04/T05の再現可能な集計・状態処理。候補Excelのバイト再現ではない",
+      "inputs_unchanged": true,
+      "files_compared": 6,
+      "hashes": {
+        "definitions": {
+          "replay": "80ab7d39bff69756b820d6508bbedd2058b2306b91ecfbccb445bb8bc404b14f",
+          "current": "80ab7d39bff69756b820d6508bbedd2058b2306b91ecfbccb445bb8bc404b14f"
+        },
+        "inventory": {
+          "replay": "22b117e0a93a30480ec54fdf58bbd7daa037d185736b35461f8af5c2b22f7273",
+          "current": "22b117e0a93a30480ec54fdf58bbd7daa037d185736b35461f8af5c2b22f7273"
+        },
+        "extracted": {
+          "replay": "2a3590942aafbc1562e787aa8292f6ed8cb0e08a9a5b9b9b6b0de145223c1bac",
+          "current": "2a3590942aafbc1562e787aa8292f6ed8cb0e08a9a5b9b9b6b0de145223c1bac"
+        },
+        "numeric": {
+          "replay": "86920c8c6f7eb5846842c47cbccf9c0d3caab3f598570286f5a61423807514f8",
+          "current": "86920c8c6f7eb5846842c47cbccf9c0d3caab3f598570286f5a61423807514f8"
+        },
+        "summary": {
+          "replay": "42af679ae8cd02cdbc24f2c3f7d09fd03837777e114576078f74def90eb7f89c",
+          "current": "42af679ae8cd02cdbc24f2c3f7d09fd03837777e114576078f74def90eb7f89c"
+        },
+        "role30_check": {
+          "replay": "7a7b58734a6018ded42bd7a1fa49e417107c6c6d1ab8a775c8f669e3b322a3da",
+          "current": "7a7b58734a6018ded42bd7a1fa49e417107c6c6d1ab8a775c8f669e3b322a3da"
+        }
+      },
+      "differences": {}
+    },
+    "full_workbook_replay": "NOT_EXECUTED",
+    "note": "取得メタデータの保存ID・保存版1を照合済み。前回のZIP version 0と混同していない。"
+  },
+  "native_render": {
+    "input_candidate_sha256": "fe3ccd49b45400ea70687cd67cb50a7f9563cd7dd6641bd7c82c57aa97cbb570",
+    "engine": "LibreOfficeDev 26.8.0.0.alpha0",
+    "operation": "read-only XLSX to PDF; XLSX not saved",
+    "pages": 1203,
+    "visually_inspected_pages": [
+      1,
+      1067,
+      1203
+    ],
+    "summary_page": 1067,
+    "summary_size": "Letter landscape",
+    "guide_horizontal_pages": 3,
+    "japanese_readability": "FAIL_IN_THIS_ENVIRONMENT; approval HELD"
+  },
+  "next_role": "30",
+  "next_action": "30はE20-02/E20-03/E20-04を一括修正案にし、10が候補v2と検査JSON/報告を同時更新。E01は日本語環境で再検査。C04/C10/C11は正式資料のある範囲のみ解除。00は本FAILとC03/E20-01解消、C09の根拠取得済みを統合する。",
+  "next_actions": [
+    {
+      "role": "30",
+      "action": "この固定v1/fingerprintの指摘を読み、構成・要点・印刷・保留図表・再現手順の修正案と全依存影響一覧をreports/30.jsonへ。"
+    },
+    {
+      "role": "10",
+      "action": "30案に従いExcel/コードを修正、保存IDは同じ新しい保存版にして候補ID/候補版を進める。v1を上書きしない。全機械検査、日本語実描画、再計算・再現を記録。"
+    },
+    {
+      "role": "20",
+      "action": "次版は入力/定義/コード/影響閉包を確認。今回はQ08/Q09/Q11にHELD、構成/説明/図表にFAILが残るため自動的な差分限定PASS再利用をしない。必要条件を満たさなければ全範囲へ戻す。"
+    },
+    {
+      "role": "00",
+      "action": "STATEを統合（20は変更しない）。C09は既に分母0根拠ありで、追加元資料待ちと扱わない。表示未合格のため完成/暫定提出不可。"
+    }
+  ],
+  "restart_condition": "30修正案、10の固定新版候補・検査JSON・全指標/依存一覧・日本語描画/再計算/再現証拠が揃うこと。正式未提供範囲は入力別保留のまま検査。",
+  "outputs": [
+    {
+      "path": "care-insurance-analysis/reports/20.json",
+      "type": "first_full_candidate_independent_review",
+      "candidate_id": "care-S01-20261009-v1"
+    }
+  ],
+  "elapsed_minutes": null,
+  "time_measurements": {
+    "note": "工程別開始終了タイマーは採取していないため実測分数を推定補完しない。数値再現は確認用1回。"
+  },
+  "deadline_impact": "2026-10-12提出に対し、構成/印刷/保留図表の修正と日本語環境が必要。候補保存だけで完成/暫定提出に昇格できない。",
+  "write_scope": {
+    "github": [
+      "care-insurance-analysis/reports/20.json"
+    ],
+    "excel_modified": false,
+    "analysis_code_modified": false,
+    "state_modified": false,
+    "plan_modified": false
+  },
+  "prior_report": {
+    "commit": "3c63328c7b10b2fb7cd4c9fd81c5d71c6e0ed8f4",
+    "blob_sha": "8a62a506c6ea56688e7231b44470cabd35d5912a",
+    "scope": "候補前確認のみ。今回の全独立検査合格として再利用していない。"
+  }
+}

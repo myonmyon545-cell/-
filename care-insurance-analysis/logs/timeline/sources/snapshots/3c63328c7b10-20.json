@@ -1,0 +1,1096 @@
+{
+  "schema": "care_handoff/v1",
+  "role": "20",
+  "plan_revision": "2.2",
+  "status": "pre_candidate_review_completed_waiting_for_candidate",
+  "task_id": "T07",
+  "source_commit": "b5b14b75d8329850b441640ff5b92408a9ccca81",
+  "updated_at": "2026-10-09T11:42:35+09:00",
+  "inputs": [
+    {
+      "source_id": "S01",
+      "library_file_id": "libfile_2f275b2a53d481919fb7d942fbecc486",
+      "sha256": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d",
+      "size_bytes": 1615421,
+      "independently_bytes_verified": true,
+      "access": "provided local project source; original bytes unchanged"
+    },
+    {
+      "source_id": "S02",
+      "library_file_id": "libfile_0d9cfee943ec819188518e4922ce620e",
+      "sha256": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304",
+      "size_bytes": 1609475,
+      "independently_bytes_verified": true,
+      "access": "provided local project source; original bytes unchanged"
+    },
+    {
+      "source_id": "S03",
+      "library_file_id": "libfile_1a33a04a77e4819197bfdf49e7cd8099",
+      "sha256": "e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f",
+      "size_bytes": 1892849,
+      "independently_bytes_verified": true,
+      "access": "provided local project source; original bytes unchanged"
+    },
+    {
+      "source_id": "S04",
+      "library_file_id": "libfile_348a1421657c8191938bc42e4a79b9ea",
+      "sha256": "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800",
+      "size_bytes": 31749,
+      "independently_bytes_verified": true,
+      "access": "provided local project source; original bytes unchanged"
+    },
+    {
+      "source_id": "S05",
+      "library_file_id": "libfile_f40c9f4e1d0081919fb497f31e737856",
+      "sha256": "87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1",
+      "size_bytes": 1128810,
+      "independently_bytes_verified": true,
+      "access": "provided local project source; original bytes unchanged"
+    },
+    {
+      "source_id": "S06",
+      "library_file_id": "libfile_b7623c4ffd6881919e938f89942286f3",
+      "sha256": "b74b37c05a97d053ef46c16f380177f5a0724151dac5daff1c4076290671e524",
+      "size_bytes": 34816,
+      "independently_bytes_verified": true,
+      "access": "provided local project source; original bytes unchanged"
+    },
+    {
+      "source_id": "S04_alias",
+      "library_file_id": "libfile_d66db96b3c5881919cf10890068434de",
+      "sha256": "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800",
+      "size_bytes": 31749,
+      "independently_bytes_verified": true,
+      "access": "provided local project source; original bytes unchanged"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "care-insurance-analysis/reports/20.json",
+      "type": "pre_candidate_independent_review",
+      "includes": [
+        "C03独立修正根拠",
+        "要件別網羅性と不足",
+        "C04/C09/C10/C11保留範囲",
+        "E20-01台帳定義不足",
+        "再開・再評価条件"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "PRE20-INPUT",
+      "verdict": "PASS",
+      "scope": "添付7ファイルの実バイトハッシュ。S04と見本の同一性。元資料としてS01/S02/S03の見出し・数値・定義、S04全文、S05全9ページ本文、S06通常セルを読取。VBAは未実行。"
+    },
+    {
+      "id": "PRE20-SOURCE-VALUES",
+      "verdict": "PASS",
+      "checked_values": 6316,
+      "differences": [],
+      "method": "ROLE=10のコードを実行せず、openpyxlでS01/S02を直接読み、再現ZIPの全source_valueと照合。",
+      "scope": "登録済み3158セル×2資料の転記一致。指標の意味・全必須範囲・計算・完成Excelの合格とは別。"
+    },
+    {
+      "id": "PRE20-C03",
+      "verdict": "PASS",
+      "scope": "修正案の根拠のみ。S01/S02で9行見出し、8内訳合計、市通常割合8行、5比率列×9行のⅠ/Ⅲ一致、Ⅳ合計と3日数有効件数を直接照合。修正適用・候補表示は未実施。"
+    },
+    {
+      "id": "PRE20-COVERAGE",
+      "verdict": "FAIL",
+      "scope": "R02～R07の中核項目は対応するが、E20-01により意味・母集団を含めた台帳の網羅性合格は出せない。",
+      "counts": {
+        "table_blocks": 148,
+        "required_metric_ids": 3158,
+        "unique_metric_ids": 3158,
+        "orphan_table_blocks": 0,
+        "independent_selection_headers": 74,
+        "missing_selection_tables": 0,
+        "independent_focus_headers": 36,
+        "missing_focus_tables": 0,
+        "focus_metric_rows": 648,
+        "unlabelled_certification_summary_rows": 12
+      }
+    },
+    {
+      "id": "PRE20-HOLDS",
+      "verdict": "HELD",
+      "scope": "C04、C10、C11は正式根拠待ち。C09は分母0による未算出と独立確定し、候補での表示・依存抑止を確認する。C11の保留範囲は3セル拡張が必要。"
+    },
+    {
+      "id": "PRE20-OUTPUT",
+      "verdict": "HELD",
+      "scope": "候補未生成。10のpreservation/pilot/replayの記録を読んだ。元14シート/148グラフの保持記録は構造試行のみ。日本語表示FAILとC03適用試験未実施を確認。ROLE=20による候補Q06～Q12合格は未実施。"
+    }
+  ],
+  "issues": [
+    {
+      "id": "C03",
+      "verdict": "PASS",
+      "severity": "major",
+      "requirements": [
+        "R06",
+        "R10"
+      ],
+      "target": {
+        "S01": "Ⅰ基礎情報!G513:G521",
+        "evidence": "Ⅲ審査判定データ（一次・二次判定）!C128:Y136; Ⅰ!C513:Y521; Ⅳ!J132,J153,J189,J207,J225"
+      },
+      "source_commit": "b5b14b75d8329850b441640ff5b92408a9ccca81",
+      "observed": {
+        "S01": {
+          "labels_I": [
+            "非該当",
+            "要支援１",
+            "要支援２",
+            "要介護１",
+            "要介護２",
+            "要介護３",
+            "要介護４",
+            "要介護５",
+            "合計"
+          ],
+          "labels_III": [
+            "非該当",
+            "要支援１",
+            "要支援２",
+            "要介護１",
+            "要介護２",
+            "要介護３",
+            "要介護４",
+            "要介護５",
+            "合計"
+          ],
+          "before": [
+            255,
+            198,
+            432,
+            259,
+            190,
+            230,
+            157,
+            0.03693340794627868,
+            66
+          ],
+          "proposed": [
+            66,
+            255,
+            198,
+            432,
+            259,
+            190,
+            230,
+            157,
+            1787
+          ],
+          "parts_sum": 1787,
+          "ratios_max_abs_error": 0,
+          "all_ratio_columns_equal": true,
+          "IV_counts": {
+            "J129": 1749,
+            "J150": 810,
+            "J189": 1787,
+            "J207": 1787,
+            "J225": 1787
+          }
+        },
+        "S02": {
+          "labels_I": [
+            "非該当",
+            "要支援１",
+            "要支援２",
+            "要介護１",
+            "要介護２",
+            "要介護３",
+            "要介護４",
+            "要介護５",
+            "合計"
+          ],
+          "labels_III": [
+            "非該当",
+            "要支援１",
+            "要支援２",
+            "要介護１",
+            "要介護２",
+            "要介護３",
+            "要介護４",
+            "要介護５",
+            "合計"
+          ],
+          "before": [
+            246,
+            174,
+            436,
+            216,
+            203,
+            269,
+            140,
+            0.037714285714285714,
+            66
+          ],
+          "proposed": [
+            66,
+            246,
+            174,
+            436,
+            216,
+            203,
+            269,
+            140,
+            1750
+          ],
+          "parts_sum": 1750,
+          "ratios_max_abs_error": 0,
+          "all_ratio_columns_equal": true,
+          "IV_counts": {
+            "J129": 1709,
+            "J150": 867,
+            "J189": 1750,
+            "J207": 1750,
+            "J225": 1750
+          }
+        }
+      },
+      "rule": "同一母集団・同一見出しで内訳/割合/別表件数が一意に一致した箇所のみ修正する。",
+      "reproduction_steps": [
+        "8区分と合計の見出しを照合",
+        "ⅢのG128:G135を合計しG136と照合",
+        "各区分件数/G136をⅠのK513:K520と照合",
+        "ⅠとⅢのK/N/Q/U/Y全45値を照合",
+        "Ⅳの申請合計と指標別有効件数を照合"
+      ],
+      "impact": "S01一次判定9セルとそれに依存する抽出/比較/表示。S02比較側にも同じ不整合。",
+      "next_action": "10はS01作業コピーのみ[66,255,198,432,259,190,230,157,1787]へ修正可。S02原本は保持し、比較に使う値はⅢから出所付きで取得。",
+      "recheck_condition": "前後9値・数式/キャッシュ・依存先・グラフ・表示・保存を固定候補で確認。",
+      "proof_status": "independently_confirmed",
+      "applied": false,
+      "issue_status": "awaiting_role10_application",
+      "additional_totals": {
+        "S01": {
+          "Ⅳ!J132": 1787,
+          "Ⅳ!J153": 1787
+        },
+        "S02": {
+          "Ⅳ!J132": 1750,
+          "Ⅳ!J153": 1750
+        }
+      }
+    },
+    {
+      "id": "C04",
+      "verdict": "HELD",
+      "severity": "major",
+      "requirements": [
+        "R07",
+        "R10"
+      ],
+      "target": "S01/S02 Ⅳ事務データ!J207:J208",
+      "source_commit": "b5b14b75d8329850b441640ff5b92408a9ccca81",
+      "observed": {
+        "S01": {
+          "mean": 0.023503077783995522,
+          "valid_n": 1787,
+          "implied_sum_only": 42
+        },
+        "S02": {
+          "mean": 0,
+          "valid_n": 1750,
+          "implied_sum_only": 0
+        }
+      },
+      "rule": "調査実施日－調査依頼日。提供平均から個票平均を再算出したとはいえない。0日だけで誤りを断定しない。",
+      "reproduction_steps": [
+        "D204の見出し、D84:D88の除外規則、J207/J208を直接読取"
+      ],
+      "impact": "市調査日数とその県差/全国差/提供期間差、短い/改善等の解釈。意見書・認定日数と県/全国の出所確認は独立して継続。",
+      "next_action": "調査依頼日・実施日・判定日を含む対象ケースと欠損/同日/逆転/除外規則、または正式な元送信/集計結果を取得。値をR5の7.1日や県平均で置換しない。",
+      "recheck_condition": "正式根拠で有効件数と日数総和/平均を一致確認。候補で保留と結論抑止を確認。",
+      "note": "S01平均×1787=42日は掲載値から逆算した算術的含意にすぎず、個票日数総和の確認ではない。"
+    },
+    {
+      "id": "C09",
+      "verdict": "HELD",
+      "severity": "medium",
+      "requirements": [
+        "R06",
+        "R10"
+      ],
+      "target": "S01/S02 Ⅲ審査判定データ（変更率）!J109:N116",
+      "source_commit": "b5b14b75d8329850b441640ff5b92408a9ccca81",
+      "observed": {
+        "S01": {
+          "denominator": 0,
+          "numerators": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ratios": [
+            "#DIV/0!",
+            "#DIV/0!",
+            "#DIV/0!",
+            "#DIV/0!",
+            "#DIV/0!",
+            "#DIV/0!",
+            "#DIV/0!"
+          ]
+        },
+        "S02": {
+          "denominator": 0,
+          "numerators": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ratios": [
+            "#DIV/0!",
+            "#DIV/0!",
+            "#DIV/0!",
+            "#DIV/0!",
+            "#DIV/0!",
+            "#DIV/0!",
+            "#DIV/0!"
+          ]
+        }
+      },
+      "rule": "軽度変更内訳構成比の分母J109=0なら未算出。0%として使わない。全体軽度変更率0/全ケースは別指標。",
+      "reproduction_steps": [
+        "軽度変更0件と7内訳0件、N110:N116の#DIV/0!を直接確認"
+      ],
+      "impact": "未算出構成比7セル×2入力、依存比較/説明/グラフ。県/全国の分母が正の構成比や全体率は別扱い。",
+      "next_action": "新しい元資料待ちは不要。10は分析要点/候補で「未算出（軽度変更0件）」を明示し、0%への置換や有効比較を禁止。原表変更なら表示専用の分母0処理と来歴を記録。",
+      "recheck_condition": "候補で7セル、グラフの欠損表示、比較抑止、原パーツ保持/変更範囲を独立確認。",
+      "definition_verdict": "PASS",
+      "unresolved_scope": "candidate implementation and display"
+    },
+    {
+      "id": "C10",
+      "verdict": "HELD",
+      "severity": "major",
+      "requirements": [
+        "R05",
+        "R10"
+      ],
+      "target": "S01/S02 Ⅱ調査項目データ（第５群）!H70:R73",
+      "source_commit": "b5b14b75d8329850b441640ff5b92408a9ccca81",
+      "observed": {
+        "S01": {
+          "header_P70": 644821,
+          "regions": {
+            "H": {
+              "counts": [
+                1949,
+                464,
+                435
+              ],
+              "ratios": [
+                0.259653049804141,
+                0.4969222160044768,
+                0.2434247341913822
+              ],
+              "sum": 2848
+            },
+            "L": {
+              "counts": [
+                42087,
+                16972,
+                14991
+              ],
+              "ratios": [
+                0.23909950269782906,
+                0.5497090852739388,
+                0.2111914120282321
+              ],
+              "sum": 74050
+            },
+            "P": {
+              "counts": [
+                1249157,
+                486926,
+                462916
+              ],
+              "ratios": [
+                0.2708303232721689,
+                0.5246566010221327,
+                0.20451307570569835
+              ],
+              "sum": 2198999
+            }
+          }
+        },
+        "S02": {
+          "header_P70": 618046,
+          "regions": {
+            "H": {
+              "counts": [
+                1949,
+                458,
+                409
+              ],
+              "ratios": [
+                0.26171428571428573,
+                0.5045714285714286,
+                0.2337142857142857
+              ],
+              "sum": 2816
+            },
+            "L": {
+              "counts": [
+                42087,
+                15979,
+                14487
+              ],
+              "ratios": [
+                0.23325304722283044,
+                0.5552733377125757,
+                0.21147361506459383
+              ],
+              "sum": 72553
+            },
+            "P": {
+              "counts": [
+                1247400,
+                484745,
+                462916
+              ],
+              "ratios": [
+                0.26297692400319805,
+                0.5307653718357359,
+                0.20625770416106606
+              ],
+              "sum": 2195061
+            }
+          }
+        }
+      },
+      "rule": "5-1薬の内服の選択件数/有効件数と掲載比率の対応を元集計で確定する。壊れた見出しを推測補完しない。",
+      "reproduction_steps": [
+        "C68薬の内服、C71:C73選択肢、H/L/P件数とJ/N/R割合を直接読取",
+        "全18割合を各件数内訳合計で独立照合。18件すべて不一致",
+        "P70見出し位置も読取。S01=644821、S02=618046、S03参照は「全国」"
+      ],
+      "impact": "18数値セル×2入力の薬の内服表、P70見出し、比較/説明/対応グラフ。表の分布統計を用いた断定も元集計との整合が確認できるまで保留。",
+      "next_action": "正式元送信/集計表の地域見出し・3選択肢の件数/有効件数/割合・列位置を取得。C10.affected_cellsの空配列を具体的範囲へ更新。逆算値やS03の過年度件数で確定修正しない。",
+      "recheck_condition": "正式根拠と全地域・3区分・見出しを照合し、保留伝播・比較・グラフ・表示を再検査。",
+      "independent_mismatch_count": 18,
+      "additional_finding": "P70の見出し破損を保留範囲へ含める。"
+    },
+    {
+      "id": "C11",
+      "verdict": "HELD",
+      "severity": "major",
+      "requirements": [
+        "R06",
+        "R10"
+      ],
+      "target": "S01/S02 Ⅲ審査判定データ（変更率）!369:371,430:432,491:493",
+      "source_commit": "b5b14b75d8329850b441640ff5b92408a9ccca81",
+      "observed": {
+        "independent_numeric_mismatches": {
+          "S01": [
+            {
+              "cell": "N370",
+              "num_cell": "J370",
+              "den_cell": "J369",
+              "num": 35,
+              "den": 810,
+              "source": 0.043478260869565216,
+              "expected_same_table": 0.043209876543209874,
+              "match": false
+            },
+            {
+              "cell": "T370",
+              "num_cell": "P370",
+              "den_cell": "P369",
+              "num": 1515,
+              "den": 29858,
+              "source": 0.0527323355377654,
+              "expected_same_table": 0.05074017013865631,
+              "match": false
+            },
+            {
+              "cell": "T371",
+              "num_cell": "P371",
+              "den_cell": "P369",
+              "num": 42,
+              "den": 29858,
+              "source": 0.001461886529759833,
+              "expected_same_table": 0.001406658182061759,
+              "match": false
+            },
+            {
+              "cell": "Z370",
+              "num_cell": "V370",
+              "den_cell": "V369",
+              "num": 73474,
+              "den": 1005430,
+              "source": 0.07726760773706677,
+              "expected_same_table": 0.0730771908536646,
+              "match": false
+            },
+            {
+              "cell": "Z371",
+              "num_cell": "V371",
+              "den_cell": "V369",
+              "num": 6572,
+              "den": 1005430,
+              "source": 0.006911325340229235,
+              "expected_same_table": 0.006536506768248411,
+              "match": false
+            },
+            {
+              "cell": "T431",
+              "num_cell": "P431",
+              "den_cell": "P430",
+              "num": 1857,
+              "den": 32312,
+              "source": 0.05866371821197283,
+              "expected_same_table": 0.05747090864075266,
+              "match": false
+            },
+            {
+              "cell": "T432",
+              "num_cell": "P432",
+              "den_cell": "P430",
+              "num": 78,
+              "den": 32312,
+              "source": 0.0024640657084188913,
+              "expected_same_table": 0.0024139638524387223,
+              "match": false
+            },
+            {
+              "cell": "Z431",
+              "num_cell": "V431",
+              "den_cell": "V430",
+              "num": 88004,
+              "den": 1093875,
+              "source": 0.0827176008474409,
+              "expected_same_table": 0.08045160553079649,
+              "match": false
+            },
+            {
+              "cell": "Z432",
+              "num_cell": "V432",
+              "den_cell": "V430",
+              "num": 5060,
+              "den": 1093875,
+              "source": 0.004756045864824905,
+              "expected_same_table": 0.0046257570563364185,
+              "match": false
+            },
+            {
+              "cell": "T492",
+              "num_cell": "P492",
+              "den_cell": "P491",
+              "num": 458,
+              "den": 8813,
+              "source": 0.05242673992673993,
+              "expected_same_table": 0.051968682627936004,
+              "match": false
+            },
+            {
+              "cell": "T493",
+              "num_cell": "P493",
+              "den_cell": "P491",
+              "num": 4,
+              "den": 8813,
+              "source": 0.0004578754578754579,
+              "expected_same_table": 0.0004538749574492227,
+              "match": false
+            },
+            {
+              "cell": "Z492",
+              "num_cell": "V492",
+              "den_cell": "V491",
+              "num": 22521,
+              "den": 281599,
+              "source": 0.08105744313273827,
+              "expected_same_table": 0.07997542604909819,
+              "match": false
+            },
+            {
+              "cell": "Z493",
+              "num_cell": "V493",
+              "den_cell": "V491",
+              "num": 1653,
+              "den": 281599,
+              "source": 0.005949467319320472,
+              "expected_same_table": 0.005870049254436273,
+              "match": false
+            }
+          ],
+          "S02": [
+            {
+              "cell": "N370",
+              "num_cell": "J370",
+              "den_cell": "J369",
+              "num": 35,
+              "den": 867,
+              "source": 0.04046242774566474,
+              "expected_same_table": 0.040369088811995385,
+              "match": false
+            },
+            {
+              "cell": "T370",
+              "num_cell": "P370",
+              "den_cell": "P369",
+              "num": 1478,
+              "den": 29929,
+              "source": 0.051262486126526084,
+              "expected_same_table": 0.04938354104714491,
+              "match": false
+            },
+            {
+              "cell": "T371",
+              "num_cell": "P371",
+              "den_cell": "P369",
+              "num": 89,
+              "den": 29929,
+              "source": 0.0030868479467258602,
+              "expected_same_table": 0.0029737044338267234,
+              "match": false
+            },
+            {
+              "cell": "Z370",
+              "num_cell": "V370",
+              "den_cell": "V369",
+              "num": 71626,
+              "den": 1006535,
+              "source": 0.07523399678375872,
+              "expected_same_table": 0.07116096310610162,
+              "match": false
+            },
+            {
+              "cell": "Z371",
+              "num_cell": "V371",
+              "den_cell": "V369",
+              "num": 7182,
+              "den": 1006535,
+              "source": 0.007543776909236242,
+              "expected_same_table": 0.0071353703547318275,
+              "match": false
+            },
+            {
+              "cell": "N431",
+              "num_cell": "J431",
+              "den_cell": "J430",
+              "num": 29,
+              "den": 678,
+              "source": 0.04283604135893648,
+              "expected_same_table": 0.04277286135693215,
+              "match": false
+            },
+            {
+              "cell": "T431",
+              "num_cell": "P431",
+              "den_cell": "P430",
+              "num": 1617,
+              "den": 29642,
+              "source": 0.05550216242191254,
+              "expected_same_table": 0.05455097496795088,
+              "match": false
+            },
+            {
+              "cell": "T432",
+              "num_cell": "P432",
+              "den_cell": "P430",
+              "num": 29,
+              "den": 29642,
+              "source": 0.0009954005629161805,
+              "expected_same_table": 0.0009783415424060454,
+              "match": false
+            },
+            {
+              "cell": "Z431",
+              "num_cell": "V431",
+              "den_cell": "V430",
+              "num": 87328,
+              "den": 1063622,
+              "source": 0.08443141156349131,
+              "expected_same_table": 0.0821043566229356,
+              "match": false
+            },
+            {
+              "cell": "Z432",
+              "num_cell": "V432",
+              "den_cell": "V430",
+              "num": 5025,
+              "den": 1063622,
+              "source": 0.00485832542949047,
+              "expected_same_table": 0.004724422774256267,
+              "match": false
+            },
+            {
+              "cell": "T492",
+              "num_cell": "P492",
+              "den_cell": "P491",
+              "num": 469,
+              "den": 8934,
+              "source": 0.053000339021358346,
+              "expected_same_table": 0.0524960823819118,
+              "match": false
+            },
+            {
+              "cell": "T493",
+              "num_cell": "P493",
+              "den_cell": "P491",
+              "num": 27,
+              "den": 8934,
+              "source": 0.003051192225110182,
+              "expected_same_table": 0.0030221625251846875,
+              "match": false
+            },
+            {
+              "cell": "Z492",
+              "num_cell": "V492",
+              "den_cell": "V491",
+              "num": 21978,
+              "den": 280034,
+              "source": 0.0795261287731309,
+              "expected_same_table": 0.07848332702457558,
+              "match": false
+            },
+            {
+              "cell": "Z493",
+              "num_cell": "V493",
+              "den_cell": "V491",
+              "num": 1831,
+              "den": 280034,
+              "source": 0.006625368176522098,
+              "expected_same_table": 0.006538491754572659,
+              "match": false
+            }
+          ]
+        },
+        "mismatch_count": 27,
+        "additional_hold_required": [
+          {
+            "input": "S01",
+            "cell": "N371",
+            "current_status": "valid",
+            "denominator": 810
+          },
+          {
+            "input": "S02",
+            "cell": "N371",
+            "current_status": "valid",
+            "denominator": 867
+          },
+          {
+            "input": "S02",
+            "cell": "N432",
+            "current_status": "valid",
+            "denominator": 678
+          }
+        ]
+      },
+      "rule": "各申請区分に占める変更件数の割合（同シートN30:N31）。分母の正当性は0/分母=0の一致では検証できない。",
+      "reproduction_steps": [
+        "3申請区分×3地域×2方向×2入力の36割合を同表件数で計算",
+        "13件(S01)+14件(S02)の不一致を確認",
+        "不一致と同一対象分母を使うゼロ分子3セルが現在validのままであることを確認"
+      ],
+      "impact": "不一致27割合および同一未確定分母に依存するゼロ分子3割合、その比較/説明。S01更新/区分変更の市比率など一致かつ今回の分母疑義外の部分まで一律保留にしない。",
+      "next_action": "正式な対象/除外ケース定義と申請区分別元集計、使用した有効分母を確認。30は保留を上記3セルにも伝播する修正案を提示、10が適用。逆算分母805等を正式値として採用しない。",
+      "recheck_condition": "正式分母と件数・掲載率を照合。資料待ち中は該当30割合と依存先がvalidにならないことを確認。ゼロ比率を含む分母条件を再検査。",
+      "hold_scope_verdict": "FAIL",
+      "observed_zero_counts_preserved": true
+    },
+    {
+      "id": "E20-01",
+      "verdict": "FAIL",
+      "severity": "major",
+      "requirements": [
+        "R03",
+        "R05",
+        "R10",
+        "R12"
+      ],
+      "target": [
+        "src/definitions.json: II.focus.* 36表",
+        "src/metric_inventory.json: II.focus.* 648行",
+        "src/metric_inventory.json: I.certification.summary 12行"
+      ],
+      "source_commit": "b5b14b75d8329850b441640ff5b92408a9ccca81",
+      "observed": {
+        "focus_definition": "全36表のpopulationが「一次判定区分を限定した当該調査項目の有効ケース」で同一。項目名/対象区分を示すlabelなし。",
+        "focus_metric": "row_labelは「ない/ある」等のみ。R/T/V/X/Z各列の最小/第1四分位/中央値/第3四分位/最大の意味をフィールドに持たない。全体6表も層別と記述。",
+        "source_examples": {
+          "Ⅱ（３）５項目!C72": "1-1_麻痺（左-下肢）",
+          "C81": "非該当・要支援１・要支援２",
+          "C89": "非該当・要支援１・要支援２・要介護１",
+          "C97": "要介護１・要介護２",
+          "C105": "要介護２・要介護３",
+          "C113": "要介護４・要介護５",
+          "Ⅰ基礎情報!D284": "認定率",
+          "D321": "軽度認定率（要支援１・２、要介護１）",
+          "D352": "中・重度認定率（要介護２～５）"
+        },
+        "summary_row_labels": "12行すべて空"
+      },
+      "rule": "Q01は値だけでなく母集団・補正条件・出所を照合。R05は5項目と層別の意味を保つ。R03は認定率3種類を区別。",
+      "reproduction_steps": [
+        "元資料の各項目タイトル/層別見出し/統計見出しを読む",
+        "台帳の当該table_id/row_label/populationと比較",
+        "認定率3種の行に対応する見出しと空row_labelを比較"
+      ],
+      "impact": "登録値は一致するが、648詳細指標と12認定率概要指標の説明・比較・分析要点生成が曖昧。原セルへ遡れることだけでは意味定義の完了としない。",
+      "next_action": "30は項目ID/項目名/全体または明示した一次判定区分/統計種類/定義の根拠セルを加える修正案を一括提示。10は36詳細表・648指標と認定率12指標へ適用。6図種（左右別）を5項目と区別し、C37:C38の補正例外も定義へ記録。",
+      "recheck_condition": "元見出しに36表すべて一致し、全体6表と層別30表を正しく識別。648+12指標の意味が一意で、比較/要点/グラフのラベルへ伝播することを固定候補で確認。",
+      "count_coverage_verdict": "PASS",
+      "semantic_coverage_verdict": "FAIL"
+    }
+  ],
+  "next_role": "30",
+  "next_action": "30はE20-01の意味定義・C11保留拡張・C10見出しを含む修正案を一括整理。10は本報告で根拠PASSとなったC03をS01作業コピーへ適用しT03未完了試験を再開可能。正式資料待ちと独立して進める。00は本報告をSTATEへ統合。",
+  "restart_condition": "最新mainを固定してPLAN/STATE/10/20/30を照合。10の新候補ID・保存版・SHA256および同一コミットのchecks/candidate.jsonとreports/10.jsonが揃った時点でROLE=20が初回全独立評価。候補前の結果は初回評価の免除に使わない。",
+  "candidate": null,
+  "candidate_fingerprint": null,
+  "newly_checked": [
+    "S01-S06 input bytes",
+    "6316 registered source values",
+    "C03 S01 and S02 source proof",
+    "74 selection / 36 focus original headers vs inventory",
+    "R01-R12 coverage classification",
+    "C04/C09/C10/C11 evidence and hold boundaries",
+    "E20-01 semantic metadata",
+    "reproduction ZIP CRC and 33 inner SHA256"
+  ],
+  "reused_from": [],
+  "elapsed_minutes": null,
+  "pre_save_rechecked_commit": "b5b14b75d8329850b441640ff5b92408a9ccca81",
+  "verdict": "HELD",
+  "release_status": "not_created",
+  "completed_tasks": [],
+  "T07_completed": false,
+  "full_independent_evaluation_completed": false,
+  "scope": "候補前の先行独立評価。C03修正根拠・定義/指標台帳・既知保留範囲を評価。候補未登録のためQ01～Q12全独立評価、表示、保存、解析全体の合格ではない。",
+  "startup_read": {
+    "branch": "main",
+    "same_commit": true,
+    "plan_revision": "2.2",
+    "operations_revision": "2.2.1",
+    "files": {
+      "STATE.json": {
+        "git_blob_sha": "552993fce3df387f4e7e1bb7c20946b2e29aaf3a",
+        "sha256": "a28bd3c5b2b1b3e150840bfd2975d32da93cbcea9d4143f3b2c897c4a694e31b"
+      },
+      "PLAN.md": {
+        "git_blob_sha": "6e7076831d8b5bdcc85acd346db2161b49c9579b",
+        "sha256": "d7eca466f902aefe40edac99db240d62f519a310b80ac5d3c3189bb2cc16fce1"
+      },
+      "checks/startup.json": {
+        "git_blob_sha": "ea111d60e3b281cfdfa0f30edd2a4ce44811537a",
+        "sha256": "148b772d6680b7c2c0b1dc01e750bfef10bb6a6b01e9d082e609cb59cc28e7cb"
+      },
+      "checks/pilot.json": {
+        "git_blob_sha": "e6b0160e5250eb484d8683ff732ed64897db87c2",
+        "sha256": "0d9975d20405a75f23ec9fc2fe4025b5326b50de4e9b44391f1aa32cd335d02b"
+      },
+      "checks/calculation_summary.json": {
+        "git_blob_sha": "2106f85644b8a890f6d646ee2a8aa8719dcd4eda",
+        "sha256": "15552594bfd06a895a97c91bb2ed39e213b66d56315ef9cd2cb84db2108a66c5"
+      },
+      "checks/replay.json": {
+        "git_blob_sha": "5b62d7c3ad3f86ef13b74c335d2534b8fac4cd93",
+        "sha256": "afdeccbab7a064894ea4a2f27f2c94308fb231bc5838727b2ee8a75ade3dbfcb"
+      },
+      "checks/preservation.json": {
+        "git_blob_sha": "0791023855ceefcd47638c01414605cc4fd5bff1",
+        "sha256": "a28d4a5f8f4fed68b9ae6a4e0db76ab5d07fadbb1dc7e0e429df169d667ba89f"
+      },
+      "tools/verify_handoff.py": {
+        "git_blob_sha": "1da68b23a2e4195506163bd629b4facc3e547532",
+        "sha256": "8554c15966c7a9c1aa9f0b6d0f2b7efccb5a3402cf26d86f2c62a77f257a0d30"
+      },
+      "src/input_manifest.json": {
+        "git_blob_sha": "c3c831c38aba2d5461df5e0c52d783403e55060d",
+        "sha256": "eb12757ac9ba39ae7679f437dcef1e2bbd2d1f0367f36f4e944bb0542bb1965c"
+      },
+      "src/metric_inventory.json": {
+        "git_blob_sha": "a45a8c27aba7d2e2ab9b13c0064716240e2be265",
+        "sha256": "e1b88d270885a6e1c65b4bb3a917bc2a9c9bb158884a01b39b371eb9db8b3808"
+      },
+      "src/definitions.json": {
+        "git_blob_sha": "2bdff82d98b0b598330f6a5bbee1bf0d02955033",
+        "sha256": "3eb00c6041866615e1b4e406ea72192d97df93a607799686ab59f41e604e74a1"
+      },
+      "reports/10.json": {
+        "git_blob_sha": "502a9d137f6cc5b99a4acaafcef6700d92be3b52",
+        "sha256": "338df63d5f82aeb41e1058a20815ed40cacba7868abb69525eee704e75da88cb"
+      },
+      "reports/20.json": {
+        "git_blob_sha": "cff9f8d1d57af1db59f4878588f23e2bad81d37b",
+        "sha256": "0db8c795fba1668836139d443b28581de5717dcf31c24bada3fb7db4def2ec0c"
+      },
+      "reports/30.json": {
+        "git_blob_sha": "c0bdba7a13e3003cd4109222040321b974f75dd9",
+        "sha256": "227c0845e8b34e2a5609bdae9cdabd559503ef94e22d01081efba8e5e4871f8a"
+      }
+    },
+    "candidate_registration": {
+      "STATE_outputs_candidate": null,
+      "report10_candidate": null,
+      "checks_candidate_json_in_tree": false,
+      "reproduction_diagnostic_is_candidate": false
+    },
+    "metric_inventory_access": "GitHub fetch_file returned empty content for 2,976,158-byte file; raw fetch rejected as too large/unsupported. ZIP v0の同ファイルGit blob SHA a45a8c27aba7d2e2ab9b13c0064716240e2be265が固定コミットのtreeと一致。本文をローカルで読取・評価した。"
+  },
+  "reproduction": {
+    "library_file_id": "libfile_d613c5b2ffb08191bf6eff5c8d7e0fdb",
+    "version": "0",
+    "sha256": "1ffe4956b4961b5182a7cbf928dd0e2efc3f3f968de4f08d173305acd20790b8",
+    "size_bytes": 2033175,
+    "zip_crc": "PASS",
+    "manifest_files_verified": 33,
+    "manifest_mismatches": [],
+    "used": [
+      "src/metric_inventory.json",
+      "results/extracted_values.json",
+      "file_manifest.json"
+    ],
+    "not_used_as_current_management": "ZIP内の管理情報は旧版。現在のPLAN/STATE/報告は固定GitHubコミットを採用。"
+  },
+  "requirement_coverage": [
+    {
+      "id": "R01",
+      "verdict": "HELD",
+      "evidence": "S01/S02表紙・データの見方、S03実バイトと148グラフ部品、PLAN outputs。S03は令和4年度第2回の形式参照。候補の14シート・元表・グラフ・印刷・目次保持は候補待ち。"
+    },
+    {
+      "id": "R02",
+      "verdict": "PASS",
+      "scope": "台帳の中核数値範囲",
+      "evidence": "I.population、Ⅰ!G129:Z139。65歳以上分母K/N/Qと総人口分母T/W/Zを区別。75・85歳以上の両系列を登録。S01/S02同一2025年1月ストックを合算しない。",
+      "metrics": 74
+    },
+    {
+      "id": "R03",
+      "verdict": "FAIL",
+      "scope": "台帳の意味定義",
+      "evidence": "I.certification/summary、Ⅰ!F260:AA270、D287:W287/D324:W324/D355:W355。数値は登録済みだがsummary12行のrow_labelが全て空。認定率/軽度/中重度を台帳上明示する必要。E20-01。",
+      "metrics": 96
+    },
+    {
+      "id": "R04",
+      "verdict": "PASS",
+      "scope": "台帳の中核数値範囲",
+      "evidence": "I.dementia G390:Z400、I.disability G452:Z462。Ⅱ以上/Ⅲ以上/M・B1+B2+C1+C2を含む内訳を登録。S03 G400=1のMも直接確認。",
+      "metrics": 132
+    },
+    {
+      "id": "R05",
+      "verdict": "FAIL",
+      "scope": "台帳の意味・対象区分",
+      "evidence": "5群得点、選択表74＝第1群20/第2群12/第3群9/第4群15/第5群6/特別な医療12、5項目詳細36表に対応漏れなし。詳細648指標の項目・層別区分・統計種類の識別不足と全体6表のpopulation誤記あり。E20-01。薬の内服はC10。",
+      "metrics": 1945
+    },
+    {
+      "id": "R06",
+      "verdict": "HELD",
+      "scope": "台帳と既知問題",
+      "evidence": "一次/二次・全体/申請区分/一次判定区分別変更・前回変化・有効期間全体および7区分が登録済み。C03根拠確認済、C09未算出、C11分母と保留範囲を解決する。",
+      "metrics": 836
+    },
+    {
+      "id": "R07",
+      "verdict": "HELD",
+      "scope": "台帳と既知問題",
+      "evidence": "被保険者別/申請区分別、意見書/調査/認定の日数と指標別有効件数を登録。C04の調査日数を保留。他2日数を一律保留に拡張しない。",
+      "metrics": 75
+    },
+    {
+      "id": "R08",
+      "verdict": "HELD",
+      "evidence": "manual p1集計項目、p3二次判定日による抽出例、p4選択/抽出件数照合、p5マクロ出力/20合議体上限を直接確認。Tool通常セルだけではVBA実行根拠にならない。今回7添付に個票CSVなし。正式列定義・合議体ID・抽出権限・実行環境待ち。主経路を止めない。"
+    },
+    {
+      "id": "R09",
+      "verdict": "HELD",
+      "evidence": "同一コミットによるROLE=20の直接読取りと本報告の受渡し。別チャットの会話や稼働状態を直接観測していない。"
+    },
+    {
+      "id": "R10",
+      "verdict": "HELD",
+      "evidence": "S04の過年度値・因果説明・誤った高低表現を今回へ流用しない。候補の数値/説明/表示/保存/開封評価待ち。"
+    },
+    {
+      "id": "R11",
+      "verdict": "HELD",
+      "evidence": "checks/replayは10の一度の計算再実行記録として確認。候補の再現・提出は未了。期限2026-10-12、内部提出目標21:00 JSTを維持。"
+    },
+    {
+      "id": "R12",
+      "verdict": "HELD",
+      "evidence": "初候補未到着。本先行評価を初回全独立評価や再利用可能な候補PASSとして扱わない。候補ID/版/SHA256/fingerprint固定後に全要件・必須指標・出所・計算・表示を初回評価。"
+    }
+  ],
+  "next_actions": [
+    {
+      "owner": "10",
+      "action": "C03のS01作業コピーG513:G521を修正履歴付きで適用。S02原本は変更せず比較用構造化データにⅢ由来値と来歴を使用。元セル変更を含む保持/再計算/描画試験、E01表示問題の解消後に候補を生成。"
+    },
+    {
+      "owner": "30",
+      "action": "E20-01とC11の修正箇所・影響する指標/比較/説明/グラフ・再検証をreports/30へ一括提示。"
+    },
+    {
+      "owner": "10",
+      "action": "C04/C10/C11は元集計や正式定義を得た範囲だけ再計算。根拠未取得なら保留値・比較・結論を抑止した暫定候補の整合性を検査。"
+    },
+    {
+      "owner": "20",
+      "action": "固定候補到着後は初回の全必須独立評価を実行。今回未実施の表示/保存/再計算/再現確認を含む。"
+    },
+    {
+      "owner": "00",
+      "action": "保存された評価の実態のみSTATEへ統合。T07完了・解析合格へ昇格しない。"
+    }
+  ],
+  "time_measurements": {
+    "whole_session": "開始時計を別途固定していないため実測分数なし。ユーザー送信時刻との差を実作業時間へ変換しない。"
+  },
+  "deadline_impact": {
+    "nearest_milestone": "2026-10-09T18:00:00+09:00",
+    "C03": "独立根拠確認待ちは解消。適用・保持・表示確認は10の次作業。",
+    "candidate_milestone": "2026-10-10T20:00:00+09:00",
+    "risks": [
+      "E01日本語表示とC03適用保持試験",
+      "E20-01台帳意味定義修正とC11保留範囲修正",
+      "C04/C10/C11正式資料の到着待ち"
+    ],
+    "submission_target": "2026-10-12T21:00:00+09:00",
+    "statement": "納期達成を保証する実測根拠はない。重要未解決が残る場合は完成扱いにせず、暫定条件を検査する。"
+  },
+  "write_scope": {
+    "only_canonical_write": "care-insurance-analysis/reports/20.json",
+    "Excel_modified": false,
+    "analysis_code_modified": false,
+    "STATE_modified": false,
+    "originals_modified": false,
+    "other_chats_started": false
+  },
+  "model_selection": {
+    "role_requested": "20",
+    "actual_model_and_effort": "ROLE指定による切替はしていない。評価担当を分けた本チャットの独立確認。"
+  },
+  "known_environment_condition": {
+    "id": "E01",
+    "verdict": "HELD",
+    "evidence": "checks/pilot.jsonおよびreports/10.jsonの日本語フォント欠落によるvisual FAIL。ROLE=20は描画試験を再実行していない。",
+    "next_action": "10は日本語描画可能な環境で分析要点と必要変更箇所を再描画し、C03適用保持試験を含めて確認する。"
+  },
+  "status_propagation_note": {
+    "inventory_baseline_vs_per_input_disagreements": 63,
+    "description": "C10/C11計63入力別レコードは台帳top-level status=validとextraction_status_by_input=heldが併存。今回読んだextracted_valuesは保留を反映している。候補生成は入力別の最新状態を正とし、top-levelだけを使って保留を解除しない。"
+  }
+}

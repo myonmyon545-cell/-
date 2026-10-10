@@ -1,6 +1,6 @@
 # 介護保険データ解析 AI実行仕様
 
-解析契約2.4 / 運用版2.4.0 / 2026-10-10
+解析契約2.4 / 運用版2.4.1 / 2026-10-10
 
 ROLE=00|10|20|30|40。最新ユーザー判断を優先。旧候補と報告は変更しない。全条件は以下のYAMLを正本とする。
 
@@ -8,7 +8,7 @@ ROLE=00|10|20|30|40。最新ユーザー判断を優先。旧候補と報告は�
 meta:
   schema: care_analysis_execution_v2
   revision: '2.4'
-  operations_revision: 2.4.0
+  operations_revision: 2.4.1
   operations_updated_at: '2026-10-10'
   version_policy: revisionは解析・評価契約、operations_revisionはその契約を変えない閲覧・案内の運用版。運用だけの変更は候補の評価を無効化しない。入力・定義・コード・テンプレート・要件・検査・受入条件への変更はrevisionを更新し、既存の再評価規則を適用する。
   project: 介護保険データ解析
@@ -451,6 +451,16 @@ outputs:
     packaging: 同一データはSHAで一度収録し別名/版との対応を台帳に残す。大容量ならZIP分冊+全巻台帳で全体を照合。外部IDだけ残して実バイト収録済みとしない。
     candidate_binding: ログは対象候補ID/版/SHA/計画版/評価を固定。チェックの自己ハッシュを避け、最終提出コミットは00の別提出記録でログZIPのSHAと対応付け。
     summary: 介護保険解析_簡易確認.mdをZIP内と別ファイルに保存し、先頭分析要点へ同内容を掲載。決定/実施/未実施/検証結果/未収録を短く分ける。
+    timeline:
+      viewer: logs/timeline/timeline.html
+      markdown: logs/timeline/TIMELINE.md
+      data: logs/timeline/timeline.json
+      history_sources: logs/timeline/sources/
+      manifest: logs/timeline/manifest.json
+      order: 日時既知はJST昇順、日時不明は会話順。保存日と送信日を区別。
+      classification: 表示原文・検索要約・実JSON報告・コミット保存を区別。
+      archive_inclusion: T12/T08で全ログZIPへ同じスナップショットと収録元を添付。未収録を明示し収録件数を簡易確認文へ。
+      update: 各更新要求/役割報告保存時に取得範囲を追加して再構築。無人監視/他チャット全文取得を保証しない。
 value_schema:
   fields:
   - 指標ID
@@ -1078,6 +1088,10 @@ change_management:
     date: '2026-10-09'
     change: 閲覧専用40と履歴一覧/更新手順、今後の指示組込み手順、GitHub直読みによるmd保存不要の開始方法を追加。
     impact: 計算・入力・要件・候補・評価・受入条件は変更なし。STATE/実行報告/候補は更新しない。解析契約revisionは2.2のまま。
+  - version: 2.4.1
+    date: '2026-10-10'
+    change: 既存全ログ契約の閲覧方式を時系列へ具体化。原文/要約/実報告/保存時刻の分類と未収録を明示。
+    impact: 解析入力/算出/評価契約revision2.4不変。10の進行中コード/報告/候補と00のSTATEは変更しない。00が次回STATE更新時に表示運用版のみ反映。
   contract_change_20261010_v24:
     revision: '2.4'
     reason: ユーザーがC04置換/C10欠落/C12放置/C09未算出と品質修正、全ログ別添/簡易文を明示。C11は未指定。
@@ -1166,4 +1180,4 @@ machine_contract:
   release_authority: 機械は完成昇格もSTATE更新も実施しない。20の独立判定を00が統合し、10がrelease_gatesに従って提出。
 ```
 
-2.4変更：承認置換/欠落/除外、全ログ別添と簡易確認文。Excel変更/新評価/最終全ログは未実施。旧版全履歴はGitHubに保持。
+運用2.4.1：過去会話・実報告をタイムライン表示。解析契約2.4と候補評価は変更しない。過去全文取得は未完了。

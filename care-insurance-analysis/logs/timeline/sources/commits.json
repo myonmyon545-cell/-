@@ -1,0 +1,794 @@
+[
+  {
+    "sha": "1bb4fdc43e15811909f711dbe7f76608a928cbe5",
+    "commit_at": "2026-10-10T01:40:21Z",
+    "message": "Add ROLE10 candidate v3 generation and S10 display integration",
+    "parents": [
+      "482ad7a2ecf502b9bb4184cf06b847922438ff2a"
+    ],
+    "tree": "abefbd7d55a3e1e7e7baff7e2fc2c83b7a62ae7f",
+    "files": [
+      {
+        "path": "care-insurance-analysis/src/README.md",
+        "status": "modified",
+        "additions": 9,
+        "deletions": 12
+      },
+      {
+        "path": "care-insurance-analysis/src/build_candidate_v3.py",
+        "status": "added",
+        "additions": 51,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/graft_v2.py",
+        "status": "added",
+        "additions": 86,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/integrate_s10.py",
+        "status": "added",
+        "additions": 107,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/replay_v2.py",
+        "status": "added",
+        "additions": 27,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/summary_v2.mjs",
+        "status": "added",
+        "additions": 28,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/summary_v2.py",
+        "status": "added",
+        "additions": 65,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/tools/verify_handoff.py",
+        "status": "modified",
+        "additions": 2,
+        "deletions": 1
+      }
+    ],
+    "full_diff_available": true
+  },
+  {
+    "sha": "482ad7a2ecf502b9bb4184cf06b847922438ff2a",
+    "commit_at": "2026-10-10T01:29:03Z",
+    "message": "Retain available planning user messages and plan 2.4 save receipt",
+    "parents": [
+      "e3b27a95a4ab1906b43a8d0c6684e4544bcae639"
+    ],
+    "tree": "0531438a624df57da808e7e7805854c9e9e44ab2",
+    "files": [
+      {
+        "path": "care-insurance-analysis/logs/conversation_available_user_text.json",
+        "status": "added",
+        "additions": 247,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/logs/events/planning_20261010_v24_save_receipt.json",
+        "status": "added",
+        "additions": 99,
+        "deletions": 0
+      }
+    ],
+    "full_diff_available": true
+  },
+  {
+    "sha": "e3b27a95a4ab1906b43a8d0c6684e4544bcae639",
+    "commit_at": "2026-10-10T01:27:23Z",
+    "message": "Apply care plan 2.4 user decisions and full audit log contract; preserve historical candidate",
+    "parents": [
+      "a96eba0920c8c21fb3b85d17e6a59cc5cea03fc7"
+    ],
+    "tree": "b311735a44144b7eda0502433f43223b92bee59e",
+    "files": [
+      {
+        "path": "care-insurance-analysis/PLAN.md",
+        "status": "modified",
+        "additions": 154,
+        "deletions": 58
+      },
+      {
+        "path": "care-insurance-analysis/README.md",
+        "status": "modified",
+        "additions": 5,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/STATE.json",
+        "status": "modified",
+        "additions": 133,
+        "deletions": 54
+      },
+      {
+        "path": "care-insurance-analysis/checks/C10_recheck.json",
+        "status": "added",
+        "additions": 60,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/checks/font_diagnostic.json",
+        "status": "added",
+        "additions": 32,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/checks/planning_2_4_validation.json",
+        "status": "added",
+        "additions": 26,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/decisions/2026-10-10_user_decisions.json",
+        "status": "added",
+        "additions": 88,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/logs/README.md",
+        "status": "added",
+        "additions": 7,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/logs/events/planning_20261010_decisions.json",
+        "status": "added",
+        "additions": 36,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/references/S10_excerpts.json",
+        "status": "modified",
+        "additions": 137,
+        "deletions": 25
+      },
+      {
+        "path": "care-insurance-analysis/references/S10_integration.md",
+        "status": "modified",
+        "additions": 29,
+        "deletions": 81
+      },
+      {
+        "path": "care-insurance-analysis/references/簡易確認.md",
+        "status": "added",
+        "additions": 20,
+        "deletions": 0
+      }
+    ],
+    "full_diff_available": true
+  },
+  {
+    "sha": "a96eba0920c8c21fb3b85d17e6a59cc5cea03fc7",
+    "commit_at": "2026-10-09T16:18:54Z",
+    "message": "Integrate S10 administrative context and care plan 2.3 with preserved historical evaluation",
+    "parents": [
+      "1051610978f031164d83e1ba02f72fe162a48b60"
+    ],
+    "tree": "0d13d8662c304db0b81005dcf55208876d0104de",
+    "files": [
+      {
+        "path": "care-insurance-analysis/PLAN.md",
+        "status": "modified",
+        "additions": 101,
+        "deletions": 18
+      },
+      {
+        "path": "care-insurance-analysis/README.md",
+        "status": "modified",
+        "additions": 9,
+        "deletions": 2
+      },
+      {
+        "path": "care-insurance-analysis/STATE.json",
+        "status": "modified",
+        "additions": 257,
+        "deletions": 59
+      },
+      {
+        "path": "care-insurance-analysis/references/S10_excerpts.json",
+        "status": "added",
+        "additions": 642,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/references/S10_integration.md",
+        "status": "added",
+        "additions": 81,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/tools/test_revision_transition.py",
+        "status": "added",
+        "additions": 122,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/tools/verify_handoff.py",
+        "status": "modified",
+        "additions": 45,
+        "deletions": 3
+      }
+    ],
+    "full_diff_available": true
+  },
+  {
+    "sha": "1051610978f031164d83e1ba02f72fe162a48b60",
+    "commit_at": "2026-10-09T08:38:52Z",
+    "message": "Record ROLE=30 candidate v1 correction proposal and release blockers",
+    "parents": [
+      "f15b6c5f1b4dc02f31cd21bdb498bb6f3c87009f"
+    ],
+    "tree": "3a23b0f8b04cac06963c76aa950a87ed6351a287",
+    "files": [
+      {
+        "path": "care-insurance-analysis/reports/30.json",
+        "status": "modified",
+        "additions": 267,
+        "deletions": 606
+      }
+    ],
+    "full_diff_available": true
+  },
+  {
+    "sha": "f15b6c5f1b4dc02f31cd21bdb498bb6f3c87009f",
+    "commit_at": "2026-10-09T08:14:07Z",
+    "message": "ROLE20: first full independent review of fixed candidate v1 (FAIL with explicit holds)",
+    "parents": [
+      "a34c36881e99f940280eafa88c1e871ad145ca78"
+    ],
+    "tree": "4cf2372f1bdacbe8e9eec48ce786bf81f245f00f",
+    "files": [
+      {
+        "path": "care-insurance-analysis/reports/20.json",
+        "status": "modified",
+        "additions": 520,
+        "deletions": 924
+      }
+    ],
+    "full_diff_available": true
+  },
+  {
+    "sha": "a34c36881e99f940280eafa88c1e871ad145ca78",
+    "commit_at": "2026-10-09T07:40:44Z",
+    "message": "Integrate ROLE=10 candidate v1 and verified checks into state",
+    "parents": [
+      "a855a41a7801f321db399356f3627f7db4be02aa"
+    ],
+    "tree": "91d3e85a31d6d210d1125dc191081ddaf1a55be8",
+    "files": [
+      {
+        "path": "care-insurance-analysis/STATE.json",
+        "status": "modified",
+        "additions": 250,
+        "deletions": 125
+      }
+    ],
+    "full_diff_available": true
+  },
+  {
+    "sha": "a855a41a7801f321db399356f3627f7db4be02aa",
+    "commit_at": "2026-10-09T07:30:40Z",
+    "message": "Register ROLE=10 candidate v1 for independent review",
+    "parents": [
+      "ffda24608348a5390c35a7b81c216bba03394cc6"
+    ],
+    "tree": "b93b4b57d7d9568b14a801d0300952bff3d39668",
+    "files": [
+      {
+        "path": "care-insurance-analysis/checks/candidate.json",
+        "status": "added",
+        "additions": 198226,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/reports/10.json",
+        "status": "modified",
+        "additions": 171,
+        "deletions": 70
+      }
+    ],
+    "full_diff_available": false
+  },
+  {
+    "sha": "ffda24608348a5390c35a7b81c216bba03394cc6",
+    "commit_at": "2026-10-09T07:23:27Z",
+    "message": "Apply ROLE=30 definitions and input-specific holds",
+    "parents": [
+      "e3e5258ef1ea6424780daf22e2b38b1e16e1c8a6"
+    ],
+    "tree": "4e6aa74318852a13201d582a5d91cb09f94ddb8c",
+    "files": [
+      {
+        "path": "care-insurance-analysis/checks/calculation_summary.json",
+        "status": "modified",
+        "additions": 53,
+        "deletions": 17
+      },
+      {
+        "path": "care-insurance-analysis/checks/candidate_preservation.json",
+        "status": "added",
+        "additions": 27,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/checks/metric_inventory.json",
+        "status": "modified",
+        "additions": 63985,
+        "deletions": 10793
+      },
+      {
+        "path": "care-insurance-analysis/checks/pilot.json",
+        "status": "modified",
+        "additions": 14,
+        "deletions": 1
+      },
+      {
+        "path": "care-insurance-analysis/checks/replay_role30.json",
+        "status": "added",
+        "additions": 33,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/checks/role30_apply.json",
+        "status": "added",
+        "additions": 32,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/checks/startup.json",
+        "status": "modified",
+        "additions": 840,
+        "deletions": 21
+      },
+      {
+        "path": "care-insurance-analysis/src/README.md",
+        "status": "modified",
+        "additions": 12,
+        "deletions": 58
+      },
+      {
+        "path": "care-insurance-analysis/src/apply_role30.py",
+        "status": "added",
+        "additions": 281,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/build_candidate.py",
+        "status": "added",
+        "additions": 133,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/build_candidate_tables.py",
+        "status": "added",
+        "additions": 99,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/candidate_donor.mjs",
+        "status": "added",
+        "additions": 52,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/definitions.json",
+        "status": "modified",
+        "additions": 492,
+        "deletions": 42
+      },
+      {
+        "path": "care-insurance-analysis/src/graft_candidate.py",
+        "status": "added",
+        "additions": 134,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/metric_inventory.json",
+        "status": "modified",
+        "additions": 64003,
+        "deletions": 10811
+      },
+      {
+        "path": "care-insurance-analysis/src/replay_pipeline.py",
+        "status": "added",
+        "additions": 61,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/summarize_checks.py",
+        "status": "modified",
+        "additions": 33,
+        "deletions": 3
+      }
+    ],
+    "full_diff_available": false
+  },
+  {
+    "sha": "e3e5258ef1ea6424780daf22e2b38b1e16e1c8a6",
+    "commit_at": "2026-10-09T06:57:53Z",
+    "message": "Resume ROLE=10 C03 preservation trial",
+    "parents": [
+      "102797981e97c347509569276cbe6ff6e4d1acef"
+    ],
+    "tree": "6903449ceb585f32bc7d3fb9ca287ea2dafe807f",
+    "files": [
+      {
+        "path": "care-insurance-analysis/checks/c03_overlay.json",
+        "status": "added",
+        "additions": 539,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/checks/calculation_summary.json",
+        "status": "modified",
+        "additions": 5,
+        "deletions": 221
+      },
+      {
+        "path": "care-insurance-analysis/checks/metric_inventory.json",
+        "status": "added",
+        "additions": 104223,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/checks/pilot.json",
+        "status": "modified",
+        "additions": 85,
+        "deletions": 16
+      },
+      {
+        "path": "care-insurance-analysis/checks/preservation.json",
+        "status": "modified",
+        "additions": 45,
+        "deletions": 4
+      },
+      {
+        "path": "care-insurance-analysis/checks/startup.json",
+        "status": "modified",
+        "additions": 20,
+        "deletions": 10
+      },
+      {
+        "path": "care-insurance-analysis/reports/10.json",
+        "status": "modified",
+        "additions": 94,
+        "deletions": 53
+      },
+      {
+        "path": "care-insurance-analysis/src/apply_c03_overlay.py",
+        "status": "added",
+        "additions": 125,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/c03_trial.mjs",
+        "status": "added",
+        "additions": 95,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/preserve_package.py",
+        "status": "modified",
+        "additions": 77,
+        "deletions": 8
+      }
+    ],
+    "full_diff_available": false
+  },
+  {
+    "sha": "102797981e97c347509569276cbe6ff6e4d1acef",
+    "commit_at": "2026-10-09T06:43:11Z",
+    "message": "Integrate verified ROLE=20 review and ROLE=30 correction proposals",
+    "parents": [
+      "67f2734951e548575babdb3ba57eb05ad318e3a2"
+    ],
+    "tree": "44080f90ad7289811080b7b1723ee239a9f399ac",
+    "files": [
+      {
+        "path": "care-insurance-analysis/STATE.json",
+        "status": "modified",
+        "additions": 96,
+        "deletions": 50
+      }
+    ],
+    "full_diff_available": true
+  },
+  {
+    "sha": "67f2734951e548575babdb3ba57eb05ad318e3a2",
+    "commit_at": "2026-10-09T06:32:37Z",
+    "message": "Record ROLE=30 consolidated corrections for semantic definitions and holds",
+    "parents": [
+      "3c63328c7b10b2fb7cd4c9fd81c5d71c6e0ed8f4"
+    ],
+    "tree": "aff69e47e07e46d5883190636427d70e038fa18f",
+    "files": [
+      {
+        "path": "care-insurance-analysis/reports/30.json",
+        "status": "modified",
+        "additions": 687,
+        "deletions": 12
+      }
+    ],
+    "full_diff_available": true
+  },
+  {
+    "sha": "3c63328c7b10b2fb7cd4c9fd81c5d71c6e0ed8f4",
+    "commit_at": "2026-10-09T02:43:14Z",
+    "message": "Record ROLE=20 independent pre-candidate review and C03 source proof",
+    "parents": [
+      "b5b14b75d8329850b441640ff5b92408a9ccca81"
+    ],
+    "tree": "32ff04c07e9cd706c69baaae330b59f806d409b1",
+    "files": [
+      {
+        "path": "care-insurance-analysis/reports/20.json",
+        "status": "modified",
+        "additions": 1088,
+        "deletions": 13
+      }
+    ],
+    "full_diff_available": true
+  },
+  {
+    "sha": "b5b14b75d8329850b441640ff5b92408a9ccca81",
+    "commit_at": "2026-10-09T02:32:03Z",
+    "message": "Integrate verified ROLE=10 progress into canonical state",
+    "parents": [
+      "0aba93618ab3d43e1ea5b2007714a9b8cd8c91ab"
+    ],
+    "tree": "ae3666e8edee677edac19f920f62bcd213675b54",
+    "files": [
+      {
+        "path": "care-insurance-analysis/STATE.json",
+        "status": "modified",
+        "additions": 301,
+        "deletions": 44
+      }
+    ],
+    "full_diff_available": true
+  },
+  {
+    "sha": "0aba93618ab3d43e1ea5b2007714a9b8cd8c91ab",
+    "commit_at": "2026-10-09T02:27:52Z",
+    "message": "Add read-only history role 40 and operational change policy (2.2.1)",
+    "parents": [
+      "ca5e064bdfbfdd6bb5da94201bccc0877d65cf3d"
+    ],
+    "tree": "729fc1f7a5dfdef1b28ba8045849f1d01af970e6",
+    "files": [
+      {
+        "path": "care-insurance-analysis/PLAN.md",
+        "status": "modified",
+        "additions": 48,
+        "deletions": 5
+      },
+      {
+        "path": "care-insurance-analysis/README.md",
+        "status": "modified",
+        "additions": 10,
+        "deletions": 1
+      },
+      {
+        "path": "care-insurance-analysis/roles/40.md",
+        "status": "added",
+        "additions": 30,
+        "deletions": 0
+      }
+    ],
+    "full_diff_available": true
+  },
+  {
+    "sha": "ca5e064bdfbfdd6bb5da94201bccc0877d65cf3d",
+    "commit_at": "2026-10-09T02:25:04Z",
+    "message": "Record ROLE=10 extraction, aggregate checks and held output pilot",
+    "parents": [
+      "176588644023d1b2bc186e574abd6c435c089447"
+    ],
+    "tree": "0d920820b84c3bbfde9baf8bf08b06a588e5b4a0",
+    "files": [
+      {
+        "path": "care-insurance-analysis/checks/calculation_summary.json",
+        "status": "added",
+        "additions": 1899,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/checks/pilot.json",
+        "status": "added",
+        "additions": 58,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/checks/preservation.json",
+        "status": "added",
+        "additions": 24,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/checks/replay.json",
+        "status": "added",
+        "additions": 14,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/checks/startup.json",
+        "status": "added",
+        "additions": 866,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/reports/10.json",
+        "status": "modified",
+        "additions": 643,
+        "deletions": 13
+      },
+      {
+        "path": "care-insurance-analysis/src/README.md",
+        "status": "modified",
+        "additions": 61,
+        "deletions": 2
+      },
+      {
+        "path": "care-insurance-analysis/src/calculate.py",
+        "status": "added",
+        "additions": 109,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/definitions.json",
+        "status": "added",
+        "additions": 4582,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/input_manifest.json",
+        "status": "added",
+        "additions": 343,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/inspect_inputs.py",
+        "status": "added",
+        "additions": 112,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/metric_inventory.json",
+        "status": "added",
+        "additions": 104223,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/metric_inventory.py",
+        "status": "added",
+        "additions": 73,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/pilot.mjs",
+        "status": "added",
+        "additions": 43,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/prepare_contract.py",
+        "status": "added",
+        "additions": 98,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/preserve_package.py",
+        "status": "added",
+        "additions": 145,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/summarize_checks.py",
+        "status": "added",
+        "additions": 60,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/verify_extraction.py",
+        "status": "added",
+        "additions": 28,
+        "deletions": 0
+      }
+    ],
+    "full_diff_available": false
+  },
+  {
+    "sha": "176588644023d1b2bc186e574abd6c435c089447",
+    "commit_at": "2026-10-09T01:47:20Z",
+    "message": "Record ROLE=00 startup, fixed input aliases and verified metadata checks",
+    "parents": [
+      "14ad689ab195ed5c10a8ecdc01863bef4204c50d"
+    ],
+    "tree": "cf04245f01c170daf2252220efe2ffecfa02dbca",
+    "files": [
+      {
+        "path": "care-insurance-analysis/STATE.json",
+        "status": "modified",
+        "additions": 220,
+        "deletions": 23
+      }
+    ],
+    "full_diff_available": true
+  },
+  {
+    "sha": "14ad689ab195ed5c10a8ecdc01863bef4204c50d",
+    "commit_at": "2026-10-08T14:34:01Z",
+    "message": "Initialize care analysis plan 2.2 and lightweight reevaluation checks",
+    "parents": [
+      "e112993174cbe55de9e88fa7a0fcdaf024d0af28"
+    ],
+    "tree": "06ccc418b1e01fa08b7505ac394d7adb6f72e929",
+    "files": [
+      {
+        "path": "care-insurance-analysis/PLAN.md",
+        "status": "added",
+        "additions": 947,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/README.md",
+        "status": "added",
+        "additions": 37,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/STATE.json",
+        "status": "added",
+        "additions": 260,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/reports/10.json",
+        "status": "added",
+        "additions": 21,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/reports/20.json",
+        "status": "added",
+        "additions": 21,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/reports/30.json",
+        "status": "added",
+        "additions": 21,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/src/README.md",
+        "status": "added",
+        "additions": 3,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/tools/test_verify_handoff.py",
+        "status": "added",
+        "additions": 90,
+        "deletions": 0
+      },
+      {
+        "path": "care-insurance-analysis/tools/verify_handoff.py",
+        "status": "added",
+        "additions": 196,
+        "deletions": 0
+      }
+    ],
+    "full_diff_available": true
+  }
+]

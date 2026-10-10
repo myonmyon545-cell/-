@@ -1,0 +1,692 @@
+{
+  "schema": "care_handoff/v1",
+  "role": "10",
+  "plan_revision": "2.2",
+  "status": "partially_completed_waiting_for_conditions",
+  "task_id": "T03",
+  "source_commit": "102797981e97c347509569276cbe6ff6e4d1acef",
+  "pre_save_rechecked_commit": "102797981e97c347509569276cbe6ff6e4d1acef",
+  "updated_at": "2026-10-09T15:47:45+09:00",
+  "startup_read": {
+    "branch": "main",
+    "head_sha": "102797981e97c347509569276cbe6ff6e4d1acef",
+    "paths": [
+      "PLAN.md",
+      "STATE.json",
+      "reports/10.json",
+      "reports/20.json",
+      "reports/30.json"
+    ],
+    "blob_sha_by_path": {
+      "PLAN.md": "6e7076831d8b5bdcc85acd346db2161b49c9579b",
+      "STATE.json": "e3119ecc8a658005c987cb6660ad737975b1cf0d",
+      "reports/10.json": "502a9d137f6cc5b99a4acaafcef6700d92be3b52",
+      "reports/20.json": "8a62a506c6ea56688e7231b44470cabd35d5912a",
+      "reports/30.json": "d46d6c69f11d0b1457a04e58acc9c2e032ccabe3"
+    },
+    "all_same_commit": true,
+    "initial_completed_tasks": [
+      "T01",
+      "T02",
+      "T04"
+    ],
+    "latest_plan_unchanged": true,
+    "latest_report10_unchanged": true,
+    "latest_state_revision": 5,
+    "latest_read_scope": "main HEADの固定commitで5管理ファイルを読取。PLAN 2.2 / STATE revision 5 / report20 C03 PASSを確認"
+  },
+  "inputs": [
+    {
+      "source_id": "S01",
+      "library_file_id": "libfile_2f275b2a53d481919fb7d942fbecc486",
+      "sha256": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d",
+      "size_bytes": 1615421,
+      "sheet_count": 14,
+      "chart_count": 148,
+      "sheets": [
+        {
+          "name": "表紙・目次",
+          "dimension": "A1:AQ138",
+          "state": "visible",
+          "populated_cells": 71,
+          "formula_cells": 0
+        },
+        {
+          "name": "データの見方",
+          "dimension": "A1:AC284",
+          "state": "visible",
+          "populated_cells": 84,
+          "formula_cells": 0
+        },
+        {
+          "name": "Ⅰ基礎情報",
+          "dimension": "A1:BE568",
+          "state": "visible",
+          "populated_cells": 1037,
+          "formula_cells": 219
+        },
+        {
+          "name": "Ⅱ調査項目データ（第１群）",
+          "dimension": "A1:AQ585",
+          "state": "visible",
+          "populated_cells": 1720,
+          "formula_cells": 504
+        },
+        {
+          "name": "Ⅱ調査項目データ（第２群）",
+          "dimension": "A1:AR307",
+          "state": "visible",
+          "populated_cells": 1252,
+          "formula_cells": 392
+        },
+        {
+          "name": "Ⅱ調査項目データ（第３群）",
+          "dimension": "A1:AQ210",
+          "state": "visible",
+          "populated_cells": 749,
+          "formula_cells": 224
+        },
+        {
+          "name": "Ⅱ調査項目データ（第４群）",
+          "dimension": "A1:AP349",
+          "state": "visible",
+          "populated_cells": 1229,
+          "formula_cells": 373
+        },
+        {
+          "name": "Ⅱ調査項目データ（第５群）",
+          "dimension": "A1:AQ183",
+          "state": "visible",
+          "populated_cells": 692,
+          "formula_cells": 216
+        },
+        {
+          "name": "Ⅱ調査項目データ（その他）",
+          "dimension": "A1:AQ180",
+          "state": "visible",
+          "populated_cells": 668,
+          "formula_cells": 192
+        },
+        {
+          "name": "Ⅱ（３）５項目",
+          "dimension": "A1:AQ433",
+          "state": "visible",
+          "populated_cells": 1995,
+          "formula_cells": 756
+        },
+        {
+          "name": "Ⅲ審査判定データ（一次・二次判定）",
+          "dimension": "A1:BI246",
+          "state": "visible",
+          "populated_cells": 798,
+          "formula_cells": 292
+        },
+        {
+          "name": "Ⅲ審査判定データ（変更率）",
+          "dimension": "A1:BA774",
+          "state": "visible",
+          "populated_cells": 2560,
+          "formula_cells": 58
+        },
+        {
+          "name": "Ⅲ審査判定データ（有効期間）",
+          "dimension": "A1:AU226",
+          "state": "visible",
+          "populated_cells": 619,
+          "formula_cells": 136
+        },
+        {
+          "name": "Ⅳ事務データ",
+          "dimension": "A1:AW240",
+          "state": "visible",
+          "populated_cells": 348,
+          "formula_cells": 0
+        }
+      ]
+    },
+    {
+      "source_id": "S02",
+      "library_file_id": "libfile_0d9cfee943ec819188518e4922ce620e",
+      "sha256": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304",
+      "size_bytes": 1609475,
+      "sheet_count": 14,
+      "chart_count": 148,
+      "sheets": [
+        {
+          "name": "表紙・目次",
+          "dimension": "A1:AQ138",
+          "state": "visible",
+          "populated_cells": 71,
+          "formula_cells": 0
+        },
+        {
+          "name": "データの見方",
+          "dimension": "A1:AC284",
+          "state": "visible",
+          "populated_cells": 84,
+          "formula_cells": 0
+        },
+        {
+          "name": "Ⅰ基礎情報",
+          "dimension": "A1:BE568",
+          "state": "visible",
+          "populated_cells": 1037,
+          "formula_cells": 219
+        },
+        {
+          "name": "Ⅱ調査項目データ（第１群）",
+          "dimension": "A1:AQ585",
+          "state": "visible",
+          "populated_cells": 1720,
+          "formula_cells": 504
+        },
+        {
+          "name": "Ⅱ調査項目データ（第２群）",
+          "dimension": "A1:AR307",
+          "state": "visible",
+          "populated_cells": 1252,
+          "formula_cells": 392
+        },
+        {
+          "name": "Ⅱ調査項目データ（第３群）",
+          "dimension": "A1:AQ210",
+          "state": "visible",
+          "populated_cells": 749,
+          "formula_cells": 224
+        },
+        {
+          "name": "Ⅱ調査項目データ（第４群）",
+          "dimension": "A1:AP349",
+          "state": "visible",
+          "populated_cells": 1229,
+          "formula_cells": 373
+        },
+        {
+          "name": "Ⅱ調査項目データ（第５群）",
+          "dimension": "A1:AQ183",
+          "state": "visible",
+          "populated_cells": 692,
+          "formula_cells": 216
+        },
+        {
+          "name": "Ⅱ調査項目データ（その他）",
+          "dimension": "A1:AQ180",
+          "state": "visible",
+          "populated_cells": 668,
+          "formula_cells": 192
+        },
+        {
+          "name": "Ⅱ（３）５項目",
+          "dimension": "A1:AQ433",
+          "state": "visible",
+          "populated_cells": 1995,
+          "formula_cells": 756
+        },
+        {
+          "name": "Ⅲ審査判定データ（一次・二次判定）",
+          "dimension": "A1:BI246",
+          "state": "visible",
+          "populated_cells": 798,
+          "formula_cells": 292
+        },
+        {
+          "name": "Ⅲ審査判定データ（変更率）",
+          "dimension": "A1:BA774",
+          "state": "visible",
+          "populated_cells": 2560,
+          "formula_cells": 58
+        },
+        {
+          "name": "Ⅲ審査判定データ（有効期間）",
+          "dimension": "A1:AU226",
+          "state": "visible",
+          "populated_cells": 619,
+          "formula_cells": 136
+        },
+        {
+          "name": "Ⅳ事務データ",
+          "dimension": "A1:AW240",
+          "state": "visible",
+          "populated_cells": 348,
+          "formula_cells": 0
+        }
+      ]
+    },
+    {
+      "source_id": "S03",
+      "library_file_id": "libfile_1a33a04a77e4819197bfdf49e7cd8099",
+      "sha256": "e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f",
+      "size_bytes": 1892849,
+      "sheet_count": 14,
+      "chart_count": 148,
+      "sheets": [
+        {
+          "name": "表紙・目次",
+          "dimension": "A1:AQ138",
+          "state": "visible",
+          "populated_cells": 71,
+          "formula_cells": 0
+        },
+        {
+          "name": "データの見方",
+          "dimension": "A1:AC291",
+          "state": "visible",
+          "populated_cells": 111,
+          "formula_cells": 0
+        },
+        {
+          "name": "Ⅰ基礎情報",
+          "dimension": "A1:BE568",
+          "state": "visible",
+          "populated_cells": 1035,
+          "formula_cells": 219
+        },
+        {
+          "name": "Ⅱ調査項目データ（第１群）",
+          "dimension": "A1:AQ585",
+          "state": "visible",
+          "populated_cells": 1721,
+          "formula_cells": 561
+        },
+        {
+          "name": "Ⅱ調査項目データ（第２群）",
+          "dimension": "A1:AR307",
+          "state": "visible",
+          "populated_cells": 1253,
+          "formula_cells": 435
+        },
+        {
+          "name": "Ⅱ調査項目データ（第３群）",
+          "dimension": "A1:AQ210",
+          "state": "visible",
+          "populated_cells": 750,
+          "formula_cells": 246
+        },
+        {
+          "name": "Ⅱ調査項目データ（第４群）",
+          "dimension": "A1:AP349",
+          "state": "visible",
+          "populated_cells": 1229,
+          "formula_cells": 418
+        },
+        {
+          "name": "Ⅱ調査項目データ（第５群）",
+          "dimension": "A1:AQ183",
+          "state": "visible",
+          "populated_cells": 692,
+          "formula_cells": 237
+        },
+        {
+          "name": "Ⅱ調査項目データ（その他）",
+          "dimension": "A1:AQ180",
+          "state": "visible",
+          "populated_cells": 668,
+          "formula_cells": 216
+        },
+        {
+          "name": "Ⅱ（３）５項目",
+          "dimension": "A1:AQ433",
+          "state": "visible",
+          "populated_cells": 1995,
+          "formula_cells": 756
+        },
+        {
+          "name": "Ⅲ審査判定データ（一次・二次判定）",
+          "dimension": "A1:BI246",
+          "state": "visible",
+          "populated_cells": 799,
+          "formula_cells": 292
+        },
+        {
+          "name": "Ⅲ審査判定データ（変更率）",
+          "dimension": "A1:BA774",
+          "state": "visible",
+          "populated_cells": 2558,
+          "formula_cells": 60
+        },
+        {
+          "name": "Ⅲ審査判定データ（有効期間）",
+          "dimension": "A1:AU226",
+          "state": "visible",
+          "populated_cells": 617,
+          "formula_cells": 136
+        },
+        {
+          "name": "Ⅳ事務データ",
+          "dimension": "A1:AW240",
+          "state": "visible",
+          "populated_cells": 346,
+          "formula_cells": 0
+        }
+      ]
+    },
+    {
+      "source_id": "S04",
+      "library_file_id": "libfile_348a1421657c8191938bc42e4a79b9ea",
+      "sha256": "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800",
+      "size_bytes": 31749
+    },
+    {
+      "source_id": "S05",
+      "library_file_id": "libfile_f40c9f4e1d0081919fb497f31e737856",
+      "sha256": "87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1",
+      "size_bytes": 1128810
+    },
+    {
+      "source_id": "S06",
+      "library_file_id": "libfile_b7623c4ffd6881919e938f89942286f3",
+      "sha256": "b74b37c05a97d053ef46c16f380177f5a0724151dac5daff1c4076290671e524",
+      "size_bytes": 34816
+    },
+    {
+      "source_id": "S04_alias",
+      "library_file_id": "libfile_d66db96b3c5881919cf10890068434de",
+      "sha256": "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800",
+      "size_bytes": 31749
+    }
+  ],
+  "additional_sources": [
+    {
+      "source_id": "S07",
+      "body_revision": "2.0",
+      "access": "project instructions provided in context"
+    },
+    {
+      "source_id": "S08",
+      "library_file_id": "libfile_b1e28b0e61a48191b21f809be438f8f4",
+      "body_revision": "2.0",
+      "access": "full text read"
+    },
+    {
+      "source_id": "S09",
+      "library_file_id": "libfile_605f9fb6055481919ba3ce07b897a540",
+      "body_revision": "2.0",
+      "access": "full text read"
+    }
+  ],
+  "completed_tasks": [
+    "T01",
+    "T02",
+    "T04"
+  ],
+  "task_results": {
+    "T01": {
+      "status": "completed",
+      "scope": "ROLE=10入力ハッシュ・ID別名・期間台帳を確定。STATE入力台帳への統合は00担当",
+      "evidence": "src/input_manifest.json"
+    },
+    "T02": {
+      "status": "completed_with_documented_holds",
+      "scope": "148表ブロックと3158掲載値の定義・母集団・通常補正区分・元セル・保留範囲を固定。指標要件の独立網羅性評価はT07",
+      "evidence": [
+        "src/definitions.json",
+        "src/metric_inventory.json",
+        "checks/startup.json"
+      ]
+    },
+    "T03": {
+      "status": "partially_completed_visual_held",
+      "completed_scope": "C03独立照合済みの9セルをS01作業コピーだけへ適用。変更セルが指定9個のみで、元14シート・148グラフ・数式/キャッシュ・図形・印刷部品・既存スタイルを保持。Artifact Toolによる新規計算式・変更/復元試験、保存ブック再読込、LibreOfficeネイティブPDF出力、要点シート1ページ化を確認。",
+      "unfinished_scope": "日本語グリフ欠落。実行環境に日本語フォントがなく、表示確認は不合格。TTF/OTFまたは描画環境提供後に再検査。",
+      "evidence": [
+        "checks/preservation.json",
+        "checks/pilot.json",
+        "checks/startup.json",
+        "checks/c03_overlay.json"
+      ],
+      "work_copy_sha256": "fef7ab5b1b46bc8eb03c040c3d4767ec9aa41098c6106019397ce29623c77cf6"
+    },
+    "T04": {
+      "status": "completed",
+      "scope": "定義台帳3158セルをS01/S02から6316値として抽出。別の読取りパーサーで全元値一致。保留・欠損97値を区別",
+      "evidence": "再現ZIP内results/extracted_values.json"
+    },
+    "T05": {
+      "status": "partially_completed_with_independent_C03_overlay",
+      "completed_scope": "C03をROLE20独立PASSの範囲だけ反映。S01作業コピーと分析値18件を更新、S02は原本不変更でⅢから比較値を取得。内訳合計とⅣ3件を再確認。C03提供期間差9件を有効化。",
+      "remaining_scope": "C04/C10/C11の正式根拠、E20-01の定義・出力修正提案待ち。該当工程に依存する分析を保留。",
+      "evidence": [
+        "checks/c03_overlay.json",
+        "checks/calculation_summary.json",
+        "checks/metric_inventory.json"
+      ]
+    },
+    "T06": {
+      "status": "blocked",
+      "reason": "T03未完了、T05の修正と元集計確認待ち"
+    },
+    "T07": {
+      "status": "not_started",
+      "owner": "20",
+      "reason": "固定候補未生成。今回の別パーサー検査はAI独立評価ではない"
+    },
+    "T08": {
+      "status": "not_started",
+      "reason": "候補・独立評価前"
+    }
+  },
+  "outputs": [
+    {
+      "type": "reproduction_checkpoint",
+      "name": "介護保険解析_再現用.zip",
+      "id": "libfile_d613c5b2ffb08191bf6eff5c8d7e0fdb",
+      "version": "0",
+      "sha256": "1ffe4956b4961b5182a7cbf928dd0e2efc3f3f968de4f08d173305acd20790b8",
+      "size_bytes": 2033175,
+      "saved": true,
+      "scope": "途中保存。全表抽出・比較・検査・実行コードと診断用Excel。完成成果/候補ではない。",
+      "archive_integrity": "ZIP CRC and all 33 inner file SHA256 verified"
+    },
+    {
+      "type": "code_and_aggregate_checks",
+      "repository": "myonmyon545-cell/-",
+      "paths": [
+        "care-insurance-analysis/src/c03_trial.mjs",
+        "care-insurance-analysis/src/apply_c03_overlay.py",
+        "care-insurance-analysis/src/preserve_package.py",
+        "care-insurance-analysis/checks/metric_inventory.json",
+        "care-insurance-analysis/checks/startup.json",
+        "care-insurance-analysis/checks/calculation_summary.json",
+        "care-insurance-analysis/checks/c03_overlay.json",
+        "care-insurance-analysis/checks/preservation.json",
+        "care-insurance-analysis/checks/pilot.json"
+      ],
+      "save_contract": "reports/10.jsonと同じ原子的コミット。保存後にcommit tree/blob SHAと報告本文を読戻して検証する。"
+    },
+    {
+      "type": "S01_C03_work_copy",
+      "name": "S01_C03_作業コピー_保持試験.xlsx",
+      "library_file_id": "libfile_62b53f903fd08191b6791f304b704519",
+      "version": "0",
+      "sha256": "fef7ab5b1b46bc8eb03c040c3d4767ec9aa41098c6106019397ce29623c77cf6",
+      "size_bytes": 1677542,
+      "saved": true,
+      "readback_verified": true,
+      "scope": "C03独立PASSの9セル修正・保持試験専用。候補/完成成果ではない。日本語表示未解決"
+    }
+  ],
+  "checks": [
+    {
+      "id": "input_hashes",
+      "verdict": "PASS",
+      "scope": "入力ファイルの原本SHA-256を再確認。S01原本不変更"
+    },
+    {
+      "id": "source_values",
+      "verdict": "PASS",
+      "verified_source_values": 6316,
+      "independent_parser": "openpyxl read-only data_only",
+      "differences": [],
+      "workbook_write_performed": false,
+      "scope": "C03反映の前に全抽出値一致を別読取で確認"
+    },
+    {
+      "id": "numeric",
+      "verdict": "PASS_WITH_HOLDS",
+      "counts": {
+        "integer_count": 2276,
+        "ratio": 2170,
+        "provided_transcription": 1784,
+        "ratio_display_interval": 7
+      },
+      "count_total_checks": 112,
+      "count_total_pass": 112,
+      "source_holds": 79,
+      "valid_comparisons": 1431,
+      "held_comparisons": 47,
+      "scope": "C03反映後。C04/C09/C10/C11等の未解決は別途保留"
+    },
+    {
+      "id": "deterministic_replay",
+      "verdict": "PASS",
+      "evidence": "checks/replay.json",
+      "scope": "既存T04計算再現。C03反映後値はchecks/c03_overlay.jsonで別途確認"
+    },
+    {
+      "id": "output_structure",
+      "verdict": "PASS",
+      "evidence": "checks/preservation.json",
+      "scope": "C03の9セル変更だけ許可。元14シート148グラフ、数式/キャッシュ、描画と印刷設定を保持"
+    },
+    {
+      "id": "output_visual",
+      "verdict": "FAIL",
+      "evidence": "checks/pilot.json",
+      "scope": "要点シートは横向き1ページに収まる。日本語フォントなしで日本語字形が欠落"
+    },
+    {
+      "id": "necessary_cell_change",
+      "verdict": "PASS_WORK_COPY",
+      "evidence": "checks/c03_overlay.json",
+      "scope": "S01作業コピーに限りⅠ!G513:G521。S01/S02原本は変更せず"
+    },
+    {
+      "id": "handoff_metadata",
+      "verdict": "PASS",
+      "scope": "PLAN 2.2 / STATE revision 5 / report20/30との記録整合。最終承認ではない",
+      "result": {
+        "handoff": "PASS",
+        "analysis": "IN_PROGRESS_WITH_HELD_ITEMS"
+      }
+    }
+  ],
+  "issues": [
+    {
+      "id": "C03",
+      "status": "PASS_WORK_COPY",
+      "needs": "作業コピーの保持・再読込は確認済み。日本語表示はE01として未解決",
+      "applied": true,
+      "originals_modified": false,
+      "evidence": "checks/c03_overlay.json"
+    },
+    {
+      "id": "C04",
+      "status": "HELD",
+      "needs": "元送信・集計結果または個票の調査依頼日・実施日",
+      "applied": false,
+      "evidence": "checks/startup.json"
+    },
+    {
+      "id": "C09",
+      "status": "HELD",
+      "needs": "候補では未算出と明記。原表修正する場合は明示した根拠と独立評価",
+      "applied": false,
+      "evidence": "checks/startup.json"
+    },
+    {
+      "id": "C10",
+      "status": "HELD",
+      "needs": "S01/S02の薬の内服について正式な元送信・集計表と列定義",
+      "applied": false,
+      "evidence": "checks/startup.json"
+    },
+    {
+      "id": "C11",
+      "status": "HELD",
+      "needs": "変更率の正式な対象・除外ケース定義と申請区分別の元集計結果",
+      "applied": false,
+      "evidence": "checks/startup.json"
+    },
+    {
+      "id": "E01",
+      "status": "HELD",
+      "target": "日本語対応フォント",
+      "needs": "日本語対応TTF/OTFまたは日本語対応描画環境。原表と要点シートを再出力・再確認",
+      "attempted_access": "実行環境の日本語フォント一覧を確認、該当グリフを持つフォントなし",
+      "reason": "保存ブックPDFの第1ページで日本語グリフ欠落を確認"
+    }
+  ],
+  "manual_tasks": {
+    "M01": "本文全9ページとTool通常セルの読取り確認済み。xls読取りをVBA実行済みとしない",
+    "M02_M04": "今回の添付に個票CSV・正式列定義・合議体IDなし。認定ソフトの抽出権限とVBA実行環境も未確認。これらを提供/確認して再開。主解析の依存条件ではない"
+  },
+  "access_failures": [],
+  "unavailable_conditions": [
+    {
+      "target": "M02～M04の個票CSV・合議体ID・正式列定義・認定ソフト/VBA実行環境",
+      "needed_action": "認定ソフトからmanualに従ってCSVを抽出し、選択件数と出力件数を付けて提供。正式列定義と合議体ID、利用可能なExcel/VBA環境を確認"
+    },
+    {
+      "target": "C04 調査日数の元送信・集計または個票日付",
+      "needed_action": "調査依頼日・実施日と対象ケースを確認できる資料を提供"
+    },
+    {
+      "target": "C10 薬の内服の元集計",
+      "needed_action": "S01/S02の件数・割合・列位置を確認できる正式元集計と列定義を提供"
+    },
+    {
+      "target": "C11 申請区分別変更率の分母",
+      "needed_action": "元集計と正式な対象・除外ケース定義を提供"
+    },
+    {
+      "target": "日本語フォント",
+      "needed_action": "日本語対応TTF/OTFまたは日本語対応描画環境を提供。元表と要点シートを再出力して字形とレイアウトを確認"
+    }
+  ],
+  "next_role": "00",
+  "next_action": "00は本報告をSTATEへ統合。10は日本語フォント/描画環境が利用可能になった時点でT03の表示再検査。30修正案に依存しないC03工程は完了したが、C04/C09/C10/C11とE20-01依存の定義修正は保留。候補登録・完成扱いはしない。",
+  "restart_condition": "日本語対応フォント提供時はT03表示再検査。ROLE=30提案と正式元集計等の根拠が揃ったら、該当保留だけ再開。",
+  "candidate": null,
+  "candidate_fingerprint": null,
+  "newly_checked": [
+    "T03 C03独立根拠反映",
+    "S01作業コピーのセル限定保持試験",
+    "Artifact Tool計算式の変更/復元試験",
+    "作業コピー再読込・LibreOfficeネイティブPDF・1ページ表示確認",
+    "C03のT05集計オーバーレイ",
+    "C03内訳合計とⅣ合計",
+    "main固定HEADからの管理ファイル読取"
+  ],
+  "reused_from": [],
+  "time_measurements": {
+    "display_pdf_native_export_pages": 137,
+    "summary_print_layout": "1 page, Letter landscape, fit-to-page",
+    "S01_source_sha256_unchanged": true,
+    "work_copy_sha256": "fef7ab5b1b46bc8eb03c040c3d4767ec9aa41098c6106019397ce29623c77cf6",
+    "formula_reopen_certification_rate": 0.15868346905285322,
+    "formula_reopen_C03_total": 1787,
+    "temporary_change_and_restore": [
+      1787,
+      1788,
+      1787
+    ]
+  },
+  "release_status": "not_created",
+  "originals_modified": false,
+  "STATE_modified_by_role10": false,
+  "model_selection": {
+    "role_requested": "10",
+    "actual_user_selected_model_and_effort": "unverified; ROLE does not change model selection"
+  },
+  "environment": {
+    "python": "3.12.14",
+    "node": "v24.19.0",
+    "artifact_tool": "2.8.85",
+    "primary_runtime_bundle": "26.1004.11800",
+    "pandas": "2.2.3",
+    "openpyxl_read_only": "3.1.5",
+    "xlrd": "2.0.1",
+    "LibreOffice": "26.8 alpha",
+    "japanese_font": "unavailable; Japanese glyphs missing in PDF visual check"
+  }
+}
