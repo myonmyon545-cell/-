@@ -1,0 +1,99 @@
+{
+  "schema": "care_audit_receipt/v1",
+  "event_id": "planning_20261010_v24_save_receipt",
+  "plan_revision": "2.4",
+  "saved_commit": "e3b27a95a4ab1906b43a8d0c6684e4544bcae639",
+  "readback": [
+    {
+      "path": "care-insurance-analysis/PLAN.md",
+      "match": true,
+      "sha": "d0c360c5441fe71f2b019bbfce4a8f7431a86f7a"
+    },
+    {
+      "path": "care-insurance-analysis/STATE.json",
+      "match": true,
+      "sha": "ce0e9334b6a70b8b6963e05bc58db4a07c23328b"
+    },
+    {
+      "path": "care-insurance-analysis/README.md",
+      "match": true,
+      "sha": "b750cc2cfbc07ddae0b7f411c1cbc8a72211d720"
+    },
+    {
+      "path": "care-insurance-analysis/references/S10_excerpts.json",
+      "match": true,
+      "sha": "93d812066d0b7ade5142c325b5a6ce7762bddd72"
+    },
+    {
+      "path": "care-insurance-analysis/references/S10_integration.md",
+      "match": true,
+      "sha": "a1e5dbe3c9d882be0d53a786470249596b2ad7c7"
+    },
+    {
+      "path": "care-insurance-analysis/references/簡易確認.md",
+      "match": true,
+      "sha": "dac1788673e33388cf8d7011ecc1d00e57c62a59"
+    },
+    {
+      "path": "care-insurance-analysis/decisions/2026-10-10_user_decisions.json",
+      "match": true,
+      "sha": "95fd03a84a39fe68b49d69c570c590ea40250301"
+    },
+    {
+      "path": "care-insurance-analysis/logs/README.md",
+      "match": true,
+      "sha": "ce1df0656f790427a822f36af2298a94ac93b31e"
+    },
+    {
+      "path": "care-insurance-analysis/logs/events/planning_20261010_decisions.json",
+      "match": true,
+      "sha": "2eb4949fcf35820713fb756cf6d6477a44d69d8a"
+    },
+    {
+      "path": "care-insurance-analysis/checks/font_diagnostic.json",
+      "match": true,
+      "sha": "40fbce5d3f15b3facce197813d69ef26339a09df"
+    },
+    {
+      "path": "care-insurance-analysis/checks/C10_recheck.json",
+      "match": true,
+      "sha": "5c50c5c2e503bf271f0f7fd31952fa204b0dab41"
+    },
+    {
+      "path": "care-insurance-analysis/checks/planning_2_4_validation.json",
+      "match": true,
+      "sha": "9f253286f382ff0d9b1ff50afa2aed324e93a18f"
+    }
+  ],
+  "changed_paths": [
+    "care-insurance-analysis/PLAN.md",
+    "care-insurance-analysis/README.md",
+    "care-insurance-analysis/STATE.json",
+    "care-insurance-analysis/checks/C10_recheck.json",
+    "care-insurance-analysis/checks/font_diagnostic.json",
+    "care-insurance-analysis/checks/planning_2_4_validation.json",
+    "care-insurance-analysis/decisions/2026-10-10_user_decisions.json",
+    "care-insurance-analysis/logs/README.md",
+    "care-insurance-analysis/logs/events/planning_20261010_decisions.json",
+    "care-insurance-analysis/references/S10_excerpts.json",
+    "care-insurance-analysis/references/S10_integration.md",
+    "care-insurance-analysis/references/簡易確認.md"
+  ],
+  "historical_role_reports_and_candidate_unchanged": true,
+  "errors": [
+    {
+      "operation": "github_compare_commits",
+      "error": "Internal error",
+      "recovery": "GitHub REST compare取得で差分12ファイル確認"
+    },
+    {
+      "operation": "fetch_commit_workflow_runs",
+      "error": "Missing repo_full_name/commit_sha",
+      "recovery": "正しい引数で再取得。workflow_runs=[]、Actions完了は未確認"
+    }
+  ],
+  "candidate_changed": false,
+  "final_log_zip_created": false,
+  "final_public_response_record": "最終公開応答はこの受領記録後に表示。自動全文収録は未実施。",
+  "next": "ROLE10 applies PLAN2.4 startup; ROLE20 independently reviews new fixed candidate"
+}
