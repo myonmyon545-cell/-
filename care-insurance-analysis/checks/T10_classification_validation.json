@@ -1,0 +1,64 @@
+{
+  "schema": "care_t10_classification_checks/v1",
+  "task_id": "T10",
+  "plan_revision": "2.4",
+  "source_commit": "afa996bc6a3d7a82b7d1fd04a0381e8abcfa3833",
+  "checked_at": "2026-10-10T13:07:00+09:00",
+  "checks": [
+    {
+      "id": "S10_ID_coverage",
+      "result": "PASS",
+      "count": 11
+    },
+    {
+      "id": "T09_source_binding",
+      "result": "PASS",
+      "sha256": "a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2",
+      "version": "0"
+    },
+    {
+      "id": "C04_substitution",
+      "result": "PASS",
+      "comparisons_allowed": false
+    },
+    {
+      "id": "C11_hold",
+      "result": "PASS",
+      "denominator_created": false
+    },
+    {
+      "id": "C10_missing_and_C12_exclusion",
+      "result": "PASS"
+    },
+    {
+      "id": "C09_not_computable",
+      "result": "PASS",
+      "zero_percent": false
+    },
+    {
+      "id": "C14_uncertain",
+      "result": "PASS",
+      "confirmed_correction": null
+    },
+    {
+      "id": "M_separated",
+      "result": "PASS",
+      "individual_data_fabricated": false
+    },
+    {
+      "id": "original_cell_honesty",
+      "result": "PASS",
+      "fabricated_cell_coordinates": 0
+    },
+    {
+      "id": "scope_boundary",
+      "result": "PASS",
+      "candidate_created": false
+    }
+  ],
+  "overall": "PASS_WITH_DOCUMENTED_LIMITS",
+  "limitations": [
+    "DOCXの正確な行列セル番地は既存T09台帳に記録なし。表・ページ・項目ラベルで追跡し、座標を捏造しない。",
+    "S10-06の年度帰属はROLE10/20による節内再確認前で条件付き。"
+  ]
+}
