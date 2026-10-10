@@ -6,10 +6,14 @@
   "operations_revision": "2.4.3",
   "source_commit": "2e00b8aac02f3b2452f29e4ca1daa58b22eec228",
   "hosting": {
-    "status": "BLOCKED_NOT_PUBLISHED",
-    "project_id": null,
-    "url": null,
-    "reason": "Sites source helper resource not available in this environment; no Site created."
+    "status": "PUBLISHED_PRIVATE",
+    "project_id": "appgprj_6ac9a6f33718819199cfb04689e0550f",
+    "url": "https://care-analysis-atlas.adept-sun-2909.chatgpt.site",
+    "source_checkout": "/workspace/sites/care-analysis-atlas",
+    "audience": "owner_private",
+    "deployment_id": "appgdep_6ac9a78ce0bc8191b61236eb703c9365",
+    "version_id": "appgprj_6ac9a6f33718819199cfb04689e0550f~appgver_4dc60dd404988191995dc276574248cb",
+    "source_commit": "3bb14bf26870318803b633cafd3b25e0706f4bd3"
   },
   "update_owners": [
     "planning",
@@ -21,7 +25,8 @@
     "frequency": "HOURLY",
     "timezone": "Asia/Tokyo",
     "until": "2026-10-12T23:59:00+09:00",
-    "verified_runs": 0
+    "verified_runs": 0,
+    "status": "ENABLED"
   },
   "final_attachment": {
     "owner": "10",
@@ -32,6 +37,7 @@
   },
   "verification": {
     "actual_browser": "NOT_EXECUTED",
-    "sites_deployment": "NOT_EXECUTED"
+    "sites_deployment": "SUCCEEDED",
+    "dom_fixture": "PASS: search/tabs/tasks/folders/parent"
   }
 }

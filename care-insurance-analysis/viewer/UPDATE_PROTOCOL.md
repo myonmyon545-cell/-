@@ -27,7 +27,7 @@
 
 両チャットの更新要求・記録保存後に上記を実施。自動タスクが有効なら同じ規約で保存された変更を確認する。このチャットの自動タスクはSTATEを書かず、表示/自分のイベントだけ更新する。00の通常更新は独立。無人の別チャット全文収集は不可能として未収録に残す。
 
-Sites公開：この実行環境では必須のsource helperを取得できず未実施。Site IDを捏造/新規多重作成しない。公開環境が復旧したらSites skillの正規source同期・非公開デプロイを実施し返されたURL/版をviewer/platform.jsonへ記録。現時点の共通プラットフォームはGitHub。閲覧HTMLは添付で開く。
+Sites配信：非公開Site project_id `appgprj_6ac9a6f33718819199cfb04689e0550f` を使用。URLはplatform.jsonのhosting.urlが正本。同じID・owner-privateを維持し、多重作成しない。Sites skillのsource helperは `/root/.codex/plugins/cache/openai-curated-remote/sites/1.0.0/scripts/site-workflow.mjs` 。既存Siteのget_siteとcreate_source_repository_write_credentialから正規手順でsourceを開く。dist/index.htmlへviewer生成物、dist/timeline.htmlへタイムライン生成物を配置してsource同期・package・private deployを行う。成功したURL/版/deployment_idをplatform.jsonへ保存。元資料・個票・認証情報はsourceへ含めない。添付HTMLのプレビューではJavaScriptが動かない場合があるため、通常のブラウザでhosting.urlを開く。実機検証済みとは扱わない。
 
 ## 最終提出は別枠・固定版
 

@@ -1,0 +1,64 @@
+{
+  "schema": "care_audit_event/v1",
+  "event_id": "planning_20261010_shared_viewer_repair",
+  "at": "2026-10-10T11:49:16+09:00",
+  "role": "planning",
+  "user_verbatim": "どちらも動いてないから確認して",
+  "input_commit": "c908dea1a5a3f5cf0149169b3d27b370999819d7",
+  "observed": {
+    "previous_automation_run_missing_files": "required viewer files were absent at 2e00b8a; available at c908dea",
+    "site_before": "NOT_PUBLISHED",
+    "attachment_JS_execution": "not directly observed; sandbox preview limitation possible, not proven",
+    "actual_browser": "NOT_EXECUTED"
+  },
+  "changes": [
+    "private Site deployed with atlas and standalone timeline",
+    "global history function renamed renderHistory to avoid browser API name collision; not proven as original failure cause",
+    "noscript message added",
+    "stable input timestamp allows exact rebuild",
+    "existing hourly automation resumed"
+  ],
+  "verification": {
+    "schema": "care_atlas_checks/v1",
+    "unique_DOM_ids": "PASS",
+    "workflow_DAG": "PASS",
+    "file_paths_and_summaries": "PASS",
+    "javascript_syntax": "PASS",
+    "replay_structured_data": "PASS",
+    "PLAN_yaml_and_contract_unchanged": "PASS",
+    "remote_network_calls": "NONE",
+    "actual_browser_and_3D_visual_test": "NOT_EXECUTED: managed browser skill unavailable; no preview started",
+    "original_data_embedded": false,
+    "release": "NOT_FINAL",
+    "dom_fixture": {
+      "search": "PASS",
+      "tabs": "PASS",
+      "task_details": "PASS",
+      "folder_details": "PASS",
+      "parent_navigation": "PASS",
+      "scope": "Node DOM fixture, not real browser"
+    },
+    "deployment": "SUCCEEDED_PRIVATE"
+  },
+  "hosting": {
+    "status": "PUBLISHED_PRIVATE",
+    "project_id": "appgprj_6ac9a6f33718819199cfb04689e0550f",
+    "url": "https://care-analysis-atlas.adept-sun-2909.chatgpt.site",
+    "source_checkout": "/workspace/sites/care-analysis-atlas",
+    "audience": "owner_private",
+    "deployment_id": "appgdep_6ac9a78ce0bc8191b61236eb703c9365",
+    "version_id": "appgprj_6ac9a6f33718819199cfb04689e0550f~appgver_4dc60dd404988191995dc276574248cb",
+    "source_commit": "3bb14bf26870318803b633cafd3b25e0706f4bd3"
+  },
+  "candidate_changed": false,
+  "STATE_and_reports_changed": false,
+  "release_status": "NOT_FINAL",
+  "transient_attempts": [
+    {
+      "action": "site helper launched in scratch root",
+      "result": "cancelled before credential input or any source save; relaunched in dedicated Site checkout"
+    }
+  ],
+  "github_save_scope": "template/generator/hosting metadata/protocol/validation/event only; detailed input and generated data not retransmitted",
+  "auto_review_rejection": "Full viewer/input.json replacement rejected for detailed private project data. Reduced write excludes all full inputs and generated data."
+}

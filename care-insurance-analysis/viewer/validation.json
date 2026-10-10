@@ -9,5 +9,15 @@
   "remote_network_calls": "NONE",
   "actual_browser_and_3D_visual_test": "NOT_EXECUTED: managed browser skill unavailable; no preview started",
   "original_data_embedded": false,
-  "release": "NOT_FINAL"
+  "release": "NOT_FINAL",
+  "dom_fixture": {
+    "search": "PASS",
+    "tabs": "PASS",
+    "task_details": "PASS",
+    "folder_details": "PASS",
+    "parent_navigation": "PASS",
+    "scope": "Node DOM fixture, not real browser"
+  },
+  "deployment": "SUCCEEDED_PRIVATE",
+  "scope": "Repaired deployed Site and local output; repository generated index/process_atlas not replaced in this transaction."
 }

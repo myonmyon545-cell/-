@@ -27,7 +27,7 @@ def build(source, timeline, template, out):
   actual.append({'title':'ROLE'+role+' 保存済み報告','at':r.get('updated_at'),'status':r.get('verdict',r.get('status')),'plan_revision':r.get('plan_revision'),'candidate':r.get('candidate'),'next_action':r.get('next_action'),'source':'reports/'+role+'.json','scope':'保存済み報告に基づく履歴。現行契約への適用完了は別途必要。'})
  tasks=[dict(x,id=k,record_status='現行計画。新版候補への完了報告未確認') for k,x in y['execution'].items() if isinstance(x,dict) and re.fullmatch(r'T\d+',k)]
  tasks.sort(key=lambda x:int(x['id'][1:]))
- data={'schema':'care_process_atlas/v1','as_of':datetime.now(ZoneInfo('Asia/Tokyo')).isoformat(timespec='seconds'),'base_commit':source['base_commit'],'plan_revision':y['meta']['revision'],'candidate_binding':None,'release_status':'NOT_FINAL','timeline':timeline,'actual':actual,'tasks':tasks,'files':files,'state_record_at':source['state'].get('updated_at'),'missing':['過去の全チャット原文は未取得','現行2.4新候補の実処理完了は未確認','非公開原本/候補のファイルツリーはROLE10の実manifest待ち','共有サイトは公開未完了','実ブラウザ操作・3D視覚検証は未実施']}
+ data={'schema':'care_process_atlas/v1','as_of':source.get('as_of') or datetime.now(ZoneInfo('Asia/Tokyo')).isoformat(timespec='seconds'),'base_commit':source['base_commit'],'plan_revision':y['meta']['revision'],'candidate_binding':None,'release_status':'NOT_FINAL','timeline':timeline,'actual':actual,'tasks':tasks,'files':files,'state_record_at':source['state'].get('updated_at'),'missing':['過去の全チャット原文は未取得','現行2.4新候補の実処理完了は未確認','非公開原本/候補のファイルツリーはROLE10の実manifest待ち','実ブラウザ操作・3D視覚検証は未実施']}
  text=Path(template).read_text().replace('__DATA__',json.dumps(data,ensure_ascii=False).replace('<','\\u003c'))
  (out/'index.html').write_text(text)
  (out/'process_atlas.json').write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
