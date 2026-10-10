@@ -1,0 +1,57 @@
+{
+  "schema": "care_audit_event/v1",
+  "event_id": "planning_20261010_reference_3d_circuit",
+  "role": "planning",
+  "at": "2026-10-10T03:13:08.653134+00:00",
+  "input_commit": "ea339c66c05311eb66ddbf6dacd66d2c4d8da3a9",
+  "request": "User supplied reference screen recording for visually engaging 3D",
+  "observations": [
+    "Dense spatial labels and fine circuit-like lines",
+    "Orbit/fly-through and selected-node focus",
+    "Dark and light variants"
+  ],
+  "changes": {
+    "mode": "3D_FILE_CIRCUIT",
+    "reference": "user supplied screen recording; observed at 3s,17s,30s",
+    "geometry": "deterministic hierarchical display; not semantic embeddings",
+    "controls": [
+      "drag orbit",
+      "pinch/wheel zoom",
+      "tap focus",
+      "search",
+      "dark/light",
+      "auto cruise opt-in",
+      "2D",
+      "large view"
+    ],
+    "nodes": 116,
+    "edges": 115,
+    "render_engine": "Canvas 2D perspective projection of 3D coordinates; standalone offline",
+    "actual_browser": "NOT_EXECUTED"
+  },
+  "validation": {
+    "canvas_DOM_fixture": "PASS",
+    "selection": "PASS",
+    "orbit": "PASS",
+    "pinch": "PASS",
+    "actual_iPad": "NOT_EXECUTED"
+  },
+  "source_preservation": "Used latest Site checkout; existing timeline/history data unchanged; no recording/raw files uploaded.",
+  "candidate_changed": false,
+  "state_reports_changed": false,
+  "release": "NOT_FINAL",
+  "deployment": {
+    "status": "PUBLISHED_PRIVATE",
+    "project_id": "appgprj_6ac9a6f33718819199cfb04689e0550f",
+    "url": "https://care-analysis-atlas.adept-sun-2909.chatgpt.site",
+    "source_checkout": "/workspace/sites/care-analysis-atlas",
+    "audience": "owner_private",
+    "deployment_id": "appgdep_6ac9ad36c2cc8191bbf7c712043894ca",
+    "version_id": "appgprj_6ac9a6f33718819199cfb04689e0550f~appgver_459cb7d1dd108191a53d1f9226bcffd1",
+    "source_commit": "0d0162704c2757359cde5ea14de3cc583824faf5",
+    "updated_at": "2026-10-10T02:54:33.508075+00:00"
+  },
+  "observed_failures": [
+    "Initial test command used checkout-relative scratch test path; corrected to absolute path and passed before source push."
+  ]
+}

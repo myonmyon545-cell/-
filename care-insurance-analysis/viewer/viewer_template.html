@@ -4,7 +4,7 @@
 <div class="notice">完成版ではありません。実施済みの保存報告と、現在の計画を分離しています。全文未取得・未検証は補完していません。共有サイトは非公開で配信済みです。取得時点の記録を表示し、更新は担当が保存記録から反映します。</div>
 <section id="history"><div class="stats" id="counts"></div><div class="controls"><input id="search" aria-label="履歴検索" placeholder="本文・問題IDを検索"><select id="kind" aria-label="記録の種類"></select><select id="chat" aria-label="チャット"></select></div><p id="result" class="muted"></p><div id="events"></div></section>
 <section id="process" hidden><h2>実際に保存された処理記録</h2><p class="muted">古い候補v1の実績。現行契約2.4への適用完了を意味しません。</p><div id="actual" class="workflow"></div><h2>現行計画の依存付きワークフロー</h2><p>入力固定 → 抽出・保持試行と追加資料を並行 → 比較・要点統合 → 新候補固定 → ログ集約 → 全独立評価 → 修正再評価 → 提出。各工程を開くと依存・担当・入出力・検査を表示します。</p><div class="grid"><div id="tasks" class="workflow"></div><aside class="panel" id="taskdetail"><h3>工程の詳細</h3><p>工程を選択してください。</p></aside></div><h2>計算の要点</h2><div class="panel">比率 = 分子 ÷ 対応する有効分母。差 = 100 ×（市比率 − 比較先比率）pp。集約比率 = 分子合計 ÷ 分母合計。平均の集約は件数加重で、個票・対応件数がなければ再算出しない。C09の0/0は未算出。S10年度調査日数25.6日は提供値置換で、半年間の調査日数・差の再計算には使わない。</div></section>
-<section id="files" hidden><h2>階層を立体で見る</h2><p class="muted">奥行きはフォルダの深さ。フォルダを選ぶと下位階層へ、ファイルを選ぶと右側に概要。3Dは配置表現で、ファイルの解析値を示す軸ではありません。</p><div class="controls"><label>左右 <input id="ry" type="range" min="-45" max="45" value="-18"></label><label>上下 <input id="rx" type="range" min="-25" max="35" value="12"></label><button id="reset">位置を戻す</button><button id="up">親へ戻る</button></div><div id="crumb" class="breadcrumb"></div><div class="grid"><div><div class="stage"><div id="space" class="space"></div></div><h3>通常の入れ子ツリー</h3><div id="tree" class="tree panel"></div></div><aside id="details" class="panel"><h3>ファイル概要</h3><p>ファイルを選択してください。</p></aside></div></section>
+<section id="files" hidden><h2>ファイルの情報空間</h2><p class="muted">実在ファイルを立体配置した回遊空間。線はフォルダの親子関係で、意味の類似度ではありません。ドラッグ・ピンチで探索し、タップで概要と選択地点への移動。</p><div class="controls"><label>左右 <input id="ry" type="range" min="-45" max="45" value="-18"></label><label>上下 <input id="rx" type="range" min="-25" max="35" value="12"></label><button id="reset">位置を戻す</button><button id="up">親へ戻る</button></div><div id="crumb" class="breadcrumb"></div><div class="grid"><div><div class="stage"><div id="space" class="space"></div></div><h3>通常の入れ子ツリー</h3><div id="tree" class="tree panel"></div></div><aside id="details" class="panel"><h3>ファイル概要</h3><p>ファイルを選択してください。</p></aside></div></section>
 <section id="updates" hidden><h2>共通正本と更新分担</h2><div class="panel"><p><strong>この計画チャット：</strong>取得できる会話・指示・決定、閲覧画面の構成、計画変更を追記。</p><p><strong>ROLE00：</strong>保存報告を同じコミットで確認し、通常STATEと進捗・提出台帳を更新。共通スナップショットを再生成。</p><p><strong>ROLE10：</strong>実処理の入出力・コマンド・検査・実測時間・ファイル概要を提供し、最終候補に対応した添付HTML/JSON/全ログへ固定。</p><p><strong>ROLE20：</strong>実施記録と計画、候補ID/版/SHA、表示・収録漏れを独立確認。</p><p>両チャットは同じGitHubのviewer/UPDATE_PROTOCOL.mdを読み、単一の正本から更新。別チャットの起動・遠隔操作はしません。閲覧画面を開いただけでは最新情報を取得しません。</p><p>ファイルの追加は既存版を消さず、更新前HEADを期待値にして保存。競合時は再読取りし、他担当の追記を取り込みます。</p><p>最終添付は更新し続ける表示と別の固定版。候補ID/版/SHA・計画版・評価・ログZIP SHA・添付内manifestを一致させて提出。予定ファイルを存在済みと表示しません。</p><a id="github" target="_blank" rel="noopener">GitHubの正本を開く</a></div></section>
 </main><script id="data" type="application/json">__DATA__</script><script>
 const D=JSON.parse(document.getElementById('data').textContent), el=id=>document.getElementById(id);
@@ -24,4 +24,148 @@ function choose(f){overview(f);if(f.type==='tree'){current=f.path;space();}}
 function space(){clear(el('space'));clear(el('crumb'));let p='';for(const part of current.split('/')){p+=(p?'/':'')+part;const path=p;const b=node('button',part);b.onclick=()=>{current=path;space();};el('crumb').append(b);}const depth=current.split('/').length-1;for(let i=0;i<2;i++){const plane=node('div',undefined,'plane');plane.style.transform='translateZ('+(-70*(depth+i))+'px)';plane.append(node('p',i?'階層 '+depth+' / フォルダ内を選択':current,'plane-head'));if(i===0){const tiles=node('div',undefined,'tiles');for(const f of children(current)){const b=node('button',f.path.split('/').pop(),'tile'+(f.type==='tree'?' folder':''));b.onclick=()=>choose(f);tiles.append(b);}plane.append(tiles);}el('space').prepend(plane);}el('up').disabled=current===root.path;}
 function tree(parent,target){for(const f of children(parent)){if(f.type==='tree'){const d=node('details'),s=node('summary',f.path.split('/').pop());s.onclick=()=>overview(f);d.append(s);tree(f.path,d);target.append(d);}else{const b=node('button',f.path.split('/').pop());b.onclick=()=>choose(f);target.append(b);}}}tree(root.path,el('tree'));space();
 for(const id of ['rx','ry'])el(id).oninput=()=>el('space').style.setProperty('--'+id,el(id).value+'deg');el('reset').onclick=()=>{el('rx').value=12;el('ry').value=-18;el('rx').oninput();el('ry').oninput();};el('up').onclick=()=>{if(current!==root.path){current=current.slice(0,current.lastIndexOf('/'));space();}};el('github').href='https://github.com/myonmyon545-cell/-/tree/main/care-insurance-analysis/viewer';
+</script>
+<style>
+.stage{position:relative;height:640px;min-height:420px;overflow:hidden;perspective:none;background:#080f15;touch-action:none;border-color:#284349}
+.space{width:100%;height:100%;position:static;margin:0;transform:none!important}
+#file-universe{display:block;cursor:grab;touch-action:none;outline:none}
+#file-universe:focus-visible{outline:2px solid #78dfcb;outline-offset:-3px}
+.universe-hud{position:absolute;inset:18px 18px auto;display:flex;justify-content:space-between;gap:12px;font:10px/1.4 ui-monospace,monospace;letter-spacing:1.5px;color:#88abae;pointer-events:none}
+.universe-hint{position:absolute;bottom:18px;left:18px;right:18px;font:12px/1.5 system-ui;color:#a8c3c5;pointer-events:none}
+.universe-light .universe-hud,.universe-light .universe-hint{color:#3b6063}
+#files>.grid{grid-template-columns:minmax(0,3fr) minmax(240px,1fr)}
+.universe-tools{margin:8px 0 16px}.universe-tools input{min-width:160px}
+#files.immersive{position:fixed;inset:0;z-index:100;background:#0d1524;overflow:auto;padding:16px 24px}
+#files.immersive .stage{height:calc(100vh - 250px);min-height:400px}
+@media(max-width:760px){#files>.grid{grid-template-columns:1fr}.stage{height:58vh}.universe-hud{font-size:9px}#files.immersive{padding:12px}.universe-tools button{font-size:13px;padding:7px 9px}}
+</style>
+<script>
+/* Reference-inspired 3D file circuit. Positions are display layout, edges are real parents. */
+(() => {
+  const stage = document.querySelector('.stage');
+  const section = el('files');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const palette = ['#78dfcb','#aba6ff','#e7c77a','#7eb6f3','#e791b2'];
+  const graph = [root, ...files.filter(f => f.path !== root.path)];
+  const branchPaths = children(root.path).map(f => f.path);
+  const positions = new Map();
+  positions.set(root.path, {x:0,y:0,z:0});
+  const counters = new Map();
+  for (const f of graph.slice(1)) {
+    const branch = branchPaths.find(p => f.path === p || f.path.startsWith(p+'/'));
+    const b = Math.max(0, branchPaths.indexOf(branch));
+    const k = counters.get(b) || 0; counters.set(b,k+1);
+    const depth = f.path.split('/').length-1;
+    const angle = b * Math.PI*2 / Math.max(1,branchPaths.length);
+    const localAngle = k*2.39996;
+    const radius = depth===1 ? 0 : 38 + 16*Math.sqrt(k);
+    positions.set(f.path, {x:Math.cos(angle)*230 + Math.cos(localAngle)*radius,
+      y:(depth===1?0:Math.sin(k*1.7)*100)+(depth-2)*70,
+      z:Math.sin(angle)*230 + Math.sin(localAngle)*radius, branch:b});
+  }
+  const edges = graph.slice(1).map(f => [f.path.slice(0,f.path.lastIndexOf('/')),f.path]);
+  const canvas = node('canvas');canvas.id='file-universe';canvas.tabIndex=0;
+  canvas.setAttribute('aria-label','3Dファイル空間。ドラッグで回転、ピンチで拡大縮小。通常ツリーでも同じファイルを選べます。');
+  clear(el('space'));el('space').append(canvas);
+  const ctx = canvas.getContext('2d');
+  const hud = node('div',undefined,'universe-hud');
+  hud.append(node('span','FILE CIRCUIT / 3D'),node('span',graph.length+' NODES · '+edges.length+' PARENT LINKS'));
+  stage.append(hud);
+  const hint = node('div','ドラッグで回転 · ピンチでズーム · 点をタップして移動','universe-hint');stage.append(hint);
+  const tools = node('div',undefined,'controls universe-tools');
+  const search = node('input');search.placeholder='ファイル名を探す';search.setAttribute('aria-label','3Dファイル検索');
+  const cruise=node('button','自動回遊を開始');
+  const theme=node('button','明るい空間');
+  const full=node('button','大きく見る');
+  const map=node('button','2Dに切替');
+  const zoomOut=node('button','−');zoomOut.setAttribute('aria-label','縮小');
+  const zoomIn=node('button','＋');zoomIn.setAttribute('aria-label','拡大');
+  tools.append(search,cruise,theme,map,zoomOut,zoomIn,full);
+  section.insertBefore(tools,el('crumb'));
+  let W=700,H=600,light=false,flat=false,auto=false,selected=root.path,hover=null;
+  let yaw=-.3,pitch=.16,distance=940,targetDistance=940,center={x:0,y:0,z:0},target={x:0,y:0,z:0};
+  let hits=[],last=0,frame=0;
+  const pointers=new Map();let moved=0,pinch=0;
+  function resize(){const r=stage.getBoundingClientRect();if(!r.width)return;W=r.width;H=r.height;
+    const d=Math.min(devicePixelRatio||1,2);canvas.width=W*d;canvas.height=H*d;canvas.style.width=W+'px';canvas.style.height=H+'px';ctx.setTransform(d,0,0,d,0,0);}
+  const observer=new ResizeObserver(resize);observer.observe(stage);
+  function project(p){let x=p.x-center.x,y=p.y-center.y,z=p.z-center.z;
+    if(flat){const s=Math.min(W,H)/720;return {x:W/2+x*s,y:H/2+z*s,s:s,z:0};}
+    const cx=x*Math.cos(yaw)-z*Math.sin(yaw),cz=x*Math.sin(yaw)+z*Math.cos(yaw);
+    const cy=y*Math.cos(pitch)-cz*Math.sin(pitch),dz=y*Math.sin(pitch)+cz*Math.cos(pitch)+distance;
+    if(dz<70)return null;const s=Math.min(W,H)*1.15/dz;
+    return {x:W/2+cx*s,y:H/2+cy*s,s,z:dz};
+  }
+  function line(a,b,alpha,color){const A=project(a),B=project(b);if(!A||!B)return;
+    ctx.globalAlpha=alpha;ctx.strokeStyle=color;ctx.beginPath();ctx.moveTo(A.x,A.y);ctx.lineTo(B.x,B.y);ctx.stroke();}
+  function select(path){selected=path;const f=graph.find(f=>f.path===path);if(!f)return;
+    overview(f);current=f.type==='tree'?f.path:f.path.slice(0,f.path.lastIndexOf('/'));
+    space();target={...positions.get(path)};targetDistance=f.type==='tree'?680:390;
+    if(reduced){center={...target};distance=targetDistance;}auto=false;cruise.textContent='自動回遊を開始';}
+  space=function(){clear(el('crumb'));let p='';for(const part of current.split('/')){p+=(p?'/':'')+part;const path=p;
+    const b=node('button',part);b.onclick=()=>select(path);el('crumb').append(b);}
+    el('up').disabled=current===root.path;
+    if(positions.has(current))target={...positions.get(current)};
+  };
+  choose= f=>select(f.path);
+  el('reset').onclick=()=>{yaw=-.3;pitch=.16;target={x:0,y:0,z:0};targetDistance=940;current=root.path;selected=root.path;space();};
+  el('up').onclick=()=>{if(current!==root.path)select(current.slice(0,current.lastIndexOf('/')));};
+  el('rx').oninput=()=>pitch=Number(el('rx').value)*Math.PI/180;
+  el('ry').oninput=()=>yaw=Number(el('ry').value)*Math.PI/180;
+  zoomOut.onclick=()=>targetDistance=Math.min(1800,targetDistance*1.2);
+  zoomIn.onclick=()=>targetDistance=Math.max(230,targetDistance/1.2);
+  cruise.onclick=()=>{auto=!auto;cruise.textContent=auto?'回遊を止める':'自動回遊を開始';};
+  theme.onclick=()=>{light=!light;stage.classList.toggle('universe-light',light);theme.textContent=light?'暗い空間':'明るい空間';};
+  map.onclick=()=>{flat=!flat;map.textContent=flat?'3Dに戻す':'2Dに切替';};
+  full.onclick=()=>{section.classList.toggle('immersive');full.textContent=section.classList.contains('immersive')?'元の大きさ':'大きく見る';resize();};
+  function pointerGap(){const a=[...pointers.values()];return a.length<2?0:Math.hypot(a[0].x-a[1].x,a[0].y-a[1].y);}
+  canvas.onpointerdown=e=>{canvas.setPointerCapture(e.pointerId);pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});moved=0;pinch=pointerGap();};
+  canvas.onpointermove=e=>{const old=pointers.get(e.pointerId);const r=canvas.getBoundingClientRect();
+    if(!old){hover=hits.find(h=>Math.abs(h.x-(e.clientX-r.left))<h.w/2+9&&Math.abs(h.y-(e.clientY-r.top))<17)?.path||null;return;}
+    const dx=e.clientX-old.x,dy=e.clientY-old.y;moved+=Math.abs(dx)+Math.abs(dy);pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});
+    if(pointers.size>1){const gap=pointerGap();if(pinch>0&&gap>0)targetDistance=Math.max(230,Math.min(1800,targetDistance*pinch/gap));pinch=gap;}
+    else{yaw+=dx*.005;pitch=Math.max(-1.2,Math.min(1.2,pitch+dy*.004));}auto=false;cruise.textContent='自動回遊を開始';};
+  canvas.onpointerup=e=>{const r=canvas.getBoundingClientRect();if(moved<8&&pointers.size===1){
+    const h=hits.find(h=>Math.abs(h.x-(e.clientX-r.left))<h.w/2+10&&Math.abs(h.y-(e.clientY-r.top))<18);if(h)select(h.path);}
+    pointers.delete(e.pointerId);pinch=pointerGap();};
+  canvas.onpointercancel=e=>{pointers.delete(e.pointerId);};
+  canvas.addEventListener('wheel',e=>{e.preventDefault();targetDistance=Math.max(230,Math.min(1800,targetDistance*Math.exp(e.deltaY*.001)));},{passive:false});
+  canvas.onkeydown=e=>{if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','+','-','Escape'].includes(e.key))e.preventDefault();
+    if(e.key==='ArrowLeft')yaw-=.1;if(e.key==='ArrowRight')yaw+=.1;if(e.key==='ArrowUp')pitch-=.1;if(e.key==='ArrowDown')pitch+=.1;
+    if(e.key==='+')zoomIn.onclick();if(e.key==='-')zoomOut.onclick();if(e.key==='Escape')el('reset').onclick();};
+  function draw(now){frame=requestAnimationFrame(draw);if(section.hidden||document.hidden)return;
+    if(now-last<33)return;const dt=Math.min(60,now-last);last=now;
+    if(!W||canvas.width===0)resize();
+    if(auto&&!flat)yaw+=dt*.00008;
+    const t=reduced?1:1-Math.exp(-dt*.009);for(const a of ['x','y','z'])center[a]+=(target[a]-center[a])*t;distance+=(targetDistance-distance)*t;
+    ctx.globalAlpha=1;ctx.fillStyle=light?'#f4f6f4':'#080f15';ctx.fillRect(0,0,W,H);
+    ctx.lineWidth=.6;
+    const wire=light?'#60797a':'#708e97';
+    // Architectural coordinate grid, not extra relationships.
+    for(let i=-600;i<=600;i+=80){line({x:i,y:180,z:-600},{x:i,y:180,z:600},.16,wire);line({x:-600,y:180,z:i},{x:600,y:180,z:i},.16,wire);}
+    const q=search.value.toLowerCase();
+    for(const [a,b] of edges){const A=positions.get(a),B=positions.get(b);if(!A||!B)continue;
+      const active=b===selected||a===selected||b.startsWith(selected+'/')&&selected!==root.path;
+      const col=active?(light?'#147c71':'#74ded0'):wire;
+      const bend={x:B.x,y:A.y,z:A.z},bend2={x:B.x,y:B.y,z:A.z};
+      line(A,bend,active?.65:.2,col);line(bend,bend2,active?.65:.2,col);line(bend2,B,active?.65:.2,col);}
+    const projected=graph.map(f=>({f,p:project(positions.get(f.path))})).filter(x=>x.p).sort((a,b)=>b.p.z-a.p.z);
+    hits=[];
+    for(const {f,p} of projected){if(p.x< -150||p.x>W+150||p.y< -30||p.y>H+30)continue;
+      const name=f.path.split('/').pop(),match=!q||f.path.toLowerCase().includes(q);
+      const active=f.path===selected||f.path===hover,folder=f.type==='tree';
+      const color=light?['#157d70','#6553a2','#94711d','#2d6c9a','#a05071'][positions.get(f.path).branch%5||0]:palette[positions.get(f.path).branch%5||0];
+      ctx.globalAlpha=match?Math.max(.35,Math.min(1,p.s+.2)):.08;
+      const size=active?14:folder?12:Math.max(10,Math.min(13,11*p.s));ctx.font=(folder||active?'600 ':'400 ')+size+'px system-ui';
+      const label=name.length>34?name.slice(0,30)+'…':name;const w=ctx.measureText(label).width+18;
+      if(active||folder){ctx.fillStyle=light?'#ffffffed':'#0e1b25e8';ctx.fillRect(p.x-w/2,p.y-12,w,24);ctx.strokeStyle=color;ctx.lineWidth=active?1.5:.5;ctx.strokeRect(p.x-w/2,p.y-12,w,24);}
+      ctx.fillStyle=color;ctx.fillRect(p.x-w/2-6,p.y-3,folder?6:3,folder?6:3);
+      ctx.fillStyle=active?color:light?'#243a40':'#c0d1d9';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(label,p.x,p.y);
+      if(match)hits.unshift({path:f.path,x:p.x,y:p.y,w});}
+    ctx.globalAlpha=1;hint.textContent=hover?hover.split('/').pop()+' · タップで概要と移動':'ドラッグで回転 · ピンチでズーム · 点をタップして移動';
+  }
+  space();resize();requestAnimationFrame(draw);
+  window.careGraph3D={nodeCount:graph.length,edgeCount:edges.length,select,project,positions};
+  if(location.hash==='#files')document.querySelector('[data-tab="files"]').click();
+})();
 </script></html>

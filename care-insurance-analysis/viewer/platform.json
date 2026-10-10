@@ -11,9 +11,9 @@
     "url": "https://care-analysis-atlas.adept-sun-2909.chatgpt.site",
     "source_checkout": "/workspace/sites/care-analysis-atlas",
     "audience": "owner_private",
-    "deployment_id": "appgdep_6ac9a8dc988881919c3f3fd52be47fdb",
-    "version_id": "appgprj_6ac9a6f33718819199cfb04689e0550f~appgver_4ecb3027f3688191b90812e57f0dd183",
-    "source_commit": "14b4da64ad9b04f7b536d4665262183b288d8db6",
+    "deployment_id": "appgdep_6ac9ad36c2cc8191bbf7c712043894ca",
+    "version_id": "appgprj_6ac9a6f33718819199cfb04689e0550f~appgver_459cb7d1dd108191a53d1f9226bcffd1",
+    "source_commit": "0d0162704c2757359cde5ea14de3cc583824faf5",
     "updated_at": "2026-10-10T02:54:33.508075+00:00"
   },
   "update_owners": [
@@ -51,5 +51,24 @@
     "mode": "fixed_snapshot_regeneration",
     "save_verification": "保存後に固定コミットで全変更を読戻す。保存済みという判定はその結果に基づく。",
     "sites_deployment": "SUCCEEDED_PRIVATE"
+  },
+  "visualization": {
+    "mode": "3D_FILE_CIRCUIT",
+    "reference": "user supplied screen recording; observed at 3s,17s,30s",
+    "geometry": "deterministic hierarchical display; not semantic embeddings",
+    "controls": [
+      "drag orbit",
+      "pinch/wheel zoom",
+      "tap focus",
+      "search",
+      "dark/light",
+      "auto cruise opt-in",
+      "2D",
+      "large view"
+    ],
+    "nodes": 116,
+    "edges": 115,
+    "render_engine": "Canvas 2D perspective projection of 3D coordinates; standalone offline",
+    "actual_browser": "NOT_EXECUTED"
   }
 }
