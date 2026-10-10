@@ -2,11 +2,11 @@
   "schema": "care_handoff/v1",
   "role": "10",
   "plan_revision": "2.4",
-  "status": "T11_E20_02_scope_structure_PASS_remaining_units_pending",
-  "task_id": "T11_E20-02",
-  "source_commit": "0ca348449ba7b05b4ac8ae3f59351abdaf28a5c6",
-  "pre_save_rechecked_commit": "0ca348449ba7b05b4ac8ae3f59351abdaf28a5c6",
-  "updated_at": "2026-10-10T18:41:59+09:00",
+  "status": "T11_E20_03_notes_saved_structure_PASS_japanese_print_HELD",
+  "task_id": "T11_E20-03",
+  "source_commit": "f342d5187ab211aa99a4633c21282942645a6854",
+  "pre_save_rechecked_commit": "f342d5187ab211aa99a4633c21282942645a6854",
+  "updated_at": "2026-10-10T18:45:54+09:00",
   "startup_read": {
     "branch": "main",
     "head_sha": "afa996bc6a3d7a82b7d1fd04a0381e8abcfa3833",
@@ -639,6 +639,330 @@
       "next_action": "E20-03局所注記を次の小単位で実施。E20-04全生成再現と日本語実描画は未実施を維持。",
       "workbook_modified_this_run": false,
       "STATE_modified": false
+    },
+    "T11_E20-03": {
+      "task_id": "T11_E20-03",
+      "source_commit": "f342d5187ab211aa99a4633c21282942645a6854",
+      "pre_save_rechecked_commit": "f342d5187ab211aa99a4633c21282942645a6854",
+      "result": "IMPLEMENTED_STRUCTURE_PASS_JAPANESE_PRINT_HELD",
+      "request_at": "2026-10-10T18:45:54+09:00",
+      "base_work_copy": {
+        "library_file_id": "libfile_5b4c950910fc8191930febed5dbb7889",
+        "version": 1,
+        "sha256": "38de9fc6dc34045eb3aa2b17597bb0c8aceb9ac2d513c9fe6432fe263dbcfae5"
+      },
+      "work_copy": {
+        "library_file_id": "libfile_5b4c950910fc8191930febed5dbb7889",
+        "file_id": "file_00000000c64481f7b22d7afd3cd60e8b",
+        "version": 2,
+        "sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+        "readback_sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+        "readback": "PASS: byte-identical, reopened, 15 notes/15 sheets/148 charts"
+      },
+      "checkpoint": {
+        "library_file_id": "libfile_8a62012c3b5c8191aa8503294a3a21b6",
+        "version": 0,
+        "sha256": "cc9320d25e1989ca58a099a6b5c57554c8c286d567ae4377ccdaa1371edd3f22",
+        "readback": "SHA一致・ZIP CRC PASS",
+        "content": "注記生成コード、接合保持検査コード、変更台帳、検査JSON、隔離Native印刷PDF/PNG"
+      },
+      "changes": [
+        {
+          "issue": "C04",
+          "sheet": "Ⅳ事務データ",
+          "range": "D203:AC203",
+          "text": "C04 年度参考 | S10 R7 annual city 25.6 days (table62 p53): different period, no comparison.",
+          "targets": [
+            "S10-09 annual"
+          ]
+        },
+        {
+          "issue": "C04",
+          "sheet": "Ⅳ事務データ",
+          "range": "D209:AC209",
+          "text": "C04 未検証・比較/結論対象外 | J208 city UNVERIFIED: exclude comparison/conclusion.",
+          "targets": [
+            "J208",
+            "P208",
+            "V208"
+          ]
+        },
+        {
+          "issue": "C04",
+          "sheet": "Ⅳ事務データ",
+          "range": "D221:AC221",
+          "text": "C04 図の市値は比較/結論対象外 | City figure UNVERIFIED; S10 annual reference is separate.",
+          "targets": [
+            "image49.png"
+          ]
+        },
+        {
+          "issue": "C10",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "range": "C74:AD74",
+          "text": "C10 未検証・比較/結論対象外 | Medication labels/counts/rates UNVERIFIED.",
+          "targets": [
+            "P70",
+            "H/J/L/N/P/R71:73"
+          ]
+        },
+        {
+          "issue": "C10",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "range": "C84:AD84",
+          "text": "C10 chart78 保管表示のみ | Medication chart UNVERIFIED: exclude comparison/conclusion.",
+          "targets": [
+            "chart78.xml"
+          ]
+        },
+        {
+          "issue": "C09",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "range": "D117:AD119",
+          "text": "C09 N110:N116：市の分母J109=0のため未算出（元数式エラー保持）。\n0%・資料待ちと扱わない。県・全国の率は対象外。分析要点参照。\nNOT COMPUTABLE: denominator=0; not 0%; original errors retained.",
+          "targets": [
+            "N110:N116"
+          ]
+        },
+        {
+          "issue": "C11",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "range": "D372:AD372",
+          "text": "C11 正式分母待ち | ONLY N/T/Z370:371 held: denominator unverified; no comparisons.",
+          "targets": [
+            "N370",
+            "T370",
+            "Z370",
+            "N371",
+            "T371",
+            "Z371"
+          ]
+        },
+        {
+          "issue": "C11",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "range": "D385:AD386",
+          "text": "C11 N370/T370/Z370：正式分母待ち、指定率は比較/結論対象外。分析要点参照。\nONLY N370/T370/Z370 held: denominator unverified; exclude comparison.",
+          "targets": [
+            "N370",
+            "T370",
+            "Z370",
+            "image33.png"
+          ]
+        },
+        {
+          "issue": "C11",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "range": "D399:AD400",
+          "text": "C11 N371/T371/Z371：正式分母待ち、指定率は比較/結論対象外。分析要点参照。\nONLY N371/T371/Z371 held: denominator unverified; exclude comparison.",
+          "targets": [
+            "N371",
+            "T371",
+            "Z371",
+            "image34.png"
+          ]
+        },
+        {
+          "issue": "C11",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "range": "D433:AD433",
+          "text": "C11 正式分母待ち | ONLY T/Z431:432 held; city N431:N432 NOT held.",
+          "targets": [
+            "T431",
+            "Z431",
+            "T432",
+            "Z432"
+          ]
+        },
+        {
+          "issue": "C11",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "range": "D446:AD447",
+          "text": "C11 T431/Z431：正式分母待ち、指定率は比較/結論対象外。分析要点参照。\nONLY T431/Z431 held: denominator unverified; exclude comparison. City N431 NOT held.",
+          "targets": [
+            "T431",
+            "Z431",
+            "image35.png"
+          ]
+        },
+        {
+          "issue": "C11",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "range": "D460:AD461",
+          "text": "C11 T432/Z432：正式分母待ち、指定率は比較/結論対象外。分析要点参照。\nONLY T432/Z432 held: denominator unverified; exclude comparison. City N432 NOT held.",
+          "targets": [
+            "T432",
+            "Z432",
+            "image36.png"
+          ]
+        },
+        {
+          "issue": "C11",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "range": "D494:AD494",
+          "text": "C11 正式分母待ち | ONLY T/Z492:493 held; city N492:N493 NOT held.",
+          "targets": [
+            "T492",
+            "Z492",
+            "T493",
+            "Z493"
+          ]
+        },
+        {
+          "issue": "C11",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "range": "D507:AD508",
+          "text": "C11 T492/Z492：正式分母待ち、指定率は比較/結論対象外。分析要点参照。\nONLY T492/Z492 held: denominator unverified; exclude comparison. City N492 NOT held.",
+          "targets": [
+            "T492",
+            "Z492",
+            "image37.png"
+          ]
+        },
+        {
+          "issue": "C11",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "range": "D521:AD522",
+          "text": "C11 T493/Z493：正式分母待ち、指定率は比較/結論対象外。分析要点参照。\nONLY T493/Z493 held: denominator unverified; exclude comparison. City N493 NOT held.",
+          "targets": [
+            "T493",
+            "Z493",
+            "image38.png"
+          ]
+        }
+      ],
+      "C11_exact_S01_14_rates": [
+        "N370",
+        "T370",
+        "Z370",
+        "N371",
+        "T371",
+        "Z371",
+        "T431",
+        "Z431",
+        "T432",
+        "Z432",
+        "T492",
+        "Z492",
+        "T493",
+        "Z493"
+      ],
+      "C11_unheld_city_cells_preserved": [
+        "N431",
+        "N432",
+        "N492",
+        "N493"
+      ],
+      "C09_unrelated_figure_not_marked": {
+        "image": "image18.png",
+        "reason": "全体軽度変更率の自治体分布。N110:N116の軽度変更構成比ではなく、未算出と一律表示しない。"
+      },
+      "checks": {
+        "schema": "care_t11_e20_03_validation/v1",
+        "result": "IMPLEMENTED_STRUCTURE_PASS_JAPANESE_PRINT_HELD",
+        "source_commit": "f342d5187ab211aa99a4633c21282942645a6854",
+        "base_sha256": "38de9fc6dc34045eb3aa2b17597bb0c8aceb9ac2d513c9fe6432fe263dbcfae5",
+        "work_copy_sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+        "sheets": 15,
+        "charts": 148,
+        "notes": 15,
+        "C11_exact_14_cells": [
+          "N370",
+          "T370",
+          "Z370",
+          "N371",
+          "T371",
+          "Z371",
+          "T431",
+          "Z431",
+          "T432",
+          "Z432",
+          "T492",
+          "Z492",
+          "T493",
+          "Z493"
+        ],
+        "C11_highlight_style_cells_including_merged_blanks": [
+          "AA370",
+          "AA371",
+          "AA431",
+          "AA432",
+          "AA492",
+          "AA493",
+          "N370",
+          "N371",
+          "O370",
+          "O371",
+          "T370",
+          "T371",
+          "T431",
+          "T432",
+          "T492",
+          "T493",
+          "U370",
+          "U371",
+          "U431",
+          "U432",
+          "U492",
+          "U493",
+          "Z370",
+          "Z371",
+          "Z431",
+          "Z432",
+          "Z492",
+          "Z493"
+        ],
+        "changed_parts": [
+          "xl/styles.xml",
+          "xl/worksheets/sheet12.xml",
+          "xl/worksheets/sheet14.xml",
+          "xl/worksheets/sheet8.xml"
+        ],
+        "original_values_formulas_unchanged": true,
+        "chart_series_axes_anchors_images_byte_identical": true,
+        "E20_02_summary_byte_identical": true,
+        "print_areas_breaks_hidden_rows_columns_row_heights_unchanged": true,
+        "print_annotation_render": {
+          "note_location_same_page": "PASS",
+          "English_warning_visibility": "PASS",
+          "overlap_and_clipping": "PASS_FOR_15_NOTES",
+          "Japanese_glyphs": "FAIL_ENVIRONMENT",
+          "probe_sha256": "88cf521599a339e954cc0fe8513fd8b070469049cf5dbf515aac95ec01450c29",
+          "probe_pages": 11,
+          "target_pages": [
+            1,
+            3,
+            5,
+            6,
+            7,
+            11
+          ],
+          "scope": "隔離印刷確認コピーで対象3シートの元ページブロックを描画。作業コピーの印刷設定自体は不変更。"
+        },
+        "designation": "作業コピー。候補v2・完成品認定なし。",
+        "native_japanese_fonts_available": false,
+        "native_engine": "LibreOfficeDev 26.8.0.0.alpha0",
+        "full_E20_03_acceptance": "HELD_JAPANESE_PRINT_READABILITY",
+        "notes_bilingual": true,
+        "next_operation": "日本語フォント対応環境で同じ注記15か所を実描画してE20-03の印刷可読性を再判定。その後にE20-04を別単位で進める。",
+        "prior_error_resolution": [
+          {
+            "error": "ドナーworkbook relationshipが絶対/xlパスでxlを重複付加",
+            "resolution": "絶対と相対のTargetを区別して接合成功"
+          }
+        ]
+      },
+      "designation": "作業コピー。新候補完成認定なし。",
+      "not_run": [
+        "E20-04全生成再現・再計算",
+        "完成候補の独立評価"
+      ],
+      "remaining": "日本語セル文字・注記のNative印刷字形が欠落。E20-03全体PASSは付けず、日本語対応環境で15注記を再描画・再検査する。",
+      "next_action": "日本語フォント対応環境で同じ注記15か所を実描画してE20-03の印刷可読性を再判定。その後にE20-04を別単位で進める。",
+      "STATE_modified": false,
+      "other_role_reports_modified": false,
+      "old_candidate_modified": false,
+      "C03_reapplied": false
     }
   },
   "outputs": [
@@ -911,7 +1235,7 @@
     }
   ],
   "next_role": "10",
-  "next_action": "E20-03局所注記を次の小単位で実施。E20-04全生成再現と日本語実描画は未実施を維持。",
+  "next_action": "日本語フォント対応環境で同じ注記15か所を実描画してE20-03の印刷可読性を再判定。その後にE20-04を別単位で進める。",
   "restart_condition": "20の独立評価、C04/C10/C11等の正式根拠、日本語対応TTF/OTFまたは描画環境が得られた時点で該当保留を解消し新候補版を固定。",
   "candidate": {
     "id": "care-S01-20261009-v1",
@@ -971,15 +1295,27 @@
     "japanese_font": "unavailable; Japanese glyphs missing in PDF visual check"
   },
   "recovery_checkpoint": {
-    "role": "10",
-    "plan_revision": "2.4",
-    "source_commit": "afa996bc6a3d7a82b7d1fd04a0381e8abcfa3833",
-    "checkpoint_saved_at": "2026-10-10T13:07:27+09:00",
-    "last_successful_operation": "T09保存済みS10照合を再利用し、S10-01～11とC04/C10/C11/C12/C09/C13/C14/MのT10構造化仕分けおよび検査を別JSON出力に保存、読戻し内容一致を確認。",
-    "stopped_at": "T10構造化仕分け・読戻し後。T11、候補生成、T12ログ集約には未着手。",
-    "last_error": "今回の最初の書込みは自動承認レビューで一度拒否。リポジトリ所有者一致・private公開範囲・push権限を読取確認した後、保存に成功。以後の保存/読戻しでエラーなし。",
-    "recovered_work": "前回確認時、作業フォルダに2.3/2.4未保存中間成果はなく、未保存作業は回収不能。今回はT10出力2件をGitHubに保存。",
-    "next_action": "次回T11を開始。S01原本と旧候補は変更せず、C03再適用なし、C11保留と品質ゲート維持。"
+    "last_successful_operation": "同一作業コピーID版2と途中成果ZIP版0を保存。読戻しSHA一致・再開封15枚/148グラフ/15注記・ZIP CRC PASS。",
+    "stopped_stage": "E20-03局所注記実装と印刷確認。日本語Native字形は未合格。",
+    "last_error": "Native PDFで日本語セル字形欠落。日本語フォント未検出。注記枠・英語警告は同ページで可視、切れ/重なりなし。",
+    "recovered_results": [
+      {
+        "library_file_id": "libfile_5b4c950910fc8191930febed5dbb7889",
+        "file_id": "file_00000000c64481f7b22d7afd3cd60e8b",
+        "version": 2,
+        "sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+        "readback_sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+        "readback": "PASS: byte-identical, reopened, 15 notes/15 sheets/148 charts"
+      },
+      {
+        "library_file_id": "libfile_8a62012c3b5c8191aa8503294a3a21b6",
+        "version": 0,
+        "sha256": "cc9320d25e1989ca58a099a6b5c57554c8c286d567ae4377ccdaa1371edd3f22",
+        "readback": "SHA一致・ZIP CRC PASS",
+        "content": "注記生成コード、接合保持検査コード、変更台帳、検査JSON、隔離Native印刷PDF/PNG"
+      }
+    ],
+    "next_operation": "日本語フォント対応環境で同じ注記15か所を実描画してE20-03の印刷可読性を再判定。その後にE20-04を別単位で進める。"
   },
   "execution_checkpoints": [
     {
@@ -1121,12 +1457,337 @@
       "next_action": "E20-03局所注記を次の小単位で実施。E20-04全生成再現と日本語実描画は未実施を維持。",
       "workbook_modified_this_run": false,
       "STATE_modified": false
+    },
+    {
+      "task_id": "T11_E20-03",
+      "source_commit": "f342d5187ab211aa99a4633c21282942645a6854",
+      "pre_save_rechecked_commit": "f342d5187ab211aa99a4633c21282942645a6854",
+      "result": "IMPLEMENTED_STRUCTURE_PASS_JAPANESE_PRINT_HELD",
+      "request_at": "2026-10-10T18:45:54+09:00",
+      "base_work_copy": {
+        "library_file_id": "libfile_5b4c950910fc8191930febed5dbb7889",
+        "version": 1,
+        "sha256": "38de9fc6dc34045eb3aa2b17597bb0c8aceb9ac2d513c9fe6432fe263dbcfae5"
+      },
+      "work_copy": {
+        "library_file_id": "libfile_5b4c950910fc8191930febed5dbb7889",
+        "file_id": "file_00000000c64481f7b22d7afd3cd60e8b",
+        "version": 2,
+        "sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+        "readback_sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+        "readback": "PASS: byte-identical, reopened, 15 notes/15 sheets/148 charts"
+      },
+      "checkpoint": {
+        "library_file_id": "libfile_8a62012c3b5c8191aa8503294a3a21b6",
+        "version": 0,
+        "sha256": "cc9320d25e1989ca58a099a6b5c57554c8c286d567ae4377ccdaa1371edd3f22",
+        "readback": "SHA一致・ZIP CRC PASS",
+        "content": "注記生成コード、接合保持検査コード、変更台帳、検査JSON、隔離Native印刷PDF/PNG"
+      },
+      "changes": [
+        {
+          "issue": "C04",
+          "sheet": "Ⅳ事務データ",
+          "range": "D203:AC203",
+          "text": "C04 年度参考 | S10 R7 annual city 25.6 days (table62 p53): different period, no comparison.",
+          "targets": [
+            "S10-09 annual"
+          ]
+        },
+        {
+          "issue": "C04",
+          "sheet": "Ⅳ事務データ",
+          "range": "D209:AC209",
+          "text": "C04 未検証・比較/結論対象外 | J208 city UNVERIFIED: exclude comparison/conclusion.",
+          "targets": [
+            "J208",
+            "P208",
+            "V208"
+          ]
+        },
+        {
+          "issue": "C04",
+          "sheet": "Ⅳ事務データ",
+          "range": "D221:AC221",
+          "text": "C04 図の市値は比較/結論対象外 | City figure UNVERIFIED; S10 annual reference is separate.",
+          "targets": [
+            "image49.png"
+          ]
+        },
+        {
+          "issue": "C10",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "range": "C74:AD74",
+          "text": "C10 未検証・比較/結論対象外 | Medication labels/counts/rates UNVERIFIED.",
+          "targets": [
+            "P70",
+            "H/J/L/N/P/R71:73"
+          ]
+        },
+        {
+          "issue": "C10",
+          "sheet": "Ⅱ調査項目データ（第５群）",
+          "range": "C84:AD84",
+          "text": "C10 chart78 保管表示のみ | Medication chart UNVERIFIED: exclude comparison/conclusion.",
+          "targets": [
+            "chart78.xml"
+          ]
+        },
+        {
+          "issue": "C09",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "range": "D117:AD119",
+          "text": "C09 N110:N116：市の分母J109=0のため未算出（元数式エラー保持）。\n0%・資料待ちと扱わない。県・全国の率は対象外。分析要点参照。\nNOT COMPUTABLE: denominator=0; not 0%; original errors retained.",
+          "targets": [
+            "N110:N116"
+          ]
+        },
+        {
+          "issue": "C11",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "range": "D372:AD372",
+          "text": "C11 正式分母待ち | ONLY N/T/Z370:371 held: denominator unverified; no comparisons.",
+          "targets": [
+            "N370",
+            "T370",
+            "Z370",
+            "N371",
+            "T371",
+            "Z371"
+          ]
+        },
+        {
+          "issue": "C11",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "range": "D385:AD386",
+          "text": "C11 N370/T370/Z370：正式分母待ち、指定率は比較/結論対象外。分析要点参照。\nONLY N370/T370/Z370 held: denominator unverified; exclude comparison.",
+          "targets": [
+            "N370",
+            "T370",
+            "Z370",
+            "image33.png"
+          ]
+        },
+        {
+          "issue": "C11",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "range": "D399:AD400",
+          "text": "C11 N371/T371/Z371：正式分母待ち、指定率は比較/結論対象外。分析要点参照。\nONLY N371/T371/Z371 held: denominator unverified; exclude comparison.",
+          "targets": [
+            "N371",
+            "T371",
+            "Z371",
+            "image34.png"
+          ]
+        },
+        {
+          "issue": "C11",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "range": "D433:AD433",
+          "text": "C11 正式分母待ち | ONLY T/Z431:432 held; city N431:N432 NOT held.",
+          "targets": [
+            "T431",
+            "Z431",
+            "T432",
+            "Z432"
+          ]
+        },
+        {
+          "issue": "C11",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "range": "D446:AD447",
+          "text": "C11 T431/Z431：正式分母待ち、指定率は比較/結論対象外。分析要点参照。\nONLY T431/Z431 held: denominator unverified; exclude comparison. City N431 NOT held.",
+          "targets": [
+            "T431",
+            "Z431",
+            "image35.png"
+          ]
+        },
+        {
+          "issue": "C11",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "range": "D460:AD461",
+          "text": "C11 T432/Z432：正式分母待ち、指定率は比較/結論対象外。分析要点参照。\nONLY T432/Z432 held: denominator unverified; exclude comparison. City N432 NOT held.",
+          "targets": [
+            "T432",
+            "Z432",
+            "image36.png"
+          ]
+        },
+        {
+          "issue": "C11",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "range": "D494:AD494",
+          "text": "C11 正式分母待ち | ONLY T/Z492:493 held; city N492:N493 NOT held.",
+          "targets": [
+            "T492",
+            "Z492",
+            "T493",
+            "Z493"
+          ]
+        },
+        {
+          "issue": "C11",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "range": "D507:AD508",
+          "text": "C11 T492/Z492：正式分母待ち、指定率は比較/結論対象外。分析要点参照。\nONLY T492/Z492 held: denominator unverified; exclude comparison. City N492 NOT held.",
+          "targets": [
+            "T492",
+            "Z492",
+            "image37.png"
+          ]
+        },
+        {
+          "issue": "C11",
+          "sheet": "Ⅲ審査判定データ（変更率）",
+          "range": "D521:AD522",
+          "text": "C11 T493/Z493：正式分母待ち、指定率は比較/結論対象外。分析要点参照。\nONLY T493/Z493 held: denominator unverified; exclude comparison. City N493 NOT held.",
+          "targets": [
+            "T493",
+            "Z493",
+            "image38.png"
+          ]
+        }
+      ],
+      "C11_exact_S01_14_rates": [
+        "N370",
+        "T370",
+        "Z370",
+        "N371",
+        "T371",
+        "Z371",
+        "T431",
+        "Z431",
+        "T432",
+        "Z432",
+        "T492",
+        "Z492",
+        "T493",
+        "Z493"
+      ],
+      "C11_unheld_city_cells_preserved": [
+        "N431",
+        "N432",
+        "N492",
+        "N493"
+      ],
+      "C09_unrelated_figure_not_marked": {
+        "image": "image18.png",
+        "reason": "全体軽度変更率の自治体分布。N110:N116の軽度変更構成比ではなく、未算出と一律表示しない。"
+      },
+      "checks": {
+        "schema": "care_t11_e20_03_validation/v1",
+        "result": "IMPLEMENTED_STRUCTURE_PASS_JAPANESE_PRINT_HELD",
+        "source_commit": "f342d5187ab211aa99a4633c21282942645a6854",
+        "base_sha256": "38de9fc6dc34045eb3aa2b17597bb0c8aceb9ac2d513c9fe6432fe263dbcfae5",
+        "work_copy_sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+        "sheets": 15,
+        "charts": 148,
+        "notes": 15,
+        "C11_exact_14_cells": [
+          "N370",
+          "T370",
+          "Z370",
+          "N371",
+          "T371",
+          "Z371",
+          "T431",
+          "Z431",
+          "T432",
+          "Z432",
+          "T492",
+          "Z492",
+          "T493",
+          "Z493"
+        ],
+        "C11_highlight_style_cells_including_merged_blanks": [
+          "AA370",
+          "AA371",
+          "AA431",
+          "AA432",
+          "AA492",
+          "AA493",
+          "N370",
+          "N371",
+          "O370",
+          "O371",
+          "T370",
+          "T371",
+          "T431",
+          "T432",
+          "T492",
+          "T493",
+          "U370",
+          "U371",
+          "U431",
+          "U432",
+          "U492",
+          "U493",
+          "Z370",
+          "Z371",
+          "Z431",
+          "Z432",
+          "Z492",
+          "Z493"
+        ],
+        "changed_parts": [
+          "xl/styles.xml",
+          "xl/worksheets/sheet12.xml",
+          "xl/worksheets/sheet14.xml",
+          "xl/worksheets/sheet8.xml"
+        ],
+        "original_values_formulas_unchanged": true,
+        "chart_series_axes_anchors_images_byte_identical": true,
+        "E20_02_summary_byte_identical": true,
+        "print_areas_breaks_hidden_rows_columns_row_heights_unchanged": true,
+        "print_annotation_render": {
+          "note_location_same_page": "PASS",
+          "English_warning_visibility": "PASS",
+          "overlap_and_clipping": "PASS_FOR_15_NOTES",
+          "Japanese_glyphs": "FAIL_ENVIRONMENT",
+          "probe_sha256": "88cf521599a339e954cc0fe8513fd8b070469049cf5dbf515aac95ec01450c29",
+          "probe_pages": 11,
+          "target_pages": [
+            1,
+            3,
+            5,
+            6,
+            7,
+            11
+          ],
+          "scope": "隔離印刷確認コピーで対象3シートの元ページブロックを描画。作業コピーの印刷設定自体は不変更。"
+        },
+        "designation": "作業コピー。候補v2・完成品認定なし。",
+        "native_japanese_fonts_available": false,
+        "native_engine": "LibreOfficeDev 26.8.0.0.alpha0",
+        "full_E20_03_acceptance": "HELD_JAPANESE_PRINT_READABILITY",
+        "notes_bilingual": true,
+        "next_operation": "日本語フォント対応環境で同じ注記15か所を実描画してE20-03の印刷可読性を再判定。その後にE20-04を別単位で進める。",
+        "prior_error_resolution": [
+          {
+            "error": "ドナーworkbook relationshipが絶対/xlパスでxlを重複付加",
+            "resolution": "絶対と相対のTargetを区別して接合成功"
+          }
+        ]
+      },
+      "designation": "作業コピー。新候補完成認定なし。",
+      "not_run": [
+        "E20-04全生成再現・再計算",
+        "完成候補の独立評価"
+      ],
+      "remaining": "日本語セル文字・注記のNative印刷字形が欠落。E20-03全体PASSは付けず、日本語対応環境で15注記を再描画・再検査する。",
+      "next_action": "日本語フォント対応環境で同じ注記15か所を実描画してE20-03の印刷可読性を再判定。その後にE20-04を別単位で進める。",
+      "STATE_modified": false,
+      "other_role_reports_modified": false,
+      "old_candidate_modified": false,
+      "C03_reapplied": false
     }
   ],
   "previous_report_checkpoint": {
-    "status": "T10_structured_classification_saved_with_documented_limits",
-    "task_id": "T10",
-    "source_commit": "afa996bc6a3d7a82b7d1fd04a0381e8abcfa3833",
-    "updated_at": "2026-10-10T13:07:27+09:00"
-  }
+    "status": "T11_E20_02_scope_structure_PASS_remaining_units_pending",
+    "task_id": "T11_E20-02",
+    "source_commit": "0ca348449ba7b05b4ac8ae3f59351abdaf28a5c6",
+    "updated_at": "2026-10-10T18:41:59+09:00"
+  },
+  "updated_at_basis": "今回ユーザー指示の送信日時。完了時刻の計測値ではない。"
 }
