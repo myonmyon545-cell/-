@@ -1,12 +1,12 @@
 {
   "schema": "care_handoff/v1",
   "role": "10",
-  "plan_revision": "2.2",
-  "status": "candidate_saved_waiting_independent_review_and_visual_condition",
-  "task_id": "T06",
-  "source_commit": "e3e5258ef1ea6424780daf22e2b38b1e16e1c8a6",
+  "plan_revision": "2.4",
+  "status": "recovery_checkpoint_saved_after_T09_input_ledger",
+  "task_id": "T09",
+  "source_commit": "f94932dbe91e48e40272d83f101736de8b576caa",
   "pre_save_rechecked_commit": "e3e5258ef1ea6424780daf22e2b38b1e16e1c8a6",
-  "updated_at": "2026-10-09T16:29:07+09:00",
+  "updated_at": "2026-10-10T13:02:00+09:00",
   "startup_read": {
     "branch": "main",
     "head_sha": "e3e5258ef1ea6424780daf22e2b38b1e16e1c8a6",
@@ -789,5 +789,16 @@
     "xlrd": "2.0.1",
     "LibreOffice": "26.8 alpha",
     "japanese_font": "unavailable; Japanese glyphs missing in PDF visual check"
+  },
+  "recovery_checkpoint": {
+    "role": "10",
+    "plan_revision": "2.4",
+    "source_commit": "1aef8932ef36c614b7aca957c42519a82813119f",
+    "checkpoint_saved_at": "2026-10-10T13:02:00+09:00",
+    "last_successful_operation": "S10添付実体のSHA256・サイズ・DOCX形式を照合し、S10-01～11の根拠ブロックをDOCX表セル/本文と照合。入力台帳へS10を追記保存。",
+    "stopped_at": "T09完了後。T10/T11および新候補作成には未着手。",
+    "last_error": "現在確認できる実行記録に今回の一時作業の最終エラー記録なし。原因不明ではなく、エラーの発生自体を確認できない。",
+    "recovered_work": "作業ディレクトリに残る2.3/2.4中間生成物は確認できず。未保存作業は回収不能。既存の保存済みv1およびS10根拠台帳は保持。",
+    "next_action": "PLAN 2.4の決定に従いT10の承認判断・期間/母集団仕分けを小単位で開始。S01原本と旧候補は変更せず、C03は再適用せず、C11保留と品質ゲートを維持。"
   }
 }
