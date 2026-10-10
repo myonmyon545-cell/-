@@ -2,27 +2,35 @@
   "schema": "care_handoff/v1",
   "role": "10",
   "plan_revision": "2.4",
-  "status": "recovery_checkpoint_saved_after_T09_input_ledger",
-  "task_id": "T09",
-  "source_commit": "f94932dbe91e48e40272d83f101736de8b576caa",
-  "pre_save_rechecked_commit": "e3e5258ef1ea6424780daf22e2b38b1e16e1c8a6",
-  "updated_at": "2026-10-10T13:02:00+09:00",
+  "status": "T10_structured_classification_saved_with_documented_limits",
+  "task_id": "T10",
+  "source_commit": "afa996bc6a3d7a82b7d1fd04a0381e8abcfa3833",
+  "pre_save_rechecked_commit": "afa996bc6a3d7a82b7d1fd04a0381e8abcfa3833",
+  "updated_at": "2026-10-10T13:07:27+09:00",
   "startup_read": {
     "branch": "main",
-    "head_sha": "e3e5258ef1ea6424780daf22e2b38b1e16e1c8a6",
+    "head_sha": "afa996bc6a3d7a82b7d1fd04a0381e8abcfa3833",
     "paths": [
       "PLAN.md",
       "STATE.json",
       "reports/10.json",
       "reports/20.json",
-      "reports/30.json"
+      "reports/30.json",
+      "decisions/2026-10-10_user_decisions.json",
+      "references/S10_excerpts.json",
+      "references/S10_integration.md",
+      "src/input_manifest.json"
     ],
     "blob_sha_by_path": {
-      "PLAN.md": "6e7076831d8b5bdcc85acd346db2161b49c9579b",
-      "STATE.json": "e3119ecc8a658005c987cb6660ad737975b1cf0d",
-      "reports/10.json": "b78dd89ecd8019d2fd6f68dfa81d45aa191818fc",
-      "reports/20.json": "8a62a506c6ea56688e7231b44470cabd35d5912a",
-      "reports/30.json": "d46d6c69f11d0b1457a04e58acc9c2e032ccabe3"
+      "PLAN.md": "dab4980781f5d0d3061b78aeea91b7eb7e06efc3",
+      "STATE.json": "b37f05ad3eeccab551ead6d688bc58cf47e13548",
+      "reports/10.json": "1918a72711f2c79c82491b0979d6199e6bd4f47b",
+      "reports/20.json": "57863de7a6ba499b2872df9cf0b6549c43afa7e7",
+      "reports/30.json": "d790c1686cb72176664af414cabc82cece8bacca",
+      "decisions/2026-10-10_user_decisions.json": "95fd03a84a39fe68b49d69c570c590ea40250301",
+      "references/S10_excerpts.json": "93d812066d0b7ade5142c325b5a6ce7762bddd72",
+      "references/S10_integration.md": "a1e5dbe3c9d882be0d53a786470249596b2ad7c7",
+      "src/input_manifest.json": "b45dbfbb8eccc7845276c3a7133adbee3f787cc2"
     },
     "all_same_commit": true,
     "initial_completed_tasks": [
@@ -31,7 +39,7 @@
       "T04"
     ],
     "latest_state_revision": 5,
-    "latest_read_scope": "main固定HEADの5管理ファイル。PLAN 2.2、20のC03独立PASS、30のE20-01/C10/C11保存案を確認"
+    "latest_read_scope": "main HEAD afa996b固定でPLAN2.4、STATE、reports/10・20・30、決定JSON、S10 excerpts/integration、T09入力台帳を読取。T09既存照合を再利用してT10構造化仕分け。"
   },
   "inputs": [
     {
@@ -473,6 +481,24 @@
     "T08": {
       "status": "not_started",
       "reason": "20評価と日本語表示検査の未了。release gate未達"
+    },
+    "T09": {
+      "status": "completed_verified_reused",
+      "evidence": "src/input_manifest.json S10 record",
+      "scope": "T09の実バイトSHA・文書版・11根拠ブロックを照合済みの保存台帳を再利用。再実行なし。"
+    },
+    "T10": {
+      "status": "completed_with_documented_holds",
+      "evidence": [
+        "checks/T10_classification.json",
+        "checks/T10_classification_validation.json"
+      ],
+      "scope": "S10-01～11の構造化仕分けとC04/C10/C11/C12/C09/C13/C14/Mクロスカット記録。候補Excel生成なし。",
+      "limitations": [
+        "DOCXの厳密な行列セル番地はT09台帳に記録がなく、表/ページ/項目名で追跡。",
+        "S10-06年度帰属は節内確認まで条件付き。",
+        "C14の2920/2924確定訂正は未確認。"
+      ]
     }
   },
   "outputs": [
@@ -537,6 +563,20 @@
       "original_sheet_count": 14,
       "original_chart_count": 148,
       "scope": "20の初回独立評価対象。日本語描画未合格、正式資料待ちを保留表示して比較抑止。完成・暫定提出ではない。"
+    },
+    {
+      "type": "T10_S10_classification",
+      "path": "care-insurance-analysis/checks/T10_classification.json",
+      "blob_sha": "4ff0bfebe59a7a5d43913ce822768295065c4931",
+      "record_count": 11,
+      "readback_verified": true
+    },
+    {
+      "type": "T10_validation",
+      "path": "care-insurance-analysis/checks/T10_classification_validation.json",
+      "blob_sha": "908f5714732083a06d848f2371ade98634d3fb79",
+      "result": "PASS_WITH_DOCUMENTED_LIMITS",
+      "readback_verified": true
     }
   ],
   "checks": [
@@ -730,8 +770,8 @@
       "needed_action": "日本語対応TTF/OTFまたは日本語対応描画環境を提供。元表と要点シートを再出力して字形とレイアウトを確認"
     }
   ],
-  "next_role": "20",
-  "next_action": "候補v1（保存ID libfile_7d32eed56014819184d160de1a2af7d5、版0、SHA固定）を全要件・全必須指標・出所・計算・表示について初回独立評価。30案のE20-01/C10/C11入力別保留、C03の既適用履歴を元資料と照合。日本語フォント環境で表示を再検査。00は後でSTATE統合。",
+  "next_role": "10",
+  "next_action": "次回はT11を小単位で開始。T10の仕分けJSONを適用し、先頭要点1枚/局所注記/保持・印刷・日本語・再現の検証へ進む。C11保留を維持し、STATEは00のみ更新。",
   "restart_condition": "20の独立評価、C04/C10/C11等の正式根拠、日本語対応TTF/OTFまたは描画環境が得られた時点で該当保留を解消し新候補版を固定。",
   "candidate": {
     "id": "care-S01-20261009-v1",
@@ -793,12 +833,12 @@
   "recovery_checkpoint": {
     "role": "10",
     "plan_revision": "2.4",
-    "source_commit": "1aef8932ef36c614b7aca957c42519a82813119f",
-    "checkpoint_saved_at": "2026-10-10T13:02:00+09:00",
-    "last_successful_operation": "S10添付実体のSHA256・サイズ・DOCX形式を照合し、S10-01～11の根拠ブロックをDOCX表セル/本文と照合。入力台帳へS10を追記保存。",
-    "stopped_at": "T09完了後。T10/T11および新候補作成には未着手。",
-    "last_error": "現在確認できる実行記録に今回の一時作業の最終エラー記録なし。原因不明ではなく、エラーの発生自体を確認できない。",
-    "recovered_work": "作業ディレクトリに残る2.3/2.4中間生成物は確認できず。未保存作業は回収不能。既存の保存済みv1およびS10根拠台帳は保持。",
-    "next_action": "PLAN 2.4の決定に従いT10の承認判断・期間/母集団仕分けを小単位で開始。S01原本と旧候補は変更せず、C03は再適用せず、C11保留と品質ゲートを維持。"
+    "source_commit": "afa996bc6a3d7a82b7d1fd04a0381e8abcfa3833",
+    "checkpoint_saved_at": "2026-10-10T13:07:27+09:00",
+    "last_successful_operation": "T09保存済みS10照合を再利用し、S10-01～11とC04/C10/C11/C12/C09/C13/C14/MのT10構造化仕分けおよび検査を別JSON出力に保存、読戻し内容一致を確認。",
+    "stopped_at": "T10構造化仕分け・読戻し後。T11、候補生成、T12ログ集約には未着手。",
+    "last_error": "今回の最初の書込みは自動承認レビューで一度拒否。リポジトリ所有者一致・private公開範囲・push権限を読取確認した後、保存に成功。以後の保存/読戻しでエラーなし。",
+    "recovered_work": "前回確認時、作業フォルダに2.3/2.4未保存中間成果はなく、未保存作業は回収不能。今回はT10出力2件をGitHubに保存。",
+    "next_action": "次回T11を開始。S01原本と旧候補は変更せず、C03再適用なし、C11保留と品質ゲート維持。"
   }
 }
