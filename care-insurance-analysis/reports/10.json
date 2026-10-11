@@ -2,11 +2,11 @@
   "schema": "care_handoff/v1",
   "role": "10",
   "plan_revision": "2.4",
-  "status": "T11_E20_04_unit2_path_fix_saved_PASS_unit_only_overall_NOT_PASS",
-  "task_id": "T11_E20-03",
-  "source_commit": "f342d5187ab211aa99a4633c21282942645a6854",
-  "pre_save_rechecked_commit": "f342d5187ab211aa99a4633c21282942645a6854",
-  "updated_at": "2026-10-10T20:50:18+09:00",
+  "status": "T11_E20_04_unit3_inspected_scope_applicability_unresolved",
+  "task_id": "T11_E20-04_unit3",
+  "source_commit": "5f95ce0ef2c40765a083cfdfda656cce74536174",
+  "pre_save_rechecked_commit": "5f95ce0ef2c40765a083cfdfda656cce74536174",
+  "updated_at": "2026-10-11T10:33:32+09:00",
   "startup_read": {
     "branch": "main",
     "head_sha": "afa996bc6a3d7a82b7d1fd04a0381e8abcfa3833",
@@ -1042,6 +1042,79 @@
       },
       "next_action": "次の小単位は保存済みE20-03作業コピー版2を--base、新しい隔離出力を--outに指定した印刷確認コピー生成と構造検査。今回未実施。全工程再実行・再計算は別単位の指示を待つ。",
       "designation": "実行入口のパス修正のみ。候補v2・完成品認定なし。"
+    },
+    "T11_E20-04_unit3": {
+      "task_id": "T11_E20-04_unit3",
+      "source_commit": "5f95ce0ef2c40765a083cfdfda656cce74536174",
+      "pre_save_rechecked_commit": "5f95ce0ef2c40765a083cfdfda656cce74536174",
+      "request_at": "2026-10-11T10:33:32+09:00",
+      "result": "STRUCTURE_CONFIRMED_PRINT_PROBE_SCOPE_UNRESOLVED",
+      "scope": "保存済み印刷確認コピーをLibraryから取得し、再生成せず読み取り専用でSHA・開封・ZIP・シート登録・グラフ部品・局所注記を実検査。",
+      "source_work_copy": {
+        "library_file_id": "libfile_5b4c950910fc8191930febed5dbb7889",
+        "file_id": "file_00000000c64481f7b22d7afd3cd60e8b",
+        "version": 2,
+        "expected_sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+        "before_sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+        "after_sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+        "unchanged": true
+      },
+      "print_probe": {
+        "library_file_id": "libfile_24c8577da2608191ad4e0a3ea03c75eb",
+        "file_id": "file_000000001cfc8209b30f36f57c1fc35f",
+        "file_name": "T11_E20_04_unit3_print_probe.xlsx",
+        "version": 0,
+        "sha256": "9f6e33239ef9065481d7c0227f402c7ff36ee74a4e71d32e201f1371a3abee64",
+        "size_bytes": 1645584
+      },
+      "checks": {
+        "sha256_from_library_bytes": "PASS",
+        "openpyxl_readonly_reopen": "PASS",
+        "zip_crc": "PASS",
+        "registered_sheets": {
+          "count": 3,
+          "names": [
+            "Ⅱ調査項目データ（第５群）",
+            "Ⅲ審査判定データ（変更率）",
+            "Ⅳ事務データ"
+          ],
+          "measurement": "PASS"
+        },
+        "chart_xml_parts": {
+          "count": 148,
+          "result": "PASS"
+        },
+        "local_notes": {
+          "count": 15,
+          "text_and_merge_verified": true,
+          "result": "PASS"
+        },
+        "source_work_copy_sha_unchanged": "PASS"
+      },
+      "requirement_scope": {
+        "plan_full_workbook_requirement": "PLAN 2.4 E20-02 summary says retain all 15 sheets for the completed analysis workbook.",
+        "print_probe_requirement": "No explicit 15-sheet requirement for the isolated print-confirmation copy was found in PLAN 2.4 or the examined E20-04 repair proposal.",
+        "verdict": "SCOPE_APPLICABILITY_UNRESOLVED; do not label the three-sheet probe structurally nonconforming absent an explicit print-probe requirement."
+      },
+      "implementation_cause": "Pinned make_print_probe.py uses AREAS with exactly three print-target sheets and filters workbook.xml registration to those sheets.",
+      "environment": {
+        "tools": "Python openpyxl read_only=True; zipfile and OOXML XML parsing",
+        "inspection": "Library materialized versioned bytes",
+        "japanese_print_readability": "NOT_TESTED_HELD"
+      },
+      "not_run": [
+        "Excel_generation",
+        "reproduction_ZIP_update",
+        "full_pipeline_replay",
+        "Excel_recalculation",
+        "native_Japanese_render",
+        "candidate_v2_certification"
+      ],
+      "E20_04_overall": "NOT_PASS",
+      "restart_position": "Do not regenerate. Resolve whether the print-probe acceptance scope is the three selected sheets or all 15 completed-workbook sheets, then inspect under the confirmed contract.",
+      "state_changed": false,
+      "other_role_reports_changed": false,
+      "workbooks_changed": false
     }
   },
   "outputs": [
@@ -1314,8 +1387,8 @@
     }
   ],
   "next_role": "10",
-  "next_action": "次の小単位は保存済みE20-03作業コピー版2を--base、新しい隔離出力を--outに指定した印刷確認コピー生成と構造検査。今回未実施。全工程再実行・再計算は別単位の指示を待つ。",
-  "restart_condition": "20の独立評価、C04/C10/C11等の正式根拠、日本語対応TTF/OTFまたは描画環境が得られた時点で該当保留を解消し新候補版を固定。",
+  "next_action": "Do not regenerate. Resolve whether the print-probe acceptance scope is the three selected sheets or all 15 completed-workbook sheets, then inspect under the confirmed contract.",
+  "restart_condition": "印刷確認コピーのシート数受入範囲をPLAN準拠で明確化し、その範囲に対するSHA・構造・印刷検査が完了するまでE20-04全体をPASSにしない。",
   "candidate": {
     "id": "care-S01-20261009-v1",
     "version": 1,
@@ -1939,6 +2012,79 @@
       },
       "next_action": "次の小単位は保存済みE20-03作業コピー版2を--base、新しい隔離出力を--outに指定した印刷確認コピー生成と構造検査。今回未実施。全工程再実行・再計算は別単位の指示を待つ。",
       "designation": "実行入口のパス修正のみ。候補v2・完成品認定なし。"
+    },
+    {
+      "task_id": "T11_E20-04_unit3",
+      "source_commit": "5f95ce0ef2c40765a083cfdfda656cce74536174",
+      "pre_save_rechecked_commit": "5f95ce0ef2c40765a083cfdfda656cce74536174",
+      "request_at": "2026-10-11T10:33:32+09:00",
+      "result": "STRUCTURE_CONFIRMED_PRINT_PROBE_SCOPE_UNRESOLVED",
+      "scope": "保存済み印刷確認コピーをLibraryから取得し、再生成せず読み取り専用でSHA・開封・ZIP・シート登録・グラフ部品・局所注記を実検査。",
+      "source_work_copy": {
+        "library_file_id": "libfile_5b4c950910fc8191930febed5dbb7889",
+        "file_id": "file_00000000c64481f7b22d7afd3cd60e8b",
+        "version": 2,
+        "expected_sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+        "before_sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+        "after_sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+        "unchanged": true
+      },
+      "print_probe": {
+        "library_file_id": "libfile_24c8577da2608191ad4e0a3ea03c75eb",
+        "file_id": "file_000000001cfc8209b30f36f57c1fc35f",
+        "file_name": "T11_E20_04_unit3_print_probe.xlsx",
+        "version": 0,
+        "sha256": "9f6e33239ef9065481d7c0227f402c7ff36ee74a4e71d32e201f1371a3abee64",
+        "size_bytes": 1645584
+      },
+      "checks": {
+        "sha256_from_library_bytes": "PASS",
+        "openpyxl_readonly_reopen": "PASS",
+        "zip_crc": "PASS",
+        "registered_sheets": {
+          "count": 3,
+          "names": [
+            "Ⅱ調査項目データ（第５群）",
+            "Ⅲ審査判定データ（変更率）",
+            "Ⅳ事務データ"
+          ],
+          "measurement": "PASS"
+        },
+        "chart_xml_parts": {
+          "count": 148,
+          "result": "PASS"
+        },
+        "local_notes": {
+          "count": 15,
+          "text_and_merge_verified": true,
+          "result": "PASS"
+        },
+        "source_work_copy_sha_unchanged": "PASS"
+      },
+      "requirement_scope": {
+        "plan_full_workbook_requirement": "PLAN 2.4 E20-02 summary says retain all 15 sheets for the completed analysis workbook.",
+        "print_probe_requirement": "No explicit 15-sheet requirement for the isolated print-confirmation copy was found in PLAN 2.4 or the examined E20-04 repair proposal.",
+        "verdict": "SCOPE_APPLICABILITY_UNRESOLVED; do not label the three-sheet probe structurally nonconforming absent an explicit print-probe requirement."
+      },
+      "implementation_cause": "Pinned make_print_probe.py uses AREAS with exactly three print-target sheets and filters workbook.xml registration to those sheets.",
+      "environment": {
+        "tools": "Python openpyxl read_only=True; zipfile and OOXML XML parsing",
+        "inspection": "Library materialized versioned bytes",
+        "japanese_print_readability": "NOT_TESTED_HELD"
+      },
+      "not_run": [
+        "Excel_generation",
+        "reproduction_ZIP_update",
+        "full_pipeline_replay",
+        "Excel_recalculation",
+        "native_Japanese_render",
+        "candidate_v2_certification"
+      ],
+      "E20_04_overall": "NOT_PASS",
+      "restart_position": "Do not regenerate. Resolve whether the print-probe acceptance scope is the three selected sheets or all 15 completed-workbook sheets, then inspect under the confirmed contract.",
+      "state_changed": false,
+      "other_role_reports_changed": false,
+      "workbooks_changed": false
     }
   ],
   "previous_report_checkpoint": {
@@ -1947,5 +2093,5 @@
     "source_commit": "0ca348449ba7b05b4ac8ae3f59351abdaf28a5c6",
     "updated_at": "2026-10-10T18:41:59+09:00"
   },
-  "updated_at_basis": "今回の指示送信時刻。実行完了時刻の実測ではない。"
+  "updated_at_basis": "今回の指示送信時刻。実行終了時刻の実測ではない。"
 }
