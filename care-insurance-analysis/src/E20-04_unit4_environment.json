@@ -1,0 +1,18 @@
+{
+  "task_id": "T11_E20-04_unit4",
+  "observed_at": "2026-10-12",
+  "runtime": {
+    "python": "3.12.14",
+    "node": "v24.19.0",
+    "codex_primary_runtime_root": "/opt/codex/runtimes/codex-primary-runtime",
+    "node_modules": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules",
+    "artifact_tool": "2.8.85",
+    "pandas": "2.2.3",
+    "openpyxl": "3.1.5",
+    "xlrd": "2.0.1",
+    "lxml": "6.1.1",
+    "Pillow": "12.3.0",
+    "libreoffice": "LibreOfficeDev 26.8.0.0.alpha0 2c87e51eeaa2b413ff4ae097b2705eea1995d8e5"
+  },
+  "scope_note": "Observed versions from this runtime. This task did not run the full replay, Excel generation, recalculation, save/reopen, or native rendering."
+}
