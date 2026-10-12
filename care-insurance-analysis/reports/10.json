@@ -2,11 +2,11 @@
   "schema": "care_handoff/v1",
   "role": "10",
   "plan_revision": "2.4",
-  "status": "T11_E20_04_unit3_inspected_scope_applicability_unresolved",
-  "task_id": "T11_E20-04_unit3",
-  "source_commit": "5f95ce0ef2c40765a083cfdfda656cce74536174",
-  "pre_save_rechecked_commit": "5f95ce0ef2c40765a083cfdfda656cce74536174",
-  "updated_at": "2026-10-11T10:33:32+09:00",
+  "status": "T11_E20-04_unit4_documented_path_audit_pass_full_replay_pending",
+  "task_id": "T11_E20-04_unit4",
+  "source_commit": "11573220bd30c2047d8fc39ccd1559ba8b2329e4",
+  "pre_save_rechecked_commit": "5b1d3f5244d7a19bb5a548ceb7ab0c69094707ce",
+  "updated_at": "2026-10-12",
   "startup_read": {
     "branch": "main",
     "head_sha": "afa996bc6a3d7a82b7d1fd04a0381e8abcfa3833",
@@ -1114,11 +1114,107 @@
       "restart_position": "Do not regenerate. Resolve whether the print-probe acceptance scope is the three selected sheets or all 15 completed-workbook sheets, then inspect under the confirmed contract.",
       "state_changed": false,
       "other_role_reports_changed": false,
-      "workbooks_changed": false
+      "workbooks_changed": false,
+      "scope_resolution": {
+        "decided_at": "2026-10-12",
+        "decision": "Three affected annotation sheets are the defined print-probe scope; the completed workbook remains subject to the 15-sheet requirement.",
+        "print_probe_structure": "PASS",
+        "measurement_reused": {
+          "library_file_id": "libfile_24c8577da2608191ad4e0a3ea03c75eb",
+          "version": 0,
+          "sha256": "9f6e33239ef9065481d7c0227f402c7ff36ee74a4e71d32e201f1371a3abee64",
+          "registered_sheets": 3,
+          "chart_xml_parts": 148,
+          "verified_local_notes": 15,
+          "openpyxl_reopen": "PASS",
+          "zip_crc": "PASS"
+        },
+        "source_work_copy": {
+          "library_file_id": "libfile_5b4c950910fc8191930febed5dbb7889",
+          "version": 2,
+          "sha256_before_after": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+          "unchanged": true
+        },
+        "result": "STRUCTURE_PASS_FOR_DEFINED_PRINT_PROBE_SCOPE",
+        "japanese_print_readability": "HELD_NOT_RENDERED",
+        "E20_04_overall": "NOT_PASS",
+        "prior_unresolved_scope_note": "Retained as the historical finding at unit 3 time; this addendum resolves the print-probe scope without changing measured values."
+      }
+    },
+    "T11_E20-04_unit4": {
+      "task_id": "T11_E20-04_unit4",
+      "source_main_commit": "11573220bd30c2047d8fc39ccd1559ba8b2329e4",
+      "pre_save_rechecked_commit": "5b1d3f5244d7a19bb5a548ceb7ab0c69094707ce",
+      "duplicate_check": "No unit-4 entry existed in reports/10.json at pinned source commit.",
+      "scope_decision": "Unit-3 print probe is for the three annotation target sheets; completed workbook remains 15 sheets.",
+      "procedure": {
+        "file": "care-insurance-analysis/src/E20-04_unit4_repro_runbook_draft.md",
+        "git_blob_sha": "62c3e30b68db03940ea24966dccfc8670dc70fd2",
+        "status": "DRAFT_SAVED_NOT_YET_IN_REPRODUCTION_ZIP",
+        "command_verified_against": "src/replay_v2.py in saved ZIP v2",
+        "actual_entry": "python src/replay_v2.py --bundle . --sources ./sources --node <runtime-node> --node-modules <runtime-node_modules> --out ./replay-unit4",
+        "required_inputs": [
+          "S01",
+          "S02",
+          "S03",
+          "S04",
+          "S05",
+          "S06",
+          "S10"
+        ],
+        "input_identity_method": "Library IDs and SHA256 recorded in runbook; files are keyed by SHA by replay_v2.py.",
+        "stop_conditions": [
+          "input SHA missing",
+          "subprocess non-zero",
+          "sheet/chart structure mismatch",
+          "logical OOXML part differences",
+          "S10 output mismatch"
+        ],
+        "full_command_executed": false
+      },
+      "environment": {
+        "file": "care-insurance-analysis/src/E20-04_unit4_environment.json",
+        "git_blob_sha": "2ba8ae151f6255409d44ea19bd81e6f8614004ff",
+        "observed_runtime": "Python 3.12.14; Node v24.19.0; @oai/artifact-tool 2.8.85; pandas 2.2.3; openpyxl 3.1.5; xlrd 2.0.1; lxml 6.1.1; Pillow 12.3.0; LibreOfficeDev 26.8.0.0.alpha0"
+      },
+      "path_audit": {
+        "file": "care-insurance-analysis/src/E20-04_unit4_checks.json",
+        "git_blob_sha": "b5daf0f4680e70877c561e030b651af58815a487",
+        "saved_zip": {
+          "library_file_id": "libfile_d613c5b2ffb08191bf6eff5c8d7e0fdb",
+          "version": 2,
+          "sha256": "d05e3f71c7df01d42ca17d0581324b78b403e38033d216411010788f1a1cf143",
+          "zip_crc": "PASS"
+        },
+        "path_resolution_test": "PASS in two distinct empty /tmp working directories using main make_print_probe.py --check-paths-only; no output created",
+        "fixed_path_hits": "inspection/input_manifest.json source workspace_path entries; checks/native_check.json engine and logs; historical report quotes (non-executable)",
+        "unsupported": "replay_v2.py has no --check-paths-only or --tmpdir; internal temp author directory is not configurable; saved ZIP v2 lacks current-main make_print_probe.py."
+      },
+      "report_scope": {
+        "print_probe_structure": "PASS",
+        "Japanese_print_readability": "HELD",
+        "full_pipeline_replay": "NOT_RUN",
+        "Excel_recalculation_and_save_reopen": "NOT_RUN",
+        "ZIP_update": "NOT_RUN",
+        "candidate_certification": "NOT_RUN",
+        "E20_04_overall": "NOT_PASS"
+      },
+      "restart_position": "Normalize machine-specific paths in the ZIP input manifest/native-check record and update the reproduction package in a later bounded unit; then separately run replay_v2.py, followed by recalculation/save-reopen and Japanese print rendering.",
+      "saved_artifacts": {
+        "care-insurance-analysis/src/E20-04_unit4_repro_runbook_draft.md": {
+          "blob_sha": "62c3e30b68db03940ea24966dccfc8670dc70fd2"
+        },
+        "care-insurance-analysis/src/E20-04_unit4_environment.json": {
+          "blob_sha": "2ba8ae151f6255409d44ea19bd81e6f8614004ff"
+        },
+        "care-insurance-analysis/src/E20-04_unit4_checks.json": {
+          "blob_sha": "b5daf0f4680e70877c561e030b651af58815a487"
+        }
+      }
     }
   },
-  "outputs": [
-    {
+  "outputs": {
+    "0": {
       "type": "reproduction_checkpoint",
       "name": "介護保険解析_再現用.zip",
       "id": "libfile_d613c5b2ffb08191bf6eff5c8d7e0fdb",
@@ -1130,7 +1226,7 @@
       "archive_integrity": "ZIP CRC and all 43 inner file SHA256 verified",
       "readback_verified": true
     },
-    {
+    "1": {
       "type": "code_and_aggregate_checks",
       "repository": "myonmyon545-cell/-",
       "paths": [
@@ -1151,7 +1247,7 @@
       "save_contract": "解析コードは親コミットへ固定。checks/candidate.jsonとreports/10.jsonは同じ子コミットで登録し、main更新後に読戻す。",
       "code_commit": "ffda24608348a5390c35a7b81c216bba03394cc6"
     },
-    {
+    "2": {
       "type": "S01_C03_work_copy",
       "name": "S01_C03_作業コピー_保持試験.xlsx",
       "library_file_id": "libfile_62b53f903fd08191b6791f304b704519",
@@ -1162,7 +1258,7 @@
       "readback_verified": true,
       "scope": "C03独立PASSの9セル修正・保持試験専用。候補/完成成果ではない。日本語表示未解決"
     },
-    {
+    "3": {
       "type": "candidate_for_initial_independent_review",
       "name": "介護保険解析_候補_v1.xlsx",
       "library_file_id": "libfile_7d32eed56014819184d160de1a2af7d5",
@@ -1180,21 +1276,32 @@
       "original_chart_count": 148,
       "scope": "20の初回独立評価対象。日本語描画未合格、正式資料待ちを保留表示して比較抑止。完成・暫定提出ではない。"
     },
-    {
+    "4": {
       "type": "T10_S10_classification",
       "path": "care-insurance-analysis/checks/T10_classification.json",
       "blob_sha": "4ff0bfebe59a7a5d43913ce822768295065c4931",
       "record_count": 11,
       "readback_verified": true
     },
-    {
+    "5": {
       "type": "T10_validation",
       "path": "care-insurance-analysis/checks/T10_classification_validation.json",
       "blob_sha": "908f5714732083a06d848f2371ade98634d3fb79",
       "result": "PASS_WITH_DOCUMENTED_LIMITS",
       "readback_verified": true
+    },
+    "unit4_artifacts": {
+      "care-insurance-analysis/src/E20-04_unit4_repro_runbook_draft.md": {
+        "blob_sha": "62c3e30b68db03940ea24966dccfc8670dc70fd2"
+      },
+      "care-insurance-analysis/src/E20-04_unit4_environment.json": {
+        "blob_sha": "2ba8ae151f6255409d44ea19bd81e6f8614004ff"
+      },
+      "care-insurance-analysis/src/E20-04_unit4_checks.json": {
+        "blob_sha": "b5daf0f4680e70877c561e030b651af58815a487"
+      }
     }
-  ],
+  },
   "checks": [
     {
       "id": "input_hashes",
@@ -1387,8 +1494,8 @@
     }
   ],
   "next_role": "10",
-  "next_action": "Do not regenerate. Resolve whether the print-probe acceptance scope is the three selected sheets or all 15 completed-workbook sheets, then inspect under the confirmed contract.",
-  "restart_condition": "印刷確認コピーのシート数受入範囲をPLAN準拠で明確化し、その範囲に対するSHA・構造・印刷検査が完了するまでE20-04全体をPASSにしない。",
+  "next_action": "Use the saved fixed-path audit and runbook draft to normalize machine-specific references in a later bounded unit. Then run the full replay separately; do not infer recalculation/save-reopen or Japanese readability from that run.",
+  "restart_condition": "E20-04 remains NOT_PASS until full replay, recalculation/save-reopen comparison, and Japanese print readability review are independently recorded.",
   "candidate": {
     "id": "care-S01-20261009-v1",
     "version": 1,
@@ -2085,6 +2192,13 @@
       "state_changed": false,
       "other_role_reports_changed": false,
       "workbooks_changed": false
+    },
+    {
+      "task_id": "T11_E20-04_unit4",
+      "source_commit": "11573220bd30c2047d8fc39ccd1559ba8b2329e4",
+      "pre_save_rechecked_commit": "5b1d3f5244d7a19bb5a548ceb7ab0c69094707ce",
+      "result": "procedure/environment/path audit saved; print-probe scope resolved; full replay and E20-04 overall not pass",
+      "restart_position": "Normalize machine-specific paths in the ZIP input manifest/native-check record and update the reproduction package in a later bounded unit; then separately run replay_v2.py, followed by recalculation/save-reopen and Japanese print rendering."
     }
   ],
   "previous_report_checkpoint": {
