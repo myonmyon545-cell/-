@@ -1,18 +1,19 @@
 {
   "schema": "care_state/v1",
-  "revision": 13,
+  "revision": 14,
   "plan_revision": "2.5",
-  "updated_at": "2026-10-12T16:18:00+09:00",
-  "phase": "ORIGINAL_INTENT_CORRECTION_2_5_REEVALUATION_REQUIRED",
+  "updated_at": "2026-10-12T08:14:03.920Z",
+  "phase": "DEADLINE_DELIVERABLE_BATCH_EXECUTION",
   "writer": "00",
   "canonical_repository": "myonmyon545-cell/-",
   "canonical_path": "care-insurance-analysis/STATE.json",
   "deadline": {
-    "date": "2026-10-12",
     "timezone": "Asia/Tokyo",
-    "user_time_specified": false
+    "hard_deadline": "2026-10-13T00:00:00+09:00",
+    "submission_target": "2026-10-12T23:30:00+09:00",
+    "submission_buffer_minutes": 30
   },
-  "target_submission": "2026-10-12T21:00:00+09:00",
+  "target_submission": "2026-10-12T23:30:00+09:00",
   "inputs": {
     "S01": {
       "name": "処理対象データ群.xlsx",
@@ -312,7 +313,7 @@
         "readback_verified": true,
         "reported_at": "2026-10-09T16:29:07+09:00"
       },
-      "next_action": "ROLE10はunit15診断後、新契約のブック候補を固定し、値検証とブック固定後にR02-R07説明を完成。先行アウトライン・根拠対応表は可。",
+      "next_action": "成果物単位で2.5ブックと説明候補を検査・固定保存。小単位承認なし。",
       "plan_revision": "2.5"
     },
     "T07": {
@@ -330,7 +331,7 @@
         },
         "plan_revision": "2.2"
       },
-      "next_action": "ROLE20が2.5固定候補のブックと物語説明を全範囲独立評価。R01-R15/Q01-Q16。旧FAIL/HELDは流用不可。",
+      "next_action": "直ちに評価準備、固定ペア取得後に必要全範囲を独立評価。",
       "plan_revision": "2.5"
     },
     "T08": {
@@ -338,7 +339,7 @@
       "status": "未着手",
       "wait_reason": "独立評価FAIL、新候補と表示/再現/補完評価が未了。完成・暫定の提出条件未達。",
       "confirmed_output": null,
-      "next_action": "ROLE10はROLE20判定後、ブック・物語説明・再現ZIP・ログZIPを完成または暫定として保存提出。"
+      "next_action": "独立評価と最終manifest照合後23:30提出引渡し。"
     },
     "T09": {
       "owner": "10",
@@ -368,7 +369,7 @@
         "T10"
       ],
       "confirmed_output": "reports/10.json task_results.T11_E20-04_unit3: 保存済みコピー実物検査記録",
-      "next_action": "先行指示済みのROLE10 unit15数値矛盾の原因診断のみ。unit14を重複しない。",
+      "next_action": "unit18を重複せず継続/読戻し後、根拠付き修正・生成・自己検査・固定候補ペア保存まで連続実行。小単位ごとの承認/受渡しなし。",
       "plan_revision": "2.5",
       "last_confirmed_subunit": {
         "task_id": "T11_E20-04_unit3",
@@ -839,15 +840,15 @@
   },
   "next_action": {
     "owner": "10",
-    "single_unit": "T11_E20-04_unit15 diagnosis_only",
-    "detail": "数値PASS報告と中間SHA/1469対1478の不一致原因を診断。unit14再実行なし。診断後に2.5候補/説明へ進む。",
+    "assignment": "complete_workbook_and_narrative_candidate",
+    "detail": "unit18を重複せず継続/読戻し後、根拠付き修正・生成・自己検査・固定候補ペア保存まで連続実行。小単位ごとの承認/受渡しなし。",
+    "evaluation_owner": "20",
     "blockers": [
-      "日本語実描画未完了",
-      "全生成再実行未完了",
-      "Excel再計算未完了",
-      "2.5ブック候補未作成",
-      "物語説明未作成",
-      "C11正式分母待ち"
+      "real_numeric_replay_not_yet_reported",
+      "generation_display_recalc_and_Japanese_validation_pending",
+      "candidate_pair_not_saved",
+      "independent_current_candidate_review_pending",
+      "required_packages_manifest_pending"
     ]
   },
   "history": [
@@ -1027,8 +1028,8 @@
       "共有画面の通常更新をUPDATE_PROTOCOLへ組込み。固定画面の再生成と保存読戻しを実施し、Site/既存添付/自動実行の更新は別途確認する。"
     ]
   },
-  "operations_revision": "2.5.0",
-  "canonical_plan_checked_commit": "23e52d7cf813783bda310aa6309c1aa1f1e6e8c4",
+  "operations_revision": "2.5.1",
+  "canonical_plan_checked_commit": "298186d1a08af79958a47c7a7207fe6f01e29f49",
   "canonical_plan_blob_sha": "9cff1723e0a98a1bdeea9baaf4e3a26b682a1c3e",
   "checks": [
     {
@@ -1263,24 +1264,19 @@
     }
   },
   "deadline_impact": {
-    "checked_at": "2026-10-12T16:16:03+09:00",
-    "candidate_milestone": "2026-10-10T20:00:00+09:00",
-    "independent_review_milestone": "2026-10-11T20:00:00+09:00",
-    "submission_target": "2026-10-12T21:00:00+09:00",
-    "status": "2.5契約改訂でブックと物語説明双方の新規評価が必要。残時間内の完了可否・所要時間は未確認のため期限影響は重大/見積不能。期限は自動延長しない。",
+    "checked_at": "2026-10-12T08:14:03.920Z",
+    "hard_deadline": "2026-10-13T00:00:00+09:00",
+    "submission_target": "2026-10-12T23:30:00+09:00",
+    "status": "AT_RISK_UNQUANTIFIED",
     "estimate": null,
-    "source_waits": [
-      "C11"
-    ],
-    "not_new_source_wait": [
-      "C04",
-      "C09",
-      "C10",
-      "C12",
-      "C14",
-      "M"
-    ],
-    "main_path": "10新候補→20全独立評価→00統合→10提出。指摘時30→10→20。"
+    "basis": "unit17までの保存実績のみ。unit18の実行状態未観測。全生成・再計算・日本語表示・説明・独立評価の実測所要時間なし。",
+    "actions": [
+      "report_current_outputs",
+      "list_required_remaining_work",
+      "evidence_based_estimate",
+      "prioritize_blockers",
+      "immediate_deadline_risk_notification"
+    ]
   },
   "plan_change": {
     "previous_revision": "2.4",
@@ -1441,5 +1437,244 @@
     ],
     "next_role": "10",
     "next_unit": "再現ZIP内の機械固有パス修正と手順・環境記録の収録"
+  },
+  "deadline_execution_override": {
+    "schema": "care_analysis_deadline_override_v1",
+    "authority": "explicit_user_instruction_20261012_170949_JST",
+    "precedence": "supersedes_conflicting_workflow_handoff_and_deadline_rules",
+    "scope_reduction": "requires_explicit_user_approval",
+    "deadline": {
+      "timezone": "Asia/Tokyo",
+      "hard_deadline": "2026-10-13T00:00:00+09:00",
+      "submission_target": "2026-10-12T23:30:00+09:00",
+      "submission_buffer_minutes": 30
+    },
+    "preserve": [
+      "original_workbook_and_narrative_scope",
+      "required_numeric_accuracy",
+      "independent_evaluation",
+      "source_traceability",
+      "required_reproduction_and_audit_log_deliverables",
+      "C04_C09_C10_C11_boundaries"
+    ],
+    "workflow": {
+      "task_granularity": "deliverable_or_blocking_defect_batch",
+      "per_subunit_user_handoff": "disabled",
+      "routine_micro_approval": "disabled",
+      "authorized_sequence": [
+        "repair",
+        "generate",
+        "self_check",
+        "save_candidate"
+      ],
+      "checkpoint_is_approval_gate": false,
+      "continue_within_assigned_authority": true,
+      "known_supported_repairs_and_rechecks": "authorized_without_new_instruction",
+      "duplicate_unchanged_execution": "forbidden",
+      "stop_or_escalate": [
+        "unresolved_requirement_conflict",
+        "unavailable_required_input",
+        "unsupported_numeric_mismatch_resolution",
+        "change_requiring_explicit_user_approval"
+      ]
+    },
+    "roles": {
+      "10": {
+        "assignment": "complete_matching_workbook_and_narrative_candidate_and_required_packages",
+        "sequence": [
+          "preserve_or_resume_unit18_without_duplicate_execution",
+          "resolve_supported_numeric_or_generation_defects",
+          "retain_verified_numeric_run",
+          "generate_15_sheet_148_chart_workbook_from_retained_run",
+          "integrate_existing_display_and_annotation_repairs_into_reproducible_generation",
+          "draft_R02_R07_narrative_incrementally",
+          "perform_required_recalculation_save_readback_and_Japanese_visual_checks",
+          "save_hash_pinned_matching_candidate_pair",
+          "prepare_required_reproduction_audit_logs_manifest_and_simple_confirmation"
+        ],
+        "writes": [
+          "code",
+          "workbook",
+          "narrative",
+          "private_evidence_and_required_packages",
+          "reports/10.json"
+        ]
+      },
+      "20": {
+        "assignment": "prepare_now_then_independently_evaluate_fixed_candidate_pair",
+        "writes": [
+          "reports/20.json"
+        ],
+        "shared_artifact_mutation": "forbidden",
+        "coverage": "all_required_uncovered_scope_plus_verified_changed_and_affected_scope",
+        "reuse": "only_verified_applicability_no_old_candidate_verdict_transfer",
+        "critical_blockers": "release_immediately",
+        "other_findings": "consolidated_batches"
+      },
+      "30": {
+        "assignment": "targeted_unresolved_blocker_resolution_only",
+        "activation": [
+          "unexplained_numeric_mismatch",
+          "unresolved_generator_defect",
+          "disputed_technical_diagnosis"
+        ],
+        "routine_subunit_review": "disabled",
+        "writes": [
+          "reports/30.json"
+        ]
+      },
+      "40": {
+        "assignment": "routine_history_deferred_until_after_submission",
+        "writes": []
+      },
+      "00": {
+        "assignment": "single_remaining_work_list_and_deadline_control",
+        "writes": [
+          "PLAN.md",
+          "STATE.json"
+        ],
+        "routine_subunit_approval": "disabled"
+      }
+    },
+    "priorities": {
+      "P0": [
+        "openability",
+        "required_numeric_correctness",
+        "required_sheets_charts_and_sections",
+        "workbook_narrative_consistency",
+        "generation_correctness"
+      ],
+      "P1": [
+        "chart_references_units_labels_years",
+        "readability",
+        "required_validation_traceability_and_submission_format"
+      ],
+      "deferred_if_not_required": [
+        "bundle_cosmetic_reorganization",
+        "duplicate_report_rewriting",
+        "expanded_history_documentation",
+        "viewer_updates",
+        "annual_update_system_development",
+        "general_automation_development"
+      ],
+      "defer_only_if": "no_effect_on_required_outputs_validation_recovery_or_traceability"
+    },
+    "milestones": [
+      {
+        "at": "2026-10-12T17:30:00+09:00",
+        "target": "remaining_work_and_assignments_verified"
+      },
+      {
+        "at": "2026-10-12T21:00:00+09:00",
+        "target": "candidate_pair_saved_with_self_checks"
+      },
+      {
+        "at": "2026-10-12T22:30:00+09:00",
+        "target": "independent_evaluation_and_required_repairs_complete"
+      },
+      {
+        "at": "2026-10-12T23:15:00+09:00",
+        "target": "final_validation_and_saved_deliverables"
+      },
+      {
+        "at": "2026-10-12T23:30:00+09:00",
+        "target": "submission_handoff"
+      }
+    ],
+    "candidate_control": {
+      "pin": [
+        "artifact_id_or_path",
+        "version",
+        "sha256",
+        "generation_commit",
+        "input_versions"
+      ],
+      "mutable_during_evaluation": false,
+      "correction": "new_version_with_impact_and_affected_recheck",
+      "narrative_finalization": "matches_verified_final_workbook",
+      "external_submission": "only_existing_explicit_authorization"
+    },
+    "deadline_control": {
+      "estimate": "verified_remaining_work_no_unsupported_promise",
+      "replan_triggers": [
+        "candidate_missing_at_2100",
+        "new_submission_blocker",
+        "required_validation_exceeds_remaining_time"
+      ],
+      "actions": [
+        "report_current_outputs",
+        "list_required_remaining_work",
+        "evidence_based_estimate",
+        "prioritize_blockers",
+        "immediate_deadline_risk_notification"
+      ],
+      "unverified_output_PASS": "forbidden",
+      "time_expiry_as_validation_success": "forbidden"
+    },
+    "dispatch": {
+      "other_chat_runtime": "unobserved",
+      "mode": "consolidated_copyable_role_instructions",
+      "pretend_dispatched": false,
+      "avoid_conflicting_writers": true
+    }
+  },
+  "active_assignments": {
+    "ROLE10": {
+      "instruction": "unit18 issued before override; preserve valid progress then continue candidate batch",
+      "runtime": "unobserved",
+      "latest_verified_completed": "unit17"
+    },
+    "ROLE20": {
+      "instruction": "prepare immediately; evaluate hash-pinned pair when available",
+      "runtime": "unobserved"
+    },
+    "ROLE30": {
+      "instruction": "targeted blockers only",
+      "runtime": "unobserved"
+    },
+    "ROLE00": {
+      "writer": "this_user_authorized_ROLE00_turn",
+      "scope": "deadline_and_execution_reconciliation"
+    }
+  },
+  "verified_current_state": {
+    "checked_commit": "298186d1a08af79958a47c7a7207fe6f01e29f49",
+    "plan_revision": "2.5",
+    "latest_ROLE10_saved": "unit17",
+    "unit16": "bounded_fixture_PASS_only",
+    "unit17": "bundle_v7_preflight_and_readback_PASS",
+    "unit18": "not_reported_at_checked_commit",
+    "candidate_current_pair": "not_saved",
+    "old_v1": "FAIL_not_releaseable",
+    "candidate_json_access": "connector_returned_empty_content_with_blob_sha; full_body_unavailable; not treated_as_validated",
+    "reused_workbook": "unit14_display_trial_readback_reported_not_visual_or_numeric_acceptance"
+  },
+  "remaining_required_work": [
+    "preserve_or_resume_unit18_without_duplicate_execution",
+    "resolve_supported_numeric_or_generation_defects",
+    "retain_verified_numeric_run",
+    "generate_15_sheet_148_chart_workbook_from_retained_run",
+    "integrate_existing_display_and_annotation_repairs_into_reproducible_generation",
+    "draft_R02_R07_narrative_incrementally",
+    "perform_required_recalculation_save_readback_and_Japanese_visual_checks",
+    "save_hash_pinned_matching_candidate_pair",
+    "prepare_required_reproduction_audit_logs_manifest_and_simple_confirmation",
+    "ROLE20_full_required_independent_evaluation",
+    "apply_and_recheck_required_findings",
+    "verify_final_submission_manifest_and_handoff"
+  ],
+  "execution_reconciliation": {
+    "authority": "latest_explicit_user_deadline_override",
+    "source_commit": "298186d1a08af79958a47c7a7207fe6f01e29f49",
+    "completed_units": [
+      "unit14",
+      "unit15",
+      "unit16",
+      "unit17"
+    ],
+    "unit18": "instruction_issued_result_not_yet_reported",
+    "reports_modified": false,
+    "scope_reduced": false,
+    "contract_revision_changed": false
   }
 }

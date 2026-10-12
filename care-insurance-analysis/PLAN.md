@@ -1,6 +1,6 @@
 # 介護保険データ解析 AI実行仕様
 
-解析契約2.5 / 運用版2.5.0 / 2026-10-12
+解析契約2.5 / 運用版2.5.1 / 2026-10-12
 
 ROLE=00|10|20|30|40。最新ユーザー判断を優先。旧候補と報告は変更しない。全条件は以下のYAMLを正本とする。
 
@@ -8,7 +8,7 @@ ROLE=00|10|20|30|40。最新ユーザー判断を優先。旧候補と報告は�
 meta:
   schema: care_analysis_execution_v2
   revision: '2.5'
-  operations_revision: 2.5.0
+  operations_revision: 2.5.1
   operations_updated_at: '2026-10-12'
   completed_workbook_sheet_requirement: 完成ブックは従来どおり15シート必須。
   print_probe_scope_decision:
@@ -26,11 +26,12 @@ meta:
   canonical_plan: GitHub mainのcare-insurance-analysis/PLAN.md。本ファイルは同じ版の導入用写し。GitHubを読めない場合は確定コミットの写しを使う。
   checked_at: '2026-10-10T10:24:49+09:00'
   deadline:
-    date: '2026-10-12'
+    date: '2026-10-13'
     timezone: Asia/Tokyo
-    user_time_specified: false
-  target_submission: '2026-10-12T21:00:00+09:00'
-  deadline_interpretation: 三連休最終日の同日中。21時は予備時間を確保する内部目標。
+    user_time_specified: true
+    hard_deadline: '2026-10-13T00:00:00+09:00'
+  target_submission: '2026-10-12T23:30:00+09:00'
+  deadline_interpretation: ユーザー明示期限は10月12日終了時の翌13日00時。提出目標23時30分、予備30分。
   execution: one_off
   reproducibility: same_inputs_code_config_environment_produce_same_values_and_verdicts
   priorities:
@@ -1117,14 +1118,14 @@ original_intent_correction_20261012:
   exclusions: [別プロジェクトの年度更新開発]
   decision_at: '2026-10-12'
   next_role: '10'
-  next_single_unit: ROLE10 unit15「数値PASS報告と中間SHA/1469対1478の不一致の原因診断のみ」。unit14を中断・重複しない。
+  next_single_unit: deadline_execution_override_20261012に従う成果物単位の連続実行。完了済みunit14～17とunit18実績を読戻し、重複しない。
 startup:
-  '00': viewer/UPDATE_PROTOCOL.mdとplatform.jsonも同じコミットで読み、共有表示を更新。通常STATEは専有のまま。同一コミットのPLAN/STATE/10/20/30/決定JSONを読み、T/M/C01-C14と品質問題、期限と次操作を表示。承認範囲と未実施を分離し通常STATEを単独更新。
-  '10': 現在HEADのPLAN/STATE/10/20/30と参照資料を同一コミットで読む。unit14は再実行せず、次の単位はunit15数値矛盾の原因診断のみ。契約2.5の新候補を作成し、R7物語説明のアウトライン・根拠対応表は準備可、最終化は固定検証済みブック後。C11は保持。
-  '20': 2.5新候補についてブックと物語説明を固定し全R01-R15/Q01-Q16を元資料から独立評価。承認欠落/置換を原データ検証済みと誤表示しない。C11未免除。初回全範囲の評価は差分だけで済ませない。
-  '30': 指摘前は待機。20の固定候補と問題IDから再現/原因/変更案/影響/再検証を一通にまとめ、reports/30へ返す。10が適用し20が再評価。Excelは編集しない。
-  '40': GitHubの同一コミットのPLAN・STATE・10/20/30報告とroles/40.mdを読む。当該フォルダのコミット履歴と必要な過去版・差分を確認し、日時/担当/工程/実施内容/検証結果/成果物と根拠の直近10件表を表示。更新指示で再取得。書込み・完成昇格・別チャット監視は行わない。
-  first_user_action: 実行担当00/10/20/30の4チャットと閲覧専用40を同じプロジェクトで開設し、ROLE指定の開始文を送る。mdを保存できない場合はGitHubの現在コミットを取得して同じ版のPLAN/STATE/必要報告を読み該当startupを実行するよう指示する。40はroles/40.mdも読む。モデルは実際の選択欄で設定。GitHubだけでは起動しない。
+  "10": "最新同一コミットとdeadline_execution_override_20261012を読む。unit18の継続/完了を確認し重複せず、修正・生成・自己検査・ブックと説明の候補保存まで担当範囲内で続行。"
+  "20": "直ちに元資料・全要件の評価準備。固定候補ペア取得後に必要全範囲を独立評価。旧候補判定の流用不可。"
+  "30": "未解決の数値/生成/技術的争点のみ修正案。小単位の定例レビュー不要。"
+  "40": "提出後まで通常履歴報告を延期。読取専用。"
+  "00": "deadline_execution_override_20261012を最優先して残作業を統合。STATE専有。小単位承認なし。"
+  first_user_action: "copyable_role_instructionsを各既存ROLEへ一度渡す。別チャット起動・監視・自動受渡しを実行したとは扱わない。"
 change_management:
   authorization: 2026-10-09、ユーザーが40の共有指示への組込みと、今後の追加指示の自動組込み・再構成による最適化を依頼。
   trigger: この計画チャットで本プロジェクトの追加指示を受けた際に適用する。無人の定期監視や他チャットからの自動収集を意味しない。
@@ -1249,6 +1250,153 @@ machine_contract:
   supplement_contract: S10-*独立出所を維持。C04置換表示だけprovided_substituteとしてユーザー承認に対応付け。C10欠落/C12除外/C09未算出は採用null/比較なし。既存care_candidate/v1の機械状態は互換held/not_applicable等を維持し、新presentation_status/decision_refへ表示区分を別記。未算出や提供値をvalid再算出にしない。
     旧S01調査行はheldのまま保持し、新S10置換行は転記確認後にstatus=valid, kind=provided, verification_scope=年度独自提供値の転記確認、presentation_status=provided_substituteとする。統計の再計算合格ではない。比較依存に使用不可。
   release_authority: 機械は完成昇格もSTATE更新も実施しない。20の独立判定を00が統合し、10がrelease_gatesに従って提出。
+deadline_execution_override_20261012:
+  schema: "care_analysis_deadline_override_v1"
+  authority: "explicit_user_instruction_20261012_170949_JST"
+  precedence: "supersedes_conflicting_workflow_handoff_and_deadline_rules"
+  scope_reduction: "requires_explicit_user_approval"
+  deadline:
+    timezone: "Asia/Tokyo"
+    hard_deadline: "2026-10-13T00:00:00+09:00"
+    submission_target: "2026-10-12T23:30:00+09:00"
+    submission_buffer_minutes: 30
+  preserve:
+    - "original_workbook_and_narrative_scope"
+    - "required_numeric_accuracy"
+    - "independent_evaluation"
+    - "source_traceability"
+    - "required_reproduction_and_audit_log_deliverables"
+    - "C04_C09_C10_C11_boundaries"
+  workflow:
+    task_granularity: "deliverable_or_blocking_defect_batch"
+    per_subunit_user_handoff: "disabled"
+    routine_micro_approval: "disabled"
+    authorized_sequence:
+      - "repair"
+      - "generate"
+      - "self_check"
+      - "save_candidate"
+    checkpoint_is_approval_gate: false
+    continue_within_assigned_authority: true
+    known_supported_repairs_and_rechecks: "authorized_without_new_instruction"
+    duplicate_unchanged_execution: "forbidden"
+    stop_or_escalate:
+      - "unresolved_requirement_conflict"
+      - "unavailable_required_input"
+      - "unsupported_numeric_mismatch_resolution"
+      - "change_requiring_explicit_user_approval"
+  roles:
+    "10":
+      assignment: "complete_matching_workbook_and_narrative_candidate_and_required_packages"
+      sequence:
+        - "preserve_or_resume_unit18_without_duplicate_execution"
+        - "resolve_supported_numeric_or_generation_defects"
+        - "retain_verified_numeric_run"
+        - "generate_15_sheet_148_chart_workbook_from_retained_run"
+        - "integrate_existing_display_and_annotation_repairs_into_reproducible_generation"
+        - "draft_R02_R07_narrative_incrementally"
+        - "perform_required_recalculation_save_readback_and_Japanese_visual_checks"
+        - "save_hash_pinned_matching_candidate_pair"
+        - "prepare_required_reproduction_audit_logs_manifest_and_simple_confirmation"
+      writes:
+        - "code"
+        - "workbook"
+        - "narrative"
+        - "private_evidence_and_required_packages"
+        - "reports/10.json"
+    "20":
+      assignment: "prepare_now_then_independently_evaluate_fixed_candidate_pair"
+      writes:
+        - "reports/20.json"
+      shared_artifact_mutation: "forbidden"
+      coverage: "all_required_uncovered_scope_plus_verified_changed_and_affected_scope"
+      reuse: "only_verified_applicability_no_old_candidate_verdict_transfer"
+      critical_blockers: "release_immediately"
+      other_findings: "consolidated_batches"
+    "30":
+      assignment: "targeted_unresolved_blocker_resolution_only"
+      activation:
+        - "unexplained_numeric_mismatch"
+        - "unresolved_generator_defect"
+        - "disputed_technical_diagnosis"
+      routine_subunit_review: "disabled"
+      writes:
+        - "reports/30.json"
+    "40":
+      assignment: "routine_history_deferred_until_after_submission"
+      writes:
+
+    "00":
+      assignment: "single_remaining_work_list_and_deadline_control"
+      writes:
+        - "PLAN.md"
+        - "STATE.json"
+      routine_subunit_approval: "disabled"
+  priorities:
+    P0:
+      - "openability"
+      - "required_numeric_correctness"
+      - "required_sheets_charts_and_sections"
+      - "workbook_narrative_consistency"
+      - "generation_correctness"
+    P1:
+      - "chart_references_units_labels_years"
+      - "readability"
+      - "required_validation_traceability_and_submission_format"
+    deferred_if_not_required:
+      - "bundle_cosmetic_reorganization"
+      - "duplicate_report_rewriting"
+      - "expanded_history_documentation"
+      - "viewer_updates"
+      - "annual_update_system_development"
+      - "general_automation_development"
+    defer_only_if: "no_effect_on_required_outputs_validation_recovery_or_traceability"
+  milestones:
+    -
+      at: "2026-10-12T17:30:00+09:00"
+      target: "remaining_work_and_assignments_verified"
+    -
+      at: "2026-10-12T21:00:00+09:00"
+      target: "candidate_pair_saved_with_self_checks"
+    -
+      at: "2026-10-12T22:30:00+09:00"
+      target: "independent_evaluation_and_required_repairs_complete"
+    -
+      at: "2026-10-12T23:15:00+09:00"
+      target: "final_validation_and_saved_deliverables"
+    -
+      at: "2026-10-12T23:30:00+09:00"
+      target: "submission_handoff"
+  candidate_control:
+    pin:
+      - "artifact_id_or_path"
+      - "version"
+      - "sha256"
+      - "generation_commit"
+      - "input_versions"
+    mutable_during_evaluation: false
+    correction: "new_version_with_impact_and_affected_recheck"
+    narrative_finalization: "matches_verified_final_workbook"
+    external_submission: "only_existing_explicit_authorization"
+  deadline_control:
+    estimate: "verified_remaining_work_no_unsupported_promise"
+    replan_triggers:
+      - "candidate_missing_at_2100"
+      - "new_submission_blocker"
+      - "required_validation_exceeds_remaining_time"
+    actions:
+      - "report_current_outputs"
+      - "list_required_remaining_work"
+      - "evidence_based_estimate"
+      - "prioritize_blockers"
+      - "immediate_deadline_risk_notification"
+    unverified_output_PASS: "forbidden"
+    time_expiry_as_validation_success: "forbidden"
+  dispatch:
+    other_chat_runtime: "unobserved"
+    mode: "consolidated_copyable_role_instructions"
+    pretend_dispatched: false
+    avoid_conflicting_writers: true
 ```
 
 運用2.4.1：過去会話・実報告をタイムライン表示。解析契約2.4と候補評価は変更しない。過去全文取得は未完了。
