@@ -1,0 +1,116 @@
+{
+  "schema": "care_t11_e20_04_unit10_package_check/v1",
+  "task_id": "T11_E20-04_unit10",
+  "source_main_commit": "8e60e1e4accd3c15369f31bdb440184dca8fcf72",
+  "same_commit_inputs": {
+    "plan_blob": "6ef11a6d11791dd4dee32c7c56fa4ad338e9f964",
+    "state_blob": "fe188c41f1c489a1a7b3ef744ea9e050383225f1",
+    "reports10_blob": "85e3d9fb5b5050d133584148d3d16b25055aaae7",
+    "reports20_blob": "57863de7a6ba499b2872df9cf0b6549c43afa7e7",
+    "reports30_blob": "d790c1686cb72176664af414cabc82cece8bacca",
+    "unit9_check_blob": "d218aa913764fe3f1c289fe1053c6a4dafcf24be",
+    "plan_revision": "2.4",
+    "state_revision": 11,
+    "unit10_absent_before": true
+  },
+  "package": {
+    "library_id": "libfile_ee630bb61568819194c96e581ef243a4",
+    "version": 1,
+    "library_file_id": "file_00000000ca8c820989a094b3c9c08b66",
+    "filename": "介護保険解析_再現用_v4.zip",
+    "sha256": "5087322e5285aaf7b0ad60c9c57df54cc90c7b666a910710569e7b6c81e823bd",
+    "size_bytes": 5570711,
+    "based_on": {
+      "library_id": "libfile_d613c5b2ffb08191bf6eff5c8d7e0fdb",
+      "version": 3,
+      "sha256": "cd0e9b694b0f43031c588c5f6bbf08115aba0f1ab0b55b0a14c42821364dd746",
+      "modified": false
+    }
+  },
+  "code": {
+    "commit": "8e60e1e4accd3c15369f31bdb440184dca8fcf72",
+    "files": {
+      "src/summary_v2.mjs": {
+        "git_blob": "585cdf92042d6ab8eb27ef8f2184662c74dbc075",
+        "sha256": "b23e91876db5539c51b42ca310d9fe94ad98b32d5f7dffd1e2485f2699e5c2fc",
+        "readback_match": true
+      },
+      "src/graft_v2.py": {
+        "git_blob": "fb0191ab49a26b4b93a53170e29581772b268c5f",
+        "sha256": "eb1889170f06eb0a712f570ec6fedee15f3b3f602625bec7ec0dfe7eb20e1142",
+        "readback_match": true
+      }
+    },
+    "scope": "local-note generation and assembly verification only"
+  },
+  "inputs": {
+    "source_bytes_included": false,
+    "retrieval": "Use PLAN Library ID first; if unavailable, the v3 verified alias is a fallback only after SHA256 match.",
+    "slots": {
+      "S01": {
+        "plan_id": "libfile_2f275b2a53d481919fb7d942fbecc486",
+        "verified_alias_id": "libfile_2f275b2a53d481919fb7d942fbecc486",
+        "sha256": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d"
+      },
+      "S02": {
+        "plan_id": "libfile_49bf2650277881919afc2e41b9afaca2",
+        "verified_alias_id": "libfile_0d9cfee943ec819188518e4922ce620e",
+        "sha256": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304"
+      },
+      "S03": {
+        "plan_id": "libfile_6ef50a7e48148191bab971c64f1df614",
+        "verified_alias_id": "libfile_1a33a04a77e4819197bfdf49e7cd8099",
+        "sha256": "e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f"
+      },
+      "S04": {
+        "plan_id": "libfile_348a1421657c8191938bc42e4a79b9ea",
+        "verified_alias_id": "libfile_348a1421657c8191938bc42e4a79b9ea",
+        "sha256": "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800"
+      },
+      "S05": {
+        "plan_id": "libfile_7a46b17eb12c8191b3104fe6a8f4f0aa",
+        "verified_alias_id": "libfile_f40c9f4e1d0081919fb497f31e737856",
+        "sha256": "87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1"
+      },
+      "S06": {
+        "plan_id": "libfile_6f78bde68948819198a39bb69b17af54",
+        "verified_alias_id": "libfile_b7623c4ffd6881919e938f89942286f3",
+        "sha256": "b74b37c05a97d053ef46c16f380177f5a0724151dac5daff1c4076290671e524"
+      },
+      "S10": {
+        "plan_id": "libfile_292453196e588191a056e2f761753670",
+        "verified_alias_id": null,
+        "sha256": "a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2"
+      }
+    }
+  },
+  "archive_readback": {
+    "status": "PASS",
+    "zip_crc": "PASS",
+    "archive_members": 83,
+    "manifest_members": 82,
+    "internal_sha_size_crc": "PASS",
+    "active_fixed_path_scan": "PASS",
+    "legacy_candidate_sha256": "ae232eb250d4e089f7a167290e85bf4b39c59b0e12a11b0115be7d8290433695",
+    "zip_v3_sha_unchanged": true
+  },
+  "expected_output": {
+    "unit9_probe_sha256": "d1cc8e022bce56db0608ec6a1a5dafbfd74c333ff197f65c78ef2470609129da",
+    "unit9_check_blob": "d218aa913764fe3f1c289fe1053c6a4dafcf24be",
+    "target_notes_exact": "15/15",
+    "sheets": 15,
+    "charts": 148,
+    "total_unique_caption_positions": 21,
+    "binary_included": false,
+    "verification_limit": "Unit9 probe was not persisted; its SHA and result are cross-checked against the saved unit9 JSON record but the binary bytes cannot be independently re-read in unit10."
+  },
+  "not_run": {
+    "full_replay": true,
+    "excel_recalculation": true,
+    "save_readback_after_recalculation": true,
+    "japanese_native_render": true,
+    "role20_independent_review": true
+  },
+  "verdict": "PACKAGE_INTEGRITY_PASS; EXPECTED_FIXTURE_BINARY_UNAVAILABLE; E20-04 NOT_PASS",
+  "restart_position": "Before full replay, resolve that replay_v2.py currently compares against the unchanged pre-fix v3 candidate; use a separate bounded unit to align its expected-output check with the patched annotation contract, then run the authorized full replay once. If exact byte comparison to the unit9 probe is required, recover/recreate and persist that fixture first."
+}
