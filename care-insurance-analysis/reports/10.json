@@ -2,11 +2,11 @@
   "schema": "care_handoff/v1",
   "role": "10",
   "plan_revision": "2.4",
-  "status": "T11_E20-04_unit8_replay_generated_but_local_note_scope_failed; E20-04 overall NOT_PASS",
-  "task_id": "T11_E20-04_unit8",
+  "status": "unit9_local_annotation_assembly_fixed_and_limited_probe_pass; E20-04 overall NOT_PASS",
+  "task_id": "T11_E20-04_unit9",
   "source_commit": "210aec627ca32c13874e855a8fd8e6b6a7cd630d",
   "pre_save_rechecked_commit": "210aec627ca32c13874e855a8fd8e6b6a7cd630d",
-  "updated_at": "2026-10-12T01:08:01.481Z",
+  "updated_at": "2026-10-12T01:45:00Z",
   "startup_read": {
     "branch": "main",
     "head_sha": "210aec627ca32c13874e855a8fd8e6b6a7cd630d",
@@ -1854,6 +1854,263 @@
         "old_candidate_modified": false,
         "work_copy_version2_modified": false
       }
+    },
+    "T11_E20-04_unit9": {
+      "task_id": "T11_E20-04_unit9",
+      "source_main_before_code_commit": "a877a7db83a7bbeb5fd65e5c57b32704f7aa588a",
+      "source_main_with_code": "a9559d58c34d439222374b38bf73e77df13d8fd4",
+      "report_base_commit": "a9559d58c34d439222374b38bf73e77df13d8fd4",
+      "same_commit_inputs": {
+        "plan_blob": "6ef11a6d11791dd4dee32c7c56fa4ad338e9f964",
+        "state_blob": "fe188c41f1c489a1a7b3ef744ea9e050383225f1",
+        "reports10_before_blob": "24da41cec3aad996d6017bfb82d5d5bbe592ff67",
+        "reports20_blob": "57863de7a6ba499b2872df9cf0b6549c43afa7e7",
+        "reports30_blob": "d790c1686cb72176664af414cabc82cece8bacca",
+        "plan_revision": "2.4",
+        "state_revision": 11,
+        "unit9_absent_before": true
+      },
+      "source_code_commit": "a9559d58c34d439222374b38bf73e77df13d8fd4",
+      "source_code_blobs": {
+        "summary_v2_mjs": {
+          "blob": "585cdf92042d6ab8eb27ef8f2184662c74dbc075",
+          "sha256": "b23e91876db5539c51b42ca310d9fe94ad98b32d5f7dffd1e2485f2699e5c2fc"
+        },
+        "graft_v2_py": {
+          "blob": "fb0191ab49a26b4b93a53170e29581772b268c5f",
+          "sha256": "eb1889170f06eb0a712f570ec6fedee15f3b3f602625bec7ec0dfe7eb20e1142"
+        }
+      },
+      "investigation": {
+        "work_copy_v2": {
+          "library_id": "libfile_5b4c950910fc8191930febed5dbb7889",
+          "version": 2,
+          "sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+          "exact_target_notes": "15/15",
+          "duplicates": 0,
+          "pre_post_sha_same": true
+        },
+        "zip_v3": {
+          "library_id": "libfile_d613c5b2ffb08191bf6eff5c8d7e0fdb",
+          "version": 3,
+          "sha256": "cd0e9b694b0f43031c588c5f6bbf08115aba0f1ab0b55b0a14c42821364dd746",
+          "fixed_candidate_sha256": "ae232eb250d4e089f7a167290e85bf4b39c59b0e12a11b0115be7d8290433695",
+          "exact_target_notes": "0/15",
+          "legacy_aggregate_captions": 6,
+          "inspection_side_misses": 0
+        },
+        "unit8_output": {
+          "sha256": "ae232eb250d4e089f7a167290e85bf4b39c59b0e12a11b0115be7d8290433695",
+          "identical_to_fixed_candidate": true,
+          "exact_target_notes": "0/15"
+        },
+        "classification": {
+          "body_different": 14,
+          "missing": 1,
+          "exists": 0,
+          "inspection_side_miss": 0
+        },
+        "cause": "summary_v2.mjs emitted six aggregate captions; replay_v2.py rebuilt from the C03-only source copy, not the E20-03 work-copy v2 containing the exact 15 annotations. This was an annotation-generation/source-contract gap, not a count-checker miss.",
+        "per_target": [
+          {
+            "ordinal": 1,
+            "issue": "C04",
+            "sheet": "Ⅳ事務データ",
+            "range": "D203:AC203",
+            "pre_fix_zip_v3_unit8": "欠落（局所のS10年度参考注記なし）",
+            "work_copy_v2": "存在・本文一致・指定結合範囲",
+            "probe": "存在・本文一致・指定結合範囲",
+            "related_legacy_caption": null
+          },
+          {
+            "ordinal": 2,
+            "issue": "C04",
+            "sheet": "Ⅳ事務データ",
+            "range": "D209:AC209",
+            "pre_fix_zip_v3_unit8": "本文違い（別位置の総括注記）",
+            "work_copy_v2": "存在・本文一致・指定結合範囲",
+            "probe": "存在・本文一致・指定結合範囲",
+            "related_legacy_caption": "Ⅳ事務データ!D205:AA205"
+          },
+          {
+            "ordinal": 3,
+            "issue": "C04",
+            "sheet": "Ⅳ事務データ",
+            "range": "D221:AC221",
+            "pre_fix_zip_v3_unit8": "本文違い（別位置の総括注記）",
+            "work_copy_v2": "存在・本文一致・指定結合範囲",
+            "probe": "存在・本文一致・指定結合範囲",
+            "related_legacy_caption": "Ⅳ事務データ!D205:AA205"
+          },
+          {
+            "ordinal": 4,
+            "issue": "C10",
+            "sheet": "Ⅱ調査項目データ（第５群）",
+            "range": "C74:AD74",
+            "pre_fix_zip_v3_unit8": "本文違い（別位置の総括注記）",
+            "work_copy_v2": "存在・本文一致・指定結合範囲",
+            "probe": "存在・本文一致・指定結合範囲",
+            "related_legacy_caption": "Ⅱ調査項目データ（第５群）!C69:AD69"
+          },
+          {
+            "ordinal": 5,
+            "issue": "C10",
+            "sheet": "Ⅱ調査項目データ（第５群）",
+            "range": "C84:AD84",
+            "pre_fix_zip_v3_unit8": "本文違い（別位置の総括注記）",
+            "work_copy_v2": "存在・本文一致・指定結合範囲",
+            "probe": "存在・本文一致・指定結合範囲",
+            "related_legacy_caption": "Ⅱ調査項目データ（第５群）!C69:AD69"
+          },
+          {
+            "ordinal": 6,
+            "issue": "C09",
+            "sheet": "Ⅲ審査判定データ（変更率）",
+            "range": "D117:AD119",
+            "pre_fix_zip_v3_unit8": "本文違い（別位置の総括注記）",
+            "work_copy_v2": "存在・本文一致・指定結合範囲",
+            "probe": "存在・本文一致・指定結合範囲",
+            "related_legacy_caption": "Ⅲ審査判定データ（変更率）!D99:AA99"
+          },
+          {
+            "ordinal": 7,
+            "issue": "C11",
+            "sheet": "Ⅲ審査判定データ（変更率）",
+            "range": "D372:AD372",
+            "pre_fix_zip_v3_unit8": "本文違い（別位置の総括注記）",
+            "work_copy_v2": "存在・本文一致・指定結合範囲",
+            "probe": "存在・本文一致・指定結合範囲",
+            "related_legacy_caption": "Ⅲ審査判定データ（変更率）!D367:AA367"
+          },
+          {
+            "ordinal": 8,
+            "issue": "C11",
+            "sheet": "Ⅲ審査判定データ（変更率）",
+            "range": "D385:AD386",
+            "pre_fix_zip_v3_unit8": "本文違い（別位置の総括注記）",
+            "work_copy_v2": "存在・本文一致・指定結合範囲",
+            "probe": "存在・本文一致・指定結合範囲",
+            "related_legacy_caption": "Ⅲ審査判定データ（変更率）!D367:AA367"
+          },
+          {
+            "ordinal": 9,
+            "issue": "C11",
+            "sheet": "Ⅲ審査判定データ（変更率）",
+            "range": "D399:AD400",
+            "pre_fix_zip_v3_unit8": "本文違い（別位置の総括注記）",
+            "work_copy_v2": "存在・本文一致・指定結合範囲",
+            "probe": "存在・本文一致・指定結合範囲",
+            "related_legacy_caption": "Ⅲ審査判定データ（変更率）!D367:AA367"
+          },
+          {
+            "ordinal": 10,
+            "issue": "C11",
+            "sheet": "Ⅲ審査判定データ（変更率）",
+            "range": "D433:AD433",
+            "pre_fix_zip_v3_unit8": "本文違い（別位置の総括注記）",
+            "work_copy_v2": "存在・本文一致・指定結合範囲",
+            "probe": "存在・本文一致・指定結合範囲",
+            "related_legacy_caption": "Ⅲ審査判定データ（変更率）!D428:AA428"
+          },
+          {
+            "ordinal": 11,
+            "issue": "C11",
+            "sheet": "Ⅲ審査判定データ（変更率）",
+            "range": "D446:AD447",
+            "pre_fix_zip_v3_unit8": "本文違い（別位置の総括注記）",
+            "work_copy_v2": "存在・本文一致・指定結合範囲",
+            "probe": "存在・本文一致・指定結合範囲",
+            "related_legacy_caption": "Ⅲ審査判定データ（変更率）!D428:AA428"
+          },
+          {
+            "ordinal": 12,
+            "issue": "C11",
+            "sheet": "Ⅲ審査判定データ（変更率）",
+            "range": "D460:AD461",
+            "pre_fix_zip_v3_unit8": "本文違い（別位置の総括注記）",
+            "work_copy_v2": "存在・本文一致・指定結合範囲",
+            "probe": "存在・本文一致・指定結合範囲",
+            "related_legacy_caption": "Ⅲ審査判定データ（変更率）!D428:AA428"
+          },
+          {
+            "ordinal": 13,
+            "issue": "C11",
+            "sheet": "Ⅲ審査判定データ（変更率）",
+            "range": "D494:AD494",
+            "pre_fix_zip_v3_unit8": "本文違い（別位置の総括注記）",
+            "work_copy_v2": "存在・本文一致・指定結合範囲",
+            "probe": "存在・本文一致・指定結合範囲",
+            "related_legacy_caption": "Ⅲ審査判定データ（変更率）!D489:AA489"
+          },
+          {
+            "ordinal": 14,
+            "issue": "C11",
+            "sheet": "Ⅲ審査判定データ（変更率）",
+            "range": "D507:AD508",
+            "pre_fix_zip_v3_unit8": "本文違い（別位置の総括注記）",
+            "work_copy_v2": "存在・本文一致・指定結合範囲",
+            "probe": "存在・本文一致・指定結合範囲",
+            "related_legacy_caption": "Ⅲ審査判定データ（変更率）!D489:AA489"
+          },
+          {
+            "ordinal": 15,
+            "issue": "C11",
+            "sheet": "Ⅲ審査判定データ（変更率）",
+            "range": "D521:AD522",
+            "pre_fix_zip_v3_unit8": "本文違い（別位置の総括注記）",
+            "work_copy_v2": "存在・本文一致・指定結合範囲",
+            "probe": "存在・本文一致・指定結合範囲",
+            "related_legacy_caption": "Ⅲ審査判定データ（変更率）!D489:AA489"
+          }
+        ]
+      },
+      "limited_fix": {
+        "summary_v2_mjs": "Kept six existing caption positions; corrected C04 D205 text to keep S10 25.6 as an independent annual reference; added 15 E20-03 notes.",
+        "graft_v2_py": "Enforces 21 unique caption ranges/bodies, rejects duplicate merged ranges, and reads back exact text/ranges from OOXML.",
+        "limited_probe": {
+          "sha256": "d1cc8e022bce56db0608ec6a1a5dafbfd74c333ff197f65c78ef2470609129da",
+          "persistent_id": null,
+          "version": null,
+          "sheets": 15,
+          "charts": 148,
+          "target_notes_exact": "15/15",
+          "total_caption_cells": 21,
+          "unique_ranges": 21,
+          "unique_bodies": 21,
+          "C03_reapplied": false,
+          "original_values_formulas_unchanged": true,
+          "chart_drawing_image_parts_byte_identical": true,
+          "original_print_hidden_settings_unchanged": true,
+          "summary_print": {
+            "orientation": "landscape",
+            "paper": "A3",
+            "fit_width": 1,
+            "fit_height": "automatic",
+            "range": "A1:N1197",
+            "repeat_row": 201
+          }
+        },
+        "previous_caption_handling": "Five existing caption bodies unchanged; existing C04 D205 body corrected to avoid incorrectly implying S10 25.6 replaced J208.",
+        "check_artifact": {
+          "path": "care-insurance-analysis/checks/E20-04_unit9_note_assembly.json",
+          "local_sha256": "eb6459c9099320527ed9bfcf0c703fa6efcaa7cabc837551adf9a4a2b0ce151e",
+          "git_blob": "d218aa913764fe3f1c289fe1053c6a4dafcf24be"
+        }
+      },
+      "scope": {
+        "full_numeric_pipeline": false,
+        "full_generation_replay": false,
+        "excel_recalculation": false,
+        "save_readback_after_recalculation": false,
+        "japanese_actual_render": false,
+        "role20_independent_review": false,
+        "zip_v3_modified": false,
+        "work_copy_v2_modified": false,
+        "source_or_old_candidate_modified": false,
+        "e20_04_overall": "NOT_PASS"
+      },
+      "verdict": "LIMITED_NOTE_ASSEMBLY_PROBE_PASS; E20-04 overall NOT_PASS",
+      "restart_position": "Keep ZIP v3 and its fixed candidate unchanged. In a separate bounded unit, package these saved code changes into a new ZIP version and establish the updated expected-output fixture without overwriting v3. Then run the authorized full replay once. Recalculation/save-readback, Japanese actual rendering, and ROLE20 remain separate."
     }
   },
   "outputs": {
@@ -2145,8 +2402,8 @@
     }
   ],
   "next_role": "10",
-  "next_action": "第8単位の再実行は繰り返さない。reports/10 unit8に記録した6/15局所注記数の差を原因確認し、注記生成だけを対象にした独立単位の指示を待つ。再計算・保存後読戻し、日本語実描画、ROLE20独立評価は別単位。",
-  "restart_condition": "unit8結果を再利用。生成コード/manifestと局所注記15件の適用範囲を照合し、6件になった箇所を特定してから限定修正する。",
+  "next_action": "Keep ZIP v3 and its fixed candidate unchanged. In a separate bounded unit, package these saved code changes into a new ZIP version and establish the updated expected-output fixture without overwriting v3. Then run the authorized full replay once. Recalculation/save-readback, Japanese actual rendering, and ROLE20 remain separate.",
+  "restart_condition": "ZIP v3 and fixed candidate remain immutable. Package patched source as a new ZIP version and establish a new expected fixture in a separate unit; full replay only as separately authorized. Excel recalculation/save-readback, Japanese native rendering, and ROLE20 independent review remain pending.",
   "candidate": {
     "id": "care-S01-20261009-v1",
     "version": 1,
