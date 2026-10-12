@@ -2,11 +2,11 @@
   "schema": "care_handoff/v1",
   "role": "10",
   "plan_revision": "2.4",
-  "status": "T11_E20-04_unit6_stopped_before_pipeline; E20-04 overall NOT_PASS",
-  "task_id": "T11_E20-04_unit6",
-  "source_commit": "d3f6f783fec6b2c07b523fdc57707ea0753eae07",
-  "pre_save_rechecked_commit": "d3f6f783fec6b2c07b523fdc57707ea0753eae07",
-  "updated_at": "2026-10-12T00:45:28.570Z",
+  "status": "T11_E20-04_unit7_full_replay_failed_at_verify_extraction; E20-04 overall NOT_PASS",
+  "task_id": "T11_E20-04_unit7",
+  "source_commit": "62e6bca7f9afd5545593c274ddba5524293394b1",
+  "pre_save_rechecked_commit": "62e6bca7f9afd5545593c274ddba5524293394b1",
+  "updated_at": "2026-10-12T00:53:45.725Z",
   "startup_read": {
     "branch": "main",
     "head_sha": "afa996bc6a3d7a82b7d1fd04a0381e8abcfa3833",
@@ -1484,6 +1484,212 @@
         "raw_inputs_or_originals_modified": false,
         "existing_candidate_modified": false
       }
+    },
+    "T11_E20-04_unit7": {
+      "task_id": "T11_E20-04_unit7",
+      "source_commit": "62e6bca7f9afd5545593c274ddba5524293394b1",
+      "recorded_at": "2026-10-12T00:53:45.725Z",
+      "duplicate_check": "No unit7 record existed at the fixed latest main HEAD before this run.",
+      "package": {
+        "library_file_id": "libfile_d613c5b2ffb08191bf6eff5c8d7e0fdb",
+        "file_id": "file_00000000317c8209831970b069b7ce55",
+        "name": "介護保険解析_再現用_v3.zip",
+        "version": 3,
+        "sha256": "cd0e9b694b0f43031c588c5f6bbf08115aba0f1ab0b55b0a14c42821364dd746",
+        "zip_crc": "PASS",
+        "manifest_count": 77,
+        "manifest_hash_and_size": "PASS"
+      },
+      "startup_read": {
+        "same_commit_documents": [
+          {
+            "path": "care-insurance-analysis/PLAN.md",
+            "blob": "6ef11a6d11791dd4dee32c7c56fa4ad338e9f964"
+          },
+          {
+            "path": "care-insurance-analysis/STATE.json",
+            "blob": "fe188c41f1c489a1a7b3ef744ea9e050383225f1"
+          },
+          {
+            "path": "care-insurance-analysis/reports/10.json",
+            "blob": "44a8aa0cc74c088e37684394cd2532fec1170e36"
+          },
+          {
+            "path": "care-insurance-analysis/reports/20.json",
+            "blob": "57863de7a6ba499b2872df9cf0b6549c43afa7e7"
+          },
+          {
+            "path": "care-insurance-analysis/reports/30.json",
+            "blob": "d790c1686cb72176664af414cabc82cece8bacca"
+          }
+        ],
+        "plan_revision": "2.4",
+        "print_probe_scope": "3 annotated sheets accepted structurally; completed workbook remains 15 sheets",
+        "reports20_verdict": "FAIL",
+        "reports30_status": "candidate_v1_correction_proposal_ready",
+        "reports10_unit6_reused": true,
+        "reports10_unit7_absent_before_run": true
+      },
+      "code_commit": "ec639575cee766ab31e56bb013cb35d00bf167f5",
+      "inputs": {
+        "count": 7,
+        "records": [
+          {
+            "id": "S01",
+            "library_file_id": "libfile_2f275b2a53d481919fb7d942fbecc486",
+            "sha256": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d",
+            "file": "S01.source",
+            "actual_sha256": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d",
+            "matched": true,
+            "read_only": true
+          },
+          {
+            "id": "S02",
+            "library_file_id": "libfile_0d9cfee943ec819188518e4922ce620e",
+            "sha256": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304",
+            "file": "S02.source",
+            "actual_sha256": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304",
+            "matched": true,
+            "read_only": true
+          },
+          {
+            "id": "S03",
+            "library_file_id": "libfile_1a33a04a77e4819197bfdf49e7cd8099",
+            "sha256": "e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f",
+            "file": "S03.source",
+            "actual_sha256": "e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f",
+            "matched": true,
+            "read_only": true
+          },
+          {
+            "id": "S04",
+            "library_file_id": "libfile_348a1421657c8191938bc42e4a79b9ea",
+            "sha256": "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800",
+            "file": "S04.source",
+            "actual_sha256": "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800",
+            "matched": true,
+            "read_only": true
+          },
+          {
+            "id": "S05",
+            "library_file_id": "libfile_f40c9f4e1d0081919fb497f31e737856",
+            "sha256": "87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1",
+            "file": "S05.source",
+            "actual_sha256": "87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1",
+            "matched": true,
+            "read_only": true
+          },
+          {
+            "id": "S06",
+            "library_file_id": "libfile_b7623c4ffd6881919e938f89942286f3",
+            "sha256": "b74b37c05a97d053ef46f16f380177f5a0724151dac5daff1c4076290671e524",
+            "file": "S06.source",
+            "actual_sha256": "b74b37c05a97d053ef46f16f380177f5a0724151dac5daff1c4076290671e524",
+            "matched": true,
+            "read_only": true
+          },
+          {
+            "id": "S10",
+            "library_file_id": "libfile_292453196e588191a056e2f761753670",
+            "sha256": "a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2",
+            "file": "S10.source",
+            "actual_sha256": "a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2",
+            "matched": true,
+            "read_only": true
+          }
+        ],
+        "all_sha_match": true,
+        "files_read_only": true,
+        "source_data_uploaded_to_github": false,
+        "originals_modified": false
+      },
+      "staging": {
+        "isolated_root": "/tmp/care_e20_unit7_20261012T005206Z",
+        "bundle": "bundle",
+        "sources": "bundle/sources",
+        "output": "bundle/replay-v3",
+        "output_new_and_empty_before_run": true,
+        "zip_and_manifest_checked": true
+      },
+      "execution": {
+        "status": "FAILED_DURING_NUMERIC_REPLAY_VERIFY_EXTRACTION",
+        "command": "\"$CODEX_PRIMARY_RUNTIME_PYTHON\" src/replay_v2.py --bundle . --sources ./sources --node \"$CODEX_PRIMARY_RUNTIME_NODE\" --node-modules \"$CODEX_PRIMARY_RUNTIME_NODE_MODULES\" --out ./replay-v3",
+        "command_invocation_count": 1,
+        "start_utc": "2026-10-12T00:52:27.291081+00:00",
+        "start_jst": "2026-10-12T09:52:27.291081+09:00",
+        "end_utc": "2026-10-12T00:52:28.349902+00:00",
+        "end_jst": "2026-10-12T09:52:28.349902+09:00",
+        "elapsed_seconds": 1.059,
+        "environment": {
+          "python": "3.12.14",
+          "node": "v24.19.0",
+          "artifact_tool": "2.8.85",
+          "node_modules": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/node_modules"
+        },
+        "exit_code": 1,
+        "stdout": "",
+        "stderr_saved_locally": true,
+        "stderr_sha256": "a3861f54f3ce6260f54c137b71c51b3b73629ad6972345825d8f7bf00f63bded",
+        "stderr_summary": "replay_pipeline.py failed while running verify_extraction.py (exit 1); replay_v2.py then raised CalledProcessError. The wrapper captured this outer stderr. replay_pipeline.py captures the verifier's stdout/stderr and does not propagate the inner FileNotFoundError text."
+      },
+      "failure": {
+        "stage": "verify_extraction.py, before C03 overlay application, S10 integration, summary authoring, workbook graft, and comparison",
+        "cause": "replay_v2 SHA lookup accepts any filenames; verify_extraction opens S01/S02 using exact basenames from inspect_inputs.SOURCES. The staged files were S01.source and S02.source, so the required paths were absent.",
+        "evidence": [
+          "verify_extraction.py opens a.sources/SOURCES[sid][0] for S01 and S02.",
+          "inspect_inputs.py pins the original S01/S02 basenames.",
+          "The staging directory contained S01.source and S02.source with the correct byte hashes."
+        ],
+        "inner_file_not_found_text": "not captured; replay_pipeline.py's inner subprocess captures its output before raising CalledProcessError"
+      },
+      "local_records": {
+        "preflight": "/tmp/care_e20_unit7_20261012T005206Z/preflight.json",
+        "execution": "/tmp/care_e20_unit7_20261012T005206Z/execution.json",
+        "stdout": "/tmp/care_e20_unit7_20261012T005206Z/stdout.txt",
+        "stderr": "/tmp/care_e20_unit7_20261012T005206Z/stderr.txt",
+        "runner_wrapper_sha256": "50f92b2bd8e89504201356ef1155a2933b0c1b9f173b9adac59c326b788fe48a"
+      },
+      "outputs": {
+        "directory": "/tmp/care_e20_unit7_20261012T005206Z/bundle/replay-v3",
+        "file_count": 0,
+        "candidate_workbook_generated": false,
+        "persistent_id": null,
+        "version": null,
+        "sha256": null
+      },
+      "checks": {
+        "zip_crc": "PASS",
+        "manifest_77_members": "PASS",
+        "source_7_hashes": "PASS",
+        "README_command_and_help": "PASS",
+        "pre_run_output_empty": "PASS",
+        "numeric_replay": "FAIL",
+        "S10_integration": "NOT_RUN",
+        "summary_authoring": "NOT_RUN",
+        "Excel_graft": "NOT_RUN",
+        "15_sheet_order": "NOT_RUN",
+        "148_chart_parts": "NOT_RUN",
+        "15_local_notes": "NOT_RUN",
+        "R02_R07_and_value_states": "NOT_RUN",
+        "6316_metrics_and_1478_comparisons": "NOT_RUN",
+        "formula_recalculation_and_save_readback": "NOT_RUN",
+        "Japanese_actual_render": "NOT_RUN_HELD",
+        "ROLE20_independent_assessment": "NOT_RUN",
+        "E20_04_overall": "NOT_PASS"
+      },
+      "checkpoint": {
+        "rerun_in_this_unit": false,
+        "next_action": "Do not rerun the ZIP command in this unit. Before the next authorized run, stage S01/S02 under the exact basenames in src/inspect_inputs.py within bundle/sources, or separately change verify_extraction.py to use the SHA lookup consistently. Keep remaining inputs hash-verified, use a fresh bundle and empty output path, and preserve verifier stderr. Recalculation/save-readback, Japanese rendering, ROLE20, and overall E20-04 remain separate."
+      },
+      "write_scope": {
+        "only": "care-insurance-analysis/reports/10.json",
+        "PLAN_modified": false,
+        "STATE_modified": false,
+        "reports20_modified": false,
+        "reports30_modified": false,
+        "raw_sources_modified": false,
+        "existing_candidate_or_workcopy_modified": false
+      }
     }
   },
   "outputs": {
@@ -1775,8 +1981,8 @@
     }
   ],
   "next_role": "10",
-  "next_action": "Do not rerun in this unit. On resume, create a fresh isolated extraction and place the SHA-verified source copies at bundle/sources (matching README's ./sources), confirm the output path is new/empty, run the documented command once with logging wrapper indexes corrected, then inspect all generated outputs. Continue to keep recalculation, Japanese rendering, ROLE20, and overall E20-04 separate.",
-  "restart_condition": "Fresh isolated bundle with bundle/sources populated from the same seven SHA-verified inputs; replay invocation not repeated in this unit. Do not mark E20-04 PASS from this failed attempt.",
+  "next_action": "Do not rerun the ZIP command in this unit. Before the next authorized run, stage S01/S02 under the exact basenames in src/inspect_inputs.py within bundle/sources, or separately change verify_extraction.py to use the SHA lookup consistently. Keep remaining inputs hash-verified, use a fresh bundle and empty output path, and preserve verifier stderr. Recalculation/save-readback, Japanese rendering, ROLE20, and overall E20-04 remain separate.",
+  "restart_condition": "Fresh isolated replay only after correcting S01/S02 basenames or an explicitly scoped verifier path fix; no reattempt in unit 7.",
   "candidate": {
     "id": "care-S01-20261009-v1",
     "version": 1,
