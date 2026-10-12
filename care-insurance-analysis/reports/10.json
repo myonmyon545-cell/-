@@ -2,11 +2,11 @@
   "schema": "care_handoff/v1",
   "role": "10",
   "plan_revision": "2.4",
-  "status": "unit10_reproduction_zip_saved_and_readback_integrity_pass; expected unit9 binary unavailable; E20-04 overall NOT_PASS",
-  "task_id": "T11_E20-04_unit10",
-  "source_commit": "210aec627ca32c13874e855a8fd8e6b6a7cd630d",
-  "pre_save_rechecked_commit": "210aec627ca32c13874e855a8fd8e6b6a7cd630d",
-  "updated_at": "2026-10-12T02:32:00Z",
+  "status": "unit11 comparison contract fixed and package readback verified; unit9 probe binary unavailable; full replay not run; E20-04 NOT_PASS",
+  "task_id": "T11_E20-04_unit11",
+  "source_commit": "506f76faaff5c8cfc2af8da7a4c43addc1e155a5",
+  "pre_save_rechecked_commit": "506f76faaff5c8cfc2af8da7a4c43addc1e155a5",
+  "updated_at": "2026-10-12T05:53:27.419Z",
   "startup_read": {
     "branch": "main",
     "head_sha": "210aec627ca32c13874e855a8fd8e6b6a7cd630d",
@@ -2228,6 +2228,125 @@
         "git_blob": "04bea96b3f33c77ebf6e231433adf10023a24605"
       },
       "restart_position": "Before full replay, resolve that replay_v2.py currently compares against the unchanged pre-fix v3 candidate; use a separate bounded unit to align its expected-output check with the patched annotation contract, then run the authorized full replay once. If exact byte comparison to the unit9 probe is required, recover/recreate and persist that fixture first."
+    },
+    "T11_E20-04_unit11": {
+      "task_id": "T11_E20-04_unit11",
+      "source_main_commit": "506f76faaff5c8cfc2af8da7a4c43addc1e155a5",
+      "same_commit_read": {
+        "plan_blob": "6ef11a6d11791dd4dee32c7c56fa4ad338e9f964",
+        "state_blob": "fe188c41f1c489a1a7b3ef744ea9e050383225f1",
+        "reports10_before_blob": "aaae2607306ea4fa125609580a9312de9d59f588",
+        "reports20_blob": "57863de7a6ba499b2872df9cf0b6549c43afa7e7",
+        "reports30_blob": "d790c1686cb72176664af414cabc82cece8bacca",
+        "plan_revision": "2.4",
+        "state_revision": 11,
+        "unit11_absent_before": true
+      },
+      "reproduction_zip": {
+        "library_id": "libfile_ee630bb61568819194c96e581ef243a4",
+        "version": 5,
+        "file_id": "file_0000000045a081f7bc85bfd776573ff7",
+        "filename": "介護保険解析_再現用_v4_unit11.zip",
+        "sha256": "0cb739117c93eaa175d698b43d67e64110aaf6dcbb8cf49f499d0d30a0c1a78d",
+        "size_bytes": 5604331,
+        "zip_crc": "PASS",
+        "archive_members": 89,
+        "manifest_members_verified": 88,
+        "readback": {
+          "file_id": "file_0000000045a081f7bc85bfd776573ff7",
+          "current_version_number": 5,
+          "sha256": "0cb739117c93eaa175d698b43d67e64110aaf6dcbb8cf49f499d0d30a0c1a78d",
+          "size_bytes": 5604331,
+          "zip_crc": "PASS",
+          "all_internal_sha_size_crc": "PASS"
+        },
+        "base_v4_version1": {
+          "library_id": "libfile_ee630bb61568819194c96e581ef243a4",
+          "version": 1,
+          "sha256": "5087322e5285aaf7b0ad60c9c57df54cc90c7b666a910710569e7b6c81e823bd",
+          "unchanged": true
+        },
+        "superseded_versions": [
+          2,
+          3,
+          4
+        ]
+      },
+      "code": {
+        "source_commit": "a9559d58c34d439222374b38bf73e77df13d8fd4",
+        "scope": "comparison only",
+        "files": {
+          "src/replay_v2.py": {
+            "sha256": "4f2ac7484728f19016a3e2514e909643fa8e2550e888f362ebc83fa837064440",
+            "size_bytes": 3920
+          },
+          "src/compare_replay_v2.py": {
+            "sha256": "566a7c8a03cb6f0c3b77e7ba579a9f107ad4e6ae08b09a44d977e1f9bee8cfc7",
+            "size_bytes": 9988
+          }
+        }
+      },
+      "inputs": {
+        "S01": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d",
+        "S02": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304",
+        "S03": "e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f",
+        "S04": "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800",
+        "S05": "87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1",
+        "S06": "b74b37c05a97d053ef46c16f380177f5a0724151dac5daff1c4076290671e524",
+        "S10": "a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2"
+      },
+      "workcopy_v2": {
+        "library_id": "libfile_5b4c950910fc8191930febed5dbb7889",
+        "version": 2,
+        "sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+        "target_note_verification": "PASS 15/15 exact body+merge range"
+      },
+      "comparison_contract": {
+        "old_full_candidate_match_removed": true,
+        "numeric_fixed_sha_count": 6,
+        "target_notes": "15 from workcopy bytes and ROLE10/unit9 records",
+        "legacy_captions": "six from unit9 code/change record; five unchanged, C04 D205 corrected",
+        "allowed_ooxml_parts": [
+          "xl/styles.xml",
+          "xl/workbook.xml",
+          "xl/worksheets/sheet12.xml",
+          "xl/worksheets/sheet14.xml",
+          "xl/worksheets/sheet15.xml",
+          "xl/worksheets/sheet8.xml"
+        ],
+        "allowed_non_note_style_deltas": 14,
+        "other_parts": "must be logically equal to v3; unchanged source values/formulas/print settings and explicit merge rules"
+      },
+      "negative_control": {
+        "status": "PASS_EXPECTED_FAIL",
+        "legacy_candidate_sha256": "ae232eb250d4e089f7a167290e85bf4b39c59b0e12a11b0115be7d8290433695",
+        "observed_target_notes": "0/15",
+        "expected": "FAIL"
+      },
+      "unit9_probe": {
+        "recorded_unique_positions": 21,
+        "recorded_unique_bodies": 21,
+        "sha256": "d1cc8e022bce56db0608ec6a1a5dafbfd74c333ff197f65c78ef2470609129da",
+        "binary_available": false,
+        "verdict": "UNVERIFIED; SHA alone not accepted"
+      },
+      "tests": {
+        "syntax": "PASS",
+        "workcopy_target_notes": "PASS 15/15",
+        "negative_control": "PASS_EXPECTED_FAIL 0/15",
+        "zip_crc": "PASS",
+        "internal_manifest_sha_size_crc": "PASS 88/88"
+      },
+      "not_run": {
+        "full_replay": true,
+        "excel_recalculation": true,
+        "post_recalculation_save_readback": true,
+        "japanese_native_render": true,
+        "role20_review": true
+      },
+      "verdict": "COMPARISON_CONTRACT_FIXED; EXPECTED_NEGATIVE_CONTROL_PASS; UNIT9_PROBE_BINARY_UNVERIFIED; FULL_REPLAY_NOT_RUN; E20-04_NOT_PASS",
+      "E20_04_overall": "NOT_PASS",
+      "restart_position": "Next unit: use ZIP version 5 in a new isolated output directory, validate all seven input SHAs, run README full replay once, and compare to six fixed numeric hashes, 15+6 note contract and explicit allowlist. On failure stop and diagnose. Recalculation, post-save readback, Japanese rendering and ROLE20 remain separate."
     }
   },
   "outputs": {
@@ -2519,7 +2638,7 @@
     }
   ],
   "next_role": "10",
-  "next_action": "Before full replay, resolve that replay_v2.py currently compares against the unchanged pre-fix v3 candidate; use a separate bounded unit to align its expected-output check with the patched annotation contract, then run the authorized full replay once. If exact byte comparison to the unit9 probe is required, recover/recreate and persist that fixture first.",
+  "next_action": "Next unit: use ZIP version 5 in a new isolated output directory, validate all seven input SHAs, run README full replay once, and compare to six fixed numeric hashes, 15+6 note contract and explicit allowlist. On failure stop and diagnose. Recalculation, post-save readback, Japanese rendering and ROLE20 remain separate.",
   "restart_condition": "Use the Library ZIP version 1 and pinned main code. Before full replay, align the replay expected-output comparison with patched annotation contract or recover the unit9 fixture; then execute full replay once in a new empty isolated output. Keep recalculation/save-readback, Japanese render, and ROLE20 as later gates.",
   "candidate": {
     "id": "care-S01-20261009-v1",
@@ -3306,5 +3425,19 @@
       "evidence": "Read-back Library version 3 ZIP checks/E20-04_unit5_package.json; matched expected and actual source bytes.",
       "work_product_unchanged": true
     }
-  ]
+  ],
+  "startup_read_unit11": {
+    "branch": "main",
+    "head_sha": "506f76faaff5c8cfc2af8da7a4c43addc1e155a5",
+    "plan_revision": "2.4",
+    "state_revision": 11,
+    "task_absent_before": true,
+    "same_commit_blobs": {
+      "plan": "6ef11a6d11791dd4dee32c7c56fa4ad338e9f964",
+      "state": "fe188c41f1c489a1a7b3ef744ea9e050383225f1",
+      "reports10": "aaae2607306ea4fa125609580a9312de9d59f588",
+      "reports20": "57863de7a6ba499b2872df9cf0b6549c43afa7e7",
+      "reports30": "d790c1686cb72176664af414cabc82cece8bacca"
+    }
+  }
 }
