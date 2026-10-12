@@ -1,9 +1,9 @@
 {
   "schema": "care_state/v1",
-  "revision": 11,
-  "plan_revision": "2.4",
-  "updated_at": "2026-10-12T09:32:15+09:00",
-  "phase": "T11_E20-04_print_probe_3_sheet_structure_accepted_next_unit_repro_zip_path_cleanup",
+  "revision": 12,
+  "plan_revision": "2.5",
+  "updated_at": "2026-10-12T16:16:03+09:00",
+  "phase": "ORIGINAL_INTENT_CORRECTION_2_5_REEVALUATION_REQUIRED",
   "writer": "00",
   "canonical_repository": "myonmyon545-cell/-",
   "canonical_path": "care-insurance-analysis/STATE.json",
@@ -297,7 +297,7 @@
     },
     "T06": {
       "owner": "10",
-      "status": "旧候補v1保存済み・FAIL／新2.4候補未着手",
+      "status": "旧候補v1保存済み・FAIL／2.5新候補未着手",
       "wait_reason": "v1の独立評価FAIL。E20-02/E20-03/E20-04/E01とS10補完を一括適用した新候補が必要。",
       "confirmed_output": {
         "evidence": [
@@ -312,11 +312,12 @@
         "readback_verified": true,
         "reported_at": "2026-10-09T16:29:07+09:00"
       },
-      "next_action": "現在HEADのPLAN/STATE/10/20/30、references/S10_excerpts.json、S10_integration.md、decisions/2026-10-10_user_decisions.jsonを同一コミットで読む。進行中2.3候補があれば作業を捨てず差分適用し2.4新候補へ固定。T09→T10→T11と保存済み30案→T06→T12。一括で置換/欠落/局所表示/字体対策/Excel再現/再計算/全ログを実施。C11は保持。"
+      "next_action": "ROLE10はunit15診断後、新契約のブック候補を固定し、値検証とブック固定後にR02-R07説明を完成。先行アウトライン・根拠対応表は可。",
+      "plan_revision": "2.5"
     },
     "T07": {
       "owner": "20",
-      "status": "旧v1評価FAIL・新2.4全独立評価待ち",
+      "status": "旧v1評価FAIL・2.5ブック+説明の全独立評価待ち",
       "wait_reason": "新版候補が未生成。旧評価は2.2で全独立評価完了条件未達、2.4へ判定再利用不可。",
       "confirmed_output": {
         "evidence": "reports/20.json",
@@ -329,14 +330,15 @@
         },
         "plan_revision": "2.2"
       },
-      "next_action": "2.4新候補を固定し全R01-R14/Q01-Q14を元資料から独立評価。承認欠落/置換を原データ検証済みと誤表示しない。C11未免除。初回全範囲の評価は差分だけで済ませない。"
+      "next_action": "ROLE20が2.5固定候補のブックと物語説明を全範囲独立評価。R01-R15/Q01-Q16。旧FAIL/HELDは流用不可。",
+      "plan_revision": "2.5"
     },
     "T08": {
       "owner": "10",
       "status": "未着手",
       "wait_reason": "独立評価FAIL、新候補と表示/再現/補完評価が未了。完成・暫定の提出条件未達。",
       "confirmed_output": null,
-      "next_action": "判定に応じて完成または暫定を保存提出"
+      "next_action": "ROLE10はROLE20判定後、ブック・物語説明・再現ZIP・ログZIPを完成または暫定として保存提出。"
     },
     "T09": {
       "owner": "10",
@@ -366,8 +368,8 @@
         "T10"
       ],
       "confirmed_output": "reports/10.json task_results.T11_E20-04_unit3: 保存済みコピー実物検査記録",
-      "next_action": "ROLE10が次の一単位として、再現ZIP内の機械固有パス修正と手順・環境記録の収録を行い、実保存・読戻し結果をreports/10.jsonへ記録。",
-      "plan_revision": "2.4",
+      "next_action": "先行指示済みのROLE10 unit15数値矛盾の原因診断のみ。unit14を重複しない。",
+      "plan_revision": "2.5",
       "last_confirmed_subunit": {
         "task_id": "T11_E20-04_unit3",
         "status": "PRINT_PROBE_THREE_SHEET_STRUCTURE_ACCEPTED",
@@ -404,7 +406,7 @@
     "T12": {
       "owner": "10",
       "work": "各担当の追記ログを集約し、取得可能な全実データ・指示・履歴・失敗・未検証も非公開ログZIPに収録。未収録台帳と簡易確認文を作り候補へ対応付け。",
-      "plan_revision": "2.4",
+      "plan_revision": "2.5",
       "status": "未着手",
       "deps": [
         "T06"
@@ -835,7 +837,19 @@
     "20": "reports/20.json",
     "30": "reports/30.json"
   },
-  "next_action": "印刷確認コピーを3対象シートで受け入れるか15シートの別仕様にするか判断待ち。判断確定までは再生成・後続検査を開始しない。",
+  "next_action": {
+    "owner": "10",
+    "single_unit": "T11_E20-04_unit15 diagnosis_only",
+    "detail": "数値PASS報告と中間SHA/1469対1478の不一致原因を診断。unit14再実行なし。診断後に2.5候補/説明へ進む。",
+    "blockers": [
+      "日本語実描画未完了",
+      "全生成再実行未完了",
+      "Excel再計算未完了",
+      "2.5ブック候補未作成",
+      "物語説明未作成",
+      "C11正式分母待ち"
+    ]
+  },
   "history": [
     {
       "event": "共有用の登録内容をローカル準備。GitHub登録は自動承認審査に拒否され未実施。本解析も未実施。",
@@ -898,6 +912,13 @@
       "role": "00",
       "source_commit": "3c61b78d66855c370248c5fa27857705e53509a2",
       "event": "ユーザー明示判断に従い印刷確認コピーの構造範囲を注記対象3シートで受入。reports/10.jsonの保存済み実測（3シート、148グラフ部品、15注記、印刷確認コピーSHA一致、元コピーSHA検査前後不変）を参照。完成ブック15シート要件は維持し、日本語実描画・全生成再実行・再計算・候補評価・E20-04全体は未完了のまま。次担当ROLE10、次単位は再現ZIP内の機械固有パス修正と手順・環境記録の収録。"
+    },
+    {
+      "at": "2026-10-12T16:16:03+09:00",
+      "actor": "00",
+      "event": "original_intent_scope_corrected_to_revision_2_5",
+      "source_commit": "8b2eda7b42d4ec869d5649fd0efc39b377123dde",
+      "details": "物語説明を当初納品範囲として定義。15シート/元14/148グラフ維持。R02-R07根拠追跡、境界条件、再評価、ROLE20両成果物レビューを設定。報告10/20/30、候補・ブック不変更。"
     }
   ],
   "deployment_status": "registered_on_main",
@@ -1006,9 +1027,9 @@
       "共有画面の通常更新をUPDATE_PROTOCOLへ組込み。固定画面の再生成と保存読戻しを実施し、Site/既存添付/自動実行の更新は別途確認する。"
     ]
   },
-  "operations_revision": "2.4.4",
-  "canonical_plan_checked_commit": "3c61b78d66855c370248c5fa27857705e53509a2",
-  "canonical_plan_blob_sha": "dab4980781f5d0d3061b78aeea91b7eb7e06efc3",
+  "operations_revision": "2.5.0",
+  "canonical_plan_checked_commit": "8b2eda7b42d4ec869d5649fd0efc39b377123dde",
+  "canonical_plan_blob_sha": "6ef11a6d11791dd4dee32c7c56fa4ad338e9f964",
   "checks": [
     {
       "id": "input_hashes",
@@ -1242,11 +1263,11 @@
     }
   },
   "deadline_impact": {
-    "checked_at": "2026-10-10T11:53:32+09:00",
+    "checked_at": "2026-10-12T16:16:03+09:00",
     "candidate_milestone": "2026-10-10T20:00:00+09:00",
     "independent_review_milestone": "2026-10-11T20:00:00+09:00",
     "submission_target": "2026-10-12T21:00:00+09:00",
-    "status": "新2.4候補の保存報告なし。10/10 20:00候補、10/11 20:00評価、10/12 21:00提出の工程余裕は未確認。C11保留と日本語/再現/再計算/全ログ/全独立評価の未了を保持。",
+    "status": "2.5契約改訂でブックと物語説明双方の新規評価が必要。残時間内の完了可否・所要時間は未確認のため期限影響は重大/見積不能。期限は自動延長しない。",
     "estimate": null,
     "source_waits": [
       "C11"
@@ -1262,16 +1283,17 @@
     "main_path": "10新候補→20全独立評価→00統合→10提出。指摘時30→10→20。"
   },
   "plan_change": {
-    "previous_revision": "2.2",
-    "current_revision": "2.4",
-    "at": "2026-10-10T10:24:49+09:00",
-    "actual_updated_by": "planning",
-    "one_time_authorization": "既存の自動組込み/再構成許可と2026-10-10の具体的判断を計画とJSONへ反映。通常00専有を維持。",
-    "base_commit": "a96eba0920c8c21fb3b85d17e6a59cc5cea03fc7",
-    "reason": "ユーザー承認の採用/欠落/除外と全ログ収録を追加",
+    "previous_revision": "2.4",
+    "current_revision": "2.5",
+    "at": "2026-10-12T16:16:03+09:00",
+    "actual_updated_by": "00",
+    "classification": "original_intent_correction",
+    "authority": "最新ユーザー明示訂正",
+    "base_commit": "8b2eda7b42d4ec869d5649fd0efc39b377123dde",
+    "reason": "R7_round2物語説明は追加依頼でなく当初納品範囲。15シート/元14/148グラフ要件は維持し説明をR02-R07の固定検証済みブック根拠で定義。",
     "status": "applied_to_plan_not_applied_to_candidate",
     "retained_historical_report_blobs": {
-      "10": "ecdd8f911fe4d4acb436a1771ace280427e80b04",
+      "10": "9d3a60f9c8003f97fb1f2230e275034f7574f80c",
       "20": "57863de7a6ba499b2872df9cf0b6549c43afa7e7",
       "30": "d790c1686cb72176664af414cabc82cece8bacca"
     },
@@ -1282,31 +1304,93 @@
       "plan_revision": "2.2",
       "candidate_fingerprint": "9f123c60a6e16622204b6abc33736d85d55358be8956a9776b716659fe620695"
     },
-    "historical_report_policy": "旧報告/候補検査は2.2の固定証拠として変更しない。新版完了・合格への流用禁止。",
     "full_independent_reevaluation_required": true,
     "changes_applied_to_workbook": false,
-    "next_role": "10",
     "pending_tasks": [
-      "T09",
-      "T10",
-      "T11",
-      "T06_new_candidate",
+      "ROLE10_unit15_diagnosis_only",
+      "T06_new_candidate_and_narrative",
       "T12",
-      "T07_full_review_2.4",
+      "T07_full_review_2.5",
       "T08"
     ],
-    "source_excerpts": "references/S10_excerpts.json",
-    "previous_canonical_revision": "2.3",
-    "baseline_note": "previous_revisionは不変の旧候補/役割報告2.2の検査基準。直前の計画はprevious_canonical_revision=2.3。"
+    "boundaries": {
+      "C04": "S10 25.6日・年度参考のみ、第2回比較不可",
+      "C09": "分母0・算出不可",
+      "C10": "欠落・見出し未検証",
+      "C11": "正式分母待ち"
+    },
+    "owners": {
+      "PLAN_and_STATE": "00",
+      "workbook_code_and_reports10": "10",
+      "independent_review_and_reports20": "20",
+      "correction_proposals_and_reports30": "30"
+    },
+    "next_single_unit": "ROLE10 unit15: 数値PASS報告と中間SHA/1469対1478の不一致の原因診断のみ。unit14を中断・重複しない。",
+    "historical_plan_change": {
+      "previous_revision": "2.2",
+      "current_revision": "2.4",
+      "at": "2026-10-10T10:24:49+09:00",
+      "actual_updated_by": "planning",
+      "one_time_authorization": "既存の自動組込み/再構成許可と2026-10-10の具体的判断を計画とJSONへ反映。通常00専有を維持。",
+      "base_commit": "a96eba0920c8c21fb3b85d17e6a59cc5cea03fc7",
+      "reason": "ユーザー承認の採用/欠落/除外と全ログ収録を追加",
+      "status": "applied_to_plan_not_applied_to_candidate",
+      "retained_historical_report_blobs": {
+        "10": "ecdd8f911fe4d4acb436a1771ace280427e80b04",
+        "20": "57863de7a6ba499b2872df9cf0b6549c43afa7e7",
+        "30": "d790c1686cb72176664af414cabc82cece8bacca"
+      },
+      "retained_candidate": {
+        "id": "care-S01-20261009-v1",
+        "version": 1,
+        "sha256": "fe3ccd49b45400ea70687cd67cb50a7f9563cd7dd6641bd7c82c57aa97cbb570",
+        "plan_revision": "2.2",
+        "candidate_fingerprint": "9f123c60a6e16622204b6abc33736d85d55358be8956a9776b716659fe620695"
+      },
+      "historical_report_policy": "旧報告/候補検査は2.2の固定証拠として変更しない。新版完了・合格への流用禁止。",
+      "full_independent_reevaluation_required": true,
+      "changes_applied_to_workbook": false,
+      "next_role": "10",
+      "pending_tasks": [
+        "T09",
+        "T10",
+        "T11",
+        "T06_new_candidate",
+        "T12",
+        "T07_full_review_2.4",
+        "T08"
+      ],
+      "source_excerpts": "references/S10_excerpts.json",
+      "previous_canonical_revision": "2.3",
+      "baseline_note": "previous_revisionは不変の旧候補/役割報告2.2の検査基準。直前の計画はprevious_canonical_revision=2.3。"
+    }
   },
-  "canonical_plan_reference_note": "前版PLANの確認根拠。新PLANはこのSTATEと同じ保存コミットで読む。",
+  "canonical_plan_reference_note": "PLAN 2.5 fixed saved commit readback pending.",
   "audit_log": {
     "scope": "取得可能な全記録と全データ",
     "collection_started": true,
     "decision_event": "logs/events/planning_20261010_decisions.json",
     "final_archive_generated": false,
     "unavailable_history_policy": "未収録を明示。要約と原文を区別。",
-    "actual_candidate_updated": false
+    "actual_candidate_updated": false,
+    "scope_reconciliation": {
+      "at": "2026-10-12T16:16:03+09:00",
+      "source_commit": "8b2eda7b42d4ec869d5649fd0efc39b377123dde",
+      "changed": [
+        "revision 2.4 to 2.5",
+        "narrative output/acceptance",
+        "R15/Q15/Q16",
+        "owners and dual review",
+        "reevaluation and next unit"
+      ],
+      "not_changed": [
+        "reports/10.json",
+        "reports/20.json",
+        "reports/30.json",
+        "workbook",
+        "ZIP"
+      ]
+    }
   },
   "shared_view_update": {
     "owner": "00",
