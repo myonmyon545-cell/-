@@ -1,11 +1,11 @@
 {
   "schema": "care_handoff/v1",
   "role": "10",
-  "plan_revision": "2.4",
-  "status": "数値再現の矛盾を診断。保存中間の工程対応は未確定。数値再現未検証、E20-04 NOT_PASS",
-  "task_id": "T11_E20-04_unit15",
-  "source_commit": "23e52d7cf813783bda310aa6309c1aa1f1e6e8c4",
-  "pre_save_rechecked_commit": "23e52d7cf813783bda310aa6309c1aa1f1e6e8c4",
+  "plan_revision": "2.5",
+  "status": "再現ZIP版7と入力識別・実引数の事前検査を固定。実データ再実行は未実施、E20-04 NOT_PASS",
+  "task_id": "T11_E20-04_unit17_align_reproduction_bundle",
+  "source_commit": "1ef99adb37eb5ff2fdbf368c2fce8e2e9f88ef64",
+  "pre_save_rechecked_commit": "1ef99adb37eb5ff2fdbf368c2fce8e2e9f88ef64",
   "updated_at": "2026-10-12",
   "startup_read": {
     "branch": "main",
@@ -3497,6 +3497,193 @@
       "E20_04": "NOT_PASS",
       "candidate_acceptance": false,
       "restart_position": "Use this committed code and fixture results; first align the reproduction ZIP invocation and input identity manifest. Do not interpret fixture PASS as production acceptance."
+    },
+    "T11_E20-04_unit17_align_reproduction_bundle": {
+      "task_id": "T11_E20-04_unit17_align_reproduction_bundle",
+      "source_main_commit": "1ef99adb37eb5ff2fdbf368c2fce8e2e9f88ef64",
+      "plan_revision": "2.5",
+      "same_commit_read": {
+        "care-insurance-analysis/PLAN.md": "9cff1723e0a98a1bdeea9baaf4e3a26b682a1c3e",
+        "care-insurance-analysis/STATE.json": "668632ff5efd8f3962f3bd240140e4390697bc1f",
+        "care-insurance-analysis/reports/10.json": "ef8cecb041856e71f1f3e02d8c2aa91a0baeab2f",
+        "care-insurance-analysis/reports/20.json": "57863de7a6ba499b2872df9cf0b6549c43afa7e7",
+        "care-insurance-analysis/reports/30.json": "c0b5b7e4b6892379eff4f669f7b26e970271141d"
+      },
+      "unit16_prerequisite": "BOUNDED_IMPLEMENTATION_AND_FIXTURE_TESTS_PASS",
+      "base_bundle": {
+        "library_file_id": "libfile_ee630bb61568819194c96e581ef243a4",
+        "version": 5,
+        "sha256": "0cb739117c93eaa175d698b43d67e64110aaf6dcbb8cf49f499d0d30a0c1a78d",
+        "integrity": "ZIP CRC and 88 internal hashes/sizes PASS; unchanged"
+      },
+      "saved_bundle": {
+        "library_file_id": "libfile_ee630bb61568819194c96e581ef243a4",
+        "file_id": "file_000000003804820698d140fbcfaaef0e",
+        "version": 7,
+        "name": "介護保険解析_再現用_unit17.zip",
+        "size_bytes": 5474711,
+        "sha256": "d3b108a11c3e6072dcdee88d9ec04d5b82136688a9ecaf107bab2ac5c314e818",
+        "readback_sha256": "d3b108a11c3e6072dcdee88d9ec04d5b82136688a9ecaf107bab2ac5c314e818",
+        "readback_version": 7,
+        "zip_crc": "PASS",
+        "internal_manifest_entries": 102,
+        "manifest_sha256": "bca8a2aa3ffe0f7c5e12d734c019f9cfdec3e2db07d2649dceea074b5452a68f",
+        "readback_manifest_all_hash_size_crc": "PASS",
+        "previous_v5_preserved": true,
+        "intermediate_v6_preserved": true
+      },
+      "code_identity": {
+        "source_commit": "1ef99adb37eb5ff2fdbf368c2fce8e2e9f88ef64",
+        "files": [
+          {
+            "path": "src/replay_pipeline.py",
+            "git_blob": "9dd35c5c9d34391f7deb407c8352cd0e65c3396b",
+            "sha256": "9749848327a8af5ae649ffdbed479e927b8f0d47585bf80bedbe1440a282d3dd"
+          },
+          {
+            "path": "src/replay_v2.py",
+            "git_blob": "7e04a8d1b8eef5b8e2181f253ae095efb2038a0a",
+            "sha256": "03709c2239ee1a9cae92d5daacdad4716c46b1fc0507301f85c63251f7e470a3"
+          },
+          {
+            "path": "src/summary_v2.py",
+            "git_blob": "b366ff9772fb7acd997bea2998c64a562fe3d95d",
+            "sha256": "c212bea91935d401ca899070364822393099e693d5a13f7c89877dea84b63ede"
+          },
+          {
+            "path": "src/test_u16_provenance.py",
+            "git_blob": "3ebcaaeec113145b96e16092af1caebc5703464e",
+            "sha256": "45cb84848badef72dcdc6a0191009aaae48fedc056cf573a5387bc80e0fe7e2a"
+          }
+        ],
+        "extensions": [
+          {
+            "path": "src/validate_bundle_inputs.py",
+            "sha256": "c852bcc4c3bf5f2381fbbd5ce82254420fe419303e67732e09f2ff4a49a488d4"
+          },
+          {
+            "path": "src/test_u17_preflight.py",
+            "sha256": "ecbe7545b64b5568a383c4c435c4a7a3668a74b0f52a4404adff9b589e74a33f"
+          }
+        ]
+      },
+      "input_identity": {
+        "path": "src/immutable_input_identity.json",
+        "sha256": "d21963753edf8e1251998cfba69a21f63b4cd83b5b0d458d424441563891ef57",
+        "records": {
+          "S01": {
+            "source": "ChatGPT Library libfile_2f275b2a53d481919fb7d942fbecc486",
+            "version": "content-addressed sha256:5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d",
+            "sha256": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d",
+            "processing_role": "target",
+            "library_file_id": "libfile_2f275b2a53d481919fb7d942fbecc486"
+          },
+          "S02": {
+            "source": "ChatGPT Library libfile_49bf2650277881919afc2e41b9afaca2",
+            "version": "content-addressed sha256:9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304",
+            "sha256": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304",
+            "processing_role": "prior_period_reference",
+            "library_file_id": "libfile_49bf2650277881919afc2e41b9afaca2",
+            "verified_alias_id": "libfile_0d9cfee943ec819188518e4922ce620e"
+          },
+          "S03": {
+            "source": "ChatGPT Library libfile_6ef50a7e48148191bab971c64f1df614",
+            "version": "content-addressed sha256:e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f",
+            "sha256": "e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f",
+            "processing_role": "structure_and_presentation_reference; input presence/hash gate",
+            "library_file_id": "libfile_6ef50a7e48148191bab971c64f1df614",
+            "verified_alias_id": "libfile_1a33a04a77e4819197bfdf49e7cd8099"
+          },
+          "S04": {
+            "source": "ChatGPT Library libfile_348a1421657c8191938bc42e4a79b9ea",
+            "version": "content-addressed sha256:d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800",
+            "sha256": "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800",
+            "processing_role": "analysis_priorities",
+            "library_file_id": "libfile_348a1421657c8191938bc42e4a79b9ea"
+          },
+          "S05": {
+            "source": "ChatGPT Library libfile_7a46b17eb12c8191b3104fe6a8f4f0aa",
+            "version": "content-addressed sha256:87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1",
+            "sha256": "87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1",
+            "processing_role": "board_analysis_procedure",
+            "library_file_id": "libfile_7a46b17eb12c8191b3104fe6a8f4f0aa",
+            "verified_alias_id": "libfile_f40c9f4e1d0081919fb497f31e737856"
+          },
+          "S06": {
+            "source": "ChatGPT Library libfile_6f78bde68948819198a39bb69b17af54",
+            "version": "content-addressed sha256:b74b37c05a97d053ef46c16f380177f5a0724151dac5daff1c4076290671e524",
+            "sha256": "b74b37c05a97d053ef46c16f380177f5a0724151dac5daff1c4076290671e524",
+            "processing_role": "board_analysis_tool",
+            "library_file_id": "libfile_6f78bde68948819198a39bb69b17af54",
+            "verified_alias_id": "libfile_b7623c4ffd6881919e938f89942286f3"
+          },
+          "S10": {
+            "source": "ChatGPT Library libfile_292453196e588191a056e2f761753670",
+            "version": "Library version 0",
+            "sha256": "a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2",
+            "processing_role": "annual_context_and_authorized_C04_reference_only",
+            "library_file_id": "libfile_292453196e588191a056e2f761753670"
+          },
+          "C03_work_copy": {
+            "source": "ChatGPT Library libfile_62b53f903fd08191b6791f304b704519; reports/10.json.task_results.T03.outputs[2]",
+            "version": "Library version 0",
+            "sha256": "fef7ab5b1b46bc8eb03c040c3d4767ec9aa41098c6106019397ce29623c77cf6",
+            "processing_role": "C03 already-applied S01 work copy; replay source-copy only; never reapply C03",
+            "library_file_id": "libfile_62b53f903fd08191b6791f304b704519",
+            "bundle_path": "candidate/S01_C03_作業コピー_保持試験.xlsx",
+            "evidence": "T03 saved/readback result in pinned reports/10.json (blob ef8cecb041856e71f1f3e02d8c2aa91a0baeab2f); exact SHA and ID match"
+          },
+          "ROLE30_proposal": {
+            "source": "v5 reproduction bundle libfile_ee630bb61568819194c96e581ef243a4#historical/role30_initial.json",
+            "version": "Library version 5 / internal snapshot",
+            "sha256": "6edacc71c952ea1f2d5530719e1628d50d8abb637cbf78881cc5353a40c590c7",
+            "processing_role": "ROLE30 historical classification/correction proposal input to apply_role30.py",
+            "library_file_id": "libfile_ee630bb61568819194c96e581ef243a4",
+            "bundle_path": "historical/role30_initial.json",
+            "evidence": "Exact bytes and digest from pinned v5 ZIP; not claimed to equal reports/30.json at embedded source_commit"
+          },
+          "legacy_candidate": {
+            "source": "v5 reproduction bundle libfile_ee630bb61568819194c96e581ef243a4#candidate/介護保険解析_候補_v2.xlsx",
+            "version": "Library version 5 / internal comparison fixture",
+            "sha256": "ae232eb250d4e089f7a167290e85bf4b39c59b0e12a11b0115be7d8290433695",
+            "processing_role": "legacy workbook comparator fixture only; not an accepted candidate",
+            "library_file_id": "libfile_ee630bb61568819194c96e581ef243a4",
+            "bundle_path": "candidate/介護保険解析_候補_v2.xlsx"
+          }
+        },
+        "C03_evidence": "Pinned reports/10 T03 output ID/version/SHA confirmed; already-applied overlay; not reapplied.",
+        "ROLE30": "Exact package v5 historical/role30_initial.json SHA; explicitly a bundle snapshot, not claimed identical to live reports/30 at embedded source commit.",
+        "templates": "S03 structure/presentation reference; bundled v5 candidate is comparator only."
+      },
+      "verification": {
+        "argparse_help": "PASS; exact flags recorded in REPRODUCE.md",
+        "cross_working_directory_paths": "PASS (/tmp with absolute bundle and sources)",
+        "actual_source_hashes": "PASS for S01-S06 and S10 read-only copies",
+        "unit16_fixtures": "PASS U16-T1..T4, 4 synthetic tests",
+        "unit17_fixtures": "PASS 5 tests including missing record, wrong C03 bytes, wrong S01 library identity rejection and cross-cwd",
+        "production_pipeline": "NOT_EXECUTED",
+        "workbook_generation": "NOT_EXECUTED"
+      },
+      "environment": {
+        "runtime": "26.1004.11800",
+        "python": "3.12.14",
+        "openpyxl": "3.1.5",
+        "node": "v24.19.0 available but not invoked",
+        "artifact_tool": "2.8.85 installed but not invoked",
+        "excel_or_libreoffice": "not invoked"
+      },
+      "future_command": {
+        "run_id": "RUN_ID=\"replay-$(date -u +%Y%m%dT%H%M%SZ)-$$\"",
+        "preflight": "$CODEX_PRIMARY_RUNTIME_PYTHON src/validate_bundle_inputs.py --bundle . --sources ./sources --code-commit 1ef99adb37eb5ff2fdbf368c2fce8e2e9f88ef64 --expected-stage post_C03_post_ROLE30_final_numeric",
+        "replay": "\"$CODEX_PRIMARY_RUNTIME_PYTHON\" src/replay_v2.py --bundle . --sources ./sources --node \"$CODEX_PRIMARY_RUNTIME_NODE\" --node-modules \"$CODEX_PRIMARY_RUNTIME_NODE_MODULES\" --out \"./outputs/$RUN_ID\" --retain-dir \"./retained/$RUN_ID\" --run-id \"$RUN_ID\" --code-commit 1ef99adb37eb5ff2fdbf368c2fce8e2e9f88ef64"
+      },
+      "unresolved": [
+        "Production 6316-record/1478-comparison run not executed; previous 1469-versus-1478 conflict unresolved.",
+        "Excel generation, recalculation/save-reopen, Japanese rendering, ROLE20 evaluation not executed."
+      ],
+      "next_single_unit": "T11_E20-04_unit18_isolated_numeric_replay_once using Library v7; preflight, then run the documented replay command once; stop and preserve evidence on failure.",
+      "E20_04": "NOT_PASS",
+      "candidate_acceptance": false
     }
   },
   "outputs": {
@@ -3788,7 +3975,7 @@
     }
   ],
   "next_role": "10",
-  "next_action": "Unit16として、stage-ID付き数値成果の永続化と再現抽出を要点生成へ渡す限定コード変更案のレビュー。全工程再実行はその後の独立承認単位。",
+  "next_action": "T11_E20-04_unit18_isolated_numeric_replay_once using Library v7; preflight, then run the documented replay command once; stop and preserve evidence on failure.",
   "restart_condition": "libfile_d176f2c0f1c081919bcc4aecf5140011 version 0 SHA256 7cdd7a6f114582e4b7b2cf6c05d1d04b8fde55f6121d939c8bb5a49627737ceb と、reproduction ZIP v5 を起点にUnit16の限定コード変更案をレビュー。再実行前に別途承認された単位に分ける。",
   "candidate": {
     "id": "care-S01-20261009-v1",
