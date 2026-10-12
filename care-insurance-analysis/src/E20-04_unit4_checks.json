@@ -1,0 +1,82 @@
+{
+  "task_id": "T11_E20-04_unit4",
+  "source_main_commit": "11573220bd30c2047d8fc39ccd1559ba8b2329e4",
+  "source_files": {
+    "PLAN.md": "dab4980781f5d0d3061b78aeea91b7eb7e06efc3",
+    "STATE.json": "2ed2cffa924015bcf139c03079a19f2e88d60fdc",
+    "reports/10.json": "523a106bf5c8e85ce235aedcdc122791934c3606",
+    "reports/20.json": "57863de7a6ba499b2872df9cf0b6549c43afa7e7",
+    "reports/30.json": "d790c1686cb72176664af414cabc82cece8bacca",
+    "src/input_manifest.json": "b45dbfbb8eccc7845276c3a7133adbee3f787cc2",
+    "src/make_print_probe.py": "f37d4fc5fc867e6f4e3df9155aafb48e66b5f281"
+  },
+  "existing_print_probe_scope_resolution": {
+    "library_id": "libfile_24c8577da2608191ad4e0a3ea03c75eb",
+    "version": 0,
+    "sha256": "9f6e33239ef9065481d7c0227f402c7ff36ee74a4e71d32e201f1371a3abee64",
+    "registered_sheets": 3,
+    "chart_parts": 148,
+    "verified_local_notes": 15,
+    "open_and_zip_crc": "PASS",
+    "base_work_copy_library_id": "libfile_5b4c950910fc8191930febed5dbb7889",
+    "base_work_copy_version": 2,
+    "base_sha256_before_after": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+    "base_unchanged": true,
+    "scope_decision": "Three affected annotation sheets are the print probe scope; completed workbook remains 15 sheets.",
+    "print_probe_structure": "PASS",
+    "japanese_print_readability": "HELD",
+    "E20_04_overall": "NOT_PASS"
+  },
+  "path_audit": {
+    "existing_zip_library_id": "libfile_d613c5b2ffb08191bf6eff5c8d7e0fdb",
+    "zip_version": 2,
+    "zip_sha256": "d05e3f71c7df01d42ca17d0581324b78b403e38033d216411010788f1a1cf143",
+    "zip_crc": "PASS",
+    "fixed_absolute_path_instances": [
+      {
+        "file": "inspection/input_manifest.json",
+        "locations": ["S01, S03, S04, S05, S06, S02, and S10 workspace_path fields"],
+        "current_reference": "/workspace/scratch/dd7887fa78cd/project_sources/...",
+        "change": "remove machine-local workspace_path; use relative paths under externally populated ./sources/ or resolve by manifest ID/SHA",
+        "impact": "input mapping and reproducible source acquisition"
+      },
+      {
+        "file": "checks/native_check.json",
+        "locations": ["engine and conversion log paths"],
+        "current_reference": "/opt/codex/runtimes/codex-primary-runtime/... and /workspace/scratch/dd7887fa78cd/...",
+        "change": "store tool version and relative artifact paths; pass the actual --soffice executable path at runtime",
+        "impact": "native recalculation trial provenance; does not affect replay_v2 assembly command"
+      },
+      {
+        "file": "historical/report_20.json",
+        "locations": ["quoted prior finding"],
+        "current_reference": "/workspace/scratch/dd7887fa78cd",
+        "change": "retain as historical evidence or annotate as obsolete; do not treat as an executable path",
+        "impact": "documentation only"
+      },
+      {
+        "file": "historical/report_30.json",
+        "locations": ["quoted prior finding"],
+        "current_reference": "/workspace/scratch/dd7887fa78cd",
+        "change": "retain as historical evidence or annotate as obsolete; do not treat as an executable path",
+        "impact": "documentation only"
+      }
+    ],
+    "unsupported_or_unavailable_options": [
+      "replay_v2.py has no --check-paths-only or --tmpdir option; its normal command writes outputs and runs the full assembly replay",
+      "replay_v2.py internal temporary author directory uses tempfile default and cannot be set by a CLI argument",
+      "saved ZIP v2 does not contain current-main make_print_probe.py or its path test; do not claim those are included in ZIP v2"
+    ]
+  },
+  "safe_path_resolution_test": {
+    "code": "main make_print_probe.py at blob f37d4fc5fc867e6f4e3df9155aafb48e66b5f281; Git blob verified identical",
+    "command_shape": "python /absolute/path/make_print_probe.py --base base.bin --out new/probe.xlsx --check-paths-only",
+    "isolated_workdirs": 2,
+    "results": ["cwd-a return code 0; resolved paths within temp dir; no output created", "cwd-b return code 0; resolved paths within different temp dir; no output created"],
+    "result": "PASS",
+    "base_placeholder": "Non-Excel bytes; check-paths-only validates paths and does not open the file as Excel.",
+    "full_generation_or_recalculation": "NOT_RUN"
+  },
+  "unrun": ["ZIP update", "full pipeline replay", "Excel generation", "recalculation", "recalculated save/reopen", "Japanese native print rendering", "candidate certification"],
+  "restart_position": "Review fixed-path audit and this runbook draft; normalize paths in the ZIP source manifest and native-check record, then run full replay only as a separately authorized next unit."
+}
