@@ -2,44 +2,42 @@
   "schema": "care_handoff/v1",
   "role": "10",
   "plan_revision": "2.4",
-  "status": "T11_E20-04_unit7_full_replay_failed_at_verify_extraction; E20-04 overall NOT_PASS",
-  "task_id": "T11_E20-04_unit7",
-  "source_commit": "62e6bca7f9afd5545593c274ddba5524293394b1",
-  "pre_save_rechecked_commit": "62e6bca7f9afd5545593c274ddba5524293394b1",
-  "updated_at": "2026-10-12T00:53:45.725Z",
+  "status": "T11_E20-04_unit8_replay_generated_but_local_note_scope_failed; E20-04 overall NOT_PASS",
+  "task_id": "T11_E20-04_unit8",
+  "source_commit": "210aec627ca32c13874e855a8fd8e6b6a7cd630d",
+  "pre_save_rechecked_commit": "210aec627ca32c13874e855a8fd8e6b6a7cd630d",
+  "updated_at": "2026-10-12T01:08:01.481Z",
   "startup_read": {
     "branch": "main",
-    "head_sha": "afa996bc6a3d7a82b7d1fd04a0381e8abcfa3833",
-    "paths": [
-      "PLAN.md",
-      "STATE.json",
-      "reports/10.json",
-      "reports/20.json",
-      "reports/30.json",
-      "decisions/2026-10-10_user_decisions.json",
-      "references/S10_excerpts.json",
-      "references/S10_integration.md",
-      "src/input_manifest.json"
+    "head_sha": "210aec627ca32c13874e855a8fd8e6b6a7cd630d",
+    "same_commit_documents": [
+      {
+        "path": "care-insurance-analysis/PLAN.md",
+        "blob": "6ef11a6d11791dd4dee32c7c56fa4ad338e9f964"
+      },
+      {
+        "path": "care-insurance-analysis/STATE.json",
+        "blob": "fe188c41f1c489a1a7b3ef744ea9e050383225f1"
+      },
+      {
+        "path": "care-insurance-analysis/reports/10.json",
+        "blob": "f3720a37a5f56c5bc1a91f8af786e7b777410d30"
+      },
+      {
+        "path": "care-insurance-analysis/reports/20.json",
+        "blob": "57863de7a6ba499b2872df9cf0b6549c43afa7e7"
+      },
+      {
+        "path": "care-insurance-analysis/reports/30.json",
+        "blob": "d790c1686cb72176664af414cabc82cece8bacca"
+      }
     ],
-    "blob_sha_by_path": {
-      "PLAN.md": "dab4980781f5d0d3061b78aeea91b7eb7e06efc3",
-      "STATE.json": "b37f05ad3eeccab551ead6d688bc58cf47e13548",
-      "reports/10.json": "1918a72711f2c79c82491b0979d6199e6bd4f47b",
-      "reports/20.json": "57863de7a6ba499b2872df9cf0b6549c43afa7e7",
-      "reports/30.json": "d790c1686cb72176664af414cabc82cece8bacca",
-      "decisions/2026-10-10_user_decisions.json": "95fd03a84a39fe68b49d69c570c590ea40250301",
-      "references/S10_excerpts.json": "93d812066d0b7ade5142c325b5a6ce7762bddd72",
-      "references/S10_integration.md": "a1e5dbe3c9d882be0d53a786470249596b2ad7c7",
-      "src/input_manifest.json": "b45dbfbb8eccc7845276c3a7133adbee3f787cc2"
-    },
-    "all_same_commit": true,
-    "initial_completed_tasks": [
-      "T01",
-      "T02",
-      "T04"
-    ],
-    "latest_state_revision": 5,
-    "latest_read_scope": "main HEAD afa996b固定でPLAN2.4、STATE、reports/10・20・30、決定JSON、S10 excerpts/integration、T09入力台帳を読取。T09既存照合を再利用してT10構造化仕分け。"
+    "plan_revision": "2.4",
+    "state_revision": 11,
+    "reports10_unit8_absent_before_run": true,
+    "reports20_verdict": "FAIL",
+    "reports30_status": "candidate_v1_correction_proposal_ready",
+    "reports10_reused_prior_unit7": true
   },
   "inputs": [
     {
@@ -1690,6 +1688,172 @@
         "raw_sources_modified": false,
         "existing_candidate_or_workcopy_modified": false
       }
+    },
+    "T11_E20-04_unit8": {
+      "task_id": "T11_E20-04_unit8",
+      "source_commit": "210aec627ca32c13874e855a8fd8e6b6a7cd630d",
+      "pre_save_rechecked_commit": "210aec627ca32c13874e855a8fd8e6b6a7cd630d",
+      "recorded_at": "2026-10-12T01:08:01.481Z",
+      "duplicate_check": "Latest main HEAD reread immediately before append; no unit8 result existed.",
+      "startup_read": {
+        "plan_revision": "2.4",
+        "state_revision": 11,
+        "reports20_verdict": "FAIL",
+        "reports30_status": "candidate_v1_correction_proposal_ready",
+        "same_commit_documents": [
+          {
+            "path": "care-insurance-analysis/PLAN.md",
+            "blob": "6ef11a6d11791dd4dee32c7c56fa4ad338e9f964"
+          },
+          {
+            "path": "care-insurance-analysis/STATE.json",
+            "blob": "fe188c41f1c489a1a7b3ef744ea9e050383225f1"
+          },
+          {
+            "path": "care-insurance-analysis/reports/10.json",
+            "blob": "f3720a37a5f56c5bc1a91f8af786e7b777410d30"
+          },
+          {
+            "path": "care-insurance-analysis/reports/20.json",
+            "blob": "57863de7a6ba499b2872df9cf0b6549c43afa7e7"
+          },
+          {
+            "path": "care-insurance-analysis/reports/30.json",
+            "blob": "d790c1686cb72176664af414cabc82cece8bacca"
+          }
+        ]
+      },
+      "package": {
+        "library_file_id": "libfile_d613c5b2ffb08191bf6eff5c8d7e0fdb",
+        "version": 3,
+        "sha256": "cd0e9b694b0f43031c588c5f6bbf08115aba0f1ab0b55b0a14c42821364dd746",
+        "zip_crc": "PASS",
+        "manifest_entries": 77,
+        "manifest_hash_size": "PASS"
+      },
+      "sources": {
+        "logical_count": 7,
+        "all_sha256_match_before_run": true,
+        "read_only_copies": true,
+        "staged_relative_directory": "bundle/sources",
+        "github_upload": false,
+        "originals_modified": false,
+        "records": [
+          [
+            "S01",
+            "libfile_2f275b2a53d481919fb7d942fbecc486",
+            "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d",
+            "01-UTF-8-Q-E7-AC-AC-EF-BC-92-E5-9B-9E-2Exlsx-1"
+          ],
+          [
+            "S02",
+            "libfile_0d9cfee943ec819188518e4922ce620e",
+            "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304",
+            "04-UTF-8-Q-E7-AC-AC-EF-BC-91-E5-9B-9E-2Exlsx-1"
+          ],
+          [
+            "S03",
+            "libfile_1a33a04a77e4819197bfdf49e7cd8099",
+            "e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f",
+            "03-R5-1-.xlsx"
+          ],
+          [
+            "S04",
+            "libfile_348a1421657c8191938bc42e4a79b9ea",
+            "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800",
+            "07-file-7"
+          ],
+          [
+            "S05",
+            "libfile_f40c9f4e1d0081919fb497f31e737856",
+            "87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1",
+            "06-manual-1-.pdf"
+          ],
+          [
+            "S06",
+            "libfile_b7623c4ffd6881919e938f89942286f3",
+            "b74b37c05a97d053ef46f16f380177f5a0724151dac5daff1c4076290671e524",
+            "02-Tool_v1.3-1-1-.xls"
+          ],
+          [
+            "S10",
+            "libfile_292453196e588191a056e2f761753670",
+            "a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2",
+            "③R8.5.31_個別業務資料（介護保険課）.docx"
+          ]
+        ],
+        "staging_note": "S04 alias was additionally staged under 05-R5-1 with the same SHA for a direct source lookup; not a distinct logical input."
+      },
+      "execution": {
+        "status": "COMMAND_EXIT_0_OUTPUT_GENERATED",
+        "command": "\"$CODEX_PRIMARY_RUNTIME_PYTHON\" src/replay_v2.py --bundle . --sources ./sources --node \"$CODEX_PRIMARY_RUNTIME_NODE\" --node-modules \"$CODEX_PRIMARY_RUNTIME_NODE_MODULES\" --out ./replay-v3",
+        "command_invocation_count": 1,
+        "cwd": "bundle root in fresh isolated directory",
+        "isolated_root": "/tmp/care_e20_unit8_20261012T010054Z",
+        "started_at_utc": "2026-10-12T01:02:42.594147+00:00",
+        "ended_at_utc": "2026-10-12T01:02:57.220082+00:00",
+        "elapsed_seconds": 14.626,
+        "exit_code": 0,
+        "environment": {
+          "python": "3.12.14",
+          "node": "v24.19.0",
+          "artifact_tool": "2.8.85",
+          "node_modules": "runtime-provided CODEX_PRIMARY_RUNTIME_NODE_MODULES",
+          "logging": "temporary PYTHONPATH sitecustomize captured nested subprocess stdout/stderr; replay ZIP code unchanged"
+        },
+        "stdout_sha256": "3cf18ea2b661612eef837c690b0faf958caa63a366f9a157d3618b7d5585acf1",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "inner_subprocess_log_sha256": "34f2b59666c2baf79510cd615809115673d87fb0be171126e848df9db1da589d",
+        "output_pre_run_new_and_empty": true,
+        "result_summary": "numeric replay PASS (6 files); S10 native table read 11 blocks/162 explicit cells; core hold unlocks 0; summary authored; preservation PASS; full replay PASS."
+      },
+      "output": {
+        "local_path": "/tmp/care_e20_unit8_20261012T010054Z/bundle/replay-v3/candidate_v2.xlsx",
+        "sha256": "ae232eb250d4e089f7a167290e85bf4b39c59b0e12a11b0115be7d8290433695",
+        "size_bytes": 1804361,
+        "exact_sha_matches_bundled_candidate": true,
+        "logical_part_differences": [],
+        "storage": "temporary isolated output only; no Library persistence ID/version and no GitHub workbook upload",
+        "recognition": "replay output only; not certified or designated as candidate_v2/finished product"
+      },
+      "checks": {
+        "zip_manifest_and_inputs": "PASS",
+        "numerical_replay": "PASS: 6 output SHA pairs identical to pinned package",
+        "all_metrics_and_comparisons": "PASS: exact reproduced baseline files contain 6,316 records and 1,478 comparisons; corresponding replay/current hashes identical",
+        "s10_integration": "PASS: 11 tables, 11 blocks, 162 explicit cells, 0 held items unlocked",
+        "workbook_open_and_structure": "PASS: reopened; 15 sheets; first is 分析要点, followed by 14 original sheets in expected order; 14 summary columns; 148 chart XML parts",
+        "original_parts": "PASS: original values/formulas unchanged, chart/drawing/image parts byte-identical, original print/hidden settings unchanged; C03_reapplied=false",
+        "summary_print_setup": "PASS in workbook structure: A3 landscape, width 1 page, height automatic, print range A1:N1197, repeat header row 201",
+        "focus_R02_R07": "PASS: all six focus sections present in summary rows with result/comparison/source-cell basis",
+        "C04": "PASS_WITH_HOLD: S10 R7 city 25.6 days in independent annual reference row (table 62); city J208 remains unverified and non-comparable",
+        "C09": "PASS_WITH_HOLD: denominator 0 explicitly shown as 未算出 (not 0%); original formula error retained",
+        "C10": "PASS_WITH_HOLD: medication counts/rates marked held and excluded from comparison/conclusion",
+        "C11": "PASS_WITH_HOLD: formal-denominator wait retained; no hold unlock; no denominator reconstructed",
+        "C12_C13_C14": "PASS_WITH_HOLD: mismatch data excluded; C13 separate reference; C14 unresolved difference 4 remains held",
+        "local_notes_15": "FAIL_SCOPE_COUNT: 6 embedded local caption ranges found (C69, D99, D367, D428, D489, D205), whereas 15 were requested. No comments XML present. Workbook unchanged; deficiency not repaired in this unit.",
+        "recalculation_and_save_readback": "NOT_RUN",
+        "japanese_actual_render": "NOT_RUN_HELD",
+        "role20_independent_review": "NOT_RUN",
+        "E20_04_overall": "NOT_PASS"
+      },
+      "checkpoint": {
+        "result": "REPLAY_PIPELINE_PASS_WITH_EXPLICIT_SCOPE_FAILURE",
+        "last_successful_operation": "README command executed once in fresh isolated bundle/sources layout; generated XLSX reopened and compared.",
+        "stopped_stage": "Post-run inspection and reporting; no subsequent process stage started.",
+        "last_error": "No command/runtime error. Explicit verification discrepancy: local annotation count is 6, not requested 15.",
+        "recovered_result": "All six numeric replay outputs matched by SHA; complete generated workbook SHA equals package's pinned candidate and logical diff list empty.",
+        "next_action": "Do not rerun now. Inspect/fix only the annotation generation contract for the missing nine local-note ranges in a separately authorized unit, preserving workbook values/formulas/charts/printing. Then rerun the applicable validation. Recalculation/save-readback, Japanese rendering, and ROLE20 remain separate."
+      },
+      "write_scope": {
+        "only": "care-insurance-analysis/reports/10.json",
+        "STATE_modified": false,
+        "PLAN_modified": false,
+        "reports20_modified": false,
+        "reports30_modified": false,
+        "originals_modified": false,
+        "old_candidate_modified": false,
+        "work_copy_version2_modified": false
+      }
     }
   },
   "outputs": {
@@ -1981,8 +2145,8 @@
     }
   ],
   "next_role": "10",
-  "next_action": "Do not rerun the ZIP command in this unit. Before the next authorized run, stage S01/S02 under the exact basenames in src/inspect_inputs.py within bundle/sources, or separately change verify_extraction.py to use the SHA lookup consistently. Keep remaining inputs hash-verified, use a fresh bundle and empty output path, and preserve verifier stderr. Recalculation/save-readback, Japanese rendering, ROLE20, and overall E20-04 remain separate.",
-  "restart_condition": "Fresh isolated replay only after correcting S01/S02 basenames or an explicitly scoped verifier path fix; no reattempt in unit 7.",
+  "next_action": "第8単位の再実行は繰り返さない。reports/10 unit8に記録した6/15局所注記数の差を原因確認し、注記生成だけを対象にした独立単位の指示を待つ。再計算・保存後読戻し、日本語実描画、ROLE20独立評価は別単位。",
+  "restart_condition": "unit8結果を再利用。生成コード/manifestと局所注記15件の適用範囲を照合し、6件になった箇所を特定してから限定修正する。",
   "candidate": {
     "id": "care-S01-20261009-v1",
     "version": 1,
@@ -2022,7 +2186,7 @@
       1787
     ]
   },
-  "release_status": "not_released_candidate_review_pending",
+  "release_status": "not_released",
   "originals_modified": false,
   "STATE_modified_by_role10": false,
   "model_selection": {
@@ -2716,7 +2880,7 @@
     "source_commit": "0ca348449ba7b05b4ac8ae3f59351abdaf28a5c6",
     "updated_at": "2026-10-10T18:41:59+09:00"
   },
-  "updated_at_basis": "今回の指示送信時刻。実行終了時刻の実測ではない。",
+  "updated_at_basis": "Post-run inspection and append; no replay repeated.",
   "correction_events": [
     {
       "event_id": "T11_E20-04_unit4_scope_correction_01",
