@@ -1,14 +1,14 @@
 # 介護保険データ解析 AI実行仕様
 
-解析契約2.4 / 運用版2.4.3 / 2026-10-10
+解析契約2.5 / 運用版2.5.0 / 2026-10-12
 
 ROLE=00|10|20|30|40。最新ユーザー判断を優先。旧候補と報告は変更しない。全条件は以下のYAMLを正本とする。
 
 ```yaml
 meta:
   schema: care_analysis_execution_v2
-  revision: '2.4'
-  operations_revision: 2.4.4
+  revision: '2.5'
+  operations_revision: 2.5.0
   operations_updated_at: '2026-10-12'
   completed_workbook_sheet_requirement: 完成ブックは従来どおり15シート必須。
   print_probe_scope_decision:
@@ -439,7 +439,6 @@ outputs:
     - 汎用フレームワーク
     - インストーラ
   out_of_scope:
-  - 新規読み原稿
   - 未提供月次台帳の復元
   - 個人判定
   - 集計Excelからの合議体差推定
@@ -790,7 +789,7 @@ execution:
     - T03
     - T05
     - T11
-    work: 保存済み30修正案とS10、今回の承認決定を一括適用。C03二重適用なし。新候補版2以上を生成固定保存。
+    work: 保存済み30修正案とS10、今回の承認決定を一括適用。C03二重適用なし。新候補ブックを固定。R02-R07物語説明のアウトライン/根拠対応表は先行準備可、検証済み固定ブック後に完成。
     output: 候補ExcelのID版ハッシュとcare_candidate/v1検査パッケージを固定。reports/10と同じコミットで登録。
     checks:
     - Q06
@@ -803,7 +802,7 @@ execution:
     deps:
     - T06
     - T12
-    work: 初回は全範囲の独立評価。修正後は再評価プロセスに従い、全数機械検査＋影響閉包の独立評価。
+    work: ブックと物語説明を同一固定候補として全要件を独立評価。初回は全範囲、修正後は全数機械検査＋影響閉包。
     output: 問題IDと判定
     checks:
     - Q01
@@ -824,7 +823,7 @@ execution:
     owner: '10'
     deps:
     - T07
-    work: 20評価に応じて完成または暫定を保存。全作業ログに評価/修正/提出記録を追記し、Excel・再現ZIP・別添全ログZIP・簡易確認文を同時提出。
+    work: 20評価に応じて完成または暫定を保存。物語説明もExcel・再現ZIP・別添全ログZIP・簡易確認文と合わせて提出。
     output: Excelと再現ZIPと00への報告
     checks:
     - Q12
@@ -914,7 +913,6 @@ milestones:
   interpretation: 逆算した内部目標。実測時間や自動実行予定ではない。
   delay_cuts:
   - 装飾
-  - 新規読み原稿
   - 追加統計
   - 合議体の追加実装
   - 新しい外部連携
@@ -1079,10 +1077,51 @@ github_handoff:
   runner_limit: ActionsはJSON/コードの検査を実行する。別チャットを起動・遠隔操作・常時監視しない。候補Excel・元資料をActionsから取得する機能は作らない。
   activation_verification: 登録コミットのPLAN・STATE・検査ファイルを読戻し、内容のSHAを比較してから共有開始を報告。Actions実行の成否は実行結果を別途確認。
   fallback: Actionsが起動しない/枠不足/権限不足なら10が同じPython検査を実行し、版付きの結果を報告。機械検査を省略しない。
+original_intent_correction_20261012:
+  authority: 最新ユーザー明示訂正。物語説明は新規追加依頼ではなく当初の納品範囲。
+  target: R7_round2
+  deliverables:
+    workbook:
+      reference: R5元データ
+      primary_input: S01
+      supplementary_input: S10
+      total_sheets: 15
+      original_sheets: 14
+      charts: 148
+    narrative:
+      reference: R5まとめ見本（構成・表現形式のみ。R5数値や根拠のない因果説明は転用禁止）
+      basis: 固定・検証済みR7ブック
+      coverage: [R02, R03, R04, R05, R06, R07]
+      analyses: [地域比較, 対象期間比較, 観測された特徴, 根拠のある解釈]
+      traceability: [workbook_id, workbook_version, workbook_sha256, metric_id, source_sheet, source_cell, source_period]
+      finalization_gate: 値の検証とブック固定後。検証前はアウトラインと根拠対応表の準備のみ可。
+      prohibitions: [R5値再利用, 根拠なきR5因果主張再利用, 未検証ページ番号, 未検証値からの結論]
+  boundaries:
+    C04: 25.6日、S10の年度参考のみ。R7第2回比較は禁止。
+    C09: 分母0のため算出不可。
+    C10: 欠落、見出し未検証。
+    C11: 正式分母待ち。
+  roles:
+    PLAN_and_STATE: '00'
+    workbook_code_and_reports10: '10'
+    independent_review_and_reports20: '20'
+    correction_proposals_and_reports30: '30'
+  requirements:
+    R15: 物語説明はR02-R07を対象とし、地域比較・対象期間比較・観測特徴・根拠付き解釈を含む。各主張は固定ブックID/版/SHA、指標ID、元シート/セル/期間へ追跡可能。
+  checks:
+    Q15: R02-R07網羅性と全主張のブック版・指標・元セル・期間への追跡を検査。
+    Q16: 比較可能性、C04/C09/C10/C11境界、禁止された転用/未検証結論がないことを検査。
+  acceptance:
+    ROLE20_independent_review: ブックと物語説明の双方を同一固定候補に対して実施。
+    reevaluation: revision変更に伴い新候補で全要件を再評価。旧報告・候補の証拠は不変保存し判定を流用しない。
+  exclusions: [別プロジェクトの年度更新開発]
+  decision_at: '2026-10-12'
+  next_role: '10'
+  next_single_unit: ROLE10 unit15「数値PASS報告と中間SHA/1469対1478の不一致の原因診断のみ」。unit14を中断・重複しない。
 startup:
   '00': viewer/UPDATE_PROTOCOL.mdとplatform.jsonも同じコミットで読み、共有表示を更新。通常STATEは専有のまま。同一コミットのPLAN/STATE/10/20/30/決定JSONを読み、T/M/C01-C14と品質問題、期限と次操作を表示。承認範囲と未実施を分離し通常STATEを単独更新。
-  '10': 現在HEADのPLAN/STATE/10/20/30、references/S10_excerpts.json、S10_integration.md、decisions/2026-10-10_user_decisions.jsonを同一コミットで読む。進行中2.3候補があれば作業を捨てず差分適用し2.4新候補へ固定。T09→T10→T11と保存済み30案→T06→T12。一括で置換/欠落/局所表示/字体対策/Excel再現/再計算/全ログを実施。C11は保持。
-  '20': 2.4新候補を固定し全R01-R14/Q01-Q14を元資料から独立評価。承認欠落/置換を原データ検証済みと誤表示しない。C11未免除。初回全範囲の評価は差分だけで済ませない。
+  '10': 現在HEADのPLAN/STATE/10/20/30と参照資料を同一コミットで読む。unit14は再実行せず、次の単位はunit15数値矛盾の原因診断のみ。契約2.5の新候補を作成し、R7物語説明のアウトライン・根拠対応表は準備可、最終化は固定検証済みブック後。C11は保持。
+  '20': 2.5新候補についてブックと物語説明を固定し全R01-R15/Q01-Q16を元資料から独立評価。承認欠落/置換を原データ検証済みと誤表示しない。C11未免除。初回全範囲の評価は差分だけで済ませない。
   '30': 指摘前は待機。20の固定候補と問題IDから再現/原因/変更案/影響/再検証を一通にまとめ、reports/30へ返す。10が適用し20が再評価。Excelは編集しない。
   '40': GitHubの同一コミットのPLAN・STATE・10/20/30報告とroles/40.mdを読む。当該フォルダのコミット履歴と必要な過去版・差分を確認し、日時/担当/工程/実施内容/検証結果/成果物と根拠の直近10件表を表示。更新指示で再取得。書込み・完成昇格・別チャット監視は行わない。
   first_user_action: 実行担当00/10/20/30の4チャットと閲覧専用40を同じプロジェクトで開設し、ROLE指定の開始文を送る。mdを保存できない場合はGitHubの現在コミットを取得して同じ版のPLAN/STATE/必要報告を読み該当startupを実行するよう指示する。40はroles/40.mdも読む。モデルは実際の選択欄で設定。GitHubだけでは起動しない。
@@ -1104,6 +1143,10 @@ change_management:
     state_write_exception: 今回だけ計画担当が明示依頼により計画変更と既存保存報告の状態整合を更新。通常のSTATE.writerは00。
     evaluation: 2.2候補v1のFAILと30提案を保存。新2.3候補は全独立評価。未適用を適用済みとしない。
   operations_history:
+  - version: 2.5.0
+    date: '2026-10-12'
+    change: 物語説明を追加依頼扱いから当初納品範囲へ訂正。R7_round2のブック・説明成果物、根拠追跡、禁止事項、担当と受入を明文化。
+    impact: 解析契約改訂につき新候補でブックと説明双方の独立評価が必要。既存報告・候補は歴史的証拠として不変。C04/C09/C10/C11境界と15シート要件を維持。
   - version: 2.4.4
     date: '2026-10-12'
     change: ROLE00へのユーザー明示判断により、印刷確認コピーの構造受入範囲を注記対象3シートと確定。完成ブックの15シート要件は維持。
