@@ -7,6 +7,9 @@ from preserve_package import sheets_by_name,xml,tag
 def main():
  p=argparse.ArgumentParser();p.add_argument('--source-copy',type=Path,required=True);p.add_argument('--donor',type=Path,required=True);p.add_argument('--notes',type=Path,required=True);p.add_argument('--tables',type=Path,required=True);p.add_argument('--out',type=Path,required=True);p.add_argument('--checks',type=Path,required=True);a=p.parse_args()
  notes=json.loads(a.notes.read_text());table=json.loads(a.tables.read_text());old=workbook_cells(a.source_copy)
+ if len(notes)!=21:raise ValueError(f'expected 6 preserved captions + 15 E20-03 captions; got {len(notes)}')
+ if len({(n,r) for n,r,_ in notes})!=len(notes):raise ValueError('duplicate caption ranges')
+ if len({t for _,_,t in notes})!=len(notes):raise ValueError('duplicate caption bodies')
  assert len(old['sheets'])==15 and old['sheets'][0]['name']=='分析要点' and old['chart_count']==148
  with zipfile.ZipFile(a.source_copy) as sz,zipfile.ZipFile(a.donor) as dz:
   parts={n:sz.read(n) for n in sz.namelist()};sm=sheets_by_name(sz,'xl/workbook.xml');dm=sheets_by_name(dz,'xl/workbook.xml');st=E.fromstring(parts['xl/styles.xml']);ds=E.fromstring(dz.read('xl/styles.xml'))
@@ -61,6 +64,7 @@ def main():
    q=copy.deepcopy(donor.find(f'.//m:c[@r="{addr}"]',NS));row.append(q);row[:]=sorted(row,key=lambda c:(len(re.match('[A-Z]+',c.get('r'))[0]),re.match('[A-Z]+',c.get('r'))[0]))
    merges=dest.find('m:mergeCells',NS)
    if merges is None:raise ValueError('merge registry missing')
+   if any(m.get('ref')==rng for m in merges.findall('m:mergeCell',NS)):raise ValueError('duplicate merged caption range: '+rng)
    E.SubElement(merges,tag('mergeCell'),{'ref':rng});merges.set('count',str(len(merges)))
   for name,sh in edited.items():parts[sm[name]]=xml(sh)
   wb=E.fromstring(parts['xl/workbook.xml']);dn=wb.find('m:definedNames',NS)
@@ -73,6 +77,21 @@ def main():
   with zipfile.ZipFile(a.out,'w',zipfile.ZIP_DEFLATED) as z:
    for info in sz.infolist():z.writestr(info,parts[info.filename])
  new=workbook_cells(a.out);assert len(new['sheets'])==15 and new['chart_count']==148
+ # Verify every caption has one exact merge and exact displayed body in the assembled OOXML.
+ with zipfile.ZipFile(a.out) as verify_zip:
+  out_sheets=sheets_by_name(verify_zip,'xl/workbook.xml')
+  seen=set()
+  for name,rng,note in notes:
+   key=(name,rng)
+   if key in seen:raise ValueError('duplicate caption in output: '+repr(key))
+   seen.add(key)
+   part=E.fromstring(verify_zip.read(out_sheets[name]))
+   if not any(m.get('ref')==rng for m in part.findall('m:mergeCells/m:mergeCell',NS)):raise ValueError('caption merge missing: '+repr(key))
+   addr=rng.split(':')[0];cell=part.find(f'.//m:sheetData/m:row/m:c[@r="{addr}"]',NS)
+   value=cell.find('m:v',NS) if cell is not None else None
+   text=value.text if value is not None else ''.join(t.text or '' for t in cell.findall('.//m:t',NS)) if cell is not None else ''
+   if text!=note:raise ValueError('caption body mismatch: '+repr(key))
+ if len(seen)!=21:raise ValueError('caption count mismatch')
  assert [s['name'] for s in old['sheets']]==[s['name'] for s in new['sheets']]
  allowed={sm['分析要点'],'xl/workbook.xml','xl/styles.xml'}|{sm[n] for n,_,_ in notes}
  diff={n for n,h in old['part_hashes'].items() if h!=new['part_hashes'][n]};assert diff==allowed,(diff,allowed)
@@ -84,3 +103,4 @@ def main():
  result={'status':'PASS','candidate_sha256':sha(a.out.read_bytes()),'base_C03_copy_sha256':sha(a.source_copy.read_bytes()),'C03_reapplied':False,'sheets':15,'charts':148,'local_caption_cells':[list(x) for x in sorted(noteaddrs)],'changed_parts':sorted(diff),'all_original_values_formulas_unchanged':True,'all_chart_drawing_image_parts_byte_identical':True,'original_print_hidden_settings_unchanged':True,'summary_print':{'orientation':'landscape','paper':'A3','width_pages':1,'height_pages':'automatic','range':f'A1:N{len(table["rows"])}','repeat_row':table['header_row']},'visual_readability':'pending E01/native print review'}
  a.checks.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print(json.dumps(result,ensure_ascii=False))
 if __name__=='__main__':main()
+
