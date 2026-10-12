@@ -2,10 +2,10 @@
   "schema": "care_handoff/v1",
   "role": "10",
   "plan_revision": "2.4",
-  "status": "T11_E20-04_unit4_scope_acceptance_pending",
-  "task_id": "T11_E20-04_unit4_scope_correction",
-  "source_commit": "11573220bd30c2047d8fc39ccd1559ba8b2329e4",
-  "pre_save_rechecked_commit": "9eed9281ab37079ed8071ff85fc8182b7c11075e",
+  "status": "T11_E20-04_unit5_zip_v3_saved_and_readback_verified_full_replay_pending",
+  "task_id": "T11_E20-04_unit5",
+  "source_commit": "0dd5ff50c252a6d4dcb8a9bbb7d4561c5620997f",
+  "pre_save_rechecked_commit": "0dd5ff50c252a6d4dcb8a9bbb7d4561c5620997f",
   "updated_at": "2026-10-12",
   "startup_read": {
     "branch": "main",
@@ -1214,6 +1214,118 @@
         }
       },
       "scope_resolution_status": "PENDING_USER_DECISION"
+    },
+    "T11_E20-04_unit5": {
+      "task_id": "T11_E20-04_unit5",
+      "source_commit": "0dd5ff50c252a6d4dcb8a9bbb7d4561c5620997f",
+      "duplicate_check": "No T11_E20-04_unit5 record existed at the pinned main HEAD.",
+      "role00_scope_decision": {
+        "recorded_at": "2026-10-12T09:32:15+09:00",
+        "decision": "印刷確認コピーは注記対象の3シートで受入",
+        "scope_limit": "印刷確認コピーの構造範囲のみ",
+        "completed_workbook_sheet_requirement": 15,
+        "not_implied": [
+          "日本語実描画",
+          "全生成再実行",
+          "Excel再計算",
+          "候補評価",
+          "E20-04全体合格"
+        ]
+      },
+      "base_zip": {
+        "library_file_id": "libfile_d613c5b2ffb08191bf6eff5c8d7e0fdb",
+        "version": 2,
+        "sha256": "d05e3f71c7df01d42ca17d0581324b78b403e38033d216411010788f1a1cf143"
+      },
+      "saved_zip": {
+        "library_file_id": "libfile_d613c5b2ffb08191bf6eff5c8d7e0fdb",
+        "file_id": "file_00000000317c8209831970b069b7ce55",
+        "name": "介護保険解析_再現用_v3.zip",
+        "version": 3,
+        "sha256": "cd0e9b694b0f43031c588c5f6bbf08115aba0f1ab0b55b0a14c42821364dd746",
+        "size_bytes": 5555827
+      },
+      "code_provenance": {
+        "bundled_code_commit": "ec639575cee766ab31e56bb013cb35d00bf167f5",
+        "scope_decision_commit": "0dd5ff50c252a6d4dcb8a9bbb7d4561c5620997f",
+        "production_code_modified": false
+      },
+      "changes": {
+        "normalized": [
+          "inspection/input_manifest.json workspace_path values replaced with external --sources placement and SHA lookup metadata",
+          "checks/native_check.json engine and log paths replaced with runtime --soffice and relative bundle/output paths",
+          "src/README_v2.md updated with exact replay_v2.py flags, source SHA acquisition, runtime, stop conditions, scope, and unrun gates",
+          "src/README.md marked historical; current guide routes to README_v2.md",
+          "unit-4 runbook, environment, and path-audit records embedded under src/ and checks/",
+          "manifest.json checksums and expected package version updated"
+        ],
+        "historical_references": [
+          "historical/report_20.json",
+          "historical/report_30.json; absolute paths remain only in historical quoted evidence and are identified as non-executable"
+        ],
+        "source_inputs_added": false,
+        "old_candidate_modified": false
+      },
+      "checks": {
+        "zip_crc": "PASS",
+        "inner_file_sha_and_size": "PASS for all 77 manifest-listed members",
+        "reread_saved_zip_sha_match": "PASS",
+        "inputs": {
+          "method": "Temporary external sources directory using workspace-provided source files; SHA values calculated from bytes and compared to pinned bundle manifests.",
+          "all_seven_match": true,
+          "records": {
+            "S01": {
+              "library_file_id": "libfile_2f275b2a53d481919fb7d942fbecc486",
+              "sha256": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d"
+            },
+            "S02": {
+              "library_file_id": "libfile_0d9cfee943ec819188518e4922ce620e",
+              "sha256": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304"
+            },
+            "S03": {
+              "library_file_id": "libfile_1a33a04a77e4819197bfdf49e7cd8099",
+              "sha256": "e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f"
+            },
+            "S04": {
+              "library_file_id": "libfile_348a1421657c8191938bc42e4a79b9ea",
+              "sha256": "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800"
+            },
+            "S05": {
+              "library_file_id": "libfile_f40c9f4e1d0081919fb497f31e737856",
+              "sha256": "87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1"
+            },
+            "S06": {
+              "library_file_id": "libfile_b7623c4ffd6881919e938f89942286f3",
+              "sha256": "b74b37c05a97d053ef46f16f380177f5a0724151dac5daff1c4076290671e524"
+            },
+            "S10": {
+              "library_file_id": "libfile_292453196e588191a056e2f761753670",
+              "sha256": "a8050346212a34760cfa2c8be7add995f3c9f3b9fb6118ca7dc3cca3227bd2"
+            }
+          }
+        },
+        "entrypoint_help": "PASS; ran only replay_v2.py --help and confirmed --bundle/--sources/--node/--node-modules/--out.",
+        "path_resolution": "PASS in separate temporary bundle/sources placement; SHA-keyed lookup succeeded; no output directory or Excel file created.",
+        "active_machine_specific_paths": "NONE in executable files and current procedure/manifest/native-check records.",
+        "unsupported_options": "replay_v2.py has neither --check-paths-only nor --tmpdir; not used or represented as supported.",
+        "full_replay": "NOT_RUN",
+        "excel_recalculation_and_save_readback": "NOT_RUN",
+        "japanese_actual_render": "NOT_RUN_HELD"
+      },
+      "final_status": {
+        "print_probe_structure": "PASS for ROLE00-approved 3-sheet scope",
+        "completed_workbook": "15 sheets required",
+        "E20_04_overall": "NOT_PASS"
+      },
+      "readback": {
+        "library_file_id": "libfile_d613c5b2ffb08191bf6eff5c8d7e0fdb",
+        "version": 3,
+        "file_id": "file_00000000317c8209831970b069b7ce55",
+        "sha256": "cd0e9b694b0f43031c588c5f6bbf08115aba0f1ab0b55b0a14c42821364dd746",
+        "zip_crc": "PASS",
+        "manifest_and_inner_hashes": "PASS"
+      },
+      "restart_position": "The ZIP v3 and procedure are saved. Next separate unit: execute replay_v2.py once in a fresh isolated output directory and compare values/structure; do not infer recalculation/save-reopen or Japanese print readability from replay success."
     }
   },
   "outputs": {
@@ -1303,6 +1415,14 @@
       "care-insurance-analysis/src/E20-04_unit4_checks.json": {
         "blob_sha": "b5daf0f4680e70877c561e030b651af58815a487"
       }
+    },
+    "reproduction_zip_v3": {
+      "library_file_id": "libfile_d613c5b2ffb08191bf6eff5c8d7e0fdb",
+      "file_id": "file_00000000317c8209831970b069b7ce55",
+      "name": "介護保険解析_再現用_v3.zip",
+      "version": 3,
+      "sha256": "cd0e9b694b0f43031c588c5f6bbf08115aba0f1ab0b55b0a14c42821364dd746",
+      "size_bytes": 5555827
     }
   },
   "checks": [
@@ -1497,8 +1617,8 @@
     }
   ],
   "next_role": "10",
-  "next_action": "Await an explicit choice: accept the measured 3-sheet print probe, or require a 15-sheet copy. Do not regenerate the saved copy before the scope is settled.",
-  "restart_condition": "Print-probe acceptance scope is undecided; E20-04 remains NOT_PASS pending that decision, full replay, recalculation/save-reopen, and Japanese print rendering.",
+  "next_action": "In the next bounded unit, run the documented replay_v2.py command in a fresh isolated output directory and compare replayed results. Keep recalculation/save-reopen and Japanese rendering as separate gates.",
+  "restart_condition": "E20-04 remains NOT_PASS until full replay, recalculation/save-reopen comparison, and Japanese print readability are independently verified.",
   "candidate": {
     "id": "care-S01-20261009-v1",
     "version": 1,
@@ -2209,6 +2329,15 @@
       "corrected_event": "T11_E20-04_unit4_scope_correction_01",
       "result": "Scope acceptance set to pending; third-unit measurements and saved unit-four artifacts preserved; no workbook or ZIP changed.",
       "restart_position": "Wait for explicit decision on whether the print-confirmation copy is accepted at 3 sheets or must contain 15. Do not regenerate or upgrade scope status before that decision. Preserve the already-saved procedure, environment, and path audit; their scope interpretations are superseded by correction event T11_E20-04_unit4_scope_correction_01. After scope is settled, continue with separately authorized full replay, recalculation/save-reopen, and Japanese print review."
+    },
+    {
+      "task_id": "T11_E20-04_unit5",
+      "source_commit": "0dd5ff50c252a6d4dcb8a9bbb7d4561c5620997f",
+      "saved_library_id": "libfile_d613c5b2ffb08191bf6eff5c8d7e0fdb",
+      "saved_version": 3,
+      "sha256": "cd0e9b694b0f43031c588c5f6bbf08115aba0f1ab0b55b0a14c42821364dd746",
+      "result": "ZIP v3 saved and readback verified; limited path/hash checks pass; full replay not run",
+      "restart_position": "The ZIP v3 and procedure are saved. Next separate unit: execute replay_v2.py once in a fresh isolated output directory and compare values/structure; do not infer recalculation/save-reopen or Japanese print readability from replay success."
     }
   ],
   "previous_report_checkpoint": {
