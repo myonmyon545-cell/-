@@ -2,11 +2,11 @@
   "schema": "care_handoff/v1",
   "role": "10",
   "plan_revision": "2.4",
-  "status": "unit14 limited summary display edits saved/read back; preservation PASS; print readability HELD; numeric contradiction unresolved; E20-04 NOT_PASS",
-  "task_id": "T11_E20-04_unit14",
-  "source_commit": "93f009769b736edb8d4cba1df690e8ae3b997e29",
-  "pre_save_rechecked_commit": "93f009769b736edb8d4cba1df690e8ae3b997e29",
-  "updated_at": "2026-10-12T06:53:47.824Z",
+  "status": "数値再現の矛盾を診断。保存中間の工程対応は未確定。数値再現未検証、E20-04 NOT_PASS",
+  "task_id": "T11_E20-04_unit15",
+  "source_commit": "23e52d7cf813783bda310aa6309c1aa1f1e6e8c4",
+  "pre_save_rechecked_commit": "23e52d7cf813783bda310aa6309c1aa1f1e6e8c4",
+  "updated_at": "2026-10-12",
   "startup_read": {
     "branch": "main",
     "head_sha": "210aec627ca32c13874e855a8fd8e6b6a7cd630d",
@@ -3299,6 +3299,76 @@
         "originals_modified": false,
         "old_candidates_modified": false
       }
+    },
+    "T11_E20-04_unit15": {
+      "task_id": "T11_E20-04_unit15",
+      "source_main_commit": "23e52d7cf813783bda310aa6309c1aa1f1e6e8c4",
+      "checked_at": "2026-10-12T16:16:24+09:00",
+      "same_commit_read": {
+        "files": {
+          "care-insurance-analysis/PLAN.md": "9cff1723e0a98a1bdeea9baaf4e3a26b682a1c3e",
+          "care-insurance-analysis/STATE.json": "25abc062d6c5110949cc2b7515a5a8add019a3c3",
+          "care-insurance-analysis/reports/10.json": "9d3a60f9c8003f97fb1f2230e275034f7574f80c",
+          "care-insurance-analysis/reports/20.json": "57863de7a6ba499b2872df9cf0b6549c43afa7e7",
+          "care-insurance-analysis/reports/30.json": "d790c1686cb72176664af414cabc82cece8bacca"
+        },
+        "plan_revision": "2.4",
+        "state_revision": 12,
+        "unit15_absent_before": true
+      },
+      "evidence": {
+        "execution_evidence_zip": {
+          "library_file_id": "libfile_c11527aba6ec81918b73ae9730338237",
+          "version": 0,
+          "sha256": "1cd3758b9b785e60853495af792e69b9b2bcee362a586b97b63d4c300f58ee87",
+          "zip_crc": "PASS",
+          "internal_manifest": "15/15"
+        },
+        "reproduction_zip": {
+          "library_file_id": "libfile_ee630bb61568819194c96e581ef243a4",
+          "version": 5,
+          "sha256": "0cb739117c93eaa175d698b43d67e64110aaf6dcbb8cf49f499d0d30a0c1a78d",
+          "zip_crc": "PASS",
+          "internal_manifest": "88/88"
+        },
+        "private_diagnostic": {
+          "library_file_id": "libfile_d176f2c0f1c081919bcc4aecf5140011",
+          "file_id": "file_00000000fd7082098a8a12efdac54962",
+          "version": 0,
+          "sha256": "7cdd7a6f114582e4b7b2cf6c05d1d04b8fde55f6121d939c8bb5a49627737ceb",
+          "readback_verified": true
+        }
+      },
+      "differences": {
+        "record_ids": {
+          "actual": 6316,
+          "baseline": 6316,
+          "missing_or_extra_ids": 0,
+          "value_differences": 9,
+          "status_differences": 11,
+          "comparison_eligible_missing_actual": 3158
+        },
+        "comparisons": {
+          "actual": 1469,
+          "baseline": 1478,
+          "net_difference": -9,
+          "missing_ids": 9,
+          "extra_ids": 0,
+          "common_ids_metadata_changed": 49,
+          "common_ids_value_or_status_changed": 2,
+          "missing_family": "I.first_decision_duplicate G513:G521 提供期間差 (C03 S02)"
+        }
+      },
+      "diagnosis": {
+        "confirmed": [
+          "保存済みcare_replay_vec9v3u4中間スナップショットはpost-C03/post-ROLE30成果ではない。C03修正オーバーレイがなく、S02 G513:G521が保留のままで、比較は1469件。",
+          "replay_pipeline.pyは一時ディレクトリの6出力を固定baselineとハッシュ比較後に削除する。実行ログに一時パスと6ファイルの実バイト対応がなく、ZIP内スナップショットを同じ実行の最終出力と証明できない。",
+          "replay_v2.pyはsummary_v2.pyへreplay抽出ではなくbaseline/calculation/extracted_values.jsonを渡す。生成ブックの数値が再実行出力から流れた証拠にならない。"
+        ],
+        "unresolved": "保存済み中間スナップショットの厳密な生成元・実行IDは既存ログから特定不能。6ファイルPASSの実行バイトも保持されていないため数値再現は未検証。",
+        "overall": "E20-04 NOT_PASS"
+      },
+      "next_single_unit": "Unit16として、stage-ID付き数値成果の永続化と再現抽出を要点生成へ渡す限定コード変更案のレビュー。全工程再実行はその後の独立承認単位。"
     }
   },
   "outputs": {
@@ -3590,8 +3660,8 @@
     }
   ],
   "next_role": "10",
-  "next_action": "固定した表示修正試験ブックと差分ZIPを起点にする。数値PASS報告と中間SHA/1469対1478の原因確認を別単位で行う。印刷のページ数・切れ・日本語字形・詳細表の繰返し見出しは別の実描画単位で検査。原因確認前の全生成再実行や候補認定は進めない。",
-  "restart_condition": "libfile_4e8750ffa24881918eab844fe3a9ac69 v0 SHA74ce5066cff4659e9fda09f7c6d67210e467a6de196234c8a072caa300c9141e、差分ZIP libfile_75bcb635320c81918a26a8189da2dc66 v0 SHA6918d98b0e3df65f3aa511bd695a313c557b82436d6bd9860c27909d314473cb。旧版は保持。",
+  "next_action": "Unit16として、stage-ID付き数値成果の永続化と再現抽出を要点生成へ渡す限定コード変更案のレビュー。全工程再実行はその後の独立承認単位。",
+  "restart_condition": "libfile_d176f2c0f1c081919bcc4aecf5140011 version 0 SHA256 7cdd7a6f114582e4b7b2cf6c05d1d04b8fde55f6121d939c8bb5a49627737ceb と、reproduction ZIP v5 を起点にUnit16の限定コード変更案をレビュー。再実行前に別途承認された単位に分ける。",
   "candidate": {
     "id": "care-S01-20261009-v1",
     "version": 1,
@@ -3609,7 +3679,8 @@
     "候補19シート・元14シート148グラフの保持",
     "候補機械契約と6ファイル再実行",
     "保存ブック再読込・再現ZIP全43ファイル検査",
-    "候補日本語表示FAIL"
+    "候補日本語表示FAIL",
+    "Unit15 数値再現PASSと1469/1478中間差分の工程・ID診断"
   ],
   "reused_from": [
     {
@@ -3650,27 +3721,11 @@
     "japanese_font": "unavailable; Japanese glyphs missing in PDF visual check"
   },
   "recovery_checkpoint": {
-    "last_successful_operation": "同一作業コピーID版2と途中成果ZIP版0を保存。読戻しSHA一致・再開封15枚/148グラフ/15注記・ZIP CRC PASS。",
-    "stopped_stage": "E20-03局所注記実装と印刷確認。日本語Native字形は未合格。",
-    "last_error": "Native PDFで日本語セル字形欠落。日本語フォント未検出。注記枠・英語警告は同ページで可視、切れ/重なりなし。",
-    "recovered_results": [
-      {
-        "library_file_id": "libfile_5b4c950910fc8191930febed5dbb7889",
-        "file_id": "file_00000000c64481f7b22d7afd3cd60e8b",
-        "version": 2,
-        "sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
-        "readback_sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
-        "readback": "PASS: byte-identical, reopened, 15 notes/15 sheets/148 charts"
-      },
-      {
-        "library_file_id": "libfile_8a62012c3b5c8191aa8503294a3a21b6",
-        "version": 0,
-        "sha256": "cc9320d25e1989ca58a099a6b5c57554c8c286d567ae4377ccdaa1371edd3f22",
-        "readback": "SHA一致・ZIP CRC PASS",
-        "content": "注記生成コード、接合保持検査コード、変更台帳、検査JSON、隔離Native印刷PDF/PNG"
-      }
-    ],
-    "next_operation": "日本語フォント対応環境で同じ注記15か所を実描画してE20-03の印刷可読性を再判定。その後にE20-04を別単位で進める。"
+    "last_successful_operation": "main 8b2eda7b42d4ec869d5649fd0efc39b377123dde同一コミット文書読取、保存ZIP/Excel SHA・CRC・manifest読取、stable-ID差分照合、非公開診断記録のLibrary保存・読戻し",
+    "stopped_stage": "unit12 numeric replay comparison; runtime PASS report and archived intermediate do not map to the same persisted stage",
+    "last_error": "unit12 replay_v2.py終了コード1。compare_replay_v2.pyでOOXML/注記/要点比較FAIL。数値PASSは同一実行の永続中間と紐付かない。",
+    "recovered_results": "records 6316 stable IDs all retained; actual archived comparisons 1469 vs baseline 1478. Nine missing IDs are C03 S02 period comparisons; 49 shared comparison objects also differ.",
+    "next_operation": "Unit16 code-only narrow proposal/review to persist run-scoped post-overlay outputs and wire summary generation to that run's extraction."
   },
   "execution_checkpoints": [
     {
@@ -4317,6 +4372,12 @@
       "source_commit": "a1cfbc7cbf5fe346809a5d6584fc0cd007cf6370",
       "result": "Corrected one S10 SHA transcription in reports/10.json against the already-verified ZIP record; ZIP was not rewritten.",
       "restart_position": "The ZIP v3 and procedure are saved. Next separate unit: execute replay_v2.py once in a fresh isolated output directory and compare values/structure; do not infer recalculation/save-reopen or Japanese print readability from replay success."
+    },
+    {
+      "task_id": "T11_E20-04_unit15",
+      "source_commit": "23e52d7cf813783bda310aa6309c1aa1f1e6e8c4",
+      "result": "Read-only numeric replay conflict diagnosis saved privately and summarized. No pipeline rerun or code/workbook/ZIP edit.",
+      "restart_position": "Unit16として、stage-ID付き数値成果の永続化と再現抽出を要点生成へ渡す限定コード変更案のレビュー。全工程再実行はその後の独立承認単位。"
     }
   ],
   "previous_report_checkpoint": {
