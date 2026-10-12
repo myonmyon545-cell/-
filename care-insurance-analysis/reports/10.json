@@ -2,10 +2,10 @@
   "schema": "care_handoff/v1",
   "role": "10",
   "plan_revision": "2.4",
-  "status": "T11_E20-04_unit4_documented_path_audit_pass_full_replay_pending",
-  "task_id": "T11_E20-04_unit4",
+  "status": "T11_E20-04_unit4_scope_acceptance_pending",
+  "task_id": "T11_E20-04_unit4_scope_correction",
   "source_commit": "11573220bd30c2047d8fc39ccd1559ba8b2329e4",
-  "pre_save_rechecked_commit": "5b1d3f5244d7a19bb5a548ceb7ab0c69094707ce",
+  "pre_save_rechecked_commit": "9eed9281ab37079ed8071ff85fc8182b7c11075e",
   "updated_at": "2026-10-12",
   "startup_read": {
     "branch": "main",
@@ -1094,7 +1094,9 @@
       "requirement_scope": {
         "plan_full_workbook_requirement": "PLAN 2.4 E20-02 summary says retain all 15 sheets for the completed analysis workbook.",
         "print_probe_requirement": "No explicit 15-sheet requirement for the isolated print-confirmation copy was found in PLAN 2.4 or the examined E20-04 repair proposal.",
-        "verdict": "SCOPE_APPLICABILITY_UNRESOLVED; do not label the three-sheet probe structurally nonconforming absent an explicit print-probe requirement."
+        "verdict": "SCOPE_APPLICABILITY_UNRESOLVED; do not label the three-sheet probe structurally nonconforming absent an explicit print-probe requirement.",
+        "user_acceptance": "PENDING_EXPLICIT_DECISION",
+        "note": "The earlier unit-4 scope assertion is superseded by T11_E20-04_unit4_scope_correction_01; measured facts remain unchanged."
       },
       "implementation_cause": "Pinned make_print_probe.py uses AREAS with exactly three print-target sheets and filters workbook.xml registration to those sheets.",
       "environment": {
@@ -1116,9 +1118,9 @@
       "other_role_reports_changed": false,
       "workbooks_changed": false,
       "scope_resolution": {
-        "decided_at": "2026-10-12",
-        "decision": "Three affected annotation sheets are the defined print-probe scope; the completed workbook remains subject to the 15-sheet requirement.",
-        "print_probe_structure": "PASS",
+        "recorded_at": "2026-10-12",
+        "decision": "No explicit decision accepting the three-sheet print-probe scope is confirmed. Acceptance as three sheets or fifteen sheets remains pending.",
+        "print_probe_structure": "MEASUREMENTS_PASS_SCOPE_ACCEPTANCE_PENDING",
         "measurement_reused": {
           "library_file_id": "libfile_24c8577da2608191ad4e0a3ea03c75eb",
           "version": 0,
@@ -1135,10 +1137,10 @@
           "sha256_before_after": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
           "unchanged": true
         },
-        "result": "STRUCTURE_PASS_FOR_DEFINED_PRINT_PROBE_SCOPE",
+        "result": "SCOPE_ACCEPTANCE_PENDING",
         "japanese_print_readability": "HELD_NOT_RENDERED",
         "E20_04_overall": "NOT_PASS",
-        "prior_unresolved_scope_note": "Retained as the historical finding at unit 3 time; this addendum resolves the print-probe scope without changing measured values."
+        "supersedes_event": "T11_E20-04_unit4_scope_correction_01"
       }
     },
     "T11_E20-04_unit4": {
@@ -1146,7 +1148,7 @@
       "source_main_commit": "11573220bd30c2047d8fc39ccd1559ba8b2329e4",
       "pre_save_rechecked_commit": "5b1d3f5244d7a19bb5a548ceb7ab0c69094707ce",
       "duplicate_check": "No unit-4 entry existed in reports/10.json at pinned source commit.",
-      "scope_decision": "Unit-3 print probe is for the three annotation target sheets; completed workbook remains 15 sheets.",
+      "scope_decision": "Print-probe scope acceptance is pending an explicit user decision: accept the measured three-sheet probe or require fifteen sheets.",
       "procedure": {
         "file": "care-insurance-analysis/src/E20-04_unit4_repro_runbook_draft.md",
         "git_blob_sha": "62c3e30b68db03940ea24966dccfc8670dc70fd2",
@@ -1191,7 +1193,7 @@
         "unsupported": "replay_v2.py has no --check-paths-only or --tmpdir; internal temp author directory is not configurable; saved ZIP v2 lacks current-main make_print_probe.py."
       },
       "report_scope": {
-        "print_probe_structure": "PASS",
+        "print_probe_structure": "MEASUREMENTS_PASS_SCOPE_ACCEPTANCE_PENDING",
         "Japanese_print_readability": "HELD",
         "full_pipeline_replay": "NOT_RUN",
         "Excel_recalculation_and_save_reopen": "NOT_RUN",
@@ -1199,7 +1201,7 @@
         "candidate_certification": "NOT_RUN",
         "E20_04_overall": "NOT_PASS"
       },
-      "restart_position": "Normalize machine-specific paths in the ZIP input manifest/native-check record and update the reproduction package in a later bounded unit; then separately run replay_v2.py, followed by recalculation/save-reopen and Japanese print rendering.",
+      "restart_position": "Wait for explicit decision on whether the print-confirmation copy is accepted at 3 sheets or must contain 15. Do not regenerate or upgrade scope status before that decision. Preserve the already-saved procedure, environment, and path audit; their scope interpretations are superseded by correction event T11_E20-04_unit4_scope_correction_01. After scope is settled, continue with separately authorized full replay, recalculation/save-reopen, and Japanese print review.",
       "saved_artifacts": {
         "care-insurance-analysis/src/E20-04_unit4_repro_runbook_draft.md": {
           "blob_sha": "62c3e30b68db03940ea24966dccfc8670dc70fd2"
@@ -1210,7 +1212,8 @@
         "care-insurance-analysis/src/E20-04_unit4_checks.json": {
           "blob_sha": "b5daf0f4680e70877c561e030b651af58815a487"
         }
-      }
+      },
+      "scope_resolution_status": "PENDING_USER_DECISION"
     }
   },
   "outputs": {
@@ -1494,8 +1497,8 @@
     }
   ],
   "next_role": "10",
-  "next_action": "Use the saved fixed-path audit and runbook draft to normalize machine-specific references in a later bounded unit. Then run the full replay separately; do not infer recalculation/save-reopen or Japanese readability from that run.",
-  "restart_condition": "E20-04 remains NOT_PASS until full replay, recalculation/save-reopen comparison, and Japanese print readability review are independently recorded.",
+  "next_action": "Await an explicit choice: accept the measured 3-sheet print probe, or require a 15-sheet copy. Do not regenerate the saved copy before the scope is settled.",
+  "restart_condition": "Print-probe acceptance scope is undecided; E20-04 remains NOT_PASS pending that decision, full replay, recalculation/save-reopen, and Japanese print rendering.",
   "candidate": {
     "id": "care-S01-20261009-v1",
     "version": 1,
@@ -2199,6 +2202,13 @@
       "pre_save_rechecked_commit": "5b1d3f5244d7a19bb5a548ceb7ab0c69094707ce",
       "result": "procedure/environment/path audit saved; print-probe scope resolved; full replay and E20-04 overall not pass",
       "restart_position": "Normalize machine-specific paths in the ZIP input manifest/native-check record and update the reproduction package in a later bounded unit; then separately run replay_v2.py, followed by recalculation/save-reopen and Japanese print rendering."
+    },
+    {
+      "task_id": "T11_E20-04_unit4_scope_correction",
+      "source_commit": "9eed9281ab37079ed8071ff85fc8182b7c11075e",
+      "corrected_event": "T11_E20-04_unit4_scope_correction_01",
+      "result": "Scope acceptance set to pending; third-unit measurements and saved unit-four artifacts preserved; no workbook or ZIP changed.",
+      "restart_position": "Wait for explicit decision on whether the print-confirmation copy is accepted at 3 sheets or must contain 15. Do not regenerate or upgrade scope status before that decision. Preserve the already-saved procedure, environment, and path audit; their scope interpretations are superseded by correction event T11_E20-04_unit4_scope_correction_01. After scope is settled, continue with separately authorized full replay, recalculation/save-reopen, and Japanese print review."
     }
   ],
   "previous_report_checkpoint": {
@@ -2207,5 +2217,48 @@
     "source_commit": "0ca348449ba7b05b4ac8ae3f59351abdaf28a5c6",
     "updated_at": "2026-10-10T18:41:59+09:00"
   },
-  "updated_at_basis": "今回の指示送信時刻。実行終了時刻の実測ではない。"
+  "updated_at_basis": "今回の指示送信時刻。実行終了時刻の実測ではない。",
+  "correction_events": [
+    {
+      "event_id": "T11_E20-04_unit4_scope_correction_01",
+      "recorded_at": "2026-10-12",
+      "basis": "The user requested correction and stated that no explicit user decision accepting a three-sheet print probe is confirmed.",
+      "corrects": [
+        "task_results.T11_E20-04_unit4.scope_decision",
+        "task_results.T11_E20-04_unit4.report_scope.print_probe_structure",
+        "task_results.T11_E20-04_unit3.scope_resolution"
+      ],
+      "superseded_claim": "Unit-3 print probe is for the three annotation target sheets; completed workbook remains 15 sheets.",
+      "corrected_finding": {
+        "scope_acceptance": "PENDING_USER_DECISION",
+        "measured_probe": {
+          "library_file_id": "libfile_24c8577da2608191ad4e0a3ea03c75eb",
+          "version": 0,
+          "sha256": "9f6e33239ef9065481d7c0227f402c7ff36ee74a4e71d32e201f1371a3abee64",
+          "registered_sheets": 3,
+          "chart_xml_parts": 148,
+          "verified_local_notes": 15,
+          "open_and_sha": "PASS",
+          "original_work_copy_unchanged": {
+            "library_file_id": "libfile_5b4c950910fc8191930febed5dbb7889",
+            "version": 2,
+            "sha256_before_after": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1"
+          }
+        },
+        "requirements": {
+          "completed_workbook": "15 sheets required by PLAN; unchanged.",
+          "print_probe": "No acceptance as 3-sheet or 15-sheet scope is established pending explicit decision."
+        },
+        "preserved_work": {
+          "reproduction_runbook_environment_and_path_audit": "Previously saved artifacts remain unchanged; any wording that interprets three sheets as user-approved acceptance is superseded by this event.",
+          "full_excel_replay": "NOT_RUN",
+          "recalculation_and_save_readback": "NOT_RUN",
+          "japanese_rendering": "NOT_RUN_HELD",
+          "E20_04_overall": "NOT_PASS"
+        }
+      },
+      "source_commit": "9eed9281ab37079ed8071ff85fc8182b7c11075e",
+      "outcome": "Reports only; prior record retained and explicitly superseded for scope acceptance."
+    }
+  ]
 }
