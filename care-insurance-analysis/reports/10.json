@@ -2,11 +2,11 @@
   "schema": "care_handoff/v1",
   "role": "10",
   "plan_revision": "2.4",
-  "status": "T11_E20-04_unit5_zip_v3_saved_and_readback_verified_full_replay_pending",
-  "task_id": "T11_E20-04_unit5",
-  "source_commit": "0dd5ff50c252a6d4dcb8a9bbb7d4561c5620997f",
-  "pre_save_rechecked_commit": "a1cfbc7cbf5fe346809a5d6584fc0cd007cf6370",
-  "updated_at": "2026-10-12",
+  "status": "T11_E20-04_unit6_stopped_before_pipeline; E20-04 overall NOT_PASS",
+  "task_id": "T11_E20-04_unit6",
+  "source_commit": "d3f6f783fec6b2c07b523fdc57707ea0753eae07",
+  "pre_save_rechecked_commit": "d3f6f783fec6b2c07b523fdc57707ea0753eae07",
+  "updated_at": "2026-10-12T00:45:28.570Z",
   "startup_read": {
     "branch": "main",
     "head_sha": "afa996bc6a3d7a82b7d1fd04a0381e8abcfa3833",
@@ -1327,6 +1327,163 @@
         "manifest_and_inner_hashes": "PASS"
       },
       "restart_position": "The ZIP v3 and procedure are saved. Next separate unit: execute replay_v2.py once in a fresh isolated output directory and compare values/structure; do not infer recalculation/save-reopen or Japanese print readability from replay success."
+    },
+    "T11_E20-04_unit6": {
+      "task_id": "T11_E20-04_unit6",
+      "source_commit": "d3f6f783fec6b2c07b523fdc57707ea0753eae07",
+      "recorded_at": "2026-10-12T00:45:28.570Z",
+      "duplicate_check": "No unit6 record existed at the pinned latest main HEAD before this append.",
+      "package": {
+        "library_file_id": "libfile_d613c5b2ffb08191bf6eff5c8d7e0fdb",
+        "file_id": "file_00000000317c8209831970b069b7ce55",
+        "name": "介護保険解析_再現用_v3.zip",
+        "version": 3,
+        "sha256": "cd0e9b694b0f43031c588c5f6bbf08115aba0f1ab0b55b0a14c42821364dd746",
+        "size_bytes": 5555827,
+        "zip_crc": "PASS",
+        "manifest_and_readme": "read"
+      },
+      "code_commit": "ec639575cee766ab31e56bb013cb35d00bf167f5",
+      "startup_read": {
+        "plan_state_reports_same_commit": true,
+        "commit": "d3f6f783fec6b2c07b523fdc57707ea0753eae07",
+        "plan_revision": "2.4",
+        "state_print_probe_scope": "ROLE00 decision accepts the 3 annotated sheets for print-probe structure only; complete workbook still requires 15 sheets",
+        "reports10_existing_unit6": false,
+        "reports20_and_30_read": true
+      },
+      "inputs": {
+        "source_count": 7,
+        "records": [
+          {
+            "id": "S01",
+            "library_file_id": "libfile_2f275b2a53d481919fb7d942fbecc486",
+            "sha256": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d",
+            "staged_sha256": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d",
+            "matched": true,
+            "copy_read_only": true
+          },
+          {
+            "id": "S02",
+            "library_file_id": "libfile_0d9cfee943ec819188518e4922ce620e",
+            "sha256": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304",
+            "staged_sha256": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304",
+            "matched": true,
+            "copy_read_only": true
+          },
+          {
+            "id": "S03",
+            "library_file_id": "libfile_1a33a04a77e4819197bfdf49e7cd8099",
+            "sha256": "e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f",
+            "staged_sha256": "e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f",
+            "matched": true,
+            "copy_read_only": true
+          },
+          {
+            "id": "S04",
+            "library_file_id": "libfile_348a1421657c8191938bc42e4a79b9ea",
+            "sha256": "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800",
+            "staged_sha256": "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800",
+            "matched": true,
+            "copy_read_only": true
+          },
+          {
+            "id": "S05",
+            "library_file_id": "libfile_f40c9f4e1d0081919fb497f31e737856",
+            "sha256": "87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1",
+            "staged_sha256": "87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1",
+            "matched": true,
+            "copy_read_only": true
+          },
+          {
+            "id": "S06",
+            "library_file_id": "libfile_b7623c4ffd6881919e938f89942286f3",
+            "sha256": "b74b37c05a97d053ef46f16f380177f5a0724151dac5daff1c4076290671e524",
+            "staged_sha256": "b74b37c05a97d053ef46f16f380177f5a0724151dac5daff1c4076290671e524",
+            "matched": true,
+            "copy_read_only": true
+          },
+          {
+            "id": "S10",
+            "library_file_id": "libfile_292453196e588191a056e2f761753670",
+            "sha256": "a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2",
+            "staged_sha256": "a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2",
+            "matched": true,
+            "copy_read_only": true
+          }
+        ],
+        "all_sha_matched": true,
+        "source_data_uploaded_to_github": false,
+        "originals_modified": false
+      },
+      "environment": {
+        "python": "3.12.14",
+        "node": "v24.19.0",
+        "artifact_tool": "2.8.85",
+        "node_modules": "runtime-provided CODEX_PRIMARY_RUNTIME_NODE_MODULES"
+      },
+      "command": {
+        "readme": "src/README_v2.md",
+        "help_check": "PASS; --bundle --sources --node --node-modules --out",
+        "shell": "\"$CODEX_PRIMARY_RUNTIME_PYTHON\" src/replay_v2.py --bundle . --sources ./sources --node \"$CODEX_PRIMARY_RUNTIME_NODE\" --node-modules \"$CODEX_PRIMARY_RUNTIME_NODE_MODULES\" --out ./replay-v3",
+        "attempts": 1,
+        "artifact_operation_marker": "success"
+      },
+      "staging": {
+        "isolated_root": "/tmp/care_e20_unit6_20261012T004341Z",
+        "bundle_relative": "bundle",
+        "sources_staged_relative": "../sources",
+        "command_resolves_sources_to": "bundle/sources",
+        "resolved_sources_directory_exists": false,
+        "reason": "README command was run from bundle root while the seven read-only source copies were staged as a sibling directory. The runner argument ./sources therefore pointed to a missing directory.",
+        "input_hashes_match_before_attempt": true
+      },
+      "execution": {
+        "status": "STOPPED_BEFORE_NUMERIC_PIPELINE",
+        "candidate_workbook_generated": false,
+        "start_time_utc": null,
+        "end_time_utc": null,
+        "elapsed_seconds": null,
+        "outer_tool_call_wall_seconds": 0.4,
+        "runner_exit_code": null,
+        "runner_stdout": "not captured to disk",
+        "runner_stderr": "not captured to disk",
+        "runner_failure_location": "src/replay_v2.py creates the output directory, then enumerates --sources at line 9 before invoking replay_pipeline.py; the resolved directory was absent.",
+        "last_visible_error": "Wrapper raised FileNotFoundError [Errno 2] No such file or directory: './sources' while querying node version via an incorrect argument index after subprocess.run returned. The wrapper terminated before writing execution.json/stdout.txt/stderr.txt, so runner exit code and output are unavailable.",
+        "output_directory": {
+          "relative_path": "bundle/replay-v3",
+          "exists": true,
+          "file_count": 0
+        },
+        "generated_output_storage": null
+      },
+      "comparisons": {
+        "numeric_replay": "NOT_RUN",
+        "S10_integration": "NOT_RUN",
+        "summary_generation": "NOT_RUN",
+        "excel_assembly": "NOT_RUN",
+        "candidate_hash_or_logical_comparison": "NOT_RUN"
+      },
+      "remaining_gates": {
+        "excel_formula_recalculation_and_save_readback": "NOT_RUN",
+        "japanese_actual_render": "NOT_RUN_HELD",
+        "ROLE20_independent_assessment": "NOT_RUN",
+        "E20_04_overall": "NOT_PASS"
+      },
+      "checkpoint": {
+        "saved_candidate_or_output": false,
+        "known_intermediate": "empty replay-v3 directory only",
+        "cause": "sources path mismatch in isolated staging; runner diagnostics not captured because wrapper failed afterward",
+        "next_action": "Do not rerun in this unit. On resume, create a fresh isolated extraction and place the SHA-verified source copies at bundle/sources (matching README's ./sources), confirm the output path is new/empty, run the documented command once with logging wrapper indexes corrected, then inspect all generated outputs. Continue to keep recalculation, Japanese rendering, ROLE20, and overall E20-04 separate."
+      },
+      "write_scope": {
+        "only": "care-insurance-analysis/reports/10.json",
+        "STATE_modified": false,
+        "PLAN_modified": false,
+        "other_role_reports_modified": false,
+        "raw_inputs_or_originals_modified": false,
+        "existing_candidate_modified": false
+      }
     }
   },
   "outputs": {
@@ -1618,8 +1775,8 @@
     }
   ],
   "next_role": "10",
-  "next_action": "In the next bounded unit, run the documented replay_v2.py command in a fresh isolated output directory and compare replayed results. Keep recalculation/save-reopen and Japanese rendering as separate gates.",
-  "restart_condition": "E20-04 remains NOT_PASS until full replay, recalculation/save-reopen comparison, and Japanese print readability are independently verified.",
+  "next_action": "Do not rerun in this unit. On resume, create a fresh isolated extraction and place the SHA-verified source copies at bundle/sources (matching README's ./sources), confirm the output path is new/empty, run the documented command once with logging wrapper indexes corrected, then inspect all generated outputs. Continue to keep recalculation, Japanese rendering, ROLE20, and overall E20-04 separate.",
+  "restart_condition": "Fresh isolated bundle with bundle/sources populated from the same seven SHA-verified inputs; replay invocation not repeated in this unit. Do not mark E20-04 PASS from this failed attempt.",
   "candidate": {
     "id": "care-S01-20261009-v1",
     "version": 1,
