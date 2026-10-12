@@ -1,12 +1,12 @@
 {
   "schema": "care_handoff/v1",
   "role": "30",
-  "plan_revision": "2.2",
-  "operations_revision": "2.2.1",
-  "status": "candidate_v1_correction_proposal_ready",
-  "task_id": "T07_v1_feedback",
-  "source_commit": "f15b6c5f1b4dc02f31cd21bdb498bb6f3c87009f",
-  "updated_at": "2026-10-09T17:38:41.975+09:00",
+  "plan_revision": "2.5",
+  "operations_revision": "2.5.0",
+  "status": "U16_bounded_correction_proposal_ready",
+  "task_id": "U16_numeric_replay_fix_review",
+  "source_commit": "6d67948024e834d81218dd1232a1786d13d27169",
+  "updated_at": "2026-10-12T16:31:46.167+09:00",
   "candidate": {
     "id": "care-S01-20261009-v1",
     "version": 1,
@@ -326,6 +326,11 @@
       "id": "implementation_and_release",
       "verdict": "NOT_EXECUTED",
       "scope": "本報告は提案のみ。Excel/コード/STATE無変更、新候補の受入は20に委ねる"
+    },
+    {
+      "id": "U16-bounded-review",
+      "verdict": "PROPOSAL_ONLY",
+      "scope": "unit15診断と現行3コードの読取。実行/候補/数値PASSなし。"
     }
   ],
   "outputs": [
@@ -335,8 +340,8 @@
     }
   ],
   "next_role": "10",
-  "next_action": "handoff_orderの1～5を順に適用し、元14枚保持＋先頭要点1枚と局所保留注記/日本語可読性/全生成再現を新候補で検証。正式資料なしにC04/C10/C11を解除しない。C09は分母0未算出として扱う。",
-  "restart_condition": "mainの現行HEADからPLAN/STATE/10/20/30と新候補版を再固定。10が新候補ID/保存版/SHAと同一コミットのcandidate検査JSON/10報告を揃えたら20が独立再評価。",
+  "next_action": "T11_E20-04_unit16_implement_stage_provenanceのみ：最終数値をrun_id/stage_idで保持し、実抽出をsummaryへ配線し、段階/入力不一致の負例を限定検査。全工程再実行・旧PASS遡及承認は行わない。",
+  "restart_condition": "10がunit16のコードと限定試験を保存したら新HEADのPLAN2.5とmanifest/報告を固定してレビュー。後続の全生成再実行・20評価は別単位。",
   "newly_checked": [
     "v1実XLSX SHA・19シート/印刷設定",
     "20の全初回独立評価",
@@ -352,6 +357,183 @@
     "only": "care-insurance-analysis/reports/30.json",
     "excel_modified": false,
     "analysis_code_modified": false,
-    "STATE_modified": false
+    "STATE_modified": false,
+    "PLAN_modified": false,
+    "reports10_modified": false,
+    "reports20_modified": false
+  },
+  "prior_proposal_plan_revision": "2.2",
+  "unit_proposals": {
+    "U16_numeric_replay_fix_review": {
+      "proposal_key": "E20-04/U16/stage_provenance_and_dataflow",
+      "implementation_status": "PROPOSAL_ONLY",
+      "E20_04": "NOT_PASS",
+      "source_commit": "6d67948024e834d81218dd1232a1786d13d27169",
+      "plan_revision": "2.5",
+      "fixed_read": {
+        "files": [
+          {
+            "path": "care-insurance-analysis/PLAN.md",
+            "git_blob_sha": "9cff1723e0a98a1bdeea9baaf4e3a26b682a1c3e"
+          },
+          {
+            "path": "care-insurance-analysis/STATE.json",
+            "git_blob_sha": "668632ff5efd8f3962f3bd240140e4390697bc1f"
+          },
+          {
+            "path": "care-insurance-analysis/reports/10.json",
+            "git_blob_sha": "187751d7968f2f909fd5ed7a5a643705172d0393"
+          },
+          {
+            "path": "care-insurance-analysis/reports/20.json",
+            "git_blob_sha": "57863de7a6ba499b2872df9cf0b6549c43afa7e7"
+          },
+          {
+            "path": "care-insurance-analysis/reports/30.json",
+            "git_blob_sha": "d790c1686cb72176664af414cabc82cece8bacca"
+          }
+        ],
+        "unit15_source": "reports/10.json.task_results.T11_E20-04_unit15",
+        "code": [
+          {
+            "path": "care-insurance-analysis/src/replay_pipeline.py",
+            "git_blob_sha": "5cf51259661cf3778d7806d7b76b317e107a57e8"
+          },
+          {
+            "path": "care-insurance-analysis/src/replay_v2.py",
+            "git_blob_sha": "75c3e52bbe4bd1239f69069f28073da5861c65c8"
+          },
+          {
+            "path": "care-insurance-analysis/src/summary_v2.py",
+            "git_blob_sha": "487a45a9f052f45e61acc4fef7e7f9441af2a557"
+          }
+        ]
+      },
+      "confirmed_cause": [
+        {
+          "location": "src/replay_pipeline.py:22-56",
+          "evidence": "TemporaryDirectory内でpost-C03/post-ROLE30の6ファイルを生成・比較するが、保持対象に実バイトとrun_id/stage_idを残さず終了時に削除。a.outはハッシュ比較結果のみ。unit15で保存中間の実行同一性未解決。",
+          "status": "confirmed_code_path_and_unit15_diagnosis"
+        },
+        {
+          "location": "src/replay_v2.py:11,13",
+          "evidence": "11行目でnumeric_replay.jsonを書き、13行目はsummary_v2.py --extractionへb/baseline/calculation/extracted_values.jsonを渡す。生成ブックが直前の数値再実行を消費した証拠にならない。",
+          "status": "confirmed_code_path"
+        },
+        {
+          "location": "src/summary_v2.py:5-6",
+          "evidence": "--extractionファイルを無条件に読み、records/comparisonsを要点に展開。段階・run_id・ハッシュの入口検証がない。",
+          "status": "confirmed_code_path"
+        },
+        {
+          "location": "reports/10.json.task_results.T11_E20-04_unit15",
+          "evidence": "実中間は6316レコード・1469比較、baselineは6316・1478比較。I.first_decision_duplicateのS02 G513:G521提供期間差9件欠落、値差9・状態差11等。保存スナップショットはpost-C03/post-ROLE30でない。",
+          "status": "confirmed_diagnostic_not_new_execution"
+        }
+      ],
+      "unresolved_provenance": {
+        "stored_intermediate": "保存済みcare_replay_vec9v3u4の厳密な生成元・実行IDは既存ログから特定不能。baselineと同一と見なさない。",
+        "six_file_pass": "従前の数値6ファイルPASSを裏付ける当時の実バイトが保持されていない。過去PASSを現在の2.5受入に遡及利用しない。",
+        "final_numeric_bytes": "unit15時点で最終段階の実バイト・実行IDは未保持。今回も再実行していないため、修正後の一致は未検証。",
+        "scope": "C03後の9比較/11状態差等は新runで再観測し、期待差分リストと出所で説明する。推測した出力を確定根拠にしない。"
+      },
+      "exact_change_locations": [
+        {
+          "path": "care-insurance-analysis/src/replay_pipeline.py",
+          "anchors": [
+            "argparse --out周辺",
+            "TemporaryDirectory生成範囲",
+            "apply_c03_overlay.pyとapply_role30.py後",
+            "targets六出力とハッシュ比較",
+            "write_json(a.out,report)"
+          ],
+          "proposal": "--run-id と --retain-dir（または単一output-root）を必須化。最終段階のdefinitions/inventory/extracted/numeric/summary/role30_checkを比較・cleanupより先に非衝突run_id/stage_idディレクトリへ相対パス維持で原子的に保管。各ファイル実バイトとmanifest/logを一緒に確定し、既存baseline/旧候補へ書かない。比較失敗時も診断用最終バイトを保持しFAILを報告。"
+        },
+        {
+          "path": "care-insurance-analysis/src/replay_v2.py",
+          "anchors": [
+            "run('replay_pipeline.py',...)",
+            "run('summary_v2.py',...)"
+          ],
+          "proposal": "replay_pipelineの戻すrun manifestを検証し、post_C03_post_ROLE30の実extracted_values.jsonをsummary_v2.py --extractionへ渡す。baseline/calculation/extracted_values.jsonは差分比較だけに使い、最終の要点/ブック生成パスには使わない。旧baselineへの暗黙フォールバックを禁止。"
+        },
+        {
+          "path": "care-insurance-analysis/src/summary_v2.py",
+          "anchors": [
+            "argparse --extraction",
+            "x=json.loads(a.extraction.read_text())"
+          ],
+          "proposal": "--run-manifestと期待run_id/stage_id/抽出SHAを受け、--extractionの実パス・SHA・段階・件数を入口で照合。不一致/欠落は生成前に非ゼロ終了。records/comparisonsをソース段階付きで要点出力メタへ保存し、graft後のブック入力と同run manifestを紐付ける。"
+        }
+      ],
+      "proposed_changes": {
+        "stage_contract": {
+          "run_id": "衝突しない単一実行ID（生成者・開始時刻/乱数等を含むが固定候補IDと混同しない）",
+          "stage_id": "post_C03_post_ROLE30_final_numeric",
+          "immutable_output": "run_id/stage_id以下の最終数値一式を比較前に保存し、既存フォルダ/同名run_idは拒否",
+          "manifest_fields": [
+            "relative_path",
+            "sha256",
+            "size_bytes",
+            "processing_stage",
+            "code_identity（固定コミットまたは各コードSHA）",
+            "input_identity（S01/S02/作業コピー/提案版のID・SHA）",
+            "record_count",
+            "comparison_count"
+          ],
+          "logs": [
+            "実行コマンド（秘密/不要な個人情報を除外）",
+            "各サブ工程exit_code",
+            "stdout",
+            "stderr"
+          ],
+          "atomicity": "一時ファイルでハッシュ/件数を検証後にmanifestと一式を確定。未完成は成功manifestにしない。cleanupはこの保持領域を削除しない。"
+        },
+        "data_flow": "post_C03_post_ROLE30_final_numeric manifest -> extracted_values.json (実バイト・SHA照合) -> summary_v2.py -> summary_tables.json (source_run_id/source_stage_id/source_extracted_sha) -> graft_v2.py -> candidate_v2.xlsx (使用入力manifest参照)。baselineはexpected/diffだけ。所要段階がない、SHA違い、record/comparison件数が不適合、生成ブックが別runを参照した場合はFAILで停止。",
+        "expected_source_rule": "unit15の1469比較は不適合の診断値。1478を無理に埋めず、同じ入力・定義でC03後のS02 G513:G521由来9比較が実在することをID/値/状態/出所で証明。最終件数が計画/定義の必要指標と一致するまで先へ進めない。",
+        "boundaries": "PLAN 2.5の15シート/148グラフ、S10の年度提供値と主解析分離、C09未算出、C10欠落、C11保留、C04承認置換、物語説明R15/Q15/Q16を維持。今回の提案は数値受渡し欠陥に限定し、定義・受入条件を緩めない。"
+      },
+      "impact_scope": [
+        "T01/T02/T04/T05の最終数値6出力とrun provenance",
+        "I.first_decision_duplicate S02 G513:G521関連9提供期間差、値差9・状態差11、および共通比較のメタ差49/値状態差2",
+        "summary_v2優先結果/14列比較/分析要点、graft_v2ブック値・説明/表示、candidate hash/fingerprint",
+        "Q03/Q10/Q11、PLAN2.5 R02-R07とS10代替/欠落の表示、R15/Q15/Q16の固定ブック追跡",
+        "旧v1/v2候補や保存baselineの検証判定は変更しない"
+      ],
+      "minimal_required_tests": [
+        {
+          "id": "U16-T1",
+          "kind": "bounded_unit",
+          "check": "空の作業領域に模擬最終6ファイルを置き、run_id/stage_id付きmanifestの相対パス・sha256・サイズ・件数・コード/入力ID、実バイト保存、command/exit/stdout/stderrを読戻す。cleanup後も読める。既存run_idへの書込みは拒否。"
+        },
+        {
+          "id": "U16-T2",
+          "kind": "bounded_unit",
+          "check": "post_C03_post_ROLE30の実抽出（または忠実な小型fixture）からS02 G513:G521 9比較を消費経路に通し、欠落0をID/値/状態/元セルで確認。全6316 ID/値/状態差と全比較差をbaselineに対して列挙し、原因タグ付き承認リストなしの差分はFAIL。実数値のPASSは後続の独立runで判定。"
+        },
+        {
+          "id": "U16-T3",
+          "kind": "negative",
+          "check": "最終数値ファイル欠落、SHA改変、stage_id=pre_C03、run_id相違、1469比較、baselineパスによる無言代替、summaryの別run入力を各々非ゼロ終了させ、候補を生成しない。"
+        },
+        {
+          "id": "U16-T4",
+          "kind": "bounded_integration",
+          "check": "summary_tables.jsonのsource_run_id/stage_id/extraction_shaがmanifest実バイトと一致し、graftが消費したtables/supplement/作業コピーもmanifestに対応。ブック検査で消費入力とrun manifestを照合。"
+        },
+        {
+          "id": "U16-T5",
+          "kind": "later_separate_approval",
+          "check": "限定修正と小型試験が通った後、ROLE10が新たな実行単位で全数値パイプライン・Excel全生成を一度再実行し、15シート/148グラフ、保留境界、S10、比較・物語説明のPLAN2.5回帰検査を固定新版で行う。今回のROLE30は未実行。"
+        }
+      ],
+      "ROLE10_next_single_implementation_unit": {
+        "id": "T11_E20-04_unit16_implement_stage_provenance",
+        "scope": "3ファイルの数値保持・stage検査・再実行抽出からsummaryへの配線と限定fixtureテストまで。旧baseline不変更、全工程再実行と候補合格宣言は次の別単位。",
+        "acceptance": "U16-T1～T4の結果・コード差分・manifest例をreports/10.jsonに記録し、次の実runの前にレビュー可能な状態にする。"
+      },
+      "preexisting_proposals_preserved": true,
+      "historical_decisions": "reports/30.json既存issuesを変更/削除せず本キーを追加。旧2.2提案は歴史上の提案で2.5合格ではない。"
+    }
   }
 }
