@@ -8,8 +8,18 @@ ROLE=00|10|20|30|40。最新ユーザー判断を優先。旧候補と報告は�
 meta:
   schema: care_analysis_execution_v2
   revision: '2.4'
-  operations_revision: 2.4.3
-  operations_updated_at: '2026-10-10'
+  operations_revision: 2.4.4
+  operations_updated_at: '2026-10-12'
+  completed_workbook_sheet_requirement: 完成ブックは従来どおり15シート必須。
+  print_probe_scope_decision:
+    decision: 印刷確認コピーは注記対象の3シートで構造受入とする。
+    decided_at: '2026-10-12T09:32:15+09:00'
+    authority: ROLE00へのユーザー明示判断
+    evidence: reports/10.json task_results.T11_E20-04_unit3 の保存済み実測。印刷確認コピーは3シート、グラフ部品148件、局所注記15件、SHA一致、元コピーSHA検査前後不変。
+    scope_limit: この判断は印刷確認コピーの構造範囲だけに適用。完成ブック15シート要件は変更しない。
+    excluded_acceptances: 日本語実描画、全生成再実行、Excel再計算、候補評価、E20-04全体の合格を意味しない。
+    next_role: '10'
+    next_unit: 再現ZIP内の機械固有パス修正と手順・環境記録の収録
   version_policy: revisionは解析・評価契約、operations_revisionはその契約を変えない閲覧・案内の運用版。運用だけの変更は候補の評価を無効化しない。入力・定義・コード・テンプレート・要件・検査・受入条件への変更はrevisionを更新し、既存の再評価規則を適用する。
   project: 介護保険データ解析
   state: approved_missing_and_substitution_pending_candidate
@@ -1094,6 +1104,10 @@ change_management:
     state_write_exception: 今回だけ計画担当が明示依頼により計画変更と既存保存報告の状態整合を更新。通常のSTATE.writerは00。
     evaluation: 2.2候補v1のFAILと30提案を保存。新2.3候補は全独立評価。未適用を適用済みとしない。
   operations_history:
+  - version: 2.4.4
+    date: '2026-10-12'
+    change: ROLE00へのユーザー明示判断により、印刷確認コピーの構造受入範囲を注記対象3シートと確定。完成ブックの15シート要件は維持。
+    impact: 保存済み実測（3シート/148グラフ部品/15注記/SHA一致/元コピー不変）を構造範囲に限り受入。日本語実描画・全生成再実行・再計算・候補評価・E20-04全体は未完了。次担当10、次単位は再現ZIP内の機械固有パス修正と手順・環境記録の収録。
   - version: 2.4.3
     date: '2026-10-10'
     change: 共有画面を計画チャットと00で分担。別枠の実処理/詳細フロー/3Dファイル概要アトラスと期限までの毎時更新を追加。Siteは未公開。
