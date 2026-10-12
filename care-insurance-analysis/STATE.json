@@ -1,9 +1,9 @@
 {
   "schema": "care_state/v1",
-  "revision": 9,
+  "revision": 10,
   "plan_revision": "2.4",
-  "updated_at": "2026-10-10T11:53:32+09:00",
-  "phase": "user_decisions_integrated_waiting_ROLE10_candidate_2_4",
+  "updated_at": "2026-10-12T09:11:15+09:00",
+  "phase": "T11_E20-04_unit3_inspected_waiting_print_probe_scope_decision",
   "writer": "00",
   "canonical_repository": "myonmyon545-cell/-",
   "canonical_path": "care-insurance-analysis/STATE.json",
@@ -360,14 +360,43 @@
     },
     "T11": {
       "owner": "10",
-      "status": "未着手",
-      "wait_reason": "先行工程",
+      "status": "進行中_第3単位確認済み_印刷確認コピー範囲判断待ち",
+      "wait_reason": "印刷確認コピーの受入範囲が未確定。E20-04全体は未完了。",
       "deps": [
         "T10"
       ],
-      "confirmed_output": null,
-      "next_action": "先頭要点1枚に集約し年度日数置換と簡易確認文を掲載。元表/グラフ/画像の局所注記、保持/印刷/日本語/再現を同じ候補で検証。",
-      "plan_revision": "2.4"
+      "confirmed_output": "reports/10.json task_results.T11_E20-04_unit3: 保存済みコピー実物検査記録",
+      "next_action": "印刷確認コピーを3対象シートで受け入れるか15シートの別仕様にするか判断待ち。判断確定までは再生成・後続検査を開始しない。",
+      "plan_revision": "2.4",
+      "last_confirmed_subunit": {
+        "task_id": "T11_E20-04_unit3",
+        "status": "STRUCTURE_CONFIRMED_PRINT_PROBE_SCOPE_UNRESOLVED",
+        "report_path": "care-insurance-analysis/reports/10.json#task_results/T11_E20-04_unit3",
+        "report_commit": "6e1b3a82f4da7c3f3422913e5805e973d7e37f14",
+        "print_probe": {
+          "library_file_id": "libfile_24c8577da2608191ad4e0a3ea03c75eb",
+          "version": 0,
+          "sha256": "9f6e33239ef9065481d7c0227f402c7ff36ee74a4e71d32e201f1371a3abee64"
+        },
+        "checks": {
+          "opened": "PASS",
+          "zip": "PASS",
+          "registered_sheets": 3,
+          "chart_parts": 148,
+          "local_notes_text_and_merge": 15,
+          "base_before_sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+          "base_after_sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+          "base_unchanged": true
+        },
+        "not_run": [
+          "Japanese_native_render",
+          "full_pipeline_replay",
+          "Excel_recalculation"
+        ],
+        "E20_04_overall": "NOT_PASS",
+        "acceptance_scope": "未確定。完成ブックの15シート要件と印刷確認コピーの3シート構成を区別し、ROLE00による合格変更なし。",
+        "next_action": "印刷確認コピーを3対象シートで受け入れるか15シートの別仕様にするか判断待ち。判断確定までは再生成・後続検査を開始しない。"
+      }
     },
     "T12": {
       "owner": "10",
@@ -377,6 +406,36 @@
       "deps": [
         "T06"
       ]
+    },
+    "T11_E20-04_unit3": {
+      "owner": "00",
+      "status": "STRUCTURE_CONFIRMED_PRINT_PROBE_SCOPE_UNRESOLVED",
+      "source_commit": "6e1b3a82f4da7c3f3422913e5805e973d7e37f14",
+      "report_commit": "6e1b3a82f4da7c3f3422913e5805e973d7e37f14",
+      "evidence": "care-insurance-analysis/reports/10.json#task_results/T11_E20-04_unit3",
+      "print_probe": {
+        "library_file_id": "libfile_24c8577da2608191ad4e0a3ea03c75eb",
+        "version": 0,
+        "sha256": "9f6e33239ef9065481d7c0227f402c7ff36ee74a4e71d32e201f1371a3abee64"
+      },
+      "checks": {
+        "opened": "PASS",
+        "zip": "PASS",
+        "registered_sheets": 3,
+        "chart_parts": 148,
+        "local_notes_text_and_merge": 15,
+        "base_before_sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+        "base_after_sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+        "base_unchanged": true
+      },
+      "not_run": [
+        "Japanese_native_render",
+        "full_pipeline_replay",
+        "Excel_recalculation"
+      ],
+      "E20_04_overall": "NOT_PASS",
+      "wait_reason": "印刷確認コピーの対象シート数の受入範囲未確定",
+      "next_action": "印刷確認コピーを3対象シートで受け入れるか15シートの別仕様にするか判断待ち。判断確定までは再生成・後続検査を開始しない。"
     }
   },
   "manual_tasks": {
@@ -593,13 +652,16 @@
       "last_reported_by": "20/30"
     },
     "E20-04": {
-      "last_reported_status": "HELD",
+      "last_reported_status": "STRUCTURE_CONFIRMED_PRINT_PROBE_SCOPE_UNRESOLVED",
       "applied": false,
       "proposal_ready": true,
       "proposal_report": "reports/30.json",
-      "needs": "30の保存済み案を10が新2.4候補へ適用・検証。旧v1は提出不可。",
-      "last_reported_at": "2026-10-09T17:38:41.975+09:00",
-      "last_reported_by": "20/30"
+      "needs": "印刷確認コピーを3シートで受け入れるか15シートを含む別仕様にするかの判断待ち。日本語実描画、全工程再実行、再計算は未実施。E20-04全体NOT_PASS。",
+      "last_reported_at": "2026-10-11T10:33:32+09:00",
+      "last_reported_by": "10",
+      "evidence": "reports/10.json#task_results/T11_E20-04_unit3",
+      "status": "held_scope_unresolved",
+      "next_action": "印刷確認コピーを3対象シートで受け入れるか15シートの別仕様にするか判断待ち。判断確定までは再生成・後続検査を開始しない。"
     },
     "C12": {
       "status": "approved_excluded",
@@ -719,6 +781,37 @@
     "quick_check": {
       "name": "介護保険解析_簡易確認.md",
       "status": "計画版のみ_候補反映未実施"
+    },
+    "e20_04_unit3_print_probe": {
+      "task_id": "T11_E20-04_unit3",
+      "status": "STRUCTURE_CONFIRMED_PRINT_PROBE_SCOPE_UNRESOLVED",
+      "report_path": "care-insurance-analysis/reports/10.json#task_results/T11_E20-04_unit3",
+      "report_commit": "6e1b3a82f4da7c3f3422913e5805e973d7e37f14",
+      "print_probe": {
+        "library_file_id": "libfile_24c8577da2608191ad4e0a3ea03c75eb",
+        "version": 0,
+        "sha256": "9f6e33239ef9065481d7c0227f402c7ff36ee74a4e71d32e201f1371a3abee64"
+      },
+      "checks": {
+        "opened": "PASS",
+        "zip": "PASS",
+        "registered_sheets": 3,
+        "chart_parts": 148,
+        "local_notes_text_and_merge": 15,
+        "base_before_sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+        "base_after_sha256": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+        "base_unchanged": true
+      },
+      "not_run": [
+        "Japanese_native_render",
+        "full_pipeline_replay",
+        "Excel_recalculation"
+      ],
+      "E20_04_overall": "NOT_PASS",
+      "acceptance_scope": "未確定。完成ブックの15シート要件と印刷確認コピーの3シート構成を区別し、ROLE00による合格変更なし。",
+      "next_action": "印刷確認コピーを3対象シートで受け入れるか15シートの別仕様にするか判断待ち。判断確定までは再生成・後続検査を開始しない。",
+      "readback_report_blob": "523a106bf5c8e85ce235aedcdc122791934c3606",
+      "file_integrity": "保存ID/版/SHAと実ファイル検査はreports/10.jsonに記録"
     }
   },
   "role_reports": {
@@ -726,7 +819,7 @@
     "20": "reports/20.json",
     "30": "reports/30.json"
   },
-  "next_action": "10で最新2.4を同一HEADから読取り、進行中2.3作業へ差分を一括適用。新候補+ログを固定し20が全独立評価。C11正式分母の保留は継続。",
+  "next_action": "印刷確認コピーを3対象シートで受け入れるか15シートの別仕様にするか判断待ち。判断確定までは再生成・後続検査を開始しない。",
   "history": [
     {
       "event": "共有用の登録内容をローカル準備。GitHub登録は自動承認審査に拒否され未実施。本解析も未実施。",
@@ -777,6 +870,12 @@
       "role": "00",
       "source_commit": "f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
       "event": "同一コミットの進捗と共有画面更新規約を確認。報告更新なし（最新状況未確認）。運用2.4.3を通常進捗更新へ組込み。解析工程/候補/評価の完了は昇格しない。"
+    },
+    {
+      "at": "2026-10-12T09:11:15+09:00",
+      "role": "00",
+      "source_commit": "6e1b3a82f4da7c3f3422913e5805e973d7e37f14",
+      "event": "reports/10.jsonのT11_E20-04_unit3を照合し、印刷確認コピーの保存済み実物検査をSTATEへ統合。開封/ZIP PASS、登録3シート、グラフ部品148件、局所注記15件、元版2 SHA検査前後不変を記録。完成ブック15シート要件と印刷確認コピーの適用範囲を区別し、印刷確認コピーの受入範囲は未確定として維持。日本語実描画/全工程再実行/再計算未実施、E20-04全体NOT_PASS。"
     }
   ],
   "deployment_status": "registered_on_main",
@@ -886,7 +985,7 @@
     ]
   },
   "operations_revision": "2.4.3",
-  "canonical_plan_checked_commit": "f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
+  "canonical_plan_checked_commit": "6e1b3a82f4da7c3f3422913e5805e973d7e37f14",
   "canonical_plan_blob_sha": "dab4980781f5d0d3061b78aeea91b7eb7e06efc3",
   "checks": [
     {
@@ -1048,28 +1147,35 @@
       "reported_at": "2026-10-10T01:06:52+09:00",
       "source_sha256": "a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2",
       "evidence": "references/S10_excerpts.json"
+    },
+    {
+      "id": "E20-04_unit3_saved_print_probe_reinspection",
+      "verdict": "STRUCTURE_CONFIRMED_PRINT_PROBE_SCOPE_UNRESOLVED",
+      "scope": "印刷確認コピー実物の構造検査。3シート/148グラフ部品/15局所注記を確認。15シート要件の適用範囲は未確定で、合格へ変更しない。",
+      "evidence": "care-insurance-analysis/reports/10.json#task_results/T11_E20-04_unit3",
+      "reported_by": "10",
+      "recorded_by": "00",
+      "reported_at": "2026-10-11T10:33:32+09:00",
+      "source_commit": "6e1b3a82f4da7c3f3422913e5805e973d7e37f14",
+      "report_commit": "6e1b3a82f4da7c3f3422913e5805e973d7e37f14",
+      "base_sha_unchanged": true,
+      "E20_04_overall": "NOT_PASS"
     }
   ],
   "report_freshness": {
     "10": {
-      "last_recorded_at": "2026-10-09T16:29:07+09:00",
-      "status": "candidate_saved_waiting_independent_review_and_visual_condition",
-      "source_commit": "1051610978f031164d83e1ba02f72fe162a48b60",
-      "pre_save_rechecked_commit": "e3e5258ef1ea6424780daf22e2b38b1e16e1c8a6",
-      "report_sha": "ecdd8f911fe4d4acb436a1771ace280427e80b04",
-      "candidate": {
-        "id": "care-S01-20261009-v1",
-        "version": 1,
-        "sha256": "fe3ccd49b45400ea70687cd67cb50a7f9563cd7dd6641bd7c82c57aa97cbb570"
-      },
-      "last_recorded_status": "candidate_saved_waiting_independent_review_and_visual_condition",
-      "plan_revision": "2.2",
-      "verdict": null,
-      "note": "保存済み報告を同一HEADで再確認。報告更新なし。実行状態は直接観測していない。",
-      "checked_at": "2026-10-10T11:53:32+09:00",
-      "checked_commit": "f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
-      "content_changed_since_previous": false,
-      "freshness": "最新状況未確認"
+      "last_recorded_at": "2026-10-11T10:33:32+09:00",
+      "status": "STRUCTURE_CONFIRMED_PRINT_PROBE_SCOPE_UNRESOLVED",
+      "source_commit": "6e1b3a82f4da7c3f3422913e5805e973d7e37f14",
+      "report_sha": "523a106bf5c8e85ce235aedcdc122791934c3606",
+      "last_recorded_status": "STRUCTURE_CONFIRMED_PRINT_PROBE_SCOPE_UNRESOLVED",
+      "plan_revision": "2.4",
+      "verdict": "STRUCTURE_CONFIRMED_PRINT_PROBE_SCOPE_UNRESOLVED",
+      "note": "T11 E20-04第3単位の実物検査記録を同一HEADから確認しSTATEへ統合。",
+      "checked_at": "2026-10-12T09:11:15+09:00",
+      "checked_commit": "6e1b3a82f4da7c3f3422913e5805e973d7e37f14",
+      "content_changed_since_previous": true,
+      "freshness": "current_as_of_commit"
     },
     "20": {
       "last_recorded_at": "2026-10-09T17:13:29.181705+09:00",
@@ -1198,5 +1304,6 @@
       "url": "https://care-analysis-atlas.adept-sun-2909.chatgpt.site",
       "at": "2026-10-10T02:54:33.508075+00:00"
     }
-  }
+  },
+  "STATE_modified_by_role10": false
 }
