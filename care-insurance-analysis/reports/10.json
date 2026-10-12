@@ -2,11 +2,11 @@
   "schema": "care_handoff/v1",
   "role": "10",
   "plan_revision": "2.4",
-  "status": "unit12 one-shot isolated generation stopped at comparison failure; six-file numeric PASS report conflicts with actual intermediate hashes and 1469/1478 comparison count; E20-04 NOT_PASS",
-  "task_id": "T11_E20-04_unit12",
-  "source_commit": "82c9ad62a0a07bfb6ddbc085dbc39972ad5bf342",
-  "pre_save_rechecked_commit": "82c9ad62a0a07bfb6ddbc085dbc39972ad5bf342",
-  "updated_at": "2026-10-12T06:14:39.924Z",
+  "status": "unit13 failed-generation workbook and execution evidence privately saved/read back; table inspection has 8 presentation/state issues; numeric conflict unresolved; E20-04 NOT_PASS",
+  "task_id": "T11_E20-04_unit13",
+  "source_commit": "54553bafb943bf0cad6029adaaf7606bbb69a941",
+  "pre_save_rechecked_commit": "54553bafb943bf0cad6029adaaf7606bbb69a941",
+  "updated_at": "2026-10-12T06:31:25.671Z",
   "startup_read": {
     "branch": "main",
     "head_sha": "210aec627ca32c13874e855a8fd8e6b6a7cd630d",
@@ -2594,6 +2594,480 @@
       "next_action": "比較処理と生成中間出力を照合し、固定6ファイルPASS報告と実中間SHAの不一致、6316レコード中1469比較である点を原因調査する。併せてsheet/styles/workbook、Z492および分析要点値/書式の差分を特定する。原因・比較条件が是正されるまで同じ全生成を再実行しない。再計算、日本語実描画、ROLE20は後続の別単位。",
       "restart_condition": "ZIP v5の一回実行ログ・出力を参照し、pipeline/comparatorの期待値マッピングと生成物の実SHAを説明できる原因・限定修正・再検査条件を reports/10 に保存後、別単位として承認された隔離再実行。",
       "stream_hash_note": "stdout_sha256/stderr_sha256 are hashes of the exact unmodified byte-text captured in the local execution_log.json. The inline stdout/stderr fields are sanitized copies with machine-specific workspace/runtime paths replaced; compare the raw hashes against the local log, not against the sanitized inline text."
+    },
+    "T11_E20-04_unit13": {
+      "task_id": "T11_E20-04_unit13",
+      "source_main_commit": "54553bafb943bf0cad6029adaaf7606bbb69a941",
+      "pre_save_rechecked_commit": "54553bafb943bf0cad6029adaaf7606bbb69a941",
+      "checked_at_utc": "2026-10-12T06:27:34.462136+00:00",
+      "plan_revision": "2.4",
+      "same_commit_read": {
+        "head": "54553bafb943bf0cad6029adaaf7606bbb69a941",
+        "files": [
+          {
+            "path": "care-insurance-analysis/PLAN.md",
+            "blob_sha": "6ef11a6d11791dd4dee32c7c56fa4ad338e9f964"
+          },
+          {
+            "path": "care-insurance-analysis/STATE.json",
+            "blob_sha": "fe188c41f1c489a1a7b3ef744ea9e050383225f1"
+          },
+          {
+            "path": "care-insurance-analysis/reports/10.json",
+            "blob_sha": "ffad77f73d9af891a21fcd75b11211644df48217"
+          },
+          {
+            "path": "care-insurance-analysis/reports/20.json",
+            "blob_sha": "57863de7a6ba499b2872df9cf0b6549c43afa7e7"
+          },
+          {
+            "path": "care-insurance-analysis/reports/30.json",
+            "blob_sha": "d790c1686cb72176664af414cabc82cece8bacca"
+          }
+        ],
+        "state_revision": 11,
+        "unit13_absent_before": true,
+        "role20_verdict": "FAIL",
+        "role30_scope_reused": "E20-02/03/04/E01 proposals"
+      },
+      "recovery": {
+        "unit12_workbook_remaining": true,
+        "unit12_execution_log_remaining": true,
+        "workbook_real_sha_matched_report": true,
+        "full_generation_rerun": false,
+        "workbook_modified": false,
+        "workbook_sha_before": "d1cc8e022bce56db0608ec6a1a5dafbfd74c333ff197f65c78ef2470609129da",
+        "workbook_sha_after": "d1cc8e022bce56db0608ec6a1a5dafbfd74c333ff197f65c78ef2470609129da"
+      },
+      "saved_artifacts": {
+        "workbook": {
+          "library_file_id": "libfile_562a7617cef08191ae92d6c016011994",
+          "file_id": "file_0000000004f881f5a65bf19c995f8c41",
+          "name": "検証中_比較FAIL_T11_E20-04_unit12生成Excel.xlsx",
+          "version": 0,
+          "size_bytes": 1805859,
+          "sha256": "d1cc8e022bce56db0608ec6a1a5dafbfd74c333ff197f65c78ef2470609129da",
+          "readback_sha256": "d1cc8e022bce56db0608ec6a1a5dafbfd74c333ff197f65c78ef2470609129da",
+          "readback_verified": true,
+          "private_saved": true
+        },
+        "execution_evidence_zip": {
+          "library_file_id": "libfile_c11527aba6ec81918b73ae9730338237",
+          "file_id": "file_000000004fec81f5867c678ff6837d93",
+          "name": "T11_E20-04_unit12_比較FAIL_実行証拠.zip",
+          "version": 0,
+          "size_bytes": 860074,
+          "sha256": "1cd3758b9b785e60853495af792e69b9b2bcee362a586b97b63d4c300f58ee87",
+          "readback_sha256": "1cd3758b9b785e60853495af792e69b9b2bcee362a586b97b63d4c300f58ee87",
+          "readback_verified": true,
+          "private_saved": true,
+          "zip_crc": "PASS",
+          "internal_manifest_hash_size_verification": "PASS 15/15",
+          "included_scope": "unit12 execution_log.json/preflight.json and surviving replay JSON/NDJSON outputs, including intermediate calculation and contract files; workbook stored separately; no source input bytes",
+          "missing_scope": [
+            "per-script stdout/stderr inside replay_pipeline.py were captured but not persisted",
+            "recalculation/native Japanese rendering logs were not produced",
+            "any already deleted temporary output is not recovered"
+          ],
+          "unit12_log_capture_correction": "The inherited-stream statement in unit12 does not cover nested numeric pipeline children whose captured streams were discarded. Unit13 explicitly records this missing scope."
+        },
+        "actual_workbook_inspection": {
+          "library_file_id": "libfile_a5b1d20088e48191b141be10b824581e",
+          "file_id": "file_0000000083288207be28ae4b634a8d83",
+          "name": "T11_E20-04_unit13_実物点検.json",
+          "version": 0,
+          "size_bytes": 28141,
+          "sha256": "90f376decc60268acef8cc0ea62de22a2d86751f7be5fe59367a15f33da8a56d",
+          "readback_sha256": "90f376decc60268acef8cc0ea62de22a2d86751f7be5fe59367a15f33da8a56d",
+          "readback_verified": true,
+          "private_saved": true
+        }
+      },
+      "inspection_method": {
+        "tool": "openpyxl 3.1.5 and Python 3.12.14; DOCX XML/python-docx read-only extraction",
+        "source": "saved workbook version0 readback bytes",
+        "xlsx_cell_value_style_merge_and_print_inspection": true,
+        "Excel_native_open": false,
+        "Japanese_rendered_glyph_readability": "UNVERIFIED",
+        "workbook_recalculated_or_resaved": false
+      },
+      "structure": {
+        "sheets": 15,
+        "sheet_order": [
+          "分析要点",
+          "表紙・目次",
+          "データの見方",
+          "Ⅰ基礎情報",
+          "Ⅱ調査項目データ（第１群）",
+          "Ⅱ調査項目データ（第２群）",
+          "Ⅱ調査項目データ（第３群）",
+          "Ⅱ調査項目データ（第４群）",
+          "Ⅱ調査項目データ（第５群）",
+          "Ⅱ調査項目データ（その他）",
+          "Ⅱ（３）５項目",
+          "Ⅲ審査判定データ（一次・二次判定）",
+          "Ⅲ審査判定データ（変更率）",
+          "Ⅲ審査判定データ（有効期間）",
+          "Ⅳ事務データ"
+        ],
+        "charts": 148,
+        "header_range": "分析要点!A201:N201",
+        "header_order_pass": true,
+        "header_cells": {
+          "A201": "指標ID",
+          "B201": "区分",
+          "C201": "期間または基準日",
+          "D201": "通常または補正",
+          "E201": "単位",
+          "F201": "市",
+          "G201": "県",
+          "H201": "全国",
+          "I201": "第1回参考値",
+          "J201": "県差",
+          "K201": "全国差",
+          "L201": "提供期間差",
+          "M201": "元セル",
+          "N201": "判定"
+        },
+        "exact_target_notes": 15,
+        "exact_total_notes": 21,
+        "duplicate_note_ranges": 0
+      },
+      "coverage": {
+        "R02": "present in detailed table; top priority shows total population/100%, aging and 75/85 fields are lower",
+        "R03": "present in detailed table; top priority is denominator population/100%, certification rate at F239 lower",
+        "R04": "present in detailed table; top priority total cases/100%, II+/III+ and disability outcomes lower",
+        "R05": "detailed groups and counts present; score source transcription verified, score derivation not independently verified; integer formatting loses precision",
+        "R06": "detailed decision/change/validity fields present; top priority only non-applicable cases; change/C09 state display inconsistent",
+        "R07": "insured/application/day fields present in detailed table; key day results at F1191/F1194/F1197 are near bottom"
+      },
+      "representative_traces": [
+        {
+          "id": "I.population:G129",
+          "summary_cell": "F202",
+          "stored_value": 104961,
+          "excel_format": "0",
+          "source_cell": "Ⅰ基礎情報!G129",
+          "source_value": 104961,
+          "baseline_record_id": "I.population:G129",
+          "baseline_value": 104961,
+          "numerator": null,
+          "denominator": null,
+          "ratio_independent_check": null,
+          "source_record_summary_equal": true,
+          "verdict": "PASS_REPRESENTATIVE_CELL_TRACE_ONLY",
+          "scope": "selected source-cell/record/value or ratio correspondence; not numeric pipeline acceptance"
+        },
+        {
+          "id": "I.population:T130",
+          "summary_cell": "F206",
+          "stored_value": 0.30770476653233103,
+          "excel_format": "0.0%",
+          "source_cell": "Ⅰ基礎情報!T130",
+          "source_value": 0.30770476653233103,
+          "baseline_record_id": "I.population:T130",
+          "baseline_value": 0.30770476653233103,
+          "numerator": 32297,
+          "denominator": 104961,
+          "ratio_independent_check": true,
+          "source_record_summary_equal": true,
+          "verdict": "PASS_REPRESENTATIVE_CELL_TRACE_ONLY",
+          "scope": "selected source-cell/record/value or ratio correspondence; not numeric pipeline acceptance",
+          "actual_source_numerator_denominator_cells": [
+            "G130",
+            "G129"
+          ],
+          "actual_source_numerator_denominator_values": [
+            32297,
+            104961
+          ],
+          "actual_source_ratio_matches": true
+        },
+        {
+          "id": "I.certification:U261",
+          "summary_cell": "F239",
+          "stored_value": 0.15868346905285322,
+          "excel_format": "0.0%",
+          "source_cell": "Ⅰ基礎情報!U261",
+          "source_value": 0.15868346905285322,
+          "baseline_record_id": "I.certification:U261",
+          "baseline_value": 0.15868346905285322,
+          "numerator": 5125,
+          "denominator": 32297,
+          "ratio_independent_check": true,
+          "source_record_summary_equal": true,
+          "verdict": "PASS_REPRESENTATIVE_CELL_TRACE_ONLY",
+          "scope": "selected source-cell/record/value or ratio correspondence; not numeric pipeline acceptance",
+          "actual_source_numerator_denominator_cells": [
+            "F261",
+            "F260"
+          ],
+          "actual_source_numerator_denominator_values": [
+            5125,
+            32297
+          ],
+          "actual_source_ratio_matches": true
+        },
+        {
+          "id": "I.dementia:K391",
+          "summary_cell": "F285",
+          "stored_value": 0.6519306099608282,
+          "excel_format": "0.0%",
+          "source_cell": "Ⅰ基礎情報!K391",
+          "source_value": 0.6519306099608282,
+          "baseline_record_id": "I.dementia:K391",
+          "baseline_value": 0.6519306099608282,
+          "numerator": 1165,
+          "denominator": 1787,
+          "ratio_independent_check": true,
+          "source_record_summary_equal": true,
+          "verdict": "PASS_REPRESENTATIVE_CELL_TRACE_ONLY",
+          "scope": "selected source-cell/record/value or ratio correspondence; not numeric pipeline acceptance",
+          "actual_source_numerator_denominator_cells": [
+            "G391",
+            "G390"
+          ],
+          "actual_source_numerator_denominator_values": [
+            1165,
+            1787
+          ],
+          "actual_source_ratio_matches": true
+        },
+        {
+          "id": "II.score.1:G188",
+          "summary_cell": "F353",
+          "stored_value": 71.25086737548965,
+          "excel_format": "0",
+          "source_cell": "Ⅱ調査項目データ（第１群）!G188",
+          "source_value": 71.25086737548965,
+          "baseline_record_id": "II.score.1:G188",
+          "baseline_value": 71.25086737548965,
+          "numerator": null,
+          "denominator": null,
+          "ratio_independent_check": null,
+          "source_record_summary_equal": true,
+          "verdict": "TRANSCRIPTION_ONLY_UNVERIFIED_SCORE_CALCULATION",
+          "scope": "selected source-cell/record/value or ratio correspondence; not numeric pipeline acceptance"
+        },
+        {
+          "id": "III.first_decision:G136",
+          "summary_cell": "F919",
+          "stored_value": 1787,
+          "excel_format": "0",
+          "source_cell": "Ⅲ審査判定データ（一次・二次判定）!G136",
+          "source_value": 1787,
+          "baseline_record_id": "III.first_decision:G136",
+          "baseline_value": 1787,
+          "numerator": null,
+          "denominator": null,
+          "ratio_independent_check": null,
+          "source_record_summary_equal": true,
+          "verdict": "PASS_REPRESENTATIVE_CELL_TRACE_ONLY",
+          "scope": "selected source-cell/record/value or ratio correspondence; not numeric pipeline acceptance"
+        },
+        {
+          "id": "IV.insured:J129",
+          "summary_cell": "F1173",
+          "stored_value": 1749,
+          "excel_format": "0",
+          "source_cell": "Ⅳ事務データ!J129",
+          "source_value": 1749,
+          "baseline_record_id": "IV.insured:J129",
+          "baseline_value": 1749,
+          "numerator": null,
+          "denominator": null,
+          "ratio_independent_check": null,
+          "source_record_summary_equal": true,
+          "verdict": "PASS_REPRESENTATIVE_CELL_TRACE_ONLY",
+          "scope": "selected source-cell/record/value or ratio correspondence; not numeric pipeline acceptance"
+        }
+      ],
+      "representative_comparisons": [
+        {
+          "cell": "J206",
+          "value": -0.10646394363956757,
+          "calculation": "(S01 T130-W130)*100",
+          "matches_stored_inputs": true,
+          "format": "0.0\" pp\"",
+          "scope": "regional ratio difference only",
+          "actual_source_reference_value": 0.3087694059687267,
+          "actual_source_city_value": 0.30770476653233103,
+          "actual_source_difference_matches": true
+        },
+        {
+          "cell": "K206",
+          "value": 1.8826557941998279,
+          "calculation": "(S01 T130-Z130)*100",
+          "matches_stored_inputs": true,
+          "format": "0.0\" pp\"",
+          "scope": "regional ratio difference only",
+          "actual_source_reference_value": 0.28887820859033275,
+          "actual_source_city_value": 0.30770476653233103,
+          "actual_source_difference_matches": true
+        },
+        {
+          "cell": "L285",
+          "value": -0.6355104324886063,
+          "calculation": "(S01 K391-S02 K391)*100",
+          "matches_stored_inputs": true,
+          "format": "0.0\" pp\"",
+          "scope": "selected period ratio difference; source S02 not independently recalculated in this unit",
+          "actual_source_reference_value": 0.6582857142857143,
+          "actual_source_city_value": 0.6519306099608282,
+          "actual_source_difference_matches": true
+        }
+      ],
+      "trace_scope": "selected cell and pinned baseline record correspondence only; not PASS for full 6316 metrics/1478 comparisons. Underlying provided score calculation remains UNVERIFIED.",
+      "s10_25_6_reference": {
+        "summary_cell": "D182",
+        "value": 25.6,
+        "format": "0.0",
+        "period_cell": "C182",
+        "period_value": "R7.city.survey",
+        "source_cell": "S10 DOCX XML table62 row3 cell8 (zero-based)",
+        "source_text": "25.6",
+        "source_sha256": "a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2",
+        "record_file": "replay-v4/S10_application.json",
+        "no_comparison_columns": true,
+        "limit_note_cell": "N182",
+        "value_matches_source": true
+      },
+      "local_state_inspection": {
+        "C04": "D182=25.6/S10 table62 source match, comparison columns G:L empty, annual/different-method limitation N182; source J208 and city/period comparisons F1194,I1194:L1194 held",
+        "C10": "A25, source note C74/C84, F697:G697/I697 and related ratios held; no affected region inferred",
+        "C11": "A26, exact14 source-rate notes and corresponding held rows; no denominator created",
+        "C09": "A27/source D117 says not computed with denominator zero; F972:F978 and N972:N978 instead say held; presentation FAIL"
+      },
+      "table_findings": [
+        {
+          "id": "U13-F01",
+          "severity": "major",
+          "cells": "分析要点!A1",
+          "finding": "旧タイトル「候補v2／PLAN2.3／ROLE20全件再評価待ち」。今回の検証中・比較FAILとPLAN2.4に一致しない。"
+        },
+        {
+          "id": "U13-F02",
+          "severity": "major",
+          "cells": "分析要点!A5:F22、A201:N201",
+          "finding": "重点結果は各分野の最初の2指標に留まる。R03は分母人口と100%、R04は全体件数と100%、R06は非該当のみ。認定率F239、認知症II以上F285/III以上F287、主判定総数F919、意見書/認定日数F1191/F1197などが下方に分散し、重点結果として見つけにくい。"
+        },
+        {
+          "id": "U13-F03",
+          "severity": "major",
+          "cells": "分析要点!F972:F978、I972:L978、N972:N978、A27／Ⅲ審査判定データ（変更率）!J109,N110:N116,D117",
+          "finding": "C09の局所注記とA27は分母0で未算出。14列表は値・差が「保留」、判定がheld。未算出の状態表示と整合していない。原本J109=0、N110:N116は数式エラー保持。"
+        },
+        {
+          "id": "U13-F04",
+          "severity": "major",
+          "cells": "分析要点!L203,L206,L208 など人口ストック比率行",
+          "finding": "同じ2025年1月人口ストックで提供期間差が対象外なのに0.0 ppが表示される。実差0と比較不可が区別されていない。"
+        },
+        {
+          "id": "U13-F05",
+          "severity": "major",
+          "cells": "分析要点!D15,F353:L353",
+          "finding": "得点71.250867…および差1.510102…、0.888668…、-0.006446…を整数形式0で表示。差の意味と小数精度が失われる。裸のGeneral小数は全要点シートで検出0件。"
+        },
+        {
+          "id": "U13-F06",
+          "severity": "major",
+          "cells": "分析要点!E29:F29 と E30:F195",
+          "finding": "S10見出しE29は状態、F29は資料位置/方法・利用制限だが、実データE列は単位、F列はreference_only/missing/held。出所と制限はM/N列にあり見出しとデータの列対応が違う。"
+        },
+        {
+          "id": "U13-F07",
+          "severity": "concern_static_only",
+          "cells": "分析要点!A1:N1197、繰返し見出し201行、N182、B202:N1197",
+          "finding": "全1197行（主指標996行）をA3横・幅1ページ・縦自動で印刷。S10枠より下の201行だけが繰返し見出し。長文N列幅31、S10行高48、主表行高90のため長文の収まりとページ跨ぎが懸念。ページ数・切れ・字形は実描画未検証。"
+        },
+        {
+          "id": "U13-F08",
+          "severity": "clarity",
+          "cells": "分析要点!B202:B1197,N202:N1197、C30:C195",
+          "finding": "内部table ID・valid/held/reference_only・R7.city.survey等が主なラベル。対象外/保留/欠損と真の空欄の意味が一覧で説明されていない。"
+        }
+      ],
+      "bare_General_fractional_values_detected": 0,
+      "reference_review": {
+        "R5_source": "libfile_1a33a04a77e4819197bfdf49e7cd8099 (S03 exact-hash alias); 14 sheets/148 charts, original sequence and table/chart/index/print definitions read as format reference",
+        "R5_summary": "libfile_d66db96b3c5881919cf10890068434de; same-hash old narrative example read as domain/form reference",
+        "R02_to_R07": "population/aging; certification; dementia/disability; survey items/medical care; primary-secondary/change/validity; insured/applications/opinion/survey/certification intervals",
+        "old_numeric_year_or_causal_explanation_reused": false
+      },
+      "unresolved_numeric_conflict": {
+        "verdict": "UNRESOLVED",
+        "reported_six_output_status": "PASS",
+        "baseline_records": 6316,
+        "baseline_comparisons": 1478,
+        "surviving_intermediate_records": 6316,
+        "surviving_intermediate_comparisons": 1469,
+        "evidence_paths": {
+          "replay-v4/numeric_replay.json": {
+            "sha256": "382976f803db803794ad7d2c017ddcc34c8e6b53c516941f7ab57b619c4528df",
+            "size_bytes": 1391
+          },
+          "baseline/calculation/extracted_values.json": {
+            "sha256": "2a3590942aafbc1562e787aa8292f6ed8cb0e08a9a5b9b9b6b0de145223c1bac",
+            "size_bytes": 9147329
+          },
+          "replay-v4/care_replay_vec9v3u4/calculation/extracted_values.json": {
+            "sha256": "a37f24eaa1c8316be03d1d0dc162e75be6de7d7975c2d3196715140dfc400070",
+            "size_bytes": 8095187
+          },
+          "replay-v4/care_replay_vec9v3u4/contract/definitions.json": {
+            "sha256": "3eb00c6041866615e1b4e406ea72192d97df93a607799686ab59f41e604e74a1",
+            "size_bytes": 108104
+          },
+          "replay-v4/care_replay_vec9v3u4/contract/metric_inventory.json": {
+            "sha256": "39841583ff0fa1c3d708bd62bc71e800ced55b958a2221b13ee2fabc4d09d4dc",
+            "size_bytes": 2307096
+          },
+          "replay-v4/care_replay_vec9v3u4/calculation/numeric_checks.json": {
+            "sha256": "47bbc7ae361a5599bf72059226e2a2de911f20a84d6ec01f88589ae7501a2466",
+            "size_bytes": 1067518
+          },
+          "replay-v4/replay_comparison.json": {
+            "sha256": "186141498cda3725aa97a8fb25252cc5b0cd3b48625f288e234eb00ae3bf0d39",
+            "size_bytes": 43028
+          },
+          "src/summary_v2.py": {
+            "sha256": "12bf7db53c941180b97da077f6103ddd75f3f1a6206fd543f9b3ad7af4e52beb",
+            "size_bytes": 6616
+          },
+          "src/replay_v2.py": {
+            "sha256": "4f2ac7484728f19016a3e2514e909643fa8e2550e888f362ebc83fa837064440",
+            "size_bytes": 3920
+          },
+          "src/replay_pipeline.py": {
+            "sha256": "961b58138489f677279744cf2cc4353b80ca68bd9a032e9a7fb52ec6d883d006",
+            "size_bytes": 3558
+          }
+        },
+        "note": "Only evidence/path binding in this unit; no cause fix and no replay. Representative checks use the pinned baseline records, not a full acceptance of current numeric pipeline."
+      },
+      "not_run": [
+        "full_generation",
+        "Excel_recalculation",
+        "save_reopen_after_recalculation",
+        "Japanese_native_render",
+        "ROLE20_independent_review"
+      ],
+      "verdict": "UNIT13_SAVED_READBACK_PASS; TABLE_INSPECTION_FAIL_PRESENTATION_AND_STATE_CONSISTENCY; NUMERIC_CONFLICT_UNRESOLVED; E20-04_NOT_PASS",
+      "E20_04_overall": "NOT_PASS",
+      "candidate_acceptance": false,
+      "next_action": "次は数値PASS報告と残存中間ファイルの対象パス・処理段階・SHAを診断し、6316/1469と固定6316/1478の違いを説明する。表示修正案はA1の旧版タイトル、A5:F22の重点結果、C09行972:978、人口ストック期間差、得点桁、S10見出し対応、印刷範囲を限定対象として作る。原因修正・全生成・再計算・日本語描画は別単位。",
+      "restart_position": "保存済み検証中Excel libfile_562a7617cef08191ae92d6c016011994 v0、証拠ZIP libfile_c11527aba6ec81918b73ae9730338237 v0、実物点検JSON libfile_a5b1d20088e48191b141be10b824581e v0を固定SHAで取得し、既存数値矛盾の証拠対応表から再開。",
+      "write_scope": {
+        "github": [
+          "care-insurance-analysis/reports/10.json"
+        ],
+        "PLAN_modified": false,
+        "STATE_modified": false,
+        "other_role_reports_modified": false,
+        "source_workbooks_modified": false,
+        "old_candidates_modified": false
+      }
     }
   },
   "outputs": {
@@ -2885,8 +3359,8 @@
     }
   ],
   "next_role": "10",
-  "next_action": "比較処理と生成中間出力を照合し、固定6ファイルPASS報告と実中間SHAの不一致、6316レコード中1469比較である点を原因調査する。併せてsheet/styles/workbook、Z492および分析要点値/書式の差分を特定する。原因・比較条件が是正されるまで同じ全生成を再実行しない。再計算、日本語実描画、ROLE20は後続の別単位。",
-  "restart_condition": "ZIP v5の一回実行ログ・出力を参照し、pipeline/comparatorの期待値マッピングと生成物の実SHAを説明できる原因・限定修正・再検査条件を reports/10 に保存後、別単位として承認された隔離再実行。",
+  "next_action": "次は数値PASS報告と残存中間ファイルの対象パス・処理段階・SHAを診断し、6316/1469と固定6316/1478の違いを説明する。表示修正案はA1の旧版タイトル、A5:F22の重点結果、C09行972:978、人口ストック期間差、得点桁、S10見出し対応、印刷範囲を限定対象として作る。原因修正・全生成・再計算・日本語描画は別単位。",
+  "restart_condition": "保存済み検証中Excel libfile_562a7617cef08191ae92d6c016011994 v0、証拠ZIP libfile_c11527aba6ec81918b73ae9730338237 v0、実物点検JSON libfile_a5b1d20088e48191b141be10b824581e v0を固定SHAで取得し、既存数値矛盾の証拠対応表から再開。",
   "candidate": {
     "id": "care-S01-20261009-v1",
     "version": 1,
@@ -3715,5 +4189,34 @@
     "unit12_absent_before": true,
     "plan_revision": "2.4",
     "state_revision": 11
+  },
+  "startup_read_unit13": {
+    "head": "54553bafb943bf0cad6029adaaf7606bbb69a941",
+    "files": [
+      {
+        "path": "care-insurance-analysis/PLAN.md",
+        "blob_sha": "6ef11a6d11791dd4dee32c7c56fa4ad338e9f964"
+      },
+      {
+        "path": "care-insurance-analysis/STATE.json",
+        "blob_sha": "fe188c41f1c489a1a7b3ef744ea9e050383225f1"
+      },
+      {
+        "path": "care-insurance-analysis/reports/10.json",
+        "blob_sha": "ffad77f73d9af891a21fcd75b11211644df48217"
+      },
+      {
+        "path": "care-insurance-analysis/reports/20.json",
+        "blob_sha": "57863de7a6ba499b2872df9cf0b6549c43afa7e7"
+      },
+      {
+        "path": "care-insurance-analysis/reports/30.json",
+        "blob_sha": "d790c1686cb72176664af414cabc82cece8bacca"
+      }
+    ],
+    "state_revision": 11,
+    "unit13_absent_before": true,
+    "role20_verdict": "FAIL",
+    "role30_scope_reused": "E20-02/03/04/E01 proposals"
   }
 }
