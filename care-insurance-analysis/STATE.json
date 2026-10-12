@@ -1,8 +1,8 @@
 {
   "schema": "care_state/v1",
-  "revision": 12,
+  "revision": 13,
   "plan_revision": "2.5",
-  "updated_at": "2026-10-12T16:16:03+09:00",
+  "updated_at": "2026-10-12T16:18:00+09:00",
   "phase": "ORIGINAL_INTENT_CORRECTION_2_5_REEVALUATION_REQUIRED",
   "writer": "00",
   "canonical_repository": "myonmyon545-cell/-",
@@ -1028,8 +1028,8 @@
     ]
   },
   "operations_revision": "2.5.0",
-  "canonical_plan_checked_commit": "8b2eda7b42d4ec869d5649fd0efc39b377123dde",
-  "canonical_plan_blob_sha": "6ef11a6d11791dd4dee32c7c56fa4ad338e9f964",
+  "canonical_plan_checked_commit": "23e52d7cf813783bda310aa6309c1aa1f1e6e8c4",
+  "canonical_plan_blob_sha": "9cff1723e0a98a1bdeea9baaf4e3a26b682a1c3e",
   "checks": [
     {
       "id": "input_hashes",
@@ -1365,7 +1365,7 @@
       "baseline_note": "previous_revisionは不変の旧候補/役割報告2.2の検査基準。直前の計画はprevious_canonical_revision=2.3。"
     }
   },
-  "canonical_plan_reference_note": "PLAN 2.5 fixed saved commit readback pending.",
+  "canonical_plan_reference_note": "PLAN 2.5 and STATE correction read back from fixed main commit 23e52d7cf813783bda310aa6309c1aa1f1e6e8c4; reports/10,20,30 blob SHAs unchanged.",
   "audit_log": {
     "scope": "取得可能な全記録と全データ",
     "collection_started": true,
@@ -1389,7 +1389,8 @@
         "reports/30.json",
         "workbook",
         "ZIP"
-      ]
+      ],
+      "readback_commit": "23e52d7cf813783bda310aa6309c1aa1f1e6e8c4"
     }
   },
   "shared_view_update": {
