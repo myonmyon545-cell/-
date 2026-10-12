@@ -1,9 +1,45 @@
 """One printable summary; full machine audit stays outside the workbook."""
-import argparse,json
+import argparse
+import json
 from pathlib import Path
-def main():
-    p=argparse.ArgumentParser();p.add_argument('--extraction',type=Path,required=True);p.add_argument('--supplement',type=Path,required=True);p.add_argument('--out',type=Path,required=True);a=p.parse_args()
-    x=json.loads(a.extraction.read_text());s=json.loads(a.supplement.read_text());by={(r['input_id'],r['id']):r for r in x['records']};cm={(c['city_id'],c['label']):c for c in x['comparisons']}
+
+from replay_pipeline import STAGE_ID, verify_extraction_manifest
+
+
+def comparison_trace(extraction):
+    by={(r.get('input_id'),r.get('id')):r for r in extraction.get('records',[])}
+    trace=[]
+    for c in extraction.get('comparisons',[]):
+        city=by.get(('S01',c.get('city_id')))
+        ref=by.get((c.get('reference_input'),c.get('reference_id')))
+        trace.append({
+            'id':c.get('id') or '|'.join(str(c.get(k,'')) for k in ('city_id','label','reference_input','reference_id')),
+            'city_id':c.get('city_id'),'label':c.get('label'),
+            'reference_input':c.get('reference_input'),'reference_id':c.get('reference_id'),
+            'value':c.get('value'),'status':c.get('status'),'reason':c.get('reason'),
+            'dependent_status':c.get('dependent_status'),
+            'city_source_ref':city.get('source_ref') if city else None,
+            'reference_source_ref':ref.get('source_ref') if ref else None})
+    return trace
+
+
+def input_provenance(verified, run_id, stage_id):
+    return {'run_id':run_id,'stage_id':stage_id,
+        'extraction_sha256':verified['extraction_sha256'],
+        'manifest_sha256':verified['manifest_sha256']}
+
+
+def build_summary(x, s, verified, run_id, stage_id):
+    rows,formats,header=build_rows(x,s)
+    return {'schema':'care_summary_v2/v1','rows':rows,'row_formats':formats,'header_row':header,
+        'core_rows':len(rows)-header,'supplemental_blocks':11,
+        'input_provenance':input_provenance(verified,run_id,stage_id),
+        'input_counts':verified['counts'],'comparison_trace':comparison_trace(x)}
+
+
+def build_rows(x, s):
+    by={(r['input_id'],r['id']):r for r in x['records']}
+    cm={(c['city_id'],c['label']):c for c in x['comparisons']}
     rows=[];formats=[]
     def add(v,fmt=None):rows.append(v+['']*(14-len(v)));formats.append(fmt)
     add(['介護保険解析 候補 v3／PLAN 2.4／ROLE20 全件再評価待ち'])
@@ -53,13 +89,32 @@ def main():
         trace=[r]+[other(k) for k in ['県差','全国差','提供期間差']]
         source=' / '.join(q['source_ref']['input']+' '+q['source_ref']['sheet']+'!'+q['source_ref']['cell'] for q in trace if q)
         if c04:
-            period='令和7年度・市独自年度集計（S10）'
-            status='provided_substitute：S01第2回の復元ではない'
-            value=25.6
+            period='令和7年度・市独自年度集計（S10）';status='provided_substitute：S01第2回の復元ではない';value=25.6
             source='S10 表62 R7 市 調査日数（元S01値は監査ログ）'
         else:
             period=r['period'];status=r['status']+(' '+r['reason'] if r['reason'] else '');value=v(r)
         add([r['id'],label,period,r['adjustment'],'%' if r['unit']=='比率' else r['unit'],value,v(other('県差')) if not c04 else '対象外',v(other('全国差')) if not c04 else '対象外',v(other('提供期間差')) if not c04 else '対象外',diff('県差'),diff('全国差'),diff('提供期間差'),source,status], 'ratio' if r['unit']=='比率' else ('days' if r['unit']=='日' else 'count'))
-    result={'schema':'care_summary_v2/v1','rows':rows,'row_formats':formats,'header_row':header,'core_rows':len(rows)-header,'supplemental_blocks':11}
-    a.out.parent.mkdir(parents=True,exist_ok=True);a.out.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print(json.dumps({k:v for k,v in result.items() if k not in ['rows','row_formats']}))
+    return rows,formats,header
+
+
+def main():
+    p=argparse.ArgumentParser()
+    p.add_argument('--extraction',type=Path,required=True)
+    p.add_argument('--run-manifest',type=Path,required=True)
+    p.add_argument('--expected-run-id',required=True)
+    p.add_argument('--expected-stage-id',required=True)
+    p.add_argument('--supplement',type=Path,required=True)
+    p.add_argument('--out',type=Path,required=True)
+    a=p.parse_args()
+    verified=verify_extraction_manifest(a.extraction,a.run_manifest,a.expected_run_id,a.expected_stage_id)
+    x=verified['extraction'];s=json.loads(a.supplement.read_text(encoding='utf-8'))
+    result=build_summary(x,s,verified,a.expected_run_id,a.expected_stage_id)
+    a.out.parent.mkdir(parents=True,exist_ok=True)
+    if a.out.exists():raise FileExistsError('summary output already exists: '+str(a.out))
+    a.out.write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    print(json.dumps({'rows':len(rows),'comparison_trace_count':len(result['comparison_trace']),
+        'source_run_id':a.expected_run_id,'source_stage_id':a.expected_stage_id,
+        'extraction_sha256':verified['extraction_sha256']},ensure_ascii=False))
+
+
 if __name__=='__main__':main()

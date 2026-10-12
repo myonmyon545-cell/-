@@ -3369,6 +3369,134 @@
         "overall": "E20-04 NOT_PASS"
       },
       "next_single_unit": "Unit16として、stage-ID付き数値成果の永続化と再現抽出を要点生成へ渡す限定コード変更案のレビュー。全工程再実行はその後の独立承認単位。"
+    },
+    "T11_E20-04_unit16_implement_stage_provenance": {
+      "task_id": "T11_E20-04_unit16_implement_stage_provenance",
+      "source_main_commit": "5876f892f6161e311bb5575f8bacc13b217bd0e2",
+      "recorded_at_utc": "2026-10-12T07:46:00.112Z",
+      "same_commit_read": {
+        "files": {
+          "care-insurance-analysis/PLAN.md": "9cff1723e0a98a1bdeea9baaf4e3a26b682a1c3e",
+          "care-insurance-analysis/STATE.json": "668632ff5efd8f3962f3bd240140e4390697bc1f",
+          "care-insurance-analysis/reports/10.json": "187751d7968f2f909fd5ed7a5a643705172d0393",
+          "care-insurance-analysis/reports/20.json": "57863de7a6ba499b2872df9cf0b6549c43afa7e7",
+          "care-insurance-analysis/reports/30.json": "c0b5b7e4b6892379eff4f669f7b26e970271141d"
+        },
+        "plan_revision": "2.5",
+        "state_revision": 13,
+        "unit16_absent_before": true
+      },
+      "proposal_identity": "E20-04/U16/stage_provenance_and_dataflow",
+      "proposal_source_commit": "6d67948024e834d81218dd1232a1786d13d27169",
+      "proposal_status_before": "PROPOSAL_ONLY",
+      "result": "BOUNDED_IMPLEMENTATION_AND_FIXTURE_TESTS_PASS",
+      "implementation": {
+        "changed_files": {
+          "care-insurance-analysis/src/replay_pipeline.py": {
+            "base_blob": "5cf51259661cf3778d7806d7b76b317e107a57e8",
+            "blob": "9dd35c5c9d34391f7deb407c8352cd0e65c3396b",
+            "sha256": "9749848327a8af5ae649ffdbed479e927b8f0d47585bf80bedbe1440a282d3dd",
+            "size_bytes": 15887
+          },
+          "care-insurance-analysis/src/replay_v2.py": {
+            "base_blob": "75c3e52bbe4bd1239f69069f28073da5861c65c8",
+            "blob": "7e04a8d1b8eef5b8e2181f253ae095efb2038a0a",
+            "sha256": "03709c2239ee1a9cae92d5daacdad4716c46b1fc0507301f85c63251f7e470a3",
+            "size_bytes": 9241
+          },
+          "care-insurance-analysis/src/summary_v2.py": {
+            "base_blob": "487a45a9f052f45e61acc4fef7e7f9441af2a557",
+            "blob": "b366ff9772fb7acd997bea2998c64a562fe3d95d",
+            "sha256": "c212bea91935d401ca899070364822393099e693d5a13f7c89877dea84b63ede",
+            "size_bytes": 9368
+          },
+          "care-insurance-analysis/src/test_u16_provenance.py": {
+            "base_blob": null,
+            "blob": "3ebcaaeec113145b96e16092af1caebc5703464e",
+            "sha256": "45cb84848badef72dcdc6a0191009aaae48fedc056cf573a5387bc80e0fe7e2a",
+            "size_bytes": 9470
+          }
+        },
+        "scope": [
+          "replay_pipeline.py retains six final numeric files under a unique run_id/stage_id before temporary cleanup; pending output becomes final only after structural completeness checks.",
+          "run manifest records relative paths, SHA256, byte sizes, counts, stage, code identity, input ID/SHA identity, and comparison/record ID sets.",
+          "per-subprocess command, exit code, stdout, stderr, and timestamps are retained; failures retain available partial artifacts and logs.",
+          "replay_v2.py passes the retained post-C03/post-ROLE30 extraction plus its manifest to summary; baseline is used only for comparison.",
+          "summary_v2.py rejects missing/changed/wrong-path/wrong-run/wrong-stage/pre-C03/incomplete/baseline extraction and records consumed run/stage/extraction/manifest identity in summary_tables.json."
+        ],
+        "tests": {
+          "syntax": "PASS (Python 3.12.14 py_compile for all 4 changed/added Python files)",
+          "command": "python -m unittest discover -s care-insurance-analysis/src -p 'test_u16_provenance.py' -v",
+          "verdict": "PASS",
+          "U16_T1": "PASS: six synthetic retained artifacts survive producer-temp deletion; manifest hashes, sizes, counts and stage match bytes; run-id collision rejected; subprocess transcript readback verified.",
+          "U16_T2": "PASS: nine synthetic S02 G513:G521 comparison records flow through summary trace with stable IDs, values, states, reasons, and source references.",
+          "U16_T3": "PASS: missing extraction, modified SHA, wrong run_id, pre-C03 stage, incomplete record/comparison set, and baseline fallback are rejected.",
+          "U16_T4": "PASS: summary result binds consumed run_id, stage_id, extraction SHA, manifest SHA, and counts."
+        },
+        "manifest_example": {
+          "schema": "care_numeric_run_manifest/v1",
+          "run_id": "fixture-run-0001",
+          "stage_id": "post_C03_post_ROLE30_final_numeric",
+          "fixture_counts": {
+            "record_count": 18,
+            "comparison_count": 9
+          },
+          "production_contract_counts": {
+            "record_count": 6316,
+            "comparison_count": 1478
+          },
+          "artifact_fields": [
+            "name",
+            "relative_path",
+            "sha256",
+            "size_bytes",
+            "processing_stage",
+            "record_count",
+            "comparison_count"
+          ],
+          "code_identity": [
+            "commit",
+            "files"
+          ],
+          "input_identity": [
+            "S01-S06/S10 IDs and SHA",
+            "C03 work-copy SHA",
+            "ROLE30 proposal SHA",
+            "bundle manifest SHA"
+          ],
+          "command_log_fields": [
+            "command",
+            "exit_code",
+            "stdout",
+            "stderr",
+            "started_at_utc",
+            "ended_at_utc"
+          ],
+          "fixture_only": true
+        },
+        "full_numeric_pipeline_rerun": "NOT_EXECUTED",
+        "full_excel_generation": "NOT_EXECUTED",
+        "excel_recalculation_and_save_readback": "NOT_EXECUTED",
+        "japanese_rendering": "NOT_EXECUTED",
+        "role20_evaluation": "NOT_EXECUTED"
+      },
+      "private_checkpoint": {
+        "library_file_id": "libfile_db57b9c9085c81918bc0962066980fad",
+        "file_id": "file_00000000a0f082078a7fb843dce22f07",
+        "version": 0,
+        "sha256": "d92ca2da0deee1a50d2545ad49b47e254cd962b5f28996ae92e85e59e12bb640",
+        "size_bytes": 6815,
+        "content_readback": "Library read content and materialized byte SHA both match local checkpoint SHA"
+      },
+      "unresolved": [
+        "No real run has validated 6316 records, 1478 comparisons, value/status differences, or production C03 inputs.",
+        "The reproduction ZIP and its README have not been updated for the now-required run-id/retention/code-commit arguments.",
+        "No Excel generation, recalculation/save-reopen, Japanese rendering, or independent ROLE20 review was performed."
+      ],
+      "next_single_unit": "Review/update the reproduction bundle invocation and immutable input identities in a separate bounded unit; only a later authorized unit may run one isolated full replay.",
+      "E20_04": "NOT_PASS",
+      "candidate_acceptance": false,
+      "restart_position": "Use this committed code and fixture results; first align the reproduction ZIP invocation and input identity manifest. Do not interpret fixture PASS as production acceptance."
     }
   },
   "outputs": {
