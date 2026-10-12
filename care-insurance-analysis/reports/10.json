@@ -2,11 +2,11 @@
   "schema": "care_handoff/v1",
   "role": "10",
   "plan_revision": "2.4",
-  "status": "unit13 failed-generation workbook and execution evidence privately saved/read back; table inspection has 8 presentation/state issues; numeric conflict unresolved; E20-04 NOT_PASS",
-  "task_id": "T11_E20-04_unit13",
-  "source_commit": "54553bafb943bf0cad6029adaaf7606bbb69a941",
-  "pre_save_rechecked_commit": "54553bafb943bf0cad6029adaaf7606bbb69a941",
-  "updated_at": "2026-10-12T06:31:25.671Z",
+  "status": "unit14 limited summary display edits saved/read back; preservation PASS; print readability HELD; numeric contradiction unresolved; E20-04 NOT_PASS",
+  "task_id": "T11_E20-04_unit14",
+  "source_commit": "93f009769b736edb8d4cba1df690e8ae3b997e29",
+  "pre_save_rechecked_commit": "93f009769b736edb8d4cba1df690e8ae3b997e29",
+  "updated_at": "2026-10-12T06:53:47.824Z",
   "startup_read": {
     "branch": "main",
     "head_sha": "210aec627ca32c13874e855a8fd8e6b6a7cd630d",
@@ -3068,6 +3068,237 @@
         "source_workbooks_modified": false,
         "old_candidates_modified": false
       }
+    },
+    "T11_E20-04_unit14": {
+      "task_id": "T11_E20-04_unit14",
+      "source_main_commit": "93f009769b736edb8d4cba1df690e8ae3b997e29",
+      "pre_save_rechecked_commit": "93f009769b736edb8d4cba1df690e8ae3b997e29",
+      "checked_at_utc": "2026-10-12T06:50:07.681607+00:00",
+      "same_commit_read": {
+        "head": "93f009769b736edb8d4cba1df690e8ae3b997e29",
+        "files": [
+          {
+            "path": "care-insurance-analysis/PLAN.md",
+            "blob_sha": "6ef11a6d11791dd4dee32c7c56fa4ad338e9f964"
+          },
+          {
+            "path": "care-insurance-analysis/STATE.json",
+            "blob_sha": "fe188c41f1c489a1a7b3ef744ea9e050383225f1"
+          },
+          {
+            "path": "care-insurance-analysis/reports/10.json",
+            "blob_sha": "4dafab3dd8011bd03dc9dd7b43b23ace7ef28d9d"
+          },
+          {
+            "path": "care-insurance-analysis/reports/20.json",
+            "blob_sha": "57863de7a6ba499b2872df9cf0b6549c43afa7e7"
+          },
+          {
+            "path": "care-insurance-analysis/reports/30.json",
+            "blob_sha": "d790c1686cb72176664af414cabc82cece8bacca"
+          }
+        ],
+        "plan_revision": "2.4",
+        "state_revision": 11,
+        "unit14_absent_before": true
+      },
+      "input": {
+        "library_file_id": "libfile_562a7617cef08191ae92d6c016011994",
+        "version": 0,
+        "sha256": "d1cc8e022bce56db0608ec6a1a5dafbfd74c333ff197f65c78ef2470609129da",
+        "sha256_after": "d1cc8e022bce56db0608ec6a1a5dafbfd74c333ff197f65c78ef2470609129da",
+        "unchanged": true,
+        "work_mode": "isolated separate output; original not replaced"
+      },
+      "output": {
+        "library_file_id": "libfile_4e8750ffa24881918eab844fe3a9ac69",
+        "file_id": "file_00000000a654820694026682468d1038",
+        "name": "表示修正試験_数値検査未解決_T11_unit14.xlsx",
+        "version": 0,
+        "sha256": "74ce5066cff4659e9fda09f7c6d67210e467a6de196234c8a072caa300c9141e",
+        "size_bytes": 1809382,
+        "readback_verified": true,
+        "readback_sha256": "74ce5066cff4659e9fda09f7c6d67210e467a6de196234c8a072caa300c9141e"
+      },
+      "code_and_checks": {
+        "library_file_id": "libfile_75bcb635320c81918a26a8189da2dc66",
+        "file_id": "file_00000000f9c88209a2ae235af97795f9",
+        "name": "T11_unit14_表示修正差分_検査.zip",
+        "version": 0,
+        "sha256": "6918d98b0e3df65f3aa511bd695a313c557b82436d6bd9860c27909d314473cb",
+        "size_bytes": 64581,
+        "readback_verified": true,
+        "readback_sha256": "6918d98b0e3df65f3aa511bd695a313c557b82436d6bd9860c27909d314473cb",
+        "scope": "limited summary display adapter, Artifact Tool donor builder, exact cell/style/merge/print allowlist and inspection; not global reproduction ZIP update",
+        "zip_crc": "PASS",
+        "internal_manifest_sha_size": "PASS 7/7",
+        "raw_source_bytes_included": false,
+        "code_storage": "scripts in private saved checkpoint ZIP; GitHub code unchanged"
+      },
+      "display_changes": [
+        {
+          "id": "U13-F01",
+          "status": "IMPLEMENTED_STATIC_CHECK_PASS",
+          "cells": "分析要点!A1",
+          "change": "PLAN2.4／検証中・比較FAIL／表示修正試験・数値検査未解決"
+        },
+        {
+          "id": "U13-F02",
+          "status": "IMPLEMENTED_REFERENCE_AND_CACHE_CHECK_PASS",
+          "cells": "分析要点!A5:N22",
+          "change": "14列の重点表。R02高齢化/75/85、R03認定/軽度/中重度、R04認知症II/III・障害B、R05得点とC10、R06一次判定・C11・C09、R07意見書/認定日数とS10年度参考を既存詳細表へ78参照で対応。提供得点・平均の算出未検証を明示し比較・新結論にしない。"
+        },
+        {
+          "id": "U13-F03",
+          "status": "IMPLEMENTED_STATIC_CHECK_PASS",
+          "cells": "分析要点!F972:F978,I972:L978,N972:N978",
+          "change": "分母0による未算出、比較不可（未算出）へ統一。原表のJ109=0、N110:N116数式エラーは元シート不変。県・全国は一律保留しない。"
+        },
+        {
+          "id": "U13-F04",
+          "status": "IMPLEMENTED_STATIC_CHECK_PASS",
+          "cells": "人口・認定率ストック行の分析要点L列、上部該当参照行",
+          "change": "同一人口ストックの提供期間差は対象外と明記。実差0の数値と区別。"
+        },
+        {
+          "id": "U13-F05",
+          "status": "IMPLEMENTED_STATIC_CHECK_PASS",
+          "cells": "分析要点の得点行F:Lと重点得点F15",
+          "change": "S01 G188の提供平均小数1桁に合わせ0.0、差は0.00点。値は不変更。算出/比較未検証を上部明記。"
+        },
+        {
+          "id": "U13-F06",
+          "status": "IMPLEMENTED_STATIC_CHECK_PASS",
+          "cells": "分析要点A29:F29,M29:N29,C30:C195,F30:F195",
+          "change": "単位、採否・状態、年度・対象、出所、方法/利用制限の見出しを実データへ対応。年度や状態の内部表記を読者向けに翻訳。"
+        },
+        {
+          "id": "U13-F07",
+          "status": "STATIC_ADJUSTED_READABILITY_HELD",
+          "cells": "分析要点B/C/M/N列、行高、改ページ28/200、繰返し1:4",
+          "change": "長文列拡幅・行高調整。A3横・幅1頁・縦自動と全印刷範囲維持。セクション前の改ページ。共通注意1～4行を繰返し。長い詳細表のセクション別見出し繰返し、ページ数、切れ・字形は実描画未検証。"
+        },
+        {
+          "id": "U13-F08",
+          "status": "IMPLEMENTED_STATIC_CHECK_PASS",
+          "cells": "分析要点A2/A4、B202:B1197/N202:N1197、S10状態欄",
+          "change": "IDは監査用、掲載値/保留/未算出/未掲載/対象外/比較不可/空欄の意味を説明。詳細表ID保持、ラベルとvalid/held/reference_only等を読者向け表示。"
+        }
+      ],
+      "verification": {
+        "source_sha256": "d1cc8e022bce56db0608ec6a1a5dafbfd74c333ff197f65c78ef2470609129da",
+        "source_sha256_after": "d1cc8e022bce56db0608ec6a1a5dafbfd74c333ff197f65c78ef2470609129da",
+        "output_sha256": "74ce5066cff4659e9fda09f7c6d67210e467a6de196234c8a072caa300c9141e",
+        "output_size": 1809382,
+        "changed_parts": [
+          "xl/styles.xml",
+          "xl/workbook.xml",
+          "xl/worksheets/sheet15.xml"
+        ],
+        "merge_diff_count": 0,
+        "column_width_changes": {
+          "B": {
+            "before": 31,
+            "after": 44
+          },
+          "C": {
+            "before": 22,
+            "after": 28
+          },
+          "M": {
+            "before": 28,
+            "after": 42
+          },
+          "N": {
+            "before": 31,
+            "after": 50
+          }
+        },
+        "print_title_change": {
+          "before": "$201:$201",
+          "after": "$1:$4"
+        },
+        "manual_row_breaks": [
+          28,
+          200
+        ],
+        "print_area": "'分析要点'!$A$1:$N$1197",
+        "original14_sheet_parts_byte_identical": true,
+        "original_values_formulas_print_settings_unchanged": true,
+        "original_styles_prefix_unchanged": true,
+        "148_chart_parts_byte_identical": true,
+        "source_notes_preserved_by_original_sheet_byte_identity": true,
+        "sheets": 15,
+        "formulas_with_copied_cached_references": 78,
+        "recalculation_performed": false,
+        "readability": "HELD; static wrapping/size/page-setting inspection only, section-specific repeated headers and long main table still require native review",
+        "numeric_conflict": "UNRESOLVED 6316/1469 vs baseline1478; no numeric generation",
+        "result": "PASS_LIMITED_DISPLAY_PRESERVATION; rendering HELD; E20-04 NOT_PASS",
+        "checked_at_utc": "2026-10-12T06:50:07.681607+00:00",
+        "notes_validation": {
+          "target15_unchanged": true,
+          "total21_exact": 21
+        },
+        "score_format_source_precision": "provided mean0.0 per S01 source G188; differences0.00 points; underlying numbers unchanged",
+        "inspection_recovery": {
+          "last_initial_error": "A1 style-ID/registry comparison mismatch",
+          "same_failed_condition_count": 2,
+          "cause_confirmed": "openpyxl merged-cell border normalization assigns different border indices after appended donor styles; serialized font/fill/border/alignment/protection equal",
+          "method_change": "compare effective serialized style components and numberFormat instead of style registry IDs",
+          "fixed": true
+        },
+        "value_formula_diff_count": 2644,
+        "style_diff_count": 322,
+        "selected_source_ref_count": 38,
+        "readback_opened": true,
+        "readback_xlsx_sha256": "74ce5066cff4659e9fda09f7c6d67210e467a6de196234c8a072caa300c9141e",
+        "readback_zip_crc": "PASS",
+        "readback_manifest_count": 7,
+        "allowed_diff_storage": "private checkpoint validation.json exact value/formula/style changes and explicit cell allowlists; merged ranges unchanged; column widths/row heights/print titles/breaks logged",
+        "changed_parts_only": [
+          "xl/styles.xml",
+          "xl/workbook.xml",
+          "xl/worksheets/sheet15.xml"
+        ],
+        "original14_sheet_parts_exact_bytes": true,
+        "original148_graph_series_axes_placement_parts_exact_bytes": true,
+        "original_images_and_drawings_exact_bytes": true,
+        "original15_target_annotations_and21_total_exact": true,
+        "recalculation_scope": "No Excel or native recalculation; Artifact donor has static values only; 78 final same-sheet reference formulas carry copied existing caches without evaluation.",
+        "provisional_scope": "display property/preservation checks only; no visual-layout or numeric acceptance"
+      },
+      "unresolved_numeric_conflict": {
+        "status": "UNRESOLVED",
+        "source": "unit12/unit13 unchanged evidence",
+        "records": 6316,
+        "surviving_comparisons": 1469,
+        "fixed_baseline_comparisons": 1478,
+        "numeric_PASS_report_vs_actual_intermediate_SHA": "UNRESOLVED",
+        "numeric_data_recomputed_or_corrected": false
+      },
+      "not_run": [
+        "full_generation_replay",
+        "global_reproduction_ZIP_update",
+        "Excel_native_recalculation",
+        "save_reopen_after_recalculation",
+        "Japanese_native_render",
+        "ROLE20_independent_evaluation"
+      ],
+      "verdict": "LIMITED_DISPLAY_AND_PRESERVATION_PASS; READABILITY_HELD; NUMERIC_CONFLICT_UNRESOLVED; E20-04_NOT_PASS",
+      "E20_04_overall": "NOT_PASS",
+      "candidate_acceptance": false,
+      "next_action": "固定した表示修正試験ブックと差分ZIPを起点にする。数値PASS報告と中間SHA/1469対1478の原因確認を別単位で行う。印刷のページ数・切れ・日本語字形・詳細表の繰返し見出しは別の実描画単位で検査。原因確認前の全生成再実行や候補認定は進めない。",
+      "restart_position": "libfile_4e8750ffa24881918eab844fe3a9ac69 v0 SHA74ce5066cff4659e9fda09f7c6d67210e467a6de196234c8a072caa300c9141e、差分ZIP libfile_75bcb635320c81918a26a8189da2dc66 v0 SHA6918d98b0e3df65f3aa511bd695a313c557b82436d6bd9860c27909d314473cb。旧版は保持。",
+      "write_scope": {
+        "GitHub": [
+          "care-insurance-analysis/reports/10.json"
+        ],
+        "PLAN_modified": false,
+        "STATE_modified": false,
+        "other_role_reports_modified": false,
+        "originals_modified": false,
+        "old_candidates_modified": false
+      }
     }
   },
   "outputs": {
@@ -3359,8 +3590,8 @@
     }
   ],
   "next_role": "10",
-  "next_action": "次は数値PASS報告と残存中間ファイルの対象パス・処理段階・SHAを診断し、6316/1469と固定6316/1478の違いを説明する。表示修正案はA1の旧版タイトル、A5:F22の重点結果、C09行972:978、人口ストック期間差、得点桁、S10見出し対応、印刷範囲を限定対象として作る。原因修正・全生成・再計算・日本語描画は別単位。",
-  "restart_condition": "保存済み検証中Excel libfile_562a7617cef08191ae92d6c016011994 v0、証拠ZIP libfile_c11527aba6ec81918b73ae9730338237 v0、実物点検JSON libfile_a5b1d20088e48191b141be10b824581e v0を固定SHAで取得し、既存数値矛盾の証拠対応表から再開。",
+  "next_action": "固定した表示修正試験ブックと差分ZIPを起点にする。数値PASS報告と中間SHA/1469対1478の原因確認を別単位で行う。印刷のページ数・切れ・日本語字形・詳細表の繰返し見出しは別の実描画単位で検査。原因確認前の全生成再実行や候補認定は進めない。",
+  "restart_condition": "libfile_4e8750ffa24881918eab844fe3a9ac69 v0 SHA74ce5066cff4659e9fda09f7c6d67210e467a6de196234c8a072caa300c9141e、差分ZIP libfile_75bcb635320c81918a26a8189da2dc66 v0 SHA6918d98b0e3df65f3aa511bd695a313c557b82436d6bd9860c27909d314473cb。旧版は保持。",
   "candidate": {
     "id": "care-S01-20261009-v1",
     "version": 1,
@@ -4218,5 +4449,33 @@
     "unit13_absent_before": true,
     "role20_verdict": "FAIL",
     "role30_scope_reused": "E20-02/03/04/E01 proposals"
+  },
+  "startup_read_unit14": {
+    "head": "93f009769b736edb8d4cba1df690e8ae3b997e29",
+    "files": [
+      {
+        "path": "care-insurance-analysis/PLAN.md",
+        "blob_sha": "6ef11a6d11791dd4dee32c7c56fa4ad338e9f964"
+      },
+      {
+        "path": "care-insurance-analysis/STATE.json",
+        "blob_sha": "fe188c41f1c489a1a7b3ef744ea9e050383225f1"
+      },
+      {
+        "path": "care-insurance-analysis/reports/10.json",
+        "blob_sha": "4dafab3dd8011bd03dc9dd7b43b23ace7ef28d9d"
+      },
+      {
+        "path": "care-insurance-analysis/reports/20.json",
+        "blob_sha": "57863de7a6ba499b2872df9cf0b6549c43afa7e7"
+      },
+      {
+        "path": "care-insurance-analysis/reports/30.json",
+        "blob_sha": "d790c1686cb72176664af414cabc82cece8bacca"
+      }
+    ],
+    "plan_revision": "2.4",
+    "state_revision": 11,
+    "unit14_absent_before": true
   }
 }
