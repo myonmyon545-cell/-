@@ -1,9 +1,9 @@
 {
   "schema": "care_state/v1",
-  "revision": 10,
+  "revision": 11,
   "plan_revision": "2.4",
-  "updated_at": "2026-10-12T09:11:15+09:00",
-  "phase": "T11_E20-04_unit3_inspected_waiting_print_probe_scope_decision",
+  "updated_at": "2026-10-12T09:32:15+09:00",
+  "phase": "T11_E20-04_print_probe_3_sheet_structure_accepted_next_unit_repro_zip_path_cleanup",
   "writer": "00",
   "canonical_repository": "myonmyon545-cell/-",
   "canonical_path": "care-insurance-analysis/STATE.json",
@@ -360,17 +360,17 @@
     },
     "T11": {
       "owner": "10",
-      "status": "進行中_第3単位確認済み_印刷確認コピー範囲判断待ち",
-      "wait_reason": "印刷確認コピーの受入範囲が未確定。E20-04全体は未完了。",
+      "status": "進行中_印刷確認コピー3シート構造範囲受入済み_E20-04未完了",
+      "wait_reason": "印刷確認コピーの3対象シートについて構造範囲を受入済み。日本語実描画・全生成再実行・Excel再計算・候補評価が未完了のためE20-04全体は未完了。",
       "deps": [
         "T10"
       ],
       "confirmed_output": "reports/10.json task_results.T11_E20-04_unit3: 保存済みコピー実物検査記録",
-      "next_action": "印刷確認コピーを3対象シートで受け入れるか15シートの別仕様にするか判断待ち。判断確定までは再生成・後続検査を開始しない。",
+      "next_action": "ROLE10が次の一単位として、再現ZIP内の機械固有パス修正と手順・環境記録の収録を行い、実保存・読戻し結果をreports/10.jsonへ記録。",
       "plan_revision": "2.4",
       "last_confirmed_subunit": {
         "task_id": "T11_E20-04_unit3",
-        "status": "STRUCTURE_CONFIRMED_PRINT_PROBE_SCOPE_UNRESOLVED",
+        "status": "PRINT_PROBE_THREE_SHEET_STRUCTURE_ACCEPTED",
         "report_path": "care-insurance-analysis/reports/10.json#task_results/T11_E20-04_unit3",
         "report_commit": "6e1b3a82f4da7c3f3422913e5805e973d7e37f14",
         "print_probe": {
@@ -391,11 +391,14 @@
         "not_run": [
           "Japanese_native_render",
           "full_pipeline_replay",
-          "Excel_recalculation"
+          "Excel_recalculation",
+          "candidate_evaluation"
         ],
         "E20_04_overall": "NOT_PASS",
-        "acceptance_scope": "未確定。完成ブックの15シート要件と印刷確認コピーの3シート構成を区別し、ROLE00による合格変更なし。",
-        "next_action": "印刷確認コピーを3対象シートで受け入れるか15シートの別仕様にするか判断待ち。判断確定までは再生成・後続検査を開始しない。"
+        "acceptance_scope": "ROLE00へのユーザー明示判断により、印刷確認コピーの構造範囲は注記対象3シートで受入。完成ブックの15シート要件は維持。",
+        "next_action": "再現ZIP内の機械固有パス修正と手順・環境記録の収録",
+        "user_acceptance": "ACCEPTED_FOR_PRINT_PROBE_STRUCTURE_ONLY",
+        "decision_recorded_at": "2026-10-12T09:32:15+09:00"
       }
     },
     "T12": {
@@ -409,7 +412,7 @@
     },
     "T11_E20-04_unit3": {
       "owner": "00",
-      "status": "STRUCTURE_CONFIRMED_PRINT_PROBE_SCOPE_UNRESOLVED",
+      "status": "PRINT_PROBE_THREE_SHEET_STRUCTURE_ACCEPTED",
       "source_commit": "6e1b3a82f4da7c3f3422913e5805e973d7e37f14",
       "report_commit": "6e1b3a82f4da7c3f3422913e5805e973d7e37f14",
       "evidence": "care-insurance-analysis/reports/10.json#task_results/T11_E20-04_unit3",
@@ -435,7 +438,20 @@
       ],
       "E20_04_overall": "NOT_PASS",
       "wait_reason": "印刷確認コピーの対象シート数の受入範囲未確定",
-      "next_action": "印刷確認コピーを3対象シートで受け入れるか15シートの別仕様にするか判断待ち。判断確定までは再生成・後続検査を開始しない。"
+      "next_action": "ROLE10: 再現ZIP内の機械固有パス修正と手順・環境記録の収録",
+      "decision": {
+        "recorded_at": "2026-10-12T09:32:15+09:00",
+        "decision": "印刷確認コピーは注記対象の3シートで構造範囲を受入。完成ブックは15シート必須。",
+        "scope": "印刷確認コピーの構造範囲のみ",
+        "evidence": "reports/10.json task_results.T11_E20-04_unit3: registered_sheets=3, chart_xml_parts=148, local_notes=15, print_probe SHA一致、source work copy SHA検査前後不変。",
+        "not_implied": [
+          "日本語実描画合格",
+          "全生成再実行合格",
+          "Excel再計算合格",
+          "候補評価合格",
+          "E20-04全体合格"
+        ]
+      }
     }
   },
   "manual_tasks": {
@@ -876,6 +892,12 @@
       "role": "00",
       "source_commit": "6e1b3a82f4da7c3f3422913e5805e973d7e37f14",
       "event": "reports/10.jsonのT11_E20-04_unit3を照合し、印刷確認コピーの保存済み実物検査をSTATEへ統合。開封/ZIP PASS、登録3シート、グラフ部品148件、局所注記15件、元版2 SHA検査前後不変を記録。完成ブック15シート要件と印刷確認コピーの適用範囲を区別し、印刷確認コピーの受入範囲は未確定として維持。日本語実描画/全工程再実行/再計算未実施、E20-04全体NOT_PASS。"
+    },
+    {
+      "at": "2026-10-12T09:32:15+09:00",
+      "role": "00",
+      "source_commit": "3c61b78d66855c370248c5fa27857705e53509a2",
+      "event": "ユーザー明示判断に従い印刷確認コピーの構造範囲を注記対象3シートで受入。reports/10.jsonの保存済み実測（3シート、148グラフ部品、15注記、印刷確認コピーSHA一致、元コピーSHA検査前後不変）を参照。完成ブック15シート要件は維持し、日本語実描画・全生成再実行・再計算・候補評価・E20-04全体は未完了のまま。次担当ROLE10、次単位は再現ZIP内の機械固有パス修正と手順・環境記録の収録。"
     }
   ],
   "deployment_status": "registered_on_main",
@@ -984,8 +1006,8 @@
       "共有画面の通常更新をUPDATE_PROTOCOLへ組込み。固定画面の再生成と保存読戻しを実施し、Site/既存添付/自動実行の更新は別途確認する。"
     ]
   },
-  "operations_revision": "2.4.3",
-  "canonical_plan_checked_commit": "6e1b3a82f4da7c3f3422913e5805e973d7e37f14",
+  "operations_revision": "2.4.4",
+  "canonical_plan_checked_commit": "3c61b78d66855c370248c5fa27857705e53509a2",
   "canonical_plan_blob_sha": "dab4980781f5d0d3061b78aeea91b7eb7e06efc3",
   "checks": [
     {
@@ -1305,5 +1327,34 @@
       "at": "2026-10-10T02:54:33.508075+00:00"
     }
   },
-  "STATE_modified_by_role10": false
+  "STATE_modified_by_role10": false,
+  "print_probe_scope_decision": {
+    "recorded_at": "2026-10-12T09:32:15+09:00",
+    "decision": "印刷確認コピーは注記対象の3シートで受入",
+    "authority": "ユーザー明示判断をROLE00が統合",
+    "evidence": {
+      "report": "reports/10.json#task_results/T11_E20-04_unit3",
+      "print_probe_library_id": "libfile_24c8577da2608191ad4e0a3ea03c75eb",
+      "version": 0,
+      "sha256": "9f6e33239ef9065481d7c0227f402c7ff36ee74a4e71d32e201f1371a3abee64",
+      "registered_sheets": 3,
+      "chart_parts": 148,
+      "local_notes": 15,
+      "print_probe_sha": "一致",
+      "source_work_copy_sha_before": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+      "source_work_copy_sha_after": "38d3087d8704f6d9cd9271b8c8e7102da4bfa64e06b5e9cf048500cf648f81b1",
+      "source_work_copy_unchanged": true
+    },
+    "completed_workbook_sheet_requirement": 15,
+    "scope_limit": "印刷確認コピーの構造範囲のみ",
+    "not_implied": [
+      "日本語実描画",
+      "全生成再実行",
+      "Excel再計算",
+      "候補評価",
+      "E20-04全体合格"
+    ],
+    "next_role": "10",
+    "next_unit": "再現ZIP内の機械固有パス修正と手順・環境記録の収録"
+  }
 }
