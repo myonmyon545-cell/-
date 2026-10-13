@@ -3868,6 +3868,76 @@
       },
       "next_single_operation": "Obtain a supported XLSX import/preservation route for the pinned workbook, then make only bounded display/annotation corrections on a new copy; preserve the reviewed pair. Native Excel validation remains separately HELD until a Windows/macOS Excel session is available.",
       "release_status": "NOT_COMPLETE; no new candidate identity; E20-04 NOT_PASS"
+    },
+    "T11_E20-PAIR_correction_batch_20261013_apply_preservation_route": {
+      "status": "BLOCKED_ROUTE_PRECONDITION",
+      "operation": "apply_preservation_route_and_integrate_narrative",
+      "startup": {
+        "commit": "a2e7fd7e143b8fc8ae0fdf1834dfaa09b0bf0b6d",
+        "same_commit_paths": [
+          "PLAN.md",
+          "STATE.json",
+          "reports/10.json",
+          "reports/20.json",
+          "reports/30.json"
+        ],
+        "blob_shas": {
+          "PLAN.md": "4e9acf1277229cba731e1f9e010ef4cff52e290c",
+          "STATE.json": "68a62bf525e083eb3a8ffed3a0eba3ce532f34db",
+          "reports/10.json": "f0e057ce8508b9eeee68655441535d1b45949a68",
+          "reports/20.json": "db845ea5f3f71746d0f175be5f9df360a1433149",
+          "reports/30.json": "8e8da25696bfef5ab4a828898b7f4f8b42db966a"
+        }
+      },
+      "input_sha_verified": {
+        "workbook": "dd81b1d6ea7cea27551281d4b7cecd1bb38a27b619e713c39d98973f78ed3e02",
+        "narrative": "2d7238db08244ba1fd4e4217374704c90cfca920a9e0488df397bec010fec2d0",
+        "narrative_proposal": "a9aee57da315dc87be5410d1b052733f3f2e840bb604e8eb8dc833540d5121ab"
+      },
+      "preflight": {
+        "sheets": 15,
+        "charts": 148,
+        "zip_crc": "PASS",
+        "xml_parse_errors": 0,
+        "dangling_relationships": 0,
+        "occupied_caption_targets": 21,
+        "existing_caption_merges": 21
+      },
+      "blocker": {
+        "id": "U17_PRECONDITION_EXISTING_ANNOTATIONS",
+        "confirmed": "All 21 proposed donor note targets already contain text and exact merged ranges in the pinned target. graft_v2.py asserts blank caption targets and rejects existing caption merge ranges. Its blank-source contract is incompatible with this evaluated target.",
+        "source_code_sha": "fb0191ab49a26b4b93a53170e29581772b268c5f",
+        "authoring_executed": false,
+        "graft_executed": false,
+        "assertion_failure_avoided_by_read_only_preflight": true
+      },
+      "preservation": {
+        "originals_modified": false,
+        "evaluated_pair_modified": false,
+        "target_sha_before_equals_after": true,
+        "C03_reapplied": false
+      },
+      "new_pair": null,
+      "issue_results": {
+        "E20-PAIR-01": "NOT_FIXED; no new candidate created",
+        "E20-PAIR-02": "NOT_FIXED; no new candidate created",
+        "E20-PAIR-03": "NOT_FIXED; no new candidate created",
+        "E20-P03": "NOT_FIXED; no new candidate created",
+        "E20-PAIR-04": "NOT_FIXED; no new candidate created",
+        "E20-PAIR-05": "NOT_FIXED; no new candidate created",
+        "E20-PAIR-06": "NOT_FIXED; no new candidate created"
+      },
+      "native_validation": "HELD_NOT_EXECUTED",
+      "evidence": {
+        "library_id": "libfile_d31ae9ecef4c8191a68ffdcbd07c8de0",
+        "version": 0,
+        "sha256": "0a32bb8968fa23290c4f7c4b2a963e797a90b5d558c08b011b8615885d2e2c23",
+        "filename": "介護保険解析_U17事前検査_停止証拠.zip"
+      },
+      "next_operation": "Correct the preservation adapter to identity-check and retain existing captions/merges/styles, permit only explicitly scoped note text corrections, and verify no duplicate/overlapping ranges; then restart donor/graft batch against the same pinned target. Do not clear existing captions or relax unrelated OOXML preservation assertions.",
+      "hard_stop_basis": "User handoff: preservation_check_failure / unresolved_requirement_conflict",
+      "release_status": "NOT_PASS; corrected pair, reproduction/audit deliverables, independent evaluation and native Excel validation incomplete",
+      "reporting_scope": "reports/10.json only; prior records retained"
     }
   },
   "outputs": {
