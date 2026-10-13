@@ -752,6 +752,368 @@
       "reports10_or_20_edit_by_role30": false,
       "plan_or_state_edit": false,
       "evaluated_pair_modified": false
+    },
+    "U18_consolidated_remaining_pair_fixes": {
+      "proposal_key": "U18_consolidated_remaining_pair_fixes",
+      "implementation_status": "PROPOSAL_ONLY",
+      "source_commit": "75f970f160e86f42379d246fd776f6f5049f5923",
+      "fixed_read": {
+        "commit": "75f970f160e86f42379d246fd776f6f5049f5923",
+        "latest_main_HEAD": true,
+        "files": [
+          {
+            "path": "care-insurance-analysis/PLAN.md",
+            "blob_sha": "4e9acf1277229cba731e1f9e010ef4cff52e290c"
+          },
+          {
+            "path": "care-insurance-analysis/STATE.json",
+            "blob_sha": "68a62bf525e083eb3a8ffed3a0eba3ce532f34db"
+          },
+          {
+            "path": "care-insurance-analysis/reports/10.json",
+            "blob_sha": "1e51c7c1613b6fdef17d1be7aac83f605ed02295"
+          },
+          {
+            "path": "care-insurance-analysis/reports/20.json",
+            "blob_sha": "e1faeeb9f42cf3808b769303ab0af6ea0fcc8235"
+          },
+          {
+            "path": "care-insurance-analysis/reports/30.json",
+            "blob_sha": "8e8da25696bfef5ab4a828898b7f4f8b42db966a"
+          }
+        ]
+      },
+      "evaluation": {
+        "task_id": "T18_ROLE20_U17_SAVED_PAIR_INDEPENDENT_REVIEW_20261013",
+        "report20_source_commit": "d4e6553adaae79c740fd3e08c839bb6903c01c0f",
+        "status": "INDEPENDENT_CHECKS_RECORDED_WITH_DEFECTS_AND_HELD_SCOPE",
+        "evaluated_artifacts": {
+          "workbook": {
+            "id": "libfile_59c697532e1c8191a7e908bd18164159",
+            "version": 0,
+            "sha256": "bf841e1d721ecf641715b395e78fc64db34862ef1a185fcd31a9e778a6b5c8e6"
+          },
+          "narrative": {
+            "id": "libfile_13767fc353c48191a4144d574af6f1c6",
+            "version": 0,
+            "sha256": "8450648aa6b0a5f25d8917e982406b291e6f0f4966296593a86c910051adbb8e"
+          },
+          "manifest": {
+            "id": "libfile_13f8c135212881919d0a8ba8f31ac028",
+            "version": 0,
+            "sha256": "d7be39888d6568f189f1058bc173f10d475ced6fbca362f1c7d1217e7909ae05"
+          },
+          "reproduction_package": {
+            "id": "libfile_b0b5612440648191af63ce08f79f5e30",
+            "version": 0,
+            "size_bytes": 2952535,
+            "declared_sha256": "1b52496f0e958ddffd6857c4c16ef3c45f053386e8709d6089d28e036937c02e6",
+            "observed_sha256": "1b52496f0e958ddffd6857c4c16ef3c45f053386e8709d6089d28e036937c02e",
+            "zip_integrity": "PASS_testzip_none"
+          }
+        },
+        "pair_identity_reused": true,
+        "no_newer_pair_found_at_start": true,
+        "preservation_evidence": "ROLE10 T18 reports 15 sheets and 148 charts; chart/drawing/media/relationship parts byte-identical; existing 21 annotations retained; detail cells/formulas/print settings and prior C03 correction retained; native Excel recalculation/display remains HELD."
+      },
+      "evidence_and_bounds": {
+        "role10_evidence_key": "reports/10.json.task_results.T18_ROLE10_U17_PRESERVATION_NARRATIVE_20261013",
+        "role20_issue_ids": [
+          "E20-U17-HASH-01",
+          "E20-PAIR-06",
+          "E20-PAIR-04",
+          "E20-PAIR-05",
+          "E20-PAIR-01",
+          "E20-PAIR-03",
+          "E20-U17-NOTE-STYLE"
+        ],
+        "governing_limits": [
+          "R7第2回の成果物範囲を維持",
+          "15シート・148グラフを維持",
+          "確認済み数値・C03既修正・原本・評価候補の固定版を保持",
+          "C04/C09/C10/C11の入力別保留境界を維持",
+          "正式資料待ちのC04/C10/C11を推測で解除しない",
+          "C09は分母0の未算出として別扱い",
+          "Microsoft Excelデスクトップ検証が利用不可ならHELDを維持。代替ツールをPASS扱いしない"
+        ]
+      },
+      "defect_batch": [
+        {
+          "defect_id": "E20-U17-HASH-01",
+          "severity": "blocker",
+          "exact_location": "reports/10.json.role10_runs.new_pair.reproduction_package.sha256",
+          "cause": "同一ID・版として報告されたZIPのdeclared SHAは65桁で、実バイトSHAと一致しない。",
+          "proposed_change": "ROLE10がlibfile_b0b5612440648191af63ce08f79f5e30 version 0を再取得し、長さ64のSHA-256を計算して同一ID/版の報告欄だけを訂正する。今回の読取実バイトでは1b52496f0e958ddffd6857c4c16ef3c45f053386e8709d6089d28e036937c02e。異なるID/版のハッシュへ差し替えず、再取得値が違えば不一致のまま停止・調査。",
+          "supporting_evidence": [
+            "reports/20 issue E20-U17-HASH-01",
+            "同一ID/版の読取専用ZIP実バイトSHAとCRC検査"
+          ],
+          "allowed_change_scope": "reports/10.jsonの新ペア再現パッケージ識別欄と、当該報告の監査ログのみ。パッケージ内容や候補ペアは変更しない。",
+          "affected_dependencies": [
+            "reports/10.jsonの再現パッケージ参照",
+            "ROLE20の評価入力同定"
+          ],
+          "verification_method": [
+            "同一ライブラリID・version 0を再取得",
+            "バイト長・SHA-256・ZIP CRCを再計算し、報告欄の64桁値と完全一致",
+            "一致しなければ次の実装へ進まず不一致を記録"
+          ]
+        },
+        {
+          "defect_id": "E20-PAIR-06",
+          "severity": "major",
+          "exact_location": [
+            "分析要点!G21:L21",
+            "分析要点!N21",
+            "分析要点!F1197:L1197",
+            "分析要点!N1197",
+            "説明本文N19/I10"
+          ],
+          "cause": "同じ認定日数提供平均について、要点行は比較不可・比較結論対象外とする一方、詳細行と本文は県・全国・第1回との差を使用しており、比較可能性の条件が不統一。",
+          "proposed_change": "定義・入力出典を「提供値の転記」「転記値同士の算術差」「個票からの再算出」に分ける。個票再算出を実施したと書かない。比較対象の期間・区分・母集団・算定定義が同じである根拠を既存の承認済み資料と比較台帳で検証し、根拠がある比較だけを要点・詳細・N19/I10で同じ状態/数値/注記に揃える。比較定義を立証できない地域差・全国差・第1回差は、要約/詳細/本文の全箇所で比較・結論対象外として抑止する。算術差を載せる場合も転記値差と明記し、統計的検定や原因説明と解釈しない。",
+          "supporting_evidence": [
+            "ROLE20 E20-PAIR-06: 要約は比較対象外、詳細と説明は比較に使用",
+            "報告候補の要点値F1197:L1197と説明N19/I10の相違",
+            "PLANのR7比較・出典要件およびrole10の主張-指標-セル対応台帳"
+          ],
+          "allowed_change_scope": "新候補の要点/詳細の説明セルと同一固定ペアの説明本文だけ。検証済み元数値・数式・元表・C03は変更しない。",
+          "affected_dependencies": [
+            "R07認定日数の表示と14列比較表",
+            "説明N19/I10、主張・指標・入力セル対応表",
+            "再現 manifest と paired narrative SHA"
+          ],
+          "verification_method": [
+            "全4種（市・県・全国・第1回）の提供値の参照先/期間/対象区分/単位を台帳で照合",
+            "算術差は入力値から独立再計算し、丸め前後と符号を照合",
+            "要点・詳細・本文の比較状態と数値が一致",
+            "個票再集計、統計的有意差、因果推論の未実施を明記",
+            "比較根拠がないセルは全表示箇所で比較・結論対象外"
+          ]
+        },
+        {
+          "defect_id": "E20-PAIR-04",
+          "severity": "major",
+          "exact_location": [
+            "PLAN R13/Q13（契約参照・編集禁止）",
+            "分析要点!A24",
+            "分析要点!F1194",
+            "Ⅳ事務データ!D205",
+            "説明本文N20"
+          ],
+          "cause": "候補はS01原値を監査保持しS10参考行も持つが、A24/D205/N20が承認済み表示置換を否定する表現のまま。表示上の置換と原値監査保持を混同。",
+          "proposed_change": "PLAN R13/Q13の承認範囲どおり、S10令和7年度独自提供値25.6日を指定表示箇所の承認済み表示置換として説明する。S01 IV!J208の0.023503077783995522は元値・意味未検証の監査記録として保持し、S01の値を書き換えたり25.6日をS01第2回値と呼んだりしない。25.6日は県/全国や第1回との比較・差・順位・結論に使わない。A24、F1194のラベル、D205、N20および要点表示を一貫させる。承認済み出典/表示位置の範囲を超える変更が必要と分かった場合は実装を止めROLE00へ確認。",
+          "supporting_evidence": [
+            "PLAN R13/Q13: S10の25.6日を承認済み表示置換、S01/S02原値は監査保持、期間・母集団比較不可",
+            "ROLE20 E20-PAIR-04の現行候補文言不整合",
+            "要点F1194原値とS10 25.6年度値の別ソース記録"
+          ],
+          "allowed_change_scope": "新候補で承認済み表示欄の説明、監査欄ラベル、D205/N20の説明だけ。PLAN/STATE/ROLE報告/入力資料と原値は編集しない。",
+          "affected_dependencies": [
+            "C04表示値・原値監査欄",
+            "N20主張と入力セル対応台帳",
+            "本文/ブックペアの版・SHA"
+          ],
+          "verification_method": [
+            "表示対象セルがPLANで承認済みの位置に限定されている",
+            "表示値25.6の出所がS10 R7資料の該当セル/表と照合",
+            "F1194のS01元値がバイト/数値同一で監査保持",
+            "25.6をS01第2回値、他地域/期比較値として使っていない",
+            "要点・Ⅳ事務・N20の文言を相互照合"
+          ]
+        },
+        {
+          "defect_id": "E20-PAIR-05",
+          "severity": "major",
+          "exact_location": [
+            "reproduction package/README",
+            "build_summary_data.py",
+            "summary_v2.mjs",
+            "graft_preserved_v2.py",
+            "manifest.json",
+            "environment/dependency lock and execution logs"
+          ],
+          "cause": "ZIPは部分的な要約生成・ドナー接合資料で、全解析再実行の入力・環境・監査証跡がない。build_summary_data.pyはmachine-specific absolute scratch pathsを固定し、ZIPにないinspect_inputs moduleをimport。READMEにはそのまま実行可能な引数付き全コマンドがなく、再現範囲を全工程と誤認しうる。",
+          "proposed_change": "①build_summary_data.pyに明示的な--source-workbook/--source-manifest/--output引数（または同等の必須相対path interface）を設け、スクリプト同梱コードを含めて未同梱inspect_inputs依存を解消。出力先は新規runディレクトリに限定し既存/原本へ上書き不可。②再現文書に必要コード/必須・任意依存と実使用バージョン、Python/Node/Artifact Toolの実測環境、取得可能な入力ID・version・SHA・取得方法、入力の非収録と理由、正確なコマンド順/作業ディレクトリ/引数/終了条件を明示。実測できない版は要確認として仮記入しない。③manifestに相対path,SHA,size,stage,code identity,input identity,record/comparison countを記録。全工程/原資料が非公開監査ZIPにもなければ、理由と不足入力を明示し「全解析再現可能」と主張しない。秘密・原資料はGitHub/Webに送らず、許可済み私的保管と別途アクセス手順を使う。④全工程は別の空の一時出力先で一回実行し、各コマンド/exit/stdout/stderrと実行環境を保存。数値再生だけでなくExcel全生成、隔離コピーでの再計算、保存・再開封後の値/数式/エラー読戻しを別々に検証。",
+          "supporting_evidence": [
+            "ROLE20 E20-PAIR-05",
+            "read-only audit package: 13 members, 12 hashed manifest entries, ZIP CRC valid",
+            "build_summary_data.py has fixed /workspace/scratch/... input/output and imports inspect_inputs absent from ZIP",
+            "summary_v2.mjs requires node:fs/promises and @oai/artifact-tool; README only describes sequence, without exact executable command line",
+            "source_pinned.xlsx is the target workbook, not complete original analytical inputs; raw S01/S02/S10 and replay/calculation stages are absent"
+          ],
+          "allowed_change_scope": "新しい複製の再現パッケージ・文書・manifest・実行ログだけ。原資料/候補Excel/原本は読み取り元として固定し、変更・外部送信しない。",
+          "affected_dependencies": [
+            "再現ZIP ID/version/SHA",
+            "全解析コード・定義・入力を参照するprivate audit ledger",
+            "ROLE10 run artifacts, candidate pair, reports/10 evidence",
+            "Excel full regeneration and recalc evidence"
+          ],
+          "verification_method": [
+            "ZIP展開後、絶対パスや実行者固有HOME/drive依存ゼロ",
+            "fresh empty work/output directoriesで文書記載コマンドを実行可能",
+            "必要コード・依存・入力ID/版/SHA/取得条件を全て特定。未収録物は理由付き",
+            "全段階manifestとログを読戻し、出力ハッシュ/サイズ/段階/件数を照合",
+            "別一時出力で全工程Excelを生成し、15シート/148グラフ/許可差分/数値・状態を再照合",
+            "隔離コピーを実Excel再計算・別保存し、再開封読戻しの値/式/エラーを比較",
+            "原資料・秘密のGitHub/Web送信がゼロ。private-only保管を確認"
+          ]
+        },
+        {
+          "defect_id": "E20-PAIR-01",
+          "severity": "minor",
+          "exact_location": [
+            "分析要点!J973:L973",
+            "分析要点!J975:L975",
+            "分析要点!J977:L977"
+          ],
+          "cause": "対象行の件数0は有効な件数なのに、比較不可/未算出の率側の理由だけが行説明に残り、件数と比率が混ざって見える。",
+          "proposed_change": "件数欄は有効な0件として保持し、率欄/比較欄は当該入力の実分母状態に従って別ラベルにする。分母0なら「率は分母0のため未算出（C09）」、正式分母未確定なら「率はC11分母未確定のため保留」、比較抑止なら「件数0は有効値。比較・結論対象外（理由ID）」と明示的に分離。実セルがどの境界に属すか入力別台帳で確認してからラベル選択。分母>0なら率0%が妥当か確認し、未算出を誤って残さない。数値は出典再検証なしに変更しない。",
+          "supporting_evidence": [
+            "ROLE20 E20-PAIR-01 findings and exact locations",
+            "C09 is known denominator-zero uncomputed; C11 is formal denominator pending, distinct statuses"
+          ],
+          "allowed_change_scope": "記載3行の状態/理由文言および必要な注記のみ。件数・分母・率値の変更は、独立した元資料照合で必要性が証明されROLE10承認範囲に入る場合以外禁止。",
+          "affected_dependencies": [
+            "C09/C11 input-specific holds",
+            "要約比較判定と状態台帳",
+            "表示文言の再現manifest"
+          ],
+          "verification_method": [
+            "3行それぞれの元入力ID/分母/状態を状態台帳と照合",
+            "0件を有効件数として明記",
+            "C09分母0とC11未確定分母を取り違えない",
+            "分母>0なら0率との算術整合を検査",
+            "保留入力の他のvalid率/比較を一括抑止しない"
+          ]
+        },
+        {
+          "defect_id": "E20-PAIR-03",
+          "severity": "minor",
+          "exact_location": [
+            "paired narrative Appendix A",
+            "paired narrative Appendix D rows E20-PAIR-01/03/04/05/06/NATIVE",
+            "paired narrative final integration-status paragraphs"
+          ],
+          "cause": "文書に過去の評価対象と現行ペアの一致を述べる古文、すでに統合した修正を残作業とする表、本文・要点は整合済みとする未達の記述が混在。",
+          "proposed_change": "固定ペアの実ID/version/SHAと今回評価範囲に合わせて付録Aを更新。付録Dは各指摘を「新候補へ反映済み・独立再評価待ち」「未反映・対応必要」「根拠待ち/HELD」に分類し、古いタスクの完了主張を現行評価に流用しない。末尾には15/148構造検査済みと、ROLE20独立再評価未完了・Native Excel HELD・全体PASS未達を明記。E20-PAIR-06/04/01は本バッチ後の実証が終わるまで完了形にしない。",
+          "supporting_evidence": [
+            "ROLE20 E20-PAIR-03",
+            "narrative Appendix D lines 390-397 contain old remaining-work descriptions",
+            "Appendix final status lines 411-415 make blanket aligned/summary statements despite ROLE20 findings"
+          ],
+          "allowed_change_scope": "対応する新しいpaired narrativeと付録/manifestの記述だけ。reports/20、旧版文章、評価候補や証跡の上書き不可。",
+          "affected_dependencies": [
+            "narrative ID/version/SHA",
+            "Appendix A and D issue-state ledger",
+            "candidate/narrative pair linkage and ROLE20 review"
+          ],
+          "verification_method": [
+            "全文からold pair IDs/SHA and stale completion phrasesを検索",
+            "現固定ペアID/version/SHAに一貫して対応",
+            "各issue状態がROLE20の結果と合致し、未実施Excelと未完了評価をHELD/未完了と記載",
+            "全体PASS/リリース承認の主張なし"
+          ]
+        },
+        {
+          "defect_id": "E20-U17-NOTE-STYLE",
+          "severity": "review_required",
+          "exact_location": "Ⅲ審査判定データ（変更率）!D117:AD119",
+          "cause": "更新注記に候補生成時style index 11が割当てられ、固定元ブック同じ場所のstyle index 1203と対応付けられていない。両styleのfont/fill/border/alignment属性は同等でない。これはstyle mapping差の確認であり、文字切れなど表示不良の証拠ではない。",
+          "proposed_change": "まず注記で意図する書式と固定元の当該範囲/隣接セル書式を比較。意図が元の書式なら既存style 1203を維持。注記に折返しが必要なら、元書式を基底にした正しい新styleを追加し、wrap/行高を明示して他セルの既存styleを変えない。単にdonorのstyle index 11を使い回さない。外見の欠陥はExcel実機で確認できるまで断定しない。",
+          "supporting_evidence": [
+            "read-only OOXML comparison: source D117 uses style 1203; candidate D117 uses style 11",
+            "style 1203 fontId238/fillId70/borderId260; style 11 fontId3/fillId26/borderId12; not equivalent",
+            "ROLE20 explicitly marks clipping/visual defect unconfirmed",
+            "ROLE10 structural checks show 15 sheets/148 charts and unchanged chart/drawing/media/relationships; native Excel HELD"
+          ],
+          "allowed_change_scope": "新候補のD117:AD119だけの意図的なstyle mappingと必要なrow height。既存スタイル表レコードの並べ替え/削除、他セルへの伝播、元原本変更は禁止。",
+          "affected_dependencies": [
+            "C09 local hold note readability",
+            "OOXML styles and sheet12 worksheet",
+            "native Excel display/print check and package allowlist"
+          ],
+          "verification_method": [
+            "更新範囲のstyle IDsと属性をbefore/after manifestで対照",
+            "意図したfont/fill/border/number format/alignment/wrapが個別に一致",
+            "Native Microsoft Excelで画面表示、文字切れ・重なり、印刷プレビューを確認",
+            "利用不可ならHELD維持、style mapping差のみ報告しPASSしない"
+          ]
+        }
+      ],
+      "role10_batch_execution_order": [
+        "1. 同一ID/versionの再現ZIPを再取得し、SHAを再計算・reports/10証跡を訂正。不一致なら停止し、候補生成に進まない。",
+        "2. 既存のpreservation donor/graft routeで新しい隔離コピーを作成。元原本・現固定ペアは読取専用、C03を再適用しない。15シート/148グラフ/元表/式/印刷/relationships保持前提を設定。",
+        "3. 検証済み比較台帳でE20-PAIR-06を修正（転記/算術差/個票再算出の境界、要点・詳細・本文を一貫化）。E20-PAIR-04はPLAN承認位置だけS10 25.6日への表示置換を説明し、S01原値監査保持を分離。正式資料待ち境界は解除しない。",
+        "4. E20-PAIR-01の3行を入力別分母/状態と照合して件数0・C09未算出・C11保留を分離。E20-U17-NOTE-STYLEの明示style mappingを局所修正し、表示不良の断定は避ける。",
+        "5. narrative Appendix A/D・統合状態記述を新しい固定ペアへ同期し、各指摘を反映済/未完/HELDで正確に示す。候補・本文ペアを新規ID/version/SHAで保存。",
+        "6. 再現ZIPを新規版として修正。全ソース入力が存在しない・収録できないときは欠落台帳に具体的理由を記し、全工程再現可能とは主張しない。私的監査データを公開先へ送らない。",
+        "7. 新規空ディレクトリで記載コマンドを再生し、manifest/log/hash/size/stage/input/code/record/comparison一致、全工程Excel生成、隔離再計算・保存再開封を確認。新候補に対し保存保持チェック、全差分の許可範囲、C03不再適用を検査。",
+        "8. Native Microsoft Excelデスクトップで表示/日本語/注記/グラフ/印刷/再計算/保存再開封を確認。環境が用意できない検査はHELDのまま明示。reports/10に証拠を記録しROLE20へ新ペアの独立評価を依頼。"
+      ],
+      "minimal_required_tests": [
+        {
+          "id": "U18-T1",
+          "test": "same package ID/version readback; exact 64-digit SHA, size and ZIP CRC"
+        },
+        {
+          "id": "U18-T2",
+          "test": "E20-PAIR-06 source/period/population/definition provenance; valid arithmetic; consistent summary/detail/narrative statuses; no individual recalculation claim"
+        },
+        {
+          "id": "U18-T3",
+          "test": "C04 S10 25.6 approved display mapping and S01 raw audit value preserved; no cross-period/region comparison"
+        },
+        {
+          "id": "U18-T4",
+          "test": "three E20-PAIR-01 rows checked against input-specific denominators; valid zero counts retained; C09 vs C11 statuses remain separate"
+        },
+        {
+          "id": "U18-T5",
+          "test": "style IDs/attributes scoped to D117:AD119; visual inspection by native Excel or remain HELD"
+        },
+        {
+          "id": "U18-T6",
+          "test": "narrative stale ID/status phrase scan; paired workbook/narrative/manifest IDs and SHA consistent"
+        },
+        {
+          "id": "U18-T7",
+          "test": "reproduction package clean-room command execution, pinned dependency evidence, full missing-input ledger, retained logs, full workbook generation and isolated recalc/reopen"
+        },
+        {
+          "id": "U18-T8",
+          "test": "preservation regression: 15 sheets, 148 charts, original 14 order/names, chart series/axes/positions, drawings/images/rels, original formulas/print settings, verified numeric values, C03 unchanged, C04/C09/C10/C11 input boundaries"
+        },
+        {
+          "id": "U18-T9",
+          "test": "no edits to source originals or pinned evaluated pair; no PLAN/STATE/reports/10/reports/20 edits by ROLE30"
+        }
+      ],
+      "unresolved_or_held": [
+        "C04 approved source/display cross-check remains limited to the source referenced by PLAN; any expansion or interpretation change requires ROLE00.",
+        "C10 damaged/missing regional header/official source and C11 formal denominators remain held; no inferred repair or release.",
+        "C09 is known zero denominator/uncomputed, not waiting for new source material.",
+        "Actual clean-room full replay may be blocked until all private inputs/code dependencies are available; if so, record exact missing item and do not call full pipeline reproducible.",
+        "Native Microsoft Excel desktop validation is required and currently HELD; other spreadsheet engines cannot substitute for PASS.",
+        "These are correction proposals only; no new candidate is verified or accepted."
+      ],
+      "ROLE10_next_single_implementation_unit": {
+        "id": "T19_ROLE10_U18_CONSOLIDATED_REMAINING_FIXES_20261013",
+        "next_role": "10",
+        "operation": "apply_consolidated_pair_fixes",
+        "scope": "Apply only the ordered local wording/style/pair/provenance/package corrections to a new isolated candidate pair; keep original and evaluated pair immutable; preserve R7 scope, 15 sheets/148 charts, verified values/C03, and C04/C09/C10/C11 boundaries.",
+        "acceptance": "Record exact new pair IDs/version/SHA and each U18 test result in reports/10.json; unresolved full replay or Native Excel checks remain explicitly held; hand the fixed pair to ROLE20 for independent re-evaluation. No PASS/release claim based on this proposal."
+      },
+      "preserved_proposals": [
+        "U16_numeric_replay_fix_review",
+        "U17_workbook_import_preservation_blocker"
+      ],
+      "reports10_or20_edit_by_role30": false,
+      "plan_or_state_edit": false,
+      "workbook_or_candidate_edited": false,
+      "original_or_evaluated_pair_edited": false,
+      "status": "PROPOSAL_ONLY",
+      "evaluation_status": "NOT_PASS",
+      "next_role": "10"
     }
   }
 }
