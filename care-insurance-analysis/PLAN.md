@@ -1,14 +1,14 @@
 # 介護保険データ解析 AI実行仕様
 
-解析契約2.6 / 運用版2.6.0 / 2026-10-13
+解析契約2.7 / 運用版2.7.0 / 2026-10-13
 
 ROLE=00|10|20|30|40。最新ユーザー判断を優先。旧候補と報告は変更しない。全条件は以下のYAMLを正本とする。
 
 ```yaml
 meta:
   schema: care_analysis_execution_v2
-  revision: '2.6'
-  operations_revision: 2.6.0
+  revision: '2.7'
+  operations_revision: 2.7.0
   operations_updated_at: '2026-10-13'
   completed_workbook_sheet_requirement: 完成ブックは従来どおり15シート必須。
   print_probe_scope_decision:
@@ -1398,6 +1398,7 @@ deadline_execution_override_20261012:
     pretend_dispatched: false
     avoid_conflicting_writers: true
 microsoft_desktop_excel_validation_20261013: {"authority":"explicit_user_instruction_20261013_114539_JST","required":true,"application":"Microsoft Excel desktop","platform":"Windows_or_macOS","target":"saved_hash_pinned_current_workbook","web_mobile_or_LibreOffice_substitute":false,"required_checks":["open_without_repair_warning","Japanese_cell_chart_and_annotation_readability","table_header_column_alignment","no_clipping_or_overlap","print_preview_page_breaks_and_repeated_headers","changed_formula_recalculation_on_isolated_copy","save_reopen_and_compare_affected_values_formulas_and_errors"],"evidence":["workbook_id_version_sha256","application_version","OS","fonts","checked_sheets_ranges_and_print_pages","screenshots_or_exported_PDF","recalculation_save_readback_results","operator_and_check_time"],"candidate_preservation":"read_only_original_or_isolated_copy; never_mutate_evaluation_target","unavailable_environment":"HELD; continue_other_independent_checks","release_gate":"required_native_checks_PASS_before_completion_acceptance","prior_exemption":"superseded"}
+multidisciplinary_narrative_requirement_20261013: {"authority":"explicit_user_instruction_20261013_120036_JST","goal":"multidisciplinary_academic_interpretation_of_verified_R7_results","required_lenses":["sociology","statistics"],"additional_lenses":"analyst_freely_selects_relevant_academic_perspectives_with_rationale; no_all_fields_requirement","examples_optional":["gerontology","epidemiology","public_health","health_economics","public_administration","social_policy"],"analyst":{"requested_model":"GPT-6 Astra","actual_model":"user_UI_selection_required_not_verified","assignment":"separate_narrative_analysis_context; not_ROLE20_self_authorship","output":"evidence_linked_narrative_proposal","shared_repo_or_workbook_mutation":"forbidden"},"integration_owner":"10","independent_evaluation_owner":"20","independence":"ROLE20_must_not_author_the_narrative_it_is_evaluating","method":{"anchor":"pinned_verified_workbook_ID_version_SHA_and_source_cells","separate":["observed_fact","supported_interpretation","hypothesis","policy_implication","additional_data_needed"],"statistics":["denominators_and_populations","age_structure_and_confounding","valid_period_and_region_comparisons","measurement_selection_bias","display_precision_and_uncertainty","ecological_fallacy_and_limits_of_aggregate_data"],"unsupported":["causal_assertions","individual_inference_from_aggregate_data","uncomputable_inferential_statistics","unverified_numeric_claims"],"external_literature":"if_used_primary_public_sources_with_citations; never_send_private_raw_data_or_secrets_to_Web","hold_boundaries":"C04_C09_C10_C11_unchanged"},"delivery":"R5_reference_readable_explanation_plus_evidence_and_limitations_appendix; required_R02_R07_content_preserved","evaluation":{"current_saved_pair":"continue_all_available_checks_now","revised_pair":"evaluate_newly_saved_hash_pinned_pair_immediately_after_ROLE10_self_checks","native_unavailable":"HELD_for_affected_checks_only; continue_numeric_source_narrative_and_structure_checks","requirement_change":"reevaluate_new_academic_content_and_affected_dependencies; retain_prior_evidence_if_applicable"},"scope":"one_off_care_analysis_only"}
 ```
 
 運用2.4.1：過去会話・実報告をタイムライン表示。解析契約2.4と候補評価は変更しない。過去全文取得は未完了。

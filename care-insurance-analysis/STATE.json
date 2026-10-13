@@ -1,8 +1,8 @@
 {
   "schema": "care_state/v1",
-  "revision": 15,
-  "plan_revision": "2.6",
-  "updated_at": "2026-10-13T02:46:28.005Z",
+  "revision": 16,
+  "plan_revision": "2.7",
+  "updated_at": "2026-10-13T03:01:45.676Z",
   "phase": "DEADLINE_DELIVERABLE_BATCH_EXECUTION",
   "writer": "00",
   "canonical_repository": "myonmyon545-cell/-",
@@ -839,15 +839,11 @@
     "30": "reports/30.json"
   },
   "next_action": {
-    "owner": "20",
-    "assignment": "independently_evaluate_saved_pair_and_require_Microsoft_Excel_native_evidence",
-    "parallel_role10": "prepare_or_obtain_native_desktop_Excel_validation_environment_and_record_evidence",
-    "blockers": [
-      "native_Excel_environment_unavailable",
-      "current_pair_independent_evaluation_pending",
-      "recalculation_difference_analysis_pending",
-      "required_submission_packages_pending"
-    ]
+    "owner": "10",
+    "assignment": "repair_ROLE20_findings_and_integrate_separate_Astra_multidisciplinary_narrative_proposal",
+    "independent_role20": "continue_available_current_pair_checks; independently_review_revised_saved_pair_without_waiting_for_native_environment",
+    "native_Excel": "mandatory_HELD_until_actual_evidence",
+    "runtime": "other_chat_execution_unobserved"
   },
   "history": [
     {
@@ -1026,7 +1022,7 @@
       "共有画面の通常更新をUPDATE_PROTOCOLへ組込み。固定画面の再生成と保存読戻しを実施し、Site/既存添付/自動実行の更新は別途確認する。"
     ]
   },
-  "operations_revision": "2.6.0",
+  "operations_revision": "2.7.0",
   "canonical_plan_checked_commit": "298186d1a08af79958a47c7a7207fe6f01e29f49",
   "canonical_plan_blob_sha": "9cff1723e0a98a1bdeea9baaf4e3a26b682a1c3e",
   "checks": [
@@ -1623,7 +1619,7 @@
       "latest_verified_completed": "unit17"
     },
     "ROLE20": {
-      "instruction": "prepare immediately; evaluate hash-pinned pair when available",
+      "instruction": "continue_independent_review; do_not_author_evaluated_narrative",
       "runtime": "unobserved"
     },
     "ROLE30": {
@@ -1633,11 +1629,17 @@
     "ROLE00": {
       "writer": "this_user_authorized_ROLE00_turn",
       "scope": "deadline_and_execution_reconciliation"
+    },
+    "narrative_analyst": {
+      "requested_model": "GPT-6 Astra",
+      "dispatch": "copyable_instruction_only_not_dispatched",
+      "role": "analysis_proposal_only",
+      "shared_writes": "none"
     }
   },
   "verified_current_state": {
-    "checked_commit": "f380225efcec2faf5c27004400889e167d2a9edb",
-    "plan_revision": "2.6",
+    "checked_commit": "284d06f1312e4206cb19d181b5209ec3fd386300",
+    "plan_revision": "2.7",
     "latest_ROLE10_saved": "T11_E20-04_resolve_blocker_and_complete_candidate_pair",
     "unit16": "bounded_fixture_PASS_only",
     "unit17": "bundle_v7_preflight_and_readback_PASS",
@@ -1648,7 +1650,7 @@
     "reused_workbook": "unit14_display_trial_readback_reported_not_visual_or_numeric_acceptance",
     "numeric_replay": "ROLE10_reported_PASS_6316_records_1478_comparisons",
     "native_Excel": "NOT_AVAILABLE_IN_ROLE10_RUNTIME_NOT_EXECUTED",
-    "ROLE20": "preparation_saved_current_pair_independent_evaluation_pending"
+    "ROLE20": "partial_current_pair_review_with_eight_findings; full_verdict_not_issued"
   },
   "remaining_required_work": [
     "preserve_or_resume_unit18_without_duplicate_execution",
@@ -1716,5 +1718,66 @@
     "reason": "Microsoft Excelデスクトップ版の実機検証をユーザー明示で必須化",
     "prior_evidence": "reuse_only_verified_applicability; no_claim_native_test_performed",
     "reports_modified": false
+  },
+  "multidisciplinary_narrative_requirement": {
+    "authority": "explicit_user_instruction_20261013_120036_JST",
+    "goal": "multidisciplinary_academic_interpretation_of_verified_R7_results",
+    "required_lenses": [
+      "sociology",
+      "statistics"
+    ],
+    "additional_lenses": "analyst_freely_selects_relevant_academic_perspectives_with_rationale; no_all_fields_requirement",
+    "examples_optional": [
+      "gerontology",
+      "epidemiology",
+      "public_health",
+      "health_economics",
+      "public_administration",
+      "social_policy"
+    ],
+    "analyst": {
+      "requested_model": "GPT-6 Astra",
+      "actual_model": "user_UI_selection_required_not_verified",
+      "assignment": "separate_narrative_analysis_context; not_ROLE20_self_authorship",
+      "output": "evidence_linked_narrative_proposal",
+      "shared_repo_or_workbook_mutation": "forbidden"
+    },
+    "integration_owner": "10",
+    "independent_evaluation_owner": "20",
+    "independence": "ROLE20_must_not_author_the_narrative_it_is_evaluating",
+    "method": {
+      "anchor": "pinned_verified_workbook_ID_version_SHA_and_source_cells",
+      "separate": [
+        "observed_fact",
+        "supported_interpretation",
+        "hypothesis",
+        "policy_implication",
+        "additional_data_needed"
+      ],
+      "statistics": [
+        "denominators_and_populations",
+        "age_structure_and_confounding",
+        "valid_period_and_region_comparisons",
+        "measurement_selection_bias",
+        "display_precision_and_uncertainty",
+        "ecological_fallacy_and_limits_of_aggregate_data"
+      ],
+      "unsupported": [
+        "causal_assertions",
+        "individual_inference_from_aggregate_data",
+        "uncomputable_inferential_statistics",
+        "unverified_numeric_claims"
+      ],
+      "external_literature": "if_used_primary_public_sources_with_citations; never_send_private_raw_data_or_secrets_to_Web",
+      "hold_boundaries": "C04_C09_C10_C11_unchanged"
+    },
+    "delivery": "R5_reference_readable_explanation_plus_evidence_and_limitations_appendix; required_R02_R07_content_preserved",
+    "evaluation": {
+      "current_saved_pair": "continue_all_available_checks_now",
+      "revised_pair": "evaluate_newly_saved_hash_pinned_pair_immediately_after_ROLE10_self_checks",
+      "native_unavailable": "HELD_for_affected_checks_only; continue_numeric_source_narrative_and_structure_checks",
+      "requirement_change": "reevaluate_new_academic_content_and_affected_dependencies; retain_prior_evidence_if_applicable"
+    },
+    "scope": "one_off_care_analysis_only"
   }
 }
