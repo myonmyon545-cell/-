@@ -2,10 +2,10 @@
   "schema": "care_handoff/v1",
   "role": "10",
   "plan_revision": "2.5",
-  "status": "修正未完了。対象ブックの制約下取込に失敗し、現行評価ペアを保持。新ペアなし。Microsoft Excel実機検証はHELD。",
+  "status": "新ペア候補を統合保存。全主張の独立再照合とMicrosoft Excel実機検証が未完了のためNOT_PASS。",
   "task_id": "T11_E20-PAIR_correction_batch_20261013",
   "source_commit": "5991254b19119b2388987543b72acfd4ebd794ae",
-  "pre_save_rechecked_commit": "5991254b19119b2388987543b72acfd4ebd794ae",
+  "pre_save_rechecked_commit": "d1636e1347367b4a2221b5c1faf187e4f12e0c61",
   "updated_at": "2026-10-13",
   "startup_read": {
     "branch": "main",
@@ -3938,6 +3938,114 @@
       "hard_stop_basis": "User handoff: preservation_check_failure / unresolved_requirement_conflict",
       "release_status": "NOT_PASS; corrected pair, reproduction/audit deliverables, independent evaluation and native Excel validation incomplete",
       "reporting_scope": "reports/10.json only; prior records retained"
+    },
+    "T18_ROLE10_U17_PRESERVATION_NARRATIVE_20261013": {
+      "task_id": "T18_ROLE10_U17_PRESERVATION_NARRATIVE_20261013",
+      "status": "NOT_PASS_NATIVE_EXCEL_AND_FULL_CLAIM_RECHECK_PENDING",
+      "generation_commit": "d1636e1347367b4a2221b5c1faf187e4f12e0c61",
+      "source_commit": "d1636e1347367b4a2221b5c1faf187e4f12e0c61",
+      "pre_save_rechecked_commit": "d1636e1347367b4a2221b5c1faf187e4f12e0c61",
+      "updated_at": "2026-10-13",
+      "technical_proposal": {
+        "source": "reports/30.json",
+        "key": "unit_proposals.U17_workbook_import_preservation_blocker",
+        "proposal_id": "E20-PAIR/import_preservation/U17",
+        "status": "used_as_approved_route"
+      },
+      "narrative_proposal": {
+        "library_file_id": "libfile_6980a861c080819199c4739a69349b52",
+        "version": 0,
+        "sha256": "a9aee57da315dc87be5410d1b052733f3f2e840bb604e8eb8dc833540d5121ab",
+        "status": "proposal_not_independent_evaluation"
+      },
+      "source_evaluated_pair": {
+        "workbook": {
+          "library_file_id": "libfile_b8d362af68b481918d8a01818cd825fc",
+          "version": 0,
+          "sha256": "dd81b1d6ea7cea27551281d4b7cecd1bb38a27b619e713c39d98973f78ed3e02"
+        },
+        "narrative": {
+          "library_file_id": "libfile_dcd0955eccec8191938ba5b44a865f98",
+          "version": 0,
+          "sha256": "2d7238db08244ba1fd4e4217374704c90cfca920a9e0488df397bec010fec2d0"
+        },
+        "status": "unchanged"
+      },
+      "new_pair": {
+        "workbook": {
+          "library_file_id": "libfile_59c697532e1c8191a7e908bd18164159",
+          "version": 0,
+          "sha256": "bf841e1d721ecf641715b395e78fc64db34862ef1a185fcd31a9e778a6b5c8e6"
+        },
+        "narrative": {
+          "library_file_id": "libfile_13767fc353c48191a4144d574af6f1c6",
+          "version": 0,
+          "sha256": "8450648aa6b0a5f25d8917e982406b291e6f0f4966296593a86c910051adbb8e"
+        },
+        "manifest": {
+          "library_file_id": "libfile_13f8c135212881919d0a8ba8f31ac028",
+          "version": 0,
+          "sha256": "d7be39888d6568f189f1058bc173f10d475ced6fbca362f1c7d1217e7909ae05"
+        },
+        "reproduction_package": {
+          "library_file_id": "libfile_b0b5612440648191af63ce08f79f5e30",
+          "version": 0,
+          "sha256": "1b52496f0e958ddffd6857c4c16ef3c45f053386e8709d6089d28e036937c02e6"
+        }
+      },
+      "issues": {
+        "E20-PAIR-01": "APPLIED_PENDING_INDEPENDENT_REVIEW; zero counts are distinct from denominator-zero uncomputed rates; invalid city/previous-round comparisons suppressed; valid prefecture/national values retained; D117:AD119 corrected using explicit before/after allowlist.",
+        "E20-PAIR-02": "N08-N20 narrative proposal integrated across R05-R07, with groups, special medical items, impact categories, decisions, periods and counts retained; claim-level independent recheck remains pending.",
+        "E20-PAIR-03": "Narrative claim mapping and W1 identity updated to new workbook ID/version/SHA; full source-by-source recheck remains pending.",
+        "E20-P03": "S10-04/05/06 headings and units revised; meeting occurrences use 回, decision counts use 件; S10-06 category/count rows paired and total 3926 checked.",
+        "E20-PAIR-04": "S10 R7 25.6 days separated as annual reference; S01 J208 raw 0.023503077783995522 retained as unverified audit value; no cross-period comparison.",
+        "E20-PAIR-05": "Reproduction package, manifest and easy-check saved; Microsoft Excel desktop recalc/readback not available and is HELD.",
+        "E20-PAIR-06": "Summary, detail and narrative comparison scope aligned for identified issues; transcription/arithmetic distinction retained; individual-record recalculation not claimed.",
+        "E20-NATIVE-01": "HELD: native Microsoft Excel desktop validation unavailable; LibreOffice is not counted as native acceptance."
+      },
+      "preservation": {
+        "status": "PASS_STRUCTURAL",
+        "sheets": 15,
+        "charts": 148,
+        "existing_annotations": 21,
+        "annotation_added": 0,
+        "annotation_updated": [
+          {
+            "sheet": "Ⅲ審査判定データ（変更率）",
+            "range": "D117:AD119",
+            "before": "C09 N110:N116：市の分母J109=0のため未算出（元数式エラー保持）。\n0%・資料待ちと扱わない。県・全国の率は対象外。分析要点参照。\nNOT COMPUTABLE: denominator=0; not 0%; original errors retained.",
+            "after": "C09 N110:N116：市・第1回は分母J109=0のため未算出（元数式エラー保持）。0%・資料待ちと扱わない。J110:J116の0件とは区別する。県・全国の有効率は保持し、市・第1回の未算出率は比較に使わない。\nNOT COMPUTABLE: denominator=0; counts remain zero; retain valid prefecture/national rates."
+          }
+        ],
+        "changed_parts": [
+          "xl/styles.xml",
+          "xl/workbook.xml",
+          "xl/worksheets/sheet12.xml",
+          "xl/worksheets/sheet15.xml"
+        ],
+        "chart_drawing_image_relationship_bytes_identical": true,
+        "detail_sheet_cells_formulas_and_print_settings_unchanged": true,
+        "C03_reapplied": false,
+        "zip_crc_xml_relationship_integrity": "PASS",
+        "native_excel": "HELD"
+      },
+      "validation": {
+        "source_bytes_verified": true,
+        "proposal_identity_verified": true,
+        "candidate_summary_numeric_checks": [
+          "R05 provided-score values and arithmetic difference carried from detail row 353",
+          "R07 opinion-day values and arithmetic difference carried from detail row 1191",
+          "C09 counts and denominator-zero rates distinguished",
+          "S10 R7 annual 25.6 reference and S01 J208 audit value remain separate",
+          "S10-06 category counts sum to 3926"
+        ],
+        "all_narrative_claims_independently_rechecked": "PENDING",
+        "native_excel": "HELD",
+        "full_claim_sources_against_new_pair": "MAPPED_PENDING_ROLE20"
+      },
+      "next_role": "20",
+      "next_operation": "independent_review_of_new_pair",
+      "completion_condition": "NOT_PASS until full claim/source mapping review and required native/package checks pass"
     }
   },
   "outputs": {
@@ -4229,7 +4337,7 @@
     }
   ],
   "next_role": "20",
-  "next_action": "Independently evaluate the saved hash-pinned workbook and narrative pair. Keep desktop Excel Japanese readability and recalculation differences held; do not accept the pair.",
+  "next_action": "新ペア候補の主張・数値・保存版を独立評価。Microsoft Excelデスクトップ実機検証の証拠を追加する。",
   "restart_condition": "libfile_d176f2c0f1c081919bcc4aecf5140011 version 0 SHA256 7cdd7a6f114582e4b7b2cf6c05d1d04b8fde55f6121d939c8bb5a49627737ceb と、reproduction ZIP v5 を起点にUnit16の限定コード変更案をレビュー。再実行前に別途承認された単位に分ける。",
   "candidate": {
     "id": "care-S01-20261009-v1",
@@ -5107,5 +5215,115 @@
     "plan_revision": "2.4",
     "state_revision": 11,
     "unit14_absent_before": true
-  }
+  },
+  "role10_runs": [
+    {
+      "task_id": "T18_ROLE10_U17_PRESERVATION_NARRATIVE_20261013",
+      "status": "NOT_PASS_NATIVE_EXCEL_AND_FULL_CLAIM_RECHECK_PENDING",
+      "generation_commit": "d1636e1347367b4a2221b5c1faf187e4f12e0c61",
+      "source_commit": "d1636e1347367b4a2221b5c1faf187e4f12e0c61",
+      "pre_save_rechecked_commit": "d1636e1347367b4a2221b5c1faf187e4f12e0c61",
+      "updated_at": "2026-10-13",
+      "technical_proposal": {
+        "source": "reports/30.json",
+        "key": "unit_proposals.U17_workbook_import_preservation_blocker",
+        "proposal_id": "E20-PAIR/import_preservation/U17",
+        "status": "used_as_approved_route"
+      },
+      "narrative_proposal": {
+        "library_file_id": "libfile_6980a861c080819199c4739a69349b52",
+        "version": 0,
+        "sha256": "a9aee57da315dc87be5410d1b052733f3f2e840bb604e8eb8dc833540d5121ab",
+        "status": "proposal_not_independent_evaluation"
+      },
+      "source_evaluated_pair": {
+        "workbook": {
+          "library_file_id": "libfile_b8d362af68b481918d8a01818cd825fc",
+          "version": 0,
+          "sha256": "dd81b1d6ea7cea27551281d4b7cecd1bb38a27b619e713c39d98973f78ed3e02"
+        },
+        "narrative": {
+          "library_file_id": "libfile_dcd0955eccec8191938ba5b44a865f98",
+          "version": 0,
+          "sha256": "2d7238db08244ba1fd4e4217374704c90cfca920a9e0488df397bec010fec2d0"
+        },
+        "status": "unchanged"
+      },
+      "new_pair": {
+        "workbook": {
+          "library_file_id": "libfile_59c697532e1c8191a7e908bd18164159",
+          "version": 0,
+          "sha256": "bf841e1d721ecf641715b395e78fc64db34862ef1a185fcd31a9e778a6b5c8e6"
+        },
+        "narrative": {
+          "library_file_id": "libfile_13767fc353c48191a4144d574af6f1c6",
+          "version": 0,
+          "sha256": "8450648aa6b0a5f25d8917e982406b291e6f0f4966296593a86c910051adbb8e"
+        },
+        "manifest": {
+          "library_file_id": "libfile_13f8c135212881919d0a8ba8f31ac028",
+          "version": 0,
+          "sha256": "d7be39888d6568f189f1058bc173f10d475ced6fbca362f1c7d1217e7909ae05"
+        },
+        "reproduction_package": {
+          "library_file_id": "libfile_b0b5612440648191af63ce08f79f5e30",
+          "version": 0,
+          "sha256": "1b52496f0e958ddffd6857c4c16ef3c45f053386e8709d6089d28e036937c02e6"
+        }
+      },
+      "issues": {
+        "E20-PAIR-01": "APPLIED_PENDING_INDEPENDENT_REVIEW; zero counts are distinct from denominator-zero uncomputed rates; invalid city/previous-round comparisons suppressed; valid prefecture/national values retained; D117:AD119 corrected using explicit before/after allowlist.",
+        "E20-PAIR-02": "N08-N20 narrative proposal integrated across R05-R07, with groups, special medical items, impact categories, decisions, periods and counts retained; claim-level independent recheck remains pending.",
+        "E20-PAIR-03": "Narrative claim mapping and W1 identity updated to new workbook ID/version/SHA; full source-by-source recheck remains pending.",
+        "E20-P03": "S10-04/05/06 headings and units revised; meeting occurrences use 回, decision counts use 件; S10-06 category/count rows paired and total 3926 checked.",
+        "E20-PAIR-04": "S10 R7 25.6 days separated as annual reference; S01 J208 raw 0.023503077783995522 retained as unverified audit value; no cross-period comparison.",
+        "E20-PAIR-05": "Reproduction package, manifest and easy-check saved; Microsoft Excel desktop recalc/readback not available and is HELD.",
+        "E20-PAIR-06": "Summary, detail and narrative comparison scope aligned for identified issues; transcription/arithmetic distinction retained; individual-record recalculation not claimed.",
+        "E20-NATIVE-01": "HELD: native Microsoft Excel desktop validation unavailable; LibreOffice is not counted as native acceptance."
+      },
+      "preservation": {
+        "status": "PASS_STRUCTURAL",
+        "sheets": 15,
+        "charts": 148,
+        "existing_annotations": 21,
+        "annotation_added": 0,
+        "annotation_updated": [
+          {
+            "sheet": "Ⅲ審査判定データ（変更率）",
+            "range": "D117:AD119",
+            "before": "C09 N110:N116：市の分母J109=0のため未算出（元数式エラー保持）。\n0%・資料待ちと扱わない。県・全国の率は対象外。分析要点参照。\nNOT COMPUTABLE: denominator=0; not 0%; original errors retained.",
+            "after": "C09 N110:N116：市・第1回は分母J109=0のため未算出（元数式エラー保持）。0%・資料待ちと扱わない。J110:J116の0件とは区別する。県・全国の有効率は保持し、市・第1回の未算出率は比較に使わない。\nNOT COMPUTABLE: denominator=0; counts remain zero; retain valid prefecture/national rates."
+          }
+        ],
+        "changed_parts": [
+          "xl/styles.xml",
+          "xl/workbook.xml",
+          "xl/worksheets/sheet12.xml",
+          "xl/worksheets/sheet15.xml"
+        ],
+        "chart_drawing_image_relationship_bytes_identical": true,
+        "detail_sheet_cells_formulas_and_print_settings_unchanged": true,
+        "C03_reapplied": false,
+        "zip_crc_xml_relationship_integrity": "PASS",
+        "native_excel": "HELD"
+      },
+      "validation": {
+        "source_bytes_verified": true,
+        "proposal_identity_verified": true,
+        "candidate_summary_numeric_checks": [
+          "R05 provided-score values and arithmetic difference carried from detail row 353",
+          "R07 opinion-day values and arithmetic difference carried from detail row 1191",
+          "C09 counts and denominator-zero rates distinguished",
+          "S10 R7 annual 25.6 reference and S01 J208 audit value remain separate",
+          "S10-06 category counts sum to 3926"
+        ],
+        "all_narrative_claims_independently_rechecked": "PENDING",
+        "native_excel": "HELD",
+        "full_claim_sources_against_new_pair": "MAPPED_PENDING_ROLE20"
+      },
+      "next_role": "20",
+      "next_operation": "independent_review_of_new_pair",
+      "completion_condition": "NOT_PASS until full claim/source mapping review and required native/package checks pass"
+    }
+  ]
 }
