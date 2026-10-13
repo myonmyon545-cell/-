@@ -2,10 +2,10 @@
   "schema": "care_handoff/v1",
   "role": "10",
   "plan_revision": "2.5",
-  "status": "新ペア候補を統合保存。全主張の独立再照合とMicrosoft Excel実機検証が未完了のためNOT_PASS。",
-  "task_id": "T11_E20-PAIR_correction_batch_20261013",
-  "source_commit": "5991254b19119b2388987543b72acfd4ebd794ae",
-  "pre_save_rechecked_commit": "d1636e1347367b4a2221b5c1faf187e4f12e0c61",
+  "status": "NOT_COMPLETE_ROLE20_REVIEW_FULL_REPLAY_AND_NATIVE_EXCEL_HELD",
+  "task_id": "T20_ROLE10_ROLE20_TARGETED_CORRECTIONS_20261013",
+  "source_commit": "c0f48eddf945eecc22188a3004493d787369613c",
+  "pre_save_rechecked_commit": "c0f48eddf945eecc22188a3004493d787369613c",
   "updated_at": "2026-10-13",
   "startup_read": {
     "branch": "main",
@@ -4153,6 +4153,32 @@
       "version": 3,
       "sha256": "cd0e9b694b0f43031c588c5f6bbf08115aba0f1ab0b55b0a14c42821364dd746",
       "size_bytes": 5555827
+    },
+    "U20": {
+      "type": "targeted_corrections_pair",
+      "task_id": "T20_ROLE10_ROLE20_TARGETED_CORRECTIONS_20261013",
+      "workbook": {
+        "library_file_id": "libfile_c17d27b379308191acf27bb17e9f0497",
+        "version": 0,
+        "sha256": "9c3c50835961e876844daf59db5709316055a79579f79aa151ad54e15a5f68f8",
+        "bytes": 1812623
+      },
+      "narrative": {
+        "library_file_id": "libfile_49d445210cb481918445587a5e22e0fb",
+        "version": 1,
+        "sha256": "e304571171ab948766a425831e7c54d90160555e4dcc7825d8e538f1cf376fd6",
+        "bytes": 72988
+      },
+      "reproduction_package": {
+        "library_file_id": "libfile_ed33f81229448191adaad9a6918117e2",
+        "version": 1,
+        "zip_file_sha256": "3e122dc50dceb37f18bdfafb729705adff17c2e24431d115ef40287265dbade8",
+        "embedded_manifest_file_sha256": "e984910faa3567b87da69c711a3a2a988b14c0ad4cc7e58c9391b6c9524d6366",
+        "bytes": 12679091,
+        "zip_entries": 35,
+        "zip_crc": "PASS"
+      },
+      "saved_readback": "Library read metadata confirms narrative version1/72988 bytes and package version1/12679091 bytes; workbook SHA checked locally and matches pair identity"
     }
   },
   "checks": [
@@ -4347,14 +4373,14 @@
     }
   ],
   "next_role": "20",
-  "next_action": "新ペア候補の主張・数値・保存版を独立評価。Microsoft Excelデスクトップ実機検証の証拠を追加する。",
+  "next_action": "ROLE20が新しい固定ペアと対象修正を独立再確認する。全工程再現・必須監査・Excel実機検証が完了するまでNOT_COMPLETE。",
   "restart_condition": "libfile_d176f2c0f1c081919bcc4aecf5140011 version 0 SHA256 7cdd7a6f114582e4b7b2cf6c05d1d04b8fde55f6121d939c8bb5a49627737ceb と、reproduction ZIP v5 を起点にUnit16の限定コード変更案をレビュー。再実行前に別途承認された単位に分ける。",
   "candidate": {
-    "id": "care-S01-20261009-v1",
-    "version": 1,
-    "sha256": "fe3ccd49b45400ea70687cd67cb50a7f9563cd7dd6641bd7c82c57aa97cbb570"
+    "id": "libfile_c17d27b379308191acf27bb17e9f0497",
+    "version": 0,
+    "sha256": "9c3c50835961e876844daf59db5709316055a79579f79aa151ad54e15a5f68f8"
   },
-  "candidate_fingerprint": "9f123c60a6e16622204b6abc33736d85d55358be8956a9776b716659fe620695",
+  "candidate_fingerprint": "5fa7dadcc03c4789d65838f9ca58b3d6ea16fee239a4e6259a760e7e1c7652b3",
   "newly_checked": [
     "main同一コミットの5管理ファイル",
     "30保存案とS01/S02元セルの照合",
@@ -5400,8 +5426,10 @@
         },
         "manifest_in_package": true,
         "manifest_inside_package": {
-          "sha256": "manifest included and cross-checked",
-          "reproduction_package_sha256": "17e74cb897788f7efdb73dcfe3df5f0f14cb21c5c3db24dc57a8f02924f834bd"
+          "zip_file_sha256": "89ff085af1bb0b2d2dcfe165864b359f8a31ad5c23dff82f7023276c2f2f5bff",
+          "embedded_manifest_file_sha256": "a2767298705e85a4f719151f11d759d8694120f0b0f166da39186b3e344ffed9",
+          "manifest_recorded_zip_sha256": null,
+          "status": "実物の内部manifestにZIP自身SHAの欄はない。循環参照は要求せず、ZIPとmanifest単体を外部報告で別記録。"
         }
       },
       "hash_correction": {
@@ -5411,7 +5439,14 @@
         "actual_64_char_sha256": "1b52496f0e958ddffd6857c4c16ef3c45f053386e8709d6089d28e036937c02e",
         "bytes": 2952535,
         "zip_crc": "PASS",
-        "reported_previous_65_char_value": "1b52496f0e958ddffd6857c4c16ef3c45f053386e8709d6089d28e036937c02e6"
+        "reported_previous_65_char_value": "1b52496f0e958ddffd6857c4c16ef3c45f053386e8709d6089d28e036937c02e6",
+        "manifest_reconciliation": {
+          "zip_file_sha256": "89ff085af1bb0b2d2dcfe165864b359f8a31ad5c23dff82f7023276c2f2f5bff",
+          "embedded_manifest_file_sha256": "a2767298705e85a4f719151f11d759d8694120f0b0f166da39186b3e344ffed9",
+          "manifest_recorded_zip_sha256": null,
+          "zip_crc": "PASS",
+          "correction_basis": "ROLE20 actual-byte verification at c0f48eddf945eecc22188a3004493d787369613c"
+        }
       },
       "code_and_input_identity": {
         "replay_script_sha256": "ec5cb5d2d42393fef40907ee68933c35cd1e24b39faa8287cbae82daf77d569b",
@@ -5456,13 +5491,18 @@
         "chart_drawing_image_relationship_bytes_identical": true,
         "zip_crc_xml_and_relationship_integrity": "PASS",
         "existing_annotations": 21,
-        "updated_annotations": 1,
+        "updated_annotations": 2,
         "added_annotations": 0,
         "duplicate_annotations": 0,
         "detail_print_settings_unchanged": true,
         "C03_reapplied": false,
         "C03_correction_inherited_and_unmodified": true,
-        "workbook_bytes_readback": "Library v0 saved; local generation SHA matches report identity"
+        "workbook_bytes_readback": "Library v0 saved; local generation SHA matches report identity",
+        "updated_annotation_ranges": [
+          "Ⅲ審査判定データ（変更率）!D117:AD119",
+          "Ⅳ事務データ!D205:AA205"
+        ],
+        "annotation_count_reconciled_with_actual_diff": true
       },
       "verification": {
         "clean_output_directory_replay": "PASS; final candidate SHA equals replay output in fresh isolated output directory",
@@ -5530,6 +5570,103 @@
           "reason": "superseded to add exact cell-diff evidence"
         }
       ]
+    },
+    {
+      "task_id": "T20_ROLE10_ROLE20_TARGETED_CORRECTIONS_20261013",
+      "status": "NOT_COMPLETE_ROLE20_REVIEW_FULL_REPLAY_AND_NATIVE_EXCEL_HELD",
+      "source_commit": "c0f48eddf945eecc22188a3004493d787369613c",
+      "source_reports": {
+        "reports10_blob": "0b335f4707c00682468b27e8c64596d8bca2e1cf",
+        "reports20_blob": "54653baf01d93c4cd464a1a504119475a669f506",
+        "evaluation_task": "T19_ROLE20_U18_INDEPENDENT_RECHECK_20261013"
+      },
+      "proposal": {
+        "source": "reports/30.json.unit_proposals.U18_consolidated_remaining_pair_fixes",
+        "status": "proposal_only_used_as_route"
+      },
+      "changes": {
+        "C09_summary_labels": {
+          "status": "APPLIED",
+          "cells": [
+            "分析要点!J973:L973",
+            "分析要点!J975:L975",
+            "分析要点!J977:L977"
+          ],
+          "text": "件数比較対象外（地域規模・対象母数が異なるため）",
+          "numeric_values_changed": false,
+          "rate_boundary": "分母0の率は未算出。0件と0%を混同せず、率比較対象外と明示。"
+        },
+        "narrative_storage_version": {
+          "status": "APPLIED_AND_SAVED",
+          "appendix": "A",
+          "old_value": 0,
+          "new_value": 1,
+          "library_file_id": "libfile_49d445210cb481918445587a5e22e0fb",
+          "sha256": "e304571171ab948766a425831e7c54d90160555e4dcc7825d8e538f1cf376fd6",
+          "bytes": 72988,
+          "identity_authority": "reports/10.json fixed commit; narrative omits self-SHA to avoid self-reference"
+        },
+        "annotation_count": {
+          "status": "RECONCILED",
+          "baseline": "U18 evaluated workbook",
+          "existing_note_count": 21,
+          "updated_existing_notes": 2,
+          "added": 0,
+          "duplicates": 0,
+          "updated_ranges": [
+            "Ⅲ審査判定データ（変更率）!D117:AD119",
+            "Ⅳ事務データ!D205:AA205"
+          ],
+          "manifest_and_report_count": 2,
+          "source": "actual before/after OOXML note diff"
+        }
+      },
+      "pair": {
+        "workbook": {
+          "library_file_id": "libfile_c17d27b379308191acf27bb17e9f0497",
+          "version": 0,
+          "sha256": "9c3c50835961e876844daf59db5709316055a79579f79aa151ad54e15a5f68f8",
+          "bytes": 1812623
+        },
+        "narrative": {
+          "library_file_id": "libfile_49d445210cb481918445587a5e22e0fb",
+          "version": 1,
+          "sha256": "e304571171ab948766a425831e7c54d90160555e4dcc7825d8e538f1cf376fd6",
+          "bytes": 72988
+        },
+        "fingerprint": "5fa7dadcc03c4789d65838f9ca58b3d6ea16fee239a4e6259a760e7e1c7652b3",
+        "reproduction_package": {
+          "library_file_id": "libfile_ed33f81229448191adaad9a6918117e2",
+          "version": 1,
+          "zip_file_sha256": "3e122dc50dceb37f18bdfafb729705adff17c2e24431d115ef40287265dbade8",
+          "embedded_manifest_file_sha256": "e984910faa3567b87da69c711a3a2a988b14c0ad4cc7e58c9391b6c9524d6366",
+          "bytes": 12679091,
+          "zip_entries": 35,
+          "zip_crc": "PASS"
+        }
+      },
+      "verification": {
+        "workbook_content": "existing U19 saved workbook carried forward; SHA matches prior U19; 15 sheets, 148 charts; 9 C09 label cells differ from U18 baseline; sheet15.xml only; chart/drawing/image/relationship bytes unchanged",
+        "narrative": "Library saved version 1 readback confirms 72988 bytes; local SHA fixed above; Appendix A storage_version=1",
+        "manifest": "ZIP readback passes CRC; manifest SHA recalculated from embedded manifest bytes; pair IDs/version/hash and two updated notes recorded",
+        "note_changes": "D117 and D205 are the two text changes relative to U18 baseline; U20 made no additional workbook note change",
+        "c03": "retained without reapplication",
+        "c04_c10_c11": "approved annual reference boundary, held medication values, and affected denominator-pending holds retained",
+        "source_evaluated_pair": "unchanged",
+        "state_and_other_role_reports": "unchanged by this task",
+        "role20_independent_review": "PENDING"
+      },
+      "reproducibility": {
+        "limited_ooxml_replay": "PASS; fresh isolated output SHA equals workbook SHA; 15 sheets/148 charts; nine C09 cells",
+        "full_pipeline": "HELD_BLOCKED; ModuleNotFoundError: No module named 'replay_pipeline'; required pinned code/bundle/inputs absent. Full source-to-analysis replay and complete audit archive not demonstrated.",
+        "native_excel": {
+          "status": "HELD",
+          "reason": "Linux environment lacks Microsoft Excel desktop on Windows/macOS; substitute renderer is not treated as PASS."
+        }
+      },
+      "next_role": "20",
+      "next_operation": "independently_recheck_new_hash_pinned_pair_and_targeted_corrections",
+      "completion_condition": "NOT_COMPLETE until ROLE20 required evaluation, full replay/audit requirements, and Microsoft Excel desktop checks pass"
     }
   ]
 }
