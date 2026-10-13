@@ -1,15 +1,15 @@
 # 介護保険データ解析 AI実行仕様
 
-解析契約2.5 / 運用版2.5.1 / 2026-10-12
+解析契約2.6 / 運用版2.6.0 / 2026-10-13
 
 ROLE=00|10|20|30|40。最新ユーザー判断を優先。旧候補と報告は変更しない。全条件は以下のYAMLを正本とする。
 
 ```yaml
 meta:
   schema: care_analysis_execution_v2
-  revision: '2.5'
-  operations_revision: 2.5.1
-  operations_updated_at: '2026-10-12'
+  revision: '2.6'
+  operations_revision: 2.6.0
+  operations_updated_at: '2026-10-13'
   completed_workbook_sheet_requirement: 完成ブックは従来どおり15シート必須。
   print_probe_scope_decision:
     decision: 印刷確認コピーは注記対象の3シートで構造受入とする。
@@ -1397,6 +1397,7 @@ deadline_execution_override_20261012:
     mode: "consolidated_copyable_role_instructions"
     pretend_dispatched: false
     avoid_conflicting_writers: true
+microsoft_desktop_excel_validation_20261013: {"authority":"explicit_user_instruction_20261013_114539_JST","required":true,"application":"Microsoft Excel desktop","platform":"Windows_or_macOS","target":"saved_hash_pinned_current_workbook","web_mobile_or_LibreOffice_substitute":false,"required_checks":["open_without_repair_warning","Japanese_cell_chart_and_annotation_readability","table_header_column_alignment","no_clipping_or_overlap","print_preview_page_breaks_and_repeated_headers","changed_formula_recalculation_on_isolated_copy","save_reopen_and_compare_affected_values_formulas_and_errors"],"evidence":["workbook_id_version_sha256","application_version","OS","fonts","checked_sheets_ranges_and_print_pages","screenshots_or_exported_PDF","recalculation_save_readback_results","operator_and_check_time"],"candidate_preservation":"read_only_original_or_isolated_copy; never_mutate_evaluation_target","unavailable_environment":"HELD; continue_other_independent_checks","release_gate":"required_native_checks_PASS_before_completion_acceptance","prior_exemption":"superseded"}
 ```
 
 運用2.4.1：過去会話・実報告をタイムライン表示。解析契約2.4と候補評価は変更しない。過去全文取得は未完了。
