@@ -1,8 +1,8 @@
 {
   "schema": "care_state/v1",
-  "revision": 16,
+  "revision": 17,
   "plan_revision": "2.7",
-  "updated_at": "2026-10-13T03:01:45.676Z",
+  "updated_at": "2026-10-13T22:29:19Z",
   "phase": "DEADLINE_DELIVERABLE_BATCH_EXECUTION",
   "writer": "00",
   "canonical_repository": "myonmyon545-cell/-",
@@ -839,10 +839,13 @@
     "30": "reports/30.json"
   },
   "next_action": {
-    "owner": "10",
-    "assignment": "repair_ROLE20_findings_and_integrate_separate_Astra_multidisciplinary_narrative_proposal",
-    "independent_role20": "continue_available_current_pair_checks; independently_review_revised_saved_pair_without_waiting_for_native_environment",
-    "native_Excel": "mandatory_HELD_until_actual_evidence",
+    "owner": "00",
+    "assignment": "ROLE10へT22残件証拠化単位を割当記録。ROLE10の作業開始を別チャットへ送信済みとは扱わない。",
+    "role10_next_single_unit": "source-to-frozen-U20 full generation path and audit completeness gaps, including four XML mismatch, summary_v2 NameError, exact dependencies/log/inventory",
+    "role10_scope": "frozen candidate read-only; separate output only; do not replay already checked bounded historical numeric run",
+    "native_excel": "未割当。実機担当者・Windows/macOS Excel環境を確保後、固定ペアを照合して検査する。",
+    "role20": "新規保存証拠を待って独立再評価。現在の総合結果はNOT_COMPLETE_NOT_ACCEPTED。",
+    "restart_condition": "ROLE10が不足項目ごとの保存証拠または明示HELD記録を作成し、reports/10.jsonにID/版/SHAと実施/未実施を記録。実機検査は担当者・環境確保後に開始。",
     "runtime": "other_chat_execution_unobserved"
   },
   "history": [
@@ -914,6 +917,13 @@
       "event": "original_intent_scope_corrected_to_revision_2_5",
       "source_commit": "8b2eda7b42d4ec869d5649fd0efc39b377123dde",
       "details": "物語説明を当初納品範囲として定義。15シート/元14/148グラフ維持。R02-R07根拠追跡、境界条件、再評価、ROLE20両成果物レビューを設定。報告10/20/30、候補・ブック不変更。"
+    },
+    {
+      "at": "2026-10-14T07:29:19+09:00",
+      "role": "00",
+      "source_commit": "b5e7b10d24273be5846f669460c82a3a1921ae73",
+      "event": "integrated_T21_ROLE20_findings_and_coordinated_remaining_blockers",
+      "details": "同一コミットPLAN/STATE/reports10/20/30を読取。ROLE20のT21 scoped PASS、historical exact reconstruction FAIL、summary_v2 NameError FAIL、full U20 reproduction/audit completeness/NATIVE_EXCEL HELDを反映。ROLE10にT22の残件証拠化単位を割当記録し、完了済みT21確認を再実行しない。固定候補ペアID/版/SHA維持。Excel実機担当者とWindows/macOS環境は未確保。別チャットへの送信・作業開始を主張せず。"
     }
   ],
   "deployment_status": "registered_on_main",
@@ -936,95 +946,35 @@
     "all_four_created": "未確認"
   },
   "startup_00": {
-    "status": "progress_and_shared_view_review",
-    "checked_at": "2026-10-10T11:53:32+09:00",
-    "source_commit": "f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
-    "plan_revision": "2.4",
+    "status": "T21_reconciliation_and_blocker_coordination",
+    "checked_at": "2026-10-14T07:29:19+09:00",
+    "source_commit": "b5e7b10d24273be5846f669460c82a3a1921ae73",
+    "plan_revision": "2.7",
+    "operations_revision": "2.7.0",
     "repository_visibility": "private",
     "read_paths": [
       "care-insurance-analysis/PLAN.md",
       "care-insurance-analysis/STATE.json",
       "care-insurance-analysis/reports/10.json",
       "care-insurance-analysis/reports/20.json",
-      "care-insurance-analysis/reports/30.json",
-      "care-insurance-analysis/decisions/2026-10-10_user_decisions.json",
-      "care-insurance-analysis/viewer/UPDATE_PROTOCOL.md",
-      "care-insurance-analysis/viewer/platform.json",
-      "care-insurance-analysis/logs/timeline/timeline.json"
+      "care-insurance-analysis/reports/30.json"
     ],
     "git_blob_identity": {
-      "verified_files": 5,
-      "match": true,
-      "paths": [
-        "care-insurance-analysis/PLAN.md",
-        "care-insurance-analysis/STATE.json",
-        "care-insurance-analysis/reports/10.json",
-        "care-insurance-analysis/reports/20.json",
-        "care-insurance-analysis/reports/30.json"
-      ]
+      "PLAN.md": "4e9acf1277229cba731e1f9e010ef4cff52e290c",
+      "STATE.json": "68a62bf525e083eb3a8ffed3a0eba3ce532f34db",
+      "reports/10.json": "815cf472ed1c11333e78a62efb964209bebbc002",
+      "reports/20.json": "33c11a0cbae785eda6b02b8e86fc89f587cac52a",
+      "reports/30.json": "51c63f2f9e1c2ad516d845c19a743c147fa122f7"
     },
-    "registered_files_verified": true,
-    "originals_modified": false,
-    "analysis_executed": false,
-    "completed_main_tasks": [],
-    "main_task_completion_source": "reports/10・20・30に完了工程の報告なし。T01-T08は昇格しない。",
-    "checks": {
-      "github_actions": {
-        "run_id": 37793561045,
-        "job_id": 113366995227,
-        "head_sha": "14ad689ab195ed5c10a8ecdc01863bef4204c50d",
-        "status": "completed",
-        "conclusion": "success",
-        "tests_passed": 15,
-        "handoff": "PASS",
-        "analysis": "NOT_STARTED_OR_NO_CANDIDATE",
-        "scope": "metadata only; not analysis approval",
-        "url": "https://github.com/myonmyon545-cell/-/actions/runs/37793561045"
-      },
-      "local_fixed_commit": {
-        "boundary_tests_passed": 15,
-        "handoff": "PASS",
-        "analysis": "NOT_STARTED_OR_NO_CANDIDATE",
-        "scope": "取得9ファイルのGit blob SHA一致を確認した固定コミットの検査"
-      }
-    },
-    "access_failures": [],
-    "raw_csv": {
-      "status": "not_supplied_in_current_attachments",
-      "scope": "今回の添付7件",
-      "not_asserted": "Library全体や他チャットの未提供ファイルの不存在は未確認"
-    },
-    "model": {
-      "requested_role": "00",
-      "recommended": "GPT-6 Luna / High",
-      "actual_selection": "unverified",
-      "note": "ROLE指定では実モデルや推論設定を変更しない。"
-    },
-    "deadline_impact": {
-      "nearest_target": "2026-10-09T18:00:00+09:00",
-      "tasks": [
-        "T01",
-        "T02",
-        "T03"
-      ],
-      "submission_target": "2026-10-12T21:00:00+09:00",
-      "duration_estimate": null,
-      "note": "暦時間は稼働時間と同一ではない。10の試行実測と受渡し待ちを取得後に見積りを更新。C04未解決なら完成判定に進めない。"
-    },
-    "operations_revision": "2.4.3",
+    "latest_main_verified": true,
+    "latest_main_head": "b5e7b10d24273be5846f669460c82a3a1921ae73",
     "same_commit": true,
-    "analysis_candidate_exists": true,
-    "analysis_complete": false,
-    "other_chat_runtime_directly_observed": false,
-    "notes": [
-      "PLAN2.4/運用2.4.3と同一mainの保存報告を確認。10/20/30報告本文は前回確認版から変更なし。最新状況未確認。",
-      "旧2.2候補v1のFAILを保持。新2.4候補の実施・保存・独立評価は未確認。",
-      "共有画面の通常更新をUPDATE_PROTOCOLへ組込み。固定画面の再生成と保存読戻しを実施し、Site/既存添付/自動実行の更新は別途確認する。"
-    ]
+    "candidate_mutated": false,
+    "other_chat_runtime_directly_observed": false
   },
   "operations_revision": "2.7.0",
-  "canonical_plan_checked_commit": "298186d1a08af79958a47c7a7207fe6f01e29f49",
-  "canonical_plan_blob_sha": "9cff1723e0a98a1bdeea9baaf4e3a26b682a1c3e",
+  "canonical_plan_checked_commit": "b5e7b10d24273be5846f669460c82a3a1921ae73",
+  "canonical_plan_blob_sha": "4e9acf1277229cba731e1f9e010ef4cff52e290c",
   "checks": [
     {
       "id": "input_hashes",
@@ -1202,59 +1152,40 @@
   ],
   "report_freshness": {
     "10": {
-      "last_recorded_at": "2026-10-11T10:33:32+09:00",
-      "status": "STRUCTURE_CONFIRMED_PRINT_PROBE_SCOPE_UNRESOLVED",
-      "source_commit": "6e1b3a82f4da7c3f3422913e5805e973d7e37f14",
-      "report_sha": "523a106bf5c8e85ce235aedcdc122791934c3606",
-      "last_recorded_status": "STRUCTURE_CONFIRMED_PRINT_PROBE_SCOPE_UNRESOLVED",
-      "plan_revision": "2.4",
-      "verdict": "STRUCTURE_CONFIRMED_PRINT_PROBE_SCOPE_UNRESOLVED",
-      "note": "T11 E20-04第3単位の実物検査記録を同一HEADから確認しSTATEへ統合。",
-      "checked_at": "2026-10-12T09:11:15+09:00",
-      "checked_commit": "6e1b3a82f4da7c3f3422913e5805e973d7e37f14",
-      "content_changed_since_previous": true,
+      "last_recorded_at": "2026-10-14",
+      "last_recorded_status": "NOT_COMPLETE_FULL_REPRODUCTION_NOT_DEMONSTRATED",
+      "source_commit": "dd88fe75447879facea2386b3eff2f07e5081822",
+      "report_sha": "815cf472ed1c11333e78a62efb964209bebbc002",
+      "task_id": "T21_ROLE10_10A_REPRO_AUDIT_20261014",
+      "note": "reports/10.jsonをT21の監査報告として確認。T21監査ZIP保存と限定歴史的数値照合を記録。現行U20全工程生成は未実証。ROLE20の評価を反映し、過去完全再構成のFAILを優先。",
+      "checked_at": "2026-10-14T07:29:19+09:00",
+      "checked_commit": "b5e7b10d24273be5846f669460c82a3a1921ae73",
       "freshness": "current_as_of_commit"
     },
     "20": {
-      "last_recorded_at": "2026-10-09T17:13:29.181705+09:00",
-      "last_recorded_status": "completed",
-      "source_commit": "1051610978f031164d83e1ba02f72fe162a48b60",
-      "pre_save_rechecked_commit": "b5b14b75d8329850b441640ff5b92408a9ccca81",
-      "report_sha": "57863de7a6ba499b2872df9cf0b6549c43afa7e7",
-      "verdict": "FAIL",
-      "candidate": {
-        "id": "care-S01-20261009-v1",
-        "version": 1,
-        "sha256": "fe3ccd49b45400ea70687cd67cb50a7f9563cd7dd6641bd7c82c57aa97cbb570"
-      },
-      "status": "completed",
-      "plan_revision": "2.2",
-      "note": "保存済み報告を同一HEADで再確認。報告更新なし。実行状態は直接観測していない。",
-      "checked_at": "2026-10-10T11:53:32+09:00",
-      "checked_commit": "f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
-      "content_changed_since_previous": false,
-      "freshness": "最新状況未確認"
+      "last_recorded_at": "2026-10-13T22:26:25.086Z",
+      "last_recorded_status": "HELD_FULL_REPRODUCTION_AND_NATIVE_EXCEL",
+      "source_commit": "87e414c0ef4ee032d5690749c22df15e4a06b4f0",
+      "report_sha": "33c11a0cbae785eda6b02b8e86fc89f587cac52a",
+      "task_id": "T21_ROLE20_REPRODUCTION_EVIDENCE_REVIEW_20261014",
+      "verdict": null,
+      "scoped_verdict": "PASS_IDENTITY_AND_BOUNDED_EVIDENCE; FAIL_HISTORICAL_EXACT_RECONSTRUCTION; HELD_FULL_U20_REPRODUCTION",
+      "release_status": "NOT_COMPLETE_NOT_ACCEPTED",
+      "candidate_fingerprint": "5fa7dadcc03c4789d65838f9ca58b3d6ea16fee239a4e6259a760e7e1c7652b3",
+      "checked_at": "2026-10-14T07:29:19+09:00",
+      "checked_commit": "b5e7b10d24273be5846f669460c82a3a1921ae73",
+      "content_changed_since_previous": true,
+      "freshness": "current_as_of_commit"
     },
     "30": {
-      "last_recorded_at": "2026-10-09T17:38:41.975+09:00",
-      "last_recorded_status": "candidate_v1_correction_proposal_ready",
-      "source_commit": "1051610978f031164d83e1ba02f72fe162a48b60",
-      "report_sha": "d790c1686cb72176664af414cabc82cece8bacca",
-      "verdict": "PROPOSAL_ONLY",
-      "candidate": {
-        "id": "care-S01-20261009-v1",
-        "version": 1,
-        "sha256": "fe3ccd49b45400ea70687cd67cb50a7f9563cd7dd6641bd7c82c57aa97cbb570",
-        "storage_id": "libfile_7d32eed56014819184d160de1a2af7d5",
-        "storage_version": 0
-      },
-      "status": "candidate_v1_correction_proposal_ready",
-      "plan_revision": "2.2",
-      "note": "保存済み報告を同一HEADで再確認。報告更新なし。実行状態は直接観測していない。",
-      "checked_at": "2026-10-10T11:53:32+09:00",
-      "checked_commit": "f07bc7f6080b68d1ca407e1bbb1d8fd9dbe693e1",
+      "last_recorded_at": "2026-10-13T14:55:00+09:00",
+      "last_recorded_status": "U16_bounded_correction_proposal_ready",
+      "source_commit": "6d67948024e834d81218dd1232a1786d13d27169",
+      "report_sha": "51c63f2f9e1c2ad516d845c19a743c147fa122f7",
+      "checked_at": "2026-10-14T07:29:19+09:00",
+      "checked_commit": "b5e7b10d24273be5846f669460c82a3a1921ae73",
       "content_changed_since_previous": false,
-      "freshness": "最新状況未確認"
+      "freshness": "no_new_report_in_pinned_commit"
     }
   },
   "deadline_impact": {
@@ -1614,102 +1545,144 @@
   },
   "active_assignments": {
     "ROLE10": {
-      "instruction": "unit18 issued before override; preserve valid progress then continue candidate batch",
+      "instruction": "T22_ROLE10_CLOSE_T21_REPRO_GAPS_20261014; frozen U20 pair remains read-only; do not duplicate T21 completed evidence collection or rerun bounded historical checks",
       "runtime": "unobserved",
-      "latest_verified_completed": "unit17"
+      "latest_verified_completed": "T21_ROLE10_10A_REPRO_AUDIT_20261014 (saved report and audit ZIP; limited historical numeric evidence only)",
+      "next_single_unit": "source-to-frozen-U20 full generation path or concrete missing-input/dependency ledger; separately resolve historical 4-XML mismatch and summary_v2 NameError; complete archive inventory/log provenance and pre-execution fixture vs post-run cache distinction",
+      "candidate_edit": "forbidden",
+      "state_or_other_role_report_write": "forbidden",
+      "output": "saved evidence with IDs/version/SHA, commands, environment/dependencies, logs, exact status and restart point; no PASS unless run completes and output is verified"
     },
     "ROLE20": {
-      "instruction": "continue_independent_review; do_not_author_evaluated_narrative",
-      "runtime": "unobserved"
+      "instruction": "T21 independent review retained; independently review only newly saved T22 evidence; no duplicate completed T21 checks",
+      "runtime": "unobserved",
+      "status": "HELD_FULL_REPRODUCTION_AND_NATIVE_EXCEL"
     },
     "ROLE30": {
-      "instruction": "targeted blockers only",
+      "instruction": "no new correction proposal needed unless T22/Excel evidence identifies a concrete defect",
       "runtime": "unobserved"
     },
     "ROLE00": {
       "writer": "this_user_authorized_ROLE00_turn",
-      "scope": "deadline_and_execution_reconciliation"
+      "scope": "T21 evidence reconciliation, ROLE10 next-unit definition, Excel operator availability/blocker record, final STATE integration after persisted readback"
     },
     "narrative_analyst": {
       "requested_model": "GPT-6 Astra",
       "dispatch": "copyable_instruction_only_not_dispatched",
       "role": "analysis_proposal_only",
       "shared_writes": "none"
+    },
+    "NATIVE_EXCEL": {
+      "owner": "00 coordinates; actual Windows/macOS Microsoft Excel operator unassigned",
+      "status": "HELD_WAITING_FOR_OPERATOR_AND_NATIVE_ENVIRONMENT",
+      "runtime": "not available in current ROLE00 runtime",
+      "candidate": {
+        "workbook_id": "libfile_c17d27b379308191acf27bb17e9f0497",
+        "workbook_version": 0,
+        "workbook_sha256": "9c3c50835961e876844daf59db5709316055a79579f79aa151ad54e15a5f68f8",
+        "narrative_id": "libfile_49d445210cb481918445587a5e22e0fb",
+        "narrative_version": 1,
+        "narrative_sha256": "e304571171ab948766a425831e7c54d90160555e4dcc7825d8e538f1cf376fd6"
+      },
+      "start_condition": "operator and native Excel environment available; exact pinned candidate bytes verified before inspection",
+      "resume_position": "open/read/visual/print inspect fixed candidate; perform recalculation/save/reopen only on isolated copy; save evidence and hand to ROLE20",
+      "candidate_mutation": "forbidden"
     }
   },
   "verified_current_state": {
-    "checked_commit": "284d06f1312e4206cb19d181b5209ec3fd386300",
+    "checked_commit": "b5e7b10d24273be5846f669460c82a3a1921ae73",
     "plan_revision": "2.7",
-    "latest_ROLE10_saved": "T11_E20-04_resolve_blocker_and_complete_candidate_pair",
-    "unit16": "bounded_fixture_PASS_only",
-    "unit17": "bundle_v7_preflight_and_readback_PASS",
-    "unit18": "not_reported_at_checked_commit",
-    "candidate_current_pair": "saved_hash_pinned_verification_drafts",
-    "old_v1": "FAIL_not_releaseable",
-    "candidate_json_access": "connector_returned_empty_content_with_blob_sha; full_body_unavailable; not treated_as_validated",
-    "reused_workbook": "unit14_display_trial_readback_reported_not_visual_or_numeric_acceptance",
-    "numeric_replay": "ROLE10_reported_PASS_6316_records_1478_comparisons",
-    "native_Excel": "NOT_AVAILABLE_IN_ROLE10_RUNTIME_NOT_EXECUTED",
-    "ROLE20": "partial_current_pair_review_with_eight_findings; full_verdict_not_issued"
+    "operations_revision": "2.7.0",
+    "role20_task": "T21_ROLE20_REPRODUCTION_EVIDENCE_REVIEW_20261014",
+    "role20_status": "HELD_FULL_REPRODUCTION_AND_NATIVE_EXCEL",
+    "overall_release": "NOT_COMPLETE_NOT_ACCEPTED",
+    "candidate_pair_fingerprint": "5fa7dadcc03c4789d65838f9ca58b3d6ea16fee239a4e6259a760e7e1c7652b3",
+    "frozen_candidate_pair_unchanged": true,
+    "workbook": {
+      "id": "libfile_c17d27b379308191acf27bb17e9f0497",
+      "version": 0,
+      "sha256": "9c3c50835961e876844daf59db5709316055a79579f79aa151ad54e15a5f68f8"
+    },
+    "narrative": {
+      "id": "libfile_49d445210cb481918445587a5e22e0fb",
+      "version": 1,
+      "sha256": "e304571171ab948766a425831e7c54d90160555e4dcc7825d8e538f1cf376fd6"
+    },
+    "reproduction_package": {
+      "id": "libfile_ed33f81229448191adaad9a6918117e2",
+      "version": 1,
+      "sha256": "3e122dc50dceb37f18bdfafb729705adff17c2e24431d115ef40287265dbade8"
+    },
+    "t21_audit_package": {
+      "id": "libfile_959b21cd36288191a59971a66ddaad77",
+      "version": 0,
+      "sha256": "21e8e8778b96d52c3142f64f0ebbb867b412d62963d0b7514e93080d7f9d1035",
+      "zip_crc": "PASS"
+    },
+    "role20_verified_scoped": [
+      "候補ID/版/SHAと保存ZIPのID/版/SHA/CRC",
+      "入力7種の実体/SHA台帳一致",
+      "過去Unit17の保存数値出力・転記と算術照合（範囲限定）"
+    ],
+    "role20_failures": [
+      "歴史的候補の完全再構成SHA不一致。4 XML partsに値/出所等を含む差",
+      "summary_v2.pyが未定義rows参照でNameError/exit1"
+    ],
+    "held_items": [
+      "凍結U20ペアを原資料fresh抽出から生成する全工程再現",
+      "完全監査パッケージの履歴/依存/manifest網羅性（file_inventory 102中101一致、pyc不一致の整理を含む）",
+      "Windows/macOS Microsoft Excel実機による表示・印刷・隔離コピー再計算・保存再開封"
+    ],
+    "native_excel_operator": "未確保。ROLE00環境でも実施不能。",
+    "evidence_source": "reports/20.json T21_ROLE20_REPRODUCTION_EVIDENCE_REVIEW_20261014 at pinned commit"
   },
   "remaining_required_work": [
-    "preserve_or_resume_unit18_without_duplicate_execution",
-    "resolve_supported_numeric_or_generation_defects",
-    "retain_verified_numeric_run",
-    "generate_15_sheet_148_chart_workbook_from_retained_run",
-    "integrate_existing_display_and_annotation_repairs_into_reproducible_generation",
-    "draft_R02_R07_narrative_incrementally",
-    "perform_required_recalculation_save_readback_and_Japanese_visual_checks",
-    "save_hash_pinned_matching_candidate_pair",
-    "prepare_required_reproduction_audit_logs_manifest_and_simple_confirmation",
-    "ROLE20_full_required_independent_evaluation",
-    "apply_and_recheck_required_findings",
-    "verify_final_submission_manifest_and_handoff"
+    "ROLE10: 凍結U20ペアを変えず、元資料fresh抽出からブック/叙述までの完全生成経路を実行可能に立証する。困難なら不足コード/入力/依存を個別記録し、4 XML差とsummary_v2 NameErrorを別々に解消・説明する。",
+    "ROLE10: 完全監査証拠を整える。全取得可能履歴・失敗ログ・依存lock・正確なArtifact Tool build・実行前fixtureと実行後cacheの分離・pyc不一致を収録台帳とSHA/sizeで説明する。",
+    "00: Windows/macOS Microsoft Excelを使える担当者と環境を確保する。未確保の間はNATIVE_EXCELをHELDに維持する。",
+    "検査担当へ固定候補のID/版/実SHAを照合して引き渡し、必須の開封/日本語・配置/印刷/隔離再計算/保存再開封を証拠付きで実施する。候補ファイルは変更禁止。",
+    "ROLE20: 新たに保存されたROLE10/実機証拠の独立評価を行う。全範囲の要件評価完了までは総合PASSを出さない。",
+    "ROLE00: ROLE20の必要範囲評価と必須実機検査が揃った後にのみSTATE最終統合とrelease判定を行う。"
   ],
   "execution_reconciliation": {
-    "authority": "latest_explicit_user_deadline_override",
-    "source_commit": "298186d1a08af79958a47c7a7207fe6f01e29f49",
-    "completed_units": [
-      "unit14",
-      "unit15",
-      "unit16",
-      "unit17"
+    "authority": "latest_main_verified_files",
+    "source_commit": "b5e7b10d24273be5846f669460c82a3a1921ae73",
+    "role10_t21_report": "T21_ROLE10_10A_REPRO_AUDIT_20261014; saved and retained",
+    "role20_t21_report": "T21_ROLE20_REPRODUCTION_EVIDENCE_REVIEW_20261014; integrated",
+    "completed_evidence_not_replayed": [
+      "T21 audit ZIP identity/version/SHA/CRC check",
+      "seven-input inventory check",
+      "historical Unit17 saved output and arithmetic scope"
     ],
-    "unit18": "instruction_issued_result_not_yet_reported",
-    "reports_modified": false,
-    "scope_reduced": false,
-    "contract_revision_changed": false
+    "unresolved_roles_and_start_conditions": {
+      "ROLE10": "T22 distinct residual evidence batch; do not repeat historical limited replay; no candidate edits",
+      "ROLE20": "wait for new persisted evidence then independently review",
+      "NATIVE_EXCEL": "wait until a Windows/macOS Excel operator and environment are secured; exact candidate bytes must be verified"
+    },
+    "duplicate_execution": "forbidden",
+    "cross_chat_dispatch_claim": "not made"
   },
   "microsoft_desktop_excel_validation": {
-    "authority": "explicit_user_instruction_20261013_114539_JST",
     "required": true,
-    "application": "Microsoft Excel desktop",
-    "platform": "Windows_or_macOS",
-    "target": "saved_hash_pinned_current_workbook",
-    "web_mobile_or_LibreOffice_substitute": false,
+    "status": "HELD_WAITING_FOR_OPERATOR_AND_NATIVE_ENVIRONMENT",
+    "operator": "unassigned",
+    "environment": "not available in ROLE00 runtime",
+    "artifact_scope": "frozen U20 candidate pair; unchanged",
+    "candidate_fingerprint": "5fa7dadcc03c4789d65838f9ca58b3d6ea16fee239a4e6259a760e7e1c7652b3",
     "required_checks": [
-      "open_without_repair_warning",
-      "Japanese_cell_chart_and_annotation_readability",
-      "table_header_column_alignment",
-      "no_clipping_or_overlap",
-      "print_preview_page_breaks_and_repeated_headers",
-      "changed_formula_recalculation_on_isolated_copy",
-      "save_reopen_and_compare_affected_values_formulas_and_errors"
+      "開封修復警告なし",
+      "日本語・表・グラフ・注記の可読性",
+      "切れ/重なり/印刷改ページ/反復見出し",
+      "隔離コピーでの再計算→保存→再開封→値/式/エラー差分照合"
     ],
-    "evidence": [
-      "workbook_id_version_sha256",
-      "application_version",
-      "OS",
-      "fonts",
-      "checked_sheets_ranges_and_print_pages",
-      "screenshots_or_exported_PDF",
-      "recalculation_save_readback_results",
-      "operator_and_check_time"
+    "required_evidence": [
+      "candidate ID/version/SHA",
+      "Windows/macOS と Excel の実バージョン",
+      "確認したシート/範囲/印刷ページと結果",
+      "スクリーンショットまたはPDF",
+      "再計算前後差分と保存再開封の結果"
     ],
-    "candidate_preservation": "read_only_original_or_isolated_copy; never_mutate_evaluation_target",
-    "unavailable_environment": "HELD; continue_other_independent_checks",
-    "release_gate": "required_native_checks_PASS_before_completion_acceptance",
-    "prior_exemption": "superseded"
+    "resume_condition": "操作者・環境確保後、凍結候補の実ファイルSHA照合を先に行う。再計算・保存は隔離コピーだけ。"
   },
   "validation_requirement_change": {
     "authority": "explicit_user_instruction_20261013_114539_JST",
