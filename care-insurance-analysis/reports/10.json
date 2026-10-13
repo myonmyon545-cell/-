@@ -5384,19 +5384,19 @@
       "new_pair": {
         "workbook": {
           "library_file_id": "libfile_77c58cb987e481919cf71068fa9ba824",
-          "version": 0,
-          "sha256": "025bddb890e3d2770103b29e288c120732b8f72655087824a9e386402c5a0cd5"
+          "version": 1,
+          "sha256": "fc57c0bd92e5b2b1d1f0b6daf7b7264f8fa1d3b2db3ffd380d190f4305f7cfc6"
         },
         "narrative": {
           "library_file_id": "libfile_bb0a8083e86881918f2af52518ef89b5",
-          "version": 1,
-          "sha256": "ada15ec489538606a17514f8cc139b363816389b7c91dc2f1eaf5a83ceec88b5"
+          "version": 2,
+          "sha256": "de12790ded97b04b77906f7cb6dfaa39a178278698f61b0b4a08a9f5ab5e2c4d"
         },
         "reproduction_package": {
           "library_file_id": "libfile_30928172fda08191af86ec4dcc76534b",
-          "version": 0,
-          "sha256": "17e74cb897788f7efdb73dcfe3df5f0f14cb21c5c3db24dc57a8f02924f834bd",
-          "bytes": 2743731
+          "version": 1,
+          "sha256": "90679e88f6ebc75731238b08f4046ce20c1ec784add6eb421e43cea250a893ef",
+          "bytes": 2743796
         },
         "manifest_in_package": true,
         "manifest_inside_package": {
@@ -5410,10 +5410,11 @@
         "reported_65_char_value": "1b52496f0e958ddffd6857c4c16ef3c45f053386e8709d6089d28e036937c02e6",
         "actual_64_char_sha256": "1b52496f0e958ddffd6857c4c16ef3c45f053386e8709d6089d28e036937c02e",
         "bytes": 2952535,
-        "zip_crc": "PASS"
+        "zip_crc": "PASS",
+        "reported_previous_65_char_value": "1b52496f0e958ddffd6857c4c16ef3c45f053386e8709d6089d28e036937c02e6"
       },
       "code_and_input_identity": {
-        "replay_script_sha256": "1c61582e49482b5040020e8773560da051de9bcf717a54251b8731c3240e1538",
+        "replay_script_sha256": "73a3b51deb0fd15fa1174c719d911a49d899ce05fc1c9af7379159abe4a53884",
         "evaluated_workbook_sha256": "bf841e1d721ecf641715b395e78fc64db34862ef1a185fcd31a9e778a6b5c8e6",
         "runtime": "Python 3.12.14; Linux x86_64; standard library only",
         "full_raw_source_pipeline": "not bundled or claimed reproducible"
@@ -5464,8 +5465,8 @@
         "workbook_bytes_readback": "Library v0 saved; local generation SHA matches report identity"
       },
       "verification": {
-        "clean_output_directory_replay": "PASS; generated workbook SHA exactly matches candidate",
-        "summary_detail_narrative_values": "PASS for U18 affected scope",
+        "clean_output_directory_replay": "PASS; final numeric-value candidate SHA exactly matches replay output",
+        "summary_detail_narrative_values": "PASS for U18 affected scope; six comparison cells are numeric values in final workbook",
         "zero_counts_vs_uncomputed_rates": "PASS for affected C09 rows; C11 holds retained",
         "C04_display_wording_and_raw_audit_value": "PASS",
         "note_style_ids_attributes": "PASS",
@@ -5481,7 +5482,27 @@
       },
       "next_role": "20",
       "next_operation": "independently_recheck_the_new_hash_pinned_pair_and_U18_affected_scope",
-      "completion_condition": "NOT_COMPLETE until all required checks pass"
+      "completion_condition": "NOT_COMPLETE until all required checks pass",
+      "superseded_intermediate_versions": [
+        {
+          "artifact": "workbook",
+          "version": 0,
+          "sha256": "025bddb890e3d2770103b29e288c120732b8f72655087824a9e386402c5a0cd5",
+          "reason": "comparison values converted from text to numeric cells; superseded"
+        },
+        {
+          "artifact": "narrative",
+          "version": 1,
+          "sha256": "ada15ec489538606a17514f8cc139b363816389b7c91dc2f1eaf5a83ceec88b5",
+          "reason": "updated to point to final workbook version 1"
+        },
+        {
+          "artifact": "reproduction_package",
+          "version": 0,
+          "sha256": "17e74cb897788f7efdb73dcfe3df5f0f14cb21c5c3db24dc57a8f02924f834bd",
+          "reason": "refreshed with final matched pair"
+        }
+      ]
     }
   ]
 }
