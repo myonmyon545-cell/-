@@ -6,7 +6,7 @@
   "status": "U16_bounded_correction_proposal_ready",
   "task_id": "U16_numeric_replay_fix_review",
   "source_commit": "6d67948024e834d81218dd1232a1786d13d27169",
-  "updated_at": "2026-10-12T16:31:46.167+09:00",
+  "updated_at": "2026-10-13T14:55:00+09:00",
   "candidate": {
     "id": "care-S01-20261009-v1",
     "version": 1,
@@ -534,6 +534,224 @@
       },
       "preexisting_proposals_preserved": true,
       "historical_decisions": "reports/30.json既存issuesを変更/削除せず本キーを追加。旧2.2提案は歴史上の提案で2.5合格ではない。"
+    },
+    "U17_workbook_import_preservation_blocker": {
+      "proposal_key": "E20-PAIR/import_preservation/U17",
+      "implementation_status": "PROPOSAL_ONLY",
+      "source_commit": "a091075aac253818043cd5dc640f12acc0422e8e",
+      "plan_revision": "2.7",
+      "operations_revision": "2.7.0",
+      "fixed_read": {
+        "commit": "a091075aac253818043cd5dc640f12acc0422e8e",
+        "files": [
+          {
+            "path": "care-insurance-analysis/PLAN.md",
+            "blob_sha": "4e9acf1277229cba731e1f9e010ef4cff52e290c"
+          },
+          {
+            "path": "care-insurance-analysis/STATE.json",
+            "blob_sha": "68a62bf525e083eb3a8ffed3a0eba3ce532f34db"
+          },
+          {
+            "path": "care-insurance-analysis/reports/10.json",
+            "blob_sha": "f0e057ce8508b9eeee68655441535d1b45949a68"
+          },
+          {
+            "path": "care-insurance-analysis/reports/20.json",
+            "blob_sha": "db845ea5f3f71746d0f175be5f9df360a1433149"
+          },
+          {
+            "path": "care-insurance-analysis/reports/30.json",
+            "blob_sha": "c0b5b7e4b6892379eff4f669f7b26e970271141d"
+          }
+        ],
+        "evidence_key": "reports/10.json.task_results.T11_E20-PAIR_correction_batch_20261013"
+      },
+      "target_verification": {
+        "library_id": "libfile_b8d362af68b481918d8a01818cd825fc",
+        "version": 0,
+        "filename": "介護保険解析_検証中_表示修正反映.xlsx",
+        "expected_sha256": "dd81b1d6ea7cea27551281d4b7cecd1bb38a27b619e713c39d98973f78ed3e02",
+        "observed_local_sha256": "dd81b1d6ea7cea27551281d4b7cecd1bb38a27b619e713c39d98973f78ed3e02",
+        "size_bytes": 1809490,
+        "sha_match": true,
+        "zip_crc_test": "PASS_all_entries",
+        "package_inspection": {
+          "entries": 668,
+          "xml_and_rels_parts": 605,
+          "xml_parse_errors": 0,
+          "dangling_internal_relationships": 0,
+          "sheet_count": 15,
+          "sheet_order": [
+            "分析要点",
+            "表紙・目次",
+            "データの見方",
+            "Ⅰ基礎情報",
+            "Ⅱ調査項目データ（第１群）",
+            "Ⅱ調査項目データ（第２群）",
+            "Ⅱ調査項目データ（第３群）",
+            "Ⅱ調査項目データ（第４群）",
+            "Ⅱ調査項目データ（第５群）",
+            "Ⅱ調査項目データ（その他）",
+            "Ⅱ（３）５項目",
+            "Ⅲ審査判定データ（一次・二次判定）",
+            "Ⅲ審査判定データ（変更率）",
+            "Ⅲ審査判定データ（有効期間）",
+            "Ⅳ事務データ"
+          ],
+          "chart_parts": 148,
+          "drawing_parts": 13,
+          "media_parts": 51,
+          "extension_parts_with_ext_elements": 163,
+          "extension_elements_by_uri": {
+            "{C3380CC4-5D6E-409C-BE32-E72D297353CC}": 715,
+            "{FF2B5EF4-FFF2-40B4-BE49-F238E27FC236}": 198,
+            "{56B9EC1D-385E-4148-901F-78D8002777C0}": 110,
+            "{CE6537A1-D6FC-4f65-9D91-7224C49458BB}": 85,
+            "other_uris": 3
+          }
+        },
+        "import_attempt": {
+          "api": "@oai/artifact-tool SpreadsheetFile.importXlsx",
+          "result": "FAILED_BEFORE_EDIT",
+          "error": "Xml_MessageWithErrorPosition_Xml_UserException_2_2",
+          "repeated_identical_import_attempt": "FORBIDDEN; none performed in this review",
+          "candidate_exported": false
+        },
+        "inspection_scope": "Read-only bytes, ZIP CRC, OOXML well-formedness and internal relationship target checks. No spreadsheet import/open/edit/export was performed here."
+      },
+      "confirmed_cause_or_unknown_scope": {
+        "confirmed": "The target XLSX is not ZIP-corrupt and its 605 XML/.rels parts parse as well-formed XML; all internal relationships resolve. Therefore the observed import error is not explained by a malformed package entry or broken internal target found by these checks.",
+        "unresolved": "The import error contains no part name or parser stack location beyond generic position 2:2. The exact failing XML part or unsupported construct is not identified.",
+        "possible_area_not_root_cause": "The package contains extension-list structures in 163 parts, including all 148 chart parts and 13 drawing parts. These are compatibility suspects only. Do not strip or normalize them without a part-specific reproduction and preservation proof."
+      },
+      "selected_route": {
+        "id": "existing_donor_and_graft_workflow",
+        "decision": "Use the existing Artifact-authored summary donor plus package-level graft on a new isolated copy of the hash-pinned target. Do not import the target workbook with SpreadsheetFile.importXlsx.",
+        "reasons": [
+          "The target already has the required 15-sheet order with 分析要点 first; graft_v2.py is written for this exact shape and does not add another worksheet.",
+          "summary_v2.mjs authors the donor as a fresh workbook, avoiding an import round-trip of the target.",
+          "graft_v2.py changes only the summary sheet, appended style records, workbook-level summary print names, and explicitly blank local-note cells on named sheets; its allow-list and cell-level assertions fail on unapproved package changes.",
+          "It records C03_reapplied=false, appropriate for a target that already contains the approved C03 correction."
+        ],
+        "evidence_boundary": "reports/10.json T03 has a prior preservation-check precedent (original-sheet/chart/formula/drawing/print preservation and reopen checks, visual review held); current graft_v2.py also includes strict preservation assertions. No U17 graft was executed, so the route is proposed, not yet proven on this exact target."
+      },
+      "exact_code_and_package_locations": [
+        {
+          "path": "care-insurance-analysis/src/summary_v2.mjs",
+          "role": "Generate summary_donor.xlsx from validated summary_tables.json using a fresh Artifact Tool workbook; do not call importXlsx on the pinned target."
+        },
+        {
+          "path": "care-insurance-analysis/src/graft_v2.py",
+          "anchors": [
+            "lines 8-13",
+            "lines 14-79",
+            "lines 80-103"
+          ],
+          "role": "Graft donor summary and 21 unique local captions into an isolated copy; assert target shape, blank note cells, output sheet order, chart count, and exact allowed changed-part set."
+        },
+        {
+          "path": "care-insurance-analysis/src/replay_v2.py",
+          "anchors": [
+            "summary_v2.mjs donor invocation",
+            "graft_v2.py invocation",
+            "candidate/log outputs"
+          ],
+          "role": "Existing orchestration entry for summary donor and graft; run only as the approved ROLE10 bounded correction operation with pinned input identities."
+        },
+        {
+          "path": "care-insurance-analysis/src/inspect_inputs.py",
+          "role": "Existing OOXML structure/cell/part-hash inspection used by graft assertions; extend only if the preservation manifest lacks explicit chart/relationship/print details."
+        },
+        {
+          "path": "care-insurance-analysis/src/preserve_package.py",
+          "role": "Do not select for this target: its source contract is the original 14-sheet workbook and it adds a first summary sheet plus C03 values; that is the wrong base shape and risks duplicate summary/C03 application."
+        },
+        {
+          "path": "care-insurance-analysis/reproduction bundle",
+          "runtime": "Include the above exact source files, pinned pair manifest, instructions, and a relative-path invocation. Pass node and node_modules through replay_v2.py --node and --node-modules; resolve the runtime from the provisioned environment at execution time, never bake a machine-specific absolute path into the archive. Python package work uses the existing Python runtime and standard-library zip/XML modules; no new XLSX authoring package."
+        }
+      ],
+      "impact_and_allowed_changes": {
+        "scope": "New candidate copy and its paired narrative/manifest only; exact evaluated workbook and narrative IDs/version 0 remain byte-identical.",
+        "allowed_changes": [
+          "Replace only 分析要点 content from the regenerated approved summary donor.",
+          "Append the planned local notes into verified blank caption cells/ranges on named original sheets, including E20-03 notes.",
+          "Append donor styles without modifying/reordering existing style records.",
+          "Update only the documented summary print area/title and summary print layout; preserve other 14 sheets' print settings.",
+          "Retain C03 as-is; do not reapply the nine approved cell changes."
+        ],
+        "prohibited_changes": [
+          "Any chart, drawing, image, relationship, chart-series, axis, or anchor change/removal.",
+          "Any unlisted source cell, formula/cached-value, name, print, hidden-row/column, or sheet-order change.",
+          "Repair/strip/rewrite of extension XML merely to make the importer succeed.",
+          "Edits to pinned evaluated pair, PLAN, STATE, reports/10.json or reports/20.json by ROLE30."
+        ],
+        "expected_changed_package_parts": "Exact whitelist from graft_v2.py: 分析要点 worksheet XML, xl/styles.xml, xl/workbook.xml, and worksheet XML for only the caption-target sheets; no chart/drawing/media/relationship part may differ."
+      },
+      "actionable_ROLE10_steps": [
+        "Re-resolve version 0 and verify the target SHA before work; copy it to a new unique output path. Preserve the evaluated target read-only.",
+        "Continue the existing claim-to-cell mapping and narrative draft in parallel; do not let the import failure block these independent tasks. Keep Microsoft Excel desktop validation separately HELD until an authorized Windows/macOS Excel session exists.",
+        "Use summary_v2.mjs to generate a fresh donor from fixed summary_tables.json, then invoke graft_v2.py against the isolated target copy. Do not route the target through SpreadsheetFile.importXlsx and do not use preserve_package.py on this already-15-sheet target.",
+        "Ensure generated summary data and notes come from the same pinned correction batch and manifest; retain source pair IDs/SHA, code identity, donor SHA, graft input/output SHA, and command/stdout/stderr/exit code.",
+        "Run the bounded preservation checks below. If a preservation invariant fails, stop this candidate and report the exact part/difference; do not silently remove features or switch to a full rebuild.",
+        "Create the corrected workbook and narrative as a new pinned pair, update ROLE10 evidence, and hand to ROLE20 for independent review. Do not mark E20-PAIR issues fixed or release-ready from structural checks alone."
+      ],
+      "minimal_required_tests": [
+        {
+          "id": "U17-T1",
+          "check": "Before and after source identity: pinned target SHA remains dd81b1d6ea7cea27551281d4b7cecd1bb38a27b619e713c39d98973f78ed3e02; target file unchanged; new output has distinct path and SHA."
+        },
+        {
+          "id": "U17-T2",
+          "check": "Run ZIP CRC, parse every XML/.rels part, resolve every internal relationship, and verify 15 sheet names/order (new analysis summary first; original 14 in exact order), 148 charts."
+        },
+        {
+          "id": "U17-T3",
+          "check": "Compare every chart XML (series formulas/references, axes IDs, layout/positions), drawing XML, media payload, and relationships against target. All these parts must be byte-identical; verify the preservation result rather than trusting counts."
+        },
+        {
+          "id": "U17-T4",
+          "check": "Compare original sheet cells/formulas/cached values, styles, hidden rows/columns, defined names, and print settings. Differences must equal the exact documented summary+local-note allow-list; all 14 detail-sheet print configurations remain unchanged."
+        },
+        {
+          "id": "U17-T5",
+          "check": "Confirm all existing nine C03 corrected cells remain unchanged and C03_reapplied=false. No second application or new raw-data corrections are permitted in this route."
+        },
+        {
+          "id": "U17-T6",
+          "check": "Verify every planned local note has a unique non-overlapping range, was blank in the target, is visible on its source sheet, and states unverified / comparison and conclusion excluded with a traceable reference as required by E20-03."
+        },
+        {
+          "id": "U17-T7",
+          "check": "Open/save/reopen, Japanese rendering, pagination and changed-formula recalculation are not established by OOXML checks; complete them on the isolated new candidate in native Microsoft Excel desktop separately. Keep this gate HELD if unavailable."
+        }
+      ],
+      "parallel_assignments": {
+        "Astra_narrative_analysis": "CONTINUE",
+        "verified_claim_mapping_and_narrative_draft": "CONTINUE",
+        "native_Microsoft_Excel_validation": "SEPARATELY_HELD",
+        "importer_failure": "Not a reason to stop independent analysis or supported graft work."
+      },
+      "unresolved_provenance": [
+        "The prior error record gives no failed part name or parser diagnostic, so the incompatible XML/feature remains unidentified.",
+        "The attempted failed import did not edit/export, per T11 report evidence; confirm this against the operation log when ROLE10 updates the batch evidence.",
+        "The previous T03 preservation pass applies to its recorded earlier source/candidate, not this target's U17 output.",
+        "No corrected workbook/narrative pair or new fingerprint exists yet."
+      ],
+      "ROLE10_next_single_implementation_unit": {
+        "id": "T11_E20-PAIR_correction_batch_20261013_apply_preservation_route",
+        "next_role": "10",
+        "next_operation": "apply_route_and_batch_remaining_corrections",
+        "scope": "Produce one new paired candidate using the selected existing donor/graft route; complete the structural preservation checks and record held native Excel validation. Continue independent narrative and source mapping in parallel.",
+        "acceptance": "New pair is pinned by IDs/version/SHA and has the exact changed-part allow-list plus preserved 15 sheets/148 charts/relationships/C03; reports/10.json records evidence. ROLE20 then re-evaluates. Status remains NOT_COMPLETE until all PLAN 2.7 and native checks are satisfied."
+      },
+      "E20_PAIR": "NOT_FIXED",
+      "native_excel": "HELD",
+      "completion": "PROPOSAL_ONLY",
+      "reports10_or_20_edit_by_role30": false,
+      "plan_or_state_edit": false,
+      "evaluated_pair_modified": false
     }
   }
 }
