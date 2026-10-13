@@ -1,8 +1,8 @@
 {
   "schema": "care_state/v1",
-  "revision": 17,
+  "revision": 18,
   "plan_revision": "2.7",
-  "updated_at": "2026-10-13T22:29:19Z",
+  "updated_at": "2026-10-13T23:12:48Z",
   "phase": "DEADLINE_DELIVERABLE_BATCH_EXECUTION",
   "writer": "00",
   "canonical_repository": "myonmyon545-cell/-",
@@ -840,12 +840,11 @@
   },
   "next_action": {
     "owner": "00",
-    "assignment": "ROLE10へT22残件証拠化単位を割当記録。ROLE10の作業開始を別チャットへ送信済みとは扱わない。",
-    "role10_next_single_unit": "source-to-frozen-U20 full generation path and audit completeness gaps, including four XML mismatch, summary_v2 NameError, exact dependencies/log/inventory",
-    "role10_scope": "frozen candidate read-only; separate output only; do not replay already checked bounded historical numeric run",
-    "native_excel": "未割当。実機担当者・Windows/macOS Excel環境を確保後、固定ペアを照合して検査する。",
-    "role20": "新規保存証拠を待って独立再評価。現在の総合結果はNOT_COMPLETE_NOT_ACCEPTED。",
-    "restart_condition": "ROLE10が不足項目ごとの保存証拠または明示HELD記録を作成し、reports/10.jsonにID/版/SHAと実施/未実施を記録。実機検査は担当者・環境確保後に開始。",
+    "assignment": "T22 ROLE20 findings integrated into STATE. ROLE10 residual work and NATIVE_EXCEL hold recorded; no cross-chat messages sent.",
+    "role10_next_single_unit": "Resolve manifest self-entry failure in a new audit package and continue full source-to-frozen-U20 reproduction evidence, without changing candidate or repeating completed T22 checks.",
+    "native_excel": "Operator unavailable/unassigned; remains HELD. Identify and secure an operator/environment before starting.",
+    "role20": "Independently assess newly saved ROLE10 and native-execution evidence.",
+    "restart_condition": "ROLE10 persists corrected new package/version and full-reproduction evidence or precise blocker ledger; native lane starts only after actual operator/environment and candidate SHA confirmation.",
     "runtime": "other_chat_execution_unobserved"
   },
   "history": [
@@ -924,6 +923,13 @@
       "source_commit": "b5e7b10d24273be5846f669460c82a3a1921ae73",
       "event": "integrated_T21_ROLE20_findings_and_coordinated_remaining_blockers",
       "details": "同一コミットPLAN/STATE/reports10/20/30を読取。ROLE20のT21 scoped PASS、historical exact reconstruction FAIL、summary_v2 NameError FAIL、full U20 reproduction/audit completeness/NATIVE_EXCEL HELDを反映。ROLE10にT22の残件証拠化単位を割当記録し、完了済みT21確認を再実行しない。固定候補ペアID/版/SHA維持。Excel実機担当者とWindows/macOS環境は未確保。別チャットへの送信・作業開始を主張せず。"
+    },
+    {
+      "at": "2026-10-14T08:12:48+09:00",
+      "role": "00",
+      "source_commit": "3804f29f364e88b24e2267daa573c62ac0275862",
+      "event": "integrated_T22_ROLE20_saved_audit_review_and_native_excel_lane",
+      "details": "Same-commit PLAN/STATE/reports10/20/30 read. Integrated bounded T22 PASS scope; manifest self-entry FAIL (284/285 other entries match); full reproduction/audit completeness/NATIVE_EXCEL HELD. Frozen workbook/narrative pair unchanged. ROLE10 next residual batch recorded. Checked available evidence for native operator/environment; none identified, so unassigned/HELD. No cross-chat dispatch claimed."
     }
   ],
   "deployment_status": "registered_on_main",
@@ -946,9 +952,9 @@
     "all_four_created": "未確認"
   },
   "startup_00": {
-    "status": "T21_reconciliation_and_blocker_coordination",
-    "checked_at": "2026-10-14T07:29:19+09:00",
-    "source_commit": "b5e7b10d24273be5846f669460c82a3a1921ae73",
+    "status": "T22_ROLE20_integration_and_native_excel_coordination",
+    "checked_at": "2026-10-14T08:12:48+09:00",
+    "source_commit": "3804f29f364e88b24e2267daa573c62ac0275862",
     "plan_revision": "2.7",
     "operations_revision": "2.7.0",
     "repository_visibility": "private",
@@ -961,19 +967,19 @@
     ],
     "git_blob_identity": {
       "PLAN.md": "4e9acf1277229cba731e1f9e010ef4cff52e290c",
-      "STATE.json": "68a62bf525e083eb3a8ffed3a0eba3ce532f34db",
+      "STATE.json": "95b3ffd390395a48b28082a1fb05c6ee5bf91da7",
       "reports/10.json": "815cf472ed1c11333e78a62efb964209bebbc002",
-      "reports/20.json": "33c11a0cbae785eda6b02b8e86fc89f587cac52a",
+      "reports/20.json": "093025fc7924a322f1629cdd06e4702a3729899c",
       "reports/30.json": "51c63f2f9e1c2ad516d845c19a743c147fa122f7"
     },
     "latest_main_verified": true,
-    "latest_main_head": "b5e7b10d24273be5846f669460c82a3a1921ae73",
+    "latest_main_head": "3804f29f364e88b24e2267daa573c62ac0275862",
     "same_commit": true,
     "candidate_mutated": false,
     "other_chat_runtime_directly_observed": false
   },
   "operations_revision": "2.7.0",
-  "canonical_plan_checked_commit": "b5e7b10d24273be5846f669460c82a3a1921ae73",
+  "canonical_plan_checked_commit": "3804f29f364e88b24e2267daa573c62ac0275862",
   "canonical_plan_blob_sha": "4e9acf1277229cba731e1f9e010ef4cff52e290c",
   "checks": [
     {
@@ -1163,17 +1169,16 @@
       "freshness": "current_as_of_commit"
     },
     "20": {
-      "last_recorded_at": "2026-10-13T22:26:25.086Z",
+      "last_recorded_at": "2026-10-13T23:06:57Z",
       "last_recorded_status": "HELD_FULL_REPRODUCTION_AND_NATIVE_EXCEL",
-      "source_commit": "87e414c0ef4ee032d5690749c22df15e4a06b4f0",
-      "report_sha": "33c11a0cbae785eda6b02b8e86fc89f587cac52a",
-      "task_id": "T21_ROLE20_REPRODUCTION_EVIDENCE_REVIEW_20261014",
-      "verdict": null,
-      "scoped_verdict": "PASS_IDENTITY_AND_BOUNDED_EVIDENCE; FAIL_HISTORICAL_EXACT_RECONSTRUCTION; HELD_FULL_U20_REPRODUCTION",
+      "source_commit": "6cf7d9267f15317b34359236db037a0d16913832",
+      "report_sha": "093025fc7924a322f1629cdd06e4702a3729899c",
+      "task_id": "T22_ROLE20_SAVED_AUDIT_ARTIFACT_REVIEW_20261014",
+      "scoped_verdict": "PASS_BOUNDED_T22_EVIDENCE; FAIL_MANIFEST_SELF_ENTRY; HELD_FULL_REPRODUCTION",
       "release_status": "NOT_COMPLETE_NOT_ACCEPTED",
       "candidate_fingerprint": "5fa7dadcc03c4789d65838f9ca58b3d6ea16fee239a4e6259a760e7e1c7652b3",
-      "checked_at": "2026-10-14T07:29:19+09:00",
-      "checked_commit": "b5e7b10d24273be5846f669460c82a3a1921ae73",
+      "checked_at": "2026-10-14T08:12:48+09:00",
+      "checked_commit": "3804f29f364e88b24e2267daa573c62ac0275862",
       "content_changed_since_previous": true,
       "freshness": "current_as_of_commit"
     },
@@ -1545,26 +1550,27 @@
   },
   "active_assignments": {
     "ROLE10": {
-      "instruction": "T22_ROLE10_CLOSE_T21_REPRO_GAPS_20261014; frozen U20 pair remains read-only; do not duplicate T21 completed evidence collection or rerun bounded historical checks",
+      "instruction": "Resolve E20-T22-MANIFEST-SELF and E20-PAIR-05/E20-T21-AUDIT-01 gaps using saved T22 findings; do not repeat checks already independently passed",
       "runtime": "unobserved",
-      "latest_verified_completed": "T21_ROLE10_10A_REPRO_AUDIT_20261014 (saved report and audit ZIP; limited historical numeric evidence only)",
-      "next_single_unit": "source-to-frozen-U20 full generation path or concrete missing-input/dependency ledger; separately resolve historical 4-XML mismatch and summary_v2 NameError; complete archive inventory/log provenance and pre-execution fixture vs post-run cache distinction",
+      "latest_verified_completed": "T22 audit artifact saved and reviewed; only scoped checks passed",
+      "next_single_unit": "Correct manifest self-entry policy in a new saved audit package and report new ID/version/SHA; separately continue source-to-frozen-pair end-to-end reproduction evidence",
       "candidate_edit": "forbidden",
-      "state_or_other_role_report_write": "forbidden",
-      "output": "saved evidence with IDs/version/SHA, commands, environment/dependencies, logs, exact status and restart point; no PASS unless run completes and output is verified"
+      "report_write_scope": "reports/10.json only",
+      "output": "Persisted evidence and exact remaining blockers/restart conditions; no PASS for full reproduction unless independently supported"
     },
     "ROLE20": {
-      "instruction": "T21 independent review retained; independently review only newly saved T22 evidence; no duplicate completed T21 checks",
+      "instruction": "T22 review recorded; independently review newly saved manifest/full-reproduction evidence and later native Excel evidence",
       "runtime": "unobserved",
-      "status": "HELD_FULL_REPRODUCTION_AND_NATIVE_EXCEL"
+      "status": "HELD_FULL_REPRODUCTION_AND_NATIVE_EXCEL",
+      "duplicate_checks": "Do not repeat T22 scoped checks already passed"
     },
     "ROLE30": {
-      "instruction": "no new correction proposal needed unless T22/Excel evidence identifies a concrete defect",
+      "instruction": "No work unless ROLE10/ROLE20 produces a concrete new defect needing a correction proposal",
       "runtime": "unobserved"
     },
     "ROLE00": {
       "writer": "this_user_authorized_ROLE00_turn",
-      "scope": "T21 evidence reconciliation, ROLE10 next-unit definition, Excel operator availability/blocker record, final STATE integration after persisted readback"
+      "scope": "Integrate ROLE20 T22 report; maintain STATE; coordinate native Excel lane; no cross-chat dispatch claim"
     },
     "narrative_analyst": {
       "requested_model": "GPT-6 Astra",
@@ -1573,9 +1579,9 @@
       "shared_writes": "none"
     },
     "NATIVE_EXCEL": {
-      "owner": "00 coordinates; actual Windows/macOS Microsoft Excel operator unassigned",
+      "owner": "00 coordinates; actual Windows/macOS Microsoft Excel operator remains unassigned",
       "status": "HELD_WAITING_FOR_OPERATOR_AND_NATIVE_ENVIRONMENT",
-      "runtime": "not available in current ROLE00 runtime",
+      "availability_check": "No operator or native Excel environment identified in current verified records or available ROLE00 tools",
       "candidate": {
         "workbook_id": "libfile_c17d27b379308191acf27bb17e9f0497",
         "workbook_version": 0,
@@ -1584,16 +1590,16 @@
         "narrative_version": 1,
         "narrative_sha256": "e304571171ab948766a425831e7c54d90160555e4dcc7825d8e538f1cf376fd6"
       },
-      "start_condition": "operator and native Excel environment available; exact pinned candidate bytes verified before inspection",
-      "resume_position": "open/read/visual/print inspect fixed candidate; perform recalculation/save/reopen only on isolated copy; save evidence and hand to ROLE20",
+      "start_condition": "Named operator and Windows/macOS Excel environment available; exact fixed candidate bytes verified before inspection",
+      "resume_position": "Inspect frozen workbook without mutation; use isolated copy for recalc/save/reopen; preserve screenshots/PDF and result log for ROLE20",
       "candidate_mutation": "forbidden"
     }
   },
   "verified_current_state": {
-    "checked_commit": "b5e7b10d24273be5846f669460c82a3a1921ae73",
+    "checked_commit": "3804f29f364e88b24e2267daa573c62ac0275862",
     "plan_revision": "2.7",
     "operations_revision": "2.7.0",
-    "role20_task": "T21_ROLE20_REPRODUCTION_EVIDENCE_REVIEW_20261014",
+    "role20_task": "T22_ROLE20_SAVED_AUDIT_ARTIFACT_REVIEW_20261014",
     "role20_status": "HELD_FULL_REPRODUCTION_AND_NATIVE_EXCEL",
     "overall_release": "NOT_COMPLETE_NOT_ACCEPTED",
     "candidate_pair_fingerprint": "5fa7dadcc03c4789d65838f9ca58b3d6ea16fee239a4e6259a760e7e1c7652b3",
@@ -1601,17 +1607,23 @@
     "workbook": {
       "id": "libfile_c17d27b379308191acf27bb17e9f0497",
       "version": 0,
-      "sha256": "9c3c50835961e876844daf59db5709316055a79579f79aa151ad54e15a5f68f8"
+      "sha256": "9c3c50835961e876844daf59db5709316055a79579f79aa151ad54e15a5f68f8",
+      "bytes": 1812623,
+      "actual_version_and_sha_match": true
     },
     "narrative": {
       "id": "libfile_49d445210cb481918445587a5e22e0fb",
       "version": 1,
-      "sha256": "e304571171ab948766a425831e7c54d90160555e4dcc7825d8e538f1cf376fd6"
+      "sha256": "e304571171ab948766a425831e7c54d90160555e4dcc7825d8e538f1cf376fd6",
+      "bytes": 72988,
+      "actual_version_and_sha_match": true
     },
     "reproduction_package": {
       "id": "libfile_ed33f81229448191adaad9a6918117e2",
       "version": 1,
-      "sha256": "3e122dc50dceb37f18bdfafb729705adff17c2e24431d115ef40287265dbade8"
+      "sha256": "3e122dc50dceb37f18bdfafb729705adff17c2e24431d115ef40287265dbade8",
+      "bytes": 12679091,
+      "actual_version_and_sha_match": true
     },
     "t21_audit_package": {
       "id": "libfile_959b21cd36288191a59971a66ddaad77",
@@ -1633,34 +1645,77 @@
       "完全監査パッケージの履歴/依存/manifest網羅性（file_inventory 102中101一致、pyc不一致の整理を含む）",
       "Windows/macOS Microsoft Excel実機による表示・印刷・隔離コピー再計算・保存再開封"
     ],
-    "native_excel_operator": "未確保。ROLE00環境でも実施不能。",
-    "evidence_source": "reports/20.json T21_ROLE20_REPRODUCTION_EVIDENCE_REVIEW_20261014 at pinned commit"
+    "native_excel_operator": "unassigned; no candidate bytes changed",
+    "evidence_source": "reports/20.json T22_ROLE20_SAVED_AUDIT_ARTIFACT_REVIEW_20261014 at pinned commit",
+    "t22_audit_package": {
+      "id": "libfile_d8cd5bab2b388191a642a6bdc6afbc40",
+      "version": 1,
+      "bytes": 3003012,
+      "sha256": "70758d8ba5eb35b0f3b601f628e4d4eb5c5d721069792527d48719f47f6befbf",
+      "zip_crc": "PASS",
+      "entries": 285,
+      "embedded_manifest_actual_sha256": "c261d1fe3797b6be742c9268a2c956fa71b80eb7d9b474639b68a1f72e7b1177"
+    },
+    "role20_t22_scoped_passes": {
+      "fixed_identity": "PASS",
+      "fresh_extraction": "PASS; S01/S02/S03 only, same extractor and retained fixture",
+      "summary_nameerror_reproduction": "PASS for code delta/output identity only; historical command failure remains",
+      "four_xml_difference_explanation": "PASS for differential record and process-version explanation only; not proof of current U20 generation",
+      "pyc_difference_explanation": "PASS for scoped source/cache explanation only",
+      "history_index": "PASS for 92 project-related commits/index correspondence; not complete private conversations or command logs"
+    },
+    "fail_and_held": {
+      "manifest_self_entry": {
+        "status": "FAIL",
+        "recorded_bytes": 56226,
+        "recorded_sha256": "d4953c1ba0e97f6b247696cd87458b0d19cba283117e16620a89f4d99ff02abd",
+        "actual_bytes": 56562,
+        "actual_sha256": "c261d1fe3797b6be742c9268a2c956fa71b80eb7d9b474639b68a1f72e7b1177",
+        "other_entries": "284/285 match"
+      },
+      "full_reproduction": "HELD: no end-to-end run from original source through all transformations to frozen U20 workbook+narrative",
+      "audit_completeness": "HELD: missing historical lock/exact artifact build, full private chat/command history, precise failure timing and complete bundle/manifest trace",
+      "native_excel": "HELD: Windows/macOS Excel desktop evidence absent; operator unassigned"
+    }
   },
   "remaining_required_work": [
-    "ROLE10: 凍結U20ペアを変えず、元資料fresh抽出からブック/叙述までの完全生成経路を実行可能に立証する。困難なら不足コード/入力/依存を個別記録し、4 XML差とsummary_v2 NameErrorを別々に解消・説明する。",
-    "ROLE10: 完全監査証拠を整える。全取得可能履歴・失敗ログ・依存lock・正確なArtifact Tool build・実行前fixtureと実行後cacheの分離・pyc不一致を収録台帳とSHA/sizeで説明する。",
-    "00: Windows/macOS Microsoft Excelを使える担当者と環境を確保する。未確保の間はNATIVE_EXCELをHELDに維持する。",
-    "検査担当へ固定候補のID/版/実SHAを照合して引き渡し、必須の開封/日本語・配置/印刷/隔離再計算/保存再開封を証拠付きで実施する。候補ファイルは変更禁止。",
-    "ROLE20: 新たに保存されたROLE10/実機証拠の独立評価を行う。全範囲の要件評価完了までは総合PASSを出さない。",
-    "ROLE00: ROLE20の必要範囲評価と必須実機検査が揃った後にのみSTATE最終統合とrelease判定を行う。"
+    "ROLE10: correct the T22 audit manifest's self-entry approach (exclude/self-hash safely); save a new package version and report exact package ID/version/size/SHA/CRC and external manifest SHA.",
+    "ROLE10: demonstrate a complete source-to-frozen-U20 generation path or give a specific missing/unconnected/irrecoverable item ledger; record per-stage input/code/output identities and normal completion logs in separate output directories.",
+    "ROLE10: retain historical exact-reconstruction differences and summary_v2 NameError as distinct historical findings; do not imply they are repaired by T22 explanatory checks.",
+    "ROLE10/00: finish audit-completeness ledger for unavailable historical locks, exact Artifact Tool build, private history/command logs, missing timing records and immutable pre-run vs post-run inventory.",
+    "00: identify and secure a named Windows/macOS Microsoft Excel operator and environment; this remains unassigned and HELD.",
+    "Native operator: after candidate ID/version/actual SHA verification, perform required read/display/print checks and isolated-copy recalc-save-reopen, preserving OS/Excel version, locations, results and screenshots/PDF.",
+    "ROLE20: independently review new saved manifest/reproduction/native evidence without replaying T22 checks already passed.",
+    "ROLE00: final integration/release decision only after required reproduction, audit, independent review and native checks are complete."
   ],
   "execution_reconciliation": {
     "authority": "latest_main_verified_files",
-    "source_commit": "b5e7b10d24273be5846f669460c82a3a1921ae73",
-    "role10_t21_report": "T21_ROLE10_10A_REPRO_AUDIT_20261014; saved and retained",
-    "role20_t21_report": "T21_ROLE20_REPRODUCTION_EVIDENCE_REVIEW_20261014; integrated",
+    "source_commit": "3804f29f364e88b24e2267daa573c62ac0275862",
+    "role20_task": "T22_ROLE20_SAVED_AUDIT_ARTIFACT_REVIEW_20261014",
+    "role20_status": "HELD_FULL_REPRODUCTION_AND_NATIVE_EXCEL",
     "completed_evidence_not_replayed": [
-      "T21 audit ZIP identity/version/SHA/CRC check",
-      "seven-input inventory check",
-      "historical Unit17 saved output and arithmetic scope"
+      "T22 package ID/version/size/SHA/ZIP CRC",
+      "frozen workbook/narrative identity match and immutability",
+      "S01/S02/S03 same-extractor cell/cache extraction against retained fixtures",
+      "scoped summary NameError code/output explanation",
+      "4 XML differences/process version explanation",
+      "pyc difference explanation",
+      "92 project commit index correspondence"
     ],
-    "unresolved_roles_and_start_conditions": {
-      "ROLE10": "T22 distinct residual evidence batch; do not repeat historical limited replay; no candidate edits",
-      "ROLE20": "wait for new persisted evidence then independently review",
-      "NATIVE_EXCEL": "wait until a Windows/macOS Excel operator and environment are secured; exact candidate bytes must be verified"
+    "remaining": {
+      "manifest_self_entry": "FAIL; requires next package version with safe exclusion/ external digest record",
+      "full_reproduction": "HELD",
+      "audit_completeness": "HELD",
+      "native_excel": "HELD; no operator/environment identified"
+    },
+    "assignments": {
+      "ROLE10": "next distinct evidence/correction unit; no duplicate T22 checks; candidate read-only",
+      "NATIVE_EXCEL": "ROLE00 coordination; operator unassigned; start only once named operator and native application are available",
+      "ROLE20": "review newly saved evidence"
     },
     "duplicate_execution": "forbidden",
-    "cross_chat_dispatch_claim": "not made"
+    "cross_chat_dispatch_claim": "not made",
+    "candidate_pair_changed": false
   },
   "microsoft_desktop_excel_validation": {
     "required": true,
@@ -1670,19 +1725,30 @@
     "artifact_scope": "frozen U20 candidate pair; unchanged",
     "candidate_fingerprint": "5fa7dadcc03c4789d65838f9ca58b3d6ea16fee239a4e6259a760e7e1c7652b3",
     "required_checks": [
-      "開封修復警告なし",
-      "日本語・表・グラフ・注記の可読性",
-      "切れ/重なり/印刷改ページ/反復見出し",
-      "隔離コピーでの再計算→保存→再開封→値/式/エラー差分照合"
+      "open_without_repair_warning",
+      "Japanese text/tables/charts/annotations",
+      "clipping/overlap and print pagebreaks/headers",
+      "isolated-copy recalculation, save, reopen and compare values/formulas/errors"
     ],
     "required_evidence": [
-      "candidate ID/version/SHA",
-      "Windows/macOS と Excel の実バージョン",
-      "確認したシート/範囲/印刷ページと結果",
-      "スクリーンショットまたはPDF",
-      "再計算前後差分と保存再開封の結果"
+      "operator and timestamp",
+      "OS and exact Excel version",
+      "inspected locations and results",
+      "screenshots or PDF",
+      "recalculation differences"
     ],
-    "resume_condition": "操作者・環境確保後、凍結候補の実ファイルSHA照合を先に行う。再計算・保存は隔離コピーだけ。"
+    "resume_condition": "Secure a named operator and actual Windows/macOS desktop Excel; verify exact frozen candidate file SHA before inspection. Recalculation/save/reopen on isolated copy only.",
+    "availability_check": "No named Windows/macOS Microsoft Excel operator or execution environment found in verified records/tools for this turn.",
+    "workbook": {
+      "id": "libfile_c17d27b379308191acf27bb17e9f0497",
+      "version": 0,
+      "sha256": "9c3c50835961e876844daf59db5709316055a79579f79aa151ad54e15a5f68f8"
+    },
+    "narrative": {
+      "id": "libfile_49d445210cb481918445587a5e22e0fb",
+      "version": 1,
+      "sha256": "e304571171ab948766a425831e7c54d90160555e4dcc7825d8e538f1cf376fd6"
+    }
   },
   "validation_requirement_change": {
     "authority": "explicit_user_instruction_20261013_114539_JST",
