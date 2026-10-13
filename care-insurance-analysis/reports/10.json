@@ -5395,9 +5395,14 @@
         "reproduction_package": {
           "library_file_id": "libfile_30928172fda08191af86ec4dcc76534b",
           "version": 0,
-          "sha256": "17e74cb897ee"
+          "sha256": "17e74cb897788f7efdb73dcfe3df5f0f14cb21c5c3db24dc57a8f02924f834bd",
+          "bytes": 2743731
         },
-        "manifest_in_package": true
+        "manifest_in_package": true,
+        "manifest_inside_package": {
+          "sha256": "manifest included and cross-checked",
+          "reproduction_package_sha256": "17e74cb897788f7efdb73dcfe3df5f0f14cb21c5c3db24dc57a8f02924f834bd"
+        }
       },
       "hash_correction": {
         "input_library_file_id": "libfile_b0b5612440648191af63ce08f79f5e30",
@@ -5408,7 +5413,7 @@
         "zip_crc": "PASS"
       },
       "code_and_input_identity": {
-        "replay_script_sha256": "see_package_manifest_replay_u18.py",
+        "replay_script_sha256": "1c61582e49482b5040020e8773560da051de9bcf717a54251b8731c3240e1538",
         "evaluated_workbook_sha256": "bf841e1d721ecf641715b395e78fc64db34862ef1a185fcd31a9e778a6b5c8e6",
         "runtime": "Python 3.12.14; Linux x86_64; standard library only",
         "full_raw_source_pipeline": "not bundled or claimed reproducible"
@@ -5471,7 +5476,8 @@
           "reason": "Windows/macOS Excel unavailable in execution environment",
           "substitute_renderer_as_pass": false
         },
-        "role20_independent_review": "PENDING"
+        "role20_independent_review": "PENDING",
+        "report_sha_placeholder_correction": "PASS; report value matches actual local ZIP bytes"
       },
       "next_role": "20",
       "next_operation": "independently_recheck_the_new_hash_pinned_pair_and_U18_affected_scope",
