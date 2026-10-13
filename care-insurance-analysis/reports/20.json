@@ -1,290 +1,279 @@
 {
   "schema": "care_role_report/v1",
   "role": "20",
-  "task_id": "T19_ROLE20_U18_INDEPENDENT_RECHECK_20261013",
-  "producer_task_id": "T19_ROLE10_U18_CONSOLIDATED_REMAINING_FIXES_20261013",
-  "source_commit": "441645bf985045f91dd05acc1f61d462821c161c",
-  "pre_save_rechecked_commit": "441645bf985045f91dd05acc1f61d462821c161c",
-  "generation_commit": "58fc867e3d2eef130ccfe06e1f543d4a51ca510d",
+  "task_id": "T20_ROLE20_U20_INDEPENDENT_RECHECK_20261013",
+  "producer_task_id": "T20_ROLE10_ROLE20_TARGETED_CORRECTIONS_20261013",
+  "source_commit": "38ef0c20cbb60c14eeceb19ab8d7e5605b7e6935",
+  "pre_save_rechecked_commit": "38ef0c20cbb60c14eeceb19ab8d7e5605b7e6935",
+  "updated_at": "2026-10-13",
   "plan_revision": "2.7",
   "operations_revision": "2.7.0",
-  "updated_at": "2026-10-13",
-  "status": "U18_SCOPED_RECHECK_COMPLETE_WITH_REMAINING_DEFECTS_AND_HELD_REQUIRED_CHECKS",
+  "status": "U20_TARGETED_CHECKS_PASS_REQUIRED_PROJECT_CHECKS_HELD",
   "verdict": null,
-  "verdict_reason": "U18の実施可能な影響範囲検査を完了。必須の全工程再現・監査網羅性・Microsoft Excel実機が未完了のため総合判定は確定しない。",
+  "scoped_verdict": "PASS for U20 targeted C09/Appendix A/preservation/limited replay checks",
+  "verdict_reason": "今回の限定修正は独立確認済み。全工程再現・全監査収録とMicrosoft Excelデスクトップ実機検査が未完了のため総合PASSを出さない。",
   "release_status": "NOT_COMPLETE_NOT_ACCEPTED",
   "T07_completed": false,
   "full_independent_evaluation_completed": false,
   "startup_read": {
-    "commit": "441645bf985045f91dd05acc1f61d462821c161c",
+    "commit": "38ef0c20cbb60c14eeceb19ab8d7e5605b7e6935",
+    "expected_commit_matched": true,
     "files": {
       "PLAN.md": "4e9acf1277229cba731e1f9e010ef4cff52e290c",
       "STATE.json": "68a62bf525e083eb3a8ffed3a0eba3ce532f34db",
-      "reports/10.json": "0b335f4707c00682468b27e8c64596d8bca2e1cf",
-      "reports/20.json": "e1faeeb9f42cf3808b769303ab0af6ea0fcc8235",
+      "reports/10.json": "25d12c04b8aebc431fe5149f834ea42d0898274f",
+      "reports/20.json": "54653baf01d93c4cd464a1a504119475a669f506",
       "reports/30.json": "51c63f2f9e1c2ad516d845c19a743c147fa122f7"
     },
-    "expected_HEAD_matched": true,
-    "newer_candidate": false,
-    "producer_locator": "reports/10.json.role10_runs[task_id=T19_ROLE10_U18_CONSOLIDATED_REMAINING_FIXES_20261013]"
+    "reconciliation": "PLAN/STATE/30/20は前回と同一blob。最新reports10のT20を採用。U19という保存ブック名は報告済みであり、U20が引継ぐID/版/SHAに一致。"
   },
-  "candidate_fingerprint": "f3c9b7e206f45d009e4252ffec34ada153eba31788bf06e75723c266053baedb",
+  "candidate_fingerprint": "5fa7dadcc03c4789d65838f9ca58b3d6ea16fee239a4e6259a760e7e1c7652b3",
   "fingerprint_definition": "SHA256 of UTF-8 canonical JSON with sorted keys and separators comma/colon: {workbook:{id,version,sha256},narrative:{id,version,sha256}}. ZIP/manifest identities are pinned separately.",
   "evaluated_artifacts": {
     "workbook": {
-      "id": "libfile_77c58cb987e481919cf71068fa9ba824",
-      "version": 2,
-      "sha256": "9cf1161f5d8abdf8ecf88c1b1532a31ea4b19485a426911ea1a0bf1a4a79a0de",
-      "bytes": 1812572,
+      "id": "libfile_c17d27b379308191acf27bb17e9f0497",
+      "version": 0,
+      "sha256": "9c3c50835961e876844daf59db5709316055a79579f79aa151ad54e15a5f68f8",
+      "bytes": 1812623,
       "actual_version_and_sha_match": true
     },
     "narrative": {
-      "id": "libfile_bb0a8083e86881918f2af52518ef89b5",
-      "version": 3,
-      "sha256": "c2b56396897a5458d36097cc4d46dd3c42a4b7e75a5e871254a09707fbefbc18",
-      "bytes": 72227,
+      "id": "libfile_49d445210cb481918445587a5e22e0fb",
+      "version": 1,
+      "sha256": "e304571171ab948766a425831e7c54d90160555e4dcc7825d8e538f1cf376fd6",
+      "bytes": 72988,
       "actual_version_and_sha_match": true
     },
     "reproduction_package": {
-      "id": "libfile_30928172fda08191af86ec4dcc76534b",
-      "version": 2,
-      "sha256": "89ff085af1bb0b2d2dcfe165864b359f8a31ad5c23dff82f7023276c2f2f5bff",
-      "bytes": 2743562,
+      "id": "libfile_ed33f81229448191adaad9a6918117e2",
+      "version": 1,
+      "sha256": "3e122dc50dceb37f18bdfafb729705adff17c2e24431d115ef40287265dbade8",
+      "bytes": 12679091,
       "actual_version_and_sha_match": true
     },
     "embedded_manifest": {
       "path": "manifest.json",
-      "sha256": "a2767298705e85a4f719151f11d759d8694120f0b0f166da39186b3e344ffed9",
+      "sha256": "e984910faa3567b87da69c711a3a2a988b14c0ad4cc7e58c9391b6c9524d6366",
       "actual_bytes_verified": true
     }
   },
-  "manifest_SHA_reconciliation": {
-    "status": "ACTUAL_IDENTITIES_RESOLVED_REPORT_FIELDS_STALE",
-    "zip_file_sha256": "89ff085af1bb0b2d2dcfe165864b359f8a31ad5c23dff82f7023276c2f2f5bff",
-    "embedded_manifest_file_sha256": "a2767298705e85a4f719151f11d759d8694120f0b0f166da39186b3e344ffed9",
-    "zip_SHA_recorded_inside_actual_manifest": null,
-    "actual_manifest_has_reproduction_package_SHA_field": false,
-    "report10_manifest_inside_package_sha256": "manifest included and cross-checked",
-    "report10_manifest_inside_package_reproduction_package_sha256": "17e74cb897788f7efdb73dcfe3df5f0f14cb21c5c3db24dc57a8f02924f834bd",
-    "resolution": "17e74...はreports10.superseded_intermediate_versionsが旧ZIP版0と記録する値。現ZIP版2の実測値でもmanifestファイルSHAでもない。実際のmanifest内にはこの17e74...文字列もZIP自身のSHA欄も存在しない。user_reported_manifest_file_sha256は実測により一致確認。reports10側のplaceholderと誤解を招く旧ZIP欄を訂正対象とする。ROLE20はreports10もZIPも変更しない。",
-    "self_reference_note": "ZIP内manifestへ同じZIPの完成後SHAを埋め込む循環を要求しない。外部のreports10でZIP SHAと内部manifest SHAを別名で記録すればよい。",
-    "content_checks": {
-      "zip_crc": "PASS",
-      "entries": 6,
-      "manifest_output_entries_checked": 4,
-      "all_four_SHA_and_sizes_match": true,
-      "embedded_workbook_narrative_equals_separately_saved_bytes": true
-    }
-  },
   "prior_report": {
-    "commit": "75f970f160e86f42379d246fd776f6f5049f5923",
+    "commit": "c0f48eddf945eecc22188a3004493d787369613c",
     "path": "care-insurance-analysis/reports/20.json",
-    "blob_sha": "e1faeeb9f42cf3808b769303ab0af6ea0fcc8235",
-    "scope": "過去の詳細検査結果は固定コミット参照で保持。旧総合判定の新候補への転記なし。"
+    "blob_sha": "54653baf01d93c4cd464a1a504119475a669f506",
+    "note": "過去の詳細検査・残存要件は固定コミットで保持。旧総合判定の転記なし。"
   },
   "newly_checked": {
+    "identity": {
+      "status": "PASS",
+      "zip_crc": "PASS",
+      "zip_entries": 35,
+      "embedded_pair_equals_separately_saved_pair": true,
+      "manifest_pair_matches": true,
+      "old_U18_SHA_report_correction": "reports10 T19はZIP89ff...と内部manifest a276...を別記録へ訂正し、旧17e...を現物SHAとする誤記を解消。",
+      "pair_fingerprint_matches_producer": true
+    },
+    "C09": {
+      "status": "PASS",
+      "cells": [
+        "J973",
+        "K973",
+        "L973",
+        "J975",
+        "K975",
+        "L975",
+        "J977",
+        "K977",
+        "L977"
+      ],
+      "new_text": "件数比較対象外（地域規模・対象母数が異なるため）",
+      "scope": "分析要点の指定9セルだけがU18から変化。数値・数式・書式・県全国有効率・分母0の未算出率・件数0は全て保持。未算出という率側の理由を件数行に使用していた問題は解消。"
+    },
+    "Appendix_A": {
+      "status": "PASS",
+      "workbook_storage_version": 0,
+      "narrative_storage_version": 1,
+      "library_IDs_match": true,
+      "workbook_SHA_matches": true,
+      "narrative_self_SHA": "自己参照を避け外部の固定reports10へ委ねる方式。実SHAはROLE20が別途実測。"
+    },
     "preservation": {
-      "status": "PASS_EXACT_U18_ALLOWLIST",
+      "status": "PASS_EXACT_ALLOWLIST",
       "sheets": 15,
       "charts": 148,
-      "sheet_order_identical": true,
+      "sheet_order_matches": true,
       "changed_parts": [
-        "xl/worksheets/sheet12.xml",
-        "xl/worksheets/sheet14.xml",
         "xl/worksheets/sheet15.xml"
       ],
-      "changed_cell_count": 17,
-      "changed_cells": {
-        "分析要点": [
-          "A24",
-          "B22",
-          "G21",
-          "H21",
-          "I21",
-          "J21",
-          "K21",
-          "L21",
-          "M21",
-          "N21",
-          "N22",
-          "N973",
-          "N975",
-          "N977",
-          "N1197"
-        ],
-        "Ⅲ審査判定データ（変更率）": [
-          "D117"
-        ],
-        "Ⅳ事務データ": [
-          "D205"
-        ]
-      },
-      "all_other_XML_equal_after_removing_allowed_cells": true,
+      "changed_cells": 9,
       "all_other_parts_byte_identical": true,
-      "chart_drawing_media_relationship_bytes_identical": true,
-      "styles_workbook_names_print_settings_unchanged": true,
-      "internal_relationship_targets_resolve": true,
-      "XML_wellformed": true,
-      "C03": "G513:G521を一次二次表G128:G136に再照合して一致。9修正保持・二重適用なし。",
-      "annotations": "既存範囲を保持、追加なし。実際にはD117とD205の2注記を変更。manifestのupdated=1はD117だけを数えた不完全な要約。",
-      "note_style": "D117=1203。styles.xmlはバイト同一で旧固定元のfont/fill/border/number format/alignmentと同じ。見た目の合格ではない。"
+      "changed_sheet_XML_equal_after_removing_9_cells": true,
+      "all_detail_sheets_byte_identical": true,
+      "chart_series_axes_positions_drawings_media_relationships_byte_identical": true,
+      "styles_names_print_settings_unchanged": true,
+      "all_internal_relationship_targets_resolve": true,
+      "all_XML_wellformed": true,
+      "C03": "既修正9セルを保持し、U18から変更なし。原資料との前回独立照合を適用。"
     },
-    "numeric": {
+    "annotation_audit": {
+      "status": "PASS_WITH_EXPLICIT_BASELINE",
+      "existing": 21,
+      "distinct_ranges": 21,
+      "each_expected_merge_occurs_once": true,
+      "added": 0,
+      "duplicates": 0,
+      "U20_vs_U18_updated": 0,
+      "U18_vs_U17_inherited_updated": 2,
+      "updated_ranges": [
+        "Ⅲ審査判定データ（変更率）!D117:AD119",
+        "Ⅳ事務データ!D205:AA205"
+      ],
+      "note": "更新2件はU17→U18の履歴。U18→U20では注記更新0件。manifest.baseline_pairの略記だけで更新2件を今回差分と読まない。README/本文には継承と明記され、実差分と対応する。"
+    },
+    "numeric_regression": {
+      "status": "PASS_TRANSCRIPTION_AND_ARITHMETIC_ONLY",
       "source_cell_checks": 3506,
       "direct_matches": 3490,
       "documented_exceptions": 16,
-      "exception_recheck": "C03修正9件とS02丸め率7件（F264:F270/F260）を元資料から再照合。未説明差なし。",
+      "exceptions": "前回検証済みC03の9修正とS02の7丸め率。数値全保持を確認して適用。",
       "arithmetic_difference_checks": 1407,
       "arithmetic_mismatches": 0,
       "appendix_numeric_checks": 829,
       "appendix_mismatches": 0,
-      "recognition_summary": "F21:L21とF1197:L1197が同一。S01 J/P/V226、S02 J226の提供平均とJ/P/V225の有効ケース数を直接照合。新本文N19の認定日数・意見書日数の各3差は内部値の引算と表示丸めに一致。",
-      "scope": "提供値転記と算術。個票・日付からの平均再集計、有意差、因果推論は未実施。"
-    },
-    "C04": {
-      "status": "RESOLVED_DISPLAY_BOUNDARY",
-      "evidence": "S10実ファイルSHA=a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2、word/document.xml表62行3セル8=25.6を直接読取り。要点B22/N22/A24、D205、N20は承認済み年度表示代替値と原値監査保持を区別。F1194及び原J208は保持。",
-      "limitation": "文章の『二つの値を置換しない』は原値非改変の文脈として評価。S01第2回値への復元、県全国/前回との比較や差へ転用していない。表示と原値の語をより明示すると誤読を減らせるが、従前の承認否定は解消。"
-    },
-    "C09": {
-      "status": "VALID_VALUES_AND_HOLDS_PRESERVED_MINOR_LABEL_REMAINS",
-      "evidence": "7件数行の0件、7率行の分母0未算出、県全国の有効率を保持。N973/975/977に件数と率の理由を追記。J:Lの既存『比較不可（未算出）』は変更されず、件数行の理由表示がなお曖昧。"
-    },
-    "C10_C11": {
-      "status": "INPUT_SPECIFIC_HOLDS_PRESERVED",
-      "evidence": "C10シート・対象注記と要点16の状態は未変更。C11要点1036/1038全保留、1042/1044市今回のみ有効、1048/1050市今回と前回有効。原詳細と保留理由は保持。新規/県全国更新/区分、S02市更新の保留を一括解除しない。"
+      "not_claimed": [
+        "個票からの補正再集計",
+        "元日付からの平均再計算",
+        "有意差検定",
+        "因果効果"
+      ]
     },
     "narrative": {
-      "status": "U18_AFFECTED_CLAIMS_CHECKED_METADATA_DEFECT_REMAINS",
-      "changed_claims": [
-        "N19",
-        "I10",
-        "N20",
-        "付録A/B/Dと統合状態"
-      ],
-      "unchanged_scope": "R02-R06、R07の他の数値・解釈・仮説・提案は旧版との差分と元セル照合で適用を確認。W1→W2の参照置換は実セル番地とは分離して評価。",
-      "observed_vs_interpretation": "N19は記述的算術差、I10は工程差の算出や職員不足の原因断定を抑止。N20は別年度参考。社会学・統計学の観点と仮説/政策示唆の区別を保持。",
-      "identity": "W2ブックID/版2/SHAは正しい。一方narrative_candidate.storage_versionは0のままで保存実版3と不一致。旧reports20と新対象一致の古文は削除。",
-      "full_claim_acceptance": "必須検査全体の最終PASSは未宣言。"
+      "status": "PASS_TARGETED_CHANGES_MINOR_EDITORIAL_NOTE",
+      "method": "旧U18との全文差分を確認。別名W2→W3、ID/版/SHA、C09状態、監査範囲/注記履歴の変更を確認。数値・学術的解釈・仮説/政策提案の実質変更なし。付録数値829照合を新ブックで再実行。",
+      "R02_R07": "本文範囲を保持。前回N19/I10/N20の記述的比較・年度参考の独立根拠を適用。",
+      "minor_note": "付録D E20-PAIR-03行に『本文自身の保存版自己申告は省き』が残り、付録Aの版1記載と文言だけが不一致。ID/版/SHAの実同定は確定しており数値判断は影響なし。"
     },
-    "reproduction": {
-      "status": "PASS_BOUNDED_OOXML_REPLAY_ONLY",
-      "method": "同梱replay_u18.pyを読取り、明示sourceと新規隔離outputへPython 3.12.14標準ライブラリで一回実行。既存候補への出力なし。",
-      "command": "python replay_u18.py --source evaluated_base.xlsx --output <fresh-output>/candidate.xlsx",
+    "C04_C10_C11": {
+      "status": "PASS_HOLD_BOUNDARY_PRESERVATION",
+      "evidence": "U18から数値・局所注記・比較状態に変更なし。C04の25.6は年度表示代替でS01復元/地域・前回比較ではない。C10見出し/欠落を推測補完せず、C11の正式分母待ち及びゼロ率の入力別保留を保持。",
+      "held_inputs": "元資料不足そのものは解消していない。境界保持のPASSを保留値のPASSにしない。"
+    },
+    "limited_replay": {
+      "status": "PASS",
+      "script": "replay_u20.py",
+      "environment": "Python3.12.14 / Linux / standard library",
+      "execution": "同梱コードを読取り、同梱evaluated_base.xlsxを入力に新規隔離出力へ1回再実行。既存出力を拒否するガードあり。",
       "exit_code": 0,
-      "replayed_sha256": "9cf1161f5d8abdf8ecf88c1b1532a31ea4b19485a426911ea1a0bf1a4a79a0de",
-      "matches_saved_candidate": true,
-      "prior_absolute_path_dependency_resolved_for_this_bounded_route": true,
-      "not_demonstrated": [
-        "元資料からの全解析生成",
-        "物語説明の生成再現",
-        "全履歴/失敗/旧版/原入力を含むR14監査網羅性",
-        "Excel実機の再計算・保存再開封"
-      ],
-      "package_contents": [
-        "README.txt",
-        "candidate.xlsx",
-        "evaluated_base.xlsx",
-        "manifest.json",
-        "narrative.md",
-        "replay_u18.py"
-      ],
-      "limits": "不足をmanifestに明記した点は改善。ただし完全な実データ収録台帳/欠落理由台帳・全工程コード/入力・実行ログ・別添簡易確認文は揃っていない。旧パッケージの全工程不備が解消したとは扱わない。",
-      "implementation_note": "replayは--outputの既存ファイル/入力同一パスを拒否しない。今回の実行は新規隔離出力のみ。再配布前に上書き防止を実装するのが望ましい。"
+      "output_sha256": "9c3c50835961e876844daf59db5709316055a79579f79aa151ad54e15a5f68f8",
+      "matches_saved_workbook": true,
+      "scope": "U18基底から9ラベルを更新する限定再現のみ。全解析生成や説明生成の再現ではない。"
+    },
+    "audit_package": {
+      "status": "PARTIAL_PROGRESS_REQUIRED_COVERAGE_HELD",
+      "input_records_checked": 9,
+      "deduplicated_input_files": 7,
+      "legacy_code_records_checked": 11,
+      "all_20_size_SHA_and_original_input_checks_match": true,
+      "prior_U18_package_SHA_matches": true,
+      "improvement": "原資料・過去コード・以前のZIP・失敗記録・不足理由を収録し、未達範囲を明記。",
+      "remaining": "全工程コード/入力bundle・固定依存情報・全取得可能履歴の収録照合/全ログ・必須簡易確認文等の完全性は未実証。原資料を今回GitHubに転載していない。",
+      "full_pipeline": "HELD。legacy replay_v2.pyがimportするreplay_pipeline.pyは現ZIPに存在せず、完全なbundleも欠落台帳に列挙。ROLE10のModuleNotFoundError記録と整合するが、ROLE20が全工程を実行したとはしない。"
     }
   },
   "prior_evidence_applicability": {
-    "source": "reports20 at 75f970f160e86f42379d246fd776f6f5049f5923",
-    "verified_base_SHA": "bf841e1d721ecf641715b395e78fc64db34862ef1a185fcd31a9e778a6b5c8e6",
-    "reuse_condition": "変更17セル以外のXML/パーツ同一を確認。未変更の元資料定義・保留境界の証拠のみ適用。新候補の数値差/付録数値は再実行。",
-    "not_transferred": [
+    "baseline_workbook_SHA": "9cf1161f5d8abdf8ecf88c1b1532a31ea4b19485a426911ea1a0bf1a4a79a0de",
+    "verified": "同梱基底SHAを確認し、差分が指定9文字列セルのみで、それ以外はXML同一。原資料収録9記録も添付実バイトと一致。",
+    "reused": [
+      "C03元資料照合",
+      "C04年度参考と原値監査保持",
+      "C10/C11入力別保留根拠",
+      "R02-R07の未変更主張と出典・学術的限界"
+    ],
+    "fresh_checks": [
+      "ID/版/SHA",
+      "C09九セル",
+      "Appendix A",
+      "注記範囲/差分",
+      "保存構造/関係参照",
+      "全算術差と付録数値",
+      "拡充監査ZIP",
+      "限定再現"
+    ],
+    "not_reused": [
       "旧総合判定",
       "生成者自己検査を独立PASSとすること",
-      "旧描画を新候補実機合格とすること"
+      "旧描画を現native PASSにすること"
     ]
   },
-  "U18_finding_statuses": [
-    {
-      "id": "E20-U17-HASH-01",
-      "status": "RESOLVED_OLD_ZIP_HASH; NEW_METADATA_ISSUE",
-      "reason": "旧65桁値の訂正は確認。現U18 ZIP SHAも一致。manifest報告欄の問題はE20-U18-MANIFEST-01。"
-    },
-    {
-      "id": "E20-PAIR-06",
-      "status": "RESOLVED_SCOPED_CONTENT",
-      "reason": "要約/詳細/本文の提供平均・記述的差を統一。個票再集計と混同なし。"
-    },
-    {
-      "id": "E20-PAIR-04",
-      "status": "RESOLVED_SCOPED_CONTENT",
-      "reason": "承認済年度表示代替とS01原値監査保持を明記し、異期間比較を抑止。"
-    },
+  "finding_statuses": [
     {
       "id": "E20-PAIR-01",
-      "status": "PARTIALLY_RESOLVED_MINOR_LABEL",
-      "reason": "説明注記は明確化。件数行J:Lの未算出理由は残存。"
+      "status": "PASS",
+      "reason": "C09指定9セル修正を確認。"
     },
     {
       "id": "E20-PAIR-03",
-      "status": "PARTIALLY_RESOLVED_METADATA",
-      "reason": "W2固定ID/版/SHAと古い評価一致記述を訂正。文書自身storage_version=0が残存。"
+      "status": "PASS_TARGETED_IDENTITY",
+      "reason": "Appendix Aの実版1一致。付録Dの軽微な文言矛盾は別途記録。"
     },
     {
-      "id": "E20-PAIR-05",
-      "status": "PARTIAL_REPLAY_PASS_REQUIRED_COVERAGE_OPEN",
-      "reason": "限定更新再現は独立成功。全工程と全監査、nativeは未達。"
+      "id": "E20-U18-MANIFEST-01",
+      "status": "PASS",
+      "reason": "ZIPと内部manifestのSHA別記録、実バイト一致。旧T19欄も訂正。"
+    },
+    {
+      "id": "E20-U18-AUDIT-COUNT",
+      "status": "PASS_WITH_BASELINE_CLARIFICATION",
+      "reason": "21件/継承更新2件/追加重複0を確認。今回U18からの更新は0。"
+    },
+    {
+      "id": "E20-PAIR-04",
+      "status": "PASS_APPLICABLE_PRIOR_EVIDENCE",
+      "reason": "年度参考と原値の区別保持。"
+    },
+    {
+      "id": "E20-PAIR-06",
+      "status": "PASS_APPLICABLE_PRIOR_EVIDENCE",
+      "reason": "認定日数の提供値比較の整合を保持。"
     },
     {
       "id": "E20-U17-NOTE-STYLE",
-      "status": "RESOLVED_STRUCTURAL_NATIVE_HELD",
-      "reason": "D117のstyle1203への復帰を独立確認。日本語可読性は実機未実施。"
+      "status": "PASS_STRUCTURAL_NATIVE_HELD",
+      "reason": "D117 style1203保持。"
+    },
+    {
+      "id": "E20-PAIR-05",
+      "status": "HELD",
+      "reason": "限定再現PASS、全工程と完全監査は未達。"
     },
     {
       "id": "E20-NATIVE-01",
       "status": "HELD",
-      "reason": "Linuxのみ。Windows/macOS Microsoft Excel desktopなし。"
+      "reason": "必須Microsoft Excelデスクトップ環境なし。"
     }
   ],
-  "remaining_defects": [
-    {
-      "id": "E20-U18-MANIFEST-01",
-      "severity": "major_metadata",
-      "owner": "10",
-      "location": "reports/10.json T19 new_pair.manifest_inside_package",
-      "finding": "sha256欄がplaceholder。reproduction_package_sha256欄は旧ZIP v0で、実際の内部manifestには存在しない。",
-      "action": "最新T19を維持し、zip_file_sha256=89ff...、embedded_manifest_sha256=a276...を別々に実測記録。17e...を現manifest/ZIPのSHAと扱わず旧版履歴へ限定。ZIP自体を再生成する必要はない。"
-    },
-    {
-      "id": "E20-PAIR-03",
-      "severity": "minor",
-      "owner": "10",
-      "location": "narrative Appendix A narrative_candidate.storage_version",
-      "finding": "実版3に対して0。",
-      "action": "次版文書で自己版の固定誤記をなくし、外部報告/manifestで権威あるID/版を記録する方式へ統一。版更新時の循環誤記を避ける。"
-    },
-    {
-      "id": "E20-PAIR-01",
-      "severity": "minor",
-      "owner": "10",
-      "location": "分析要点!J973:L973,J975:L975,J977:L977",
-      "finding": "件数0有効とのN列追記は正しいが、件数行比較欄は依然『未算出』理由。",
-      "action": "指定9セルを『対象外（件数比較を実施しない）』等、実際の運用方針に一致する理由へ統一。率の分母0未算出は率行だけで保持。"
-    },
+  "remaining_defects_and_HELD": [
     {
       "id": "E20-PAIR-05",
-      "severity": "major_incomplete_requirement",
+      "status": "HELD",
+      "blocks_submission": true,
       "owner": "10/00",
-      "location": "reproduction/audit package R11/R14 Q11/Q14",
-      "finding": "限定OOXML再現は合格だが全解析/全監査パッケージ要件を満たさない。",
-      "action": "取得可能原資料・コード・版・作業履歴を私的パッケージで台帳化し、未取得分は具体的理由・影響を記録。完成要件の変更は20が行わない。"
+      "action": "欠落台帳の全工程コード・bundle・固定依存版を回収し、原資料から別出力へ再現。R14の全収録台帳/未収録理由/実行ログ/簡易確認文を揃え、20へ検査可能な保存版を渡す。"
     },
     {
-      "id": "E20-U18-AUDIT-COUNT",
-      "severity": "minor",
+      "id": "E20-NATIVE-01",
+      "status": "HELD",
+      "blocks_submission": true,
+      "owner": "00→native Excel検査担当→20",
+      "action": "Windows/macOS Microsoft Excelで固定候補の修復警告、日本語・グラフ・注記、切れ重なり、印刷改ページ、隔離コピー再計算/保存/再開封を実施。ID/版/SHA、OS/Excel版、箇所・時刻・結果・画像/PDF証拠を保存。"
+    },
+    {
+      "id": "E20-U20-EDITORIAL-01",
+      "status": "FAIL_MINOR_WORDING",
+      "blocks_submission_independently": false,
       "owner": "10",
-      "location": "manifest checks.annotation_count / reports10 preservation",
-      "finding": "注記更新1と記録する一方D117・D205の2注記文言が変更。17セル全体数は正しい。",
-      "action": "注記更新件数と対象範囲の説明を実差分に合わせる。"
+      "location": "narrative Appendix D E20-PAIR-03",
+      "action": "次の必要更新時に『保存版自己申告は省き』を『自己SHAは省き、ID/保存版は付録A、実SHAは固定reports10』へ整合。これ単独で新たな全再生成を要求しない。"
     }
   ],
   "native_excel_validation": {
@@ -312,57 +301,22 @@
       "元14シートと148グラフの保存対象"
     ],
     "evidence_required": "対象ID/版/SHA、Excel版・OS・フォント、検査範囲/ページ、操作者/日時、スクリーンショットまたはPDF、再計算前後値・数式・エラー差分、別コピー保存再開封。",
-    "artifact_scope": "この報告のworkbook ID libfile_77c58cb987e481919cf71068fa9ba824 version2 SHA9cf116...に対する全実機チェック未実施",
+    "artifact_scope": "libfile_c17d27b379308191acf27bb17e9f0497 version0 SHA9c3c50835961e876844daf59db5709316055a79579f79aa151ad54e15a5f68f8",
     "evidence_from_native_application": []
   },
-  "requirement_coverage": {
-    "R01": "PARTIAL:15シート保持/対象期間確認; visual_HELD",
-    "R02": "APPLICABLE_UNCHANGED_NUMERIC_EVIDENCE_RECHECKED",
-    "R03": "APPLICABLE_UNCHANGED_NUMERIC_EVIDENCE_RECHECKED",
-    "R04": "APPLICABLE_UNCHANGED_NUMERIC_EVIDENCE_RECHECKED",
-    "R05": "SOURCE_TRANSCRIPTION_CHECKED; C10/raw_adjustment_HELD",
-    "R06": "C09/C11_BOUNDARIES_CHECKED; minor_label_OPEN",
-    "R07": "U18_AFFECTED_CONTENT_RESOLVED",
-    "R08": "HELD_UNEXECUTED_CONDITIONAL_PROCESSING",
-    "R09": "REPORT_HANDOFF_ONLY_NOT_PROJECT_COMPLETE",
-    "R10": "CONTENT_CHECKED; METADATA_DEFECT; NATIVE_HELD",
-    "R11": "BOUNDED_REPLAY_PASS; FULL_PIPELINE_OPEN",
-    "R12": "PAIR_AND_ZIP_PIN_PASS; MANIFEST_REPORT_METADATA_OPEN",
-    "R13": "APPROVED_DISPLAY_AND_HOLD_BOUNDARIES_CHECKED",
-    "R14": "INCOMPLETE_AUDIT_COVERAGE",
-    "R15": "U18_CLAIMS_CHECKED; SELF_VERSION_METADATA_OPEN"
-  },
-  "check_coverage": {
-    "Q01": "PASS_SCOPED_TRANSCRIPTION",
-    "Q02": "PASS_C03_AND_DISPLAYED_COUNTS",
-    "Q03": "PASS_1407_ARITHMETIC_DIFFERENCES",
-    "Q04": "C03/C09/C10/C11_RECHECKED; RAW_DATE_CASES_HELD",
-    "Q05": "TRANSCRIPTION_ONLY; RAW_RECALCULATION_HELD",
-    "Q06": "EXACT_PRESERVATION_PASS; NATIVE_LAYOUT_HELD",
-    "Q07": "XML_RELATIONSHIPS_PASS; NATIVE_ERRORS_HELD",
-    "Q08": "HELD_NATIVE_RECALCULATION",
-    "Q09": "HELD_NATIVE_RENDERING",
-    "Q10": "U18_COMPARISON_ALIGNMENT_PASS; C09_MINOR_LABEL",
-    "Q11": "BOUNDED_REPLAY_PASS; FULL_PIPELINE_HELD",
-    "Q12": "ARTIFACT_READBACK_PASS; REPORT_METADATA_DEFECT; NATIVE_HELD",
-    "Q13": "C04_CONTENT_RESOLVED; C09/C10/C11_RETAINED",
-    "Q14": "INCOMPLETE_REQUIRED_AUDIT",
-    "Q15": "U18_CHANGED_CLAIMS_AND_APPENDIX_NUMBERS_CHECKED; SELF_VERSION_DEFECT",
-    "Q16": "NO_NEW_UNVERIFIED_COMPARISON_OR_HOLD_RELEASE"
-  },
-  "next_role": "10",
+  "next_role": "00",
   "next_actions": [
     {
-      "owner": "10",
-      "action": "最新T19全記録を保持したままSHA欄と監査要約を訂正。自己版誤記とC09指定9セルを限定修正し、新固定ペアへ引継ぐ。"
+      "owner": "00",
+      "action": "残る提出阻害2系統（全工程/監査、Excel実機）の担当と環境を調整。限定修正を繰り返すだけで総合PASSへ進めない。"
     },
     {
-      "owner": "00",
-      "action": "全工程/監査未達の解消担当とMicrosoft Excelデスクトップ実機環境を調整。"
+      "owner": "10",
+      "action": "全工程/監査欠落を解消して証拠保存。軽微な付録D文言は次の必要更新と同時に整合。候補を変更した場合は新ID/版/SHAを通知。"
     },
     {
       "owner": "20",
-      "action": "訂正記録と新ペアの影響範囲を再確認し、必要なnative/全工程/監査証拠を独立評価。必須範囲が完了するまで総合PASS不可。"
+      "action": "新たな再現/監査/実機証拠の独立検査。候補変更時は影響範囲を根拠付きで再評価。"
     }
   ],
   "write_scope": [
@@ -372,5 +326,148 @@
   "originals_modified": false,
   "STATE_modified": false,
   "role10_artifacts_modified": false,
-  "shared_code_modified": false
+  "shared_code_modified": false,
+  "requirement_coverage": {
+    "R01": {
+      "status": "HELD",
+      "evidence": "対象/期間/15シート保持PASS、実機表示未実施",
+      "scope": "内容又は対象要件の記載範囲。個票未検証やnativeを含む総合PASSではない。"
+    },
+    "R02": {
+      "status": "PASS",
+      "evidence": "未変更人口指標と付録数値再照合",
+      "scope": "内容又は対象要件の記載範囲。個票未検証やnativeを含む総合PASSではない。"
+    },
+    "R03": {
+      "status": "PASS",
+      "evidence": "未変更認定指標と算術根拠適用",
+      "scope": "内容又は対象要件の記載範囲。個票未検証やnativeを含む総合PASSではない。"
+    },
+    "R04": {
+      "status": "PASS",
+      "evidence": "自立度指標と比較を保持",
+      "scope": "内容又は対象要件の記載範囲。個票未検証やnativeを含む総合PASSではない。"
+    },
+    "R05": {
+      "status": "HELD",
+      "evidence": "提供値照合PASS、C10/補正個票は保留",
+      "scope": "内容又は対象要件の記載範囲。個票未検証やnativeを含む総合PASSではない。"
+    },
+    "R06": {
+      "status": "HELD",
+      "evidence": "C09修正PASS、C11未確定入力を保留",
+      "scope": "内容又は対象要件の記載範囲。個票未検証やnativeを含む総合PASSではない。"
+    },
+    "R07": {
+      "status": "PASS",
+      "evidence": "提供平均の記述比較とC04年度表示境界を保持",
+      "scope": "内容又は対象要件の記載範囲。個票未検証やnativeを含む総合PASSではない。"
+    },
+    "R08": {
+      "status": "HELD",
+      "evidence": "条件付き合議体処理の完了を確認していない",
+      "scope": "内容又は対象要件の記載範囲。個票未検証やnativeを含む総合PASSではない。"
+    },
+    "R09": {
+      "status": "HELD",
+      "evidence": "役割別報告は保存、プロジェクト全体完了は未確認",
+      "scope": "内容又は対象要件の記載範囲。個票未検証やnativeを含む総合PASSではない。"
+    },
+    "R10": {
+      "status": "HELD",
+      "evidence": "内容/保存構造PASS、native未実施",
+      "scope": "内容又は対象要件の記載範囲。個票未検証やnativeを含む総合PASSではない。"
+    },
+    "R11": {
+      "status": "HELD",
+      "evidence": "限定再現PASS、全工程未達",
+      "scope": "内容又は対象要件の記載範囲。個票未検証やnativeを含む総合PASSではない。"
+    },
+    "R12": {
+      "status": "PASS",
+      "evidence": "固定版と根拠付き影響範囲検査",
+      "scope": "内容又は対象要件の記載範囲。個票未検証やnativeを含む総合PASSではない。"
+    },
+    "R13": {
+      "status": "PASS",
+      "evidence": "年度参考/保留境界の表示を保持",
+      "scope": "内容又は対象要件の記載範囲。個票未検証やnativeを含む総合PASSではない。"
+    },
+    "R14": {
+      "status": "HELD",
+      "evidence": "収録増加、全監査網羅性は未達",
+      "scope": "内容又は対象要件の記載範囲。個票未検証やnativeを含む総合PASSではない。"
+    },
+    "R15": {
+      "status": "PASS",
+      "evidence": "R02-R07内容/根拠を保持、軽微な付録D状態文言に注記",
+      "scope": "内容又は対象要件の記載範囲。個票未検証やnativeを含む総合PASSではない。"
+    }
+  },
+  "check_coverage": {
+    "Q01": {
+      "status": "PASS",
+      "evidence": "転記保持/付録829件"
+    },
+    "Q02": {
+      "status": "PASS",
+      "evidence": "件数0/C03保持"
+    },
+    "Q03": {
+      "status": "PASS",
+      "evidence": "1407算術差"
+    },
+    "Q04": {
+      "status": "HELD",
+      "evidence": "C03/C09/C10/C11境界確認、原日付検査未実施"
+    },
+    "Q05": {
+      "status": "HELD",
+      "evidence": "補正提供値転記のみ"
+    },
+    "Q06": {
+      "status": "HELD",
+      "evidence": "全パーツ保持PASS、実表示未実施"
+    },
+    "Q07": {
+      "status": "HELD",
+      "evidence": "XML/参照先PASS、実機警告未検査"
+    },
+    "Q08": {
+      "status": "HELD",
+      "evidence": "native再計算未実施"
+    },
+    "Q09": {
+      "status": "HELD",
+      "evidence": "native描画未実施"
+    },
+    "Q10": {
+      "status": "PASS",
+      "evidence": "数値と比較理由、変更主張を確認"
+    },
+    "Q11": {
+      "status": "HELD",
+      "evidence": "限定再現のみPASS"
+    },
+    "Q12": {
+      "status": "HELD",
+      "evidence": "保存SHA/CRCはPASS、native再開封未実施"
+    },
+    "Q13": {
+      "status": "PASS",
+      "evidence": "C04年度表示とC09/C10/C11境界保持"
+    },
+    "Q14": {
+      "status": "HELD",
+      "evidence": "完全監査未達"
+    },
+    "Q15": {
+      "status": "PASS",
+      "evidence": "対象版/主張対応と数値保持確認"
+    },
+    "Q16": {
+      "status": "PASS",
+      "evidence": "禁止比較/保留解除なし"
+    }
+  }
 }
