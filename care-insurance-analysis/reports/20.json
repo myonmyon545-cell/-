@@ -1,31 +1,31 @@
 {
   "schema": "care_role_report/v1",
   "role": "20",
-  "task_id": "T21_ROLE20_REPRODUCTION_EVIDENCE_REVIEW_20261014",
-  "producer_task_id": "T21_ROLE10_10A_REPRO_AUDIT_20261014",
-  "source_commit": "87e414c0ef4ee032d5690749c22df15e4a06b4f0",
-  "pre_save_rechecked_commit": "87e414c0ef4ee032d5690749c22df15e4a06b4f0",
-  "updated_at": "2026-10-13T22:26:25.086Z",
+  "task_id": "T22_ROLE20_SAVED_AUDIT_ARTIFACT_REVIEW_20261014",
+  "producer_task_id": "T22_ROLE10_CLOSE_T21_REPRO_GAPS_20261014",
+  "source_commit": "6cf7d9267f15317b34359236db037a0d16913832",
+  "pre_save_rechecked_commit": "6cf7d9267f15317b34359236db037a0d16913832",
+  "updated_at": "2026-10-13T23:06:38.676Z",
   "plan_revision": "2.7",
   "operations_revision": "2.7.0",
   "status": "HELD_FULL_REPRODUCTION_AND_NATIVE_EXCEL",
   "verdict": null,
-  "scoped_verdict": "PASS_IDENTITY_AND_BOUNDED_EVIDENCE; FAIL_HISTORICAL_EXACT_RECONSTRUCTION; HELD_FULL_U20_REPRODUCTION",
-  "verdict_reason": "T21監査証拠を独立確認。過去数値処理の証拠は増えたが、4XMLの不一致、summary_v2.py異常終了、現行U20ペア全工程/履歴/固定依存の欠落、Microsoft Excel実機未実施のため総合PASSを出さない。",
+  "scoped_verdict": "PASS_BOUNDED_T22_EVIDENCE; FAIL_MANIFEST_SELF_ENTRY; HELD_FULL_REPRODUCTION",
+  "verdict_reason": "T22保存物を実バイトで独立検査。抽出接続、隔離summary修正の差分/出力同一性、XML差の工程区別、pyc説明は限定確認。台帳自己項目不一致、現U20全工程/監査完全性/実機は未解消。",
   "release_status": "NOT_COMPLETE_NOT_ACCEPTED",
   "T07_completed": false,
   "full_independent_evaluation_completed": false,
   "startup_read": {
-    "commit": "87e414c0ef4ee032d5690749c22df15e4a06b4f0",
+    "commit": "6cf7d9267f15317b34359236db037a0d16913832",
     "expected_commit_matched": true,
     "files": {
       "PLAN.md": "4e9acf1277229cba731e1f9e010ef4cff52e290c",
-      "STATE.json": "68a62bf525e083eb3a8ffed3a0eba3ce532f34db",
+      "STATE.json": "95b3ffd390395a48b28082a1fb05c6ee5bf91da7",
       "reports/10.json": "815cf472ed1c11333e78a62efb964209bebbc002",
-      "reports/20.json": "aa0b707265574e4e6c72c6f61086f92d5d0fdc99",
+      "reports/20.json": "33c11a0cbae785eda6b02b8e86fc89f587cac52a",
       "reports/30.json": "51c63f2f9e1c2ad516d845c19a743c147fa122f7"
     },
-    "reconciliation": "最新T21を採用。PLAN/STATE/20/30は前回保存後と同一blob。凍結U20ペアを再取得し版/SHA一致、同一候補の内容評価を重複実行せず適用可能なU20証拠を継承。"
+    "reconciliation": "STATEのT21統合を確認。reports10は815cf472...でT22追記未保存。今回の根拠は取得した保存済ZIPと独立照合であり、未保存報告案を実行事実・独立PASSとしない。"
   },
   "candidate_fingerprint": "5fa7dadcc03c4789d65838f9ca58b3d6ea16fee239a4e6259a760e7e1c7652b3",
   "fingerprint_definition": "SHA256 of UTF-8 canonical JSON with sorted keys and separators comma/colon: {workbook:{id,version,sha256},narrative:{id,version,sha256}}. ZIP/manifest identities are pinned separately.",
@@ -67,89 +67,95 @@
       "zip_crc": "PASS",
       "entries": 9793,
       "regular_files": 8912
+    },
+    "t22_audit_package": {
+      "id": "libfile_d8cd5bab2b388191a642a6bdc6afbc40",
+      "file_id": "file_00000000c8b48209ba8c653358f92da2",
+      "version": 1,
+      "filename": "ROLE10_T22_再現ギャップ監査パッケージ_20261014.zip",
+      "bytes": 3003012,
+      "sha256": "70758d8ba5eb35b0f3b601f628e4d4eb5c5d721069792527d48719f47f6befbf",
+      "actual_version_and_sha_match": true,
+      "zip_crc": "PASS",
+      "entries": 285,
+      "embedded_manifest_actual_sha256": "c261d1fe3797b6be742c9268a2c956fa71b80eb7d9b474639b68a1f72e7b1177"
     }
   },
   "prior_report": {
-    "commit": "dd88fe75447879facea2386b3eff2f07e5081822",
+    "commit": "b5e7b10d24273be5846f669460c82a3a1921ae73",
     "path": "care-insurance-analysis/reports/20.json",
-    "blob_sha": "aa0b707265574e4e6c72c6f61086f92d5d0fdc99"
+    "blob_sha": "33c11a0cbae785eda6b02b8e86fc89f587cac52a"
   },
   "newly_checked": {
-    "identity": {
+    "fixed_identity": {
       "status": "PASS",
-      "evidence": "Library実保存版W0/N1/ZIP0と実SHA/サイズ一致。U20ペア不変。"
+      "evidence": "T22 ZIP version1/size/SHA/CRC一致。ブックv0と文書v1を別途再取得しSHAがU20固定ペアに一致。候補不変。"
     },
-    "input_inventory": {
+    "fresh_extraction": {
       "status": "PASS",
-      "scope": "7パイプライン入力",
-      "evidence": "S01/S02/S03/S04/S05/S06/S10の収録staged bytes、SHA台帳、添付元資料が7/7一致。9添付は重複2を含む。"
+      "scope": "S01/S02/S03保存OOXMLセル・数式キャッシュの抽出一致のみ",
+      "evidence": "収録inspect_inputs.pyを全文確認後、書込を行わないworkbook_cells関数を原添付3件に対して実行し収録JSONとのオブジェクト一致を確認。3件ともT21保存fixtureとバイト一致。生成者ログのexit0だけに依存しない。",
+      "limits": "同一抽出実装による再実行であり独立実装による全セル意味検証ではない。個票/Excel再計算、S04以降全意味抽出、後続U20生成は未実施。"
     },
-    "numeric_scope": {
+    "summary_nameerror": {
       "status": "PASS",
-      "scope": "歴史的Unit17の保存出力照合と独立算術検査のみ。ROLE20による生成パイプライン実行ではない。",
-      "run_id": "U10A_REPRO_20261014_0730JST",
-      "stage_id": "post_C03_post_ROLE30_final_numeric",
-      "code_commit": "1ef99adb37eb5ff2fdbf368c2fce8e2e9f88ef64",
-      "extraction_sha256": "2a3590942aafbc1562e787aa8292f6ed8cb0e08a9a5b9b9b6b0de145223c1bac",
-      "run_manifest_sha256": "6c95466202737a7680082cd005c9a46c481be985b76642077f11b4e68ad6aff4",
-      "checks": [
-        "保存run_manifestの出力6件SHAとソースコード11件SHAを実バイト照合、一致。保存された数値出力6件とbaseline実バイトSHAも一致。",
-        "6316はS01/S02各3158のキャッシュ値転記。保存pre-C03 fixture全6316を元資料に直接照合、不一致0。post-C03保存出力は6307直接一致＋承認済C03の9セル差。9件はIII一次・二次判定G128:G136に直接一致。",
-        "1478比較は1429有効の差・pp演算誤差1e-10以内、49保留の値nullを独立確認。不一致0。1478件全てが有効/全てU20適用ではない。",
-        "verify_extraction.pyはC03 overlay前に実行される。6316件は提供集計値の転記確認であり個票再計算ではない。"
-      ],
-      "limitations": [
-        "入力は保存inspection JSONから開始。元資料全セルのfresh抽出は当該パイプラインに含まれない。",
-        "U20文書生成およびU18/U19/U20の後続修正を生成していない。",
-        "6出力SHA一致は過去baseline一致を証明し、凍結U20全工程一致を証明しない。"
-      ]
+      "scope": "修正内容と出力同一性のみ。正常終了ログは生成者証拠。",
+      "evidence": "原コードSHAc212bea...、隔離コードSHA549892...、最終printのlen(rows)→len(result['rows'])だけの差を独立確認。固定出力SHAe2965e...はT21異常終了後の保存出力と実バイト一致。ROLE20は生成コマンド再実行/コード修正をしていない。",
+      "remaining": "原コードの異常終了は歴史的事実としてFAILのまま。実行可能な現行全工程への採用・全体正常終了は未実証。"
     },
-    "exact_historical_reconstruction": {
+    "four_xml": {
+      "status": "PASS",
+      "scope": "差分記録の照合・工程説明",
+      "evidence": "T21保存2ブックを読み、4XMLのSHA、29セル位置、sheet8/12/14の追加結合範囲がT22記録と一致。年度参考値/出所等の変更を含む。旧v2と再構成v3の差として説明され、U20差やU20一致の根拠ではない。",
+      "remaining": "v2との完全一致FAILは撤回しないが、異なる工程版同士という説明を追加。Unit14実体→表示修正→U17以降→U20全生成は未実証。"
+    },
+    "pyc": {
+      "status": "PASS",
+      "scope": "キャッシュ不一致原因の限定説明",
+      "evidence": "T22 immutable pycとT21 post-execution pycのSHA/ヘッダ差を確認。marshal内codeを実行せず再帰比較しco_filenameを除くコード属性同一、同梱ソースのcompile結果とも一致。ソース無変更と整合。",
+      "limits": "T22 immutableコピーは台帳102件中4件のみ収録。T21 post treeは101/102一致。元アーカイブ102/102の生成者記録は今回独立再取得未実施のため全面PASSへ転記しない。"
+    },
+    "history": {
+      "status": "PASS",
+      "scope": "92関連コミットの収録・索引対応",
+      "evidence": "92一意IDと詳細92ファイル、差分あり80/なし12の索引を確認。固定HEAD GitHub一覧93件と比較、除外1件e112993...はルートREADME.mdだけのInitial commitで本プロジェクト範囲外。",
+      "limits": "全私的会話・全コマンド履歴の完全性ではない。欠落12差分本文と初期失敗の精密ログ/時刻、歴史的依存lock/Artifact Tool実版はHELD。現観測2.8.93を過去生成版に転用しない。"
+    },
+    "manifest": {
       "status": "FAIL",
-      "legacy_sha256": "ae232eb250d4e089f7a167290e85bf4b39c59b0e12a11b0115be7d8290433695",
-      "reconstructed_sha256": "d6e7543471ff96b980643c0ae9947a6d0cd66220f8baa21f9274cb60f52e2383",
-      "parts": [
-        "xl/worksheets/sheet8.xml",
-        "xl/worksheets/sheet12.xml",
-        "xl/worksheets/sheet14.xml",
-        "xl/worksheets/sheet15.xml"
-      ],
-      "evidence": "XMLを再解析して4パーツ差を独立確認。sheet8:2セル、sheet12:10セル、sheet14:4セル、sheet15:13セルのXML差。単なる注記差ではなく分析要点F1194の保留→年度参考値、G:Iの比較表示、M1194出所等も異なる。148グラフ保持は全候補一致の代替にならない。"
+      "evidence": "ZIP全285エントリが台帳に列挙され、284件のSHA/サイズは一致。自己項目T22/audit_manifest.jsonだけ不一致。",
+      "recorded": {
+        "bytes": 56226,
+        "sha256": "d4953c1ba0e97f6b247696cd87458b0d19cba283117e16620a89f4d99ff02abd"
+      },
+      "actual": {
+        "bytes": 56562,
+        "sha256": "c261d1fe3797b6be742c9268a2c956fa71b80eb7d9b474639b68a1f72e7b1177"
+      },
+      "action": "自己SHAを自身へ埋め込まず自己項目を明示除外し、確定manifestのSHAは外部報告へ記録。ZIP再保存時は新保存版/ZIP SHAを通知。"
     },
-    "summary_generation": {
-      "status": "FAIL",
-      "evidence": "summary_v2.py main末尾はローカル未定義rowsをprintで参照。summary_tables.json書込後のNameError/exit1をコードとログで確認。出力存在/手動継続exit0は元コマンド正常完了を意味しない。技術修正・候補生成は実施していない。"
-    },
-    "archive_completeness": {
+    "missing_inventory": {
       "status": "HELD",
-      "evidence": "以前不足していたreplay_pipeline.pyやbundle/inspectionがT21に収録され、コード11SHA一致を確認。欠落が全て継続しているとの旧記述は現状に適用しない。",
-      "caveat": "展開済実行bundleのfile_inventory102件に対し101一致、src/__pycache__/inspect_inputs.cpython-312.pycが1不一致。元ZIPのpre-execution inventory照合と実行後treeは区別が必要。元unit17 ZIPそのものは今回のパッケージ内に同名ファイルとして見当たらず、102/102元ZIP照合の独立PASSは主張しない。",
-      "missing": [
-        "現在の凍結U20を元資料からブック/文書まで生成する完全コード・変換順序・全依存物",
-        "依存lock/正確なArtifact Tool buildと再現可能環境",
-        "取得可能な私的履歴・コマンド履歴の完全台帳、欠落理由と影響、簡易確認文との対応",
-        "第3準備失敗の正確な時刻記録",
-        "実行前fixtureと実行後生成キャッシュを分離した台帳"
-      ]
+      "evidence": "T22欠落リストは旧U19 full_pipeline_replayの相対パス一覧を継承。replay_pipeline.py/summary_v2.py等はT21/T22に存在するため『どこにも無い』という意味には使えない。現行入口へ未接続か、実際に未取得か、歴史的取得不能かを区別する必要がある。"
     },
-    "full_U20_reproduction": {
+    "full_reproduction": {
       "status": "HELD",
-      "evidence": "同一凍結ペアの全工程再現未実証。保存物/監査ZIPの存在のみでPASSにしない。"
+      "evidence": "抽出→全後続修正→凍結U20ブックと叙述の一貫実行を証明していない。限定段階の確認を全工程へ拡張しない。"
     },
     "native_excel": {
       "status": "HELD",
-      "evidence": "Linuxのみ。Windows/macOS Microsoft Excel実機証拠なし。既存全必須箇所・再計算/保存/再開封要件を維持。"
+      "evidence": "Windows/macOS Microsoft Excel実機証拠なし。必須検査全項目を保持。"
     }
   },
   "prior_evidence_applicability": {
-    "prior_commit": "dd88fe75447879facea2386b3eff2f07e5081822",
-    "current_pair_fingerprint": "5fa7dadcc03c4789d65838f9ca58b3d6ea16fee239a4e6259a760e7e1c7652b3",
-    "reason": "再取得したブックv0と文書v1の全バイトSHAがU20独立評価と一致。数値・C03/C09/C04/C10/C11・829付録対応・1407算術・15シート148グラフ等の既評価範囲に適用。",
+    "prior_commit": "b5e7b10d24273be5846f669460c82a3a1921ae73",
+    "pair_fingerprint": "5fa7dadcc03c4789d65838f9ca58b3d6ea16fee239a4e6259a760e7e1c7652b3",
+    "verified": "現U20ペアの再取得版/SHAが同一。U20内容・構造とT21の6316転記/1478比較の限定証拠のみ適用。今回数値再生を重複実行しない。",
     "not_reused": [
-      "旧総合判定",
-      "生成者自己検査を独立PASSへ転用",
-      "Excel実機未実施",
-      "旧監査ZIPの不足を現T21にそのまま転用"
+      "総合判定",
+      "生成者のPASSを独立実行結果とすること",
+      "旧欠落リストの全面継承",
+      "native実施済み扱い"
     ]
   },
   "finding_statuses": [
@@ -207,6 +213,21 @@
       "id": "E20-T21-AUDIT-01",
       "status": "HELD",
       "reason": "実行後bundleキャッシュ1不一致と全監査/環境欠落。"
+    },
+    {
+      "id": "E20-T22-MANIFEST-SELF",
+      "status": "FAIL",
+      "reason": "監査台帳自己項目のSHA/sizeが保存実体と不一致。284/285一致。"
+    },
+    {
+      "id": "E20-T21-REPLAY-01-T22",
+      "status": "HELD",
+      "reason": "29セル/merge差は別工程版として説明確認、隔離summaryの限定修正を確認。原コードFAILと現U20全工程未達は継続。"
+    },
+    {
+      "id": "E20-T21-AUDIT-01-T22",
+      "status": "HELD",
+      "reason": "pyc差原因は限定解消。履歴/依存/全取得可能範囲の完全性は未達。"
     }
   ],
   "remaining_defects_and_HELD": [
@@ -214,8 +235,22 @@
       "id": "E20-PAIR-05",
       "status": "HELD",
       "blocks_submission": true,
+      "owner": "10",
+      "action": "現在のU20生成入口にT21/T22回収済資材を対応付け、実欠落と未接続を分離。原資料からブックと叙述までの全工程を別出力へ一貫実行し、各段階入力/コード/出力SHA・正常終了ログを固定する。凍結ペアは変更しない。"
+    },
+    {
+      "id": "E20-T22-MANIFEST-SELF",
+      "status": "FAIL",
+      "blocks_submission": true,
+      "owner": "10",
+      "action": "自己SHAを自身へ埋め込まず自己項目を明示除外し、確定manifestのSHAは外部報告へ記録。ZIP再保存時は新保存版/ZIP SHAを通知。"
+    },
+    {
+      "id": "E20-T21-AUDIT-01",
+      "status": "HELD",
+      "blocks_submission": true,
       "owner": "10/00",
-      "action": "ROLE10: 回収済歴史的bundleと現在のU20生成経路を区別し、元資料fresh抽出→C03/ROLE30/S10→全後続修正→凍結ブック/文書までの実行可能経路、固定依存、正常終了ログ、各段階SHAを提出。候補を変えず別出力で検証し、既知差は明示。4XMLの注記以外の差とNameErrorを含める。"
+      "action": "欠落履歴/依存lock/過去実使用版と未取得理由・影響を明示。過去取得不能を現在観測値で補完済み扱いしない。取得済資材の所在を現行生成経路へ対応付ける。"
     },
     {
       "id": "E20-NATIVE-01",
@@ -231,13 +266,6 @@
       "owner": "10",
       "location": "narrative Appendix D E20-PAIR-03",
       "action": "次の必要更新時に『保存版自己申告は省き』を『自己SHAは省き、ID/保存版は付録A、実SHAは固定reports10』へ整合。これ単独で新たな全再生成を要求しない。"
-    },
-    {
-      "id": "E20-T21-AUDIT-01",
-      "status": "HELD",
-      "blocks_submission": true,
-      "owner": "10/00",
-      "action": "全取得可能履歴/失敗ログ/依存lockの収録台帳と未収録理由・影響を提出。immutable fixtureと実行後treeを分離してSHA/size一覧を作り、pyc不一致を説明。秘密や非公開元資料は公開先に送らない。"
     }
   ],
   "native_excel_validation": {
@@ -268,23 +296,27 @@
     "artifact_scope": "libfile_c17d27b379308191acf27bb17e9f0497 version0 SHA9c3c50835961e876844daf59db5709316055a79579f79aa151ad54e15a5f68f8",
     "evidence_from_native_application": []
   },
-  "next_role": "00",
+  "next_role": "10/00",
   "next_actions": [
     {
       "owner": "10",
-      "action": "ROLE10: 回収済歴史的bundleと現在のU20生成経路を区別し、元資料fresh抽出→C03/ROLE30/S10→全後続修正→凍結ブック/文書までの実行可能経路、固定依存、正常終了ログ、各段階SHAを提出。候補を変えず別出力で検証し、既知差は明示。4XMLの注記以外の差とNameErrorを含める。"
+      "action": "現在のU20生成入口にT21/T22回収済資材を対応付け、実欠落と未接続を分離。原資料からブックと叙述までの全工程を別出力へ一貫実行し、各段階入力/コード/出力SHA・正常終了ログを固定する。凍結ペアは変更しない。"
+    },
+    {
+      "owner": "10",
+      "action": "自己SHAを自身へ埋め込まず自己項目を明示除外し、確定manifestのSHAは外部報告へ記録。ZIP再保存時は新保存版/ZIP SHAを通知。"
     },
     {
       "owner": "10/00",
-      "action": "全取得可能履歴/失敗ログ/依存lockの収録台帳と未収録理由・影響を提出。immutable fixtureと実行後treeを分離してSHA/size一覧を作り、pyc不一致を説明。秘密や非公開元資料は公開先に送らない。"
+      "action": "欠落履歴/依存lock/過去実使用版と未取得理由・影響を明示。過去取得不能を現在観測値で補完済み扱いしない。取得済資材の所在を現行生成経路へ対応付ける。"
     },
     {
-      "owner": "00→Microsoft Excel実機担当",
-      "action": "Windows/macOS Microsoft Excelで固定候補の修復警告、日本語・グラフ・注記、切れ重なり、印刷改ページ、隔離コピー再計算/保存/再開封を実施。ID/版/SHA、OS/Excel版、箇所・時刻・結果・画像/PDF証拠を保存。"
+      "owner": "00→実機担当",
+      "action": "Windows/macOS Microsoft Excel検査を確保し既定必須範囲を隔離コピーで実施。"
     },
     {
       "owner": "20",
-      "action": "上記の保存済・SHA固定証拠を独立確認。現時点ではT07/全評価完了/総合PASSを宣言しない。"
+      "action": "新保存版の台帳再照合と未実施全工程/実機証拠の独立評価から再開。T22の限定確認済項目を重複実行しない。"
     }
   ],
   "write_scope": [
@@ -348,7 +380,7 @@
     },
     "R11": {
       "status": "HELD",
-      "evidence": "過去数値処理の保存出力6件と1478比較は限定確認済。歴史的ブック一致FAIL、現U20全工程未実証。"
+      "evidence": "3資料fresh抽出接続とsummary段階の限定証拠は確認。凍結ペアの一貫生成未実証。"
     },
     "R12": {
       "status": "PASS",
@@ -362,7 +394,7 @@
     },
     "R14": {
       "status": "HELD",
-      "evidence": "T21の実SHA/CRC、7元入力、11コード/6出力SHAを確認。全履歴/固定依存/実行前後inventory整理未完了。"
+      "evidence": "T22追加監査確認、台帳自己項目FAIL、全履歴/歴史的固定依存は未達。"
     },
     "R15": {
       "status": "PASS",
@@ -413,7 +445,7 @@
     },
     "Q11": {
       "status": "HELD",
-      "evidence": "歴史的数値再現証拠の範囲のみPASS。4XML差、NameError、現U20全工程不足。"
+      "evidence": "限定段階確認のみ、U20全工程未実証。"
     },
     "Q12": {
       "status": "HELD",
@@ -425,7 +457,7 @@
     },
     "Q14": {
       "status": "HELD",
-      "evidence": "T21保存・一部台帳照合PASS、完全監査未達。"
+      "evidence": "285件列挙/284件一致、自己項目不一致。全監査未達。"
     },
     "Q15": {
       "status": "PASS",
@@ -552,5 +584,77 @@
       "remaining": "全工程コード/入力bundle・固定依存情報・全取得可能履歴の収録照合/全ログ・必須簡易確認文等の完全性は未実証。原資料を今回GitHubに転載していない。",
       "full_pipeline": "HELD。legacy replay_v2.pyがimportするreplay_pipeline.pyは現ZIPに存在せず、完全なbundleも欠落台帳に列挙。ROLE10のModuleNotFoundError記録と整合するが、ROLE20が全工程を実行したとはしない。"
     }
+  },
+  "previously_checked_T21": {
+    "identity": {
+      "status": "PASS",
+      "evidence": "Library実保存版W0/N1/ZIP0と実SHA/サイズ一致。U20ペア不変。"
+    },
+    "input_inventory": {
+      "status": "PASS",
+      "scope": "7パイプライン入力",
+      "evidence": "S01/S02/S03/S04/S05/S06/S10の収録staged bytes、SHA台帳、添付元資料が7/7一致。9添付は重複2を含む。"
+    },
+    "numeric_scope": {
+      "status": "PASS",
+      "scope": "歴史的Unit17の保存出力照合と独立算術検査のみ。ROLE20による生成パイプライン実行ではない。",
+      "run_id": "U10A_REPRO_20261014_0730JST",
+      "stage_id": "post_C03_post_ROLE30_final_numeric",
+      "code_commit": "1ef99adb37eb5ff2fdbf368c2fce8e2e9f88ef64",
+      "extraction_sha256": "2a3590942aafbc1562e787aa8292f6ed8cb0e08a9a5b9b9b6b0de145223c1bac",
+      "run_manifest_sha256": "6c95466202737a7680082cd005c9a46c481be985b76642077f11b4e68ad6aff4",
+      "checks": [
+        "保存run_manifestの出力6件SHAとソースコード11件SHAを実バイト照合、一致。保存された数値出力6件とbaseline実バイトSHAも一致。",
+        "6316はS01/S02各3158のキャッシュ値転記。保存pre-C03 fixture全6316を元資料に直接照合、不一致0。post-C03保存出力は6307直接一致＋承認済C03の9セル差。9件はIII一次・二次判定G128:G136に直接一致。",
+        "1478比較は1429有効の差・pp演算誤差1e-10以内、49保留の値nullを独立確認。不一致0。1478件全てが有効/全てU20適用ではない。",
+        "verify_extraction.pyはC03 overlay前に実行される。6316件は提供集計値の転記確認であり個票再計算ではない。"
+      ],
+      "limitations": [
+        "入力は保存inspection JSONから開始。元資料全セルのfresh抽出は当該パイプラインに含まれない。",
+        "U20文書生成およびU18/U19/U20の後続修正を生成していない。",
+        "6出力SHA一致は過去baseline一致を証明し、凍結U20全工程一致を証明しない。"
+      ]
+    },
+    "exact_historical_reconstruction": {
+      "status": "FAIL",
+      "legacy_sha256": "ae232eb250d4e089f7a167290e85bf4b39c59b0e12a11b0115be7d8290433695",
+      "reconstructed_sha256": "d6e7543471ff96b980643c0ae9947a6d0cd66220f8baa21f9274cb60f52e2383",
+      "parts": [
+        "xl/worksheets/sheet8.xml",
+        "xl/worksheets/sheet12.xml",
+        "xl/worksheets/sheet14.xml",
+        "xl/worksheets/sheet15.xml"
+      ],
+      "evidence": "XMLを再解析して4パーツ差を独立確認。sheet8:2セル、sheet12:10セル、sheet14:4セル、sheet15:13セルのXML差。単なる注記差ではなく分析要点F1194の保留→年度参考値、G:Iの比較表示、M1194出所等も異なる。148グラフ保持は全候補一致の代替にならない。"
+    },
+    "summary_generation": {
+      "status": "FAIL",
+      "evidence": "summary_v2.py main末尾はローカル未定義rowsをprintで参照。summary_tables.json書込後のNameError/exit1をコードとログで確認。出力存在/手動継続exit0は元コマンド正常完了を意味しない。技術修正・候補生成は実施していない。"
+    },
+    "archive_completeness": {
+      "status": "HELD",
+      "evidence": "以前不足していたreplay_pipeline.pyやbundle/inspectionがT21に収録され、コード11SHA一致を確認。欠落が全て継続しているとの旧記述は現状に適用しない。",
+      "caveat": "展開済実行bundleのfile_inventory102件に対し101一致、src/__pycache__/inspect_inputs.cpython-312.pycが1不一致。元ZIPのpre-execution inventory照合と実行後treeは区別が必要。元unit17 ZIPそのものは今回のパッケージ内に同名ファイルとして見当たらず、102/102元ZIP照合の独立PASSは主張しない。",
+      "missing": [
+        "現在の凍結U20を元資料からブック/文書まで生成する完全コード・変換順序・全依存物",
+        "依存lock/正確なArtifact Tool buildと再現可能環境",
+        "取得可能な私的履歴・コマンド履歴の完全台帳、欠落理由と影響、簡易確認文との対応",
+        "第3準備失敗の正確な時刻記録",
+        "実行前fixtureと実行後生成キャッシュを分離した台帳"
+      ]
+    },
+    "full_U20_reproduction": {
+      "status": "HELD",
+      "evidence": "同一凍結ペアの全工程再現未実証。保存物/監査ZIPの存在のみでPASSにしない。"
+    },
+    "native_excel": {
+      "status": "HELD",
+      "evidence": "Linuxのみ。Windows/macOS Microsoft Excel実機証拠なし。既存全必須箇所・再計算/保存/再開封要件を維持。"
+    }
+  },
+  "report10_persistence": {
+    "observed_blob": "815cf472ed1c11333e78a62efb964209bebbc002",
+    "T22_record_saved": false,
+    "scope": "保存済監査成果物をユーザー明示依頼で直接評価。未保存reports10案を既存GitHub証拠扱いしない。"
   }
 }
