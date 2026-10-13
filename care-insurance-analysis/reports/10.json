@@ -3990,7 +3990,7 @@
         "reproduction_package": {
           "library_file_id": "libfile_b0b5612440648191af63ce08f79f5e30",
           "version": 0,
-          "sha256": "1b52496f0e958ddffd6857c4c16ef3c45f053386e8709d6089d28e036937c02e6"
+          "sha256": "1b52496f0e958ddffd6857c4c16ef3c45f053386e8709d6089d28e036937c02e"
         }
       },
       "issues": {
@@ -4046,6 +4046,16 @@
       "next_role": "20",
       "next_operation": "independent_review_of_new_pair",
       "completion_condition": "NOT_PASS until full claim/source mapping review and required native/package checks pass"
+    },
+    "T19_ROLE10_U18_CONSOLIDATED_REMAINING_FIXES_20261013": {
+      "status": "not_complete_with_documented_holds",
+      "scope": "U18 consolidated fixes applied to isolated pair; structural checks and bounded clean replay passed.",
+      "evidence": "Library new pair and ROLE10_U18 reproduction package; see role10_runs T19 record.",
+      "remaining": [
+        "Microsoft Excel desktop native checks HELD",
+        "ROLE20 independent review pending",
+        "full raw-source analysis pipeline reproduction not demonstrated"
+      ]
     }
   },
   "outputs": {
@@ -5114,6 +5124,24 @@
       "corrected_value": "a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2",
       "evidence": "Read-back Library version 3 ZIP checks/E20-04_unit5_package.json; matched expected and actual source bytes.",
       "work_product_unchanged": true
+    },
+    {
+      "event_id": "T19_U18_T18_REPRODUCTION_SHA256_CORRECTION",
+      "recorded_at": "2026-10-13",
+      "corrects": "role10_runs[T18_ROLE10_U17_PRESERVATION_NARRATIVE_20261013].new_pair.reproduction_package.sha256",
+      "before": "1b52496f0e958ddffd6857c4c16ef3c45f053386e8709d6089d28e036937c02e6",
+      "before_hex_length": 65,
+      "after": "1b52496f0e958ddffd6857c4c16ef3c45f053386e8709d6089d28e036937c02e",
+      "after_hex_length": 64,
+      "evidence": {
+        "library_file_id": "libfile_b0b5612440648191af63ce08f79f5e30",
+        "version": 0,
+        "bytes": 2952535,
+        "zip_entries": 13,
+        "zip_crc": "PASS",
+        "actual_sha256": "1b52496f0e958ddffd6857c4c16ef3c45f053386e8709d6089d28e036937c02e"
+      },
+      "evaluated_package_unchanged": true
     }
   ],
   "startup_read_unit11": {
@@ -5268,7 +5296,7 @@
         "reproduction_package": {
           "library_file_id": "libfile_b0b5612440648191af63ce08f79f5e30",
           "version": 0,
-          "sha256": "1b52496f0e958ddffd6857c4c16ef3c45f053386e8709d6089d28e036937c02e6"
+          "sha256": "1b52496f0e958ddffd6857c4c16ef3c45f053386e8709d6089d28e036937c02e"
         }
       },
       "issues": {
@@ -5324,6 +5352,130 @@
       "next_role": "20",
       "next_operation": "independent_review_of_new_pair",
       "completion_condition": "NOT_PASS until full claim/source mapping review and required native/package checks pass"
+    },
+    {
+      "task_id": "T19_ROLE10_U18_CONSOLIDATED_REMAINING_FIXES_20261013",
+      "status": "NOT_COMPLETE_ROLE20_REVIEW_AND_NATIVE_EXCEL_HELD",
+      "generation_commit": "58fc867e3d2eef130ccfe06e1f543d4a51ca510d",
+      "pre_save_rechecked_commit": "58fc867e3d2eef130ccfe06e1f543d4a51ca510d",
+      "plan_revision": "2.7",
+      "operations_revision": "2.7.0",
+      "state_revision": 16,
+      "technical_proposal": {
+        "source": "reports/30.json",
+        "source_blob": "51c63f2f9e1c2ad516d845c19a743c147fa122f7",
+        "key": "unit_proposals.U18_consolidated_remaining_pair_fixes",
+        "proposal_id": "E20-PAIR/import_preservation/U18_consolidated_remaining_pair_fixes",
+        "status": "proposal_only_used_as_route_and_issue_list"
+      },
+      "source_evaluated_pair_unchanged": {
+        "workbook": {
+          "library_file_id": "libfile_59c697532e1c8191a7e908bd18164159",
+          "version": 0,
+          "sha256": "bf841e1d721ecf641715b395e78fc64db34862ef1a185fcd31a9e778a6b5c8e6"
+        },
+        "narrative": {
+          "library_file_id": "libfile_13767fc353c48191a4144d574af6f1c6",
+          "version": 0,
+          "sha256": "8450648aa6b0a5f25d8917e982406b291e6f0f4966296593a86c910051adbb8e"
+        },
+        "verified_unchanged": true
+      },
+      "new_pair": {
+        "workbook": {
+          "library_file_id": "libfile_77c58cb987e481919cf71068fa9ba824",
+          "version": 0,
+          "sha256": "025bddb890e3d2770103b29e288c120732b8f72655087824a9e386402c5a0cd5"
+        },
+        "narrative": {
+          "library_file_id": "libfile_bb0a8083e86881918f2af52518ef89b5",
+          "version": 1,
+          "sha256": "ada15ec489538606a17514f8cc139b363816389b7c91dc2f1eaf5a83ceec88b5"
+        },
+        "reproduction_package": {
+          "library_file_id": "libfile_30928172fda08191af86ec4dcc76534b",
+          "version": 0,
+          "sha256": "17e74cb897ee"
+        },
+        "manifest_in_package": true
+      },
+      "hash_correction": {
+        "input_library_file_id": "libfile_b0b5612440648191af63ce08f79f5e30",
+        "version": 0,
+        "reported_65_char_value": "1b52496f0e958ddffd6857c4c16ef3c45f053386e8709d6089d28e036937c02e6",
+        "actual_64_char_sha256": "1b52496f0e958ddffd6857c4c16ef3c45f053386e8709d6089d28e036937c02e",
+        "bytes": 2952535,
+        "zip_crc": "PASS"
+      },
+      "code_and_input_identity": {
+        "replay_script_sha256": "see_package_manifest_replay_u18.py",
+        "evaluated_workbook_sha256": "bf841e1d721ecf641715b395e78fc64db34862ef1a185fcd31a9e778a6b5c8e6",
+        "runtime": "Python 3.12.14; Linux x86_64; standard library only",
+        "full_raw_source_pipeline": "not bundled or claimed reproducible"
+      },
+      "issues": {
+        "E20-PAIR-06": "APPLIED_PENDING_ROLE20: summary/detail/narrative aligned on S01 and S02 recognition-day provided averages and arithmetic differences; distinguish transcription/arithmetic from raw-record recalculation. Raw-record recalculation, significance and causality not claimed.",
+        "E20-PAIR-04": "APPLIED_PENDING_ROLE20: S10 FY2025 25.6 days shown as approved display substitute/annual reference; S01 J208 raw 0.023503077783995522 retained for audit with unit/meaning/calculation unverified; no cross-period/regional comparison.",
+        "E20-PAIR-01": "APPLIED_PENDING_ROLE20: valid zero counts retained; denominator-zero rates are uncomputed, not 0%; invalid city/prior comparisons suppressed; valid prefecture/national rates retained; C11 denominator-pending states remain distinct.",
+        "E20-PAIR-03": "APPLIED_PENDING_ROLE20: narrative mapping updated to W2 workbook identity, version and SHA; N19/N20 source mappings updated; stale W1 display references removed except historical evaluated-pair statement.",
+        "E20-PAIR-05": "PARTIAL: portable replay script, manifest, missing-input/dependency ledger and clean-directory deterministic replay included. Only bounded OOXML edit replay is demonstrated; full raw-source analytical reproducibility not demonstrated.",
+        "E20-U17-NOTE-STYLE": "APPLIED_PENDING_ROLE20: D117 style checked before=11, target source style=1203; final style ID 1203 attributes numFmtId=0,fontId=238,fillId=70,borderId=260,xfId=0 with apply flags verified. No visual defect asserted."
+      },
+      "preservation": {
+        "result": "STRUCTURAL_CHECKS_PASS",
+        "target_sheet_order": [
+          "分析要点",
+          "表紙・目次",
+          "データの見方",
+          "Ⅰ基礎情報",
+          "Ⅱ調査項目データ（第１群）",
+          "Ⅱ調査項目データ（第２群）",
+          "Ⅱ調査項目データ（第３群）",
+          "Ⅱ調査項目データ（第４群）",
+          "Ⅱ調査項目データ（第５群）",
+          "Ⅱ調査項目データ（その他）",
+          "Ⅱ（３）５項目",
+          "Ⅲ審査判定データ（一次・二次判定）",
+          "Ⅲ審査判定データ（変更率）",
+          "Ⅲ審査判定データ（有効期間）",
+          "Ⅳ事務データ"
+        ],
+        "sheets": 15,
+        "charts": 148,
+        "changed_parts": [
+          "xl/worksheets/sheet12.xml",
+          "xl/worksheets/sheet14.xml",
+          "xl/worksheets/sheet15.xml"
+        ],
+        "chart_drawing_image_relationship_bytes_identical": true,
+        "zip_crc_xml_and_relationship_integrity": "PASS",
+        "existing_annotations": 21,
+        "updated_annotations": 1,
+        "added_annotations": 0,
+        "duplicate_annotations": 0,
+        "detail_print_settings_unchanged": true,
+        "C03_reapplied": false,
+        "C03_correction_inherited_and_unmodified": true,
+        "workbook_bytes_readback": "Library v0 saved; local generation SHA matches report identity"
+      },
+      "verification": {
+        "clean_output_directory_replay": "PASS; generated workbook SHA exactly matches candidate",
+        "summary_detail_narrative_values": "PASS for U18 affected scope",
+        "zero_counts_vs_uncomputed_rates": "PASS for affected C09 rows; C11 holds retained",
+        "C04_display_wording_and_raw_audit_value": "PASS",
+        "note_style_ids_attributes": "PASS",
+        "claim_mapping_new_workbook_identity": "PASS for narrative mapping; ROLE20 independent recheck pending",
+        "native_excel_desktop": {
+          "status": "HELD",
+          "application": "Microsoft Excel desktop",
+          "reason": "Windows/macOS Excel unavailable in execution environment",
+          "substitute_renderer_as_pass": false
+        },
+        "role20_independent_review": "PENDING"
+      },
+      "next_role": "20",
+      "next_operation": "independently_recheck_the_new_hash_pinned_pair_and_U18_affected_scope",
+      "completion_condition": "NOT_COMPLETE until all required checks pass"
     }
   ]
 }
