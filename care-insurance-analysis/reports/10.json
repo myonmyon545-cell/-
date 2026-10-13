@@ -2,11 +2,11 @@
   "schema": "care_handoff/v1",
   "role": "10",
   "plan_revision": "2.5",
-  "status": "再現ZIP版7と入力識別・実引数の事前検査を固定。実データ再実行は未実施、E20-04 NOT_PASS",
-  "task_id": "T11_E20-04_unit17_align_reproduction_bundle",
-  "source_commit": "1ef99adb37eb5ff2fdbf368c2fce8e2e9f88ef64",
-  "pre_save_rechecked_commit": "1ef99adb37eb5ff2fdbf368c2fce8e2e9f88ef64",
-  "updated_at": "2026-10-12",
+  "status": "検証中ペア保存。数値再実行PASS。再計算差分未解決、日本語描画FAIL/HELD、ROLE20評価待ち。E20-04 NOT_PASS",
+  "task_id": "T11_E20-04_completion_batch_20261013",
+  "source_commit": "a651b30745d777d2d8772a46ea9a7dde8314bc41",
+  "pre_save_rechecked_commit": "a651b30745d777d2d8772a46ea9a7dde8314bc41",
+  "updated_at": "2026-10-13",
   "startup_read": {
     "branch": "main",
     "head_sha": "210aec627ca32c13874e855a8fd8e6b6a7cd630d",
@@ -3684,6 +3684,65 @@
       "next_single_unit": "T11_E20-04_unit18_isolated_numeric_replay_once using Library v7; preflight, then run the documented replay command once; stop and preserve evidence on failure.",
       "E20_04": "NOT_PASS",
       "candidate_acceptance": false
+    },
+    "T11_E20-04_completion_batch_20261013": {
+      "operation": "complete_workbook_and_narrative_candidate",
+      "source_commit": "a651b30745d777d2d8772a46ea9a7dde8314bc41",
+      "numeric_replay": {
+        "run_id": "replay-finalpaths-20261013T1120Z-a651b307",
+        "stage": "post_C03_post_ROLE30_final_numeric",
+        "exit_code": 0,
+        "records": 6316,
+        "comparisons": 1478,
+        "missing_or_extra_ids": 0,
+        "verdict": "PASS"
+      },
+      "workbook": {
+        "library_id": "libfile_b8d362af68b481918d8a01818cd825fc",
+        "version": 0,
+        "sha256": "dd81b1d6ea7cea27551281d4b7cecd1bb38a27b619e713c39d98973f78ed3e02",
+        "sheets": 15,
+        "charts": 148,
+        "first_sheet": "分析要点",
+        "verification": "structure pass; original fourteen sheet parts and 148 chart parts byte-identical; C03 not reapplied"
+      },
+      "narrative": {
+        "library_id": "libfile_dcd0955eccec8191938ba5b44a865f98",
+        "version": 0,
+        "sha256": "2d7238db08244ba1fd4e4217374704c90cfca920a9e0488df397bec010fec2d0",
+        "scope": "R02-R07; matched to workbook"
+      },
+      "manifest": {
+        "library_id": "libfile_5d1e9c8ce5388191b05b284d40f47caa",
+        "version": 0,
+        "sha256": "85245089eb567ef6e27f689b7a693957e7c756834f2686aef1c74216a074c821"
+      },
+      "library_readback": "all three items materialized; byte SHA matched",
+      "recalculation": {
+        "disposable_copy": true,
+        "reopened": true,
+        "formula_count": 3440,
+        "formula_expression_changes": 0,
+        "cached_errors_before_after": 7,
+        "numeric_cache_differences": 8621,
+        "max_abs_delta": 5.684341886080802e-14,
+        "text_normalizations": 5,
+        "status": "executed; OOXML/cache differences unresolved; recalc copy not promoted"
+      },
+      "japanese_render": {
+        "status": "FAIL_HELD",
+        "workbook_pdf_pages": 260,
+        "narrative_pages": 2,
+        "detail": "Japanese glyphs absent in available LibreOffice rendering environment"
+      },
+      "known_limits": [
+        "C11 formal denominator pending",
+        "ROLE20 independent evaluation pending",
+        "final reproduction/audit package pending",
+        "hard deadline 2026-10-13 00:00 JST passed"
+      ],
+      "verdict": "E20-04 NOT_PASS; hash-pinned verification drafts only",
+      "next_action": "ROLE20 independent evaluation of pinned pair with known rendering and recalculation issues disclosed"
     }
   },
   "outputs": {
@@ -3974,8 +4033,8 @@
       "needed_action": "日本語対応TTF/OTFまたは日本語対応描画環境を提供。元表と要点シートを再出力して字形とレイアウトを確認"
     }
   ],
-  "next_role": "10",
-  "next_action": "T11_E20-04_unit18_isolated_numeric_replay_once using Library v7; preflight, then run the documented replay command once; stop and preserve evidence on failure.",
+  "next_role": "20",
+  "next_action": "Independently evaluate the hash-pinned verification-only workbook and matching narrative; include known Japanese rendering failure and unresolved recalculation differences; do not accept the pair.",
   "restart_condition": "libfile_d176f2c0f1c081919bcc4aecf5140011 version 0 SHA256 7cdd7a6f114582e4b7b2cf6c05d1d04b8fde55f6121d939c8bb5a49627737ceb と、reproduction ZIP v5 を起点にUnit16の限定コード変更案をレビュー。再実行前に別途承認された単位に分ける。",
   "candidate": {
     "id": "care-S01-20261009-v1",
