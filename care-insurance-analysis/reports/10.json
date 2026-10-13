@@ -4128,7 +4128,56 @@
       "report_write": {
         "target": "reports/10.json",
         "method": "add task_results and role10_runs entry to exact latest content; prior entries preserved"
-      }
+      },
+      "input_versions": [
+        {
+          "role": "S01",
+          "library_file_id": "libfile_2f275b2a53d4819197bfdf49dde76ab",
+          "version": "not recorded; content-addressed",
+          "sha256": "5721ee2b38cb8f55f973f149fe32f67dcfe5453645fcfdccdb934b169bcd2a2d"
+        },
+        {
+          "role": "S02",
+          "library_file_id": "libfile_49bf2650277881919afc2e41b9afaca2",
+          "version": "not recorded; content-addressed",
+          "sha256": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304"
+        },
+        {
+          "role": "S03",
+          "library_file_id": "libfile_6ef50a7e48148191bab971c64f1df614",
+          "version": "not recorded; content-addressed",
+          "sha256": "e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f"
+        },
+        {
+          "role": "S04",
+          "library_file_id": "libfile_348a1421657c8191938bc42e4a79b9ea",
+          "version": "not recorded; content-addressed",
+          "sha256": "d879ed1d222d43deb1d1f962e66e8b6d72eadac355596980e78d5ad0a49ec800"
+        },
+        {
+          "role": "S05",
+          "library_file_id": "libfile_7a46b17eb12c8191b3104fe6a8f4f0aa",
+          "version": "not recorded; content-addressed",
+          "sha256": "87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1"
+        },
+        {
+          "role": "S06",
+          "library_file_id": "libfile_6f78bde68948819198a39bb69b17af54",
+          "version": "not recorded; content-addressed",
+          "sha256": "b74b37c05a97d053ef46c16f380177f5a0724151dac5daff1c4076290671e524"
+        },
+        {
+          "role": "S10",
+          "library_file_id": "libfile_292453196e588191a056e2f761753670",
+          "version": 0,
+          "sha256": "a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2"
+        },
+        {
+          "role": "deduplicated_aliases",
+          "detail": "The recovered U20 manifest lists two duplicate attachments byte-identical to S04; retained once in package."
+        }
+      ],
+      "latest_main_at_update": "81fde90cd60372b5b063cc0c694b2b24fa027fb3"
     }
   },
   "outputs": {
