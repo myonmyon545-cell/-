@@ -2,10 +2,10 @@
   "schema": "care_handoff/v1",
   "role": "10",
   "plan_revision": "2.5",
-  "status": "検証中ペア保存。数値再実行PASS。再計算差分未解決、日本語描画FAIL/HELD、ROLE20評価待ち。E20-04 NOT_PASS",
-  "task_id": "T11_E20-04_completion_batch_20261013",
-  "source_commit": "a651b30745d777d2d8772a46ea9a7dde8314bc41",
-  "pre_save_rechecked_commit": "a651b30745d777d2d8772a46ea9a7dde8314bc41",
+  "status": "保存済み検証ペアの再確認完了。数値PASS、Microsoft Excelデスクトップ確認は環境不在でHELD。E20-04 NOT_PASS",
+  "task_id": "T11_E20-04_resolve_blocker_and_complete_candidate_pair",
+  "source_commit": "56efd423739d2850db54ae8875584255cdddc403",
+  "pre_save_rechecked_commit": "56efd423739d2850db54ae8875584255cdddc403",
   "updated_at": "2026-10-13",
   "startup_read": {
     "branch": "main",
@@ -3743,6 +3743,74 @@
       ],
       "verdict": "E20-04 NOT_PASS; hash-pinned verification drafts only",
       "next_action": "ROLE20 independent evaluation of pinned pair with known rendering and recalculation issues disclosed"
+    },
+    "T11_E20-04_resolve_blocker_and_complete_candidate_pair": {
+      "operation": "resolve_blocker_and_complete_candidate_pair",
+      "source_commit": "56efd423739d2850db54ae8875584255cdddc403",
+      "same_commit_blob_shas": {
+        "PLAN.md": "e649f920a3581d10b0876c03c8a3ca0234a14557",
+        "STATE.json": "262b9b9d8599c0d4c268ac57e76ed341f0a19617",
+        "reports/10.json": "6d3d9f2274d9b563fe9ba3f12dbc9104a0d06bba",
+        "reports/20.json": "bdfd764653ef0a6111ee02fb724a90a3bd10e0ad",
+        "reports/30.json": "c0b5b7e4b6892379eff4f669f7b26e970271141d"
+      },
+      "reused": {
+        "numeric_run_id": "replay-finalpaths-20261013T1120Z-a651b307",
+        "numeric_verdict": "PASS",
+        "records": 6316,
+        "comparisons": 1478,
+        "numeric_files": "six fixed SHA matches; zero missing/extra comparison IDs",
+        "existing_pair_readback": "Library bytes verified against saved SHA for workbook, narrative, and manifest"
+      },
+      "desktop_excel_check": {
+        "application": "Microsoft Excel desktop",
+        "availability": "NOT_AVAILABLE",
+        "evidence": "command -v excel returned not-found; runtime exposes LibreOfficeDev 26.8.0.0.alpha0 only",
+        "installed_japanese_fonts": 0,
+        "alternative_renderer": "LibreOffice compatibility check only; not an Excel acceptance check",
+        "actual_excel_screen_and_print_preview": "NOT_EXECUTED",
+        "verdict": "HELD"
+      },
+      "reused_rendering": {
+        "workbook_pdf_pages": 260,
+        "narrative_pages": 2,
+        "observed": "Japanese glyphs missing in LibreOffice output; column/table headers and prose are not reliably readable",
+        "acceptance": "FAIL_HELD; no Microsoft Excel claim"
+      },
+      "pair_consistency": {
+        "workbook_id": "libfile_b8d362af68b481918d8a01818cd825fc",
+        "workbook_version": 0,
+        "workbook_sha256": "dd81b1d6ea7cea27551281d4b7cecd1bb38a27b619e713c39d98973f78ed3e02",
+        "narrative_id": "libfile_dcd0955eccec8191938ba5b44a865f98",
+        "narrative_version": 0,
+        "narrative_sha256": "2d7238db08244ba1fd4e4217374704c90cfca920a9e0488df397bec010fec2d0",
+        "narrative_scope": "R02-R07; figures and held/reference-only states aligned with workbook",
+        "notes": "C04 S10 25.6 annual reference/incomparable; C09 uncomputed at zero denominator; C10 held; C11 held pending formal denominator"
+      },
+      "recalculation": {
+        "executed_in_disposable_copy": true,
+        "reopened": true,
+        "workbook_original_unchanged": true,
+        "differences": "OOXML roundtrip rewrote package; 8,621 cached numeric values differed by up to 5.684341886080802e-14 and five line-break text normalizations occurred; C09's seven #DIV/0! caches remained",
+        "verdict": "RECALCULATION_EXECUTED_BUT_EXACT_LOGICAL_EQUIVALENCE_UNRESOLVED; recalculated copy not promoted"
+      },
+      "blockers": [
+        "Microsoft Excel desktop and Japanese-capable font environment unavailable in this runtime",
+        "Japanese screen/print readability therefore unverified in required application; compatibility renderer shows missing glyphs",
+        "LibreOffice recalculation OOXML/cache differences need resolution before promoting recalculated workbook",
+        "C11 formal denominator remains pending",
+        "ROLE20 independent evaluation not yet completed",
+        "final reproduction/audit submission package remains pending"
+      ],
+      "remaining_time_estimate": {
+        "value": null,
+        "unit": "minutes",
+        "status": "UNAVAILABLE",
+        "reason": "No Microsoft Excel desktop execution or timing data is available; the required rendering inspection scope has not been measured. No duration is inferred."
+      },
+      "completion_verdict": "NOT_COMPLETE; saved hash-pinned pair remains verification-only, E20-04 NOT_PASS",
+      "next_role": "20",
+      "next_operation": "independently_evaluate_saved_pair; evaluate all available numeric/source/structural/narrative requirements and keep Japanese desktop rendering and recalculation discrepancies held"
     }
   },
   "outputs": {
@@ -4034,7 +4102,7 @@
     }
   ],
   "next_role": "20",
-  "next_action": "Independently evaluate the hash-pinned verification-only workbook and matching narrative; include known Japanese rendering failure and unresolved recalculation differences; do not accept the pair.",
+  "next_action": "Independently evaluate the saved hash-pinned workbook and narrative pair. Keep desktop Excel Japanese readability and recalculation differences held; do not accept the pair.",
   "restart_condition": "libfile_d176f2c0f1c081919bcc4aecf5140011 version 0 SHA256 7cdd7a6f114582e4b7b2cf6c05d1d04b8fde55f6121d939c8bb5a49627737ceb と、reproduction ZIP v5 を起点にUnit16の限定コード変更案をレビュー。再実行前に別途承認された単位に分ける。",
   "candidate": {
     "id": "care-S01-20261009-v1",
