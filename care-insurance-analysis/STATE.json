@@ -1,8 +1,8 @@
 {
   "schema": "care_state/v1",
-  "revision": 19,
+  "revision": 20,
   "plan_revision": "2.7",
-  "updated_at": "2026-10-14T13:36:03+09:00",
+  "updated_at": "2026-10-14T04:52:22.197Z",
   "phase": "DEADLINE_DELIVERABLE_BATCH_EXECUTION",
   "writer": "00",
   "canonical_repository": "myonmyon545-cell/-",
@@ -72,7 +72,21 @@
       ],
       "content_access_scope": "表紙・期間、C03/C04対応セルを読取り。提供期間比較は未実施。",
       "last_verified_by": "10",
-      "last_verified_at": "2026-10-09T11:18:48.380637+09:00"
+      "last_verified_at": "2026-10-09T11:18:48.380637+09:00",
+      "t23_identity_review": {
+        "source": "S02",
+        "id": "libfile_49bf2650277881919afc2e41b9afaca2",
+        "version": 0,
+        "bytes": 1609475,
+        "sha256": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304",
+        "attachment_bytes_equal": true,
+        "actual_used_id": "libfile_0d9cfee943ec819188518e4922ce620e",
+        "actual_used_saved_version": "UNKNOWN",
+        "status": "PASS_ALIAS_BYTE_MAPPING_ONLY",
+        "evidence": "T23_ROLE20_INPUT_IDENTITY_AND_STAGE_EVIDENCE_REVIEW_20261014",
+        "report_commit": "5094a89b93479b377486da549436200e25e63d8b",
+        "reviewed_at": "2026-10-14T04:47:05.940Z"
+      }
     },
     "S03": {
       "name": "R5　元データ.xlsx",
@@ -97,7 +111,21 @@
       ],
       "content_access_scope": "表紙の令和4年度第2回・期間、14シート/148グラフパーツ数と代表元セルを読取り。R5という名前と対象期間を区別。",
       "last_verified_by": "10",
-      "last_verified_at": "2026-10-09T11:18:48.380637+09:00"
+      "last_verified_at": "2026-10-09T11:18:48.380637+09:00",
+      "t23_identity_review": {
+        "source": "S03",
+        "id": "libfile_6ef50a7e48148191bab971c64f1df614",
+        "version": 0,
+        "bytes": 1892849,
+        "sha256": "e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f",
+        "attachment_bytes_equal": true,
+        "actual_used_id": "libfile_1a33a04a77e4819197bfdf49e7cd8099",
+        "actual_used_saved_version": "UNKNOWN",
+        "status": "PASS_ALIAS_BYTE_MAPPING_ONLY",
+        "evidence": "T23_ROLE20_INPUT_IDENTITY_AND_STAGE_EVIDENCE_REVIEW_20261014",
+        "report_commit": "5094a89b93479b377486da549436200e25e63d8b",
+        "reviewed_at": "2026-10-14T04:47:05.940Z"
+      }
     },
     "S04": {
       "name": "指示書",
@@ -156,7 +184,21 @@
       ],
       "content_access_scope": "9ページ本文を読取り。個票CSV抽出、選択/出力件数照合、Toolのマクロ集計の条件を確認。",
       "last_verified_by": "10",
-      "last_verified_at": "2026-10-09T11:18:48.380637+09:00"
+      "last_verified_at": "2026-10-09T11:18:48.380637+09:00",
+      "t23_identity_review": {
+        "source": "S05",
+        "id": "libfile_7a46b17eb12c8191b3104fe6a8f4f0aa",
+        "version": 0,
+        "bytes": 1128810,
+        "sha256": "87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1",
+        "attachment_bytes_equal": true,
+        "actual_used_id": "libfile_f40c9f4e1d0081919fb497f31e737856",
+        "actual_used_saved_version": "UNKNOWN",
+        "status": "PASS_ALIAS_BYTE_MAPPING_ONLY",
+        "evidence": "T23_ROLE20_INPUT_IDENTITY_AND_STAGE_EVIDENCE_REVIEW_20261014",
+        "report_commit": "5094a89b93479b377486da549436200e25e63d8b",
+        "reviewed_at": "2026-10-14T04:47:05.940Z"
+      }
     },
     "S06": {
       "name": "Tool_v1.3 (1).xls",
@@ -180,7 +222,21 @@
       ],
       "content_access_scope": "実ファイルの存在・形式・SHA256のみ今回照合。VBA実行は未確認。",
       "last_verified_by": "10",
-      "last_verified_at": "2026-10-09T11:18:48.380637+09:00"
+      "last_verified_at": "2026-10-09T11:18:48.380637+09:00",
+      "t23_identity_review": {
+        "source": "S06",
+        "id": "libfile_6f78bde68948819198a39bb69b17af54",
+        "version": 0,
+        "bytes": 34816,
+        "sha256": "b74b37c05a97d053ef46c16f380177f5a0724151dac5daff1c4076290671e524",
+        "attachment_bytes_equal": true,
+        "actual_used_id": "libfile_b7623c4ffd6881919e938f89942286f3",
+        "actual_used_saved_version": "UNKNOWN",
+        "status": "PASS_ALIAS_BYTE_MAPPING_ONLY",
+        "evidence": "T23_ROLE20_INPUT_IDENTITY_AND_STAGE_EVIDENCE_REVIEW_20261014",
+        "report_commit": "5094a89b93479b377486da549436200e25e63d8b",
+        "reviewed_at": "2026-10-14T04:47:05.940Z"
+      }
     },
     "S07": {
       "name": "介護保険データ解析_プロジェクト共通指示.md",
@@ -220,7 +276,21 @@
       "bytes_hash_verified": true,
       "originals_modified": false,
       "access_route": "Library本文＋実DOCX XML表セル",
-      "analysis_applied": false
+      "analysis_applied": false,
+      "t23_identity_review": {
+        "source": "S10",
+        "id": "libfile_292453196e588191a056e2f761753670",
+        "version": 0,
+        "bytes": 584930,
+        "sha256": "a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2",
+        "attachment_bytes_equal": true,
+        "actual_used_id": "libfile_292453196e588191a056e2f761753670",
+        "actual_used_saved_version": 0,
+        "status": "PASS_ID_VERSION_SHA",
+        "evidence": "T23_ROLE20_INPUT_IDENTITY_AND_STAGE_EVIDENCE_REVIEW_20261014",
+        "report_commit": "5094a89b93479b377486da549436200e25e63d8b",
+        "reviewed_at": "2026-10-14T04:47:05.940Z"
+      }
     }
   },
   "tasks": {
@@ -839,13 +909,14 @@
     "30": "reports/30.json"
   },
   "next_action": {
-    "owner": "00",
-    "assignment": "T22 ROLE20 findings integrated into STATE. ROLE10 residual work and NATIVE_EXCEL hold recorded; no cross-chat messages sent.",
-    "role10_next_single_unit": "Resolve manifest self-entry failure in a new audit package and continue full source-to-frozen-U20 reproduction evidence, without changing candidate or repeating completed T22 checks.",
-    "native_excel": "Operator unavailable/unassigned; remains HELD. Identify and secure an operator/environment before starting.",
-    "role20": "Independently assess newly saved ROLE10 and native-execution evidence.",
-    "restart_condition": "ROLE10 persists corrected new package/version and full-reproduction evidence or precise blocker ledger; native lane starts only after actual operator/environment and candidate SHA confirmation.",
-    "runtime": "other_chat_execution_unobserved"
+    "owner": "10/00",
+    "assignment": "T23 saved ROLE20 review integrated. Input alias-byte mappings and S10 identity are scoped PASS; attachment actual-used versions remain UNKNOWN.",
+    "role10_next_single_unit": "工程台帳のrun_id・全入力/コード/出力SHA・所在・終了結果を補完し、summaryのrun_manifest/S10_application.json参照SHAを展開。S04のテキスト抽出と意味検証を区別。4添付の実使用保存版UNKNOWNと歴史的依存/ログ不足を根拠付き分類。固定候補は変更しない。",
+    "native_excel": "00 coordination; actual operator/environment unassigned. Required native checks remain HELD.",
+    "role20": "新しく保存された工程台帳・全工程証拠・監査証拠・実機証拠だけ独立確認。既確認の限定PASSは適用範囲を確認して再利用。",
+    "restart_condition": "ROLE10が不足台帳・回収根拠・固定工程入口を保存。全工程再現は原資料からペアへの隔離正常終了ログが必要。実機は担当/環境と固定候補SHA確認後に開始。",
+    "runtime": "other_chat_execution_unobserved",
+    "cross_chat_dispatch": "not claimed"
   },
   "history": [
     {
@@ -937,6 +1008,13 @@
       "source_commit": "2c591431c48ff3f9e59009d32c9e6822c172d017",
       "event": "integrated_T22_v2_ROLE20_review_and_updated_native_excel_coordination",
       "details": "最新main同一コミットPLAN/STATE/reports10/20/30を確認。T22 v2 manifest PASS（自己項目除外、285件一致）を反映し、v1 manifest FAILは履歴として限定。入力ID/保存版対応、全工程再現、監査完全性、Microsoft Excel実機検査はHELD。候補ペア不変。ROLE10/20の次作業とROLE00のExcel担当確保を記録。担当者不在・実機環境不在を確認し、クロスチャット送信は主張しない。"
+    },
+    {
+      "at": "2026-10-14T04:52:22.197Z",
+      "role": "00",
+      "source_commit": "5094a89b93479b377486da549436200e25e63d8b",
+      "event": "integrated_T23_ROLE20_input_identity_and_stage_evidence_review",
+      "details": "S02/S03/S05/S06別名ID実バイト対応、S10 ID/版/SHA、工程ログ照合を限定PASSで統合。4実使用添付保存版UNKNOWN、全工程再現・監査完全性・実機HELDを維持。T22v2 PASS再利用、旧評価履歴保持。次単位を工程台帳全SHA・所在・run_id・終了結果の不足補完と証拠不足分類へ更新。候補・元資料・役割報告変更なし。別チャット送信主張なし。"
     }
   ],
   "deployment_status": "registered_on_main",
@@ -959,9 +1037,9 @@
     "all_four_created": "未確認"
   },
   "startup_00": {
-    "status": "T22_ROLE20_integration_and_native_excel_coordination",
-    "checked_at": "2026-10-14T08:12:48+09:00",
-    "source_commit": "3804f29f364e88b24e2267daa573c62ac0275862",
+    "status": "T23_ROLE20_review_integration",
+    "checked_at": "2026-10-14T04:52:22.197Z",
+    "source_commit": "5094a89b93479b377486da549436200e25e63d8b",
     "plan_revision": "2.7",
     "operations_revision": "2.7.0",
     "repository_visibility": "private",
@@ -974,19 +1052,19 @@
     ],
     "git_blob_identity": {
       "PLAN.md": "4e9acf1277229cba731e1f9e010ef4cff52e290c",
-      "STATE.json": "95b3ffd390395a48b28082a1fb05c6ee5bf91da7",
-      "reports/10.json": "815cf472ed1c11333e78a62efb964209bebbc002",
-      "reports/20.json": "093025fc7924a322f1629cdd06e4702a3729899c",
+      "STATE.json": "4c22f696b47bac1fc9d4c09922b2818f2d2b83d0",
+      "reports/10.json": "a0de9df9bc18884fc6d2f1abfce6d6d680d7e933",
+      "reports/20.json": "513d0a8c95117419cbf67fc94265c4c01ccaef3d",
       "reports/30.json": "51c63f2f9e1c2ad516d845c19a743c147fa122f7"
     },
     "latest_main_verified": true,
-    "latest_main_head": "3804f29f364e88b24e2267daa573c62ac0275862",
+    "latest_main_head": "5094a89b93479b377486da549436200e25e63d8b",
     "same_commit": true,
     "candidate_mutated": false,
     "other_chat_runtime_directly_observed": false
   },
   "operations_revision": "2.7.0",
-  "canonical_plan_checked_commit": "2c591431c48ff3f9e59009d32c9e6822c172d017",
+  "canonical_plan_checked_commit": "5094a89b93479b377486da549436200e25e63d8b",
   "canonical_plan_blob_sha": "4e9acf1277229cba731e1f9e010ef4cff52e290c",
   "checks": [
     {
@@ -1166,26 +1244,26 @@
   "report_freshness": {
     "10": {
       "last_recorded_at": "2026-10-14",
-      "last_recorded_status": "NOT_COMPLETE_FULL_REPRODUCTION_NOT_DEMONSTRATED",
-      "source_commit": "dd88fe75447879facea2386b3eff2f07e5081822",
-      "report_sha": "815cf472ed1c11333e78a62efb964209bebbc002",
-      "task_id": "T21_ROLE10_10A_REPRO_AUDIT_20261014",
-      "note": "reports/10.jsonをT21の監査報告として確認。T21監査ZIP保存と限定歴史的数値照合を記録。現行U20全工程生成は未実証。ROLE20の評価を反映し、過去完全再構成のFAILを優先。",
-      "checked_at": "2026-10-14T07:29:19+09:00",
-      "checked_commit": "b5e7b10d24273be5846f669460c82a3a1921ae73",
+      "last_recorded_status": "PARTIAL_INPUT_BYTE_IDENTITY_RECONCILED_FULL_REPRODUCTION_AND_AUDIT_HELD",
+      "source_commit": "f0f2aa93be78c8d014c726a4cbdc164819529fd4",
+      "report_sha": "a0de9df9bc18884fc6d2f1abfce6d6d680d7e933",
+      "task_id": "T23_ROLE10_INPUT_IDENTITY_AND_REPRODUCTION_GAPS_20261014",
+      "note": "T23追加保存レコードを確認。判定はROLE20のT23限定レビューを基準。",
+      "checked_at": "2026-10-14T04:52:22.197Z",
+      "checked_commit": "5094a89b93479b377486da549436200e25e63d8b",
       "freshness": "current_as_of_commit"
     },
     "20": {
-      "last_recorded_at": "2026-10-13T23:06:57Z",
-      "last_recorded_status": "HELD_FULL_REPRODUCTION_AND_NATIVE_EXCEL",
-      "source_commit": "6cf7d9267f15317b34359236db037a0d16913832",
-      "report_sha": "093025fc7924a322f1629cdd06e4702a3729899c",
-      "task_id": "T22_ROLE20_SAVED_AUDIT_ARTIFACT_REVIEW_20261014",
-      "scoped_verdict": "PASS_BOUNDED_T22_EVIDENCE; FAIL_MANIFEST_SELF_ENTRY; HELD_FULL_REPRODUCTION",
+      "last_recorded_at": "2026-10-14T04:47:05.940Z",
+      "last_recorded_status": "T23_SCOPED_PASS_WITH_UNKNOWN_AND_HELD",
+      "source_commit": "97b6ed7f1461a7275cad3894eecc87a197f888ea",
+      "report_sha": "513d0a8c95117419cbf67fc94265c4c01ccaef3d",
+      "task_id": "T23_ROLE20_INPUT_IDENTITY_AND_STAGE_EVIDENCE_REVIEW_20261014",
+      "scoped_verdict": "PASS_ALIAS_BYTE_MAPPING_S10_IDENTITY_STAGE_EVIDENCE; UNKNOWN_ATTACHMENT_SAVED_VERSIONS; HELD_REPRODUCTION_AUDIT_NATIVE",
       "release_status": "NOT_COMPLETE_NOT_ACCEPTED",
       "candidate_fingerprint": "5fa7dadcc03c4789d65838f9ca58b3d6ea16fee239a4e6259a760e7e1c7652b3",
-      "checked_at": "2026-10-14T08:12:48+09:00",
-      "checked_commit": "3804f29f364e88b24e2267daa573c62ac0275862",
+      "checked_at": "2026-10-14T04:52:22.197Z",
+      "checked_commit": "5094a89b93479b377486da549436200e25e63d8b",
       "content_changed_since_previous": true,
       "freshness": "current_as_of_commit"
     },
@@ -1194,8 +1272,8 @@
       "last_recorded_status": "U16_bounded_correction_proposal_ready",
       "source_commit": "6d67948024e834d81218dd1232a1786d13d27169",
       "report_sha": "51c63f2f9e1c2ad516d845c19a743c147fa122f7",
-      "checked_at": "2026-10-14T07:29:19+09:00",
-      "checked_commit": "b5e7b10d24273be5846f669460c82a3a1921ae73",
+      "checked_at": "2026-10-14T04:52:22.197Z",
+      "checked_commit": "5094a89b93479b377486da549436200e25e63d8b",
       "content_changed_since_previous": false,
       "freshness": "no_new_report_in_pinned_commit"
     }
@@ -1557,19 +1635,19 @@
   },
   "active_assignments": {
     "ROLE10": {
-      "instruction": "Resolve ROLE20 T22 v2 input ID/saved-version mapping hold and continue end-to-end reproduction/audit gaps; no repeat of the passed v2 manifest review.",
+      "instruction": "T23の限定PASSを再利用し、工程台帳・全工程入口・監査不足を補完。実使用添付保存版はUNKNOWNのまま根拠を回収し、別名ID版を転用しない。",
       "runtime": "unobserved",
-      "latest_verified_completed": "T22 v2 manifest PASS, self-entry excluded and all 285 other entries matched; frozen pair IDs/versions/SHAs unchanged.",
-      "next_single_unit": "Produce persisted evidence resolving S02/S03/S05/S06 report-vs-archive ID/version mapping (or exact unavailable-item ledger), then connect/identify source-to-pair stage boundaries without changing frozen pair.",
+      "latest_verified_completed": "T23 independent scoped PASS for 4 alias-byte mappings, S10 ID/version/SHA and saved-stage evidence reconciliation; T22 v2 manifest PASS reused.",
+      "next_single_unit": "工程台帳のrun_id・全入力/コード/出力SHA・所在・終了結果を補完し、summaryのrun_manifest/S10_application.json参照SHAを展開。S04のテキスト抽出と意味検証を区別。4添付の実使用保存版UNKNOWNと歴史的依存/ログ不足を根拠付き分類。固定候補は変更しない。",
       "candidate_edit": "forbidden",
       "report_write_scope": "reports/10.json only",
-      "output": "Exact input identity/version evidence, stage input/code/output identities and logs, or concrete blockers and restart conditions; no full reproduction PASS absent end-to-end execution."
+      "output": "reports/10.jsonに追加証拠、段階入出力台帳、取得未了/取得不能の根拠、正確な再開条件を保存。未実行をPASSにしない。"
     },
     "ROLE20": {
-      "instruction": "Independently review new ROLE10 input-identity and reproduction evidence and later native Excel evidence; T22 v2 scoped review is complete.",
+      "instruction": "新しく保存された工程台帳・全工程証拠・監査証拠・実機証拠だけ独立確認。既確認の限定PASSは適用範囲を確認して再利用。",
       "runtime": "unobserved",
-      "status": "HELD_INPUT_ID_MAPPING_FULL_REPRODUCTION_AUDIT_COMPLETENESS_AND_NATIVE_EXCEL",
-      "duplicate_checks": "Do not repeat T22 v2 manifest checks already passed."
+      "status": "T23_REVIEW_SAVED_OVERALL_NOT_COMPLETE_NOT_ACCEPTED",
+      "duplicate_checks": "T22 v2 manifestおよびT23限定確認を同一証拠で再実行しない。"
     },
     "ROLE30": {
       "instruction": "No work unless ROLE10/ROLE20 produces a concrete new defect needing a correction proposal",
@@ -1577,7 +1655,7 @@
     },
     "ROLE00": {
       "writer": "this_user_authorized_ROLE00_turn",
-      "scope": "Integrate ROLE20 T22 report; maintain STATE; coordinate native Excel lane; no cross-chat dispatch claim"
+      "scope": "T23 independent review integration and audit/native operator coordination; STATE writer only for this update; no cross-chat dispatch claim."
     },
     "narrative_analyst": {
       "requested_model": "GPT-6 Astra",
@@ -1588,7 +1666,7 @@
     "NATIVE_EXCEL": {
       "owner": "00 coordinates; actual Windows/macOS Microsoft Excel operator remains unassigned",
       "status": "HELD_WAITING_FOR_OPERATOR_AND_NATIVE_ENVIRONMENT",
-      "availability_check": "No named operator or native Excel environment identified in the current verified records/tools; no external dispatch made.",
+      "availability_check": "T23 independent saved review reports no new Windows/macOS desktop evidence. Actual operator remains unassigned in verified records.",
       "candidate": {
         "workbook": {
           "id": "libfile_c17d27b379308191acf27bb17e9f0497",
@@ -1617,15 +1695,16 @@
         "screenshots or PDF",
         "recalculation differences"
       ],
-      "resume_position": "Inspect frozen workbook read-only; perform recalc/save/reopen on an isolated copy only; save evidence and pass to ROLE20."
+      "resume_position": "Inspect frozen workbook read-only; perform recalc/save/reopen on an isolated copy only; save evidence and pass to ROLE20.",
+      "review_source": "5094a89b93479b377486da549436200e25e63d8b"
     }
   },
   "verified_current_state": {
-    "checked_commit": "2c591431c48ff3f9e59009d32c9e6822c172d017",
+    "checked_commit": "5094a89b93479b377486da549436200e25e63d8b",
     "plan_revision": "2.7",
     "operations_revision": "2.7.0",
-    "role20_task": "T22_V2_ROLE20_CORRECTED_ARTIFACT_REVIEW_20261014",
-    "role20_status": "HELD_INPUT_ID_MAPPING_FULL_REPRODUCTION_AUDIT_COMPLETENESS_AND_NATIVE_EXCEL",
+    "role20_task": "T23_ROLE20_INPUT_IDENTITY_AND_STAGE_EVIDENCE_REVIEW_20261014",
+    "role20_status": "T23_SCOPED_PASS_ATTACHMENT_VERSIONS_UNKNOWN_REPRODUCTION_AUDIT_NATIVE_HELD",
     "overall_release": "NOT_COMPLETE_NOT_ACCEPTED",
     "candidate_pair_fingerprint": "5fa7dadcc03c4789d65838f9ca58b3d6ea16fee239a4e6259a760e7e1c7652b3",
     "frozen_candidate_pair_unchanged": true,
@@ -1666,12 +1745,13 @@
       "summary_v2.pyが未定義rows参照でNameError/exit1"
     ],
     "held_items": [
-      "凍結U20ペアを原資料fresh抽出から生成する全工程再現",
-      "完全監査パッケージの履歴/依存/manifest網羅性（file_inventory 102中101一致、pyc不一致の整理を含む）",
-      "Windows/macOS Microsoft Excel実機による表示・印刷・隔離コピー再計算・保存再開封"
+      "ATTACHMENT_SAVED_VERSION: UNKNOWN; 実使用時保存版メタデータを回収。取得できない場合は試行・理由・内容SHAで固定できる範囲を記録。別名IDの版0を実使用添付の版と推定しない。",
+      "E20-PAIR-05: HELD; 固定全工程入口・段階接続と、各run_id/入力/コード/出力のSHA・所在・終了結果を記録。元資料からペアまで新規隔離出力の正常終了証拠が必要。",
+      "E20-T21-AUDIT-01: HELD; summary段階run_manifest/S10_application.jsonの参照SHAを直接台帳へ展開。歴史的依存・ログ・保存版不足を回収済/未接続/取得未了/取得不能に根拠付き分類。12差分本文は現保存セットでの欠落として扱う。",
+      "E20-NATIVE-01: HELD; Windows/macOS Microsoft Excel実機担当・環境を確保。固定ID/版/実SHAを照合し、開封・日本語/配置・印刷・隔離コピー再計算/保存再開封の証拠を保存。"
     ],
     "native_excel_operator": "unassigned",
-    "evidence_source": "reports/20.json artifact_version_reviews[0], read at 2c591431c48ff3f9e59009d32c9e6822c172d017",
+    "evidence_source": "reports/20.json.latest_review -> independent_followup_reviews[0] at 5094a89b93479b377486da549436200e25e63d8b",
     "t22_audit_package": {
       "id": "libfile_d8cd5bab2b388191a642a6bdc6afbc40",
       "version": 2,
@@ -1694,16 +1774,19 @@
     },
     "fail_and_held": {
       "manifest_self_entry": {
-        "status": "FAIL",
-        "recorded_bytes": 56226,
-        "recorded_sha256": "d4953c1ba0e97f6b247696cd87458b0d19cba283117e16620a89f4d99ff02abd",
-        "actual_bytes": 56562,
-        "actual_sha256": "c261d1fe3797b6be742c9268a2c956fa71b80eb7d9b474639b68a1f72e7b1177",
-        "other_entries": "284/285 match"
+        "status": "PASS_REUSED_VERSION2_ONLY",
+        "artifact_version": 2,
+        "evidence": "T22 v2 independent PASS reused by T23; v1 FAIL retained as historical_t22_v1_manifest_failure."
       },
-      "full_reproduction": "HELD: no end-to-end run from original source through all transformations to frozen U20 workbook+narrative",
-      "audit_completeness": "HELD: missing historical lock/exact artifact build, full private chat/command history, precise failure timing and complete bundle/manifest trace",
-      "native_excel": "HELD: Windows/macOS Excel desktop evidence absent; operator unassigned"
+      "full_reproduction": "HELD: no new end-to-end source-to-frozen-pair execution evidence.",
+      "audit_completeness": "HELD: attachment versions, historical dependency/log records and complete stage-input ledger remain incomplete.",
+      "native_excel": "HELD: required Windows/macOS desktop evidence absent; operator unassigned.",
+      "input_ID_mapping": {
+        "status": "PASS_SCOPED_WITH_VERSION_UNKNOWN",
+        "byte_mapping": "PASS for S02/S03/S05/S06",
+        "actual_used_attachment_saved_versions": "UNKNOWN for S02/S03/S05/S06",
+        "S10": "PASS_ID_VERSION_SHA"
+      }
     },
     "role20_t22_v2_scoped_passes": [
       "T22 v2 ZIP identity/CRC and manifest coverage (self-entry excluded; all 285 other entries match)",
@@ -1711,98 +1794,174 @@
       "reused scoped checks explicitly listed in reports/20.json"
     ],
     "role20_t22_v2_blockers": {
-      "input_ID_saved_version_mapping": "HELD",
+      "input_ID_saved_version_mapping": "SUPERSEDED_BY_T23: byte mapping PASS_SCOPED; actual-used attachment versions UNKNOWN.",
       "full_source_to_frozen_pair_reproduction": "HELD",
       "audit_completeness": "HELD",
       "microsoft_excel_desktop": "HELD"
     },
-    "historical_note": "T22 v1 manifest FAIL remains historical only; do not copy into v2 verdict."
+    "historical_note": "T22 v1 manifest FAIL remains historical only; do not copy into v2 verdict.",
+    "role20_t23_scoped_passes": [
+      "S02/S03/S05/S06: PASS_ALIAS_BYTE_MAPPING_ONLY; alias saved version 0 and actual attachment bytes match; actual-used attachment saved versions remain UNKNOWN.",
+      "S10: PASS_ID_VERSION_SHA; ID/version0/584930 bytes/SHA and attachment byte agreement independently checked by ROLE20.",
+      "Stage ledger: PASS_SCOPED_EVIDENCE_RECONCILIATION; saved preflight/tests/extraction/isolated summary logs checked; no new ROLE20 generation execution.",
+      "T22 v2 manifest: PASS_REUSED_VERSION2_ONLY; same saved ID/version/SHA; no repeat."
+    ],
+    "role20_t23_input_identity_results": [
+      {
+        "source": "S02",
+        "id": "libfile_49bf2650277881919afc2e41b9afaca2",
+        "version": 0,
+        "bytes": 1609475,
+        "sha256": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304",
+        "attachment_bytes_equal": true,
+        "actual_used_id": "libfile_0d9cfee943ec819188518e4922ce620e",
+        "actual_used_saved_version": "UNKNOWN",
+        "status": "PASS_ALIAS_BYTE_MAPPING_ONLY"
+      },
+      {
+        "source": "S03",
+        "id": "libfile_6ef50a7e48148191bab971c64f1df614",
+        "version": 0,
+        "bytes": 1892849,
+        "sha256": "e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f",
+        "attachment_bytes_equal": true,
+        "actual_used_id": "libfile_1a33a04a77e4819197bfdf49e7cd8099",
+        "actual_used_saved_version": "UNKNOWN",
+        "status": "PASS_ALIAS_BYTE_MAPPING_ONLY"
+      },
+      {
+        "source": "S05",
+        "id": "libfile_7a46b17eb12c8191b3104fe6a8f4f0aa",
+        "version": 0,
+        "bytes": 1128810,
+        "sha256": "87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1",
+        "attachment_bytes_equal": true,
+        "actual_used_id": "libfile_f40c9f4e1d0081919fb497f31e737856",
+        "actual_used_saved_version": "UNKNOWN",
+        "status": "PASS_ALIAS_BYTE_MAPPING_ONLY"
+      },
+      {
+        "source": "S06",
+        "id": "libfile_6f78bde68948819198a39bb69b17af54",
+        "version": 0,
+        "bytes": 34816,
+        "sha256": "b74b37c05a97d053ef46c16f380177f5a0724151dac5daff1c4076290671e524",
+        "attachment_bytes_equal": true,
+        "actual_used_id": "libfile_b7623c4ffd6881919e938f89942286f3",
+        "actual_used_saved_version": "UNKNOWN",
+        "status": "PASS_ALIAS_BYTE_MAPPING_ONLY"
+      },
+      {
+        "source": "S10",
+        "id": "libfile_292453196e588191a056e2f761753670",
+        "version": 0,
+        "bytes": 584930,
+        "sha256": "a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2",
+        "attachment_bytes_equal": true,
+        "actual_used_id": "libfile_292453196e588191a056e2f761753670",
+        "actual_used_saved_version": 0,
+        "status": "PASS_ID_VERSION_SHA"
+      }
+    ],
+    "role20_t23_remaining_items": [
+      {
+        "id": "ATTACHMENT_SAVED_VERSION",
+        "status": "UNKNOWN",
+        "owner": "10/00",
+        "scope": "S02/S03/S05/S06 actual-used attachment saved versions",
+        "resume": "実使用時保存版メタデータを回収。取得できない場合は試行・理由・内容SHAで固定できる範囲を記録。別名IDの版0を実使用添付の版と推定しない。"
+      },
+      {
+        "id": "E20-PAIR-05",
+        "status": "HELD",
+        "owner": "10",
+        "resume": "固定全工程入口・段階接続と、各run_id/入力/コード/出力のSHA・所在・終了結果を記録。元資料からペアまで新規隔離出力の正常終了証拠が必要。"
+      },
+      {
+        "id": "E20-T21-AUDIT-01",
+        "status": "HELD",
+        "owner": "10/00",
+        "resume": "summary段階run_manifest/S10_application.jsonの参照SHAを直接台帳へ展開。歴史的依存・ログ・保存版不足を回収済/未接続/取得未了/取得不能に根拠付き分類。12差分本文は現保存セットでの欠落として扱う。"
+      },
+      {
+        "id": "E20-NATIVE-01",
+        "status": "HELD",
+        "owner": "00 coordinates; actual operator unassigned",
+        "resume": "Windows/macOS Microsoft Excel実機担当・環境を確保。固定ID/版/実SHAを照合し、開封・日本語/配置・印刷・隔離コピー再計算/保存再開封の証拠を保存。"
+      }
+    ],
+    "historical_t22_v1_manifest_failure": {
+      "status": "FAIL",
+      "recorded_bytes": 56226,
+      "recorded_sha256": "d4953c1ba0e97f6b247696cd87458b0d19cba283117e16620a89f4d99ff02abd",
+      "actual_bytes": 56562,
+      "actual_sha256": "c261d1fe3797b6be742c9268a2c956fa71b80eb7d9b474639b68a1f72e7b1177",
+      "other_entries": "284/285 match"
+    }
   },
   "remaining_required_work": [
-    "ROLE10: resolve S02/S03/S05/S06 report-versus-archive input ID and saved-version mapping using actual Library identity/version and byte evidence, or record exact unavailable evidence; do not infer versions from matching SHA claims.",
-    "ROLE10: demonstrate the complete fresh-source-to-frozen-pair generation route or itemize disconnected/missing stages; retain per-stage input/code/output identities and normal completion logs in isolated output.",
-    "ROLE10/00: keep audit completeness HELD until historical dependency locks/exact Artifact Tool version, private history/command coverage and missing failure timing are evidenced or individually classified unavailable.",
-    "00: secure a named Windows/macOS Microsoft Excel operator/environment; currently unassigned and HELD.",
-    "Native operator: verify the frozen workbook SHA, inspect open/render/print behavior and isolated-copy recalc-save-reopen, preserving required evidence for ROLE20.",
-    "ROLE20: independently review newly persisted ROLE10 and native evidence without replaying the passed T22 v2 manifest checks.",
-    "ROLE00: maintain overall NOT_COMPLETE_NOT_ACCEPTED until full reproduction, audit coverage, independent review and required native checks pass."
+    "ROLE10: 工程台帳のrun_id・全入力/コード/出力SHA・所在・終了結果を補完し、summaryのrun_manifest/S10_application.json参照SHAを展開。S04のテキスト抽出と意味検証を区別。4添付の実使用保存版UNKNOWNと歴史的依存/ログ不足を根拠付き分類。固定候補は変更しない。",
+    "ROLE10: 固定全工程入口を整備し、fresh原資料抽出→全修正→ブック/叙述→ペア確定の入力/コード/出力SHAと正常終了ログを新規隔離出力で保存。未接続・不足は具体的に記録。",
+    "ROLE10/00: 実使用添付保存版UNKNOWN、歴史的依存lock/実ビルド、私的履歴/初期失敗記録の不足を回収可能・取得未了・取得不能に分けて根拠を保存。12差分本文の恒久取得不能は未証明。",
+    "ROLE00: Windows/macOS Microsoft Excel実機担当と環境を確保。現在未割当・HELD。",
+    "実機担当: 固定候補のID/版/実SHA照合後、開封、日本語/配置、印刷、隔離コピー再計算/保存再開封を実施し、OS/Excel版・箇所・時刻・画像/PDF・差分を保存。",
+    "ROLE20: 新規保存された未確認範囲の証拠を独立確認。T22 v2 manifestや既確認限定PASSを重複実行しない。",
+    "ROLE00: 必須保留と独立検証が解消するまでNOT_COMPLETE_NOT_ACCEPTEDを維持。"
   ],
   "execution_reconciliation": {
     "authority": "latest_main_same_commit_files",
-    "source_commit": "2c591431c48ff3f9e59009d32c9e6822c172d017",
+    "source_commit": "5094a89b93479b377486da549436200e25e63d8b",
     "source_blobs": {
-      "PLAN": "4e9acf1277229cba731e1f9e010ef4cff52e290c",
-      "STATE": "bf9534db791dda44fd6b2db173b0ad0fa16b500e",
-      "reports/10": "d9b722479600b96949992f8c94e4ea342d20457f",
-      "reports/20": "9c71a45753bc437537575d54b59dad5bc5e96cba",
-      "reports/30": "51c63f2f9e1c2ad516d845c19a743c147fa122f7"
+      "PLAN.md": "4e9acf1277229cba731e1f9e010ef4cff52e290c",
+      "STATE.json": "4c22f696b47bac1fc9d4c09922b2818f2d2b83d0",
+      "reports/10.json": "a0de9df9bc18884fc6d2f1abfce6d6d680d7e933",
+      "reports/20.json": "513d0a8c95117419cbf67fc94265c4c01ccaef3d",
+      "reports/30.json": "51c63f2f9e1c2ad516d845c19a743c147fa122f7"
     },
-    "integrated_review": {
-      "task_id": "T22_V2_ROLE20_CORRECTED_ARTIFACT_REVIEW_20261014",
-      "reviewed_at": "2026-10-13T23:38:55.463Z",
-      "source_commit": "d72fb3f6f787492c1c6a82d39cf4288dc9a36346",
-      "artifact_version": 2,
-      "report_path": "reports/20.json.artifact_version_reviews[0]",
-      "t22_package": {
-        "id": "libfile_d8cd5bab2b388191a642a6bdc6afbc40",
-        "version": 2,
-        "size_bytes": 3005625,
-        "sha256": "fe267365d9d9648668d7228d99aa8aeb8adba88a88bb32f3a30ca32bd1a9a200",
-        "zip_crc": "PASS",
-        "entries": 286,
-        "manifest_sha256": "000a8a5df4b6579f9a4bae71297be69d826baa9a93adeb912ca44678965ad88b",
-        "manifest_status": "PASS",
-        "manifest_self_entry_excluded": true,
-        "other_entries_matching": 285
+    "role20_task": "T23_ROLE20_INPUT_IDENTITY_AND_STAGE_EVIDENCE_REVIEW_20261014",
+    "role20_report_record": "independent_followup_reviews[0]",
+    "scoped_pass": [
+      "S02/S03/S05/S06: PASS_ALIAS_BYTE_MAPPING_ONLY; alias saved version 0 and actual attachment bytes match; actual-used attachment saved versions remain UNKNOWN.",
+      "S10: PASS_ID_VERSION_SHA; ID/version0/584930 bytes/SHA and attachment byte agreement independently checked by ROLE20.",
+      "Stage ledger: PASS_SCOPED_EVIDENCE_RECONCILIATION; saved preflight/tests/extraction/isolated summary logs checked; no new ROLE20 generation execution.",
+      "T22 v2 manifest: PASS_REUSED_VERSION2_ONLY; same saved ID/version/SHA; no repeat."
+    ],
+    "remaining": [
+      {
+        "id": "ATTACHMENT_SAVED_VERSION",
+        "status": "UNKNOWN",
+        "owner": "10/00",
+        "scope": "S02/S03/S05/S06 actual-used attachment saved versions",
+        "resume": "実使用時保存版メタデータを回収。取得できない場合は試行・理由・内容SHAで固定できる範囲を記録。別名IDの版0を実使用添付の版と推定しない。"
       },
-      "frozen_pair_unchanged": {
-        "workbook": {
-          "id": "libfile_c17d27b379308191acf27bb17e9f0497",
-          "version": 0,
-          "sha256": "9c3c50835961e876844daf59db5709316055a79579f79aa151ad54e15a5f68f8"
-        },
-        "narrative": {
-          "id": "libfile_49d445210cb481918445587a5e22e0fb",
-          "version": 1,
-          "sha256": "e304571171ab948766a425831e7c54d90160555e4dcc7825d8e538f1cf376fd6"
-        },
-        "fingerprint": "5fa7dadcc03c4789d65838f9ca58b3d6ea16fee239a4e6259a760e7e1c7652b3",
-        "unchanged": true
-      },
-      "findings": {
-        "scoped_pass": [
-          "T22 v2 ZIP identity/CRC and manifest coverage (self-entry excluded; all 285 other entries match)",
-          "frozen workbook/narrative identities and immutable status",
-          "reused scoped checks explicitly listed in reports/20.json"
-        ],
-        "input_id_saved_version_mapping": "HELD; S02/S03/S05/S06 report-vs-archive IDs differ; SHA assertions alone do not establish distinct Library ID/version identity; S10 v0 evidence not reacquired.",
-        "full_source_to_pair_reproduction": "HELD; no connected fresh-source-to-workbook+narrative end-to-end entry; T22 did not rerun full pipeline.",
-        "audit_completeness": "HELD; historical dependency locks/exact Artifact Tool version, complete private chat/command history and precise failure timing remain unavailable/unverified.",
-        "microsoft_excel_desktop": "HELD; no Windows/macOS evidence or named operator."
-      },
-      "history_note": "T22 v1 manifest FAIL remains historical only; do not copy into v2 verdict.",
-      "overall": "NOT_COMPLETE_NOT_ACCEPTED"
-    },
-    "assignments": {
-      "ROLE10": {
-        "owner": "10",
-        "next": "Resolve input ID/saved-version mapping with actual identity/version evidence or mark unavailable; continue constructing a pinned source-to-frozen-pair route and per-stage audit ledger. Do not repeat v2 manifest check.",
-        "candidate_pair_mutation": "forbidden",
-        "report_write_scope": "reports/10.json"
-      },
-      "ROLE20": {
-        "owner": "20",
-        "next": "Independently review newly persisted ROLE10 reproduction/input-identity evidence and native Excel evidence when supplied; do not rerun already passed T22 v2 scoped checks.",
-        "report_write_scope": "reports/20.json"
-      },
-      "NATIVE_EXCEL": {
-        "owner": "00 coordinates; actual operator unassigned",
+      {
+        "id": "E20-PAIR-05",
         "status": "HELD",
-        "resume": "Secure named Windows/macOS Excel operator/environment; verify exact frozen workbook bytes, inspect opening/Japanese/layout/print preview, recalculate-save-reopen isolated copy, preserve evidence for ROLE20."
+        "owner": "10",
+        "resume": "固定全工程入口・段階接続と、各run_id/入力/コード/出力のSHA・所在・終了結果を記録。元資料からペアまで新規隔離出力の正常終了証拠が必要。"
+      },
+      {
+        "id": "E20-T21-AUDIT-01",
+        "status": "HELD",
+        "owner": "10/00",
+        "resume": "summary段階run_manifest/S10_application.jsonの参照SHAを直接台帳へ展開。歴史的依存・ログ・保存版不足を回収済/未接続/取得未了/取得不能に根拠付き分類。12差分本文は現保存セットでの欠落として扱う。"
+      },
+      {
+        "id": "E20-NATIVE-01",
+        "status": "HELD",
+        "owner": "00 coordinates; actual operator unassigned",
+        "resume": "Windows/macOS Microsoft Excel実機担当・環境を確保。固定ID/版/実SHAを照合し、開封・日本語/配置・印刷・隔離コピー再計算/保存再開封の証拠を保存。"
       }
+    ],
+    "assignments": {
+      "ROLE10": "工程台帳のrun_id・全入力/コード/出力SHA・所在・終了結果を補完し、summaryのrun_manifest/S10_application.json参照SHAを展開。S04のテキスト抽出と意味検証を区別。4添付の実使用保存版UNKNOWNと歴史的依存/ログ不足を根拠付き分類。固定候補は変更しない。",
+      "ROLE20": "新しく保存された工程台帳・全工程証拠・監査証拠・実機証拠だけ独立確認。既確認の限定PASSは適用範囲を確認して再利用。",
+      "ROLE00": "STATE統合・監査欠落分類支援・実機担当/環境確保",
+      "NATIVE_EXCEL": "unassigned/HELD"
     },
-    "candidate_pair_changed": false,
-    "cross_chat_dispatch": "not claimed"
+    "duplicate_execution": "forbidden",
+    "cross_chat_dispatch_claim": "not made",
+    "candidate_pair_changed": false
   },
   "microsoft_desktop_excel_validation": {
     "required": true,
@@ -1825,7 +1984,7 @@
       "recalculation differences"
     ],
     "resume_condition": "Secure named operator and actual Windows/macOS desktop Excel; verify exact frozen candidate workbook SHA before inspection. Recalculation/save/reopen on isolated copy only.",
-    "availability_check": "No named Windows/macOS Microsoft Excel operator or environment identified in verified records/tools; no cross-chat dispatch claimed.",
+    "availability_check": "T23 independent saved review reports no new Windows/macOS desktop evidence. Actual operator remains unassigned in verified records.",
     "workbook": {
       "id": "libfile_c17d27b379308191acf27bb17e9f0497",
       "version": 0,
@@ -1835,7 +1994,8 @@
       "id": "libfile_49d445210cb481918445587a5e22e0fb",
       "version": 1,
       "sha256": "e304571171ab948766a425831e7c54d90160555e4dcc7825d8e538f1cf376fd6"
-    }
+    },
+    "review_source": "5094a89b93479b377486da549436200e25e63d8b"
   },
   "validation_requirement_change": {
     "authority": "explicit_user_instruction_20261013_114539_JST",
@@ -1905,5 +2065,248 @@
       "requirement_change": "reevaluate_new_academic_content_and_affected_dependencies; retain_prior_evidence_if_applicable"
     },
     "scope": "one_off_care_analysis_only"
+  },
+  "independent_review_integrations": {
+    "T22_v2": {
+      "task_id": "T22_V2_ROLE20_CORRECTED_ARTIFACT_REVIEW_20261014",
+      "reviewed_at": "2026-10-13T23:38:55.463Z",
+      "source_commit": "d72fb3f6f787492c1c6a82d39cf4288dc9a36346",
+      "artifact_version": 2,
+      "report_path": "reports/20.json.artifact_version_reviews[0]",
+      "t22_package": {
+        "id": "libfile_d8cd5bab2b388191a642a6bdc6afbc40",
+        "version": 2,
+        "size_bytes": 3005625,
+        "sha256": "fe267365d9d9648668d7228d99aa8aeb8adba88a88bb32f3a30ca32bd1a9a200",
+        "zip_crc": "PASS",
+        "entries": 286,
+        "manifest_sha256": "000a8a5df4b6579f9a4bae71297be69d826baa9a93adeb912ca44678965ad88b",
+        "manifest_status": "PASS",
+        "manifest_self_entry_excluded": true,
+        "other_entries_matching": 285
+      },
+      "frozen_pair_unchanged": {
+        "workbook": {
+          "id": "libfile_c17d27b379308191acf27bb17e9f0497",
+          "version": 0,
+          "sha256": "9c3c50835961e876844daf59db5709316055a79579f79aa151ad54e15a5f68f8"
+        },
+        "narrative": {
+          "id": "libfile_49d445210cb481918445587a5e22e0fb",
+          "version": 1,
+          "sha256": "e304571171ab948766a425831e7c54d90160555e4dcc7825d8e538f1cf376fd6"
+        },
+        "fingerprint": "5fa7dadcc03c4789d65838f9ca58b3d6ea16fee239a4e6259a760e7e1c7652b3",
+        "unchanged": true
+      },
+      "findings": {
+        "scoped_pass": [
+          "T22 v2 ZIP identity/CRC and manifest coverage (self-entry excluded; all 285 other entries match)",
+          "frozen workbook/narrative identities and immutable status",
+          "reused scoped checks explicitly listed in reports/20.json"
+        ],
+        "input_id_saved_version_mapping": "HELD; S02/S03/S05/S06 report-vs-archive IDs differ; SHA assertions alone do not establish distinct Library ID/version identity; S10 v0 evidence not reacquired.",
+        "full_source_to_pair_reproduction": "HELD; no connected fresh-source-to-workbook+narrative end-to-end entry; T22 did not rerun full pipeline.",
+        "audit_completeness": "HELD; historical dependency locks/exact Artifact Tool version, complete private chat/command history and precise failure timing remain unavailable/unverified.",
+        "microsoft_excel_desktop": "HELD; no Windows/macOS evidence or named operator."
+      },
+      "history_note": "T22 v1 manifest FAIL remains historical only; do not copy into v2 verdict.",
+      "overall": "NOT_COMPLETE_NOT_ACCEPTED"
+    },
+    "T23": {
+      "source_commit": "97b6ed7f1461a7275cad3894eecc87a197f888ea",
+      "report_blob_sha": "513d0a8c95117419cbf67fc94265c4c01ccaef3d",
+      "record_path": "independent_followup_reviews[0]",
+      "task_id": "T23_ROLE20_INPUT_IDENTITY_AND_STAGE_EVIDENCE_REVIEW_20261014",
+      "reviewed_at": "2026-10-14T04:47:05.940Z",
+      "startup_blobs": {
+        "PLAN.md": "4e9acf1277229cba731e1f9e010ef4cff52e290c",
+        "STATE.json": "4c22f696b47bac1fc9d4c09922b2818f2d2b83d0",
+        "reports/10.json": "a0de9df9bc18884fc6d2f1abfce6d6d680d7e933",
+        "reports/20.json": "9c71a45753bc437537575d54b59dad5bc5e96cba",
+        "reports/30.json": "51c63f2f9e1c2ad516d845c19a743c147fa122f7"
+      },
+      "producer_record": "reports/10.json.task_results.T23_ROLE10_INPUT_IDENTITY_AND_REPRODUCTION_GAPS_20261014",
+      "scope": "新規入力ID対応と工程台帳の証拠照合。T22v2台帳CRC/全entry検査、既確認数値/抽出/生成を再実行しない。",
+      "input_identity_results": [
+        {
+          "source": "S02",
+          "id": "libfile_49bf2650277881919afc2e41b9afaca2",
+          "version": 0,
+          "bytes": 1609475,
+          "sha256": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304",
+          "attachment_bytes_equal": true,
+          "actual_used_id": "libfile_0d9cfee943ec819188518e4922ce620e",
+          "actual_used_saved_version": "UNKNOWN",
+          "status": "PASS_ALIAS_BYTE_MAPPING_ONLY"
+        },
+        {
+          "source": "S03",
+          "id": "libfile_6ef50a7e48148191bab971c64f1df614",
+          "version": 0,
+          "bytes": 1892849,
+          "sha256": "e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f",
+          "attachment_bytes_equal": true,
+          "actual_used_id": "libfile_1a33a04a77e4819197bfdf49e7cd8099",
+          "actual_used_saved_version": "UNKNOWN",
+          "status": "PASS_ALIAS_BYTE_MAPPING_ONLY"
+        },
+        {
+          "source": "S05",
+          "id": "libfile_7a46b17eb12c8191b3104fe6a8f4f0aa",
+          "version": 0,
+          "bytes": 1128810,
+          "sha256": "87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1",
+          "attachment_bytes_equal": true,
+          "actual_used_id": "libfile_f40c9f4e1d0081919fb497f31e737856",
+          "actual_used_saved_version": "UNKNOWN",
+          "status": "PASS_ALIAS_BYTE_MAPPING_ONLY"
+        },
+        {
+          "source": "S06",
+          "id": "libfile_6f78bde68948819198a39bb69b17af54",
+          "version": 0,
+          "bytes": 34816,
+          "sha256": "b74b37c05a97d053ef46c16f380177f5a0724151dac5daff1c4076290671e524",
+          "attachment_bytes_equal": true,
+          "actual_used_id": "libfile_b7623c4ffd6881919e938f89942286f3",
+          "actual_used_saved_version": "UNKNOWN",
+          "status": "PASS_ALIAS_BYTE_MAPPING_ONLY"
+        },
+        {
+          "source": "S10",
+          "id": "libfile_292453196e588191a056e2f761753670",
+          "version": 0,
+          "bytes": 584930,
+          "sha256": "a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2",
+          "attachment_bytes_equal": true,
+          "actual_used_id": "libfile_292453196e588191a056e2f761753670",
+          "actual_used_saved_version": 0,
+          "status": "PASS_ID_VERSION_SHA"
+        }
+      ],
+      "findings": [
+        {
+          "id": "E20-T22V2-SOURCE-IDENTITY",
+          "status": "PASS_SCOPED_WITH_VERSION_UNKNOWN",
+          "evidence": "4別名IDを独立materializeし保存版0を確認、実SHA/sizeと添付バイトを直接比較し4/4完全一致。使用IDはT21 input_ledger/T22 fresh input_manifestと整合。別IDを同一オブジェクトとは扱わず、実使用添付IDの過去保存版はUNKNOWN。",
+          "remaining": "添付の実使用時保存版を要求する監査要件は未解消。取得不能なら理由と内容SHA固定範囲を明記。"
+        },
+        {
+          "id": "E20-T23-S10-IDENTITY",
+          "status": "PASS",
+          "evidence": "libfile_292453196e588191a056e2f761753670を取得しversion0、584930 bytes、SHA a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2を直接確認。添付実バイトと一致。"
+        },
+        {
+          "id": "E20-T23-STAGE-LEDGER",
+          "status": "PASS_SCOPED_EVIDENCE_RECONCILIATION",
+          "evidence": "保存T21 run0701ログでpreflight exit0、テスト4+5 exit0、replay_v2 exit1を再読確認。T22 extraction/isolated summaryのexit0を保存execution_commandsに照合。コード・出力SHAはT21/T22独立評価済み同一アーカイブへの参照として再利用。生成者ログをROLE20の新規実行とはしない。",
+          "limits": [
+            "T21 run0701の失敗とrun0730の数値限定結果を混同しない。T23は全工程新実行を報告していない。",
+            "summary段階は入力extraction SHAを明示するが、run_manifest/S10_application.jsonについてT23欄はSHAの直接列挙でなく参照。完全な段階入出力台帳としては追加対応が必要。",
+            "『S04以降はhash/inventoryのみ』は粗い表現。inspect_inputs.pyはS04/S04_aliasのdocxテキスト抽出も行い収録物あり。ただし意味解析・全工程実証を意味しない。"
+          ],
+          "action": "10は段階台帳にrun_id、各入力/コード/出力の全SHAと所在・実行結果を明示し、テキスト抽出と意味検証を区別する。"
+        },
+        {
+          "id": "E20-PAIR-05",
+          "status": "HELD",
+          "evidence": "現行U20の元資料→全後続修正→ブック/叙述を結ぶ固定入口・全実行ログの新証拠なし。限定replayのNOT_RUNをPASSにしない。"
+        },
+        {
+          "id": "E20-T21-AUDIT-01",
+          "status": "HELD",
+          "evidence": "添付保存版UNKNOWN、歴史的依存lock/実ビルド、私的履歴/初期失敗記録、段階接続の不足は継続。『12差分本文が取得不能』は保存セットで欠ける範囲に限り、永久取得不能の証明ではない。"
+        },
+        {
+          "id": "E20-NATIVE-01",
+          "status": "HELD",
+          "evidence": "Microsoft Excel desktop Windows/macOS実機の新証拠なし。"
+        },
+        {
+          "id": "E20-T22-MANIFEST-SELF",
+          "status": "PASS_REUSED_VERSION2_ONLY",
+          "evidence": "T23が参照するID/版2/ZIP SHA/manifest SHAは前回評価対象と同一。指定通り検査を繰り返さず2c591431...の版2限定PASSを適用。版1FAIL履歴は保持。"
+        }
+      ],
+      "frozen_pair": {
+        "mutated": false,
+        "workbook": {
+          "id": "libfile_c17d27b379308191acf27bb17e9f0497",
+          "version": 0,
+          "sha256": "9c3c50835961e876844daf59db5709316055a79579f79aa151ad54e15a5f68f8"
+        },
+        "narrative": {
+          "id": "libfile_49d445210cb481918445587a5e22e0fb",
+          "version": 1,
+          "sha256": "e304571171ab948766a425831e7c54d90160555e4dcc7825d8e538f1cf376fd6"
+        },
+        "fingerprint": "5fa7dadcc03c4789d65838f9ca58b3d6ea16fee239a4e6259a760e7e1c7652b3",
+        "scope": "T23保存報告の固定ID/版/SHAが前回実取得と同一。候補変更報告なし。今回候補を再取得/変更せず、前回バイト固定証拠を適用。"
+      },
+      "requirement_updates": {
+        "R12": {
+          "status": "PASS_SCOPED",
+          "evidence": "使用IDと別名版0の同一バイト対応、S10実版照合。添付過去保存版はUNKNOWN"
+        },
+        "R11": {
+          "status": "HELD",
+          "evidence": "全工程未実証"
+        },
+        "R14": {
+          "status": "HELD",
+          "evidence": "入力対応改善、履歴/依存/段階完全性未達"
+        },
+        "Q11": {
+          "status": "HELD",
+          "evidence": "全工程新規実行なし"
+        },
+        "Q14": {
+          "status": "HELD",
+          "evidence": "完全監査未達"
+        },
+        "Q08": {
+          "status": "HELD",
+          "evidence": "Excel実機再計算なし"
+        },
+        "Q09": {
+          "status": "HELD",
+          "evidence": "Excel実機表示なし"
+        }
+      },
+      "remaining_blockers": [
+        {
+          "id": "E20-PAIR-05",
+          "owner": "10",
+          "resume": "固定全工程入口と段階接続・入力/コード/出力SHA台帳を整備し、元資料から固定ペアへの隔離実行ログを提出。"
+        },
+        {
+          "id": "E20-T21-AUDIT-01",
+          "owner": "10/00",
+          "resume": "添付保存版UNKNOWNと歴史的依存/ログ不足を回収可能・取得不能に区別し根拠記録。summary段階の参照入力SHAを台帳へ展開。"
+        },
+        {
+          "id": "E20-NATIVE-01",
+          "owner": "00→実機担当",
+          "resume": "Windows/macOS Microsoft Excelで全必須箇所と隔離コピー再計算/保存再開封の証拠を提出。"
+        }
+      ],
+      "overall_status": "NOT_COMPLETE_NOT_ACCEPTED",
+      "verdict": null,
+      "T07_completed": false,
+      "full_independent_evaluation_completed": false,
+      "next_owner": "10/00",
+      "controls": {
+        "candidate_mutated": false,
+        "source_mutated": false,
+        "STATE_modified": false,
+        "reports10_modified": false,
+        "write_scope": [
+          "care-insurance-analysis/reports/20.json"
+        ]
+      },
+      "integration_at": "2026-10-14T04:52:22.197Z",
+      "integration_owner": "00"
+    }
   }
 }
