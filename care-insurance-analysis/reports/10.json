@@ -4178,6 +4178,243 @@
         }
       ],
       "latest_main_at_update": "81fde90cd60372b5b063cc0c694b2b24fa027fb3"
+    },
+    "T23_ROLE10_INPUT_IDENTITY_AND_REPRODUCTION_GAPS_20261014": {
+      "task_id": "T23_ROLE10_INPUT_IDENTITY_AND_REPRODUCTION_GAPS_20261014",
+      "source_commit": "f0f2aa93be78c8d014c726a4cbdc164819529fd4",
+      "task_status": "PARTIAL_INPUT_BYTE_IDENTITY_RECONCILED_FULL_REPRODUCTION_AND_AUDIT_HELD",
+      "updated_at": "2026-10-14",
+      "authority": {
+        "same_commit_documents": {
+          "PLAN.md": "4e9acf1277229cba731e1f9e010ef4cff52e290c",
+          "STATE.json": "4c22f696b47bac1fc9d4c09922b2818f2d2b83d0",
+          "reports/10.json": "d9b722479600b96949992f8c94e4ea342d20457f",
+          "reports/20.json": "9c71a45753bc437537575d54b59dad5bc5e96cba",
+          "reports/30.json": "51c63f2f9e1c2ad516d845c19a743c147fa122f7"
+        },
+        "role20_review": "reports/20.json.artifact_version_reviews[0] at source commit 2c591431c48ff3f9e59009d32c9e6822c172d017; T22 v2 manifest PASS reused without rerun"
+      },
+      "input_identity_reconciliation": {
+        "evidence_sources": [
+          "T21 U10A_REPRO_20261014_0701JST run_result.json input_ledger",
+          "T22 fresh_extraction/input_manifest.json",
+          "current PLAN.md source IDs and SHAs",
+          "local attachment and materialized alias byte SHA-256 comparisons"
+        ],
+        "attachments_saved_version": "The attached input IDs have no retrievable saved-version metadata in the retained run/attachment records; version remains UNKNOWN and is not inferred.",
+        "sources": {
+          "S02": {
+            "actual_used_id": "libfile_0d9cfee943ec819188518e4922ce620e",
+            "actual_used_saved_version": "UNKNOWN",
+            "manifest_match": true,
+            "alias_id": "libfile_49bf2650277881919afc2e41b9afaca2",
+            "alias_saved_version": "0 (prior Library metadata)",
+            "size_bytes": 1609475,
+            "sha256": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304",
+            "byte_identity": "PASS; actual attached bytes and materialized alias bytes match exactly",
+            "identity_status": "ID_ALIAS_RESOLVED_VERSION_UNKNOWN"
+          },
+          "S03": {
+            "actual_used_id": "libfile_1a33a04a77e4819197bfdf49e7cd8099",
+            "actual_used_saved_version": "UNKNOWN",
+            "manifest_match": true,
+            "alias_id": "libfile_6ef50a7e48148191bab971c64f1df614",
+            "alias_saved_version": "0 (prior Library metadata)",
+            "size_bytes": 1892849,
+            "sha256": "e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f",
+            "byte_identity": "PASS; actual attached bytes and materialized alias bytes match exactly",
+            "identity_status": "ID_ALIAS_RESOLVED_VERSION_UNKNOWN"
+          },
+          "S05": {
+            "actual_used_id": "libfile_f40c9f4e1d0081919fb497f31e737856",
+            "actual_used_saved_version": "UNKNOWN",
+            "manifest_match": true,
+            "alias_id": "libfile_7a46b17eb12c8191b3104fe6a8f4f0aa",
+            "alias_saved_version": "0 (prior Library metadata)",
+            "size_bytes": 1128810,
+            "sha256": "87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1",
+            "byte_identity": "PASS; actual attached bytes and materialized alias bytes match exactly",
+            "identity_status": "ID_ALIAS_RESOLVED_VERSION_UNKNOWN"
+          },
+          "S06": {
+            "actual_used_id": "libfile_b7623c4ffd6881919e938f89942286f3",
+            "actual_used_saved_version": "UNKNOWN",
+            "manifest_match": true,
+            "alias_id": "libfile_6f78bde68948819198a39bb69b17af54",
+            "alias_saved_version": "0 (prior Library metadata)",
+            "size_bytes": 34816,
+            "sha256": "b74b37c05a97d053ef46c16f380177f5a0724151dac5daff1c4076290671e524",
+            "byte_identity": "PASS; actual attached bytes and materialized alias bytes match exactly",
+            "identity_status": "ID_ALIAS_RESOLVED_VERSION_UNKNOWN"
+          },
+          "S10": {
+            "actual_used_id": "libfile_292453196e588191a056e2f761753670",
+            "actual_used_saved_version": "0 (T21 input manifest and prior PLAN identity)",
+            "size_bytes": 584930,
+            "sha256": "a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2",
+            "staged_byte_match": "PASS; staged T21 source size and SHA match",
+            "identity_status": "PASS_ID_VERSION_SHA"
+          }
+        },
+        "distinction": "The legacy PLAN IDs are saved-version aliases that were separately materialized and byte-compared. Equal bytes establish an alias-to-byte mapping, not that two Library IDs are the same object or that the actual attachment IDs have saved version 0."
+      },
+      "reproduction_stages": [
+        {
+          "stage": "T21 source staging and preflight",
+          "status": "PASS_PREFLIGHT_ONLY",
+          "inputs": "S01/S02/S03/S04/S05/S06/S10 actual IDs, sizes, SHAs in run_result.json; source bundle libfile_ee630bb61568819194c96e581ef243a4 v7 sha256 d3b108a11c3e6072dcdee88d9ec04d5b82136688a9ecaf107bab2ac5c314e818",
+          "code_commit": "1ef99adb37eb5ff2fdbf368c2fce8e2e9f88ef64",
+          "code_sha256": {
+            "src/validate_bundle_inputs.py": "c852bcc4c3bf5f2381fbbd5ce82254420fe419303e67732e09f2ff4a49a488d4"
+          },
+          "output": "stdout reports verified external inputs and bundled fixtures; production_pipeline_executed=false",
+          "exit_code": 0,
+          "scope_limit": "input/preflight only"
+        },
+        {
+          "stage": "T21 provenance and preflight unit tests",
+          "status": "PASS_TESTS_ONLY",
+          "inputs": "same pinned bundle and synthetic test fixtures",
+          "code_sha256": {
+            "src/test_u16_provenance.py": "45cb84848badef72dcdc6a0191009aaae48fedc056cf573a5387bc80e0fe7e2a",
+            "src/test_u17_preflight.py": "ecbe7545b64b5568a383c4c435c4a7a3668a74b0f52a4404adff9b589e74a33f"
+          },
+          "outputs": "4 + 5 tests passed; outputs captured in T21 run_result.json",
+          "exit_code": 0,
+          "scope_limit": "tests do not establish end-to-end workbook/narrative generation"
+        },
+        {
+          "stage": "T21 fresh numeric replay attempt",
+          "status": "FAIL",
+          "inputs": "same S01-S10 staged inputs and retained inspection/run manifest",
+          "code_sha256": {
+            "src/replay_pipeline.py": "9749848327a8af5ae649ffdbed479e927b8f0d47585bf80bedbe1440a282d3dd",
+            "src/replay_v2.py": "03709c2239ee1a9cae92d5daacdad4716c46b1fc0507301f85c63251f7e470a3"
+          },
+          "output": "replay_report=null; no replay output SHA",
+          "exit_code": 1,
+          "failure": "ValueError: run manifest is not complete",
+          "candidate_pair_before_after": "unchanged; workbook sha256 9c3c50835961e876844daf59db5709316055a79579f79aa151ad54e15a5f68f8; narrative sha256 e304571171ab948766a425831e7c54d90160555e4dcc7825d8e538f1cf376fd6"
+        },
+        {
+          "stage": "T22 fresh source extraction",
+          "status": "PASS_BOUNDED_FIXTURE_LINK_ONLY",
+          "inputs": "S01/S02/S03 original bytes at the above SHA; other inputs were hashed/inventoried only",
+          "code_sha256": {
+            "immutable_fixture/src/inspect_inputs.py": "63cb807bc720fbc32c7c35d7e84e480ab800a60f622dfc29687abb0d63ecde2e"
+          },
+          "outputs_sha256": {
+            "fresh_extraction/S01_cells.json": "7fbf8dd9d0ea32632d16e10b49026b050db10bb6d9aa26692d0fcea7745af6df",
+            "fresh_extraction/S02_cells.json": "5f34b80d09ca20adaff696ba14a0b587fe56b1a3fae8afc090b68245f43e7bf4",
+            "fresh_extraction/S03_cells.json": "d80cb5403284b09bd181bd116882a2ecefc2bb8d3b88eb69aa4c155408011526",
+            "input_manifest.json": "96af74bf464ba0f7a84a6de620fb9aded6e22fb1541fa9a644eafa9af6622713"
+          },
+          "exit_code": 0,
+          "scope_limit": "S01-S03 stored OOXML/cache extraction only; S04+ semantic parse, Excel recalculation and complete source-to-pair path not run"
+        },
+        {
+          "stage": "T22 summary generation isolated copy",
+          "status": "PASS_BOUNDED_ORIGINAL_FAIL_RETAINED",
+          "inputs_sha256": "2a3590942aafbc1562e787aa8292f6ed8cb0e08a9a5b9b9b6b0de145223c1bac plus retained U10A_REPRO_20261014_0730JST run manifest and S10_application.json",
+          "code_sha256": "549892dc99d1bf696f0418700c10501f486a65e11b3c987a0ac9a6ae8f1d4e51",
+          "output_sha256": "e2965e8f23f8af4e5629d9798ded9cee8f07870ec08ae395ac6bdcb27bb11b69",
+          "exit_code": 0,
+          "failure_of_original": "historical original summary_v2.py wrote output then failed NameError; original SHA c212bea91935d401ca899070364822393099e693d5a13f7c89877dea84b63ede"
+        },
+        {
+          "stage": "U20 current limited workbook replay",
+          "status": "NOT_RERUN_EXISTING_EVIDENCE_ONLY",
+          "code_commit": "c0f48eddf945eecc22188a3004493d787369613c",
+          "code_sha256": "a455f3397f3af00cfcf8fcc5aa6f24c22ea80ea92169f75b140c63b741ded595",
+          "input": "prior candidate workbook, not fresh source extraction",
+          "output": "no new output hash; no new execution",
+          "exit_code": "NOT_RUN",
+          "scope_limit": "limited OOXML edit route does not produce workbook plus narrative from original sources"
+        },
+        {
+          "stage": "Frozen U20 workbook+narrative generation",
+          "status": "HELD_NOT_EXECUTED",
+          "inputs": "source extraction handoff and full orchestrator unavailable",
+          "code": "no connected pinned full generation entry",
+          "output_sha256": null,
+          "exit_code": "NOT_RUN",
+          "reason": "required source-to-U20 stage links and dependency inputs are absent; running a partial stage would not reproduce the pair"
+        }
+      ],
+      "recovered_assets_to_stages": {
+        "source intake": "T21 run_result input_ledger and T22 fresh_extraction/input_manifest.json; identity proven at byte level",
+        "stored workbook extraction": "T22 inspect_inputs.py for S01-S03 only; S04-S06 and S10 are hashes/inventory, not semantic extraction",
+        "calculation": "historical U17/U18 numeric pipeline from retained fixtures; not a new source-to-pair execution",
+        "U20 workbook editing": "U20/replay_u20.py limited OOXML edits starting from a prior candidate workbook",
+        "narrative generation": "no deterministic current narrative-generation entry found; final narrative was iteratively edited and saved as a separate artifact",
+        "pair finalization": "no pinned one-shot orchestrator binding raw extraction, workbook generation, narrative composition and final pair identities"
+      },
+      "audit_completeness": {
+        "status": "HELD",
+        "available": "92 commit IDs indexed; 80 diff bodies available; T21/T22 run logs and bounded current workspace inventory",
+        "unavailable": [
+          {
+            "item": "12 GitHub commit diff bodies",
+            "effect": "cannot inspect omitted patch content"
+          },
+          {
+            "item": "complete private chat exports and some command history",
+            "effect": "generation decisions and chronology cannot be fully independently reconstructed"
+          },
+          {
+            "item": "exact timestamps/full stdout/stderr for earliest failed attempts",
+            "effect": "failed setup chronology is incomplete"
+          },
+          {
+            "item": "historical lockfile and exact Artifact Tool build",
+            "effect": "historical dependency/runtime identity cannot be pinned; currently observed tool version does not prove historical build"
+          },
+          {
+            "item": "current full U20 generation entry and retained full run manifest",
+            "effect": "cannot bind all source-stage-code-output transitions or rerun them"
+          },
+          {
+            "item": "some package inventory entries not available (as documented in T22)",
+            "effect": "complete package content coverage cannot be asserted"
+          }
+        ],
+        "private_paths": "credential/system directories were excluded without reading; private source bytes and secrets were not uploaded to GitHub or Web."
+      },
+      "artifact": {
+        "library_file_id": "libfile_d8cd5bab2b388191a642a6bdc6afbc40",
+        "version": 2,
+        "size_bytes": 3005625,
+        "sha256": "fe267365d9d9648668d7228d99aa8aeb8adba88a88bb32f3a30ca32bd1a9a200",
+        "zip_crc": "PASS_PREVIOUSLY_VERIFIED_ROLE20",
+        "manifest_sha256_external_record": "000a8a5df4b6579f9a4bae71297be69d826baa9a93adeb912ca44678965ad88b",
+        "manifest_check": "REUSED_NOT_REPEATED"
+      },
+      "statuses": {
+        "T22_manifest_correction": "PASS_REUSED_ROLE20_V2_REVIEW",
+        "input_ID_alias_byte_mapping": "PASS_FOR_S02_S03_S05_S06; attached_saved_version_UNKNOWN",
+        "S10_identity": "PASS_ID_VERSION_SHA",
+        "full_source_to_frozen_pair_reproduction": "HELD",
+        "audit_completeness": "HELD",
+        "microsoft_excel_desktop_validation": "HELD",
+        "overall": "NOT_COMPLETE_NOT_ACCEPTED"
+      },
+      "frozen_pair": {
+        "mutated": false,
+        "workbook": {
+          "id": "libfile_c17d27b379308191acf27bb17e9f0497",
+          "version": 0,
+          "sha256": "9c3c50835961e876844daf59db5709316055a79579f79aa151ad54e15a5f68f8"
+        },
+        "narrative": {
+          "id": "libfile_49d445210cb481918445587a5e22e0fb",
+          "version": 1,
+          "sha256": "e304571171ab948766a425831e7c54d90160555e4dcc7825d8e538f1cf376fd6"
+        }
+      },
+      "restart_position": "Obtain actual saved-version metadata for attachment IDs if available; restore or author a fully pinned source-to-pair orchestrator plus missing source-stage code, run manifest and dependency lock; run only into a new isolated output; record all stage identities/logs; then request ROLE20 independent review. Excel desktop lane remains separately held.",
+      "next_role": "20",
+      "next_operation": "independently_review_new_input_identity_and_stage_ledger; do not repeat T22 v2 manifest or scoped checks",
+      "completion_condition": "NOT_COMPLETE until full source-to-frozen-pair reproduction, audit completeness, independent review, and required native Excel desktop checks pass"
     }
   },
   "outputs": {
@@ -5939,6 +6176,16 @@
         "target": "reports/10.json",
         "method": "add task_results and role10_runs entry to exact latest content; prior entries preserved"
       }
+    },
+    {
+      "task_id": "T23_ROLE10_INPUT_IDENTITY_AND_REPRODUCTION_GAPS_20261014",
+      "source_commit": "f0f2aa93be78c8d014c726a4cbdc164819529fd4",
+      "task_status": "PARTIAL_INPUT_BYTE_IDENTITY_RECONCILED_FULL_REPRODUCTION_AND_AUDIT_HELD",
+      "evidence": "reports/10.json.task_results.T23_ROLE10_INPUT_IDENTITY_AND_REPRODUCTION_GAPS_20261014",
+      "candidate_pair_mutated": false,
+      "manifest_check": "reused T22 v2 ROLE20 PASS; not repeated",
+      "next_role": "20",
+      "next_operation": "independently_review_new_input_identity_and_stage_ledger; do not repeat T22 v2 manifest or scoped checks"
     }
   ]
 }
