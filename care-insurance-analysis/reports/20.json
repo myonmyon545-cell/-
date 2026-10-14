@@ -851,12 +851,203 @@
     }
   ],
   "latest_review": {
-    "task_id": "T22_V2_ROLE20_CORRECTED_ARTIFACT_REVIEW_20261014",
-    "source_commit": "d72fb3f6f787492c1c6a82d39cf4288dc9a36346",
-    "artifact_version": 2,
-    "record_path": "artifact_version_reviews[0]",
+    "task_id": "T23_ROLE20_INPUT_IDENTITY_AND_STAGE_EVIDENCE_REVIEW_20261014",
+    "source_commit": "97b6ed7f1461a7275cad3894eecc87a197f888ea",
+    "record_path": "independent_followup_reviews[0]",
     "overall_status": "NOT_COMPLETE_NOT_ACCEPTED",
-    "note": "既存トップレベル詳細は版1時点の履歴として保持。現版2の判定はこの追記を参照。"
-  }
+    "note": "T23入力ID対応の限定解消を追記。旧評価・版1FAIL・版2PASSと各保留は履歴として保持。"
+  },
+  "independent_followup_reviews": [
+    {
+      "task_id": "T23_ROLE20_INPUT_IDENTITY_AND_STAGE_EVIDENCE_REVIEW_20261014",
+      "source_commit": "97b6ed7f1461a7275cad3894eecc87a197f888ea",
+      "reviewed_at": "2026-10-14T04:47:05.940Z",
+      "startup_blobs": {
+        "PLAN.md": "4e9acf1277229cba731e1f9e010ef4cff52e290c",
+        "STATE.json": "4c22f696b47bac1fc9d4c09922b2818f2d2b83d0",
+        "reports/10.json": "a0de9df9bc18884fc6d2f1abfce6d6d680d7e933",
+        "reports/20.json": "9c71a45753bc437537575d54b59dad5bc5e96cba",
+        "reports/30.json": "51c63f2f9e1c2ad516d845c19a743c147fa122f7"
+      },
+      "producer_record": "reports/10.json.task_results.T23_ROLE10_INPUT_IDENTITY_AND_REPRODUCTION_GAPS_20261014",
+      "scope": "新規入力ID対応と工程台帳の証拠照合。T22v2台帳CRC/全entry検査、既確認数値/抽出/生成を再実行しない。",
+      "input_identity_results": [
+        {
+          "source": "S02",
+          "id": "libfile_49bf2650277881919afc2e41b9afaca2",
+          "version": 0,
+          "bytes": 1609475,
+          "sha256": "9b29b315bf310770295e8fe60ba2953362f3cff21b3d78adfe255c42f2c26304",
+          "attachment_bytes_equal": true,
+          "actual_used_id": "libfile_0d9cfee943ec819188518e4922ce620e",
+          "actual_used_saved_version": "UNKNOWN",
+          "status": "PASS_ALIAS_BYTE_MAPPING_ONLY"
+        },
+        {
+          "source": "S03",
+          "id": "libfile_6ef50a7e48148191bab971c64f1df614",
+          "version": 0,
+          "bytes": 1892849,
+          "sha256": "e4207ce1b47673fd6ec24e9184ea32a285698dcd0762bff612f01ce4f908c08f",
+          "attachment_bytes_equal": true,
+          "actual_used_id": "libfile_1a33a04a77e4819197bfdf49e7cd8099",
+          "actual_used_saved_version": "UNKNOWN",
+          "status": "PASS_ALIAS_BYTE_MAPPING_ONLY"
+        },
+        {
+          "source": "S05",
+          "id": "libfile_7a46b17eb12c8191b3104fe6a8f4f0aa",
+          "version": 0,
+          "bytes": 1128810,
+          "sha256": "87d0353e8a53a432146a0e918dc1bd0ed32e8b3884dcb3cdc162994cb037c8d1",
+          "attachment_bytes_equal": true,
+          "actual_used_id": "libfile_f40c9f4e1d0081919fb497f31e737856",
+          "actual_used_saved_version": "UNKNOWN",
+          "status": "PASS_ALIAS_BYTE_MAPPING_ONLY"
+        },
+        {
+          "source": "S06",
+          "id": "libfile_6f78bde68948819198a39bb69b17af54",
+          "version": 0,
+          "bytes": 34816,
+          "sha256": "b74b37c05a97d053ef46c16f380177f5a0724151dac5daff1c4076290671e524",
+          "attachment_bytes_equal": true,
+          "actual_used_id": "libfile_b7623c4ffd6881919e938f89942286f3",
+          "actual_used_saved_version": "UNKNOWN",
+          "status": "PASS_ALIAS_BYTE_MAPPING_ONLY"
+        },
+        {
+          "source": "S10",
+          "id": "libfile_292453196e588191a056e2f761753670",
+          "version": 0,
+          "bytes": 584930,
+          "sha256": "a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2",
+          "attachment_bytes_equal": true,
+          "actual_used_id": "libfile_292453196e588191a056e2f761753670",
+          "actual_used_saved_version": 0,
+          "status": "PASS_ID_VERSION_SHA"
+        }
+      ],
+      "findings": [
+        {
+          "id": "E20-T22V2-SOURCE-IDENTITY",
+          "status": "PASS_SCOPED_WITH_VERSION_UNKNOWN",
+          "evidence": "4別名IDを独立materializeし保存版0を確認、実SHA/sizeと添付バイトを直接比較し4/4完全一致。使用IDはT21 input_ledger/T22 fresh input_manifestと整合。別IDを同一オブジェクトとは扱わず、実使用添付IDの過去保存版はUNKNOWN。",
+          "remaining": "添付の実使用時保存版を要求する監査要件は未解消。取得不能なら理由と内容SHA固定範囲を明記。"
+        },
+        {
+          "id": "E20-T23-S10-IDENTITY",
+          "status": "PASS",
+          "evidence": "libfile_292453196e588191a056e2f761753670を取得しversion0、584930 bytes、SHA a8050346212a34760cfa2c8be7add995f3f59c3f9bfb6118ca7dc3cca3227bd2を直接確認。添付実バイトと一致。"
+        },
+        {
+          "id": "E20-T23-STAGE-LEDGER",
+          "status": "PASS_SCOPED_EVIDENCE_RECONCILIATION",
+          "evidence": "保存T21 run0701ログでpreflight exit0、テスト4+5 exit0、replay_v2 exit1を再読確認。T22 extraction/isolated summaryのexit0を保存execution_commandsに照合。コード・出力SHAはT21/T22独立評価済み同一アーカイブへの参照として再利用。生成者ログをROLE20の新規実行とはしない。",
+          "limits": [
+            "T21 run0701の失敗とrun0730の数値限定結果を混同しない。T23は全工程新実行を報告していない。",
+            "summary段階は入力extraction SHAを明示するが、run_manifest/S10_application.jsonについてT23欄はSHAの直接列挙でなく参照。完全な段階入出力台帳としては追加対応が必要。",
+            "『S04以降はhash/inventoryのみ』は粗い表現。inspect_inputs.pyはS04/S04_aliasのdocxテキスト抽出も行い収録物あり。ただし意味解析・全工程実証を意味しない。"
+          ],
+          "action": "10は段階台帳にrun_id、各入力/コード/出力の全SHAと所在・実行結果を明示し、テキスト抽出と意味検証を区別する。"
+        },
+        {
+          "id": "E20-PAIR-05",
+          "status": "HELD",
+          "evidence": "現行U20の元資料→全後続修正→ブック/叙述を結ぶ固定入口・全実行ログの新証拠なし。限定replayのNOT_RUNをPASSにしない。"
+        },
+        {
+          "id": "E20-T21-AUDIT-01",
+          "status": "HELD",
+          "evidence": "添付保存版UNKNOWN、歴史的依存lock/実ビルド、私的履歴/初期失敗記録、段階接続の不足は継続。『12差分本文が取得不能』は保存セットで欠ける範囲に限り、永久取得不能の証明ではない。"
+        },
+        {
+          "id": "E20-NATIVE-01",
+          "status": "HELD",
+          "evidence": "Microsoft Excel desktop Windows/macOS実機の新証拠なし。"
+        },
+        {
+          "id": "E20-T22-MANIFEST-SELF",
+          "status": "PASS_REUSED_VERSION2_ONLY",
+          "evidence": "T23が参照するID/版2/ZIP SHA/manifest SHAは前回評価対象と同一。指定通り検査を繰り返さず2c591431...の版2限定PASSを適用。版1FAIL履歴は保持。"
+        }
+      ],
+      "frozen_pair": {
+        "mutated": false,
+        "workbook": {
+          "id": "libfile_c17d27b379308191acf27bb17e9f0497",
+          "version": 0,
+          "sha256": "9c3c50835961e876844daf59db5709316055a79579f79aa151ad54e15a5f68f8"
+        },
+        "narrative": {
+          "id": "libfile_49d445210cb481918445587a5e22e0fb",
+          "version": 1,
+          "sha256": "e304571171ab948766a425831e7c54d90160555e4dcc7825d8e538f1cf376fd6"
+        },
+        "fingerprint": "5fa7dadcc03c4789d65838f9ca58b3d6ea16fee239a4e6259a760e7e1c7652b3",
+        "scope": "T23保存報告の固定ID/版/SHAが前回実取得と同一。候補変更報告なし。今回候補を再取得/変更せず、前回バイト固定証拠を適用。"
+      },
+      "requirement_updates": {
+        "R12": {
+          "status": "PASS_SCOPED",
+          "evidence": "使用IDと別名版0の同一バイト対応、S10実版照合。添付過去保存版はUNKNOWN"
+        },
+        "R11": {
+          "status": "HELD",
+          "evidence": "全工程未実証"
+        },
+        "R14": {
+          "status": "HELD",
+          "evidence": "入力対応改善、履歴/依存/段階完全性未達"
+        },
+        "Q11": {
+          "status": "HELD",
+          "evidence": "全工程新規実行なし"
+        },
+        "Q14": {
+          "status": "HELD",
+          "evidence": "完全監査未達"
+        },
+        "Q08": {
+          "status": "HELD",
+          "evidence": "Excel実機再計算なし"
+        },
+        "Q09": {
+          "status": "HELD",
+          "evidence": "Excel実機表示なし"
+        }
+      },
+      "remaining_blockers": [
+        {
+          "id": "E20-PAIR-05",
+          "owner": "10",
+          "resume": "固定全工程入口と段階接続・入力/コード/出力SHA台帳を整備し、元資料から固定ペアへの隔離実行ログを提出。"
+        },
+        {
+          "id": "E20-T21-AUDIT-01",
+          "owner": "10/00",
+          "resume": "添付保存版UNKNOWNと歴史的依存/ログ不足を回収可能・取得不能に区別し根拠記録。summary段階の参照入力SHAを台帳へ展開。"
+        },
+        {
+          "id": "E20-NATIVE-01",
+          "owner": "00→実機担当",
+          "resume": "Windows/macOS Microsoft Excelで全必須箇所と隔離コピー再計算/保存再開封の証拠を提出。"
+        }
+      ],
+      "overall_status": "NOT_COMPLETE_NOT_ACCEPTED",
+      "verdict": null,
+      "T07_completed": false,
+      "full_independent_evaluation_completed": false,
+      "next_owner": "10/00",
+      "controls": {
+        "candidate_mutated": false,
+        "source_mutated": false,
+        "STATE_modified": false,
+        "reports10_modified": false,
+        "write_scope": [
+          "care-insurance-analysis/reports/20.json"
+        ]
+      }
+    }
+  ]
 }
-
