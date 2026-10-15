@@ -1,8 +1,8 @@
 {
   "schema": "care_state/v1",
-  "revision": 21,
+  "revision": 22,
   "plan_revision": "2.7",
-  "updated_at": "2026-10-15T03:32:15.284Z",
+  "updated_at": "2026-10-15T07:35:19.829Z",
   "phase": "DEADLINE_DELIVERABLE_BATCH_EXECUTION",
   "writer": "00",
   "canonical_repository": "myonmyon545-cell/-",
@@ -910,13 +910,13 @@
   },
   "next_action": {
     "owner": "10/20/00",
-    "assignment": "T26/T27 private evidence confirmed within stated scopes; T24 report proposal remains GitHub-unsubmitted; reported ROLE20 v2 PASS remains unverified.",
-    "role10_next_single_unit": "固定U20のU17→U18→U19→U20工程接続、正確な生成入口・依存・実使用入力版を回収し、不足を分類。新規隔離出力でブックと叙述を元資料から再現・照合できる入口と証拠を整備する。現FAIL出力を固定候補の代替にしない。",
-    "role20": "版2訂正の保存済み独立評価をID・版・SHAと対象範囲付きで特定/提示。未保存なら非公開保存し、既検査を重複実行せずreports20拒否を迂回しない。",
-    "native_excel": "ROLE00 coordinates; actual Windows/macOS Microsoft Excel operator/environment remains unassigned/HELD.",
-    "restart_condition": "ROLE20版2保存評価の特定、固定全工程入口/依存/版証拠と新規隔離実行ログ、実機担当/環境と必須検査証拠を保存後に再統合。",
+    "assignment": "T28 fixed-copy v4→v5 delta review integrated at scoped PASS; do not repeat. Full source-to-pair reproduction remains FAIL, audit/native gates HELD.",
+    "role10_next_single_unit": "固定U20の元資料→ブック・叙述までの全工程入口・段階接続・依存・実使用入力版を回収し、不足を根拠付き分類。新規隔離実行で再現可能性を証拠化し、現FAIL出力で候補を置換しない。",
+    "role20": "新規保存された再現/監査/実機証拠のみ独立評価。T28固定コピー差分と従前v3確認を繰り返さない。",
+    "native_excel": "Windows/macOS Microsoft Excel実機担当・環境は未確保/HELD。",
+    "restart_condition": "ROLE10の新しい工程/実行証拠、または実機検査担当と証拠が保存された時点で該当範囲を確認。",
     "runtime": "other_chat_execution_unobserved",
-    "cross_chat_dispatch": "not claimed"
+    "cross_chat_dispatch": "not_claimed"
   },
   "history": [
     {
@@ -1022,6 +1022,13 @@
       "source_commit": "ffbb8199f09b6bcbdc9a92551c36dde785d1366c",
       "event": "integrated_T26_T27_private_evidence_with_review_verification_limit",
       "details": "前回確認済み5成果物のID/版/size/SHA、2ZIP CRC、内外JSON一致、T24追加以外既存JSON一致を統合。T24未提出、原20実行263台帳NOT_RETAINED。新441645patch限定一致・c7patch未回収。全工程再現FAIL/監査HELD/実機HELDを維持。最新reports20はT23、報告された版2PASSは対応保存評価未特定でUNVERIFIED。既存履歴・固定候補・元資料・各ROLE報告を保持。別チャット送信主張なし。"
+    },
+    {
+      "at": "2026-10-15T07:35:19.829Z",
+      "role": "00",
+      "source_commit": "c865297cdb17723ff22cd1bda00494c0af0a6b15",
+      "event": "integrated_saved_ROLE10_v4_recovery_and_ROLE20_v4_v5_delta_review",
+      "details": "指定記録2件のID/版/サイズ/SHAを確認し統合。限定PASSは固定コピー間の61同一・3変更・1追加・0削除と表内外一致に限定。manifest文言だけとの主張は不採用。原Library履歴の独立取得は未立証。全工程FAIL、監査/Excel実機HELD、全体NOT_COMPLETE_NOT_ACCEPTEDを維持。"
     }
   ],
   "deployment_status": "registered_on_main",
@@ -1651,17 +1658,19 @@
       "output": "reports/10.jsonに追加証拠、段階入出力台帳、取得未了/取得不能の根拠、正確な再開条件を保存。未実行をPASSにしない。"
     },
     "ROLE20": {
-      "instruction": "版2訂正の保存済み独立評価をID・版・SHAと対象範囲付きで特定/提示。未保存なら非公開保存し、既検査を重複実行せずreports20拒否を迂回しない。",
+      "instruction": "新たに保存された再現/監査/実機証拠だけ独立評価。T28 v4/v5 fixed-copy delta review (ROLE20 record libfile_f2142cb16ee881918702ac88500fd338 v0) および従前v3限定確認を重複実行しない。",
       "runtime": "unobserved",
-      "status": "T23_GITHUB_SAVED; T25_OLD_PRIVATE_REVIEW_SAVED; T26_T27_V2_REVIEW_UNVERIFIED",
-      "duplicate_checks": "T22 v2 manifestおよびT23限定確認を同一証拠で再実行しない。"
+      "status": "T28_V4_V5_FIXED_COPY_DELTA_SCOPED_PASS_SAVED; FULL_REPRODUCTION_AUDIT_NATIVE_HELD",
+      "duplicate_checks": "T22 v2 manifestおよびT23限定確認を同一証拠で再実行しない。",
+      "latest_verified_completed": "固定v4/v5コピーのサイズ/SHA、ZIP差分、埋込/外部表一致の限定PASSをROLE20保存記録で確認。元Library履歴の独立取得、全再現・監査・Excel実機はPASSしていない。",
+      "next_single_unit": "次の新規ROLE10再現/監査証拠またはnative Excel証拠を独立評価。"
     },
     "ROLE30": {
       "instruction": "No work unless ROLE10/ROLE20 produces a concrete new defect needing a correction proposal",
       "runtime": "unobserved"
     },
     "ROLE00": {
-      "writer": "this_user_authorized_ROLE00_turn",
+      "writer": "this_user_authorized_ROLE00_turn; T28 v4/v5 delta integration; STATE only.",
       "scope": "T23 independent review integration and audit/native operator coordination; STATE writer only for this update; no cross-chat dispatch claim."
     },
     "narrative_analyst": {
@@ -1907,31 +1916,28 @@
       "other_entries": "284/285 match"
     },
     "latest_private_evidence": {
-      "record": "private_evidence_integrations.T26_T27",
-      "checked_commit": "ffbb8199f09b6bcbdc9a92551c36dde785d1366c",
+      "record": "private_evidence_integrations.T28_V4_V5_DELTA",
+      "checked_commit": "c865297cdb17723ff22cd1bda00494c0af0a6b15",
       "full_reproduction": "FAIL_NOT_MATCHING_FROZEN_U20",
       "audit_completeness": "HELD",
       "Microsoft_Excel_desktop_validation": "HELD",
-      "T24_submission": "PRIVATE_UNSUBMITTED_CANDIDATE",
-      "role20_v2_review": "UNVERIFIED",
       "overall": "NOT_COMPLETE_NOT_ACCEPTED",
-      "original20run263file_ledger": "NOT_RETAINED"
+      "scope": "ROLE20 PASS applies only to user-designated fixed v4/v5 copies; original-history provenance is not independently proven."
     }
   },
   "remaining_required_work": [
-    "ROLE20: identify immutable v2 review with exact target IDs/versions/SHAs and coverage; reported PASS currently unverified.",
-    "ROLE10: 固定U20のU17→U18→U19→U20工程接続、正確な生成入口・依存・実使用入力版を回収し、不足を分類。新規隔離出力でブックと叙述を元資料から再現・照合できる入口と証拠を整備する。現FAIL出力を固定候補の代替にしない。",
-    "ROLE10/00: original20-run/263-file ledger NOT_RETAINED; recover actual used versions/dependency locks/history where possible, with reconstructed and original records distinguished.",
-    "ROLE00: secure Windows/macOS Microsoft Excel operator/environment; currently unassigned/HELD.",
-    "Native operator: save required open/Japanese/layout/print/isolated-copy recalc-save-reopen evidence for ROLE20.",
-    "ROLE00: retain full-reproduction FAIL, audit/native HELD and overall NOT_COMPLETE_NOT_ACCEPTED until required evidence passes."
+    "ROLE10: 固定U20の元資料→成果物までの全工程入口・段階接続・依存・実使用入力版を回収し、不足を根拠付き分類。新規隔離実行で再現を示す。",
+    "ROLE10/00: 原20-run/263-file台帳はNOT_RETAINED。歴史的依存・実使用保存版・全ログを可能な範囲で回収し、原記録と再構成記録を区別する。",
+    "ROLE00: Windows/macOS Microsoft Excel実機の担当者・環境を確保し、固定候補のID/版/SHA照合後、指定検査証拠を保存する。",
+    "ROLE20: 新規に保存された再現・監査・実機証拠を独立確認。T28固定コピー差分と従前v3確認は重複しない。",
+    "ROLE00: 全工程再現FAIL、監査/実機HELD、overall NOT_COMPLETE_NOT_ACCEPTEDを必須検証PASSまで維持。"
   ],
   "execution_reconciliation": {
     "authority": "latest_main_same_commit_files",
-    "source_commit": "5094a89b93479b377486da549436200e25e63d8b",
+    "source_commit": "c865297cdb17723ff22cd1bda00494c0af0a6b15",
     "source_blobs": {
       "PLAN.md": "4e9acf1277229cba731e1f9e010ef4cff52e290c",
-      "STATE.json": "4c22f696b47bac1fc9d4c09922b2818f2d2b83d0",
+      "STATE.json": "89ca94b44d4668f7839f4dd818f9bc59899f5699",
       "reports/10.json": "a0de9df9bc18884fc6d2f1abfce6d6d680d7e933",
       "reports/20.json": "513d0a8c95117419cbf67fc94265c4c01ccaef3d",
       "reports/30.json": "51c63f2f9e1c2ad516d845c19a743c147fa122f7"
@@ -1972,33 +1978,37 @@
       }
     ],
     "assignments": {
-      "ROLE10": "工程台帳のrun_id・全入力/コード/出力SHA・所在・終了結果を補完し、summaryのrun_manifest/S10_application.json参照SHAを展開。S04のテキスト抽出と意味検証を区別。4添付の実使用保存版UNKNOWNと歴史的依存/ログ不足を根拠付き分類。固定候補は変更しない。",
-      "ROLE20": "新しく保存された工程台帳・全工程証拠・監査証拠・実機証拠だけ独立確認。既確認の限定PASSは適用範囲を確認して再利用。",
-      "ROLE00": "STATE統合・監査欠落分類支援・実機担当/環境確保",
+      "ROLE10": "固定U20の全工程接続・入力版・依存・ログを回収/分類し、新規隔離出力で再現。固定候補不変。",
+      "ROLE20": "新規保存された再現/監査/実機証拠のみ独立評価。T28固定コピー差分と既確認v3検査は再実行しない。",
+      "ROLE00": "STATE統合とnative Excel担当/環境の確保。",
       "NATIVE_EXCEL": "unassigned/HELD"
     },
     "duplicate_execution": "forbidden",
     "cross_chat_dispatch_claim": "not made",
     "candidate_pair_changed": false,
     "latest_private_evidence": {
-      "checked_at": "2026-10-15T03:32:15.284Z",
-      "source_commit": "ffbb8199f09b6bcbdc9a92551c36dde785d1366c",
+      "checked_at": "2026-10-15T07:35:19.829Z",
+      "source_commit": "c865297cdb17723ff22cd1bda00494c0af0a6b15",
       "file_blob_SHAs": {
         "PLAN.md": "4e9acf1277229cba731e1f9e010ef4cff52e290c",
-        "STATE.json": "29e323f6bbbf8c4386f3ebd54a0501e829894f7c",
+        "STATE.json": "89ca94b44d4668f7839f4dd818f9bc59899f5699",
         "reports/10.json": "a0de9df9bc18884fc6d2f1abfce6d6d680d7e933",
         "reports/20.json": "513d0a8c95117419cbf67fc94265c4c01ccaef3d",
         "reports/30.json": "51c63f2f9e1c2ad516d845c19a743c147fa122f7"
       },
-      "record": "private_evidence_integrations.T26_T27",
-      "latest_saved_role20_review": {
-        "task_id": "T23_ROLE20_INPUT_IDENTITY_AND_STAGE_EVIDENCE_REVIEW_20261014",
-        "source_commit": "97b6ed7f1461a7275cad3894eecc87a197f888ea",
-        "record_path": "independent_followup_reviews[0]",
-        "overall_status": "NOT_COMPLETE_NOT_ACCEPTED",
-        "note": "T23入力ID対応の限定解消を追記。旧評価・版1FAIL・版2PASSと各保留は履歴として保持。"
+      "record": "private_evidence_integrations.T28_V4_V5_DELTA",
+      "role20_review": {
+        "id": "libfile_f2142cb16ee881918702ac88500fd338",
+        "version": 0,
+        "size_bytes": 49001,
+        "sha256": "f0d45ffa29a69c905b7338b2d562381fbfaec1775be01607b506605fca582a74",
+        "verdict": "PASS_SCOPED_DOCUMENTATION_AND_RESPONSE_RECORD_DELTA"
       },
-      "role20_v2_review_verified": false
+      "full_reproduction": "FAIL_NOT_MATCHING_FROZEN_U20",
+      "audit_completeness": "HELD",
+      "Microsoft_Excel_desktop_validation": "HELD",
+      "overall": "NOT_COMPLETE_NOT_ACCEPTED",
+      "candidate_pair_mutated": false
     }
   },
   "microsoft_desktop_excel_validation": {
@@ -2491,6 +2501,87 @@
       "candidate_pair_mutated": false,
       "role_reports_modified": false,
       "cross_chat_dispatch_claim": "not made"
+    },
+    "T28_V4_V5_DELTA": {
+      "schema": "care_role00_integrate_v4_v5_delta_review_v1",
+      "integrated_at": "2026-10-15T07:35:19.829Z",
+      "pinned_main_commit": "c865297cdb17723ff22cd1bda00494c0af0a6b15",
+      "pinned_main_file_blob_shas": {
+        "PLAN.md": "4e9acf1277229cba731e1f9e010ef4cff52e290c",
+        "STATE.json": "89ca94b44d4668f7839f4dd818f9bc59899f5699",
+        "reports/10.json": "a0de9df9bc18884fc6d2f1abfce6d6d680d7e933",
+        "reports/20.json": "513d0a8c95117419cbf67fc94265c4c01ccaef3d",
+        "reports/30.json": "51c63f2f9e1c2ad516d845c19a743c147fa122f7"
+      },
+      "role10_v4_recovery_record": {
+        "library_file_id": "libfile_62d9e60f5f7c8191bd322af0cc6e7636",
+        "version": 0,
+        "size_bytes": 5011,
+        "sha256": "a7a29ae2986cd6ba537c70c04621c513e28ed8cb15cb104280dcea9de10419dc",
+        "byte_size_sha_verified": true,
+        "provenance": "ROLE10記録は、固定v4コピーが同時点の保存済v4読戻しからバイト一致で複製されたと記す。元Library履歴の直接取得は独立立証されていない。"
+      },
+      "role20_delta_review": {
+        "library_file_id": "libfile_f2142cb16ee881918702ac88500fd338",
+        "version": 0,
+        "size_bytes": 49001,
+        "sha256": "f0d45ffa29a69c905b7338b2d562381fbfaec1775be01607b506605fca582a74",
+        "byte_size_sha_verified": true,
+        "verdict": "PASS_SCOPED_DOCUMENTATION_AND_RESPONSE_RECORD_DELTA"
+      },
+      "fixed_targets": [
+        [
+          "libfile_60740fcc99e08191afedc6b783936e0d",
+          0,
+          197774,
+          "6f291f31009ded9d0e302f9cd5f0e488bf59f8022a2b2a0ea556080fdd72a586"
+        ],
+        [
+          "libfile_b59bcb261a0081919635dbd4ac2c5fdc",
+          0,
+          6764574,
+          "6cda26f614657d53604939c667a4d600a784869bd818bace0281ef0a31580115"
+        ],
+        [
+          "libfile_bf1d339b14f08191a668690c0a6182d8",
+          5,
+          200026,
+          "18a6043ea1edeb637ddb6bdf8cd59a961f68ec85b95f7a53ee32a673d0bc219e"
+        ],
+        [
+          "libfile_f9332393d4cc819197d9cfbd7c997db3",
+          5,
+          6766627,
+          "366163518b90b56e7dc7b498f494bd8d5a6e3fefb08aef7448073de0d1678345"
+        ]
+      ],
+      "delta": {
+        "common_zip_members_identical": 61,
+        "changed": 3,
+        "added": 1,
+        "removed": 0,
+        "changed_paths": [
+          "T28/T28_connectivity_records.json",
+          "T28/T28_stage_connectivity_reconciliation.json",
+          "manifest.json"
+        ],
+        "added_paths": [
+          "T29_v5/T29_v5_review_response.json"
+        ],
+        "embedded_external_tables": "PASS byte-equal within v4 and within v5; each delta adds /T28_followup/v5_review_response",
+        "literal_manifest_only_claim": "FAIL",
+        "scoped_description": "Wording correction plus response/current-task-preservation metadata; 61 retained payloads unchanged."
+      },
+      "provenance_limit": "ROLE20 PASS applies to supplied fixed copies; original Library historical retrieval beyond ROLE10 recovery record remains unproven.",
+      "preserved_gates": {
+        "full_reproduction": "FAIL_NOT_MATCHING_FROZEN_U20",
+        "audit_completeness": "HELD",
+        "microsoft_excel_desktop_validation": "HELD",
+        "overall": "NOT_COMPLETE_NOT_ACCEPTED"
+      },
+      "candidate_pair_mutated": false,
+      "source_or_candidate_mutated": false,
+      "role_reports_modified": false
     }
   }
 }
