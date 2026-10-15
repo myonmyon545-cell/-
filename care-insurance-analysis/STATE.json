@@ -2725,11 +2725,12 @@
           "body_read": "FULL"
         },
         "S09": {
-          "id": "libfile_605f9fb605548191918f9e520d9a35fe2",
+          "id": "libfile_605f9fb6055481919ba3ce07b897a540",
           "version": 0,
           "size_bytes": 13999,
           "sha256": "be2511797e0995a34c0b4adf3ee37dd0de83a6ee19faea6447b6bf17e02ca17e",
-          "body_read": "FULL"
+          "body_read": "FULL",
+          "library_file_id": "libfile_605f9fb6055481919ba3ce07b897a540"
         },
         "interpretation": "S07-S09 are now FOUND_CURRENT_LIBRARY_CONTENT. The earlier NOT_FOUND_IN_CHECKED_SCOPE remains accurate for its narrower attachment/selected-bundle scope. Current records do not establish historical U20 generation-time identities."
       },
