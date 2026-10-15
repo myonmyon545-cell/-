@@ -3,10 +3,10 @@
   "role": "10",
   "plan_revision": "2.5",
   "status": "NOT_COMPLETE_FULL_REPRODUCTION_NOT_DEMONSTRATED",
-  "task_id": "T21_ROLE10_10A_REPRO_AUDIT_20261014",
+  "task_id": "T24_ROLE10_SCOPE_EXPANSION_SOURCE_INVENTORY_20261015",
   "source_commit": "dd88fe75447879facea2386b3eff2f07e5081822",
   "pre_save_rechecked_commit": "dd88fe75447879facea2386b3eff2f07e5081822",
-  "updated_at": "2026-10-14",
+  "updated_at": "2026-10-15",
   "startup_read": {
     "branch": "main",
     "head_sha": "210aec627ca32c13874e855a8fd8e6b6a7cd630d",
@@ -411,7 +411,8 @@
   "completed_tasks": [
     "T01",
     "T02",
-    "T04"
+    "T04",
+    "T24_ROLE10_SCOPE_EXPANSION_SOURCE_INVENTORY_20261015"
   ],
   "task_results": {
     "T01": {
@@ -4415,6 +4416,71 @@
       "next_role": "20",
       "next_operation": "independently_review_new_input_identity_and_stage_ledger; do not repeat T22 v2 manifest or scoped checks",
       "completion_condition": "NOT_COMPLETE until full source-to-frozen-pair reproduction, audit completeness, independent review, and required native Excel desktop checks pass"
+    },
+    "T24_ROLE10_SCOPE_EXPANSION_SOURCE_INVENTORY_20261015": {
+      "task_id": "T24_ROLE10_SCOPE_EXPANSION_SOURCE_INVENTORY_20261015",
+      "source_commit": "7601558abdb08be834298afe882bd0171d78c20d",
+      "updated_at": "2026-10-15",
+      "task_status": "S07_S09_SOURCE_CONTENT_FOUND_CURRENT_LIBRARY_IDENTITY_PARTIAL; GENERATION_TIME_IDENTITY_UNKNOWN",
+      "scope": {
+        "methods": [
+          "Library title/content search for exact S07-S09 instruction documents",
+          "Full text read of the three resolved Library records",
+          "search over saved generation/evidence index for summary_v2.mjs, dependency locks/runtime pins, original run ledger and S01 generation-version references"
+        ],
+        "result": "S07, S08, and S09 document bodies are currently retrievable; their generation-time ID/version/SHA bindings are not established. Search results do not prove which saved versions were used during U20 generation."
+      },
+      "discovered_sources": {
+        "S07": {
+          "name": "介護保険データ解析_プロジェクト共通指示.md",
+          "library_file_id": "libfile_f293e5879930819186b897dc0e3c4338",
+          "current_library_version": "1",
+          "size_bytes": 8153,
+          "body_read": "FULL",
+          "body_sha256": "NOT_COMPUTED",
+          "generation_time_version": "UNKNOWN"
+        },
+        "S08": {
+          "name": "プロジェクト作業計画_共通指示.md",
+          "library_file_id": "libfile_b1e28b0e61a48191b21f809be438f8f4",
+          "current_library_version": "1",
+          "size_bytes": 5870,
+          "body_read": "FULL",
+          "body_sha256": "NOT_COMPUTED",
+          "generation_time_version": "UNKNOWN"
+        },
+        "S09": {
+          "name": "プロジェクト作業計画_詳細運用.md",
+          "library_file_id": "libfile_605f9fb6055481919ba3ce07b897a540",
+          "current_library_version": "NOT_RETURNED_BY_LIBRARY",
+          "size_bytes": 13999,
+          "body_read": "FULL",
+          "body_sha256": "NOT_COMPUTED",
+          "generation_time_version": "UNKNOWN"
+        }
+      },
+      "classification_correction": {
+        "previous_recovery_record": "S07_S09 NOT_FOUND_IN_CHECKED_SCOPE relative to supplied attachments and selected generation bundle",
+        "current_scope": "FOUND_CURRENT_LIBRARY_CONTENT",
+        "interpretation": "The former checked-scope result remains accurate for its stated narrow scope. Broader Library search now finds current source content; this does not recover historical generation-time copies or prove historical use."
+      },
+      "unchanged_gaps": {
+        "S01_S06_generation_time_saved_versions": "UNKNOWN",
+        "original_20_run_263_file_ledger": "NOT_RETAINED",
+        "exact_executed_temporary_MJS": "NOT_RETAINED; prior T26/T28 evidence states execution identity unknown; standalone current searches did not resolve exact bytes",
+        "historical_dependency_lock_and_runtime": "NOT_RETAINED_IN_CHECKED_SCOPE",
+        "full_source_to_workbook_and_narrative_entry": "UNCONNECTED"
+      },
+      "decision": {
+        "full_pipeline_rerun": "NOT_RUN_BLOCKED",
+        "reason": "S01-S06 generation-time versions, exact executed code identity, complete historical dependency/runtime identity, and a single connected source-to-workbook-and-narrative entry remain unresolved.",
+        "full_reproduction": "FAIL_NOT_MATCHING_FROZEN_U20",
+        "source_or_frozen_pair_modified": false,
+        "GitHub_sources_uploaded": false,
+        "prior_T22_T28_checks_repeated": false
+      },
+      "next_role": "20",
+      "next_action": "Independently evaluate only this new current-source discovery and scope correction; do not repeat T22/T28 checks."
     }
   },
   "outputs": {
@@ -4732,8 +4798,8 @@
     }
   ],
   "next_role": "20",
-  "next_action": "independently_review_reproduction_evidence_and_remaining_gaps",
-  "restart_condition": "NOT_COMPLETE until full source-to-frozen-pair reproduction, complete audit requirements, ROLE20 required review, and Microsoft Excel desktop checks pass",
+  "next_action": "Independently review only the new S07-S09 current-source discovery and scope correction. Do not repeat T22/T28 checks.",
+  "restart_condition": "Full reproduction remains blocked until generation-time inputs, exact executed code, historical dependencies/runtime, and the connected source-to-workbook-and-narrative entry are evidenced.",
   "candidate": {
     "id": "libfile_c17d27b379308191acf27bb17e9f0497",
     "version": 0,
