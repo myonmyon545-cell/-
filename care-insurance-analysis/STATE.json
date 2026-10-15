@@ -1,8 +1,8 @@
 {
   "schema": "care_state/v1",
-  "revision": 25,
+  "revision": 26,
   "plan_revision": "2.7",
-  "updated_at": "2026-10-15T10:47:00Z",
+  "updated_at": "2026-10-15T12:05:00Z",
   "phase": "DEADLINE_DELIVERABLE_BATCH_EXECUTION",
   "writer": "00",
   "canonical_repository": "myonmyon545-cell/-",
@@ -910,11 +910,11 @@
   },
   "next_action": {
     "owner": "10/20/00",
-    "assignment": "ROLE20 scoped source discovery review integrated; current S07-S09 contents found, historical generation bindings unknown. ROLE10 exit-code/comparator attribution correction required. Full reproduction FAIL; audit/native gates HELD.",
-    "role10_next_single_unit": "ROLE20の指摘に従い、旧baseline gateの終了コードと後続U20比較を別々に特定し、各比較対象・入力・出力・証拠位置を記した訂正記録を保存する。既完了検査は説明修正だけのため再実行しない。ほかの来歴不足は回収または範囲付き分類し、全工程入口が揃うまで再実行・候補置換しない。",
-    "role20": "ROLE10訂正記録または新規来歴証拠を範囲限定で独立確認。T22/T28済み検査を重複しない。",
+    "assignment": "ROLE20 consolidated provenance review integrated at PASS within stated scope; no ROLE10 correction or rerun required from this review. Continue only on new concrete evidence.",
+    "role10_next_single_unit": "現行の再開条件に変更なし。新たな来歴証拠が得られた場合のみ該当範囲を追記・分類する。新証拠がなければ再実行しない。",
+    "role20": "本レビューに基づく追加評価・修正なし。新規証拠が保存された場合のみ該当範囲を独立確認。",
     "native_excel": "Windows/macOS Microsoft Excel実機担当・環境は未確保/HELD。",
-    "restart_condition": "ROLE10訂正記録または新規来歴証拠、もしくは実機担当者と検査証拠を確認した時点で該当範囲を照合。",
+    "restart_condition": "新規の具体的証拠・来歴資料、または実機検査証拠が保存された場合に該当範囲のみ再開。",
     "runtime": "other_chat_execution_unobserved",
     "cross_chat_dispatch": "not_claimed"
   },
@@ -1050,6 +1050,13 @@
       "source_commit": "e92e702b230f64e20cd8629cd74e2187930a730c",
       "event": "integrated_ROLE20_source_discovery_review",
       "details": "最新main同一コミットの5ファイルを確認し、保存済ROLE20記録(libfile_346fa4cd6e888191b8bb6e95c2e3caf4 v0, 9938 bytes, SHA 29ab2e...)を全文読取り。S07-S09は現行Library本文が取得可能と限定統合。過去の添付/選択バンドル内未発見はその範囲で有効だが、生成時ID/版は依然UNKNOWN。ROLE20の限定PASSを記録し、ROLE10記録の終了コードと比較対象の帰属記述にFAIL_DOCUMENTATION_ATTRIBUTIONを反映。別の旧baseline gateとU20比較をそれぞれ入力/comparator・出力・根拠位置付きで分離する修正を次のROLE10作業に設定。全工程FAIL、監査/実機HELD、全体NOT_COMPLETE_NOT_ACCEPTEDを維持。T22/T28再実行なし。候補・原資料・役割報告は未変更。"
+    },
+    {
+      "at": "2026-10-15T12:05:00Z",
+      "role": "00",
+      "source_commit": "6f0a777165fd6dd64d15adabdf0a6412628fa395",
+      "event": "integrated_consolidated_ROLE20_provenance_review",
+      "details": "指定ROLE20統合評価記録をID/file_id/版/サイズ/SHAで固定して全文読戻し。最新mainの同一コミット5ファイルを確認し、STATE revision25から26へSTATEのみ更新。PASSは統合記録の整合性・帰属・証拠境界・再開条件に限定。ROLE10への追加修正不要、レビュー起因の状態変更なし。生成時版・実行原物・依存/runtime・完全な工程接続、検索実施の独立立証、事後U20比較のコマンドログ/終了コード、隔離先、Excel実機は未解決。全工程FAIL、監査/Excel実機HELD、全体NOT_COMPLETE_NOT_ACCEPTEDを維持。ROLE10/ROLE20既完了チェック再実行なし。"
     }
   ],
   "deployment_status": "registered_on_main",
@@ -1673,7 +1680,7 @@
       "instruction": "固定U20のU17→U18→U19→U20工程接続、正確な生成入口・依存・実使用入力版を回収し、不足を分類。新規隔離出力でブックと叙述を元資料から再現・照合できる入口と証拠を整備する。現FAIL出力を固定候補の代替にしない。",
       "runtime": "unobserved",
       "latest_verified_completed": "S07-S09 current Library bodies located and read (current identities only); ROLE20 review found exit-code/comparator attribution defect in recovery record. Historical generation bindings remain UNKNOWN; full reproduction FAIL.",
-      "next_single_unit": "ROLE20の指摘に従い、旧baseline gateの終了コードと後続U20比較を別々に特定し、各比較対象・入力・出力・証拠位置を記した訂正記録を保存する。既完了検査は説明修正だけのため再実行しない。ほかの来歴不足は回収または範囲付き分類し、全工程入口が揃うまで再実行・候補置換しない。",
+      "next_single_unit": "現行の再開条件に変更なし。新たな来歴証拠が得られた場合のみ該当範囲を追記・分類する。新証拠がなければ再実行しない。",
       "candidate_edit": "forbidden",
       "report_write_scope": "reports/10.json only",
       "output": "reports/10.jsonに追加証拠、段階入出力台帳、取得未了/取得不能の根拠、正確な再開条件を保存。未実行をPASSにしない。"
@@ -1681,10 +1688,10 @@
     "ROLE20": {
       "instruction": "新たに保存された再現/監査/実機証拠だけ独立評価。T28 v4/v5 fixed-copy delta review (ROLE20 record libfile_f2142cb16ee881918702ac88500fd338 v0) および従前v3限定確認を重複実行しない。",
       "runtime": "unobserved",
-      "status": "SCOPED_CURRENT_SOURCE_DISCOVERY_PASS; ROLE10_ATTRIBUTION_CORRECTION_REQUIRED; FULL_REPRODUCTION_AUDIT_NATIVE_HELD",
+      "status": "CONSOLIDATED_PROVENANCE_REVIEW_PASS_SCOPED; NO_CORRECTION_REQUIRED; FULL_REPRODUCTION_AUDIT_NATIVE_HELD",
       "duplicate_checks": "T22 v2 manifestおよびT23限定確認を同一証拠で再実行しない。",
-      "latest_verified_completed": "Saved ROLE20 source discovery review read; scoped PASS for current S07-S09 availability and scope correction, HELD historical binding, FAIL documentation attribution.",
-      "next_single_unit": "ROLE10訂正記録または新規来歴証拠を範囲限定で独立確認。T22/T28済み検査を重複しない。"
+      "latest_verified_completed": "Consolidated ROLE20 provenance review PASS within stated scope; ROLE10 correction not required; unresolved historical lineage and native gates remain.",
+      "next_single_unit": "本レビューに基づく追加評価・修正なし。新規証拠が保存された場合のみ該当範囲を独立確認。"
     },
     "ROLE30": {
       "instruction": "No work unless ROLE10/ROLE20 produces a concrete new defect needing a correction proposal",
@@ -2763,6 +2770,60 @@
         "native_excel_executed": false,
         "review_request_dispatched": false
       }
+    },
+    "ROLE20_CONSOLIDATED_PROVENANCE_REVIEW": {
+      "schema": "care_role00_integrate_consolidated_role20_review_v1",
+      "integrated_at": "2026-10-15T12:05:00Z",
+      "review_commit": "6f0a777165fd6dd64d15adabdf0a6412628fa395",
+      "reviewed_role10_record": {
+        "id": "libfile_69d0d6914df08191a3d7065df0dc9d7c",
+        "version": 3,
+        "size_bytes": 59150,
+        "sha256": "809253469fa6ff313bfc1a4a2097905650d8ff607bc2c3d102aa129987852b9b",
+        "identity_status": "PASS_ACTUAL_BYTES_VERIFIED"
+      },
+      "review_artifact": {
+        "id": "libfile_a4db58716fc08191a4b721bb9446aeae",
+        "file_id": "file_000000007a24820988a75fbecfdfe77a",
+        "filename": "ROLE20_consolidated_provenance_review.json",
+        "version": 0,
+        "size_bytes": 17741,
+        "sha256": "cfe3c2139add0f1e53fd17ccd5efdacb8fd8ec976d4d383307c1710b1f7932d2",
+        "readback": "PASS_ALL_BYTES_EQUAL"
+      },
+      "verdict": "PASS",
+      "verdict_scope": "Consolidated record integrity, attribution, evidence boundaries, and restart conditions only.",
+      "checks": {
+        "current_identity_vs_generation_version": "PASS; current observations distinguished from historical generation-time UNKNOWN.",
+        "S07_ID_correction": "PASS; corrected S07 current identity matches reviewed records.",
+        "old_baseline_exit_1_attribution": "PASS; EXIT_1 belongs to the old-baseline replay gate, not the later U20 comparison.",
+        "separate_U20_post_run_comparison": "PASS as a separately recorded post-hoc comparison; independent command log and exit code remain unidentified.",
+        "bounded_search_and_missing_classification": "PASS for scope/classification; search execution and exhaustive absence independently unconfirmed.",
+        "reproduction_gate_and_restart": "PASS; BLOCKED_DO_NOT_RERUN retained until specified evidence is recovered."
+      },
+      "unresolved_limits": [
+        "Historical generation-time input versions, executed source, dependencies/runtime and full connected entry remain unproven.",
+        "Search execution history and absence beyond the recorded scope are not independently verified.",
+        "Separate post-hoc U20 comparison command, exit code and log remain unidentified.",
+        "Isolated output path was planned but not verified to exist or be usable.",
+        "Native Excel desktop validation remains separately required and HELD.",
+        "T25 correction source was reviewed as text; its own actual SHA was not verified in this evaluation."
+      ],
+      "role10_correction_needed": false,
+      "state_change_from_review": false,
+      "repeated_checks": {
+        "T22": false,
+        "T28_delta": false,
+        "ROLE10_checks": false,
+        "per_finding_followup_tasks": false
+      },
+      "preserved_status": {
+        "full_reproduction": "FAIL_NOT_MATCHING_FROZEN_U20",
+        "audit_completeness": "HELD",
+        "Excel_desktop_validation": "HELD",
+        "overall": "NOT_COMPLETE_NOT_ACCEPTED"
+      },
+      "next_action": "No additional ROLE10 correction or rerun is required from this review. Resume only on new concrete evidence or a newly recovered provenance item."
     }
   },
   "native_excel_operator_coordination": {
