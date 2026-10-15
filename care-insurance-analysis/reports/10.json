@@ -3,7 +3,7 @@
   "role": "10",
   "plan_revision": "2.5",
   "status": "NOT_COMPLETE_FULL_REPRODUCTION_NOT_DEMONSTRATED",
-  "task_id": "T24_ROLE10_SCOPE_EXPANSION_SOURCE_INVENTORY_20261015",
+  "task_id": "T25_ROLE10_CORRECT_COMPARISON_ATTRIBUTION_20261015",
   "source_commit": "dd88fe75447879facea2386b3eff2f07e5081822",
   "pre_save_rechecked_commit": "dd88fe75447879facea2386b3eff2f07e5081822",
   "updated_at": "2026-10-15",
@@ -412,7 +412,8 @@
     "T01",
     "T02",
     "T04",
-    "T24_ROLE10_SCOPE_EXPANSION_SOURCE_INVENTORY_20261015"
+    "T24_ROLE10_SCOPE_EXPANSION_SOURCE_INVENTORY_20261015",
+    "T25_ROLE10_CORRECT_COMPARISON_ATTRIBUTION_20261015"
   ],
   "task_results": {
     "T01": {
@@ -4481,6 +4482,99 @@
       },
       "next_role": "20",
       "next_action": "Independently evaluate only this new current-source discovery and scope correction; do not repeat T22/T28 checks."
+    },
+    "T25_ROLE10_CORRECT_COMPARISON_ATTRIBUTION_20261015": {
+      "task_id": "T25_ROLE10_CORRECT_COMPARISON_ATTRIBUTION_20261015",
+      "source_commit": "e92e702b230f64e20cd8629cd74e2187930a730c",
+      "updated_at": "2026-10-15",
+      "task_status": "ROLE20_ATTRIBUTION_FINDING_CORRECTED; FULL_REPRODUCTION_FAIL_RETAINED",
+      "reviewer_artifact": {
+        "id": "libfile_346fa4cd6e888191b8bb6e95c2e3caf4",
+        "version": 0,
+        "size_bytes": 9938,
+        "sha256": "29ab2e5be5e4f91e4566fd0ca5523817eba9005d1880cf3bd0252710a19c9d23",
+        "verdict": "PASS_SCOPED_WITH_ONE_DOCUMENTATION_ATTRIBUTION_CORRECTION"
+      },
+      "corrected_recovery_record": {
+        "id": "libfile_69d0d6914df08191a3d7065df0dc9d7c",
+        "version": 1,
+        "file_name": "ROLE10_reproduction_evidence_recovery.json",
+        "size_bytes": 15461,
+        "sha256": "80925978c22e5f49e912ca7453093d777b5f61fd3c25b267058e366b28b6f636",
+        "readback": "EXACT_MATERIALIZED_SIZE_SHA_JSON_PARSE_PASS"
+      },
+      "exit_code_attribution": {
+        "run_id": "U10A_REPRO_T26B_20261014",
+        "exit_code": 1,
+        "comparator": "old baseline workbook",
+        "comparator_sha256": "ae232eb250d4e089f7a167290e85bf4b39c59b0e12a11b0115be7d8290433695",
+        "replay_output_sha256": "d6e7543471ff96b980643c0ae9947a6d0cd66220f8baa21f9274cb60f52e2383",
+        "full_replay_record": {
+          "path": "T26/full_replay.json",
+          "sha256": "2c48cdb622490b9b8559f6abcd7fbf21bc00dc5fbacb2c63184b7b72841fa8a4"
+        },
+        "attribution": "The recorded exit 1 applies only to the old-baseline comparison, not to a gate against frozen U20."
+      },
+      "separate_frozen_U20_inspection": {
+        "kind": "post-run structural/logical difference inspection",
+        "record": {
+          "path": "T26/U20_frozen_comparison.json",
+          "sha256": "a8f36e4c4a0f83817277bcc7870a4e35f75b8ad34cdff6e31808a47d1980d974"
+        },
+        "frozen_workbook": {
+          "id": "libfile_c17d27b379308191acf27bb17e9f0497",
+          "version": 0,
+          "sha256": "9c3c50835961e876844daf59db5709316055a79579f79aa151ad54e15a5f68f8"
+        },
+        "result": "FAIL",
+        "semantic_cell_differences": {
+          "Ⅳ事務データ": 1,
+          "Ⅲ審査判定データ（変更率）": 1,
+          "分析要点": 2792
+        },
+        "scope": "This inspection is distinct from the old-baseline gate. It records differences only; it does not prove causal correctness or full reproduction."
+      },
+      "S07_S09_current_identity": {
+        "source": "ROLE20 materialization and exact identity report",
+        "items": [
+          {
+            "name": "介護保険データ解析_プロジェクト共通指示.md",
+            "id": "libfile_f293e5879930819186b897dc0e3c4338",
+            "version": 1,
+            "size_bytes": 8153,
+            "sha256": "a8b37b9d7e3f9433f28f032da17c8206f1eb35ef1565ff747ea8197695b3c5e7"
+          },
+          {
+            "name": "プロジェクト作業計画_共通指示.md",
+            "id": "libfile_b1e28b0e61a48191b21f809be438f8f4",
+            "version": 1,
+            "size_bytes": 5870,
+            "sha256": "bf1d8d2354656be20a29bafdddcd2f5c16ffafd56c535358c28872b34a84d531"
+          },
+          {
+            "name": "プロジェクト作業計画_詳細運用.md",
+            "id": "libfile_605f9fb6055481919ba3ce07b897a540",
+            "version": 0,
+            "size_bytes": 13999,
+            "sha256": "be2511797e0995a34c0b4adf3ee37dd0de83a6ee19faea6447b6bf17e02ca17e"
+          }
+        ],
+        "generation_time_versions": "UNKNOWN for all three"
+      },
+      "gates": {
+        "full_reproduction": "FAIL_NOT_MATCHING_FROZEN_U20",
+        "audit_completeness": "HELD",
+        "native_excel": "HELD",
+        "overall": "NOT_COMPLETE_NOT_ACCEPTED",
+        "rerun": "NOT_RUN; no rerun was needed to correct attribution"
+      },
+      "integrity": {
+        "source_or_frozen_pair_modified": false,
+        "repeated_T22_T28_checks": false,
+        "unrun_check_claimed_pass": false
+      },
+      "next_role": "20",
+      "next_action": "Independently review only the corrected comparison attribution and ROLE20-materialized S07-S09 identities; do not repeat prior T22/T28 checks."
     }
   },
   "outputs": {
@@ -4798,8 +4892,8 @@
     }
   ],
   "next_role": "20",
-  "next_action": "Independently review only the new S07-S09 current-source discovery and scope correction. Do not repeat T22/T28 checks.",
-  "restart_condition": "Full reproduction remains blocked until generation-time inputs, exact executed code, historical dependencies/runtime, and the connected source-to-workbook-and-narrative entry are evidenced.",
+  "next_action": "Review the corrected ROLE10 comparison attribution and verified current S07-S09 identities only. Do not repeat completed T22/T28 checks.",
+  "restart_condition": "Full reproduction remains blocked until generation-time inputs, exact executed code identity, historical dependencies/runtime, and a connected source-to-workbook-and-narrative entry are evidenced.",
   "candidate": {
     "id": "libfile_c17d27b379308191acf27bb17e9f0497",
     "version": 0,
