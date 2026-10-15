@@ -1049,5 +1049,98 @@
         ]
       }
     }
-  ]
+  ],
+  "correction_review_20261015": {
+    "schema": "care_role20_role10_correction_review_result_v1",
+    "role": "20",
+    "task_id": "T25_ROLE20_CORRECTION_ATTRIBUTION_REVIEW_20261015",
+    "producer_task_id": "T25_ROLE10_CORRECT_COMPARISON_ATTRIBUTION_20261015",
+    "source_commit": "58c465f033f678c6f6ae8ae9811619088394fdcc",
+    "handoff_commit_matches": true,
+    "state_revision": 25,
+    "checked_at": "2026-10-15T11:03:18.531Z",
+    "same_commit_blob_shas": {
+      "PLAN.md": "4e9acf1277229cba731e1f9e010ef4cff52e290c",
+      "STATE.json": "ce213f00291a6aace22f1cb4f00cd7a6ea5d7e40",
+      "reports/10.json": "bf3a7c99fa6ba8d1d81b6693f4c543171e46de7c",
+      "reports/20.json": "513d0a8c95117419cbf67fc94265c4c01ccaef3d",
+      "reports/30.json": "51c63f2f9e1c2ad516d845c19a743c147fa122f7"
+    },
+    "verdict": "PASS_SCOPED_CORRECTION_ONLY",
+    "overall_status": "NOT_COMPLETE_NOT_ACCEPTED",
+    "corrected_recovery_record": {
+      "id": "libfile_69d0d6914df08191a3d7065df0dc9d7c",
+      "file_id": "file_000000005dd08206b58af6fa059dbf85",
+      "version": 1,
+      "size_bytes": 15461,
+      "sha256": "80925978c22e5f49e912ca7453093d777b5f61fd3c25b267058e366b28b6f636",
+      "identity_check": "PASS_ACTUAL_BYTES_SIZE_SHA_AND_JSON_PARSE"
+    },
+    "prior_review": {
+      "id": "libfile_346fa4cd6e888191b8bb6e95c2e3caf4",
+      "version": 0,
+      "size_bytes": 9938,
+      "sha256": "29ab2e5be5e4f91e4566fd0ca5523817eba9005d1880cf3bd0252710a19c9d23",
+      "identity_check": "PASS_ACTUAL_BYTES"
+    },
+    "evidence_package": {
+      "id": "libfile_f9332393d4cc819197d9cfbd7c997db3",
+      "file_id": "file_00000000c3f0820985693e99ef5dacd5",
+      "version": 5,
+      "size_bytes": 6766627,
+      "sha256": "366163518b90b56e7dc7b498f494bd8d5a6e3fefb08aef7448073de0d1678345",
+      "scope": "Read only three retained JSON evidence members to verify correction attribution; no T22 tests, T28 delta checks or replay repeated."
+    },
+    "findings": [
+      {
+        "id": "EXIT_CODE_COMPARISON_ATTRIBUTION",
+        "verdict": "PASS_CORRECTED",
+        "evidence": [
+          "T26/full_replay.json SHA256 2c48cdb622490b9b8559f6abcd7fbf21bc00dc5fbacb2c63184b7b72841fa8a4",
+          "T26/run_result.json SHA256 175b9dd91c9c1ca437f2a1369c419254ec299c873024e5d3bd0794c1a538e93b"
+        ],
+        "basis": "Same run_id U10A_REPRO_T26B_20261014. run_result status EXIT_1 and parsed stdout match full_replay old candidate SHA ae232eb250d4e089f7a167290e85bf4b39c59b0e12a11b0115be7d8290433695 and replay SHA d6e7543471ff96b980643c0ae9947a6d0cd66220f8baa21f9274cb60f52e2383. Corrected recovery stages and report10 T25 attribute exit 1 only to this comparison."
+      },
+      {
+        "id": "FROZEN_U20_COMPARISON_SEPARATION",
+        "verdict": "PASS",
+        "evidence": "T29_v4/recovered/T26/U20_frozen_comparison.json SHA256 a8f36e4c4a0f83817277bcc7870a4e35f75b8ad34cdff6e31808a47d1980d974",
+        "basis": "Logical record T26/U20_frozen_comparison.json is stored under the recovered archive prefix. It compares the same replay SHA to frozen SHA 9c3c50835961e876844daf59db5709316055a79579f79aa151ad54e15a5f68f8; comparison_status FAIL, 5 changed parts and 2794 changed cells across 3 sheets. Explicitly limited to structural/logical workbook comparison. Correction retains that limitation; no new exit code or full source-to-pair execution inferred."
+      },
+      {
+        "id": "S07_S09_CURRENT_VS_GENERATION_IDENTITY",
+        "verdict": "PASS",
+        "basis": "Corrected source_inventory_correction and report10 T25 match prior independently verified IDs, versions 1/1/0, sizes 8153/5870/13999 and all three SHA values. All generation_time_version fields remain UNKNOWN. Prior current-source checks reused, not repeated."
+      },
+      {
+        "id": "CORRECTED_RECORD_IDENTITY",
+        "verdict": "PASS",
+        "basis": "Materialization returns version 1 and fixed file ID; actual bytes total 15461 and SHA256 exactly matches requested value. JSON parses."
+      }
+    ],
+    "remaining_limits": [
+      "Historical generation-time input versions remain unproven.",
+      "Exact executed temporary MJS, historical dependencies/runtime, original ledger and connected source-to-workbook-and-narrative entry remain unresolved.",
+      "Old NOT_FOUND_IN_CHECKED_SCOPE entries in the recovery record remain historical narrow-scope entries; appended source_inventory_correction and reproduction_decision express current discovery.",
+      "Producer reviewer_artifact.verdict is a summary label, not an exact quote of prior verdict PASS_SCOPED_CURRENT_SOURCE_DISCOVERY_WITH_RECOVERY_RECORD_CAVEAT; no additional PASS scope inferred.",
+      "Retained comparison records were read, not independently re-executed; cell counts are checked as recorded evidence, not newly recomputed."
+    ],
+    "retained_gates": {
+      "full_reproduction": "FAIL_NOT_MATCHING_FROZEN_U20",
+      "audit_completeness": "HELD",
+      "Microsoft_Excel_desktop_validation": "HELD",
+      "overall": "NOT_COMPLETE_NOT_ACCEPTED"
+    },
+    "controls": {
+      "T22_tests_repeated": false,
+      "T28_delta_review_repeated": false,
+      "source_or_frozen_pair_mutated": false,
+      "role10_report_mutated": false,
+      "state_or_plan_mutated": false
+    },
+    "next_action": {
+      "owner": "00",
+      "action": "Integrate scoped correction closure only. Retain full reproduction FAIL and audit/native HELD; resume ROLE20 only on new provenance or native-validation evidence."
+    }
+  }
 }
